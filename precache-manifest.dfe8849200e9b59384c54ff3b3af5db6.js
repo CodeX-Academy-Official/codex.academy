@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codex.academy/404.html"
   },
   {
-    "revision": "4a99eb073510426a7ede",
+    "revision": "51f7f5daaa37e91f8017",
     "url": "/codex.academy/css/app.af1ad4f5.css"
   },
   {
@@ -12,7 +12,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codex.academy/img/logo.82b9c7a5.png"
   },
   {
-    "revision": "f7b81e5d32fe8db39fb4a2eba2b4c135",
+    "revision": "aabe1567c1c64bb46e6c3e1c0cfb57b3",
     "url": "/codex.academy/index.html"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codex.academy/js/about.37ac62c0.js"
   },
   {
-    "revision": "4a99eb073510426a7ede",
-    "url": "/codex.academy/js/app.5be1e7a3.js"
+    "revision": "51f7f5daaa37e91f8017",
+    "url": "/codex.academy/js/app.19d09885.js"
   },
   {
     "revision": "78185cbc519ba1e04382",
