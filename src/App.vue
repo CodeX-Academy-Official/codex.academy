@@ -1,12 +1,27 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <navHeader />
+    <router-view />
+    <Footer />
   </div>
 </template>
+
+<script>
+import navHeader from "./components/layout/nav";
+import Footer from "./components/layout/footer";
+
+export default {
+  beforeCreate() {
+    if (this.$route.query.p) {
+      this.$router.push(this.$route.query.p);
+    }
+  },
+  components: {
+    navHeader,
+    Footer
+  }
+};
+</script>
 
 <style lang="scss">
 #app {
