@@ -4,8 +4,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codex.academy/404.html"
   },
   {
-    "revision": "cd9eea9d0a005c34df08",
-    "url": "/codex.academy/css/app.fd1f0d81.css"
+    "revision": "0f6c896f2f0a1f3260fd",
+    "url": "/codex.academy/css/app.6f2a62c5.css"
   },
   {
     "revision": "2dfeb5b8fd800e2ebd629a27d0aaac56",
@@ -76,7 +76,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codex.academy/img/photos/christina-wocintechchat-com-vLwH8bWoi_8-unsplash.jpg"
   },
   {
-    "revision": "a16f2913c1bcea331af39567da814d00",
+    "revision": "e52e2c95e005c74a189ec33013ce5986",
     "url": "/codex.academy/index.html"
   },
   {
@@ -84,8 +84,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codex.academy/js/about.cb453c43.js"
   },
   {
-    "revision": "cd9eea9d0a005c34df08",
-    "url": "/codex.academy/js/app.2dcd5316.js"
+    "revision": "0f6c896f2f0a1f3260fd",
+    "url": "/codex.academy/js/app.f4fe2bbb.js"
   },
   {
     "revision": "9004787fe8d665049f70",
