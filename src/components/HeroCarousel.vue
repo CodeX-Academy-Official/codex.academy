@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="pb-5">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -81,7 +81,7 @@
     background-color: black;
     display: inline;
     font-size: 3.5rem;
-    line-height: 3.4rem;
+    line-height: 4rem;
   }
   p {
     font-style: italic;

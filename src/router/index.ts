@@ -2,6 +2,11 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Plans from "../views/Plans.vue";
+import Contact from "../views/Contact.vue";
+import FAQ from "../views/FAQ.vue";
+import Blog from "../views/Blog.vue";
+import Method from "../views/Method.vue";
+import Testimonials from "../views/Testimonials.vue";
 
 Vue.use(VueRouter);
 
@@ -15,6 +20,31 @@ const routes = [
     path: "/plans",
     name: "Plans",
     component: Plans
+  },
+  {
+    path: "/faq",
+    name: "FAQ",
+    component: FAQ
+  },
+  {
+    path: "/testimonials",
+    name: "Testimonials",
+    component: Testimonials
+  },
+  {
+    path: "/method",
+    name: "Method",
+    component: Method
+  },
+  {
+    path: "/contact",
+    name: "Contact",
+    component: Contact
+  },
+  {
+    path: "/blog",
+    name: "Blog",
+    component: Blog
   },
   {
     path: "/about",

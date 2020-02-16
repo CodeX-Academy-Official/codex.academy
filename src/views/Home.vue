@@ -1,8 +1,18 @@
 <template>
   <div>
     <HeroCarousel />
-    <PlansTable />
-    <internshipPartners />
+    <div class="container">
+      <IntroBlock />
+      <PlansTable />
+      <hr />
+      <expectations />
+      <hr />
+      <technologies />
+      <hr />
+      <TestimonialsCarousel />
+      <hr />
+      <internshipPartners />
+    </div>
   </div>
 </template>
 
@@ -11,6 +21,10 @@ import HelloWorld from "@/components/HelloWorld.vue";
 import internshipPartners from "@/components/internship-partners";
 import HeroCarousel from "@/components/HeroCarousel";
 import PlansTable from "@/components/PlanTable";
+import IntroBlock from "@/components/IntroBlock";
+import expectations from "@/components/FAQ/expectations";
+import technologies from "@/components/FAQ/technologies";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 
 export default {
   name: "Home",
@@ -18,7 +32,11 @@ export default {
     HelloWorld,
     internshipPartners,
     HeroCarousel,
-    PlansTable
+    PlansTable,
+    IntroBlock,
+    technologies,
+    expectations,
+    TestimonialsCarousel
   }
 };
 </script>

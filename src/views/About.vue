@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <div class="container">
     <!-- Page Heading/Breadcrumbs -->
     <h1 class="mt-4 mb-3">
       About
@@ -102,6 +102,6 @@
       </div>
     </div>
     <!-- /.row -->
-  </section>
+  </div>
   <!-- /.container -->
 </template>
