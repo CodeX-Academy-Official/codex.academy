@@ -4,12 +4,28 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codex.academy/404.html"
   },
   {
-    "revision": "f1a25d2af3cdda936a54",
-    "url": "/codex.academy/css/app.6f2a62c5.css"
+    "revision": "b1492548dd7c8385f970",
+    "url": "/codex.academy/css/app.3fa0f04e.css"
   },
   {
     "revision": "2dfeb5b8fd800e2ebd629a27d0aaac56",
     "url": "/codex.academy/css/modern-business.css"
+  },
+  {
+    "revision": "463453dc533fb32966a8817f9d1879f8",
+    "url": "/codex.academy/img/headshots/leanne.jpg"
+  },
+  {
+    "revision": "11718ca4e2de10d8a9b5df9936bd730e",
+    "url": "/codex.academy/img/headshots/louis.jpg"
+  },
+  {
+    "revision": "341483efa89cf384b4c3a3f57360ea74",
+    "url": "/codex.academy/img/headshots/randy.jpg"
+  },
+  {
+    "revision": "fcd331b232664cccb903dda9a51b7733",
+    "url": "/codex.academy/img/learner-flow.png"
   },
   {
     "revision": "423bd88e9a60cfd42b6ac596172a72a0",
@@ -76,16 +92,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codex.academy/img/photos/christina-wocintechchat-com-vLwH8bWoi_8-unsplash.jpg"
   },
   {
-    "revision": "46e7d0bc8a36acd31bc31a3d257b62c1",
+    "revision": "c4d5488c87de6defb68cb870f15d563c",
+    "url": "/codex.academy/img/tech-line.png"
+  },
+  {
+    "revision": "5922dc516bb622f72e6cdda0bb6fd8ff",
     "url": "/codex.academy/index.html"
   },
   {
-    "revision": "a9850223b7ebb21e7e24",
-    "url": "/codex.academy/js/about.cb453c43.js"
+    "revision": "408ba837780130d3c398",
+    "url": "/codex.academy/js/about.72023356.js"
   },
   {
-    "revision": "f1a25d2af3cdda936a54",
-    "url": "/codex.academy/js/app.873d3eb0.js"
+    "revision": "b1492548dd7c8385f970",
+    "url": "/codex.academy/js/app.70118d4c.js"
   },
   {
     "revision": "9004787fe8d665049f70",
