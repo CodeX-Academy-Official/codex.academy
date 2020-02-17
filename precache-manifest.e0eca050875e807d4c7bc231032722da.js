@@ -4,11 +4,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codex.academy/404.html"
   },
   {
-    "revision": "a71ef1490f2182c42c80",
-    "url": "/codex.academy/css/app.3fa0f04e.css"
+    "revision": "5fcae9a67c2a0b2e5bd5",
+    "url": "/codex.academy/css/app.8da8349c.css"
   },
   {
-    "revision": "2dfeb5b8fd800e2ebd629a27d0aaac56",
+    "revision": "fbd6f13d7f012b61b1158cbbf428f615",
     "url": "/codex.academy/css/modern-business.css"
   },
   {
@@ -96,16 +96,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codex.academy/img/tech-line.png"
   },
   {
-    "revision": "ea1b88abcebd7296c81311496d2b3f71",
+    "revision": "9b90c97a76ec35f73902d9fbe6e5c36e",
     "url": "/codex.academy/index.html"
   },
   {
-    "revision": "2ff64a59d328db79ef32",
-    "url": "/codex.academy/js/about.273c4beb.js"
+    "revision": "2efafadc7a68d937286b",
+    "url": "/codex.academy/js/about.28defb1a.js"
   },
   {
-    "revision": "a71ef1490f2182c42c80",
-    "url": "/codex.academy/js/app.31aa3ddd.js"
+    "revision": "5fcae9a67c2a0b2e5bd5",
+    "url": "/codex.academy/js/app.e2e299da.js"
   },
   {
     "revision": "a0498d2ef0b12edb9d47",
