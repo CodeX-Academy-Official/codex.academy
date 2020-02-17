@@ -1,7 +1,7 @@
 <template>
   <!-- Content Row -->
   <div class="row">
-    <div class="col-lg-4 mb-4" v-for="plan in plans" :key="plan.id">
+    <div class="col-lg-4 mb-4 plans-table" v-for="plan in plans" :key="plan.id">
       <PlanCard
         :id="plan.id"
         :title="plan.title"
@@ -77,3 +77,9 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+.plans-table {
+  text-align: center;
+}
+</style>

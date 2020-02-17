@@ -5,9 +5,14 @@
       <IntroBlock />
       <PlansTable />
       <hr />
-      <expectations />
-      <hr />
-      <technologies />
+      <div class="row">
+        <div class="col-2 d-none d-lg-block"></div>
+        <div class="col">
+          <h1 class="pb-5">CodeX Academy is...</h1>
+          <MethodList />
+        </div>
+        <div class="col-2 d-none d-lg-block"></div>
+      </div>
       <hr />
       <TestimonialsCarousel />
       <hr />
@@ -25,6 +30,7 @@ import IntroBlock from "@/components/IntroBlock";
 import expectations from "@/components/FAQ/expectations";
 import technologies from "@/components/FAQ/technologies";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
+import MethodList from "@/components/MethodList";
 
 export default {
   name: "Home",
@@ -36,7 +42,8 @@ export default {
     IntroBlock,
     technologies,
     expectations,
-    TestimonialsCarousel
+    TestimonialsCarousel,
+    MethodList
   }
 };
 </script>

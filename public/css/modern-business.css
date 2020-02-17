@@ -20,3 +20,39 @@ body {
 .portfolio-item {
   margin-bottom: 30px;
 }
+
+body {
+  font-family: "Roboto", sans-serif;
+  min-height: 75rem;
+  padding-top: 4.5rem;
+  font-size: 15px;
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+  color: black;
+}
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 1.8rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+p {
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+}
+hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}

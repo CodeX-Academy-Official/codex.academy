@@ -1,8 +1,11 @@
 <template>
   <!-- Project One -->
   <div class="row text-left">
-    <div v-if="iconSide === 'left' || !iconSide" class="col-md-2 text-center">
-      <font-awesome-icon :icon="icon" class="fa-7x" />
+    <div
+      v-if="iconSide === 'left' || !iconSide"
+      class="col-md-2 text-center align-middle"
+    >
+      <font-awesome-icon :icon="icon" class="fa-3x" />
       <!-- <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt /> -->
     </div>
     <div class="col">

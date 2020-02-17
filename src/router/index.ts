@@ -7,6 +7,7 @@ import FAQ from "../views/FAQ.vue";
 import Blog from "../views/Blog.vue";
 import Method from "../views/Method.vue";
 import Testimonials from "../views/Testimonials.vue";
+import Enroll from "../views/Enroll.vue";
 
 Vue.use(VueRouter);
 
@@ -45,6 +46,11 @@ const routes = [
     path: "/blog",
     name: "Blog",
     component: Blog
+  },
+  {
+    path: "/enroll",
+    name: "Enroll",
+    component: Enroll
   },
   {
     path: "/about",

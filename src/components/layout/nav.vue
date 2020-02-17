@@ -1,9 +1,15 @@
 <template>
   <!-- Navigation -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
+  <nav
+    class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top"
+  >
     <!-- <div class="container"> -->
     <router-link class="navbar-brand" to="/">
-      <img class="logo" src="img/logo/horizontal_logo.png" alt="CodeX Academy Logo" />
+      <img
+        class="logo"
+        src="img/logo/horizontal_logo.png"
+        alt="CodeX Academy Logo"
+      />
     </router-link>
     <button
       class="navbar-toggler navbar-toggler-right"
@@ -19,6 +25,9 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
+          <router-link to="/" class="nav-link">Home</router-link>
+        </li>
+        <li class="nav-item">
           <router-link to="/plans" class="nav-link">Plans</router-link>
         </li>
         <li class="nav-item">
@@ -28,7 +37,9 @@
           <router-link to="/method" class="nav-link">Method</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/testimonials" class="nav-link">Testimonials</router-link>
+          <router-link to="/testimonials" class="nav-link"
+            >Testimonials</router-link
+          >
         </li>
         <li class="nav-item">
           <router-link class="nav-link" to="/blog">Blog</router-link>
@@ -97,7 +108,24 @@
   </nav>
 </template>
 
-<style lang="sass" scoped>
-.navbar { height: 3.5rem; }
-.navbar img.logo { height: 2.1rem; }
+<style lang="scss" scoped>
+#nav {
+  z-index: 200000;
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+
+.navbar {
+  height: 4.5rem;
+}
+.navbar img.logo {
+  height: 3.1rem;
+}
 </style>
