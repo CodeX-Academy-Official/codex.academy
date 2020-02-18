@@ -1,5 +1,5 @@
 <template>
-  <div class="container d-none d-md-block pb-5">
+  <div class="container d-none d-md-block pb-0">
     <div class="row">
       <div class="col-1"></div>
       <div class="col text-center">

@@ -10,6 +10,11 @@
       <li class="breadcrumb-item active">Plans</li>
     </ol>
 
+    <p>
+      At CodeX Academy the WORLD will be a better place if YOU are coding!
+      Because of that, we strive to provide the most flexible options possible
+      so that you have the best chance to learn.
+    </p>
     <PlansTable />
   </div>
 </template>

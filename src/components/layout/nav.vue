@@ -1,15 +1,9 @@
 <template>
   <!-- Navigation -->
-  <nav
-    class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top"
-  >
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
     <!-- <div class="container"> -->
     <router-link class="navbar-brand" to="/">
-      <img
-        class="logo"
-        src="img/logo/horizontal_logo.png"
-        alt="CodeX Academy Logo"
-      />
+      <img class="logo" src="img/logo/horizontal_logo.png" alt="CodeX Academy Logo" />
     </router-link>
     <button
       class="navbar-toggler navbar-toggler-right"
@@ -28,11 +22,17 @@
           <router-link to="/" class="nav-link">Home</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/plans" class="nav-link">Plans</router-link>
+          <router-link to="/plans" class="nav-link">Self-Paced</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/bootcamps" class="nav-link">Bootcamps</router-link>
         </li>
         <!-- <li class="nav-item">
+          <router-link to="/community" class="nav-link">Community</router-link>
+        </li>-->
+        <!-- <li class="nav-item">
           <router-link to="/method" class="nav-link">Method</router-link>
-        </li> -->
+        </li>-->
         <li class="nav-item">
           <router-link to="/call-back" class="nav-link">Learn More</router-link>
         </li>
@@ -43,16 +43,16 @@
           <router-link to="/testimonials" class="nav-link"
             >Testimonials</router-link
           >
-        </li> -->
+        </li>-->
         <!-- <li class="nav-item">
           <router-link class="nav-link" to="/blog">Blog</router-link>
-        </li> -->
+        </li>-->
         <!-- <li class="nav-item">
           <router-link class="nav-link" to="/contact">Contact</router-link>
-        </li> -->
+        </li>-->
         <!-- <li class="nav-item">
           <router-link to="/about" class="nav-link">About</router-link>
-        </li> -->
+        </li>-->
       </ul>
     </div>
     <!-- </div> -->

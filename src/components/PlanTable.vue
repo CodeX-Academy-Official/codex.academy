@@ -1,7 +1,7 @@
 <template>
   <!-- Content Row -->
   <div class="row">
-    <div class="col-lg-4 mb-4 plans-table" v-for="plan in plans" :key="plan.id">
+    <div class="col-lg-3 mb-4 plans-table" v-for="plan in plans" :key="plan.id">
       <PlanCard
         :id="plan.id"
         :title="plan.title"
@@ -20,6 +20,7 @@ import PlanCard from "@/components/PlanCard";
 
 const commonDetails = [
   "Self-Paced",
+  "Mentor-Driven",
   "Unlimited Learning Pathway Access",
   "24/7 Community Chat Access",
   "Build a Portfolio",
@@ -35,6 +36,18 @@ export default {
   data() {
     return {
       plans: [
+        {
+          id: "parttime2",
+          title: "Casual",
+          price: "400",
+          duration: "per month",
+          details: [
+            "10 hour/week commitment",
+            ...commonDetails,
+            "2 hours/week live 1:1 mentoring",
+            "Up to 3 Evaluations/month"
+          ]
+        },
         {
           id: "parttime5",
           title: "Part-Time",

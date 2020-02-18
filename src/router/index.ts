@@ -9,6 +9,8 @@ import Method from "../views/Method.vue";
 import Testimonials from "../views/Testimonials.vue";
 import Enroll from "../views/Enroll.vue";
 import CallBack from "../views/CallBack.vue";
+import Bootcamps from "../views/Bootcamps.vue";
+import Community from "../views/Community.vue";
 
 Vue.use(VueRouter);
 
@@ -22,6 +24,16 @@ const routes = [
     path: "/plans",
     name: "Plans",
     component: Plans
+  },
+  {
+    path: "/bootcamps",
+    name: "Bootcamps",
+    component: Bootcamps
+  },
+  {
+    path: "/community",
+    name: "Community",
+    component: Community
   },
   {
     path: "/faq",
