@@ -8,6 +8,7 @@ import Blog from "../views/Blog.vue";
 import Method from "../views/Method.vue";
 import Testimonials from "../views/Testimonials.vue";
 import Enroll from "../views/Enroll.vue";
+import CallBack from "../views/CallBack.vue";
 
 Vue.use(VueRouter);
 
@@ -41,6 +42,11 @@ const routes = [
     path: "/contact",
     name: "Contact",
     component: Contact
+  },
+  {
+    path: "/call-back",
+    name: "CallBack",
+    component: CallBack
   },
   {
     path: "/blog",

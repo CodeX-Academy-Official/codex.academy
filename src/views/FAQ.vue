@@ -4,7 +4,6 @@
     <!-- Page Heading/Breadcrumbs -->
     <h1 class="mt-4 mb-3">
       Frequently Asked Questions
-      <small>Subheading</small>
     </h1>
 
     <ol class="breadcrumb">
@@ -14,58 +13,52 @@
       <li class="breadcrumb-item active">FAQ</li>
     </ol>
 
+    <p>
+      If you've got questions, we want to answer them! We've tried to guess what
+      you might be wondering and answer those questions below. If there are
+      still any linger doubts, we would still like the chance to get you the
+      information you need. For that, a conversation is in order.
+      <router-link to="/call-back"
+        >Click here to set up a call-back.</router-link
+      >
+    </p>
     <div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
-      <div class="card">
-        <div class="card-header" role="tab" id="headingOne">
-          <h5 class="mb-0">
-            <a
-              data-toggle="collapse"
-              data-parent="#accordion"
-              href="#collapseOne"
-              aria-expanded="true"
-              aria-controls="collapseOne"
-            >What can I expect as a full-time student?</a>
-          </h5>
-        </div>
-
-        <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-          <div class="card-body">
-            <expectations />
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header" role="tab" id="headingTwo">
-          <h5 class="mb-0">
-            <a
-              class="collapsed"
-              data-toggle="collapse"
-              data-parent="#accordion"
-              href="#collapseTwo"
-              aria-expanded="false"
-              aria-controls="collapseTwo"
-            >What technologies will I learn in CodeX Academy?</a>
-          </h5>
-        </div>
-        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-          <div class="card-body">
-            <technologies />
-          </div>
-        </div>
-      </div>
+      <QAndA id="faq1" question="What can I expect as a full-time student?">
+        <p>
+          Full-time students can expect to earn the “Full-Stack Developer”
+          certification after just 6 months of mentor-led study! Part-time
+          students are welcome too, but the timing might stretch out a bit.
+        </p>
+        <img src="img/learner-flow.png" class="img-fluid" />
+      </QAndA>
+      <QAndA
+        id="faq2"
+        question="What technologies will I learn in CodeX Academy?"
+      >
+        <p>
+          A “Full-Stack Developer” is someone who can build world-changing apps
+          and websites from top to bottom, from what you can see and click to
+          all the unseen inner-workings. CodeX Academy currently offers learning
+          pathways for popular web-based technologies including ReactJS, NodeJS
+          and both PostgreSQL and Mongo databases. Along the way, you will also
+          be exposed to practices and principles that will make you a more
+          effective player on an Agile development team.
+        </p>
+        <img src="img/tech-line.png" class="img-fluid" />
+      </QAndA>
     </div>
   </div>
   <!-- /.container -->
 </template>
 
 <script>
-import expectations from "@/components/FAQ/expectations";
-import technologies from "@/components/FAQ/technologies";
+import QAndA from "@/components/QAndA";
 
 export default {
   components: {
-    expectations,
-    technologies
+    QAndA
   }
 };
 </script>
+
+<style lang="scss" scoped></style>

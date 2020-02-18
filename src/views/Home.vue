@@ -27,8 +27,6 @@ import internshipPartners from "@/components/internship-partners";
 import HeroCarousel from "@/components/HeroCarousel";
 import PlansTable from "@/components/PlanTable";
 import IntroBlock from "@/components/IntroBlock";
-import expectations from "@/components/FAQ/expectations";
-import technologies from "@/components/FAQ/technologies";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import MethodList from "@/components/MethodList";
 
@@ -40,8 +38,6 @@ export default {
     HeroCarousel,
     PlansTable,
     IntroBlock,
-    technologies,
-    expectations,
     TestimonialsCarousel,
     MethodList
   }

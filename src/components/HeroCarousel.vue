@@ -92,7 +92,7 @@ export default {
 
 .dimmed:after {
   content: " ";
-  z-index: 10;
+  z-index: 4;
   display: block;
   position: absolute;
   height: 100%;
@@ -107,7 +107,7 @@ export default {
   height: inherit;
   position: relative;
   width: 100%;
-  z-index: 10000;
+  z-index: 5;
   position: relative;
   left: 15px;
 

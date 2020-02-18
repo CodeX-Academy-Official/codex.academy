@@ -15,6 +15,9 @@
       <li class="list-group-item">
         <router-link to="/" class="btn btn-primary">Enroll</router-link>
       </li>
+      <li class="list-group-item">
+        <router-link to="/call-back">Learn More</router-link>
+      </li>
     </ul>
   </div>
 </template>
