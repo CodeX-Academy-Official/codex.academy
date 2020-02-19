@@ -14,10 +14,10 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/codex.academy/precache-manifest.5912c0bd97704c4c48e25a7cc10e6360.js"
+  "/codex.academy/precache-manifest.4713f92b0745366f253b705a71de859f.js"
 );
 
-workbox.core.setCacheNameDetails({prefix: "website"});
+workbox.core.setCacheNameDetails({prefix: "codex-academy-website"});
 
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {

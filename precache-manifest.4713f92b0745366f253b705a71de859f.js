@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codex.academy/404.html"
   },
   {
-    "revision": "1bb5ae6e4b2843dd889f",
+    "revision": "fbfd8e61aa8da0cef0f6",
     "url": "/codex.academy/css/app.c87e8eb4.css"
   },
   {
@@ -128,16 +128,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codex.academy/img/tech-line.png"
   },
   {
-    "revision": "2dfd1641d7fb59361fa8339f123c5faf",
+    "revision": "7fdf9730149b06323faa6794e51afe9f",
     "url": "/codex.academy/index.html"
   },
   {
-    "revision": "2efafadc7a68d937286b",
-    "url": "/codex.academy/js/about.28defb1a.js"
+    "revision": "d7b2cdb76abcc2a15847",
+    "url": "/codex.academy/js/about.b4e71123.js"
   },
   {
-    "revision": "1bb5ae6e4b2843dd889f",
-    "url": "/codex.academy/js/app.2030923f.js"
+    "revision": "fbfd8e61aa8da0cef0f6",
+    "url": "/codex.academy/js/app.ec38b414.js"
   },
   {
     "revision": "a0498d2ef0b12edb9d47",
@@ -152,7 +152,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codex.academy/js/jqBootstrapValidation.js"
   },
   {
-    "revision": "db31bf4807f47c668280a84a26a5bfcf",
+    "revision": "f75f65a6ae988f8dc14cf74f4395b7de",
     "url": "/codex.academy/manifest.json"
   },
   {
