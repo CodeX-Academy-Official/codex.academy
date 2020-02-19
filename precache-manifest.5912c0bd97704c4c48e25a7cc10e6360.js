@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codex.academy/404.html"
   },
   {
-    "revision": "bb5deefcd7ef00dae0f3",
+    "revision": "1bb5ae6e4b2843dd889f",
     "url": "/codex.academy/css/app.c87e8eb4.css"
   },
   {
@@ -128,7 +128,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codex.academy/img/tech-line.png"
   },
   {
-    "revision": "2aaf3873d47bedc306260bd5ada245f9",
+    "revision": "2dfd1641d7fb59361fa8339f123c5faf",
     "url": "/codex.academy/index.html"
   },
   {
@@ -136,8 +136,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codex.academy/js/about.28defb1a.js"
   },
   {
-    "revision": "bb5deefcd7ef00dae0f3",
-    "url": "/codex.academy/js/app.fc974402.js"
+    "revision": "1bb5ae6e4b2843dd889f",
+    "url": "/codex.academy/js/app.2030923f.js"
   },
   {
     "revision": "a0498d2ef0b12edb9d47",
