@@ -4,12 +4,40 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codex.academy/404.html"
   },
   {
-    "revision": "509e860369fee275c607",
-    "url": "/codex.academy/css/app.c87e8eb4.css"
+    "revision": "43aedec20bca19722ed3",
+    "url": "/codex.academy/css/app.3e27cbd5.css"
   },
   {
     "revision": "fbd6f13d7f012b61b1158cbbf428f615",
     "url": "/codex.academy/css/modern-business.css"
+  },
+  {
+    "revision": "3bd7b9302e16cc9893c151571e2b74e6",
+    "url": "/codex.academy/img/commercial/24-weeks.png"
+  },
+  {
+    "revision": "b282ab1f62aacb685725b275425c3742",
+    "url": "/codex.academy/img/commercial/broken-ladder.png"
+  },
+  {
+    "revision": "7806ed689bd589b02e96de235536d29e",
+    "url": "/codex.academy/img/commercial/full-stack.png"
+  },
+  {
+    "revision": "c6b928745f87bdb35477bf468989f6db",
+    "url": "/codex.academy/img/commercial/internship.png"
+  },
+  {
+    "revision": "c7ca6371dd5d647214ae93c48f8fc143",
+    "url": "/codex.academy/img/commercial/matched.png"
+  },
+  {
+    "revision": "f8e0d595e515a36121a5e019fb22e686",
+    "url": "/codex.academy/img/commercial/techs.png"
+  },
+  {
+    "revision": "e0ad4fac87f62e279fbe3a7f6658c746",
+    "url": "/codex.academy/img/commercial/which-way.png"
   },
   {
     "revision": "463453dc533fb32966a8817f9d1879f8",
@@ -124,24 +152,40 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codex.academy/img/photos/nesa-by-makers-kwzWjTnDPLk-unsplash.jpg"
   },
   {
+    "revision": "09d0ab73273d931144fdbcda36ed1ef8",
+    "url": "/codex.academy/img/screenshots/badge.png"
+  },
+  {
+    "revision": "0c70d316f1d3683a00a8c3dd0ad311fd",
+    "url": "/codex.academy/img/screenshots/figma.png"
+  },
+  {
+    "revision": "c8b0fdd234309a6f5143934b5c4843a9",
+    "url": "/codex.academy/img/screenshots/pathway.png"
+  },
+  {
+    "revision": "ae4e2d86b651070c50f1cabae4a5adab",
+    "url": "/codex.academy/img/screenshots/slack.png"
+  },
+  {
     "revision": "c4d5488c87de6defb68cb870f15d563c",
     "url": "/codex.academy/img/tech-line.png"
   },
   {
-    "revision": "ac7ea638cfa8db90ee940b8f5a8c2277",
+    "revision": "2c00bce65f1422952da0a64d006c0992",
     "url": "/codex.academy/index.html"
   },
   {
-    "revision": "d7b2cdb76abcc2a15847",
-    "url": "/codex.academy/js/about.b4e71123.js"
+    "revision": "f82dfa10915fc55b1eea",
+    "url": "/codex.academy/js/about.9f8f7bd2.js"
   },
   {
-    "revision": "509e860369fee275c607",
-    "url": "/codex.academy/js/app.1707df1d.js"
+    "revision": "43aedec20bca19722ed3",
+    "url": "/codex.academy/js/app.852b9ca2.js"
   },
   {
-    "revision": "a0498d2ef0b12edb9d47",
-    "url": "/codex.academy/js/chunk-vendors.19b57af1.js"
+    "revision": "781ee1fb1e65f87ccb6b",
+    "url": "/codex.academy/js/chunk-vendors.c508280c.js"
   },
   {
     "revision": "57178cdd29a7fdb5debae95e4c62705d",
