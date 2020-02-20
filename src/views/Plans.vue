@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <!-- Page Heading/Breadcrumbs -->
     <h1 class="mt-4 mb-3">Learning Plans</h1>
 
     <ol class="breadcrumb">

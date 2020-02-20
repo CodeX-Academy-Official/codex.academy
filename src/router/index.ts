@@ -11,6 +11,7 @@ import Enroll from "../views/Enroll.vue";
 import CallBack from "../views/CallBack.vue";
 import Bootcamps from "../views/Bootcamps.vue";
 import Community from "../views/Community.vue";
+import Tuition from "../views/Tuition.vue";
 
 Vue.use(VueRouter);
 
@@ -71,6 +72,11 @@ const routes = [
     component: Enroll
   },
   {
+    path: "/enroll-tuition",
+    name: "Enroll-Tuition",
+    component: Tuition
+  },
+  {
     path: "/about",
     name: "About",
     // route level code-splitting
@@ -86,7 +92,14 @@ const router = new VueRouter({
   //base: process.env.BASE_URL,
   routes,
   scrollBehavior(to, from, savedPosition) {
-    return { x: 0, y: 0 };
+    if (to.hash && document.querySelector(to.hash)) {
+      return window.scrollTo({
+        top: document.querySelector(to.hash).offsetTop - 50,
+        behavior: "smooth"
+      });
+    } else {
+      return { x: 0, y: 0 };
+    }
   }
 });
 

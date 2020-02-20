@@ -1,16 +1,8 @@
 <template>
   <header class="dimmed mb-5">
-    <div
-      id="carouselExampleIndicators"
-      class="carousel slide"
-      data-ride="carousel"
-    >
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
-        <li
-          data-target="#carouselExampleIndicators"
-          data-slide-to="0"
-          class="active"
-        ></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
       </ol>
@@ -60,23 +52,7 @@
 </template>
 
 <script>
-const HeroText = () => (
-  <div class="hero-title middle row">
-    <div class="col-3 d-none d-md-block"></div>
-    <div class="col d-flex">
-      <div class="align-self-center">
-        <p class="mb-5">
-          <i>Join the workforce that changes the world!</i>
-        </p>
-        <h3 class="mb-4">Learn to code in 6 months</h3>
-        <router-link to="/enroll" class="btn btn-primary btn-lg">
-          <strong>Enroll Now</strong>
-        </router-link>
-      </div>
-    </div>
-    <div class="col-3 d-none d-md-block"></div>
-  </div>
-);
+import HeroText from "@/components/HeroText";
 
 export default {
   components: {
@@ -102,41 +78,8 @@ export default {
   background: rgba(0, 0, 0, 0.2);
 }
 
-.hero-title {
-  color: white;
-  height: inherit;
-  position: relative;
-  width: 100%;
-  z-index: 5;
-  position: relative;
-  left: 15px;
-
-  h3 {
-    font-size: 3.5rem;
-    line-height: 4.2rem;
-    letter-spacing: 0.3rem;
-    font-weight: 900;
-    color: white;
-    padding: 0px;
-    text-transform: uppercase;
-  }
-  p {
-    font-style: italic;
-    font-size: 1.2rem;
-    position: relative;
-    top: 20px;
-  }
+.carousel-control-prev,
+.carousel-control-next {
+  z-index: 100;
 }
-// .carousel-item {
-//   .middle {
-//     top: 9rem;
-//   }
-//   .topside {
-//     top: 1rem;
-//   }
-//   .middle-right {
-//     top: 2rem;
-//     right: 1rem;
-//   }
-// }
 </style>

@@ -2,8 +2,18 @@
   <div>
     <HeroCarousel />
     <div class="container">
-      <IntroBlock />
+      <div class="row">
+        <div class="col-2 d-none d-lg-block"></div>
+        <div class="col">
+          <!-- <h1 class="pb-5">CodeX Academy is...</h1> -->
+          <MethodList />
+        </div>
+        <div class="col-2 d-none d-lg-block"></div>
+      </div>
+      <a id="plans"></a>
+      <hr />
 
+      <IntroBlock />
       <div class="text-center mb-5">
         <div class="row">
           <div class="col">
@@ -25,7 +35,9 @@
                 <li class="list-group-item">No Weekly Commitment</li>
               </ul>
               <div class="card-body">
-                <router-link to="/community" class="card-link">See Community Plan</router-link>
+                <router-link to="/community" class="card-link btn btn-primary"
+                  ><strong>See Community Plan</strong></router-link
+                >
               </div>
             </div>
           </div>
@@ -48,7 +60,9 @@
                 <li class="list-group-item">5-40 hours/week Commitment</li>
               </ul>
               <div class="card-body">
-                <router-link to="/plans" class="card-link">See Self-Paced Plans</router-link>
+                <router-link to="/plans" class="card-link btn btn-primary"
+                  ><strong>See Self-Paced Plans</strong></router-link
+                >
               </div>
             </div>
           </div>
@@ -71,25 +85,19 @@
                 <li class="list-group-item">40 hour/week Commitment</li>
               </ul>
               <div class="card-body">
-                <router-link to="/bootcamps" class="card-link">See Bootcamps</router-link>
+                <router-link to="/bootcamps" class="card-link btn btn-primary"
+                  ><strong>See Bootcamps</strong></router-link
+                >
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-2 d-none d-lg-block"></div>
-        <div class="col">
-          <h1 class="pb-5">CodeX Academy is...</h1>
-          <MethodList />
-        </div>
-        <div class="col-2 d-none d-lg-block"></div>
-      </div>
-      <hr />
+
       <h3 class="mb-5">What do CodeX Academy Learners say?</h3>
       <TestimonialsCarousel />
-      <hr />
-      <internshipPartners />
+      <!-- <hr />
+      <internshipPartners /> -->
     </div>
   </div>
 </template>
@@ -113,6 +121,19 @@ export default {
     IntroBlock,
     TestimonialsCarousel,
     MethodList
+  },
+  mounted() {
+    // From testing, without a brief timeout, it won't work.
+    if (this.$route.hash) {
+      setTimeout(() => this.scrollTo(this.$route.hash), TIMEOUT);
+    }
+  },
+  methods: {
+    scrollTo: function(hashtag) {
+      setTimeout(() => {
+        location.href = hashtag;
+      }, TIMEOUT);
+    }
   }
 };
 </script>

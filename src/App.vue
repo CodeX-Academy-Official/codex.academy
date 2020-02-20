@@ -29,6 +29,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.btn-primary {
+  strong {
+    color: White;
+  }
+}
 @import "@/variables";
 @import "bootstrap";
 </style>
