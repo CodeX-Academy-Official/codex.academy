@@ -31,7 +31,10 @@ const plans = [
       "2 hours/week live 1:1 mentoring",
       "Up to 3 Evaluations/month"
     ],
-    isBootcamp: false
+    isBootcamp: false,
+    paymentTypes: {
+      creditCard: "https://app.hubspot.com/sales-checkout/tpi4vFUd"
+    }
   },
   {
     id: "selfpaced5",
@@ -44,7 +47,10 @@ const plans = [
       "5 hours/week live 1:1 mentoring",
       "Up to 5 Evaluations/month"
     ],
-    isBootcamp: false
+    isBootcamp: false,
+    paymentTypes: {
+      creditCard: "https://app.hubspot.com/sales-checkout/wBN890ZZ"
+    }
   },
   {
     id: "selfpaced10",
@@ -58,7 +64,11 @@ const plans = [
       "Up to 10 Evaluations/month"
     ],
     primary: true,
-    isBootcamp: false
+    isBootcamp: false,
+    paymentTypes: {
+      creditCard: "https://app.hubspot.com/sales-checkout/lTFpUJBC",
+      callback: true
+    }
   },
   {
     id: "selfpaced20",
@@ -71,7 +81,10 @@ const plans = [
       "20 hours/week live 1:1 mentoring",
       "Up to 20 Evaluations/month"
     ],
-    isBootcamp: false
+    isBootcamp: false,
+    paymentTypes: {
+      callback: true
+    }
   }
 ];
 
@@ -97,7 +110,8 @@ const bootcamps = [
       ...bootcampCommonDetails,
       "Up to 30 Micro-Certifications"
     ],
-    isBootcamp: true
+    isBootcamp: true,
+    paymentTypes: { callback: true }
   },
   {
     id: "bootcamp6",
@@ -110,7 +124,11 @@ const bootcamps = [
       "Up to 60 Micro-Certifications"
     ],
     primary: true,
-    isBootcamp: true
+    isBootcamp: true,
+    paymentTypes: {
+      creditCard: "https://app.hubspot.com/sales-checkout/mSpPTv7B",
+      callback: true
+    }
   },
   {
     id: "bootcamp9",
@@ -123,7 +141,11 @@ const bootcamps = [
       "Up to 90 Micro-Certifications"
     ],
     primary: false,
-    isBootcamp: true
+    isBootcamp: true,
+    paymentTypes: {
+      financing: true,
+      callback: true
+    }
   }
 ];
 

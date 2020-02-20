@@ -12,6 +12,7 @@ import CallBack from "../views/CallBack.vue";
 import Bootcamps from "../views/Bootcamps.vue";
 import Community from "../views/Community.vue";
 import Tuition from "../views/Tuition.vue";
+import AdmissionsCallBack from "../views/AdmissionsCallBack.vue";
 
 Vue.use(VueRouter);
 
@@ -57,6 +58,11 @@ const routes = [
     component: Contact
   },
   {
+    path: "/admissions-call-back-requested",
+    name: "AdmissionsCallBack",
+    component: AdmissionsCallBack
+  },
+  {
     path: "/call-back",
     name: "CallBack",
     component: CallBack
@@ -92,9 +98,10 @@ const router = new VueRouter({
   //base: process.env.BASE_URL,
   routes,
   scrollBehavior(to, from, savedPosition) {
-    if (to.hash && document.querySelector(to.hash)) {
+    if (to.hash) {
+      const selector: any = document.querySelector(to.hash);
       return window.scrollTo({
-        top: document.querySelector(to.hash).offsetTop - 50,
+        top: selector.offsetTop - 50,
         behavior: "smooth"
       });
     } else {

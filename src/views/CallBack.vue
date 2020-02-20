@@ -1,8 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="mt-4 mb-3">
-      NEED HELP DECIDING?
-    </h1>
+    <h1 class="mt-4 mb-3">NEED HELP DECIDING?</h1>
 
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
@@ -25,7 +23,7 @@
     <div class="row">
       <div class="col-2 d-none d-lg-block"></div>
       <div class="col">
-        <div v-once id="call-back-form"></div>
+        <HubspotForm formId="f903a550-c89f-4cbc-9272-93edb93a75f8" />
       </div>
       <div class="col-2 d-none d-lg-block"></div>
     </div>
@@ -34,32 +32,12 @@
 
 <script>
 import StockImage from "@/components/StockImage";
+import HubspotForm from "@/components/HubspotForm";
 
 export default {
   components: {
-    StockImage
-  },
-  created() {
-    const script = document.createElement("script");
-    script.src = "https://js.hsforms.net/forms/v2.js";
-    document.body.appendChild(script);
-    script.addEventListener("load", () => {
-      if (window.hbspt) {
-        window.hbspt.forms.create({
-          portalId: "7092117",
-          formId: "f903a550-c89f-4cbc-9272-93edb93a75f8",
-          target: "#call-back-form"
-        });
-      }
-    });
+    StockImage,
+    HubspotForm
   }
 };
 </script>
-
-<style lang="scss" scoped>
-@import "@/variables";
-
-.hs-button {
-  background-color: $primary;
-}
-</style>
