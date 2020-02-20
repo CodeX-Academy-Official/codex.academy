@@ -83,6 +83,7 @@ const plans = [
     ],
     isBootcamp: false,
     paymentTypes: {
+      creditCard: "https://app.hubspot.com/sales-checkout/3IILq-Ug",
       callback: true
     }
   }
@@ -111,7 +112,10 @@ const bootcamps = [
       "Up to 30 Micro-Certifications"
     ],
     isBootcamp: true,
-    paymentTypes: { callback: true }
+    paymentTypes: { 
+      creditCard: "https://app.hubspot.com/sales-checkout/npnCjJOv",
+      callback: true 
+    }
   },
   {
     id: "bootcamp6",
@@ -144,6 +148,7 @@ const bootcamps = [
     isBootcamp: true,
     paymentTypes: {
       financing: true,
+      creditCard: "https://app.hubspot.com/sales-checkout/1P9YipN5",
       callback: true
     }
   }
