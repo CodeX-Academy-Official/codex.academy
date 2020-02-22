@@ -4,8 +4,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codex.academy/404.html"
   },
   {
-    "revision": "43aedec20bca19722ed3",
-    "url": "/codex.academy/css/app.3e27cbd5.css"
+    "revision": "dbdc1bb2a0b59bdc57ec",
+    "url": "/codex.academy/css/app.7653c120.css"
   },
   {
     "revision": "fbd6f13d7f012b61b1158cbbf428f615",
@@ -172,7 +172,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codex.academy/img/tech-line.png"
   },
   {
-    "revision": "2c00bce65f1422952da0a64d006c0992",
+    "revision": "5ba7510c8b1c2edec0cfe01c42a7e271",
     "url": "/codex.academy/index.html"
   },
   {
@@ -180,12 +180,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codex.academy/js/about.9f8f7bd2.js"
   },
   {
-    "revision": "43aedec20bca19722ed3",
-    "url": "/codex.academy/js/app.852b9ca2.js"
+    "revision": "dbdc1bb2a0b59bdc57ec",
+    "url": "/codex.academy/js/app.fa3d3980.js"
   },
   {
-    "revision": "781ee1fb1e65f87ccb6b",
-    "url": "/codex.academy/js/chunk-vendors.c508280c.js"
+    "revision": "0e6b07093a8beb1ef1e9",
+    "url": "/codex.academy/js/chunk-vendors.a2628373.js"
   },
   {
     "revision": "57178cdd29a7fdb5debae95e4c62705d",
