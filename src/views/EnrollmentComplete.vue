@@ -7,28 +7,26 @@
         <router-link to="/">Home</router-link>
       </li>
       <li class="breadcrumb-item active">Enrollment</li>
-      <li class="breadcrumb-item active">Call-Back</li>
+      <li class="breadcrumb-item active">Ready!</li>
     </ol>
 
     <div class="row">
       <div class="col">
-        <p>Please let us know how to contact you and when. We'll give you a call back as soon as possible.</p>
-        <HubspotForm formId="e7360a11-ca18-4b36-a73b-b8ccdce4f3e7" />
+        <h3>Thanks!</h3>
+        <p>We have received your enrollment. Please check your email for next steps.</p>
       </div>
-      <div class="col-4 d-none d-lg-block">
+      <!-- <div class="col-4 d-none d-lg-block">
         <PlanCard :plan="selectedPlan" :selectable="false" />
-      </div>
+      </div>-->
     </div>
   </div>
 </template>
 
 <script>
-import HubspotForm from "@/components/HubspotForm";
 import PlanCard from "@/components/PlanCard";
 
 export default {
   components: {
-    HubspotForm,
     PlanCard
   },
   data: () => ({

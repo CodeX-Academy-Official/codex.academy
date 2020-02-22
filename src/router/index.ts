@@ -14,6 +14,7 @@ import Community from "../views/Community.vue";
 import Tuition from "../views/Tuition.vue";
 import AdmissionsCallBack from "../views/AdmissionsCallBack.vue";
 import AdmissionsCallBackSetup from "../views/AdmissionsCallBackSetup.vue";
+import EnrollmentComplete from "../views/EnrollmentComplete.vue";
 
 Vue.use(VueRouter);
 
@@ -82,6 +83,11 @@ const routes = [
     path: "/enroll",
     name: "Enroll",
     component: Enroll
+  },
+  {
+    path: "/enrollment-complete",
+    name: "EnrollmentComplete",
+    component: EnrollmentComplete
   },
   {
     path: "/enroll-tuition",
