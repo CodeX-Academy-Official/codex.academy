@@ -18,7 +18,7 @@
       <testimonial
         name="LeAnne B."
         headshot="img/headshots/leanne.jpg"
-        comments="I’ve wanted to learn code for years. CodeX has mentors that ensure I am understanding the material. I have learned so much and I am set up for success, I love it!"
+        comments="CodeX was a really fun experience and has been valuable for my career!"
       />
     </div>
   </div>
