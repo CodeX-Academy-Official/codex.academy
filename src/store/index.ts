@@ -32,9 +32,15 @@ const plans = [
       "Up to 3 Evaluations/month"
     ],
     isBootcamp: false,
-    paymentTypes: {
-      creditCard: "https://app.hubspot.com/sales-checkout/tpi4vFUd"
-    }
+    paymentTypes: [
+      {
+        type: "creditCard",
+        urls: "https://app.hubspot.com/sales-checkout/tpi4vFUd"
+      },
+      {
+        type: "callBack"
+      }
+    ]
   },
   {
     id: "selfpaced5",
@@ -48,9 +54,15 @@ const plans = [
       "Up to 5 Evaluations/month"
     ],
     isBootcamp: false,
-    paymentTypes: {
-      creditCard: "https://app.hubspot.com/sales-checkout/wBN890ZZ"
-    }
+    paymentTypes: [
+      {
+        type: "creditCard",
+        url: "https://app.hubspot.com/sales-checkout/wBN890ZZ"
+      },
+      {
+        type: "callBack"
+      }
+    ]
   },
   {
     id: "selfpaced10",
@@ -65,10 +77,15 @@ const plans = [
     ],
     primary: true,
     isBootcamp: false,
-    paymentTypes: {
-      creditCard: "https://app.hubspot.com/sales-checkout/lTFpUJBC",
-      callback: true
-    }
+    paymentTypes: [
+      {
+        type: "creditCard",
+        url: "https://app.hubspot.com/sales-checkout/lTFpUJBC"
+      },
+      {
+        type: "callBack"
+      }
+    ]
   },
   {
     id: "selfpaced20",
@@ -82,9 +99,15 @@ const plans = [
       "Up to 20 Evaluations/month"
     ],
     isBootcamp: false,
-    paymentTypes: {
-      callback: true
-    }
+    paymentTypes: [
+      {
+        type: "creditCard",
+        url: "https://app.hubspot.com/sales-checkout/3IILq-Ug"
+      },
+      {
+        type: "callBack"
+      }
+    ]
   }
 ];
 
@@ -111,7 +134,15 @@ const bootcamps = [
       "Up to 30 Micro-Certifications"
     ],
     isBootcamp: true,
-    paymentTypes: { callback: true }
+    paymentTypes: [
+      {
+        type: "creditCard",
+        url: "https://app.hubspot.com/sales-checkout/npnCjJOv"
+      },
+      {
+        type: "callBack"
+      }
+    ]
   },
   {
     id: "bootcamp6",
@@ -125,10 +156,15 @@ const bootcamps = [
     ],
     primary: true,
     isBootcamp: true,
-    paymentTypes: {
-      creditCard: "https://app.hubspot.com/sales-checkout/mSpPTv7B",
-      callback: true
-    }
+    paymentTypes: [
+      {
+        type: "creditCard",
+        url: "https://app.hubspot.com/sales-checkout/mSpPTv7B"
+      },
+      {
+        type: "callBack"
+      }
+    ]
   },
   {
     id: "bootcamp9",
@@ -142,10 +178,15 @@ const bootcamps = [
     ],
     primary: false,
     isBootcamp: true,
-    paymentTypes: {
-      financing: true,
-      callback: true
-    }
+    paymentTypes: [
+      {
+        type: "creditCard",
+        url: "https://app.hubspot.com/sales-checkout/1P9YipN5"
+      },
+      {
+        type: "callBack"
+      }
+    ]
   }
 ];
 

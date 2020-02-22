@@ -13,6 +13,7 @@ import Bootcamps from "../views/Bootcamps.vue";
 import Community from "../views/Community.vue";
 import Tuition from "../views/Tuition.vue";
 import AdmissionsCallBack from "../views/AdmissionsCallBack.vue";
+import AdmissionsCallBackSetup from "../views/AdmissionsCallBackSetup.vue";
 
 Vue.use(VueRouter);
 
@@ -61,6 +62,11 @@ const routes = [
     path: "/admissions-call-back-requested",
     name: "AdmissionsCallBack",
     component: AdmissionsCallBack
+  },
+  {
+    path: "/admissions-call-back",
+    name: "AdmissionsCallBackSetup",
+    component: AdmissionsCallBackSetup
   },
   {
     path: "/call-back",
