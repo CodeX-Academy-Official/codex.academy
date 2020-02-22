@@ -17,7 +17,9 @@ export default {
   },
   computed: {
     plans() {
-      return this.$store.state.plans.filter(x => !x.isBootcamp);
+      return this.$store.state.plans.filter(
+        x => !x.isBootcamp && x.isMentoring
+      );
     }
   }
 };

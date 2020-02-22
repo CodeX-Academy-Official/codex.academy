@@ -10,10 +10,14 @@ Vue.use(Vuex);
 
 const planCommonDetails = [
   "Self-Paced",
-  "Mentor-Driven",
   "Unlimited Learning Pathway Access",
   "24/7 Community Chat Access",
-  "Build a Portfolio",
+  "Build a Portfolio"
+];
+
+const mentorDrivenCommonDetails = [
+  "Mentor-Driven",
+  ...planCommonDetails,
   "Internship Opportunities",
   "Certifications Included",
   "Career Counseling"
@@ -27,11 +31,12 @@ const plans = [
     duration: "per month",
     details: [
       "10 hour/week commitment",
-      ...planCommonDetails,
+      ...mentorDrivenCommonDetails,
       "2 hours/week live 1:1 mentoring",
       "Up to 3 Evaluations/month"
     ],
     isBootcamp: false,
+    isMentoring: true,
     paymentTypes: [
       {
         type: "creditCard",
@@ -49,11 +54,12 @@ const plans = [
     duration: "per month",
     details: [
       "20 hour/week commitment",
-      ...planCommonDetails,
+      ...mentorDrivenCommonDetails,
       "5 hours/week live 1:1 mentoring",
       "Up to 5 Evaluations/month"
     ],
     isBootcamp: false,
+    isMentoring: true,
     paymentTypes: [
       {
         type: "creditCard",
@@ -71,12 +77,13 @@ const plans = [
     duration: "per month",
     details: [
       "40 hour/week commitment",
-      ...planCommonDetails,
+      ...mentorDrivenCommonDetails,
       "10 hours/week live 1:1 mentoring",
       "Up to 10 Evaluations/month"
     ],
     primary: true,
     isBootcamp: false,
+    isMentoring: true,
     paymentTypes: [
       {
         type: "creditCard",
@@ -94,11 +101,12 @@ const plans = [
     duration: "per month",
     details: [
       "40-50 hour/week commitment",
-      ...planCommonDetails,
+      ...mentorDrivenCommonDetails,
       "20 hours/week live 1:1 mentoring",
       "Up to 20 Evaluations/month"
     ],
     isBootcamp: false,
+    isMentoring: true,
     paymentTypes: [
       {
         type: "creditCard",
@@ -129,11 +137,16 @@ const bootcamps = [
     price: "4,500",
     duration: "over 3 months",
     details: [
-      "Graduates able to develop and deploy simple web applications using HTML, CSS, JavaScipt and JQuery.",
+      {
+        css: "bootcamp-description",
+        text:
+          "Graduates able to develop and deploy simple web applications using HTML, CSS, JavaScipt and JQuery."
+      },
       ...bootcampCommonDetails,
       "Up to 30 Micro-Certifications"
     ],
     isBootcamp: true,
+    isMentoring: true,
     paymentTypes: [
       {
         type: "creditCard",
@@ -150,12 +163,17 @@ const bootcamps = [
     price: "9,000",
     duration: "over 6 months",
     details: [
-      "Graduates able to develop challenging full-stack data-driven web applications using best practices in technologies like ReactJS and NodeJS.",
+      {
+        css: "bootcamp-description",
+        text:
+          "Graduates able to develop challenging full-stack data-driven web applications using best practices in technologies like ReactJS and NodeJS."
+      },
       ...bootcampCommonDetails,
       "Up to 60 Micro-Certifications"
     ],
     primary: true,
     isBootcamp: true,
+    isMentoring: true,
     paymentTypes: [
       {
         type: "creditCard",
@@ -172,12 +190,39 @@ const bootcamps = [
     price: "13,500",
     duration: "over 9 months",
     details: [
-      "Graduates able to develop complex, secure and well-engineered full-stack web applications using multiple front-end and back-end technologies.",
+      {
+        css: "bootcamp-description",
+        text:
+          "Graduates able to develop complex, secure and well-engineered full-stack web applications using multiple front-end and back-end technologies."
+      },
       ...bootcampCommonDetails,
       "Up to 90 Micro-Certifications"
     ],
     primary: false,
     isBootcamp: true,
+    isMentoring: true,
+    paymentTypes: [
+      {
+        type: "creditCard",
+        url: "https://app.hubspot.com/sales-checkout/1P9YipN5"
+      },
+      {
+        type: "callBack"
+      }
+    ]
+  }
+];
+
+const community = [
+  {
+    id: "community",
+    title: "Community Plan",
+    price: "50",
+    duration: "per month",
+    details: ["Independent Study", ...planCommonDetails],
+    primary: false,
+    isBootcamp: false,
+    isMentoring: false,
     paymentTypes: [
       {
         type: "creditCard",
@@ -194,7 +239,7 @@ const SELECT_PLAN = "SELECT_PLAN";
 
 export default new Vuex.Store({
   state: {
-    plans: [...bootcamps, ...plans],
+    plans: [...bootcamps, ...plans, ...community],
     selectedPlan: false
   },
   mutations: {

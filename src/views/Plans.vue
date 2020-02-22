@@ -27,3 +27,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.bootcamp-description {
+  height: 2rem;
+}
+</style>

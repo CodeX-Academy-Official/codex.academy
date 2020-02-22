@@ -30,14 +30,14 @@
               <ul class="list-group list-group-flush">
                 <li class="list-group-item price">Only $50/month</li>
                 <li class="list-group-item">Self-paced</li>
-                <li class="list-group-item">Start Anytime</li>
+
                 <li class="list-group-item">Independent Study</li>
                 <li class="list-group-item">No Weekly Commitment</li>
               </ul>
               <div class="card-body">
-                <router-link to="/community" class="card-link btn btn-primary"
-                  ><strong>See Community Plan</strong></router-link
-                >
+                <router-link to="/community" class="card-link btn btn-primary">
+                  <strong>See Community Plan</strong>
+                </router-link>
               </div>
             </div>
           </div>
@@ -55,14 +55,14 @@
               <ul class="list-group list-group-flush">
                 <li class="list-group-item price">$400/mo and up</li>
                 <li class="list-group-item">Self-paced</li>
-                <li class="list-group-item">Start Anytime</li>
+
                 <li class="list-group-item">Mentor-Driven</li>
-                <li class="list-group-item">5-40 hours/week Commitment</li>
+                <li class="list-group-item">5 to 40 Hours/Week Commitment</li>
               </ul>
               <div class="card-body">
-                <router-link to="/plans" class="card-link btn btn-primary"
-                  ><strong>See Self-Paced Plans</strong></router-link
-                >
+                <router-link to="/plans" class="card-link btn btn-primary">
+                  <strong>See Self-Paced Plans</strong>
+                </router-link>
               </div>
             </div>
           </div>
@@ -79,15 +79,14 @@
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item price">$4500 and up</li>
-                <li class="list-group-item">Intense Pace</li>
-                <li class="list-group-item">Intense Pace</li>
+                <li class="list-group-item">Self-Paced with Schedule</li>
                 <li class="list-group-item">Mentor-Driven</li>
-                <li class="list-group-item">40 hour/week Commitment</li>
+                <li class="list-group-item">40 to 50 Hours/Week Commitment</li>
               </ul>
               <div class="card-body">
-                <router-link to="/bootcamps" class="card-link btn btn-primary"
-                  ><strong>See Bootcamps</strong></router-link
-                >
+                <router-link to="/bootcamps" class="card-link btn btn-primary">
+                  <strong>See Bootcamps</strong>
+                </router-link>
               </div>
             </div>
           </div>
@@ -97,7 +96,7 @@
       <h3 class="mb-5">What do CodeX Academy Learners say?</h3>
       <TestimonialsCarousel />
       <!-- <hr />
-      <internshipPartners /> -->
+      <internshipPartners />-->
     </div>
   </div>
 </template>
@@ -143,6 +142,10 @@ ul.list-group {
   li.price {
     color: black;
     font-weight: bolder;
+    font-size: 1.3rem;
   }
+}
+.card-title {
+  font-size: 1.5rem;
 }
 </style>
