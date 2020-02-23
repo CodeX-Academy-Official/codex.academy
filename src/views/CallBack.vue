@@ -8,11 +8,12 @@
       </li>
       <li class="breadcrumb-item active">Call-Back</li>
     </ol>
-    <StockImage
-      filename="fernando-hernandez-efzwcMRM6j4-unsplash.jpg"
+    <Unsplash
+      imageId="vJP-wZ6hGBg"
       align="right"
       description="Coffee-driven development"
-      width="35rem"
+      width="300"
+      height="500"
       class="d-none d-xl-block"
     />
     <p>
@@ -31,12 +32,12 @@
 </template>
 
 <script>
-import StockImage from "@/components/StockImage";
+import Unsplash from "@/components/Unsplash";
 import HubspotForm from "@/components/HubspotForm";
 
 export default {
   components: {
-    StockImage,
+    Unsplash,
     HubspotForm
   }
 };

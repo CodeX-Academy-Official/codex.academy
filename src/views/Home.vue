@@ -19,7 +19,7 @@
           <div class="col">
             <div class="card">
               <img
-                src="img/photos/kelly-sikkema-YK0HPwWDJ1I-unsplash.jpg"
+                src="https://source.unsplash.com/YK0HPwWDJ1I/348x232"
                 class="card-img-top"
                 alt="Self-Paced Plans"
               />
@@ -44,7 +44,7 @@
           <div class="col">
             <div class="card">
               <img
-                src="img/photos/nesa-by-makers-kwzWjTnDPLk-unsplash.jpg"
+                src="https://source.unsplash.com/kwzWjTnDPLk/348x232"
                 class="card-img-top"
                 alt="Self-Paced Plans"
               />
@@ -69,7 +69,7 @@
           <div class="col">
             <div class="card">
               <img
-                src="img/photos/camylla-battani-ABVE1cyT7hk-unsplash.jpg"
+                src="https://source.unsplash.com/ABVE1cyT7hk/348x232"
                 class="card-img-top"
                 alt="Self-Paced Plans"
               />

@@ -16,17 +16,20 @@
       <div class="col">
         <div v-if="selectedPlan.paymentTypes.length > 0">
           <h1>Payment Options</h1>
-          <div v-for="(paymentType, index) in selectedPlan.paymentTypes" :key="paymentType.type">
+          <div
+            v-for="(paymentType, index) in selectedPlan.paymentTypes"
+            :key="paymentType.type"
+          >
             <hr class="mt-5 mb-5" />
             <CreditCard
               v-if="paymentType.type === 'creditCard'"
               :url="paymentType.url"
-              :number="index+1"
+              :number="index + 1"
               css="paymentType ml-4"
             />
             <CallBack
               v-if="paymentType.type === 'callBack'"
-              :number="index+1"
+              :number="index + 1"
               css="paymentType ml-4"
             />
           </div>
@@ -74,7 +77,6 @@ export default {
     CallBack
   },
   data: () => ({
-    loading: false,
     selectedPlan: false
   }),
   created() {
@@ -86,5 +88,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

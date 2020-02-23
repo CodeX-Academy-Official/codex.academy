@@ -1,8 +1,16 @@
 <template>
   <header class="dimmed mb-5">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div
+      id="carouselExampleIndicators"
+      class="carousel slide"
+      data-ride="carousel"
+    >
       <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li
+          data-target="#carouselExampleIndicators"
+          data-slide-to="0"
+          class="active"
+        ></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
       </ol>
@@ -10,21 +18,21 @@
         <!-- Slide One - Set the background image for this slide in the line below -->
         <div
           class="carousel-item text-center align-middle active"
-          style="background-image: url('img/photos/christina-wocintechchat-com-vLwH8bWoi_8-unsplash.jpg')"
+          style="background-image: url('https://source.unsplash.com/vLwH8bWoi_8/1600x900')"
         >
           <HeroText />
         </div>
         <!-- Slide Two - Set the background image for this slide in the line below -->
         <div
           class="carousel-item text-center"
-          style="background-image: url('img/photos/christina-wocintechchat-com-HocFQHhGjDE-unsplash.jpg')"
+          style="background-image: url('https://source.unsplash.com/HocFQHhGjDE/1600x900')"
         >
           <HeroText />
         </div>
         <!-- Slide Three - Set the background image for this slide in the line below -->
         <div
           class="carousel-item align-middle text-center"
-          style="background-image: url('img/photos/christina-wocintechchat-com-VOYQEi3uv70-unsplash.jpg')"
+          style="background-image: url('https://source.unsplash.com/VOYQEi3uv70/1600x900')"
         >
           <HeroText />
         </div>
