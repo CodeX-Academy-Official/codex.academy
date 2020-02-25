@@ -53,7 +53,7 @@
                 <p class="card-text"></p>
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item price">$400/month and up</li>
+                <li class="list-group-item price">$400/mo and up</li>
                 <li class="list-group-item">Self-paced</li>
 
                 <li class="list-group-item">Mentor-Driven</li>
