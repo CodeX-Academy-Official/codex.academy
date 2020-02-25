@@ -20,7 +20,7 @@
     <div v-if="isOpen" class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <router-link to="/" data-toggle="collapse" class="nav-link">Home</router-link>
+          <router-link to="/" class="nav-link">Home</router-link>
         </li>
         <separator />
         <li class="nav-item">
