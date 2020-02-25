@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home-page">
     <HeroCarousel />
     <div class="container">
       <div class="row">
@@ -13,7 +13,7 @@
       <a id="plans"></a>
       <hr />
 
-      <IntroBlock />
+      <!-- <IntroBlock /> -->
       <div class="text-center mb-5">
         <div class="row">
           <div class="col">
@@ -138,14 +138,19 @@ export default {
 </script>
 
 <style lang="scss">
-ul.list-group {
-  li.price {
-    color: black;
-    font-weight: bolder;
-    font-size: 1.3rem;
+.home-page {
+  ul.list-group {
+    li.price {
+      color: black;
+      font-weight: bolder;
+      font-size: 1.3rem;
+    }
   }
-}
-.card-title {
-  font-size: 1.5rem;
+  .card-title {
+    font-size: 1.5rem;
+  }
+  hr {
+    margin: 2rem 0;
+  }
 }
 </style>
