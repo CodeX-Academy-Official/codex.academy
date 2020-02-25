@@ -4,12 +4,32 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/404.html"
   },
   {
-    "revision": "87375f92a55916a9d33f",
-    "url": "/css/app.9cd1cfec.css"
+    "revision": "b08762501e3203b1ca9f",
+    "url": "/css/app.824db9e7.css"
   },
   {
     "revision": "fbd6f13d7f012b61b1158cbbf428f615",
     "url": "/css/modern-business.css"
+  },
+  {
+    "revision": "83034b1cc216465d6742a1f2b8dce8bf",
+    "url": "/img/badges/level1.png"
+  },
+  {
+    "revision": "a6cf53488c3ab04cb37c54a351d1eb24",
+    "url": "/img/badges/level2.png"
+  },
+  {
+    "revision": "5d15b272b29e6e72fbdb79426476eab6",
+    "url": "/img/badges/level3.png"
+  },
+  {
+    "revision": "bd5237520a780e5637c88eb64aca5a79",
+    "url": "/img/badges/level4.png"
+  },
+  {
+    "revision": "66ca97c86ee0bf0bfea9e60157a6f5bc",
+    "url": "/img/badges/level5.png"
   },
   {
     "revision": "3bd7b9302e16cc9893c151571e2b74e6",
@@ -172,7 +192,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/tech-line.png"
   },
   {
-    "revision": "e456be54a04f449972ea981768f24f25",
+    "revision": "d226cd6043b3d20f48bad22e75788c56",
     "url": "/index.html"
   },
   {
@@ -180,12 +200,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/about.f5e3d78a.js"
   },
   {
-    "revision": "87375f92a55916a9d33f",
-    "url": "/js/app.4a2c6a5b.js"
+    "revision": "b08762501e3203b1ca9f",
+    "url": "/js/app.e6f1742f.js"
   },
   {
-    "revision": "0a3154c9794d4d86ff06",
-    "url": "/js/chunk-vendors.816a6d28.js"
+    "revision": "2f17d60f8f09c521d5df",
+    "url": "/js/chunk-vendors.d0d0b614.js"
   },
   {
     "revision": "57178cdd29a7fdb5debae95e4c62705d",
