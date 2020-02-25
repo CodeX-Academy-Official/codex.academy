@@ -16,7 +16,7 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
+    <div :class="!isOpen ? 'navbar-closed': ''" class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <router-link to="/" class="nav-link">Home</router-link>
@@ -79,4 +79,21 @@
 .navbar img.logo {
   height: 3.1rem;
 }
+
+.navbar-nav {
+  background-color: $lightGray;
+}
+
+@media (max-width: 991.98px) { 
+  .nav-link {
+    font-weight: bold !important;
+    margin-bottom: 5px !important;
+    text-align: center !important;
+  }
+
+  .navbar-closed {
+    display: none;
+  }
+}
+
 </style>
