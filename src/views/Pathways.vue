@@ -1,25 +1,29 @@
 <template>
   <div class="container">
-    <div
-      class="row pathway"
-      v-for="pathway in getPathways"
-      :key="pathway.name"
-      @click="selectPathway(pathway)"
-    >
-      <div class="col col-2 badgeImage mb-2 mt-2">
-        <img class="fluid-image" :src="pathway.badgeImageUrl" />
-      </div>
-      <div class="col pb-2 pt-2">
-        <h1>{{ pathway.name }}</h1>
-        <p>{{pathway.description}}</p>
-      </div>
-    </div>
+    <h1 class="mt-4 mb-3">Learning Pathways</h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <router-link to="/">Home</router-link>
+      </li>
+      <li class="breadcrumb-item active">Learning Pathways</li>
+    </ol>
+
     <div class="row">
-      <div class="col col-2 badgeImage mb-5"></div>
-      <div class="col">
-        <h1>...more levels on the way!</h1>
+      <div class="col-12 col-md-4 mb-5" v-for="pathway in getPathways" :key="pathway.name">
+        <div class="card">
+          <img class="card-img-top" :src="pathway.badgeImageUrl" :alt="pathway.name" />
+          <div class="card-body text-center">
+            <h5 class="card-title">{{pathway.name}}</h5>
+            <p class="card-text">{{pathway.description}}</p>
+            <a :href="pathway.pathwayUrl" target="_blank" class="btn btn-primary">
+              <strong>View Pathway</strong>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
+    <h5>...more levels on the way!</h5>
   </div>
 </template>
 
@@ -29,33 +33,12 @@ import { mapGetters } from "vuex";
 export default {
   computed: {
     ...mapGetters(["getPathways"])
-  },
-  methods: {
-    selectPathway(pathway) {
-      if (pathway.pathwayUrl) {
-        window.open(pathway.pathwayUrl, "_blank");
-      }
-    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.pathway:hover {
-  cursor: pointer;
-  background-color: #eee;
-}
-
-.pathway {
-  h1 {
-    font-size: 2rem;
-  }
-  .badgeImage {
-    img {
-      width: 9rem;
-      height: 9rem;
-      border-radius: 50%;
-    }
-  }
+.card-text {
+  min-height: 7rem;
 }
 </style>
