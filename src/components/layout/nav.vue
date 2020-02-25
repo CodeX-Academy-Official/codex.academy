@@ -17,7 +17,7 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div v-if="isOpen" class="collapse navbar-collapse" id="navbarResponsive">
+    <div :class="!isOpen ? 'navbar-closed': ''" class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <router-link to="/" class="nav-link">Home</router-link>
@@ -116,9 +116,16 @@ export default {
   background-color: $lightGray;
 }
 
-.nav-link {
-  font-weight: bold;
-  margin-bottom: 5px;
-  text-align: center;
+@media (max-width: 991.98px) { 
+  .nav-link {
+    font-weight: bold !important;
+    margin-bottom: 5px !important;
+    text-align: center !important;
+  }
+
+  .navbar-closed {
+    display: none;
+  }
 }
+
 </style>
