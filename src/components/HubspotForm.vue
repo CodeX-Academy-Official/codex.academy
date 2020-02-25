@@ -1,5 +1,5 @@
 <template>
-  <div v-once :id="formId"></div>
+  <div class="fixed-height" v-once :id="formId"></div>
 </template>
 
 <script>
@@ -31,4 +31,9 @@ export default {
 .hs-button {
   background-color: $primary;
 }
+
+.fixed-height {
+  height: 750px
+}
+
 </style>
