@@ -40,8 +40,7 @@ const selfpaced = [
     paymentTypes: [
       {
         type: "creditCard",
-        url: "https://app.hubspot.com/sales-checkout/tpi4vFUd",
-        testUrl: "https://app.hubspot.com/sales-checkout/test_OqVDtXse"
+        urls: "https://app.hubspot.com/sales-checkout/test_OqVDtXse"
       },
       {
         type: "callBack"
@@ -64,8 +63,7 @@ const selfpaced = [
     paymentTypes: [
       {
         type: "creditCard",
-        url: "https://app.hubspot.com/sales-checkout/wBN890ZZ",
-        testUrl: "https://app.hubspot.com/sales-checkout/test_fi5hBGei"
+        url: "https://app.hubspot.com/sales-checkout/test_fi5hBGei"
       },
       {
         type: "callBack"
@@ -89,8 +87,7 @@ const selfpaced = [
     paymentTypes: [
       {
         type: "creditCard",
-        url: "https://app.hubspot.com/sales-checkout/lTFpUJBC",
-        testUrl: "https://app.hubspot.com/sales-checkout/test_9bmF4PDE"
+        url: "https://app.hubspot.com/sales-checkout/test_9bmF4PDE"
       },
       {
         type: "callBack"
@@ -113,8 +110,7 @@ const selfpaced = [
     paymentTypes: [
       {
         type: "creditCard",
-        url: "https://app.hubspot.com/sales-checkout/3IILq-Ug",
-        testUrl: "https://app.hubspot.com/sales-checkout/test_Q2LszpvP"
+        url: "https://app.hubspot.com/sales-checkout/test_Q2LszpvP"
       },
       {
         type: "callBack"
@@ -154,8 +150,7 @@ const bootcamps = [
     paymentTypes: [
       {
         type: "creditCard",
-        url: "https://app.hubspot.com/sales-checkout/npnCjJOv",
-        testUrl: "https://app.hubspot.com/sales-checkout/test_AIL7qMLK"
+        url: "https://app.hubspot.com/sales-checkout/test_AIL7qMLK"
       },
       {
         type: "callBack"
@@ -182,8 +177,7 @@ const bootcamps = [
     paymentTypes: [
       {
         type: "creditCard",
-        url: "https://app.hubspot.com/sales-checkout/mSpPTv7B",
-        testUrl: "https://app.hubspot.com/sales-checkout/test_jQz_nidL"
+        url: "https://app.hubspot.com/sales-checkout/test_jQz_nidL"
       },
       {
         type: "callBack"
@@ -210,8 +204,7 @@ const bootcamps = [
     paymentTypes: [
       {
         type: "creditCard",
-        url: "https://app.hubspot.com/sales-checkout/1P9YipN5",
-        testUrl: "https://app.hubspot.com/sales-checkout/test_GaKZU8H-"
+        url: "https://app.hubspot.com/sales-checkout/test_GaKZU8H-"
       },
       {
         type: "callBack"
@@ -233,8 +226,7 @@ const community = [
     paymentTypes: [
       {
         type: "creditCard",
-        url: "https://app.hubspot.com/sales-checkout/YkUECPjJ",
-        testUrl: "https://app.hubspot.com/sales-checkout/test_D3sgM1ph"
+        url: "https://app.hubspot.com/sales-checkout/test_D3sgM1ph"
       },
       {
         type: "callBack"
