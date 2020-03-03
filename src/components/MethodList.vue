@@ -1,6 +1,14 @@
 <template>
   <div class="container method-list">
     <Method
+      title="Popular Technologies"
+      description="With so many choices in front-end, back-end and database technologies, how do you know where to start or what to learn? CodeX Academy leads you to the most popular, most marketable technologies throughout the stack. As a CodeX Academy graduate, you'll be equipped to work with the technologies that power the majority of the world's systems and development teams."
+      :icon="simCard"
+      iconSide="left"
+    />
+    <hr />
+
+    <Method
       title="Mentor-Driven"
       description="CodeX Academy believes mentorship is the key to achieving true mastery in programming. As you learn to code, you will get stuck several times (maybe a pesky semi-colon missing). As a CodeX Academy Learner, you have access to a personal mentor who can answer you via chat or even jump on a video call to work it out. Live 1-on-1 mentorship accelerates learning and makes it stick!"
       :icon="mentor"
@@ -50,7 +58,8 @@ import {
   faPeopleCarry,
   faClock,
   faTv,
-  faTasks
+  faTasks,
+  faSimCard
 } from "@fortawesome/free-solid-svg-icons";
 import Method from "@/components/method";
 
@@ -73,6 +82,9 @@ export default {
     },
     mastery() {
       return faTasks;
+    },
+    simCard() {
+      return faSimCard;
     }
   }
 };
@@ -87,6 +99,9 @@ export default {
   }
   .container {
     width: 10rem;
+  }
+  .fa-x3 {
+    margin-bottom: 2rem;
   }
 }
 </style>

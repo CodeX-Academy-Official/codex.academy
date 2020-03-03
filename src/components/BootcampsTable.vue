@@ -2,7 +2,7 @@
   <!-- Content Row -->
   <div class="row">
     <div class="col-lg-4 mb-4 plans-table" v-for="plan in plans" :key="plan.id">
-      <PlanCard :plan="plan" selectable="true" />
+      <PlanCard :plan="plan" :selectable="true" />
     </div>
   </div>
   <!-- /.row -->
@@ -26,5 +26,8 @@ export default {
 <style lang="scss">
 .plans-table {
   text-align: center;
+}
+.bootcamp-description {
+  height: 6.6rem;
 }
 </style>

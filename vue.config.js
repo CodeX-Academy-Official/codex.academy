@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === "production" ? "/codex.academy/" : "/"
+  // publicPath: process.env.NODE_ENV === "production" ? "/codex.academy/" : "/"
 };

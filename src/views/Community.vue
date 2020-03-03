@@ -42,10 +42,12 @@
           learning materials. When combined with our carefully designed Learning
           Pathways, you're set up for success!
         </p>
-        <router-link to="/enroll" class="btn btn-primary"
-          >Enroll Now
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </router-link>
+        <a @click="selectPlan" class="btn btn-primary">
+          <strong>
+            Enroll Now
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </strong>
+        </a>
       </div>
     </div>
     <!-- /.row -->
@@ -77,10 +79,12 @@
           moving on. Taking this "Lean" approach to learning is the best way to
           learn to code and MAKE IT STICK!
         </p>
-        <router-link to="/enroll" class="btn btn-primary"
-          >Enroll Now
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </router-link>
+        <a @click="selectPlan" class="btn btn-primary">
+          <strong>
+            Enroll Now
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </strong>
+        </a>
       </div>
     </div>
     <!-- /.row -->
@@ -110,10 +114,12 @@
           some suggested ways you might learn those skills. Completing a badge
           feels great! Small victories add up to big time success later on!
         </p>
-        <router-link to="/enroll" class="btn btn-primary"
-          >Enroll Now
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </router-link>
+        <a @click="selectPlan" class="btn btn-primary">
+          <strong>
+            Enroll Now
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </strong>
+        </a>
       </div>
     </div>
     <!-- /.row -->
@@ -147,10 +153,12 @@
           stuck at times, but at least you will have the power of a community
           around you to get you unstuck and moving again.
         </p>
-        <router-link to="/enroll" class="btn btn-primary"
-          >Enroll Now
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </router-link>
+        <a @click="selectPlan" class="btn btn-primary">
+          <strong>
+            Enroll Now
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </strong>
+        </a>
       </div>
     </div>
     <!-- /.row -->
@@ -158,6 +166,15 @@
   </div>
 </template>
 
+<script>
+export default {
+  methods: {
+    selectPlan() {
+      this.$router.push({ name: "Enroll", query: { planId: "community" } });
+    }
+  }
+};
+</script>
 <style lang="scss" scoped>
 img.screenshot {
   border: grey solid 1px;

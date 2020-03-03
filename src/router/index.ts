@@ -13,6 +13,9 @@ import Bootcamps from "../views/Bootcamps.vue";
 import Community from "../views/Community.vue";
 import Tuition from "../views/Tuition.vue";
 import AdmissionsCallBack from "../views/AdmissionsCallBack.vue";
+import AdmissionsCallBackSetup from "../views/AdmissionsCallBackSetup.vue";
+import EnrollmentComplete from "../views/EnrollmentComplete.vue";
+import Pathways from "../views/Pathways.vue";
 
 Vue.use(VueRouter);
 
@@ -48,6 +51,11 @@ const routes = [
     component: Testimonials
   },
   {
+    path: "/pathways",
+    name: "Pathways",
+    component: Pathways
+  },
+  {
     path: "/method",
     name: "Method",
     component: Method
@@ -63,6 +71,11 @@ const routes = [
     component: AdmissionsCallBack
   },
   {
+    path: "/admissions-call-back",
+    name: "AdmissionsCallBackSetup",
+    component: AdmissionsCallBackSetup
+  },
+  {
     path: "/call-back",
     name: "CallBack",
     component: CallBack
@@ -76,6 +89,11 @@ const routes = [
     path: "/enroll",
     name: "Enroll",
     component: Enroll
+  },
+  {
+    path: "/enrollment-complete",
+    name: "EnrollmentComplete",
+    component: EnrollmentComplete
   },
   {
     path: "/enroll-tuition",

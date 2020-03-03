@@ -10,21 +10,39 @@
       <li class="breadcrumb-item active">Bootcamps</li>
     </ol>
 
-    <p>
-      <strong>Looking for an intense, immersive learning experience?</strong>
-      CodeX Academy has a few bootcamp options to choose from, depending on how
-      far you want to go.
-    </p>
-    <BootcampsTable />
+    <div class="row d-none d-lg-block">
+      <Unsplash
+        imageId="oqStl2L5oxI"
+        align="right"
+        description="Coffee-driven development"
+        width="1100"
+        height="200"
+        class="d-none d-xl-block"
+      />
+    </div>
+
+    <div class="row mt-5">
+      <h4 class="text-center">
+        Looking for an intense, immersive learning experience? CodeX Academy has
+        a few bootcamp options to choose from, depending on how far you want to
+        go.
+      </h4>
+    </div>
+
+    <div class="row mt-5">
+      <BootcampsTable />
+    </div>
   </div>
 </template>
 
 <script>
 import BootcampsTable from "@/components/BootcampsTable";
+import Unsplash from "@/components/Unsplash";
 
 export default {
   components: {
-    BootcampsTable
+    BootcampsTable,
+    Unsplash
   }
 };
 </script>

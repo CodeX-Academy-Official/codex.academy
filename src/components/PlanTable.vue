@@ -2,7 +2,7 @@
   <!-- Content Row -->
   <div class="row">
     <div class="col-lg-3 mb-4 plans-table" v-for="plan in plans" :key="plan.id">
-      <PlanCard :plan="plan" selectable="true" />
+      <PlanCard :plan="plan" :selectable="true" />
     </div>
   </div>
   <!-- /.row -->
@@ -17,7 +17,9 @@ export default {
   },
   computed: {
     plans() {
-      return this.$store.state.plans.filter(x => !x.isBootcamp);
+      return this.$store.state.plans.filter(
+        x => !x.isBootcamp && x.isMentoring
+      );
     }
   }
 };
