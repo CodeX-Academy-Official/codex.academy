@@ -16,14 +16,11 @@
       <div class="col">
         <div v-if="selectedPlan.paymentTypes.length > 0">
           <h1>Payment Options</h1>
-          <div
-            v-for="(paymentType, index) in selectedPlan.paymentTypes"
-            :key="paymentType.type"
-          >
+          <div v-for="(paymentType, index) in selectedPlan.paymentTypes" :key="paymentType.type">
             <hr class="mt-5 mb-5" />
             <CreditCard
               v-if="paymentType.type === 'creditCard'"
-              :url="paymentType.url"
+              :paymentType="paymentType"
               :number="index + 1"
               css="paymentType ml-4"
             />

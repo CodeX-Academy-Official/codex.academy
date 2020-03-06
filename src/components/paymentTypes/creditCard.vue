@@ -14,9 +14,16 @@
 <script>
 export default {
   props: {
-    url: String,
+    paymentType: Object,
     number: Number,
     css: String
+  },
+  computed: {
+    url() {
+      return this.$store.state.testMode
+        ? this.paymentType.testUrl
+        : this.paymentType.url;
+    }
   }
 };
 </script>
