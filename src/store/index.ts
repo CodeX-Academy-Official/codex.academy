@@ -40,7 +40,8 @@ const plans = [
     paymentTypes: [
       {
         type: "creditCard",
-        urls: "https://app.hubspot.com/sales-checkout/tpi4vFUd"
+        url: "https://app.hubspot.com/sales-checkout/tpi4vFUd",
+        testUrl: "https://app.hubspot.com/sales-checkout/test_OqVDtXse"
       },
       {
         type: "callBack"
@@ -63,7 +64,8 @@ const plans = [
     paymentTypes: [
       {
         type: "creditCard",
-        url: "https://app.hubspot.com/sales-checkout/wBN890ZZ"
+        url: "https://app.hubspot.com/sales-checkout/wBN890ZZ",
+        testUrl: "https://app.hubspot.com/sales-checkout/test_fi5hBGei"
       },
       {
         type: "callBack"
@@ -87,7 +89,8 @@ const plans = [
     paymentTypes: [
       {
         type: "creditCard",
-        url: "https://app.hubspot.com/sales-checkout/lTFpUJBC"
+        url: "https://app.hubspot.com/sales-checkout/lTFpUJBC",
+        testUrl: "https://app.hubspot.com/sales-checkout/test_9bmF4PDE"
       },
       {
         type: "callBack"
@@ -110,7 +113,8 @@ const plans = [
     paymentTypes: [
       {
         type: "creditCard",
-        url: "https://app.hubspot.com/sales-checkout/3IILq-Ug"
+        url: "https://app.hubspot.com/sales-checkout/3IILq-Ug",
+        testUrl: "https://app.hubspot.com/sales-checkout/test_Q2LszpvP"
       },
       {
         type: "callBack"
@@ -150,7 +154,8 @@ const bootcamps = [
     paymentTypes: [
       {
         type: "creditCard",
-        url: "https://app.hubspot.com/sales-checkout/npnCjJOv"
+        url: "https://app.hubspot.com/sales-checkout/npnCjJOv",
+        testUrl: "https://app.hubspot.com/sales-checkout/test_AIL7qMLK"
       },
       {
         type: "callBack"
@@ -177,7 +182,8 @@ const bootcamps = [
     paymentTypes: [
       {
         type: "creditCard",
-        url: "https://app.hubspot.com/sales-checkout/mSpPTv7B"
+        url: "https://app.hubspot.com/sales-checkout/mSpPTv7B",
+        testUrl: "https://app.hubspot.com/sales-checkout/test_jQz_nidL"
       },
       {
         type: "callBack"
@@ -204,7 +210,8 @@ const bootcamps = [
     paymentTypes: [
       {
         type: "creditCard",
-        url: "https://app.hubspot.com/sales-checkout/1P9YipN5"
+        url: "https://app.hubspot.com/sales-checkout/1P9YipN5",
+        testUrl: "https://app.hubspot.com/sales-checkout/test_GaKZU8H-"
       },
       {
         type: "callBack"
@@ -226,7 +233,8 @@ const community = [
     paymentTypes: [
       {
         type: "creditCard",
-        url: "https://app.hubspot.com/sales-checkout/1P9YipN5"
+        url: "https://app.hubspot.com/sales-checkout/YkUECPjJ",
+        testUrl: "https://app.hubspot.com/sales-checkout/test_D3sgM1ph"
       },
       {
         type: "callBack"
@@ -239,6 +247,7 @@ const SELECT_PLAN = "SELECT_PLAN";
 
 export default new Vuex.Store({
   state: {
+    testMode: false,
     plans: [...bootcamps, ...plans, ...community],
     selectedPlan: false,
     pathways: [
