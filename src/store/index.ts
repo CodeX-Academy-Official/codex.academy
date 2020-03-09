@@ -248,11 +248,7 @@ const SELECT_PLAN = "SELECT_PLAN";
 export default new Vuex.Store({
   state: {
     testMode: false,
-<<<<<<< HEAD
-    plans: [...bootcamps, ...selfpaced, ...community],
-=======
     plans: [...bootcamps, ...plans, ...community],
->>>>>>> updated to include the testUrl from upstream
     selectedPlan: false,
     pathways: [
       {
