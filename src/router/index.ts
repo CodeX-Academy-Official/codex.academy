@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import Plans from "../views/Plans.vue";
+import Selfpaced from "../views/Selfpaced.vue";
 import Contact from "../views/Contact.vue";
 import FAQ from "../views/FAQ.vue";
 import Blog from "../views/Blog.vue";
@@ -26,9 +26,9 @@ const routes = [
     component: Home
   },
   {
-    path: "/plans",
-    name: "Plans",
-    component: Plans
+    path: "/selfpaced",
+    name: "Selfpaced",
+    component: Selfpaced
   },
   {
     path: "/bootcamps",

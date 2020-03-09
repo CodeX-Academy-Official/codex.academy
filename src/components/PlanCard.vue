@@ -19,7 +19,7 @@
           </a>
         </li>
         <li class="list-group-item" v-if="selectable">
-          <router-link to="/call-back">Learn More</router-link>
+          <router-link to="/call-back">Help Me Decide</router-link>
         </li>
       </ul>
     </div>
