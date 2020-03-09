@@ -11,8 +11,8 @@
       </div>
       <a id="plans"></a>
       <hr />
-
-      <!-- <IntroBlock /> -->
+    <div class="text-center mb-5">
+      <!-- <IntroBlock />
       <div class="text-center mb-5">
         <div class="row">
           <div class="col">
@@ -89,7 +89,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <h3 class="mb-5">What do CodeX Academy Learners say?</h3>
