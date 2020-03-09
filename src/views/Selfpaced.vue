@@ -6,7 +6,7 @@
       <li class="breadcrumb-item">
         <router-link to="/">Home</router-link>
       </li>
-      <li class="breadcrumb-item active">Plans</li>
+      <li class="breadcrumb-item active">Self-Paced</li>
     </ol>
 
     <div class="row d-none d-lg-block">

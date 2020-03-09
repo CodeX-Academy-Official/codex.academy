@@ -1,16 +1,19 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+
+import Plans from "../views/Plans.vue";
 import Selfpaced from "../views/Selfpaced.vue";
+import Bootcamps from "../views/Bootcamps.vue";
+import Community from "../views/Community.vue";
+
 import Contact from "../views/Contact.vue";
-import FAQ from "../views/FAQ.vue";
+import FAQs from "../views/FAQs.vue";
 import Blog from "../views/Blog.vue";
 import Method from "../views/Method.vue";
 import Testimonials from "../views/Testimonials.vue";
 import Enroll from "../views/Enroll.vue";
 import CallBack from "../views/CallBack.vue";
-import Bootcamps from "../views/Bootcamps.vue";
-import Community from "../views/Community.vue";
 import Tuition from "../views/Tuition.vue";
 import AdmissionsCallBack from "../views/AdmissionsCallBack.vue";
 import AdmissionsCallBackSetup from "../views/AdmissionsCallBackSetup.vue";
@@ -41,9 +44,14 @@ const routes = [
     component: Community
   },
   {
-    path: "/faq",
-    name: "FAQ",
-    component: FAQ
+    path: "/plans",
+    name: "Plans",
+    component: Plans
+  },
+  {
+    path: "/faqs",
+    name: "FAQs",
+    component: FAQs
   },
   {
     path: "/testimonials",
