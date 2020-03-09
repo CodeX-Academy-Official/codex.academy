@@ -8,6 +8,7 @@
     <button
       class="navbar-toggler navbar-toggler-right"
       type="button"
+      @click="toggleMenu"
       data-toggle="collapse"
       data-target="#navbarResponsive"
       aria-controls="navbarResponsive"
@@ -16,17 +17,20 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
+    <div :class="!isOpen ? 'navbar-closed': ''" class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <router-link to="/" class="nav-link">Home</router-link>
         </li>
+        <separator />
         <li class="nav-item">
           <router-link to="/plans" class="nav-link">Self-Paced</router-link>
         </li>
+        <separator />
         <li class="nav-item">
           <router-link to="/bootcamps" class="nav-link">Bootcamps</router-link>
         </li>
+        <separator />
         <!-- <li class="nav-item">
           <router-link to="/community" class="nav-link">Community</router-link>
         </li>-->
@@ -36,6 +40,7 @@
         <li class="nav-item">
           <router-link to="/call-back" class="nav-link">Learn More</router-link>
         </li>
+        <separator />
         <li class="nav-item">
           <router-link to="/faq" class="nav-link">FAQ</router-link>
         </li>
@@ -59,7 +64,35 @@
   </nav>
 </template>
 
+<script>
+import separator from '@/components/layout/separator';
+export default {
+  name: 'NavBar',
+  data() {
+    return {
+      isOpen: false
+    }
+  },
+  components: {
+    separator
+  },
+  methods: {
+    toggleMenu() {
+      this.isOpen = !this.isOpen;
+    }
+  },
+  watch: {
+    '$route' () {
+      this.isOpen = false;
+    }
+  }
+}
+</script>>
+
+
 <style lang="scss" scoped>
+@import "@/variables";
+
 #nav {
   z-index: 200000;
   padding: 30px;
@@ -79,4 +112,21 @@
 .navbar img.logo {
   height: 3.1rem;
 }
+
+.navbar-nav {
+  background-color: $lightGray;
+}
+
+@media (max-width: 991.98px) { 
+  .nav-link {
+    font-weight: bold !important;
+    margin-bottom: 5px !important;
+    text-align: center !important;
+  }
+
+  .navbar-closed {
+    display: none;
+  }
+}
+
 </style>
