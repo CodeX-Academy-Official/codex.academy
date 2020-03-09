@@ -15,7 +15,7 @@
         </li>
         <li class="list-group-item" v-if="selectable">
           <a href="#" class="btn btn-primary" @click.prevent="selectPlan(plan)">
-            <strong>Start Enrollment</strong>
+            <strong>Sign Up</strong>
           </a>
         </li>
         <li class="list-group-item" v-if="selectable">

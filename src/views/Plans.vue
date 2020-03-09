@@ -1,20 +1,16 @@
 <template>
-  <div class="home-page">
-    <HeroCarousel />
-    <div class="container">
-      <div class="row">
-        <div class="col-2 d-none d-lg-block"></div>
-        <div class="col">
-          <!-- <h1 class="pb-5">CodeX Academy is...</h1> -->
-          <MethodList />
-        </div>
-        <div class="col-2 d-none d-lg-block"></div>
-      </div>
-      <a id="plans"></a>
-      <hr />
-    <div class="text-center mb-5">
-      <!-- <IntroBlock />
-      <div class="text-center mb-5">
+  <div class="container">
+<!-- <IntroBlock /> -->
+     <h1 class="mt-4 mb-3">CodeX Academy Plans</h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <router-link to="/">Home</router-link>
+      </li>
+      <li class="breadcrumb-item active">Plans</li>
+    </ol>
+ 
+    <div class="row d-none d-lg-block">
         <div class="row">
           <div class="col">
             <div class="card">
@@ -36,7 +32,7 @@
               </ul>
               <div class="card-body">
                 <router-link to="/community" class="card-link btn btn-primary">
-                  <strong>See Community Plan</strong>
+                  <strong>Community Plan</strong>
                 </router-link>
               </div>
             </div>
@@ -61,7 +57,7 @@
               </ul>
               <div class="card-body">
                 <router-link to="/selfpaced" class="card-link btn btn-primary">
-                  <strong>See Self-Paced Plans</strong>
+                  <strong>Self-Paced Plans</strong>
                 </router-link>
               </div>
             </div>
@@ -85,72 +81,30 @@
               </ul>
               <div class="card-body">
                 <router-link to="/bootcamps" class="card-link btn btn-primary">
-                  <strong>See Bootcamps</strong>
+                  <strong>Bootcamp Plans</strong>
                 </router-link>
               </div>
             </div>
           </div>
-        </div> -->
+        </div>
       </div>
-
-      <h3 class="mb-5">What do CodeX Academy Learners say?</h3>
-      <TestimonialsCarousel />
-      <!-- <hr />
-      <internshipPartners />-->
     </div>
-  </div>
 </template>
 
 <script>
-import HelloWorld from "@/components/HelloWorld.vue";
-import internshipPartners from "@/components/internship-partners";
-import HeroCarousel from "@/components/HeroCarousel";
 import PlansTable from "@/components/PlanTable";
-import IntroBlock from "@/components/IntroBlock";
-import TestimonialsCarousel from "@/components/TestimonialsCarousel";
-import MethodList from "@/components/MethodList";
+import Unsplash from "@/components/Unsplash";
 
 export default {
-  name: "Home",
   components: {
-    HelloWorld,
-    internshipPartners,
-    HeroCarousel,
     PlansTable,
-    IntroBlock,
-    TestimonialsCarousel,
-    MethodList
-  },
-  mounted() {
-    // From testing, without a brief timeout, it won't work.
-    if (this.$route.hash) {
-      setTimeout(() => this.scrollTo(this.$route.hash), TIMEOUT);
-    }
-  },
-  methods: {
-    scrollTo: function(hashtag) {
-      setTimeout(() => {
-        location.href = hashtag;
-      }, TIMEOUT);
-    }
+    Unsplash
   }
 };
 </script>
 
-<style lang="scss">
-.home-page {
-  ul.list-group {
-    li.price {
-      color: black;
-      font-weight: bolder;
-      font-size: 1.3rem;
-    }
-  }
-  .card-title {
-    font-size: 1.5rem;
-  }
-  hr {
-    margin: 2rem 0;
-  }
+<style scoped>
+.bootcamp-description {
+  height: 2rem;
 }
 </style>

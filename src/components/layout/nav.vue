@@ -23,6 +23,9 @@
           <router-link to="/" class="nav-link">Home</router-link>
         </li> -->
         <li class="nav-item">
+          <router-link to="/plans" class="nav-link">Plans</router-link>
+        </li>
+        <!-- <li class="nav-item">
           <router-link to="/selfpaced" class="nav-link">Self-Paced</router-link>
         </li>
         <separator />
@@ -31,7 +34,7 @@
         </li>
         <li class="nav-item">
           <router-link to="/community" class="nav-link">Community</router-link>
-        </li>
+        </li> -->
         <!-- <li class="nav-item">
           <router-link to="/method" class="nav-link">Method</router-link>
         </li>-->
@@ -39,7 +42,7 @@
           <router-link to="/call-back" class="nav-link">Learn More</router-link>
         </li> -->
         <li class="nav-item">
-          <router-link to="/faq" class="nav-link">FAQs</router-link>
+          <router-link to="/faqs" class="nav-link">FAQs</router-link>
         </li>
         <!-- <li class="nav-item">
           <router-link to="/testimonials" class="nav-link"
@@ -49,9 +52,9 @@
         <!-- <li class="nav-item">
           <router-link class="nav-link" to="/blog">Blog</router-link>
         </li>-->
-        <!-- <li class="nav-item">
+        <li class="nav-item">
           <router-link class="nav-link" to="/contact">Contact</router-link>
-        </li>-->
+        </li>
         <!-- <li class="nav-item">
           <router-link to="/about" class="nav-link">About</router-link>
         </li>-->
