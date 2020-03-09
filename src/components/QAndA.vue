@@ -15,7 +15,7 @@
 
     <div
       :id="id"
-      class="collapse show"
+      class="collapse hide"
       role="tabpanel"
       aria-labelledby="headingOne"
     >

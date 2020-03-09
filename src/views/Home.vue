@@ -29,7 +29,7 @@
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item price">Only $50/month</li>
-                <li class="list-group-item">Self-paced</li>
+                <li class="list-group-item">Self-Paced</li>
 
                 <li class="list-group-item">Independent Study</li>
                 <li class="list-group-item">No Weekly Commitment</li>
@@ -54,13 +54,13 @@
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item price">$400/mo and up</li>
-                <li class="list-group-item">Self-paced</li>
+                <li class="list-group-item">Self-Paced</li>
 
                 <li class="list-group-item">Mentor-Driven</li>
                 <li class="list-group-item">5 to 40 Hours/Week Commitment</li>
               </ul>
               <div class="card-body">
-                <router-link to="/plans" class="card-link btn btn-primary">
+                <router-link to="/selfpaced" class="card-link btn btn-primary">
                   <strong>See Self-Paced Plans</strong>
                 </router-link>
               </div>

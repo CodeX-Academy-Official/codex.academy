@@ -23,7 +23,7 @@ const mentorDrivenCommonDetails = [
   "Career Counseling"
 ];
 
-const plans = [
+const selfpaced = [
   {
     id: "selfpaced2",
     title: "Casual",
@@ -248,7 +248,7 @@ const SELECT_PLAN = "SELECT_PLAN";
 export default new Vuex.Store({
   state: {
     testMode: false,
-    plans: [...bootcamps, ...plans, ...community],
+    plans: [...bootcamps, ...selfpaced, ...community],
     selectedPlan: false,
     pathways: [
       {

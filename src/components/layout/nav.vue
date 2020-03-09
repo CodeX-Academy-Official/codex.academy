@@ -18,26 +18,26 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <router-link to="/" class="nav-link">Home</router-link>
-        </li>
+        </li> -->
         <li class="nav-item">
-          <router-link to="/plans" class="nav-link">Self-Paced</router-link>
+          <router-link to="/selfpaced" class="nav-link">Self-Paced</router-link>
         </li>
         <li class="nav-item">
           <router-link to="/bootcamps" class="nav-link">Bootcamps</router-link>
         </li>
-        <!-- <li class="nav-item">
+        <li class="nav-item">
           <router-link to="/community" class="nav-link">Community</router-link>
-        </li>-->
+        </li>
         <!-- <li class="nav-item">
           <router-link to="/method" class="nav-link">Method</router-link>
         </li>-->
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <router-link to="/call-back" class="nav-link">Learn More</router-link>
-        </li>
+        </li> -->
         <li class="nav-item">
-          <router-link to="/faq" class="nav-link">FAQ</router-link>
+          <router-link to="/faq" class="nav-link">FAQs</router-link>
         </li>
         <!-- <li class="nav-item">
           <router-link to="/testimonials" class="nav-link"

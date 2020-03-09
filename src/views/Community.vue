@@ -10,10 +10,10 @@
     </ol>
 
     <p>
-      For those who are interested learning to code, but want to take a more
+      For those who are interested in learning to code, but want to take a more
       self-guided approach, we have the Community Plan. This plan gives you
       full, unrestricted access to our learning pathways and learner community.
-      We're not going to lie. Learning to code is HARD. Doing do in a vacuum is
+      We're not going to lie. Learning to code is HARD. Doing so in a vacuum is
       not impossible, but it's highly improbable. The extra help received from
       our Community Plan could make the difference you need to ACTUALLY learn to
       code and move on to a fruitful career!

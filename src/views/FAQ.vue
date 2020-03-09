@@ -16,14 +16,21 @@
     <p>
       If you've got questions, we want to answer them! We've tried to guess what
       you might be wondering and answer those questions below. If there are
-      still any linger doubts, we would still like the chance to get you the
+      still any lingering doubts, we would still like the chance to get you the
       information you need. For that, a conversation is in order.
+      Click here to set up a 
       <router-link to="/call-back"
-        >Click here to set up a call-back.</router-link
-      >
+        >call-back</router-link
+      >.
     </p>
+
+
+
+    
+
     <div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
-      <QAndA id="faq1" question="What can I expect as a full-time student?">
+
+      <QAndA id="faq1" question="Full-time student expectations?">
         <p>
           Full-time students can expect to earn the “Full-Stack Developer”
           certification after just 6 months of mentor-led study! Part-time
@@ -31,9 +38,11 @@
         </p>
         <img src="img/learner-flow.png" class="img-fluid" />
       </QAndA>
+      
+      
       <QAndA
         id="faq2"
-        question="What technologies will I learn in CodeX Academy?"
+        question="CodeX Academy technologies?"
       >
         <p>
           A “Full-Stack Developer” is someone who can build world-changing apps
