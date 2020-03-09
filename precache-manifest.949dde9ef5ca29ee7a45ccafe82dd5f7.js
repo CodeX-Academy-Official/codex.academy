@@ -4,8 +4,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/404.html"
   },
   {
-    "revision": "dccfebb80de7ed1b4c02",
-    "url": "/css/app.824db9e7.css"
+    "revision": "f3beb7e8f159babb219de856f1bd72ca",
+    "url": "/CNAME"
+  },
+  {
+    "revision": "7c3d306f51d9227dcc0e",
+    "url": "/css/app.e29f54e3.css"
   },
   {
     "revision": "fbd6f13d7f012b61b1158cbbf428f615",
@@ -192,16 +196,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/tech-line.png"
   },
   {
-    "revision": "f33b4d1add415ca6b66dee52ac2e19c0",
+    "revision": "2461b27301171f0b32cf532e9c0611b8",
     "url": "/index.html"
   },
   {
-    "revision": "30d320ea26bd2579ffa3",
-    "url": "/js/about.f5e3d78a.js"
+    "revision": "564685608889fec79cd0",
+    "url": "/js/about.79e37a0a.js"
   },
   {
-    "revision": "dccfebb80de7ed1b4c02",
-    "url": "/js/app.33df2ff9.js"
+    "revision": "7c3d306f51d9227dcc0e",
+    "url": "/js/app.b7bb7d27.js"
   },
   {
     "revision": "2f17d60f8f09c521d5df",
