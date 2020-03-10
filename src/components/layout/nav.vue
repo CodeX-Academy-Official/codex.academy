@@ -52,9 +52,9 @@
         <!-- <li class="nav-item">
           <router-link class="nav-link" to="/blog">Blog</router-link>
         </li>-->
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <router-link class="nav-link" to="/contact">Contact</router-link>
-        </li>
+        </li> -->
         <!-- <li class="nav-item">
           <router-link to="/about" class="nav-link">About</router-link>
         </li>-->
