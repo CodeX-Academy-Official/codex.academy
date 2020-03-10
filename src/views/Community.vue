@@ -25,7 +25,7 @@
       <div class="col text-center">
         <a @click="selectPlan" class="btn btn-primary">
           <strong>
-            Enroll Now
+            Sign Up
             <span class="glyphicon glyphicon-chevron-right"></span>
           </strong>
         </a>
@@ -157,7 +157,7 @@
       <div class="col text-center">
         <a @click="selectPlan" class="btn btn-primary">
           <strong>
-            Enroll Now
+            Sign up
             <span class="glyphicon glyphicon-chevron-right"></span>
           </strong>
         </a>
