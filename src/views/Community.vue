@@ -21,6 +21,17 @@
       code and move on to a fruitful career!
     </p>
 
+    <div class="row">
+      <div class="col text-center">
+        <a @click="selectPlan" class="btn btn-primary">
+          <strong>
+            Enroll Now
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </strong>
+        </a>
+      </div>
+    </div>
+
     <hr class="mb-5 mt-5" />
 
     <!-- Project One -->
@@ -44,12 +55,6 @@
           learning materials. When combined with our carefully designed Learning
           Pathways, you're set up for success!
         </p>
-        <a @click="selectPlan" class="btn btn-primary">
-          <strong>
-            Enroll Now
-            <span class="glyphicon glyphicon-chevron-right"></span>
-          </strong>
-        </a>
       </div>
     </div>
     <!-- /.row -->
@@ -81,12 +86,6 @@
           moving on. Taking this "Lean" approach to learning is the best way to
           learn to code and MAKE IT STICK!
         </p>
-        <a @click="selectPlan" class="btn btn-primary">
-          <strong>
-            Enroll Now
-            <span class="glyphicon glyphicon-chevron-right"></span>
-          </strong>
-        </a>
       </div>
     </div>
     <!-- /.row -->
@@ -116,12 +115,6 @@
           some suggested ways you might learn those skills. Completing a badge
           feels great! Small victories add up to big time success later on!
         </p>
-        <a @click="selectPlan" class="btn btn-primary">
-          <strong>
-            Enroll Now
-            <span class="glyphicon glyphicon-chevron-right"></span>
-          </strong>
-        </a>
       </div>
     </div>
     <!-- /.row -->
@@ -155,6 +148,13 @@
           stuck at times, but at least you will have the power of a community
           around you to get you unstuck and moving again.
         </p>
+      </div>
+    </div>
+
+    <hr class="mb-5 mt-5" />
+
+    <div class="row">
+      <div class="col text-center">
         <a @click="selectPlan" class="btn btn-primary">
           <strong>
             Enroll Now
@@ -163,7 +163,6 @@
         </a>
       </div>
     </div>
-    <!-- /.row -->
     <div class="mb-5"></div>
   </div>
 </template>
