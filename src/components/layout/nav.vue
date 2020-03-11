@@ -22,10 +22,14 @@
         <!-- <li class="nav-item">
           <router-link to="/" class="nav-link">Home</router-link>
         </li> -->
+
         <li class="nav-item">
           <router-link to="/plans" class="nav-link">Plans</router-link>
         </li>
         <!-- <li class="nav-item">
+        <separator />
+        <li class="nav-item">
+
           <router-link to="/selfpaced" class="nav-link">Self-Paced</router-link>
         </li>
         <separator />
