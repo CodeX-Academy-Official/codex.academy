@@ -19,30 +19,57 @@
     </button>
     <div :class="!isOpen ? 'navbar-closed': ''" class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <!-- <li class="nav-item">
+        
+        <li class="nav-item">
           <router-link to="/" class="nav-link">Home</router-link>
+        </li>
+
+        <!-- <li class="nav-item">
+          <router-link to="/plans" class="nav-link">Plans</router-link>
         </li> -->
+
+        <div class="dropdown">
+          <li class="btn dropdown-toggle" type="button" data-toggle="dropdown"> Plans
+        
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" >
+            <a class="dropdown-item">
+              <router-link to="/plans" class="nav-link">Compare</router-link>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item">
+              <router-link to="/selfpaced" class="nav-link">Self-Paced</router-link>
+            </a>
+            <a class="dropdown-item">
+              <router-link to="/bootcamps" class="nav-link">Bootcamps</router-link>
+            </a>
+            <a class="dropdown-item">
+              <router-link to="/community" class="nav-link">Community</router-link>
+            </a>
+          </div>
+          </li>
+        </div>
+
+        <!-- <li class="nav-item">
         <separator />
         <li class="nav-item">
+
           <router-link to="/selfpaced" class="nav-link">Self-Paced</router-link>
         </li>
         <separator />
         <li class="nav-item">
           <router-link to="/bootcamps" class="nav-link">Bootcamps</router-link>
         </li>
-        <separator />
         <li class="nav-item">
           <router-link to="/community" class="nav-link">Community</router-link>
-        </li>
+        </li> -->
         <!-- <li class="nav-item">
           <router-link to="/method" class="nav-link">Method</router-link>
         </li>-->
         <!-- <li class="nav-item">
           <router-link to="/call-back" class="nav-link">Learn More</router-link>
         </li> -->
-        <separator />
         <li class="nav-item">
-          <router-link to="/faq" class="nav-link">FAQs</router-link>
+          <router-link to="/faqs" class="nav-link">FAQs</router-link>
         </li>
         <!-- <li class="nav-item">
           <router-link to="/testimonials" class="nav-link"
@@ -54,7 +81,7 @@
         </li>-->
         <!-- <li class="nav-item">
           <router-link class="nav-link" to="/contact">Contact</router-link>
-        </li>-->
+        </li> -->
         <!-- <li class="nav-item">
           <router-link to="/about" class="nav-link">About</router-link>
         </li>-->

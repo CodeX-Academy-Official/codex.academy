@@ -7,8 +7,8 @@
           <i>Join the workforce that changes the world!</i>
         </p>
         <h3 class="mb-4">Learn to code in 6 months</h3>
-        <router-link :to="{ name: 'Home', hash: '#plans' }" class="btn btn-primary btn-lg">
-          <strong>See Plans</strong>
+        <router-link to="/plans" class="btn btn-primary btn-lg">
+          <strong>CodeX Plans</strong>
         </router-link>
       </div>
     </div>
