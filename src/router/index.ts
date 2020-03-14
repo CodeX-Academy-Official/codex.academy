@@ -15,6 +15,7 @@ import Tuition from "../views/Tuition.vue";
 import AdmissionsCallBack from "../views/AdmissionsCallBack.vue";
 import AdmissionsCallBackSetup from "../views/AdmissionsCallBackSetup.vue";
 import EnrollmentComplete from "../views/EnrollmentComplete.vue";
+import Sample from "../views/Sample.vue";
 import Pathways from "../views/Pathways.vue";
 
 Vue.use(VueRouter);
@@ -54,6 +55,11 @@ const routes = [
     path: "/pathways",
     name: "Pathways",
     component: Pathways
+  },
+  {
+    path: "/sample",
+    name: "Sample",
+    component: Sample
   },
   {
     path: "/method",

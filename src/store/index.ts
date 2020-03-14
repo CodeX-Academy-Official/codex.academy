@@ -8,6 +8,156 @@ const vuexLocal = new VuexPersistence({
 
 Vue.use(Vuex);
 
+const technologies = [
+  {
+    order: 10,
+    name: "ASP.NET",
+    logo: "aspnet.png",
+    info: "",
+    url: "https://lmgtfy.com/?q=asp.net"
+  },
+  {
+    order: 10,
+    name: "Amazon AWS",
+    logo: "aws.png",
+    info: "",
+    url: "https://lmgtfy.com/?q=amazon aws"
+  },
+  {
+    order: 10,
+    name: "C#",
+    logo: "cs.svg",
+    info: "",
+    url: "https://lmgtfy.com/?q=csharp"
+  },
+  {
+    order: 1,
+    name: "CSS3",
+    logo: "css.png",
+    info: "",
+    url: "https://lmgtfy.com/?q=css3"
+  },
+  {
+    order: 10,
+    name: "Docker",
+    logo: "docker.png",
+    info: "",
+    url: "https://lmgtfy.com/?q=docker"
+  },
+  {
+    order: 10,
+    name: "ExpressJS",
+    logo: "ExpressJS.png",
+    info: "",
+    url: "https://lmgtfy.com/?q=expressJS"
+  },
+  {
+    order: 10,
+    name: "Figma",
+    logo: "figma.svg",
+    info: "",
+    url: "https://lmgtfy.com/?q=figma"
+  },
+  {
+    order: 2,
+    name: "Heroku",
+    logo: "heroku.png",
+    info: "",
+    url: "https://lmgtfy.com/?q=heroku"
+  },
+  {
+    order: 0,
+    name: "HTML5",
+    logo: "html.png",
+    info: "",
+    url: "https://lmgtfy.com/?q=html5"
+  },
+  {
+    order: 10,
+    name: "Jest",
+    logo: "jest.png",
+    info: "",
+    url: "https://lmgtfy.com/?q=jest unit test"
+  },
+  {
+    order: 1,
+    name: "JavaScript",
+    logo: "js.png",
+    info: "",
+    url: "https://lmgtfy.com/?q=javascript"
+  },
+  {
+    order: 10,
+    name: "Mongo DB",
+    logo: "mongo.png",
+    info: "",
+    url: "https://lmgtfy.com/?q=mongo"
+  },
+  {
+    order: 3,
+    name: "NodeJS",
+    logo: "node.webp",
+    info: "",
+    url: "https://lmgtfy.com/?q=node"
+  },
+  {
+    order: 2,
+    name: "NPM - Node Package Manager",
+    logo: "npm.png",
+    info: "",
+    url: "https://lmgtfy.com/?q=npm"
+  },
+  // {
+  //   order: 10,
+  //   name: "Mozilla's Open Badges",
+  //   logo: "openbadges.png",
+  //   info: "",
+  //   url: "https://lmgtfy.com/?q=openbadges"
+  // },
+  {
+    order: 10,
+    name: "PostgrSQL",
+    logo: "pg.png",
+    info: "",
+    url: "https://lmgtfy.com/?q=postgres"
+  },
+  {
+    order: 10,
+    name: "ReactJS",
+    logo: "react.png",
+    info: "",
+    url: "https://lmgtfy.com/?q=react js"
+  },
+  {
+    order: 10,
+    name: "SASS",
+    logo: "sass.svg",
+    info: "",
+    url: "https://lmgtfy.com/?q=sass"
+  },
+  {
+    order: 10,
+    name: "TypeScript",
+    logo: "tsd.png",
+    info: "",
+    url: "https://lmgtfy.com/?q=typescript"
+  },
+  {
+    order: 10,
+    name: "Visual Studio Code",
+    logo: "vscode.png",
+    info: "",
+    url: "https://lmgtfy.com/?q=vscode"
+  },
+  {
+    order: 10,
+    name: "VueJS",
+    logo: "vue.png",
+    info: "",
+    url: "https://lmgtfy.com/?q=vuejs"
+  }
+];
+
 const planCommonDetails = [
   "Self-Paced",
   "Unlimited Learning Pathway Access",
@@ -250,6 +400,7 @@ export default new Vuex.Store({
     testMode: false,
     plans: [...bootcamps, ...selfpaced, ...community],
     selectedPlan: false,
+    technologies,
     pathways: [
       {
         name: "Level 1",
@@ -303,12 +454,11 @@ export default new Vuex.Store({
     }
   },
   getters: {
-    getPlan: state => (planId: string) => {
-      return state.plans.find((x: any) => x.id === planId);
-    },
-    getPathways: state => {
-      return state.pathways;
-    }
+    getPlan: state => (planId: string) =>
+      state.plans.find((x: any) => x.id === planId),
+    getPathways: state => state.pathways,
+    getTechnologies: state =>
+      state.technologies.sort((a: any, b: any) => a.order - b.order)
   },
   modules: {},
   plugins: [vuexLocal.plugin]

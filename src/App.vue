@@ -35,5 +35,6 @@ export default {
   }
 }
 @import "@/variables";
-@import "bootstrap";
+@import "~bootstrap";
+@import "~bootstrap-vue";
 </style>
