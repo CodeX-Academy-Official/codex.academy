@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/CNAME"
   },
   {
-    "revision": "7c3d306f51d9227dcc0e",
-    "url": "/css/app.e29f54e3.css"
+    "revision": "12d6d48c47b97c3bc917",
+    "url": "/css/app.27b3e9c7.css"
   },
   {
     "revision": "fbd6f13d7f012b61b1158cbbf428f615",
@@ -196,20 +196,104 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/tech-line.png"
   },
   {
-    "revision": "2461b27301171f0b32cf532e9c0611b8",
+    "revision": "8587dd0647ca82fb4ca0372a93f2e358",
+    "url": "/img/tech-logos/ExpressJS.png"
+  },
+  {
+    "revision": "5c4ec81e1c98a5910c11d920a4491b19",
+    "url": "/img/tech-logos/aspnet.png"
+  },
+  {
+    "revision": "dcf4eb25e8b7cc503296f7b6aa752096",
+    "url": "/img/tech-logos/aws.png"
+  },
+  {
+    "revision": "7203d5afbca835733a1ea87172e1d32f",
+    "url": "/img/tech-logos/cs.svg"
+  },
+  {
+    "revision": "c26a73b45b9a801864f13edeb0aa2cfb",
+    "url": "/img/tech-logos/css.png"
+  },
+  {
+    "revision": "7bcbbab5e4c7c9a94f7a32016ae8f827",
+    "url": "/img/tech-logos/docker.png"
+  },
+  {
+    "revision": "805052423abf5e37804e11b9f7fff41e",
+    "url": "/img/tech-logos/figma.svg"
+  },
+  {
+    "revision": "e9a31cff9a6df507760aac8681919363",
+    "url": "/img/tech-logos/heroku.png"
+  },
+  {
+    "revision": "a250ddbd91e03bb665b050384125316d",
+    "url": "/img/tech-logos/html.png"
+  },
+  {
+    "revision": "cfa3a32613483a1ee48fac169aeb6359",
+    "url": "/img/tech-logos/jest.png"
+  },
+  {
+    "revision": "0cded3a3276425911d55a2552bf361bf",
+    "url": "/img/tech-logos/js.png"
+  },
+  {
+    "revision": "e5eee315a17de0d7f56117077eb71fa9",
+    "url": "/img/tech-logos/mongo.png"
+  },
+  {
+    "revision": "a62f8b92377494959bba9dbe77be27b3",
+    "url": "/img/tech-logos/node.webp"
+  },
+  {
+    "revision": "5aa96959d8511aba5aa606ad39bca8c2",
+    "url": "/img/tech-logos/npm.png"
+  },
+  {
+    "revision": "84a6ce033d21d587cb9f04564f9fc902",
+    "url": "/img/tech-logos/openbadges.png"
+  },
+  {
+    "revision": "50156c71fb2cf47d5cfe134231975922",
+    "url": "/img/tech-logos/pg.png"
+  },
+  {
+    "revision": "638be90904f9f9248d3c69cb2992c562",
+    "url": "/img/tech-logos/react.png"
+  },
+  {
+    "revision": "8e766e9562509cb3fa14264580c5c0f9",
+    "url": "/img/tech-logos/sass.svg"
+  },
+  {
+    "revision": "26cc95f255ccb936d154b43614f61602",
+    "url": "/img/tech-logos/tsd.png"
+  },
+  {
+    "revision": "225fbbe09689a4a3219ae1e00fe2280b",
+    "url": "/img/tech-logos/vscode.png"
+  },
+  {
+    "revision": "cf23526f451784ff137f161b8fe18d5a",
+    "url": "/img/tech-logos/vue.png"
+  },
+  {
+    "revision": "cc6c52384e5a2b12e200cae90d42c309",
     "url": "/index.html"
   },
   {
-    "revision": "564685608889fec79cd0",
-    "url": "/js/about.79e37a0a.js"
+    "revision": "ee624f68391f6325437c",
+    "url": "/js/about.1419c1ae.js"
   },
   {
-    "revision": "7c3d306f51d9227dcc0e",
-    "url": "/js/app.b7bb7d27.js"
+    "revision": "12d6d48c47b97c3bc917",
+    "url": "/js/app.bf490727.js"
   },
   {
-    "revision": "2f17d60f8f09c521d5df",
-    "url": "/js/chunk-vendors.d0d0b614.js"
+    "revision": "d2afd57736ef566a4ec0",
+    "url": "/js/chunk-vendors.6fb0c2e7.js"
   },
   {
     "revision": "57178cdd29a7fdb5debae95e4c62705d",
