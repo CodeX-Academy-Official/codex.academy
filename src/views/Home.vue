@@ -10,9 +10,12 @@
         <div class="col-2 d-none d-lg-block"></div>
       </div>
     <hr />
-    <div class="text-center mb-5">
-      </div>
 
+    <div class="text-center mb-5"> </div>
+      <h3 class="mb-5">CodeX Plans</h3>
+      <PlanCompareTable />
+
+    <div class="text-center mb-5"> </div>
       <h3 class="mb-5">CodeX Students</h3>
       <TestimonialsCarousel />
       <!-- <hr />
@@ -27,6 +30,8 @@ import HeroCarousel from "@/components/HeroCarousel";
 import IntroBlock from "@/components/IntroBlock";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import MethodList from "@/components/MethodList";
+import PlanCompareTable from "@/components/PlanCompareTable";
+
 
 export default {
   name: "Home",
@@ -35,7 +40,8 @@ export default {
     HeroCarousel,
     IntroBlock,
     TestimonialsCarousel,
-    MethodList
+    MethodList,
+    PlanCompareTable
   },
   mounted() {
     // From testing, without a brief timeout, it won't work.
