@@ -13,7 +13,7 @@
     <div class="text-center mb-5">
       </div>
 
-      <h3 class="mb-5">What do CodeX Academy Learners say?</h3>
+      <h3 class="mb-5">CodeX Students</h3>
       <TestimonialsCarousel />
       <!-- <hr />
       <internshipPartners />-->
