@@ -173,7 +173,7 @@ const mentorDrivenCommonDetails = [
   "Career Counseling"
 ];
 
-const selfpaced = [
+const selfpaceds = [
   {
     id: "selfpaced2",
     title: "Casual",
@@ -185,7 +185,7 @@ const selfpaced = [
       "2 hours/week live 1:1 mentoring",
       "Up to 3 Evaluations/month"
     ],
-    isBootcamp: false,
+    isSelfpaced: true,
     isMentoring: true,
     paymentTypes: [
       {
@@ -209,7 +209,7 @@ const selfpaced = [
       "5 hours/week live 1:1 mentoring",
       "Up to 5 Evaluations/month"
     ],
-    isBootcamp: false,
+    isSelfpaced: true,
     isMentoring: true,
     paymentTypes: [
       {
@@ -234,7 +234,7 @@ const selfpaced = [
       "Up to 10 Evaluations/month"
     ],
     primary: true,
-    isBootcamp: false,
+    isSelfpaced: true,
     isMentoring: true,
     paymentTypes: [
       {
@@ -258,7 +258,7 @@ const selfpaced = [
       "20 hours/week live 1:1 mentoring",
       "Up to 20 Evaluations/month"
     ],
-    isBootcamp: false,
+    isSelfpaced: true,
     isMentoring: true,
     paymentTypes: [
       {
@@ -354,7 +354,6 @@ const bootcamps = [
       ...bootcampCommonDetails,
       "Up to 90 Micro-Certifications"
     ],
-    primary: false,
     isBootcamp: true,
     isMentoring: true,
     paymentTypes: [
@@ -378,7 +377,6 @@ const community = [
     duration: "per month",
     details: ["Independent Study", ...planCommonDetails],
     primary: false,
-    isBootcamp: false,
     isMentoring: false,
     paymentTypes: [
       {
@@ -398,7 +396,7 @@ const SELECT_PLAN = "SELECT_PLAN";
 export default new Vuex.Store({
   state: {
     testMode: false,
-    plans: [...bootcamps, ...selfpaced, ...community],
+    plans: [...bootcamps, ...selfpaceds, ...community],
     selectedPlan: false,
     technologies,
     pathways: [

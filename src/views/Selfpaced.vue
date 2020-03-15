@@ -1,17 +1,20 @@
 <template>
   <div class="container">
-    <h1 class="mt-4 mb-3">Self-Paced Mentoring Plans</h1>
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">Self-Paced</h1>
 
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
         <router-link to="/">Home</router-link>
       </li>
-      <li class="breadcrumb-item active">Plans</li>
+      <li class="breadcrumb-item">
+        <router-link to="/plans">Plans</router-link></li>
+      <li class="breadcrumb-item active">Self-Paced</li>
     </ol>
 
     <div class="row d-none d-lg-block">
       <Unsplash
-        imageId="ieic5Tq8YMk"
+        imageId="oqStl2L5oxI"
         align="right"
         description="Coffee-driven development"
         width="1100"
@@ -22,31 +25,25 @@
 
     <div class="row mt-5">
       <h4 class="text-center">
-        At CodeX Academy the WORLD will be a better place if YOU are coding!
-        Because of that, we strive to provide the most flexible options possible
-        so that you have the best chance to learn.
+      At CodeX Academy the WORLD will be a better place if YOU are coding! 
+      Because of that, we strive to provide the most flexible options possible so that you have the best chance to learn.
       </h4>
     </div>
+
     <div class="row mt-5">
-      <PlansTable />
+      <SelfPacedTable />
     </div>
   </div>
 </template>
 
 <script>
-import PlansTable from "@/components/PlanTable";
+import SelfPacedTable from "@/components/SelfPacedTable";
 import Unsplash from "@/components/Unsplash";
 
 export default {
   components: {
-    PlansTable,
+    SelfPacedTable,
     Unsplash
   }
 };
 </script>
-
-<style scoped>
-.bootcamp-description {
-  height: 2rem;
-}
-</style>

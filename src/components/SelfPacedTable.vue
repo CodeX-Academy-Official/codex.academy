@@ -17,7 +17,7 @@ export default {
   },
   computed: {
     plans() {
-      return this.$store.state.plans.filter(x => !x.isMentoring);
+      return this.$store.state.plans.filter(x => x.isSelfpaced);
     }
   }
 };
@@ -26,5 +26,8 @@ export default {
 <style lang="scss">
 .plans-table {
   text-align: center;
+}
+.selfpaced-description {
+  height: 6.6rem;
 }
 </style>

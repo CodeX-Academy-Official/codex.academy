@@ -6,6 +6,8 @@
       <li class="breadcrumb-item">
         <router-link to="/">Home</router-link>
       </li>
+      <li class="breadcrumb-item">
+        <router-link to="/Plans">Plans</router-link></li>
       <li class="breadcrumb-item active">Community Plan</li>
     </ol>
 
@@ -23,7 +25,7 @@
       <div class="col text-center">
         <a @click="selectPlan" class="btn btn-primary">
           <strong>
-            Enroll Now
+            Sign Up
             <span class="glyphicon glyphicon-chevron-right"></span>
           </strong>
         </a>
@@ -155,7 +157,7 @@
       <div class="col text-center">
         <a @click="selectPlan" class="btn btn-primary">
           <strong>
-            Enroll Now
+            Sign up
             <span class="glyphicon glyphicon-chevron-right"></span>
           </strong>
         </a>
