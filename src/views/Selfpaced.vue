@@ -8,25 +8,24 @@
         <router-link to="/">Home</router-link>
       </li>
       <li class="breadcrumb-item">
-        <router-link to="/plans">Plans</router-link></li>
+        <router-link to="/plans">Plans</router-link>
+      </li>
       <li class="breadcrumb-item active">Self-Paced</li>
     </ol>
 
-    <div class="row d-none d-lg-block">
+    <div class="row d-none d-lg-block mx-auto">
       <Unsplash
         imageId="oqStl2L5oxI"
-        align="right"
         description="Coffee-driven development"
         width="1100"
         height="200"
-        class="d-none d-xl-block"
       />
     </div>
 
     <div class="row mt-5">
       <h4 class="text-center">
-      At CodeX Academy the WORLD will be a better place if YOU are coding! 
-      Because of that, we strive to provide the most flexible options possible so that you have the best chance to learn.
+        At CodeX Academy the WORLD will be a better place if YOU are coding!
+        Because of that, we strive to provide the most flexible options possible so that you have the best chance to learn.
       </h4>
     </div>
 
@@ -47,3 +46,9 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.header-image img {
+  // width: 100%;
+}
+</style>

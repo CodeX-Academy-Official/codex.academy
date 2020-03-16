@@ -192,7 +192,7 @@
         </div>
         <div>
           <b-modal id="modal-earn-a-badge" hide-footer>
-            <template v-slot:modal-title>Earn Your First Badge</template>
+            <template v-slot:modal-title>Chrome Dev Tools Learner 1 Badge</template>
             <div class="d-block">
               <div class="float-right w-25">
                 <img
@@ -220,11 +220,16 @@
                 <li>
                   When you're ready,
                   <a
-                    href="https://calendly.com/codex-academy/mastery-evaluation-intro"
+                    href="http://evals.codex.academy/"
                     target="_blank"
                   >request an evaluation</a>.
                 </li>
-                <li>Claim your first badge!</li>
+                <li>
+                  <a
+                    href="https://codex-badge-claim.herokuapp.com/badgeid/CwCMwmY-RIOhHS-KOb12oA"
+                    target="_blank"
+                  >Claim</a> your first badge!
+                </li>
               </ol>
             </div>
             <b-button class="mt-3" block @click="$bvModal.hide('modal-earn-a-badge')">Close Me</b-button>
