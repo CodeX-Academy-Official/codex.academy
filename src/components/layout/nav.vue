@@ -17,35 +17,38 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div :class="!isOpen ? 'navbar-closed': ''" class="collapse navbar-collapse" id="navbarResponsive">
+    <div
+      :class="!isOpen ? 'navbar-closed': ''"
+      class="collapse navbar-collapse"
+      id="navbarResponsive"
+    >
       <ul class="navbar-nav ml-auto">
-        
         <li class="nav-item">
           <router-link to="/" class="nav-link">Home</router-link>
         </li>
 
         <!-- <li class="nav-item">
           <router-link to="/plans" class="nav-link">Plans</router-link>
-        </li> -->
+        </li>-->
 
         <div class="dropdown">
-          <li class="btn dropdown-toggle" type="button" data-toggle="dropdown"> Plans
-        
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" >
-            <a class="dropdown-item">
-              <router-link to="/plans" class="nav-link">Compare</router-link>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item">
-              <router-link to="/selfpaced" class="nav-link">Self-Paced</router-link>
-            </a>
-            <a class="dropdown-item">
-              <router-link to="/bootcamps" class="nav-link">Bootcamps</router-link>
-            </a>
-            <a class="dropdown-item">
-              <router-link to="/community" class="nav-link">Community</router-link>
-            </a>
-          </div>
+          <li class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+            Plans
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item">
+                <router-link to="/plans" class="nav-link">Compare</router-link>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item">
+                <router-link to="/selfpaced" class="nav-link">Self-Paced</router-link>
+              </a>
+              <a class="dropdown-item">
+                <router-link to="/bootcamps" class="nav-link">Bootcamps</router-link>
+              </a>
+              <a class="dropdown-item">
+                <router-link to="/community" class="nav-link">Community</router-link>
+              </a>
+            </div>
           </li>
         </div>
 
@@ -61,13 +64,16 @@
         </li>
         <li class="nav-item">
           <router-link to="/community" class="nav-link">Community</router-link>
-        </li> -->
+        </li>-->
         <!-- <li class="nav-item">
           <router-link to="/method" class="nav-link">Method</router-link>
         </li>-->
         <!-- <li class="nav-item">
           <router-link to="/call-back" class="nav-link">Learn More</router-link>
-        </li> -->
+        </li>-->
+        <li class="nav-item">
+          <router-link to="/howitworks" class="nav-link">How It Works</router-link>
+        </li>
         <li class="nav-item">
           <router-link to="/faqs" class="nav-link">FAQs</router-link>
         </li>
@@ -81,7 +87,7 @@
         </li>-->
         <!-- <li class="nav-item">
           <router-link class="nav-link" to="/contact">Contact</router-link>
-        </li> -->
+        </li>-->
         <!-- <li class="nav-item">
           <router-link to="/about" class="nav-link">About</router-link>
         </li>-->
@@ -92,13 +98,13 @@
 </template>
 
 <script>
-import separator from '@/components/layout/separator';
+import separator from "@/components/layout/separator";
 export default {
-  name: 'NavBar',
+  name: "NavBar",
   data() {
     return {
       isOpen: false
-    }
+    };
   },
   components: {
     separator
@@ -109,11 +115,11 @@ export default {
     }
   },
   watch: {
-    '$route' () {
+    $route() {
       this.isOpen = false;
     }
   }
-}
+};
 </script>>
 
 
@@ -144,7 +150,7 @@ export default {
   background-color: $lightGray;
 }
 
-@media (max-width: 991.98px) { 
+@media (max-width: 991.98px) {
   .nav-link {
     font-weight: bold !important;
     margin-bottom: 5px !important;
@@ -155,5 +161,4 @@ export default {
     display: none;
   }
 }
-
 </style>

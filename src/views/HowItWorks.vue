@@ -10,8 +10,10 @@
       <li class="breadcrumb-item active">How it Works</li>
     </ol>
 
+    <MethodCardList />
+
     <!-- Intro Content -->
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-lg-6">
         <img
           class="img-fluid rounded mb-4"
@@ -35,10 +37,10 @@
         </p>
       </div>
     </div>
-    <!-- /.row -->
+    /.row-->
 
     <!-- Team Members -->
-    <h2>A Typical Week at CodeX Academy</h2>
+    <h2 class="section-title">A Typical Week at CodeX Academy</h2>
 
     <div class="row">
       <div class="col-lg-4 mb-4">
@@ -67,61 +69,48 @@
             <button
               class="btn btn-secondary"
               @click="$bvModal.show('modal-try-online-course')"
-            >
-              Try an Online Course
-            </button>
+            >Try an Online Course</button>
           </div>
         </div>
         <div>
           <b-modal id="modal-try-online-course" hide-footer>
-            <template v-slot:modal-title>
-              Try an Online Course
-            </template>
+            <template v-slot:modal-title>Try an Online Course</template>
             <div class="d-block">
               <p>
-                The internet is <strong>FULL</strong> of amazing content,
+                The internet is
+                <strong>FULL</strong> of amazing content,
                 determined to teach you to code. CodeX Academy doesn't try to
                 reinvent the wheel by creating more and more competing content.
                 Instead, we curate the best content and guide you through it
                 like trail markers on a hike through the woods.
               </p>
               <h4>Want to try an online course?</h4>
-              <p>
-                Here are a few that we really like:
-              </p>
+              <p>Here are a few that we really like:</p>
               <ul>
                 <li>
                   <a
                     href="https://www.udemy.com/course/devtools-2017-the-basics-of-chrome-developer-tools/"
                     target="_blank"
-                    >Chrome Devtools</a
-                  >
+                  >Chrome Devtools</a>
                   from Udemy
                 </li>
                 <li>
                   <a
                     href="https://www.udemy.com/course/devtools-2017-the-basics-of-chrome-developer-tools/"
                     target="_blank"
-                    >Deploying Applications with Heroku</a
-                  >
+                  >Deploying Applications with Heroku</a>
                   from Udacity
                 </li>
                 <li>
                   <a
                     href="https://www.theodinproject.com/courses/web-development-101"
                     target="_blank"
-                    >Web Development</a
-                  >
+                  >Web Development</a>
                   from The Odin Project
                 </li>
               </ul>
             </div>
-            <b-button
-              class="mt-3"
-              block
-              @click="$bvModal.hide('modal-try-online-course')"
-              >Close Me</b-button
-            >
+            <b-button class="mt-3" block @click="$bvModal.hide('modal-try-online-course')">Close Me</b-button>
           </b-modal>
         </div>
       </div>
@@ -152,16 +141,12 @@
             <button
               class="btn btn-secondary"
               @click="$bvModal.show('modal-view-mentoring-session')"
-            >
-              Watch a Mentoring Session
-            </button>
+            >Watch a Mentoring Session</button>
           </div>
         </div>
         <div>
           <b-modal id="modal-view-mentoring-session" size="lg" hide-footer>
-            <template v-slot:modal-title>
-              Face-to-Face Mentoring Session
-            </template>
+            <template v-slot:modal-title>Face-to-Face Mentoring Session</template>
             <div class="d-block">
               <youtube video-id="DjhAweE2sR0" fitParent />
             </div>
@@ -169,8 +154,7 @@
               class="mt-3"
               block
               @click="$bvModal.hide('modal-view-mentoring-session')"
-              >Close Me</b-button
-            >
+            >Close Me</b-button>
           </b-modal>
         </div>
       </div>
@@ -203,16 +187,12 @@
             <button
               class="btn btn-secondary"
               @click.prevent="$bvModal.show('modal-earn-a-badge')"
-            >
-              Earn Your First Badge
-            </button>
+            >Earn Your First Badge</button>
           </div>
         </div>
         <div>
           <b-modal id="modal-earn-a-badge" hide-footer>
-            <template v-slot:modal-title>
-              Earn Your First Badge
-            </template>
+            <template v-slot:modal-title>Earn Your First Badge</template>
             <div class="d-block">
               <div class="float-right w-25">
                 <img
@@ -230,8 +210,7 @@
                   <a
                     href="https://badgr.com/public/badges/CwCMwmY-RIOhHS-KOb12oA"
                     target="_blank"
-                    >badge criteria</a
-                  >
+                  >badge criteria</a>
                   for the skills you need to master.
                 </li>
                 <li>
@@ -243,18 +222,12 @@
                   <a
                     href="https://calendly.com/codex-academy/mastery-evaluation-intro"
                     target="_blank"
-                    >request an evaluation</a
-                  >.
+                  >request an evaluation</a>.
                 </li>
                 <li>Claim your first badge!</li>
               </ol>
             </div>
-            <b-button
-              class="mt-3"
-              block
-              @click="$bvModal.hide('modal-earn-a-badge')"
-              >Close Me</b-button
-            >
+            <b-button class="mt-3" block @click="$bvModal.hide('modal-earn-a-badge')">Close Me</b-button>
           </b-modal>
         </div>
       </div>
@@ -262,7 +235,7 @@
     <!-- /.row -->
 
     <!-- Our Customers -->
-    <h2 class="mb-4">Our Technologies and Tools</h2>
+    <h2 class="section-title">Our Technologies and Tools</h2>
     <Technologies />
   </div>
   <!-- /.container -->
@@ -271,16 +244,24 @@
 <script>
 import Technologies from "@/components/Technologies";
 import Unsplash from "@/components/Unsplash";
+import MethodCardList from "@/components/MethodCardList";
 
 export default {
   components: {
     Technologies,
-    Unsplash
+    Unsplash,
+    MethodCardList
   }
 };
 </script>
 
 <style lang="scss">
+h2.section-title {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
 .badge-primary {
   color: white;
 }
