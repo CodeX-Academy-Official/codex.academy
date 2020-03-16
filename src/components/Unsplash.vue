@@ -1,6 +1,6 @@
 <template>
-  <div class="photo" :class="imageClass">
-    <img :src="fullPath" :alt="description" class="img-fluid rounded" />
+  <div :class="alignedClass">
+    <img :src="fullPath" :alt="description" :width="width" />
   </div>
 </template>
 
@@ -12,7 +12,9 @@ export default {
     align: { type: String, default: "right" },
     description: String,
     width: String,
-    height: String
+    height: String,
+    imageClass: String,
+    thumbnail: { type: Boolean, default: true }
   },
   computed: {
     fullPath() {
@@ -21,10 +23,18 @@ export default {
       const url = `https://source.unsplash.com${id}/${this.imageDimensions}${query}`;
       return url;
     },
-    imageClass() {
-      return this.align === "right" ? " float-right" : "";
+    alignedClass() {
+      const alignment = this.align === "right" ? " float-right" : "";
+
+      if (this.thumbnail) {
+        return `thumbnail ${this.imageClass} ${alignment}`;
+      }
+      return `${this.imageClass} ${alignment}`;
     },
     imageDimensions() {
+      if (this.width.indexOf("%") > -1 || this.height.indexOf("%" > -1)) {
+        return "700x400";
+      }
       if (this.width && this.height) {
         return `${this.width}x${this.height}`;
       }
@@ -39,12 +49,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-img {
-  border: #333 solid 1px;
-  padding: 0.3rem;
-  width: 100%;
-}
-.photo {
+.thumbnail {
   padding: 1rem;
+  img {
+    border: #333 solid 1px;
+    padding: 0.3rem;
+    width: 100%;
+  }
 }
 </style>

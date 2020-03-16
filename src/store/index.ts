@@ -13,70 +13,70 @@ const technologies = [
     order: 10,
     name: "ASP.NET",
     logo: "aspnet.png",
-    info: "",
+    info: "Robust backend servers",
     url: "https://lmgtfy.com/?q=asp.net"
   },
   {
     order: 10,
     name: "Amazon AWS",
     logo: "aws.png",
-    info: "",
+    info: "Cloud hosting, distribution, services",
     url: "https://lmgtfy.com/?q=amazon aws"
   },
   {
     order: 10,
     name: "C#",
     logo: "cs.svg",
-    info: "",
+    info: "Powerful statically typed programming language",
     url: "https://lmgtfy.com/?q=csharp"
   },
   {
     order: 1,
     name: "CSS3",
     logo: "css.png",
-    info: "",
+    info: "Control the way elements are displayed in the web browser",
     url: "https://lmgtfy.com/?q=css3"
   },
   {
     order: 10,
     name: "Docker",
     logo: "docker.png",
-    info: "",
+    info: "Package servers in reusable, distributable, reliable containers",
     url: "https://lmgtfy.com/?q=docker"
   },
   {
     order: 10,
     name: "ExpressJS",
     logo: "ExpressJS.png",
-    info: "",
+    info: "Lightweight but powerful NodeJS-based backend server",
     url: "https://lmgtfy.com/?q=expressJS"
   },
   {
     order: 10,
     name: "Figma",
     logo: "figma.svg",
-    info: "",
+    info: "Design and share interactive web and mobile mockups",
     url: "https://lmgtfy.com/?q=figma"
   },
   {
     order: 2,
     name: "Heroku",
     logo: "heroku.png",
-    info: "",
+    info: "Cloud-based web hosting platform",
     url: "https://lmgtfy.com/?q=heroku"
   },
   {
     order: 0,
     name: "HTML5",
     logo: "html.png",
-    info: "",
+    info: "Structure web pages and components",
     url: "https://lmgtfy.com/?q=html5"
   },
   {
     order: 10,
     name: "Jest",
     logo: "jest.png",
-    info: "",
+    info: "Test javascript code and web components",
     url: "https://lmgtfy.com/?q=jest unit test"
   },
   {

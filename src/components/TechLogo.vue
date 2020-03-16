@@ -1,5 +1,5 @@
 <template>
-  <div class="tech-logo">
+  <div class="tech-logo" :title="alt">
     <a :href="href" target="_blank">
       <img :src="src" :alt="alt" />
     </a>
@@ -19,11 +19,13 @@ export default {
       return `img/tech-logos/${this.logo}`;
     },
     alt() {
-      return `${this.name} - ${this.info}`;
+      if (this.info) {
+        return `${this.name} - ${this.info}`;
+      }
+      return this.name;
     }
   }
 };
 </script>
 
-<style>
-</style>
+<style></style>

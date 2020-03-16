@@ -1,13 +1,13 @@
 <template>
   <div class="container">
     <!-- Page Heading/Breadcrumbs -->
-    <h1 class="mt-4 mb-3">Sample</h1>
+    <h1 class="mt-4 mb-3">How it Works</h1>
 
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
         <router-link to="/">Home</router-link>
       </li>
-      <li class="breadcrumb-item active">Sample</li>
+      <li class="breadcrumb-item active">How it Works</li>
     </ol>
 
     <!-- Intro Content -->
@@ -38,15 +38,25 @@
     <!-- /.row -->
 
     <!-- Team Members -->
-    <h2>Under The Hood</h2>
+    <h2>A Typical Week at CodeX Academy</h2>
 
     <div class="row">
       <div class="col-lg-4 mb-4">
         <div class="card h-100 text-center">
-          <img class="card-img-top" src="http://placehold.it/750x450" alt />
+          <Unsplash
+            imageId="s9CC2SKySJM"
+            align="right"
+            description="Independent Study"
+            width="100%"
+            imageClass="card-img-top"
+            :thumbnail="false"
+          />
+
           <div class="card-body">
             <h4 class="card-title">Independent Study</h4>
-            <h6 class="card-subtitle mb-2 text-muted">Daily</h6>
+            <p>
+              <b-badge variant="primary">Every Day</b-badge>
+            </p>
             <p class="card-text">
               We provide you with the learning methods, direction, structure and
               curated community content. With our formula and your commitment
@@ -118,10 +128,20 @@
 
       <div class="col-lg-4 mb-4">
         <div class="card h-100 text-center">
-          <img class="card-img-top" src="http://placehold.it/750x450" alt />
+          <Unsplash
+            imageId="JyJwO0K5fWM"
+            align="right"
+            description="Coffee-driven development"
+            width="100%"
+            imageClass="card-img-top"
+            :thumbnail="false"
+          />
+
           <div class="card-body">
-            <h4 class="card-title">Face-to-face Mentoring</h4>
-            <h6 class="card-subtitle mb-2 text-muted">Several times/week</h6>
+            <h4 class="card-title">One-on-one Mentoring</h4>
+            <p>
+              <b-badge variant="primary">Several times/week</b-badge>
+            </p>
             <p class="card-text">
               You will meet with your mentor frequently in an online video-call.
               Face time with your mentor helps solidify and strengthen what you
@@ -157,10 +177,21 @@
 
       <div class="col-lg-4 mb-4">
         <div class="card h-100 text-center">
-          <img class="card-img-top" src="http://placehold.it/750x450" alt />
+          <Unsplash
+            imageId="etcp7sNcFiU"
+            align="right"
+            description="Coffee-driven development"
+            width="100%"
+            imageClass="card-img-top"
+            :thumbnail="false"
+          />
+
           <div class="card-body">
             <h4 class="card-title">Micro-Certifications</h4>
-            <h6 class="card-subtitle mb-2 text-muted">Frequently</h6>
+            <p>
+              <b-badge variant="primary">Frequently</b-badge>
+            </p>
+
             <p class="card-text">
               Each learning pathway is made up of a number of milestones, each
               one building on the other. After passing an evaluation at each
@@ -239,12 +270,18 @@
 
 <script>
 import Technologies from "@/components/Technologies";
+import Unsplash from "@/components/Unsplash";
 
 export default {
   components: {
-    Technologies
+    Technologies,
+    Unsplash
   }
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.badge-primary {
+  color: white;
+}
+</style>
