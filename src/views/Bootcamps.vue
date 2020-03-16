@@ -8,18 +8,17 @@
         <router-link to="/">Home</router-link>
       </li>
       <li class="breadcrumb-item">
-        <router-link to="/Plans">Plans</router-link></li>
+        <router-link to="/plans">Plans</router-link>
+      </li>
       <li class="breadcrumb-item active">Bootcamps</li>
     </ol>
 
-    <div class="row d-none d-lg-block">
+    <div class="row d-none d-lg-block mx-auto">
       <Unsplash
         imageId="oqStl2L5oxI"
-        align="right"
         description="Coffee-driven development"
         width="1100"
         height="200"
-        class="d-none d-xl-block"
       />
     </div>
 
