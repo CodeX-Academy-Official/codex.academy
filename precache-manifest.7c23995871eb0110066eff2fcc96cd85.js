@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/CNAME"
   },
   {
-    "revision": "12d6d48c47b97c3bc917",
-    "url": "/css/app.27b3e9c7.css"
+    "revision": "dab395a8b7d4cc34db96",
+    "url": "/css/app.7584b320.css"
   },
   {
     "revision": "fbd6f13d7f012b61b1158cbbf428f615",
@@ -62,6 +62,18 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "e0ad4fac87f62e279fbe3a7f6658c746",
     "url": "/img/commercial/which-way.png"
+  },
+  {
+    "revision": "4db071c11aed58fda159d139b94d16f8",
+    "url": "/img/headshots/hs_bsommardahl.jpg"
+  },
+  {
+    "revision": "760ef8eba71e85b463f40274d14a5e1f",
+    "url": "/img/headshots/hs_cmorsing.JPG"
+  },
+  {
+    "revision": "179d0b492c9af50ac005b45d93c9e881",
+    "url": "/img/headshots/hs_phenry.jpeg"
   },
   {
     "revision": "463453dc533fb32966a8817f9d1879f8",
@@ -280,20 +292,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/tech-logos/vue.png"
   },
   {
-    "revision": "cc6c52384e5a2b12e200cae90d42c309",
+    "revision": "340ed410849884f28251f538ccf1ea84",
     "url": "/index.html"
   },
   {
-    "revision": "ee624f68391f6325437c",
-    "url": "/js/about.1419c1ae.js"
+    "revision": "f815b2b71a621f424f59",
+    "url": "/js/about.99dbee7b.js"
   },
   {
-    "revision": "12d6d48c47b97c3bc917",
-    "url": "/js/app.bf490727.js"
+    "revision": "dab395a8b7d4cc34db96",
+    "url": "/js/app.49efb2f0.js"
   },
   {
-    "revision": "d2afd57736ef566a4ec0",
-    "url": "/js/chunk-vendors.6fb0c2e7.js"
+    "revision": "be16619e3378ead5040a",
+    "url": "/js/chunk-vendors.61c50dfc.js"
   },
   {
     "revision": "57178cdd29a7fdb5debae95e4c62705d",
