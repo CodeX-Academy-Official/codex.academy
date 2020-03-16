@@ -8,75 +8,120 @@ const vuexLocal = new VuexPersistence({
 
 Vue.use(Vuex);
 
+const methods = [
+  {
+    id: "1",
+    title: "Popular Technologies",
+    description:
+      "With so many choices in front-end, back-end and database technologies, how do you know where to start or what to learn? CodeX Academy leads you to the most popular, most marketable technologies throughout the stack. As a CodeX Academy graduate, you'll be equipped to work with the technologies that power the majority of the world's systems and development teams.",
+    icon: "simCard"
+  },
+  {
+    id: "2",
+    title: "Mentor-Driven",
+    description:
+      "CodeX Academy believes mentorship is the key to achieving true mastery in programming. As you learn to code, you will get stuck several times (maybe a pesky semi-colon missing). As a CodeX Academy Learner, you have access to a personal mentor who can answer you via chat or even jump on a video call to work it out. Live 1-on-1 mentorship accelerates learning and makes it stick!",
+    icon: "mentor"
+  },
+  {
+    id: "3",
+    title: "Self-Paced",
+    description:
+      "Some learn certain concepts quickly, while other concepts may take more time. CodeX Academy gives you the freedom to build mastery at your own pace. Some have a natural gift to understand technology and move quickly. Others require more time. Both groups can thrive at CodeX Academy.",
+    icon: "time"
+  },
+  {
+    id: "4",
+    title: "Remote",
+    description:
+      "CodeX Academy is 100% remote. That means you can learn to code from just about anywhere. All you need is a computer, internet, power and a comfortable spot.",
+    icon: "remote"
+  },
+  {
+    id: "5",
+    title: "Mastery-Based",
+    description:
+      "Traditional education programs are set to a rigid schedule while students try their best to stay caught up. CodeX Academy offers a program that is based on your own mastery of the concepts and skills. We don’t move on to the next thing until we are sure you’ve really got it!",
+    icon: "mastery"
+  },
+  {
+    id: "6",
+    title: "Internship",
+    description:
+      "Certification from a coding school is respectable, but experience beats paper every time! CodeX Academy graduates are given the opportunity to participate in an impactful internship where they can prove out newly learned skills, forge lasting relationships and jump start the “experience” section of their resumes.",
+    icon: "briefcase"
+  }
+];
+
 const technologies = [
   {
     order: 10,
     name: "ASP.NET",
     logo: "aspnet.png",
-    info: "",
+    info: "Robust backend servers",
     url: "https://lmgtfy.com/?q=asp.net"
   },
   {
     order: 10,
     name: "Amazon AWS",
     logo: "aws.png",
-    info: "",
+    info: "Cloud hosting, distribution, services",
     url: "https://lmgtfy.com/?q=amazon aws"
   },
   {
     order: 10,
     name: "C#",
     logo: "cs.svg",
-    info: "",
+    info: "Powerful statically typed programming language",
     url: "https://lmgtfy.com/?q=csharp"
   },
   {
     order: 1,
     name: "CSS3",
     logo: "css.png",
-    info: "",
+    info: "Control the way elements are displayed in the web browser",
     url: "https://lmgtfy.com/?q=css3"
   },
   {
     order: 10,
     name: "Docker",
     logo: "docker.png",
-    info: "",
+    info: "Package servers in reusable, distributable, reliable containers",
     url: "https://lmgtfy.com/?q=docker"
   },
   {
     order: 10,
     name: "ExpressJS",
     logo: "ExpressJS.png",
-    info: "",
+    info: "Lightweight but powerful NodeJS-based backend server",
     url: "https://lmgtfy.com/?q=expressJS"
   },
   {
     order: 10,
     name: "Figma",
     logo: "figma.svg",
-    info: "",
+    info: "Design and share interactive web and mobile mockups",
     url: "https://lmgtfy.com/?q=figma"
   },
   {
     order: 2,
     name: "Heroku",
     logo: "heroku.png",
-    info: "",
+    info: "Cloud-based web hosting platform",
     url: "https://lmgtfy.com/?q=heroku"
   },
   {
     order: 0,
     name: "HTML5",
     logo: "html.png",
-    info: "",
+    info: "Structure web pages and components",
     url: "https://lmgtfy.com/?q=html5"
   },
   {
     order: 10,
     name: "Jest",
     logo: "jest.png",
-    info: "",
+    info: "Test javascript code and web components",
     url: "https://lmgtfy.com/?q=jest unit test"
   },
   {
@@ -380,7 +425,6 @@ const planOptions = [
     isPlanCompare: true,
     imgSrc: "https://source.unsplash.com/YK0HPwWDJ1I/348x232",
     routerLink: "/community"
-
   },
   {
     id: "SelfPacedPlan",
@@ -403,8 +447,7 @@ const planOptions = [
     isPlanCompare: true,
     imgSrc: "https://source.unsplash.com/ABVE1cyT7hk/348x232",
     routerLink: "/bootcamps"
-    
-  },
+  }
 ];
 
 const community = [
@@ -437,6 +480,7 @@ export default new Vuex.Store({
     plans: [...bootcamps, ...selfpaceds, ...community, ...planOptions],
     selectedPlan: false,
     technologies,
+    methods,
     pathways: [
       {
         name: "Level 1",
@@ -494,7 +538,8 @@ export default new Vuex.Store({
       state.plans.find((x: any) => x.id === planId),
     getPathways: state => state.pathways,
     getTechnologies: state =>
-      state.technologies.sort((a: any, b: any) => a.order - b.order)
+      state.technologies.sort((a: any, b: any) => a.order - b.order),
+    getMethods: state => state.methods
   },
   modules: {},
   plugins: [vuexLocal.plugin]

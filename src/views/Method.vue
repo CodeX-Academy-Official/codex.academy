@@ -14,7 +14,7 @@
     <MethodList />
 
     <!-- Pagination -->
-    <ul class="pagination justify-content-center">
+    <!-- <ul class="pagination justify-content-center">
       <li class="page-item">
         <a class="page-link" href="#" aria-label="Previous">
           <span aria-hidden="true">&laquo;</span>
@@ -36,7 +36,7 @@
           <span class="sr-only">Next</span>
         </a>
       </li>
-    </ul>
+    </ul> -->
   </div>
   <!-- /.container -->
 </template>

@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 
-import Plans     from "../views/Plans.vue";
+import Plans from "../views/Plans.vue";
 import Selfpaced from "../views/Selfpaced.vue";
 import Bootcamps from "../views/Bootcamps.vue";
 import Community from "../views/Community.vue";
@@ -18,7 +18,7 @@ import Tuition from "../views/Tuition.vue";
 import AdmissionsCallBack from "../views/AdmissionsCallBack.vue";
 import AdmissionsCallBackSetup from "../views/AdmissionsCallBackSetup.vue";
 import EnrollmentComplete from "../views/EnrollmentComplete.vue";
-import Sample from "../views/Sample.vue";
+import HowItWorks from "../views/HowItWorks.vue";
 import Pathways from "../views/Pathways.vue";
 
 Vue.use(VueRouter);
@@ -65,9 +65,9 @@ const routes = [
     component: Pathways
   },
   {
-    path: "/sample",
-    name: "Sample",
-    component: Sample
+    path: "/howitworks",
+    name: "HowItWorks",
+    component: HowItWorks
   },
   {
     path: "/method",

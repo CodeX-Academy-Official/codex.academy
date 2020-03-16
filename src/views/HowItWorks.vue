@@ -1,17 +1,19 @@
 <template>
   <div class="container">
     <!-- Page Heading/Breadcrumbs -->
-    <h1 class="mt-4 mb-3">Sample</h1>
+    <h1 class="mt-4 mb-3">How it Works</h1>
 
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
         <router-link to="/">Home</router-link>
       </li>
-      <li class="breadcrumb-item active">Sample</li>
+      <li class="breadcrumb-item active">How it Works</li>
     </ol>
 
+    <MethodCardList />
+
     <!-- Intro Content -->
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-lg-6">
         <img
           class="img-fluid rounded mb-4"
@@ -35,18 +37,28 @@
         </p>
       </div>
     </div>
-    <!-- /.row -->
+    /.row-->
 
     <!-- Team Members -->
-    <h2>Under The Hood</h2>
+    <h2 class="section-title">A Typical Week at CodeX Academy</h2>
 
     <div class="row">
       <div class="col-lg-4 mb-4">
         <div class="card h-100 text-center">
-          <img class="card-img-top" src="http://placehold.it/750x450" alt />
+          <Unsplash
+            imageId="s9CC2SKySJM"
+            align="right"
+            description="Independent Study"
+            width="100%"
+            imageClass="card-img-top"
+            :thumbnail="false"
+          />
+
           <div class="card-body">
             <h4 class="card-title">Independent Study</h4>
-            <h6 class="card-subtitle mb-2 text-muted">Daily</h6>
+            <p>
+              <b-badge variant="primary">Every Day</b-badge>
+            </p>
             <p class="card-text">
               We provide you with the learning methods, direction, structure and
               curated community content. With our formula and your commitment
@@ -57,71 +69,68 @@
             <button
               class="btn btn-secondary"
               @click="$bvModal.show('modal-try-online-course')"
-            >
-              Try an Online Course
-            </button>
+            >Try an Online Course</button>
           </div>
         </div>
         <div>
           <b-modal id="modal-try-online-course" hide-footer>
-            <template v-slot:modal-title>
-              Try an Online Course
-            </template>
+            <template v-slot:modal-title>Try an Online Course</template>
             <div class="d-block">
               <p>
-                The internet is <strong>FULL</strong> of amazing content,
+                The internet is
+                <strong>FULL</strong> of amazing content,
                 determined to teach you to code. CodeX Academy doesn't try to
                 reinvent the wheel by creating more and more competing content.
                 Instead, we curate the best content and guide you through it
                 like trail markers on a hike through the woods.
               </p>
               <h4>Want to try an online course?</h4>
-              <p>
-                Here are a few that we really like:
-              </p>
+              <p>Here are a few that we really like:</p>
               <ul>
                 <li>
                   <a
                     href="https://www.udemy.com/course/devtools-2017-the-basics-of-chrome-developer-tools/"
                     target="_blank"
-                    >Chrome Devtools</a
-                  >
+                  >Chrome Devtools</a>
                   from Udemy
                 </li>
                 <li>
                   <a
                     href="https://www.udemy.com/course/devtools-2017-the-basics-of-chrome-developer-tools/"
                     target="_blank"
-                    >Deploying Applications with Heroku</a
-                  >
+                  >Deploying Applications with Heroku</a>
                   from Udacity
                 </li>
                 <li>
                   <a
                     href="https://www.theodinproject.com/courses/web-development-101"
                     target="_blank"
-                    >Web Development</a
-                  >
+                  >Web Development</a>
                   from The Odin Project
                 </li>
               </ul>
             </div>
-            <b-button
-              class="mt-3"
-              block
-              @click="$bvModal.hide('modal-try-online-course')"
-              >Close Me</b-button
-            >
+            <b-button class="mt-3" block @click="$bvModal.hide('modal-try-online-course')">Close Me</b-button>
           </b-modal>
         </div>
       </div>
 
       <div class="col-lg-4 mb-4">
         <div class="card h-100 text-center">
-          <img class="card-img-top" src="http://placehold.it/750x450" alt />
+          <Unsplash
+            imageId="JyJwO0K5fWM"
+            align="right"
+            description="Coffee-driven development"
+            width="100%"
+            imageClass="card-img-top"
+            :thumbnail="false"
+          />
+
           <div class="card-body">
-            <h4 class="card-title">Face-to-face Mentoring</h4>
-            <h6 class="card-subtitle mb-2 text-muted">Several times/week</h6>
+            <h4 class="card-title">One-on-one Mentoring</h4>
+            <p>
+              <b-badge variant="primary">Several times/week</b-badge>
+            </p>
             <p class="card-text">
               You will meet with your mentor frequently in an online video-call.
               Face time with your mentor helps solidify and strengthen what you
@@ -132,16 +141,12 @@
             <button
               class="btn btn-secondary"
               @click="$bvModal.show('modal-view-mentoring-session')"
-            >
-              Watch a Mentoring Session
-            </button>
+            >Watch a Mentoring Session</button>
           </div>
         </div>
         <div>
           <b-modal id="modal-view-mentoring-session" size="lg" hide-footer>
-            <template v-slot:modal-title>
-              Face-to-Face Mentoring Session
-            </template>
+            <template v-slot:modal-title>Face-to-Face Mentoring Session</template>
             <div class="d-block">
               <youtube video-id="DjhAweE2sR0" fitParent />
             </div>
@@ -149,18 +154,28 @@
               class="mt-3"
               block
               @click="$bvModal.hide('modal-view-mentoring-session')"
-              >Close Me</b-button
-            >
+            >Close Me</b-button>
           </b-modal>
         </div>
       </div>
 
       <div class="col-lg-4 mb-4">
         <div class="card h-100 text-center">
-          <img class="card-img-top" src="http://placehold.it/750x450" alt />
+          <Unsplash
+            imageId="etcp7sNcFiU"
+            align="right"
+            description="Coffee-driven development"
+            width="100%"
+            imageClass="card-img-top"
+            :thumbnail="false"
+          />
+
           <div class="card-body">
             <h4 class="card-title">Micro-Certifications</h4>
-            <h6 class="card-subtitle mb-2 text-muted">Frequently</h6>
+            <p>
+              <b-badge variant="primary">Frequently</b-badge>
+            </p>
+
             <p class="card-text">
               Each learning pathway is made up of a number of milestones, each
               one building on the other. After passing an evaluation at each
@@ -172,16 +187,12 @@
             <button
               class="btn btn-secondary"
               @click.prevent="$bvModal.show('modal-earn-a-badge')"
-            >
-              Earn Your First Badge
-            </button>
+            >Earn Your First Badge</button>
           </div>
         </div>
         <div>
           <b-modal id="modal-earn-a-badge" hide-footer>
-            <template v-slot:modal-title>
-              Earn Your First Badge
-            </template>
+            <template v-slot:modal-title>Earn Your First Badge</template>
             <div class="d-block">
               <div class="float-right w-25">
                 <img
@@ -199,8 +210,7 @@
                   <a
                     href="https://badgr.com/public/badges/CwCMwmY-RIOhHS-KOb12oA"
                     target="_blank"
-                    >badge criteria</a
-                  >
+                  >badge criteria</a>
                   for the skills you need to master.
                 </li>
                 <li>
@@ -212,18 +222,12 @@
                   <a
                     href="https://calendly.com/codex-academy/mastery-evaluation-intro"
                     target="_blank"
-                    >request an evaluation</a
-                  >.
+                  >request an evaluation</a>.
                 </li>
                 <li>Claim your first badge!</li>
               </ol>
             </div>
-            <b-button
-              class="mt-3"
-              block
-              @click="$bvModal.hide('modal-earn-a-badge')"
-              >Close Me</b-button
-            >
+            <b-button class="mt-3" block @click="$bvModal.hide('modal-earn-a-badge')">Close Me</b-button>
           </b-modal>
         </div>
       </div>
@@ -231,7 +235,7 @@
     <!-- /.row -->
 
     <!-- Our Customers -->
-    <h2 class="mb-4">Our Technologies and Tools</h2>
+    <h2 class="section-title">Our Technologies and Tools</h2>
     <Technologies />
   </div>
   <!-- /.container -->
@@ -239,12 +243,26 @@
 
 <script>
 import Technologies from "@/components/Technologies";
+import Unsplash from "@/components/Unsplash";
+import MethodCardList from "@/components/MethodCardList";
 
 export default {
   components: {
-    Technologies
+    Technologies,
+    Unsplash,
+    MethodCardList
   }
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+h2.section-title {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+.badge-primary {
+  color: white;
+}
+</style>
