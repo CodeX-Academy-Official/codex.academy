@@ -59,147 +59,168 @@ const technologies = [
     name: "ASP.NET",
     logo: "aspnet.png",
     info: "Robust backend servers",
-    url: "https://lmgtfy.com/?q=asp.net"
+    url: "https://dotnet.microsoft.com/apps/aspnet"
   },
   {
     order: 10,
     name: "Amazon AWS",
     logo: "aws.png",
     info: "Cloud hosting, distribution, services",
-    url: "https://lmgtfy.com/?q=amazon aws"
+    url: "https://aws.amazon.com/"
   },
   {
     order: 10,
     name: "C#",
     logo: "cs.svg",
     info: "Powerful statically typed programming language",
-    url: "https://lmgtfy.com/?q=csharp"
+    url: "https://docs.microsoft.com/en-us/dotnet/csharp/"
   },
   {
     order: 1,
     name: "CSS3",
     logo: "css.png",
     info: "Control the way elements are displayed in the web browser",
-    url: "https://lmgtfy.com/?q=css3"
+    url: "https://en.wikipedia.org/wiki/Cascading_Style_Sheets"
   },
   {
     order: 10,
     name: "Docker",
     logo: "docker.png",
     info: "Package servers in reusable, distributable, reliable containers",
-    url: "https://lmgtfy.com/?q=docker"
+    url: "https://www.docker.com/"
   },
   {
     order: 10,
     name: "ExpressJS",
-    logo: "ExpressJS.png",
+    logo: "express.jpeg",
     info: "Lightweight but powerful NodeJS-based backend server",
-    url: "https://lmgtfy.com/?q=expressJS"
+    url: "https://expressjs.com/"
   },
   {
     order: 10,
     name: "Figma",
     logo: "figma.svg",
     info: "Design and share interactive web and mobile mockups",
-    url: "https://lmgtfy.com/?q=figma"
+    url: "https://www.figma.com/"
   },
   {
     order: 2,
     name: "Heroku",
     logo: "heroku.png",
     info: "Cloud-based web hosting platform",
-    url: "https://lmgtfy.com/?q=heroku"
+    url: "https://www.heroku.com/"
   },
   {
     order: 0,
     name: "HTML5",
     logo: "html.png",
     info: "Structure web pages and components",
-    url: "https://lmgtfy.com/?q=html5"
+    url: "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5"
   },
   {
     order: 10,
     name: "Jest",
     logo: "jest.png",
     info: "Test javascript code and web components",
-    url: "https://lmgtfy.com/?q=jest unit test"
+    url: "https://jestjs.io/"
   },
   {
     order: 1,
     name: "JavaScript",
     logo: "js.png",
     info: "",
-    url: "https://lmgtfy.com/?q=javascript"
+    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
   },
   {
     order: 10,
     name: "Mongo DB",
     logo: "mongo.png",
     info: "",
-    url: "https://lmgtfy.com/?q=mongo"
+    url: "https://www.mongodb.com/"
   },
   {
     order: 3,
     name: "NodeJS",
     logo: "node.webp",
     info: "",
-    url: "https://lmgtfy.com/?q=node"
+    url: "https://nodejs.org/"
   },
   {
     order: 2,
     name: "NPM - Node Package Manager",
     logo: "npm.png",
     info: "",
-    url: "https://lmgtfy.com/?q=npm"
+    url: "https://www.npmjs.com/"
   },
-  // {
-  //   order: 10,
-  //   name: "Mozilla's Open Badges",
-  //   logo: "openbadges.png",
-  //   info: "",
-  //   url: "https://lmgtfy.com/?q=openbadges"
-  // },
   {
     order: 10,
     name: "PostgrSQL",
     logo: "pg.png",
     info: "",
-    url: "https://lmgtfy.com/?q=postgres"
+    url: "https://www.postgresql.org/"
   },
   {
     order: 10,
     name: "ReactJS",
     logo: "react.png",
     info: "",
-    url: "https://lmgtfy.com/?q=react js"
+    url: "https://reactjs.org/"
   },
   {
     order: 10,
     name: "SASS",
     logo: "sass.svg",
     info: "",
-    url: "https://lmgtfy.com/?q=sass"
+    url: "https://sass-lang.com/"
   },
   {
     order: 10,
     name: "TypeScript",
     logo: "tsd.png",
     info: "",
-    url: "https://lmgtfy.com/?q=typescript"
+    url: "https://www.typescriptlang.org/"
   },
   {
     order: 10,
     name: "Visual Studio Code",
     logo: "vscode.png",
     info: "",
-    url: "https://lmgtfy.com/?q=vscode"
+    url: "https://code.visualstudio.com/"
   },
   {
     order: 10,
     name: "VueJS",
     logo: "vue.png",
     info: "",
-    url: "https://lmgtfy.com/?q=vuejs"
+    url: "https://vuejs.org/"
+  },
+  {
+    order: 10,
+    name: "Chrome",
+    logo: "chrome.png",
+    info: "",
+    url: "https://www.google.com/chrome/"
+  },
+  {
+    order: 10,
+    name: "Github",
+    logo: "github.png",
+    info: "",
+    url: "https://github.com"
+  },
+  {
+    order: 10,
+    name: "Postman",
+    logo: "postman.png",
+    info: "",
+    url: "https://postman.com"
+  },
+  {
+    order: 10,
+    name: "Terminal",
+    logo: "terminal.png",
+    info: "",
+    url: "http://linuxcommand.org/"
   }
 ];
 
