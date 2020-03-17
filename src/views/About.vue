@@ -20,9 +20,10 @@
       </div>
       <div class="col-lg-6">
         <h2>About CodeX Academy</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
+        <p>CodeX Academy is a full service software development school with a different approach to how we develop and our train our students to become full stack developers.  </p>
+        <p>Based on your learning style and personality, we match you with a technical mentor to help you along your journey in programming. Your mentor will be there with you every step of the way. Stuck on a problem set?  No problem your mentor can help guide you right through it. Need advice on how to approach your next course? No problem your mentor will help direct you in what path to take next. Feeling overwhelmed? Your mentor will help walk you through it and achieve your next goal! All while learning at your own pace. No rushing or tedious deadlines to compete with.  </p>
+        <p>Already know programming and just need to be enrolled to gain certification, our multi-level step process to certification will ensure you have the best opportunity available to make that leap into a new career in programming. </p>
+        
       </div>
     </div>
     <!-- /.row -->
