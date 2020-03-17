@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/CNAME"
   },
   {
-    "revision": "987a8cc51380e777a1ae",
+    "revision": "e75b9980cb879033d03b",
     "url": "/css/app.69d252a0.css"
   },
   {
@@ -220,6 +220,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/tech-logos/aws.png"
   },
   {
+    "revision": "a20f161396c911382a32f288e2c7124e",
+    "url": "/img/tech-logos/badgr.png"
+  },
+  {
+    "revision": "416938c1aefc91061308fd2b0c7a0009",
+    "url": "/img/tech-logos/chrome.png"
+  },
+  {
     "revision": "7203d5afbca835733a1ea87172e1d32f",
     "url": "/img/tech-logos/cs.svg"
   },
@@ -232,8 +240,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/tech-logos/docker.png"
   },
   {
+    "revision": "3d97ce45d2b6d254e36fb552e9ffc6ca",
+    "url": "/img/tech-logos/express.jpeg"
+  },
+  {
     "revision": "805052423abf5e37804e11b9f7fff41e",
     "url": "/img/tech-logos/figma.svg"
+  },
+  {
+    "revision": "a9ee2a5bdadecfa6248a9106158b803f",
+    "url": "/img/tech-logos/github.png"
   },
   {
     "revision": "e9a31cff9a6df507760aac8681919363",
@@ -272,12 +288,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/tech-logos/pg.png"
   },
   {
+    "revision": "c32ad3d9f7b7c03e4a7e1e26f743d5c8",
+    "url": "/img/tech-logos/postman.png"
+  },
+  {
     "revision": "638be90904f9f9248d3c69cb2992c562",
     "url": "/img/tech-logos/react.png"
   },
   {
     "revision": "8e766e9562509cb3fa14264580c5c0f9",
     "url": "/img/tech-logos/sass.svg"
+  },
+  {
+    "revision": "2796e0e1fc5a3b2e1ab4a7a0c0c54cf8",
+    "url": "/img/tech-logos/terminal.png"
   },
   {
     "revision": "26cc95f255ccb936d154b43614f61602",
@@ -292,7 +316,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/tech-logos/vue.png"
   },
   {
-    "revision": "af1c0be26439f2a2c7c62774ecb41323",
+    "revision": "4cdccb428effc4d3ad6b74a03a2a2db9",
     "url": "/index.html"
   },
   {
@@ -300,8 +324,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/about.895801ef.js"
   },
   {
-    "revision": "987a8cc51380e777a1ae",
-    "url": "/js/app.fa6ca827.js"
+    "revision": "e75b9980cb879033d03b",
+    "url": "/js/app.f0f927f0.js"
   },
   {
     "revision": "be16619e3378ead5040a",
