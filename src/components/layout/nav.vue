@@ -31,25 +31,23 @@
           <router-link to="/plans" class="nav-link">Plans</router-link>
         </li>-->
 
-        <div class="dropdown">
-          <li class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-            Plans
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item">
-                <router-link to="/plans" class="nav-link">Compare</router-link>
-              </a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item">
-                <router-link to="/selfpaced" class="nav-link">Self-Paced</router-link>
-              </a>
-              <a class="dropdown-item">
-                <router-link to="/bootcamps" class="nav-link">Bootcamps</router-link>
-              </a>
-              <a class="dropdown-item">
-                <router-link to="/community" class="nav-link">Community</router-link>
-              </a>
-            </div>
-          </li>
+        <div class="dropdown-toggle btn" type="button" data-toggle="dropdown">
+          Plans
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="nav-item">
+              <router-link to="/plans" class="nav-link">Compare</router-link>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="nav-item">
+              <router-link to="/selfpaced" class="nav-link">Self-Paced</router-link>
+            </a>
+            <a class="nav-item">
+              <router-link to="/bootcamps" class="nav-link">Bootcamps</router-link>
+            </a>
+            <a class="nav-item">
+              <router-link to="/community" class="nav-link">Community</router-link>
+            </a>
+          </div>
         </div>
 
         <!-- <li class="nav-item">
@@ -151,7 +149,7 @@ export default {
 }
 
 @media (max-width: 991.98px) {
-  .nav-link {
+  .nav-link, .dropdown-toggle {
     font-weight: bold !important;
     margin-bottom: 5px !important;
     text-align: center !important;
