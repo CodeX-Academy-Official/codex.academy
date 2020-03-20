@@ -2,25 +2,16 @@
   <div>
     <div class="row">
       <div
-        class="col-lg-2 col-md-3 col-sm-6"
+        class="col-lg-2 col-md-4 col-sm-6"
         v-for="method in getMethods"
         :key="method.id"
         @click.prevent="$bvModal.show(`modal-method-${method.id}`)"
       >
         <MethodCard :title="method.title" :icon="method.icon" />
         <b-modal :id="`modal-method-${method.id}`" hide-footer>
-          <template v-slot:modal-title>
-            {{ method.title }}
-          </template>
-          <div class="d-block">
-            {{ method.description }}
-          </div>
-          <b-button
-            class="mt-3"
-            block
-            @click="$bvModal.hide(`modal-method-${method.id}`)"
-            >Close Me</b-button
-          >
+          <template v-slot:modal-title>{{ method.title }}</template>
+          <div class="d-block">{{ method.description }}</div>
+          <b-button class="mt-3" block @click="$bvModal.hide(`modal-method-${method.id}`)">Close Me</b-button>
         </b-modal>
       </div>
     </div>
@@ -51,7 +42,7 @@ export default {
 
 div.method-card {
   h4 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }
 div.method-card:hover {
