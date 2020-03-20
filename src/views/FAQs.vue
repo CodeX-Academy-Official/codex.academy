@@ -30,10 +30,10 @@
         <img src="img/learner-flow.png" class="img-fluid" />
       </QAndA>
 
-      <QAndA id="faq2" question="CodeX Academy technologies?">
+      <QAndA id="faq2" question="What technologies will I learn at CodeX Academy?">
         <p>
           A “Full-Stack Developer” is someone who can build world-changing apps
-          and websites from top to bottom, from what you can see and click to
+          and websites from top to bottom, from what you can see to
           all the unseen inner-workings. CodeX Academy currently offers learning
           pathways for popular web-based technologies including ReactJS, NodeJS
           and both PostgreSQL and Mongo databases. Along the way, you will also
@@ -44,6 +44,46 @@
           class="mb-4"
         >If you'd like to see our tech stack in more detail or learn more about the technologies we like, click any logo below:</p>
         <Technologies />
+      </QAndA>
+
+      <QAndA id="faq3" question="Can I get financing/financial aid?">
+        <p>
+          CodeX Academy partners with Climb Credit to offer special financing for any learning plan for a minimum of 3 months. For more information, see
+          <a
+            href="https://climbcredit.com/students"
+            target="_blank"
+          >Climb Credit</a>.
+        </p>
+      </QAndA>
+
+      <QAndA id="faq4" question="Can I pause my enrollment?">
+        <p>
+          Life happens! Some learners may face some hardship that impacts their ability to stay committed to independent study and meeting with mentors. We get it! If you need to pause your enrollment at any time, just send an email to
+          <a
+            href="mailto:admissions@codex.academy"
+          >Admissions</a> any time and request it. We will make sure to pause your monthly payments and you can resume at any time.
+        </p>
+        <p>
+          Learners using financial aid may still be responsible for making monthly payments, but it may be possible to "make-up" any lost time when you resume your enrollment later on. To check elegibility or if you have any questions, please email
+          <a
+            href="mailto:admissions@codex.academy"
+          >Admissions</a>.
+        </p>
+      </QAndA>
+
+      <QAndA id="faq5" question="When do I graduate?">
+        <p>
+          CodeX Academy does things a bit differently. We have ten "levels", each representing a usable skill set.
+          Everyone starts at level 1, but not everyone "graduates" at the same level. For example, if you are
+          content with the front-end skills needed to create marketing websites and simple user interactions, you
+          might go for level 3 and stop.
+        </p>
+        <p>
+          Others want to work as a full-stack developer and take charge of all the
+          systems involved in web applications. Those should target at least level 6. After level 6 comes more levels
+          that guide you through other valuable skills.
+        </p>
+        <p>So, as you can see, you may "graduate" at any level you wish, depending on your personal goals.</p>
       </QAndA>
     </div>
   </div>

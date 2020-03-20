@@ -24,7 +24,7 @@
 
     <div class="row mt-5">
       <h4 class="text-center">
-        At CodeX Academy the WORLD will be a better place if YOU are coding!
+        At CodeX Academy, we believe the WORLD will be a better place if YOU are coding!
         Because of that, we strive to provide the most flexible options possible so that you have the best chance to learn.
       </h4>
     </div>
