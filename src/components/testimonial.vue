@@ -15,6 +15,8 @@
       <footer class="blockquote-footer text-right">
         {{name}}
         <br />
+        <cite title="Position">{{position}}</cite>
+        <br />
         <cite title="Location">{{location}}</cite>
       </footer>
     </blockquote>
@@ -32,7 +34,8 @@ export default {
     headshot: String,
     name: String,
     location: String,
-    comments: String
+    comments: String,
+    position: String
   }
 };
 </script>

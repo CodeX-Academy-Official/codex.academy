@@ -6,6 +6,7 @@
         :location="t.location"
         :headshot="t.headshot"
         :comments="t.comments"
+        :position="t.position"
       />
     </div>
   </div>
