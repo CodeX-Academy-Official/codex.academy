@@ -17,12 +17,13 @@ const testimonials = [
     comments:
       "The CodeX curriculum allowed me to work at my own pace with mentors who were flexible with my ever changing schedule. As a busy professional, the scheduling flexibility made a big difference in helping me successfully complete the curriculum."
   },
-  // {
-  //   name: "Yamil G.",
-  //   location: "Tegucigalpa, Honduras",
-  //   headshot: "img/headshots/randy.jpg",
-  //   comments: ""
-  // },
+  {
+    name: "Yamil G.",
+    location: "Tegucigalpa, Honduras",
+    headshot: "img/headshots/yamil.jpeg",
+    comments:
+      "I have tried to learn programming many times before with no success. This time I feel I'm making significant progress. There's something about the CodeX methodology that just makes sense and keep you motivated."
+  },
   {
     name: "Louis P.",
     location: "Nashville, TN USA",
