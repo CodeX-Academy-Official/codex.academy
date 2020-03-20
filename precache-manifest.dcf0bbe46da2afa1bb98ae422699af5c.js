@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/CNAME"
   },
   {
-    "revision": "3161d1239ad25c23ca7b",
+    "revision": "980f27d39d3294608c56",
     "url": "/css/app.292196e2.css"
   },
   {
@@ -86,6 +86,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "341483efa89cf384b4c3a3f57360ea74",
     "url": "/img/headshots/randy.jpg"
+  },
+  {
+    "revision": "0195582c81fb633a61b67a2927d61ce5",
+    "url": "/img/headshots/yamil.jpeg"
   },
   {
     "revision": "fcd331b232664cccb903dda9a51b7733",
@@ -316,7 +320,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/tech-logos/vue.png"
   },
   {
-    "revision": "ab3c7cb991ee42cd32817b9f2533eb96",
+    "revision": "a81602ecd4206b665170465d749c94ad",
     "url": "/index.html"
   },
   {
@@ -324,8 +328,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/about.895801ef.js"
   },
   {
-    "revision": "3161d1239ad25c23ca7b",
-    "url": "/js/app.666adcc4.js"
+    "revision": "980f27d39d3294608c56",
+    "url": "/js/app.b38291e7.js"
   },
   {
     "revision": "45cd0012550665a54649",
