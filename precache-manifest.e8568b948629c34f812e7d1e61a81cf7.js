@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/CNAME"
   },
   {
-    "revision": "980f27d39d3294608c56",
-    "url": "/css/app.292196e2.css"
+    "revision": "50ed872e898ec1306c26",
+    "url": "/css/app.b23982b1.css"
   },
   {
     "revision": "fbd6f13d7f012b61b1158cbbf428f615",
@@ -64,6 +64,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/commercial/which-way.png"
   },
   {
+    "revision": "b3c2da986166d5cc46c55bfc533ecc56",
+    "url": "/img/headshots/byron.jpeg"
+  },
+  {
     "revision": "4db071c11aed58fda159d139b94d16f8",
     "url": "/img/headshots/hs_bsommardahl.jpg"
   },
@@ -86,6 +90,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "341483efa89cf384b4c3a3f57360ea74",
     "url": "/img/headshots/randy.jpg"
+  },
+  {
+    "revision": "8a853b521b62e766085b6e95214fd17f",
+    "url": "/img/headshots/ronyv.jpg"
   },
   {
     "revision": "0195582c81fb633a61b67a2927d61ce5",
@@ -320,7 +328,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/tech-logos/vue.png"
   },
   {
-    "revision": "a81602ecd4206b665170465d749c94ad",
+    "revision": "b003e0d60bf007a4219ae220700bab34",
     "url": "/index.html"
   },
   {
@@ -328,8 +336,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/about.895801ef.js"
   },
   {
-    "revision": "980f27d39d3294608c56",
-    "url": "/js/app.b38291e7.js"
+    "revision": "50ed872e898ec1306c26",
+    "url": "/js/app.514da046.js"
   },
   {
     "revision": "45cd0012550665a54649",
