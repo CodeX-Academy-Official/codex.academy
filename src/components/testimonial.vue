@@ -3,14 +3,31 @@
     <div class="headshot d-flex">
       <img :src="headshot" class="img-fluid mx-auto mb-4" />
     </div>
-    <h1>{{ name }}</h1> 
-    <h5>{{ location }}</h5>
-    <p class="pl-2 pr-2">{{ comments }}</p>
+    <p class="text-center pl-3 pr-3 stars">
+      <font-awesome-icon :icon="star" class="checked" />
+      <font-awesome-icon :icon="star" class="checked ml-1" />
+      <font-awesome-icon :icon="star" class="checked ml-1" />
+      <font-awesome-icon :icon="star" class="checked ml-1" />
+      <font-awesome-icon :icon="star" class="checked ml-1" />
+    </p>
+    <blockquote class="blockquote d-block w-75 mx-auto text-center">
+      {{ comments }}
+      <footer class="blockquote-footer text-right">
+        {{name}}
+        <br />
+        <cite title="Location">{{location}}</cite>
+      </footer>
+    </blockquote>
   </div>
 </template>
 
 <script>
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+
 export default {
+  data: () => ({
+    star: faStar
+  }),
   props: {
     headshot: String,
     name: String,
@@ -20,7 +37,23 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
-img { border-radius: 50%; width: 60%; }
-p { text-align: left;}
+<style lang="scss" scoped>
+@import "@/variables";
+
+img {
+  border-radius: 50%;
+  width: 60%;
+}
+p {
+  text-align: left;
+}
+.stars {
+  .checked {
+    color: $primary;
+  }
+}
+
+blockquote {
+  font-size: 1rem;
+}
 </style>
