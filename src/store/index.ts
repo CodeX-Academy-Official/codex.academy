@@ -1,12 +1,43 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import VuexPersistence from "vuex-persist";
+import { shuffle } from "./utils";
 
 const vuexLocal = new VuexPersistence({
   storage: window.localStorage
 });
 
 Vue.use(Vuex);
+
+const testimonials = [
+  {
+    name: "Randy K.",
+    location: "Miami, FL USA",
+    headshot: "img/headshots/randy.jpg",
+    comments:
+      "The CodeX curriculum allowed me to work at my own pace with mentors who were flexible with my ever changing schedule. As a busy professional, the scheduling flexibility made a big difference in helping me successfully complete the curriculum."
+  },
+  // {
+  //   name: "Yamil G.",
+  //   location: "Tegucigalpa, Honduras",
+  //   headshot: "img/headshots/randy.jpg",
+  //   comments: ""
+  // },
+  {
+    name: "Louis P.",
+    location: "Nashville, TN USA",
+    headshot: "img/headshots/louis.jpg",
+    comments:
+      "I’ve wanted to learn code for years. CodeX has mentors that ensure I am understanding the material. I have learned so much and I am set up for success, I love it!"
+  },
+  {
+    name: "LeAnne B.",
+    location: "Atlanta, GA USA",
+    headshot: "img/headshots/leanne.jpg",
+    comments:
+      "CodeX was a really fun experience and has been valuable for my career!"
+  }
+];
 
 const methods = [
   {
@@ -502,6 +533,7 @@ export default new Vuex.Store({
     selectedPlan: false,
     technologies,
     methods,
+    testimonials,
     pathways: [
       {
         name: "Level 1",
@@ -560,7 +592,12 @@ export default new Vuex.Store({
     getPathways: state => state.pathways,
     getTechnologies: state =>
       state.technologies.sort((a: any, b: any) => a.order - b.order),
-    getMethods: state => state.methods
+    getMethods: state => state.methods,
+    getThreeTestimonials: state => {
+      const arr = state.testimonials;
+      const shuffled = shuffle(arr);
+      return shuffled.slice(0, 3);
+    }
   },
   modules: {},
   plugins: [vuexLocal.plugin]
