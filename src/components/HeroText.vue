@@ -4,7 +4,7 @@
     <div class="col d-flex">
       <div class="align-self-center">
         <p class="mb-5">
-          <i>Join the workforce that changes the world!</i>
+          <i>Quickly gain the skills you need to enter the technology workforce.</i>
         </p>
         <h3 class="mb-4">Learn to code in 6 months</h3>
         <router-link to="/plans" class="btn btn-primary btn-lg">
