@@ -5,7 +5,8 @@
 <script>
 export default {
   props: {
-    formId: String
+    formId: String,
+    portalId: { type: String, default: "7092117" }
   },
 
   created() {
@@ -15,7 +16,7 @@ export default {
     script.addEventListener("load", () => {
       if (window.hbspt) {
         window.hbspt.forms.create({
-          portalId: "7092117",
+          portalId: this.portalId,
           formId: this.formId,
           target: `#${this.formId}`
         });
@@ -33,7 +34,6 @@ export default {
 }
 
 .fixed-height {
-  height: 750px
+  height: 750px;
 }
-
 </style>
