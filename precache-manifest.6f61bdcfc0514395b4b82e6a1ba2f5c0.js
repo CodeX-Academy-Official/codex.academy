@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/CNAME"
   },
   {
-    "revision": "045a430a165b2e3013cb",
-    "url": "/css/app.de728cfc.css"
+    "revision": "2baa61e853e4cbf5da2b",
+    "url": "/css/app.3fa6021a.css"
   },
   {
     "revision": "fbd6f13d7f012b61b1158cbbf428f615",
@@ -142,6 +142,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "217a3d96a9230a6a7c87bc19f6a6fd09",
     "url": "/img/logo/Grayscale_1024x1024_72dpi.png"
+  },
+  {
+    "revision": "747af11be8abdf518d1bef7e0b4e6590",
+    "url": "/img/logo/codex_hat_white.png"
+  },
+  {
+    "revision": "378002e44ab455e87487d69ca6902ac0",
+    "url": "/img/logo/codex_hat_white_small.png"
   },
   {
     "revision": "194eb7f122e8c55e00ddceca6d9d9cb3",
@@ -328,20 +336,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/tech-logos/vue.png"
   },
   {
-    "revision": "b7ea25c3b39a59e1b2db13a492a6b042",
+    "revision": "594d7c04f23bb704c2552bd14c5f92da",
     "url": "/index.html"
   },
   {
-    "revision": "1eb83a287897f293f546",
-    "url": "/js/about.895801ef.js"
+    "revision": "8ac59205d51c467eb211",
+    "url": "/js/about.290254da.js"
   },
   {
-    "revision": "045a430a165b2e3013cb",
-    "url": "/js/app.ee70c372.js"
+    "revision": "2baa61e853e4cbf5da2b",
+    "url": "/js/app.208446c4.js"
   },
   {
-    "revision": "45cd0012550665a54649",
-    "url": "/js/chunk-vendors.efd41c5f.js"
+    "revision": "914f0d4f42c96c07a2f5",
+    "url": "/js/chunk-vendors.9717c240.js"
   },
   {
     "revision": "57178cdd29a7fdb5debae95e4c62705d",
