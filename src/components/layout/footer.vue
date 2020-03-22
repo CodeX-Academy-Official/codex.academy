@@ -1,13 +1,141 @@
 <template>
   <!-- Footer -->
-  <footer class="py-5 bg-dark mt-5">
+  <footer class="py-5 bg-dark mt-5 text-white">
+    <div class="text-center mb-5">
+      <img src="img/logo/codex_hat_white_small.png" width="70" />
+    </div>
     <div class="container">
-      <p class="m-0 text-center text-white">
-        Copyright &copy; CodeX Academy, LLC 2020
-      </p>
+      <div class="row justify-content-md-center">
+        <div class="col-6 col-md-2">
+          <h4>CODEX</h4>
+          <p>
+            <router-link to="/">Home</router-link>
+          </p>
+          <!-- <p>
+            <router-link to="/financial-aid">Financial Aid</router-link>
+          </p> -->
+          <!-- <p>
+            <router-link to="/team">Team</router-link>
+          </p> -->
+          <!-- <p>
+            <router-link to="/about">About Us</router-link>
+          </p> -->
+          <p>
+            <router-link to="/contact">Contact</router-link>
+          </p>
+        </div>
+
+        <div class="col-6 col-md-2">
+          <h4>Plans</h4>
+          <p>
+            <router-link to="/plans">Compare</router-link>
+          </p>
+          <p>
+            <router-link to="/plans/selfpaced">Self-Paced</router-link>
+          </p>
+          <p>
+            <router-link to="/bootcamps">Bootcamps</router-link>
+          </p>
+          <p>
+            <router-link to="/community">Community</router-link>
+          </p>
+        </div>
+
+        <div class="col-6 col-md-2">
+          <h4>How It Works</h4>
+          <p>
+            <router-link to="/howitworks">A Week at CodeX</router-link>
+          </p>
+          <p>
+            <router-link to="/howitworks#tech">Our Technologies</router-link>
+          </p>
+        </div>
+
+        <div class="col-6 col-md-2">
+          <h4>Help</h4>
+          <p>
+            <router-link to="/faqs">FAQs</router-link>
+          </p>
+          <p>
+            <router-link to="/call-back">Help Me Decide</router-link>
+          </p>
+        </div>
+
+        <div class="col col-md-2">
+          <h4>Legal</h4>
+          <p>
+            <router-link to="/privacy">Privacy</router-link>
+          </p>
+          <p>
+            <router-link to="/terms-of-use">Terms of Use</router-link>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <hr />
+
+      <div class="row justify-content-md-center text-center mt-5 mb-4">
+        <div class="col-1">
+          <a href="https://facebook.com/codexacademyonline" target="_blank">
+            <font-awesome-icon :icon="faFacebookSquare" class="fa-2x" />
+          </a>
+        </div>
+        <!-- <div class="col-1">
+          <a href="https://twitter.com" target="_blank">
+            <font-awesome-icon :icon="faTwitterSquare" class="fa-2x" />
+          </a>
+        </div> -->
+        <div class="col-1">
+          <a
+            href="https://www.instagram.com/codexacademyonline/"
+            target="_blank"
+          >
+            <font-awesome-icon :icon="faInstagram" class="fa-2x" />
+          </a>
+        </div>
+      </div>
+      <div class="text-center">
+        <p>Copyright &copy; CodeX Academy, LLC 2020</p>
+      </div>
     </div>
     <!-- /.container -->
   </footer>
 </template>
 
-<style lang="scss" scoped></style>
+<script>
+import {
+  faFacebookSquare,
+  faInstagram,
+  faTwitterSquare
+} from "@fortawesome/fontawesome-free-brands";
+
+export default {
+  data: () => ({
+    faFacebookSquare,
+    faInstagram,
+    faTwitterSquare
+  })
+};
+</script>
+<style lang="scss" scoped>
+.text-white {
+  h4 {
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: bolder;
+  }
+  a {
+    color: white;
+  }
+  a:hover {
+    text-decoration: none;
+    font-weight: bolder;
+  }
+  hr {
+    border: 1px solid white;
+  }
+}
+</style>
