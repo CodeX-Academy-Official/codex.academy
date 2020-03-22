@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/CNAME"
   },
   {
-    "revision": "2baa61e853e4cbf5da2b",
-    "url": "/css/app.3fa6021a.css"
+    "revision": "76314432085e27d326a2",
+    "url": "/css/app.387b4c61.css"
   },
   {
     "revision": "fbd6f13d7f012b61b1158cbbf428f615",
@@ -336,7 +336,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/tech-logos/vue.png"
   },
   {
-    "revision": "594d7c04f23bb704c2552bd14c5f92da",
+    "revision": "0a784c6877940fc7349e6c015b6f6c07",
     "url": "/index.html"
   },
   {
@@ -344,8 +344,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/about.290254da.js"
   },
   {
-    "revision": "2baa61e853e4cbf5da2b",
-    "url": "/js/app.208446c4.js"
+    "revision": "76314432085e27d326a2",
+    "url": "/js/app.a85b8640.js"
   },
   {
     "revision": "914f0d4f42c96c07a2f5",
