@@ -336,7 +336,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/tech-logos/vue.png"
   },
   {
-    "revision": "0a784c6877940fc7349e6c015b6f6c07",
+    "revision": "30b869f8da0b9b531c2b8505df1da523",
     "url": "/index.html"
   },
   {
