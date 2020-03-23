@@ -7,6 +7,12 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 import VueYouTube from "vue-youtube";
 import VueGtag from "vue-gtag";
+import Hotjar from "vue-hotjar";
+
+Vue.use(Hotjar, {
+  id: "1739723",
+  isProduction: true
+});
 
 Vue.use(
   VueGtag,
