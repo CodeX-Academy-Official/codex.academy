@@ -6,6 +6,15 @@ import store from "./store";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 import VueYouTube from "vue-youtube";
+import VueGtag from "vue-gtag";
+
+Vue.use(
+  VueGtag,
+  {
+    config: { id: "UA-158800537-1" }
+  },
+  router
+);
 
 Vue.use(VueYouTube);
 Vue.use(BootstrapVue);
