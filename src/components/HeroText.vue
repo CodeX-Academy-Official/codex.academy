@@ -4,11 +4,17 @@
     <div class="col d-flex">
       <div class="align-self-center">
         <p class="mb-5">
-          <i>Quickly gain the skills you need to enter the technology workforce.</i>
+          <i
+            >Quickly gain the skills you need to enter the technology
+            workforce.</i
+          >
         </p>
         <h3 class="mb-4">Learn to code in 6 months</h3>
-        <router-link to="/plans" class="btn btn-primary btn-lg">
-          <strong>CodeX Plans</strong>
+        <router-link
+          to="/enroll?planId=bootcamp6"
+          class="btn btn-primary btn-lg"
+        >
+          <strong>Enroll Now</strong>
         </router-link>
       </div>
     </div>

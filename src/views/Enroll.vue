@@ -14,13 +14,20 @@
     <div class="row">
       <div class="col">
         <p>
-          Please fill in the form below to start your enrollment. If you’re not sure about enrolling
-          now, we suggest you
-          <router-link to="call-back">set up a call-back</router-link>&nbsp;so you can learn more!
+          Please fill in the form below to start your enrollment. If you’re not
+          sure about enrolling now, we suggest you
+          <router-link to="call-back">set up a call-back</router-link>&nbsp;so
+          you can learn more!
         </p>
+
         <div v-once id="regForm"></div>
       </div>
       <div class="col-4 d-none d-lg-block">
+        <div class="text-center">
+          <router-link class="btn btn-secondary btn-wide mb-4" to="/plans"
+            >Change Plan</router-link
+          >
+        </div>
         <PlanCard :plan="selectedPlan" :selectable="false" />
       </div>
     </div>

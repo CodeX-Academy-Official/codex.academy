@@ -1,9 +1,15 @@
 <template>
   <!-- Navigation -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
+  <nav
+    class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top"
+  >
     <!-- <div class="container"> -->
     <router-link class="navbar-brand" to="/">
-      <img class="logo" src="img/logo/horizontal_logo.png" alt="CodeX Academy Logo" />
+      <img
+        class="logo"
+        src="img/logo/horizontal_logo.png"
+        alt="CodeX Academy Logo"
+      />
     </router-link>
     <button
       class="navbar-toggler navbar-toggler-right"
@@ -18,7 +24,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div
-      :class="!isOpen ? 'navbar-closed': ''"
+      :class="!isOpen ? 'navbar-closed' : ''"
       class="collapse navbar-collapse"
       id="navbarResponsive"
     >
@@ -31,24 +37,41 @@
           <router-link to="/plans" class="nav-link">Plans</router-link>
         </li>-->
 
-        <div class="dropdown-toggle btn" type="button" data-toggle="dropdown">
-          Plans
-          <div class="dropdown-menu dropdown-menu-right">
-            <a class="nav-item">
+        <li class="nav-item dropdown">
+          <a
+            href="#"
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            >Plans</a
+          >
+          <div class="dropdown-menu">
+            <div class="nav-item">
               <router-link to="/plans" class="nav-link">Compare</router-link>
-            </a>
+            </div>
             <div class="dropdown-divider"></div>
-            <a class="nav-item">
-              <router-link to="/selfpaced" class="nav-link">Self-Paced</router-link>
-            </a>
-            <a class="nav-item">
-              <router-link to="/bootcamps" class="nav-link">Bootcamps</router-link>
-            </a>
-            <a class="nav-item">
-              <router-link to="/community" class="nav-link">Community</router-link>
-            </a>
+            <div class="nav-item">
+              <router-link to="/selfpaced" class="nav-link"
+                >Self-Paced</router-link
+              >
+            </div>
+            <div class="dropdown-divider"></div>
+            <div class="nav-item">
+              <router-link to="/bootcamps" class="nav-link"
+                >Bootcamps</router-link
+              >
+            </div>
+            <div class="dropdown-divider"></div>
+            <div class="nav-item">
+              <router-link to="/community" class="nav-link"
+                >Community</router-link
+              >
+            </div>
           </div>
-        </div>
+        </li>
 
         <!-- <li class="nav-item">
         <separator />
@@ -70,7 +93,9 @@
           <router-link to="/call-back" class="nav-link">Learn More</router-link>
         </li>-->
         <li class="nav-item">
-          <router-link to="/howitworks" class="nav-link">How It Works</router-link>
+          <router-link to="/howitworks" class="nav-link"
+            >How It Works</router-link
+          >
         </li>
         <li class="nav-item">
           <router-link to="/faqs" class="nav-link">FAQs</router-link>
@@ -89,6 +114,13 @@
         <!-- <li class="nav-item">
           <router-link to="/about" class="nav-link">About</router-link>
         </li>-->
+        <li class="nav-item">
+          <router-link
+            to="/enroll?planId=bootcamp6"
+            class="btn btn-primary nav-link"
+            ><strong>Enroll</strong></router-link
+          >
+        </li>
       </ul>
     </div>
     <!-- </div> -->
@@ -118,8 +150,7 @@ export default {
     }
   }
 };
-</script>>
-
+</script>
 
 <style lang="scss" scoped>
 @import "@/variables";
@@ -149,7 +180,8 @@ export default {
 }
 
 @media (max-width: 991.98px) {
-  .nav-link, .dropdown-toggle {
+  .nav-link,
+  .dropdown-toggle {
     font-weight: bold !important;
     margin-bottom: 5px !important;
     text-align: center !important;
