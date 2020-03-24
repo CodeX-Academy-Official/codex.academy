@@ -12,32 +12,7 @@
 
     <MethodCardList />
 
-    <!-- Intro Content -->
-    <!-- <div class="row">
-      <div class="col-lg-6">
-        <img
-          class="img-fluid rounded mb-4"
-          src="http://placehold.it/750x450"
-          alt
-        />
-      </div>
-      <div class="col-lg-6">
-        <h2>Learning to Code</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed
-          voluptate nihil eum consectetur similique? Consectetur, quod,
-          incidunt, harum nisi dolores delectus reprehenderit voluptatem
-          perferendis dicta dolorem non blanditiis ex fugiat.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe,
-          magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab
-          ea pariatur sint quidem corporis eveniet. Odit, temporibus
-          reprehenderit dolorum!
-        </p>
-      </div>
-    </div>
-    /.row-->
+    <Timeline />
 
     <!-- Team Members -->
     <h2 class="section-title">A Typical Week at CodeX Academy</h2>
@@ -277,12 +252,14 @@
 import Technologies from "@/components/Technologies";
 import Unsplash from "@/components/Unsplash";
 import MethodCardList from "@/components/MethodCardList";
+import Timeline from "@/components/Timeline";
 
 export default {
   components: {
     Technologies,
     Unsplash,
-    MethodCardList
+    MethodCardList,
+    Timeline
   }
 };
 </script>
