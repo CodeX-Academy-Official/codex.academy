@@ -8,12 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/CNAME"
   },
   {
-    "revision": "d78f06402b7fe2653c81",
-    "url": "/css/app.ca129aab.css"
+    "revision": "bf9ea11d42b3d6866fd5",
+    "url": "/css/app.7faa2308.css"
   },
   {
     "revision": "fbd6f13d7f012b61b1158cbbf428f615",
     "url": "/css/modern-business.css"
+  },
+  {
+    "revision": "b2560845ae03fe0cc9ce97769903ddc8",
+    "url": "/img/Climb-Credit-Logo-small.png"
   },
   {
     "revision": "83034b1cc216465d6742a1f2b8dce8bf",
@@ -336,20 +340,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/tech-logos/vue.png"
   },
   {
-    "revision": "254916fcd8ca964a5a242e305fb4b338",
+    "revision": "5f2b7c15df2e91474c419fee31aa8e4c",
     "url": "/index.html"
   },
   {
-    "revision": "375cb20b8dd125177312",
-    "url": "/js/about.402e47a7.js"
+    "revision": "e3bbe5abb2e19ef58df5",
+    "url": "/js/about.2c691664.js"
   },
   {
-    "revision": "d78f06402b7fe2653c81",
-    "url": "/js/app.ed46f587.js"
+    "revision": "bf9ea11d42b3d6866fd5",
+    "url": "/js/app.7f60e1d6.js"
   },
   {
-    "revision": "51c061e02cbcca28d50f",
-    "url": "/js/chunk-vendors.620368cc.js"
+    "revision": "a844c2e0ea7b5c76155f",
+    "url": "/js/chunk-vendors.89c6e64f.js"
   },
   {
     "revision": "57178cdd29a7fdb5debae95e4c62705d",
@@ -366,6 +370,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
     "url": "/robots.txt"
+  },
+  {
+    "revision": "6a30c6f1534eacc30b3fef4eb111e20b",
+    "url": "/test.html"
   },
   {
     "revision": "59e3488e09a8bc96de5884586f3c67ec",
