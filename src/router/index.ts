@@ -6,20 +6,24 @@ import Plans from "../views/Plans.vue";
 import Selfpaced from "../views/Selfpaced.vue";
 import Bootcamps from "../views/Bootcamps.vue";
 import Community from "../views/Community.vue";
+import FindPlan from "../views/FindPlan.vue";
 
 import Contact from "../views/Contact.vue";
 import FAQs from "../views/FAQs.vue";
 import Blog from "../views/Blog.vue";
 import Method from "../views/Method.vue";
 import Testimonials from "../views/Testimonials.vue";
-import Enroll from "../views/Enroll.vue";
 import CallBack from "../views/CallBack.vue";
-import Tuition from "../views/Tuition.vue";
 import AdmissionsCallBack from "../views/AdmissionsCallBack.vue";
 import AdmissionsCallBackSetup from "../views/AdmissionsCallBackSetup.vue";
-import EnrollmentComplete from "../views/EnrollmentComplete.vue";
 import HowItWorks from "../views/HowItWorks.vue";
 import Pathways from "../views/Pathways.vue";
+import EnrollmentContainer from "../views/enroll/EnrollmentContainer.vue";
+import PlanConfirmation from "../views/enroll/PlanConfirmation.vue";
+import EnrollmentForm from "../views/enroll/EnrollmentForm.vue";
+import EnrollmentComplete from "../views/enroll/EnrollmentComplete.vue";
+import PaymentOptions from "../views/enroll/PaymentOptions.vue";
+import FinancialAid from "../views/enroll/FinancialAid.vue";
 
 Vue.use(VueRouter);
 
@@ -100,19 +104,35 @@ const routes = [
     component: Blog
   },
   {
+    path: "/findplan",
+    component: FindPlan
+  },
+  {
     path: "/enroll",
-    name: "Enroll",
-    component: Enroll
+    component: EnrollmentContainer,
+    children: [
+      {
+        path: "",
+        component: PlanConfirmation
+      },
+      {
+        path: "applicant",
+        component: EnrollmentForm
+      },
+      {
+        path: "payment",
+        component: PaymentOptions
+      },
+      {
+        path: "climb",
+        component: FinancialAid
+      }
+    ]
   },
   {
     path: "/enrollment-complete",
     name: "EnrollmentComplete",
     component: EnrollmentComplete
-  },
-  {
-    path: "/enroll-tuition",
-    name: "Enroll-Tuition",
-    component: Tuition
   },
   {
     path: "/about",

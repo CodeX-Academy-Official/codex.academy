@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-<!-- <IntroBlock /> -->
-  <h1 class="mt-4 mb-3">CodeX Academy Plans</h1>
+    <!-- <IntroBlock /> -->
+    <h1 class="mt-4 mb-3">CodeX Academy Plans</h1>
 
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
@@ -10,12 +10,10 @@
       <li class="breadcrumb-item active">Plans</li>
     </ol>
 
-
     <div class="row mt-5">
       <PlanCompareTable />
     </div>
   </div>
-
 </template>
 
 <script>
