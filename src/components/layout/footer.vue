@@ -13,13 +13,13 @@
           </p>
           <!-- <p>
             <router-link to="/financial-aid">Financial Aid</router-link>
-          </p> -->
+          </p>-->
           <!-- <p>
             <router-link to="/team">Team</router-link>
-          </p> -->
+          </p>-->
           <!-- <p>
             <router-link to="/about">About Us</router-link>
-          </p> -->
+          </p>-->
           <p>
             <router-link to="/contact">Contact</router-link>
           </p>
@@ -57,7 +57,7 @@
             <router-link to="/faqs">FAQs</router-link>
           </p>
           <p>
-            <router-link to="/call-back">Help Me Decide</router-link>
+            <router-link to="/findplan">Help Me Decide</router-link>
           </p>
         </div>
 
@@ -85,12 +85,9 @@
           <a href="https://twitter.com" target="_blank">
             <font-awesome-icon :icon="faTwitterSquare" class="fa-2x" />
           </a>
-        </div> -->
+        </div>-->
         <div class="col-1">
-          <a
-            href="https://www.instagram.com/codexacademyonline/"
-            target="_blank"
-          >
+          <a href="https://www.instagram.com/codexacademyonline/" target="_blank">
             <font-awesome-icon :icon="faInstagram" class="fa-2x" />
           </a>
         </div>

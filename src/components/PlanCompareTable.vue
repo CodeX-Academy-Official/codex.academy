@@ -1,9 +1,9 @@
 <template>
   <!-- Content Row -->
-    <div class="row">
-      <div class="col-lg-4 mb-4 plans-table" v-for="plan in plans" :key="plan.id">
-        <PlanCompare :plan="plan" :selectable="true" />
-      </div>
+  <div class="row">
+    <div class="col-lg-4 mb-4 plans-table" v-for="plan in plans" :key="plan.id">
+      <PlanCompare :plan="plan" :selectable="true" />
+    </div>
   </div>
   <!-- /.row -->
 </template>
@@ -17,7 +17,7 @@ export default {
   },
   computed: {
     plans() {
-      return this.$store.state.plans.filter(x => x.isPlanCompare);
+      return this.$store.getters.getPlanOptions;
     }
   }
 };

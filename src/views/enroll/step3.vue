@@ -1,23 +1,20 @@
 <template>
-  <div class="container">
-    <h1 class="mt-4 mb-3">Tuition Payment Setup</h1>
-
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item">
-        <router-link to="/">Home</router-link>
-      </li>
-      <li class="breadcrumb-item active">Enrollment</li>
-      <li class="breadcrumb-item active">Tuition</li>
-    </ol>
-
-    <!-- <Progress :steps="steps" active="1" /> -->
-    <p></p>
-    <div class="row" v-if="selectedPlan && selectedPlan.paymentTypes">
+  <div>
+    <h1>Step 3</h1>
+    <h3>Payment Information</h3>
+    <div class="row">
       <div class="col">
         <div v-if="selectedPlan.paymentTypes.length > 0">
           <h1>Payment Options</h1>
           <div v-for="(paymentType, index) in selectedPlan.paymentTypes" :key="paymentType.type">
             <hr class="mt-5 mb-5" />
+            <Climb
+              v-if="paymentType.type === 'climb'"
+              :paymentType="paymentType"
+              :number="index + 1"
+              :amount="selectedPlan.total"
+              css="paymentType ml-4"
+            />
             <CreditCard
               v-if="paymentType.type === 'creditCard'"
               :paymentType="paymentType"
@@ -53,34 +50,35 @@
           <HubspotForm formId="e7360a11-ca18-4b36-a73b-b8ccdce4f3e7" />
         </div>-->
       </div>
-      <div class="col-4 d-none d-lg-block">
-        <PlanCard :plan="selectedPlan" :selectable="false" />
-      </div>
     </div>
   </div>
 </template>
 
 <script>
-import PlanCard from "@/components/PlanCard";
-import HubspotForm from "@/components/HubspotForm";
 import CreditCard from "@/components/paymentTypes/creditCard";
 import CallBack from "@/components/paymentTypes/callback";
+import Climb from "@/components/paymentTypes/climb";
 
 export default {
+  computed: {},
   components: {
-    PlanCard,
-    HubspotForm,
     CreditCard,
-    CallBack
+    CallBack,
+    Climb
   },
-  data: () => ({
-    selectedPlan: false
-  }),
-  created() {
-    if (!this.$store.state.selectedPlan) {
-      this.$router.push("/");
+  methods: {
+    next() {
+      //this.$store.dispatch("enroll", form);
+      this.$router.push("4");
     }
-    this.selectedPlan = { ...this.$store.state.selectedPlan, primary: true };
+  },
+  mounted() {
+    if (!this.getSelectedPlan) {
+      this.$router.push("1");
+    }
+    if (!this.getAppliant) {
+      this.$router.push("2");
+    }
   }
 };
 </script>

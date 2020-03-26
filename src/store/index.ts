@@ -295,7 +295,9 @@ const selfpaceds = [
   {
     id: "selfpaced2",
     title: "Casual",
-    price: "400",
+    minimumWeekyStudyHours: 10,
+    levelPerMonth: 1 / 4,
+    price: 400,
     duration: "per month",
     details: [
       "10 hour/week commitment",
@@ -319,7 +321,9 @@ const selfpaceds = [
   {
     id: "selfpaced5",
     title: "Part-Time",
-    price: "800",
+    minimumWeekyStudyHours: 20,
+    levelPerMonth: 1 / 2,
+    price: 800,
     duration: "per month",
     details: [
       "20 hour/week commitment",
@@ -343,7 +347,9 @@ const selfpaceds = [
   {
     id: "selfpaced10",
     title: "Full-Time",
-    price: "1,500",
+    minimumWeekyStudyHours: 40,
+    levelPerMonth: 1,
+    price: 1500,
     duration: "per month",
     details: [
       "40 hour/week commitment",
@@ -368,7 +374,9 @@ const selfpaceds = [
   {
     id: "selfpaced20",
     title: "Overtime",
-    price: "2,800",
+    levelPerMonth: 1.2,
+    minimumWeekyStudyHours: 40,
+    price: 2800,
     duration: "per month",
     details: [
       "40-50 hour/week commitment",
@@ -406,20 +414,22 @@ const bootcamps = [
   {
     id: "bootcamp3",
     title: "3-Month Bootcamp",
-    price: "4,500",
+    climbName: "Level 3 Developer",
+    durationMonths: 3,
+    minimumWeekyStudyHours: 40,
+    levelPerMonth: 1,
+    price: 1500,
+    total: 4500,
     duration: "over 3 months",
-    details: [
-      {
-        css: "bootcamp-description",
-        text:
-          "Graduates able to develop and deploy simple web applications using HTML, CSS, JavaScipt and JQuery."
-      },
-      ...bootcampCommonDetails,
-      "Up to 30 Micro-Certifications"
-    ],
+    description:
+      "Graduates able to develop and deploy simple web applications using HTML, CSS, JavaScipt and JQuery.",
+    details: [...bootcampCommonDetails, "Up to 30 Micro-Certifications"],
     isBootcamp: true,
     isMentoring: true,
     paymentTypes: [
+      {
+        type: "climb"
+      },
       {
         type: "creditCard",
         url: "https://app.hubspot.com/sales-checkout/npnCjJOv",
@@ -433,21 +443,22 @@ const bootcamps = [
   {
     id: "bootcamp6",
     title: "6-Month Bootcamp",
-    price: "9,000",
+    climbName: "Level 6 Developer",
+    durationMonths: 6,
+    minimumWeekyStudyHours: 40,
+    levelPerMonth: 1,
+    price: 1500,
     duration: "over 6 months",
-    details: [
-      {
-        css: "bootcamp-description",
-        text:
-          "Graduates able to develop challenging full-stack data-driven web applications using best practices in technologies like ReactJS and NodeJS."
-      },
-      ...bootcampCommonDetails,
-      "Up to 60 Micro-Certifications"
-    ],
+    description:
+      "Graduates able to develop challenging full-stack data-driven web applications using best practices in technologies like ReactJS and NodeJS.",
+    details: [...bootcampCommonDetails, "Up to 60 Micro-Certifications"],
     primary: true,
     isBootcamp: true,
     isMentoring: true,
     paymentTypes: [
+      {
+        type: "climb"
+      },
       {
         type: "creditCard",
         url: "https://app.hubspot.com/sales-checkout/mSpPTv7B",
@@ -461,20 +472,21 @@ const bootcamps = [
   {
     id: "bootcamp9",
     title: "9-Month Bootcamp",
-    price: "13,500",
+    climbName: "Level 9 Developer",
+    durationMonths: 9,
+    minimumWeekyStudyHours: 40,
+    levelPerMonth: 1,
+    price: 1500,
     duration: "over 9 months",
-    details: [
-      {
-        css: "bootcamp-description",
-        text:
-          "Graduates able to develop complex, secure and well-engineered full-stack web applications using multiple front-end and back-end technologies."
-      },
-      ...bootcampCommonDetails,
-      "Up to 90 Micro-Certifications"
-    ],
+    description:
+      "Graduates able to develop complex, secure and well-engineered full-stack web applications using multiple front-end and back-end technologies.",
+    details: [...bootcampCommonDetails, "Up to 90 Micro-Certifications"],
     isBootcamp: true,
     isMentoring: true,
     paymentTypes: [
+      {
+        type: "climb"
+      },
       {
         type: "creditCard",
         url: "https://app.hubspot.com/sales-checkout/1P9YipN5",
@@ -527,7 +539,7 @@ const community = [
   {
     id: "community",
     title: "Community Plan",
-    price: "50",
+    price: 50,
     duration: "per month",
     details: ["Independent Study", ...planCommonDetails],
     primary: false,
@@ -546,12 +558,15 @@ const community = [
 ];
 
 const SELECT_PLAN = "SELECT_PLAN";
+const ENROLL = "ENROLL";
 
 export default new Vuex.Store({
   state: {
     testMode: false,
-    plans: [...bootcamps, ...selfpaceds, ...community, ...planOptions],
-    selectedPlan: false,
+    plans: [...bootcamps, ...selfpaceds, ...community],
+    planOptions,
+    selectedPlan: undefined,
+    applicant: undefined,
     technologies,
     methods,
     testimonials,
@@ -600,16 +615,28 @@ export default new Vuex.Store({
   mutations: {
     [SELECT_PLAN](state: any, planId) {
       state.selectedPlan = planId;
+    },
+    [ENROLL](state: any, applicant) {
+      state.applicant = applicant;
     }
   },
   actions: {
     selectPlan(context, planId) {
       context.commit(SELECT_PLAN, planId);
+    },
+    enroll(context, applicant) {
+      const applicantWithId = { ...applicant, id: Date.now() };
+      //send to HS
+      context.commit(ENROLL, applicantWithId);
     }
   },
   getters: {
+    getSelectedPlan: state => state.selectedPlan,
+    getBootcamp6: state => state.plans.find((x: any) => x.id == "bootcamp6"),
     getPlan: state => (planId: string) =>
       state.plans.find((x: any) => x.id === planId),
+    getPlans: state => state.plans,
+    getPlanOptions: state => state.planOptions,
     getPathways: state => state.pathways,
     getTechnologies: state =>
       state.technologies.sort((a: any, b: any) => a.order - b.order),
@@ -618,7 +645,8 @@ export default new Vuex.Store({
       const arr = state.testimonials;
       const shuffled = shuffle(arr);
       return shuffled.slice(0, 3);
-    }
+    },
+    getApplicant: state => state.applicant
   },
   modules: {},
   plugins: [vuexLocal.plugin]

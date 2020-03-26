@@ -4,24 +4,32 @@
     <div class="col d-flex">
       <div class="align-self-center">
         <p class="mb-5">
-          <i
-            >Quickly gain the skills you need to enter the technology
-            workforce.</i
-          >
+          <i>
+            Quickly gain the skills you need to enter the technology
+            workforce.
+          </i>
         </p>
         <h3 class="mb-4">Learn to code in 6 months</h3>
-        <router-link
-          to="/enroll?planId=bootcamp6"
-          class="btn btn-primary btn-lg"
-        >
-          <strong>Enroll Now</strong>
-        </router-link>
+        <SelectPlanButton
+          :plan="getBootcamp6"
+          text="Enroll Now"
+          buttonClass="btn btn-primary btn-lg"
+        />
       </div>
     </div>
     <div class="col-3 d-none d-md-block"></div>
   </div>
 </template>
 
+<script>
+import SelectPlanButton from "@/components/SelectPlanButton";
+import { mapGetters } from "vuex";
+
+export default {
+  computed: { ...mapGetters(["getBootcamp6"]) },
+  components: { SelectPlanButton }
+};
+</script>
 <style lang="scss" scoped>
 .hero-title {
   color: white;
