@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Applicatant Information</h3>
+    <h3>Applicant Information</h3>
     <EnrollForm :plan="getSelectedPlan" @enroll="next" :applicant="applicant" />
   </div>
 </template>
