@@ -22,7 +22,7 @@
         <div class="card">
           <div class="card-body">
             <div class="float-right text-muted small">Jan 9th 2019 7:00 AM</div>
-            <h4 class="card-title text-muted">Day 1 Orientation</h4>
+            <h4 class="card-title text-muted">Orientation - Day 1</h4>
             <p class="card-text">
               Welcome to the campus, introduction and get started with the tour.
             </p>
@@ -39,7 +39,7 @@
             <div class="float-right text-success small">
               Jan 10th 2019 8:30 AM
             </div>
-            <h4 class="card-title text-success">Day 2 Sessions</h4>
+            <h4 class="card-title text-success">First Weeks</h4>
             <p class="card-text">
               Sign-up for the lessons and speakers that coincide with your
               course syllabus. Meet and greet with instructors.
@@ -101,7 +101,7 @@
             <div class="float-right text-muted small">
               Jan 11th 2019 8:30 AM
             </div>
-            <h4 class="card-title">Day 3 Sessions</h4>
+            <h4 class="card-title">Wednesday</h4>
             <p>
               Shoreditch vegan artisan Helvetica. Tattooed Codeply Echo Park
               Godard kogi, next level irony ennui twee squid fap selvage.
@@ -123,7 +123,7 @@
             <div class="float-right text-muted small">
               Jan 12th 2019 11:30 AM
             </div>
-            <h4 class="card-title">Day 4 Wrap-up</h4>
+            <h4 class="card-title">Thursday</h4>
             <p>
               Join us for lunch in Bootsy's cafe across from the Campus Center.
             </p>
@@ -150,8 +150,6 @@
 </template>
 
 <script>
-import Swiper from "swiper";
-
 const data = [
   { dateLabel: "Morning", title: "Independent Study" },
   { dateLabel: "Afternoon", title: "Meet with Mentor" },
