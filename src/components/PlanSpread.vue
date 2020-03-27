@@ -6,7 +6,7 @@
         <p class="card-text">{{plan.description}}</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">${{price}} {{plan.duration}}</li>
+        <li class="list-group-item">${{plan.price}} {{plan.duration}}</li>
       </ul>
     </div>
   </div>
