@@ -1,20 +1,18 @@
 <template>
-  <div class="h-100">
-    <div class="card">
-      <h4 class="card-header text-center">{{ plan.title }}</h4>
-      <div class="text-center mt-4">
-        <div class="display-4">${{ price }}</div>
-        <div class="font-italic">{{ plan.duration }}</div>
-      </div>
-      <ul class="list-group list-group-flush text-center mt-4">
-        <li class="list-group-item">
-          <div class="plan-description">{{ plan.description }}</div>
-        </li>
-        <li class="list-group-item">
-          <SelectPlanButton :plan="plan" text="Sign Up" />
-        </li>
-      </ul>
+  <div class="card h-100">
+    <h4 class="card-header text-center">{{ plan.title }}</h4>
+    <div class="text-center mt-4 mb-4">
+      <div class="display-4">${{ price }}</div>
+      <div class="font-italic">{{ plan.duration }}</div>
     </div>
+    <ul class="list-group list-group-flush text-center h-100">
+      <li class="list-group-item">
+        <div class="plan-description">{{ plan.description }}</div>
+      </li>
+      <li class="list-group-item">
+        <SelectPlanButton :plan="plan" text="Sign Up" />
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -46,5 +44,8 @@ export default {
 <style lang="scss" scoped>
 .list-group {
   border-top: 1px solid rgba(0, 0, 0, 0.125);
+  .card-cta {
+    min-height: 65px;
+  }
 }
 </style>

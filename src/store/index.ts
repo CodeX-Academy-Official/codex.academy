@@ -295,6 +295,7 @@ const selfpaceds = [
   {
     id: "selfpaced2",
     title: "Casual",
+    description: "Learning to code at a very relaxed pace.",
     minimumWeekyStudyHours: 10,
     levelPerMonth: 1 / 4,
     price: 400,
@@ -321,6 +322,7 @@ const selfpaceds = [
   {
     id: "selfpaced5",
     title: "Part-Time",
+    description: "Learning to code while holding your day-job.",
     minimumWeekyStudyHours: 20,
     levelPerMonth: 1 / 2,
     price: 800,
@@ -347,6 +349,7 @@ const selfpaceds = [
   {
     id: "selfpaced10",
     title: "Full-Time",
+    description: "Your full-time job is to learn to code.",
     minimumWeekyStudyHours: 40,
     levelPerMonth: 1,
     price: 1500,
@@ -374,6 +377,7 @@ const selfpaceds = [
   {
     id: "selfpaced20",
     title: "Overtime",
+    description: "Supercharged learning with extra mentor hours.",
     levelPerMonth: 1.2,
     minimumWeekyStudyHours: 40,
     price: 2800,

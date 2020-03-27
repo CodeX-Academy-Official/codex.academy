@@ -1,7 +1,7 @@
 <template>
   <!-- Content Row -->
-  <div class="row">
-    <div class="col-lg-4 mb-4 plans-table" v-for="plan in plans" :key="plan.id">
+  <div class="row mb-4">
+    <div class="col col-md-4 text-center" v-for="plan in plans" :key="plan.id">
       <PlanCompare :plan="plan" :selectable="true" />
     </div>
   </div>
@@ -23,8 +23,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.plans-table {
-  text-align: center;
-}
-</style>
+<style lang="scss"></style>

@@ -1,24 +1,20 @@
 <template>
-  <div class="h-100">
-    <div class="card">
-      <img class="card-img-top" :src="plan.imgSrc" :alt="plan.title" />
-      <div class="card-body">
-        <h5 class="card-title">{{ plan.title }}</h5>
-        <p class="card-text"></p>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item price">{{ plan.price }}</li>
-        <li class="list-group-item">{{ plan.pace }}</li>
+  <div class="card h-100">
+    <img class="card-img-top" :src="plan.imgSrc" :alt="plan.title" />
+    <div class="card-body">
+      <h5 class="card-title">{{ plan.title }}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item price">{{ plan.price }}</li>
+      <li class="list-group-item">{{ plan.pace }}</li>
 
-        <li class="list-group-item">{{ plan.mentor }}</li>
-        <li class="list-group-item">{{ plan.commitment }}</li>
-      </ul>
-
-      <div class="card-body">
-        <router-link :to="plan.routerLink" class="card-link btn btn-primary">
-          <strong>See options</strong>
-        </router-link>
-      </div>
+      <li class="list-group-item">{{ plan.mentor }}</li>
+      <li class="list-group-item">{{ plan.commitment }}</li>
+    </ul>
+    <div class="card-body">
+      <router-link :to="plan.routerLink" class="card-link btn btn-primary">
+        <strong>See options</strong>
+      </router-link>
     </div>
   </div>
 </template>

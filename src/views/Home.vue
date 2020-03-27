@@ -6,22 +6,29 @@
         <div class="col-1 d-none d-lg-block"></div>
         <div class="col stat">
           <h1>76%</h1>
-          <p>of people think mentors are important, but only 37% have a mentor.</p>
+          <p>
+            of people think mentors are important, but only 37% have a mentor.
+          </p>
           <p>
             <a
               href="https://www.forbes.com/sites/christinecomaford/2019/07/03/new-study-76-of-people-think-mentors-are-important-but-only-37-have-one/#4faa11cc4329"
               target="_blank"
-            >Learn More</a>
+              >Learn More</a
+            >
           </p>
         </div>
         <div class="col stat">
-          <h1>90%</h1>
-          <p>of workers who have a career mentor say they are happy in their jobs.</p>
+          <h1>9</h1>
+          <p>
+            out of 10 workers who have a career mentor say they are happy in
+            their jobs.
+          </p>
           <p>
             <a
               href="https://www.cnbc.com/2019/07/16/nine-in-10-workers-who-have-a-mentor-say-they-are-happy-in-their-jobs.html"
               target="_blank"
-            >Learn More</a>
+              >Learn More</a
+            >
           </p>
         </div>
         <div class="col stat">
@@ -31,7 +38,8 @@
             <a
               href="https://universe.byu.edu/2017/02/22/interns-more-likely-to-be-hired-as-full-time-employees/"
               target="_blank"
-            >Learn More</a>
+              >Learn More</a
+            >
           </p>
         </div>
         <div class="col-1 d-none d-lg-block"></div>
@@ -122,13 +130,14 @@ export default {
 
   .stat {
     background-color: #eee;
-    border: #333 solid 1px;
+    border: #bbb solid 1px;
     padding: 2rem;
     margin: 2rem;
     color: #333;
 
     h1 {
       color: #333;
+      font-size: 4rem;
       font-weight: bolder;
     }
   }

@@ -1,46 +1,74 @@
 <template>
   <form>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">
-        What level software developer to you want to be when you finish
-        studying?
-      </label>
-      <select class="form-control" id="exampleFormControlSelect1" v-model="targetLevel">
-        <option value></option>
-        <option value="3">Front-End Developer (Level 3)</option>
-        <option value="6">Full-Stack Developer (Level 6)</option>
-        <option value="9">Full-Stack Agile Engineer (Level 9)</option>
-      </select>
-    </div>
-
-    <div class="form-group" v-if="targetLevel">
-      <label for="exampleFormControlInput1">Do you plan on learning with a mentor?</label>
-      <select class="form-control" id="exampleFormControlSelect1" v-model="mentoring">
-        <option value></option>
-        <option value="yes">Yes, I want to work with a mentor!</option>
-        <option value="no">No, I plan on going it alone.</option>
-      </select>
-    </div>
-
-    <div v-if="mentoring == 'yes'">
+    <div class="survey">
+      <h3 class="mb-3">Just a few questions...</h3>
       <div class="form-group">
-        <label for="exampleFormControlSelect1">In how many months do hope to graduate?</label>
-        <select class="form-control" id="exampleFormControlSelect1" v-model="studyMonths">
-          <option></option>
-          <option v-if="targetLevel == '3'" value="3">3 months</option>
-          <option value="6">6 months</option>
-          <option value="9">9 months</option>
-          <option value="12">12 months</option>
+        <label for="exampleFormControlInput1">
+          What level software developer to you want to be when you finish
+          studying?
+        </label>
+        <select
+          class="form-control"
+          id="exampleFormControlSelect1"
+          v-model="targetLevel"
+        >
+          <option value></option>
+          <option value="3">Front-End Developer (Level 3)</option>
+          <option value="6">Full-Stack Developer (Level 6)</option>
+          <option value="9">Full-Stack Agile Engineer (Level 9)</option>
         </select>
       </div>
-    </div>
 
-    <div v-if="studyMonths && !hasSuggestedPlans" class="alert alert-danger" role="alert">
-      <h1>Hmmmmm</h1>
-      <p>It looks like we don't have any plans that would help you meet your goal of Level-{{targetLevel}} Developer in {{studyMonths}} months.</p>
+      <div class="form-group" v-if="targetLevel">
+        <label for="exampleFormControlInput1"
+          >Do you plan on learning with a mentor?</label
+        >
+        <select
+          class="form-control"
+          id="exampleFormControlSelect1"
+          v-model="mentoring"
+        >
+          <option value></option>
+          <option value="yes">Yes, I want to work with a mentor!</option>
+          <option value="no">No, I plan on going it alone.</option>
+        </select>
+      </div>
+
+      <div v-if="mentoring == 'yes'">
+        <div class="form-group">
+          <label for="exampleFormControlSelect1"
+            >In how many months do hope to graduate?</label
+          >
+          <select
+            class="form-control"
+            id="exampleFormControlSelect1"
+            v-model="studyMonths"
+          >
+            <option></option>
+            <option v-if="targetLevel == '3'" value="3">3 months</option>
+            <option value="6">6 months</option>
+            <option value="9">9 months</option>
+            <option value="12">12 months</option>
+          </select>
+        </div>
+      </div>
     </div>
-    <div v-if="(mentoring == 'no' || studyMonths) && hasSuggestedPlans">
-      <h2>Based on your selections, here are your best options:</h2>
+    <div
+      v-if="studyMonths && !hasSuggestedPlans"
+      class="alert alert-danger"
+      role="alert"
+    >
+      <h1>Hmmmmm</h1>
+      <p>
+        It looks like we don't have any plans that would help you meet your goal
+        of Level-{{ targetLevel }} Developer in {{ studyMonths }} months.
+      </p>
+    </div>
+    <div
+      v-if="(mentoring == 'no' || studyMonths) && hasSuggestedPlans"
+      class="mt-5"
+    >
+      <h3>Here are some programs that would work:</h3>
       <!-- <ul>
         <li>
           We suggest you complete {{ suggestedLevelPerMonth }}
@@ -53,8 +81,8 @@
         </li>
       </ul>-->
 
-      <div v-if="bootcamps.length > 0">
-        <h3>Bootcamps</h3>
+      <div v-if="bootcamps.length > 0" class="mt-5">
+        <h3 class="mb-4 subtitle">Bootcamps</h3>
         <div class="row">
           <div v-for="plan in bootcamps" :key="plan.id" class="col col-md-4">
             <PlanCardHead :plan="plan" />
@@ -62,8 +90,8 @@
         </div>
       </div>
 
-      <div v-if="selfPaced.length > 0">
-        <h3>Month-to-Month</h3>
+      <div v-if="selfPaced.length > 0" class="mt-5">
+        <h3 class="mb-4 subtitle">Self-Paced</h3>
         <div class="row">
           <div v-for="plan in selfPaced" :key="plan.id" class="col col-md-4">
             <PlanCardHead :plan="plan" />
@@ -76,9 +104,10 @@
 
 <script>
 import PlanCardHead from "@/components/PlanCardHead";
+import Unsplash from "@/components/Unsplash";
 
 export default {
-  components: { PlanCardHead },
+  components: { PlanCardHead, Unsplash },
   data: () => ({
     mentoring: false,
     mentorHours: false,
@@ -160,4 +189,12 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.survey {
+  padding: 20px;
+  background-color: #e9ecef;
+}
+.subtitle {
+  color: #999;
+}
+</style>
