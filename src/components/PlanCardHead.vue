@@ -11,7 +11,7 @@
       </p>
     </div>
     <div class="card-footer">
-      <SelectPlanButton :plan="plan" text="Sign Up" />
+      <SelectPlanButton :plan="plan" text="Start Enrollment" />
     </div>
   </div>
 </template>
