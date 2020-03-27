@@ -28,7 +28,7 @@ export default {
   },
   mounted() {
     if (!this.getSelectedPlan) {
-      this.$router.push("1");
+      this.$emit("changeStage", 1);
     }
   },
   created() {

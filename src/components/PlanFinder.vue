@@ -192,7 +192,7 @@ export default {
 <style lang="scss" scoped>
 .survey {
   padding: 20px;
-  background-color: #e9ecef;
+  background-color: #f8f9fa;
 }
 .subtitle {
   color: #999;

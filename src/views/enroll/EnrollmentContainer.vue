@@ -60,7 +60,7 @@ export default {
 <style lang="scss">
 @import "@/variables";
 .sidebar {
-  background-color: #e9ecef;
+  background-color: #f8f9fa;
   padding: 10px;
 }
 .steps li a {

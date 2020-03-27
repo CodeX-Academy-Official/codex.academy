@@ -7,7 +7,8 @@
         <router-link to="/">Home</router-link>
       </li>
       <li class="breadcrumb-item">
-        <router-link to="/Plans">Plans</router-link></li>
+        <router-link to="/Plans">Plans</router-link>
+      </li>
       <li class="breadcrumb-item active">Community Plan</li>
     </ol>
 
@@ -23,12 +24,7 @@
 
     <div class="row">
       <div class="col text-center">
-        <a @click="selectPlan" class="btn btn-primary">
-          <strong>
-            Sign Up
-            <span class="glyphicon glyphicon-chevron-right"></span>
-          </strong>
-        </a>
+        <SelectPlanButton :plan="getCommunityPlan" text="Start Enrollment" />
       </div>
     </div>
 
@@ -155,12 +151,7 @@
 
     <div class="row">
       <div class="col text-center">
-        <a @click="selectPlan" class="btn btn-primary">
-          <strong>
-            Sign up
-            <span class="glyphicon glyphicon-chevron-right"></span>
-          </strong>
-        </a>
+        <SelectPlanButton :plan="getCommunityPlan" text="Start Enrollment" />
       </div>
     </div>
     <div class="mb-5"></div>
@@ -168,12 +159,12 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import SelectPlanButton from "@/components/SelectPlanButton";
+
 export default {
-  methods: {
-    selectPlan() {
-      this.$router.push({ name: "Enroll", query: { planId: "community" } });
-    }
-  }
+  components: { SelectPlanButton },
+  computed: { ...mapGetters(["getCommunityPlan"]) }
 };
 </script>
 <style lang="scss" scoped>

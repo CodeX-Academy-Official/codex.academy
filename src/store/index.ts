@@ -637,6 +637,8 @@ export default new Vuex.Store({
   getters: {
     getSelectedPlan: state => state.selectedPlan,
     getBootcamp6: state => state.plans.find((x: any) => x.id == "bootcamp6"),
+    getCommunityPlan: state =>
+      state.plans.find((x: any) => x.id == "community"),
     getPlan: state => (planId: string) =>
       state.plans.find((x: any) => x.id === planId),
     getPlans: state => state.plans,

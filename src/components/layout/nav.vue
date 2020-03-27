@@ -70,6 +70,12 @@
                 >Community</router-link
               >
             </div>
+            <div class="dropdown-divider"></div>
+            <div class="nav-item">
+              <router-link to="/findplan" class="nav-link"
+                >Help Me Decide</router-link
+              >
+            </div>
           </div>
         </li>
 
