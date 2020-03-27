@@ -35,7 +35,7 @@
       <div class="form-group col-md-6">
         <label for="phone">Phone:</label>
         <input
-          type="telephone"
+          type="tel"
           class="form-control"
           id="phone"
           v-model.trim="$v.applicant.phone.$model"
@@ -61,7 +61,7 @@
           type="text"
           class="form-control"
           id="inputAddress2"
-          v-model="address2"
+          v-model="applicant.address2"
         />
       </div>
     </div>
@@ -165,7 +165,7 @@
       </div>
       <div class="form-group col-md-6">
         <label for="gender">Gender:</label>
-        <select class="form-control" id="gender" v-model="gender">
+        <select class="form-control" id="gender" v-model="applicant.gender">
           <option value="Male">Male</option>
           <option value="Female">Female</option>
           <option value="Other / Prefer not to answer"
@@ -253,7 +253,10 @@
     <button type="submit" class="btn btn-primary">
       <strong>Yes, This is Me</strong>
     </button>
-    <div class="alert alert-danger mt-3" v-if="$v.applicant.$invalid">
+    <div
+      class="alert alert-danger mt-3"
+      v-if="$v.applicant.$invalid && $v.applicant.$dirty"
+    >
       Please check the form to make sure all required fields have been filled
       in.
     </div>
@@ -266,20 +269,20 @@ import { required, minLength, between } from "vuelidate/lib/validators";
 export default {
   props: {
     plan: Object,
-    applicant: { type: Object, default: () => ({}) }
+    initialApplicant: Object
   },
   data: () => ({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    address1: "",
-    address2: "",
-    city: "",
-    state: "",
-    zip: "",
-    dateOfBirth: "",
-    gender: ""
+    applicant: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      address1: "",
+      city: "",
+      state: "",
+      zip: "",
+      dateOfBirth: ""
+    }
   }),
   validations: {
     applicant: {
@@ -325,6 +328,9 @@ export default {
         dirty: validation.$dirty
       };
     }
+  },
+  created() {
+    if (this.initialApplicant) this.applicant = this.initialApplicant;
   }
 };
 </script>

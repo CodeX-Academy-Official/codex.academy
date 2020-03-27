@@ -1,7 +1,11 @@
 <template>
   <div>
     <h3>Applicant Information</h3>
-    <EnrollForm :plan="getSelectedPlan" @enroll="next" :applicant="applicant" />
+    <EnrollForm
+      :plan="getSelectedPlan"
+      @enroll="next"
+      :initialApplicant="getApplicant"
+    />
   </div>
 </template>
 
@@ -10,11 +14,8 @@ import EnrollForm from "@/components/EnrollForm";
 import { mapGetters } from "vuex";
 
 export default {
-  data: () => ({
-    applicant: undefined
-  }),
   computed: {
-    ...mapGetters(["getSelectedPlan"])
+    ...mapGetters(["getSelectedPlan", "getApplicant"])
   },
   components: {
     EnrollForm
@@ -29,7 +30,6 @@ export default {
     if (!this.getSelectedPlan) {
       this.$router.push("1");
     }
-    this.applicant = this.$store.getters.getApplicant;
   },
   created() {
     this.$emit("changeStage", 2);
