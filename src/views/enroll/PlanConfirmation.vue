@@ -10,7 +10,9 @@
       </button>
     </p>
     <p>
-      <button class="btn btn-secondary" @click="changePlan">No, Change Plan</button>
+      <button class="btn btn-secondary" @click="changePlan">
+        No, Change Program
+      </button>
     </p>
   </div>
 </template>

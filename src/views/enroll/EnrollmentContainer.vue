@@ -12,21 +12,30 @@
     <!-- <Progress :steps="steps" active="1" /> -->
 
     <div class="row">
-      <div class="col-4 sidebar">
-        <p>We're happy you have chosen to enroll with CodeX Academy. You're just a few steps away from starting a new career!</p>
-        <h4>Enrollment Steps:</h4>
-        <ol class="steps">
-          <li :class="{active: stage===1 }">
-            <router-link to="/enroll">Select/Confirm Program</router-link>
-          </li>
-          <li :class="{active: stage===2 }">
-            <router-link to="/enroll/applicant">Enter Applicant Information</router-link>
-          </li>
-          <li :class="{active: stage===3 }">
-            <router-link to="/enroll/payment">Arrange Payment Information</router-link>
-          </li>
-          <li :class="{active: stage===4 }">Start Orientation</li>
-        </ol>
+      <div class="d-none d-md-block col-4">
+        <div class="sidebar">
+          <p>
+            We're happy you have chosen to enroll with CodeX Academy. You're
+            just a few steps away from starting a new career!
+          </p>
+          <h4>Enrollment Steps:</h4>
+          <ol class="steps">
+            <li :class="{ active: stage === 1 }">
+              <router-link to="/enroll">Select/Confirm Program</router-link>
+            </li>
+            <li :class="{ active: stage === 2 }">
+              <router-link to="/enroll/applicant"
+                >Enter Applicant Information</router-link
+              >
+            </li>
+            <li :class="{ active: stage === 3 }">
+              <router-link to="/enroll/payment"
+                >Arrange Payment Information</router-link
+              >
+            </li>
+            <li :class="{ active: stage === 4 }">Start Orientation</li>
+          </ol>
+        </div>
       </div>
       <div class="col">
         <router-view @changeStage="changeStage" />

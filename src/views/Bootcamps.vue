@@ -8,7 +8,7 @@
         <router-link to="/">Home</router-link>
       </li>
       <li class="breadcrumb-item">
-        <router-link to="/plans">Plans</router-link>
+        <router-link to="/plans">Programs</router-link>
       </li>
       <li class="breadcrumb-item active">Bootcamps</li>
     </ol>

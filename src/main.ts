@@ -8,6 +8,9 @@ import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 import VueYouTube from "vue-youtube";
 import VueGtag from "vue-gtag";
 import Hotjar from "vue-hotjar";
+import Vuelidate from "vuelidate";
+
+Vue.use(Vuelidate);
 
 Vue.use(Hotjar, {
   id: "1739723",

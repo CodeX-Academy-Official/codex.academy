@@ -1,13 +1,13 @@
 <template>
   <div class="container">
     <!-- <IntroBlock /> -->
-    <h1 class="mt-4 mb-3">CodeX Academy Plans</h1>
+    <h1 class="mt-4 mb-3">CodeX Academy Programs</h1>
 
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
         <router-link to="/">Home</router-link>
       </li>
-      <li class="breadcrumb-item active">Plans</li>
+      <li class="breadcrumb-item active">Program Types</li>
     </ol>
 
     <div class="row mt-5">

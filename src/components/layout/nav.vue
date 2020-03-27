@@ -46,7 +46,7 @@
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
-            >Plans</a
+            >Programs</a
           >
           <div class="dropdown-menu">
             <div class="nav-item">

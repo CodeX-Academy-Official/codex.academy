@@ -57,7 +57,7 @@
       </div>
 
       <div class="text-center mb-5"></div>
-      <h1 class="heading">CodeX Academy Has Flexible Plans</h1>
+      <h1 class="heading">CodeX Academy Has Flexible Programs</h1>
       <PlanCompareTable />
 
       <div class="text-center mb-5"></div>

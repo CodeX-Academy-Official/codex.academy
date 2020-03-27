@@ -1,44 +1,90 @@
 <template>
-  <form>
+  <form @submit.prevent="submitForm">
     <div class="form-row">
       <div class="form-group col">
         <label for="inputEmail4">First Name:</label>
-        <input type="text" class="form-control" v-model="applicant.firstName" />
+        <input
+          type="text"
+          class="form-control"
+          v-model.trim="$v.applicant.firstName.$model"
+          :class="isValid($v.applicant.firstName)"
+        />
       </div>
+
       <div class="form-group col">
         <label for="inputEmail4">Last Name:</label>
-        <input type="text" class="form-control" v-model="applicant.lastName" />
+        <input
+          type="text"
+          class="form-control"
+          v-model.trim="$v.applicant.lastName.$model"
+          :class="isValid($v.applicant.lastName)"
+        />
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputEmail4">Email:</label>
-        <input type="email" class="form-control" id="inputEmail4" v-model="applicant.email" />
+        <input
+          type="email"
+          class="form-control"
+          id="inputEmail4"
+          v-model.trim="$v.applicant.email.$model"
+          :class="isValid($v.applicant.email)"
+        />
       </div>
       <div class="form-group col-md-6">
         <label for="phone">Phone:</label>
-        <input type="telephone" class="form-control" id="phone" v-model="applicant.phone" />
+        <input
+          type="telephone"
+          class="form-control"
+          id="phone"
+          v-model.trim="$v.applicant.phone.$model"
+          :class="isValid($v.applicant.phone)"
+        />
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group col-md-8">
         <label for="inputAddress">Street Address:</label>
-        <input type="text" class="form-control" id="inputAddress" v-model="applicant.address1" />
+        <input
+          type="text"
+          class="form-control"
+          id="inputAddress"
+          v-model.trim="$v.applicant.address1.$model"
+          :class="isValid($v.applicant.address1)"
+        />
       </div>
       <div class="form-group col-md-4">
         <label for="inputAddress2">Apartment, Suite, Floor #:</label>
-        <input type="text" class="form-control" id="inputAddress2" v-model="applicant.address2" />
+        <input
+          type="text"
+          class="form-control"
+          id="inputAddress2"
+          v-model="address2"
+        />
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputCity">City</label>
-        <input type="text" class="form-control" id="inputCity" v-model="applicant.city" />
+        <input
+          type="text"
+          class="form-control"
+          id="inputCity"
+          v-model.trim="$v.applicant.city.$model"
+          :class="isValid($v.applicant.city)"
+        />
       </div>
       <div class="form-group col-md-4">
         <label for="inputState">State</label>
-        <select class="form-control" id="inputState" name="state" v-model="applicant.state">
+        <select
+          class="form-control"
+          id="inputState"
+          name="state"
+          v-model.trim="$v.applicant.state.$model"
+          :class="isValid($v.applicant.state)"
+        >
           <option value></option>
           <option value="AK">Alaska</option>
           <option value="AL">Alabama</option>
@@ -96,21 +142,35 @@
       </div>
       <div class="form-group col-md-2">
         <label for="inputZip">Zip</label>
-        <input type="text" class="form-control" id="inputZip" v-model="applicant.zip" />
+        <input
+          type="text"
+          class="form-control"
+          id="inputZip"
+          v-model.trim="$v.applicant.zip.$model"
+          :class="isValid($v.applicant.zip)"
+        />
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputDob">Date of Birth:</label>
-        <input type="date" class="form-control" id="inputDob" v-model="applicant.dateOfBirth" />
+        <input
+          type="date"
+          class="form-control"
+          id="inputDob"
+          v-model.trim="$v.applicant.dateOfBirth.$model"
+          :class="isValid($v.applicant.dateOfBirth)"
+        />
       </div>
       <div class="form-group col-md-6">
         <label for="gender">Gender:</label>
-        <select class="form-control" id="gender" v-model="applicant.gender">
+        <select class="form-control" id="gender" v-model="gender">
           <option value="Male">Male</option>
           <option value="Female">Female</option>
-          <option value="Other / Prefer not to answer">Other / Prefer not to answer</option>
+          <option value="Other / Prefer not to answer"
+            >Other / Prefer not to answer</option
+          >
         </select>
       </div>
     </div>
@@ -190,29 +250,92 @@
       </div>
     </div>-->
 
-    <button type="submit" @click.prevent="submitForm" class="btn btn-primary">
+    <button type="submit" class="btn btn-primary">
       <strong>Yes, This is Me</strong>
     </button>
+    <div class="alert alert-danger mt-3" v-if="$v.applicant.$invalid">
+      Please check the form to make sure all required fields have been filled
+      in.
+    </div>
   </form>
 </template>
 
 <script>
+import { required, minLength, between } from "vuelidate/lib/validators";
+
 export default {
   props: {
     plan: Object,
+    applicant: { type: Object, default: () => ({}) }
+  },
+  data: () => ({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    address1: "",
+    address2: "",
+    city: "",
+    state: "",
+    zip: "",
+    dateOfBirth: "",
+    gender: ""
+  }),
+  validations: {
     applicant: {
-      type: Object,
-      default: function() {
-        return {};
+      firstName: {
+        required
+      },
+      lastName: {
+        required
+      },
+      email: {
+        required
+      },
+      phone: {
+        required
+      },
+      address1: {
+        required
+      },
+      city: {
+        required
+      },
+      state: {
+        required
+      },
+      zip: {
+        required
+      },
+      dateOfBirth: {
+        required
       }
     }
   },
   methods: {
     submitForm() {
-      this.$emit("enroll", this.applicant);
+      this.$v.applicant.$touch();
+      if (!this.$v.applicant.$invalid) {
+        this.$emit("enroll", this.applicant);
+      }
+    },
+    isValid(validation) {
+      return {
+        error: validation.$error,
+        dirty: validation.$dirty
+      };
     }
   }
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.error {
+  border-color: red;
+  background: #fdd;
+}
+
+.error:focus {
+  outline-color: #f99;
+}
+</style>
