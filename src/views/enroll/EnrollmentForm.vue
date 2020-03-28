@@ -1,14 +1,17 @@
 <template>
   <div>
     <h3>Applicant Information</h3>
-    <EnrollForm :plan="getSelectedPlan" @enroll="next" :applicant="applicant" />
+    <EnrollForm
+      :plan="getSelectedPlan"
+      @enroll="next"
+      :initialApplicant="getApplicant"
+    />
   </div>
 </template>
 
 <script>
 import EnrollForm from "@/components/EnrollForm";
 import { mapGetters } from "vuex";
-
 export default {
   computed: {
     ...mapGetters(["getSelectedPlan", "getApplicant"])

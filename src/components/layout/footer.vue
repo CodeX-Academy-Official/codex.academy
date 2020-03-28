@@ -17,9 +17,9 @@
           <!-- <p>
             <router-link to="/team">Team</router-link>
           </p>-->
-          <!-- <p>
-            <router-link to="/about">About Us</router-link>
-          </p>-->
+          <p>
+            <router-link to="/about">About</router-link>
+          </p>
           <p>
             <router-link to="/contact">Contact</router-link>
           </p>
@@ -81,14 +81,19 @@
             <font-awesome-icon :icon="faFacebookSquare" class="fa-2x" />
           </a>
         </div>
-        <!-- <div class="col-1">
-          <a href="https://twitter.com" target="_blank">
+        <div class="col-1">
+          <a href="https://twitter.com/Academycodex" target="_blank">
             <font-awesome-icon :icon="faTwitterSquare" class="fa-2x" />
           </a>
-        </div>-->
+        </div>
         <div class="col-1">
           <a href="https://www.instagram.com/codexacademyonline/" target="_blank">
             <font-awesome-icon :icon="faInstagram" class="fa-2x" />
+          </a>
+        </div>
+        <div class="col-1">
+          <a href="https://www.youtube.com/channel/UCUKP1GrIaI-dcuV1IlK7x8Q" target="_blank">
+            <font-awesome-icon :icon="faYoutubeSquare" class="fa-2x" />
           </a>
         </div>
       </div>
@@ -104,14 +109,16 @@
 import {
   faFacebookSquare,
   faInstagram,
-  faTwitterSquare
+  faTwitterSquare,
+  faYoutubeSquare
 } from "@fortawesome/fontawesome-free-brands";
 
 export default {
   data: () => ({
     faFacebookSquare,
     faInstagram,
-    faTwitterSquare
+    faTwitterSquare,
+    faYoutubeSquare
   })
 };
 </script>

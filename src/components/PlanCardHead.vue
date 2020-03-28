@@ -1,30 +1,26 @@
 <template>
-  <div class="h-100">
-    <div class="card">
-      <h4 class="card-header text-center">{{ plan.title }}</h4>
-      <div class="text-center mt-4">
-        <div class="display-4">${{ plan.price }}</div>
+  <div class="card h-100 text-center">
+    <h4 class="card-header text-center">{{ plan.title }}</h4>
+    <div class="card-body">
+      <div class="text-center mt-4 mb-4">
+        <div class="display-4">${{ price }}</div>
         <div class="font-italic">{{ plan.duration }}</div>
       </div>
-      <ul class="list-group list-group-flush text-center mt-4">
-        <li class="list-group-item">
-          <div class="plan-description">{{ plan.description }}</div>
-        </li>
-        <li class="list-group-item">
-          <SelectPlanButton :plan="plan" text="Sign Up" />
-        </li>
-      </ul>
+      <p class="card-text">
+        {{ plan.description }}
+      </p>
+    </div>
+    <div class="card-footer">
+      <SelectPlanButton :plan="plan" text="Start Enrollment" />
     </div>
   </div>
 </template>
 
 <script>
 import SelectPlanButton from "@/components/SelectPlanButton";
-
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-
 export default {
   props: {
     plan: Object,

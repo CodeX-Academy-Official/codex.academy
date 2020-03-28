@@ -15,7 +15,7 @@
         {{ plan.title }}
       </h3>
       <div class="text-center mt-4">
-        <div class="display-4">${{ plan.price }}</div>
+        <div class="display-4">${{ price }}</div>
         <div class="font-italic">{{ plan.duration }}</div>
       </div>
       <ul class="list-group list-group-flush text-center mt-4">
