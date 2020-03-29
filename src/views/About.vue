@@ -57,7 +57,7 @@
           <img class="card-img-top" src="img/headshots/hs_phenry.jpeg" alt />
           <div class="card-body">
             <h4 class="card-title">Phil Henry</h4>
-            <h6 class="card-subtitle mb-2 text-muted">Co-founder &amp; Director of Buisness Dev</h6>
+            <h6 class="card-subtitle mb-2 text-muted">Co-founder &amp; Director of Business Dev</h6>
             <p class="card-text">
               Phillip Henry is the co-founder of CodeX Academy. 
               Phillip is a serial entrepreneur with over 15 years of
@@ -65,7 +65,7 @@
               previous startups with over $1M in valuation.
             </p>
             <p>
-              As Director of Buisness Development, Phillip monitors and supports the
+              As Director of Business Development, Phillip monitors and supports the
               company’s performance, forecasts growth, fosters strategic
               partnerships, and champions the standards of the company.
             </p>
