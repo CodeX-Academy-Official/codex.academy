@@ -144,7 +144,7 @@ export default {
       let plans = this.plans.filter(
         x =>
           x.levelPerMonth >= suggestedLevelPerMonth &&
-          x.minimumWeekyStudyHours >= studyHours &&
+          x.minimumWeeklyStudyHours >= studyHours &&
           (!x.durationMonths || x.durationMonths <= this.months) &&
           (!x.durationMonths ||
             x.levelPerMonth * x.durationMonths >= targetLevel)

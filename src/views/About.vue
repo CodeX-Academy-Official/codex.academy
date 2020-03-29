@@ -40,7 +40,7 @@
     </p>
     <p></p>
     <p>
-      CodeX was founded in 2019 by Phil Henry, Byron Sommardahl and Christian
+      CodeX was founded in 2019 by Phillip Henry, Byron Sommardahl and Christian
       Morsing.
     </p>
 
@@ -59,13 +59,13 @@
             <h4 class="card-title">Phil Henry</h4>
             <h6 class="card-subtitle mb-2 text-muted">Co-founder &amp; Director of Buisness Dev</h6>
             <p class="card-text">
-              Phillip Henry is the co-founder of business development of CodeX
-              Academy. Phillip is a serial entrepreneur with over 15 years of
+              Phillip Henry is the co-founder of CodeX Academy. 
+              Phillip is a serial entrepreneur with over 15 years of
               experience. Before co-founding CodeX Academy, Phillip founded two
               previous startups with over $1M in valuation.
             </p>
             <p>
-              As Director of Bisiness Development, Phillip monitors and supports the
+              As Director of Buisness Development, Phillip monitors and supports the
               company’s performance, forecasts growth, fosters strategic
               partnerships, and champions the standards of the company.
             </p>
@@ -82,11 +82,11 @@
             <h4 class="card-title">Byron Sommardahl</h4>
             <h6 class="card-subtitle mb-2 text-muted">Co-founder &amp; Dean of Students</h6>
             <p class="card-text">
-              Byron has been developing software since he was 9 years old, getting an early start with his Commodore 64 copmuter.
+              Byron has been developing software since he was 9 years old, getting an early start with his Commodore 64 computer.
               Since then, Byron hasn't stopped growing as a programmer, working with various industries developing software and leading agile teams.
             </p>
             <p>
-              Throughout Byron's career, education has been at the center of his passion. Byron has spent countless hours mentoring and teaching other developer around the world. Now, as Dean of Students at CodeX Academy, Byron plans and directs learning pathways, online
+              Throughout Byron's career, education has been at the center of his passion. Byron has spent countless hours mentoring and teaching other developers around the world. Now, as Dean of Students at CodeX Academy, Byron plans and directs learning pathways, online
               curriculum and mentors. He also directs student evaluations for advancement and certification.
             </p>
           </div>
@@ -102,13 +102,13 @@
             <h4 class="card-title">Christian Morsing</h4>
             <h6 class="card-subtitle mb-2 text-muted">Co-founder &amp; Director of Admission</h6>
             <p class="card-text">
-              Christian has spent most of his career in the wireless testing
+              Christian has a background in the wireless testing
               industry, building embedded systems for manufactoring.
             </p>
             <p>
-              After mentoring various SW startups at Nashville EC he joined Phil
-              in 2017. Christian has been part of 2 previous companies and then
-              co-founded CodeX in 2019.
+              After mentoring various SW startups at Nashville EC, he meet Phil
+              in 2017. Christian has been part of 2 previous software companies with Phil and then
+              co-founded CodeX Academy in 2019.
             </p>
             <p>
               As Director of Admissions, Christian handles student
