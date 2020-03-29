@@ -36,7 +36,7 @@
       subtitle="A Few Hours"
       extra="What will I have to show from my experience with CodeX Academy?"
     >
-      <p>Certifications provide you with mulestones that are within reach, but also prove to the of world your achievements.</p>
+      <p>Certifications provide you with milestones that are within reach, but also prove to the of world your achievements.</p>
       <p>CodeX Academy has three major Certifications:</p>
       <ul>
         <li>Front-End Developer</li>

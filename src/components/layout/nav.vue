@@ -1,15 +1,9 @@
 <template>
   <!-- Navigation -->
-  <nav
-    class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top"
-  >
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
     <!-- <div class="container"> -->
     <router-link class="navbar-brand" to="/">
-      <img
-        class="logo"
-        src="img/logo/horizontal_logo.png"
-        alt="CodeX Academy Logo"
-      />
+      <img class="logo" src="img/logo/horizontal_logo.png" alt="CodeX Academy Logo" />
     </router-link>
     <button
       class="navbar-toggler navbar-toggler-right"
@@ -46,35 +40,26 @@
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
-            >Programs</a
-          >
+          >Programs</a>
           <div class="dropdown-menu">
             <div class="nav-item">
               <router-link to="/plans" class="nav-link">Compare</router-link>
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
-              <router-link to="/selfpaced" class="nav-link"
-                >Self-Paced</router-link
-              >
+              <router-link to="/selfpaced" class="nav-link">Self-Paced</router-link>
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
-              <router-link to="/bootcamps" class="nav-link"
-                >Bootcamps</router-link
-              >
+              <router-link to="/bootcamps" class="nav-link">Bootcamps</router-link>
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
-              <router-link to="/community" class="nav-link"
-                >Community</router-link
-              >
+              <router-link to="/community" class="nav-link">Community</router-link>
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
-              <router-link to="/findplan" class="nav-link"
-                >Help Me Decide</router-link
-              >
+              <router-link to="/findplan" class="nav-link">Help Me Decide</router-link>
             </div>
           </div>
         </li>
@@ -99,9 +84,7 @@
           <router-link to="/call-back" class="nav-link">Learn More</router-link>
         </li>-->
         <li class="nav-item">
-          <router-link to="/howitworks" class="nav-link"
-            >How It Works</router-link
-          >
+          <router-link to="/howitworks" class="nav-link">How It Works</router-link>
         </li>
         <li class="nav-item">
           <router-link to="/faqs" class="nav-link">FAQs</router-link>
@@ -121,10 +104,7 @@
           <router-link to="/about" class="nav-link">About</router-link>
         </li>
         <li class="nav-item">
-          <SelectPlanButton
-            text="Enroll"
-            buttonClass="btn btn-primary nav-link"
-          />
+          <SelectPlanButton text="Enroll" buttonClass="btn btn-primary btn-block nav-link" />
         </li>
       </ul>
     </div>
