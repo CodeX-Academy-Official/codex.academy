@@ -12,7 +12,6 @@
 <script>
 import EnrollForm from "@/components/EnrollForm";
 import { mapGetters } from "vuex";
-
 export default {
   computed: {
     ...mapGetters(["getSelectedPlan", "getApplicant"])
