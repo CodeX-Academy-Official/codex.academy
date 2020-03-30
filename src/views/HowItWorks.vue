@@ -10,14 +10,14 @@
       <li class="breadcrumb-item active">How it Works</li>
     </ol>
 
-    <h2 class="section-title">The CodeX Academy Formula</h2>
+    <h2 class="section-title mt-5 mb-5">The CodeX Academy Formula</h2>
     <Formula />
 
-    <h2 class="section-title">Start Strong, Finish Stronger</h2>
+    <h2 class="section-title mt-5 mb-5">Start Strong, Finish Stronger</h2>
     <Timeline />
 
     <a name="tech" />
-    <h2 class="section-title">Our Technologies and Tools</h2>
+    <h2 class="section-title mt-5 mb-5">Our Technologies and Tools</h2>
     <Technologies />
   </div>
 </template>

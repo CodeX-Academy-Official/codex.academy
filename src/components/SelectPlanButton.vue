@@ -1,6 +1,10 @@
 <template>
-  <button :class="buttonClass" @click="selectPlan">
-    <strong>{{text}}</strong>
+  <button
+    class="btn btn-primary program-select-button"
+    :class="buttonClass"
+    @click="selectPlan"
+  >
+    <strong>{{ text }}</strong>
   </button>
 </template>
 
@@ -9,7 +13,7 @@ export default {
   props: {
     plan: Object,
     text: String,
-    buttonClass: { type: String, default: "btn btn-primary" }
+    buttonClass: { type: String, required: false }
   },
   methods: {
     selectPlan() {
@@ -20,5 +24,16 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@import "@/variables";
+
+.program-select-button {
+  .btn {
+    background-color: $primary;
+    border: none;
+  }
+  .btn:hover {
+    background-color: $fucia;
+  }
+}
 </style>

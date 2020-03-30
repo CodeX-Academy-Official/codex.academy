@@ -24,6 +24,7 @@ import EnrollmentForm from "../views/enroll/EnrollmentForm.vue";
 import EnrollmentComplete from "../views/enroll/EnrollmentComplete.vue";
 import PaymentOptions from "../views/enroll/PaymentOptions.vue";
 import FinancialAid from "../views/enroll/FinancialAid.vue";
+import FinancialAidMarketing from "../views/FinancialAid.vue";
 
 Vue.use(VueRouter);
 
@@ -77,6 +78,11 @@ const routes = [
     path: "/method",
     name: "Method",
     component: Method
+  },
+  {
+    path: "/financial-aid",
+    name: "Financial Aid",
+    component: FinancialAidMarketing
   },
   {
     path: "/contact",
@@ -135,13 +141,12 @@ const routes = [
     component: EnrollmentComplete
   },
   {
-    path: "/about",
-    name: "About",
+    path: "/team",
+    name: "Team",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+    component: () => import(/* webpackChunkName: "about" */ "../views/Team.vue")
   }
 ];
 

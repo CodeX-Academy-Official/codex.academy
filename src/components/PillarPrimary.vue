@@ -4,8 +4,8 @@
       <div class="icon-keystone">
         <font-awesome-icon :icon="icon" />
       </div>
-      <div class="pillar-title rainbow">{{title}}</div>
-      <div class="pillar-subtitle">{{subtitle}}</div>
+      <div class="pillar-title rainbow">{{ title }}</div>
+      <div class="pillar-subtitle">{{ subtitle }}</div>
     </div>
     <div class="pillar-body">
       <slot />
@@ -22,12 +22,7 @@ export default {
     title: String,
     subtitle: String
   },
-  components: { FontAwesomeIcon },
-  methods: {
-    getIcon(name) {
-      return icons[name];
-    }
-  }
+  components: { FontAwesomeIcon }
 };
 </script>
 
