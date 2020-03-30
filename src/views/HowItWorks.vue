@@ -41,12 +41,6 @@ export default {
 </script>
 
 <style lang="scss">
-h2.section-title {
-  text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 3rem;
-  margin-top: 3rem;
-}
 .badge-primary {
   color: white;
 }

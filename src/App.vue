@@ -34,6 +34,18 @@ export default {
     color: White;
   }
 }
+
+.section-title {
+  text-transform: uppercase;
+  text-align: center;
+}
+.section-subtitle {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-top: 0rem;
+}
+
 @import "@/variables";
 @import "~bootstrap";
 @import "~bootstrap-vue";
