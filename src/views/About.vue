@@ -40,8 +40,7 @@
     </p>
     <p></p>
     <p>
-      CodeX was founded in 2019 by Phillip Henry, Byron Sommardahl and Christian
-      Morsing.
+      CodeX was founded in 2019 by Phillip Henry, Byron Sommardahl and Christian Morsing.
     </p>
 
     <!-- </div> -->
@@ -103,7 +102,7 @@
             <h6 class="card-subtitle mb-2 text-muted">Co-founder &amp; Director of Admission</h6>
             <p class="card-text">
               Christian has a background in the wireless testing
-              industry, building embedded systems for manufactoring.
+              industry, building embedded systems for manufacturing.
             </p>
             <p>
               After mentoring various SW startups at Nashville EC, he meet Phil

@@ -3,8 +3,8 @@
     <h3>{{ number }}. Apply for Financial Aid</h3>
 
     <p>
-      You can apply for financial aid through our partner, Climb Credit. Please
-      click the button below to apply.
+      You can apply for financial aid through our partner, Climb Credit. 
+      Please click the button below to apply.
     </p>
     <p>
       <button

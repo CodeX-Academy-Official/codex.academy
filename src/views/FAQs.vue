@@ -48,7 +48,8 @@
 
       <QAndA id="faq3" question="Can I get financing/financial aid?">
         <p>
-          CodeX Academy partners with Climb Credit to offer special financing for any learning plan for a minimum of 3 months. For more information, see
+          CodeX Academy partners with Climb Credit to offer special financing for any learning plan for a minimum of 3 months. 
+          For more information, see
           <a
             href="https://climbcredit.com/students"
             target="_blank"
@@ -58,13 +59,15 @@
 
       <QAndA id="faq4" question="Can I pause my enrollment?">
         <p>
-          Life happens! Some learners may face some hardship that impacts their ability to stay committed to independent study and meeting with mentors. We get it! If you need to pause your enrollment at any time, just send an email to
+          Life happens! Some learners may face some hardship that impacts their ability to stay committed to independent study 
+          and meeting with mentors. We get it! If you need to pause your enrollment at any time, just send an email to
           <a
             href="mailto:admissions@codex.academy"
           >Admissions</a> any time and request it. We will make sure to pause your monthly payments and you can resume at any time.
         </p>
         <p>
-          Learners using financial aid may still be responsible for making monthly payments, but it may be possible to "make-up" any lost time when you resume your enrollment later on. To check elegibility or if you have any questions, please email
+          Learners using financial aid may still be responsible for making monthly payments, but it may be possible to "make-up" 
+          any lost time when you resume your enrollment later on. To check eligibility or if you have any questions, please email.
           <a
             href="mailto:admissions@codex.academy"
           >Admissions</a>.
