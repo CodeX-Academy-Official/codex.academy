@@ -20,8 +20,8 @@ export default {
     EnrollForm
   },
   methods: {
-    next(applicant) {
-      this.$store.dispatch("enroll", applicant);
+    async next(applicant) {
+      await this.$store.dispatch("enroll", applicant);
       this.$router.push("payment");
     }
   },

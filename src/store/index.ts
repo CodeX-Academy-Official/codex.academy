@@ -2,6 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 import VuexPersistence from "vuex-persist";
 import { shuffle } from "./utils";
+import { sendToHubspot } from "./hubspot";
 
 const vuexLocal = new VuexPersistence({
   storage: window.localStorage
@@ -640,10 +641,14 @@ export default new Vuex.Store({
     selectPlan(context, planId) {
       context.commit(SELECT_PLAN, planId);
     },
-    enroll(context, applicant) {
-      const applicantWithId = { ...applicant, id: Date.now() };
-      //send to HS
+    async enroll(context, applicant) {
+      const applicantWithId = { ...applicant, learnerId: Date.now() };
       context.commit(ENROLL, applicantWithId);
+      await sendToHubspot(
+        "7092117",
+        "c4c04dcc-7c42-4552-86df-cd3d25294c79",
+        applicantWithId
+      );
     }
   },
   getters: {

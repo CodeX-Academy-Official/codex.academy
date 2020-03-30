@@ -3,8 +3,8 @@
     <h3>{{ number }}. Apply for Financial Aid</h3>
 
     <p>
-      You can apply for financial aid through our partner, Climb Credit. 
-      Please click the button below to apply.
+      You can apply for financial aid through our partner, Climb Credit. Please
+      click the button below to apply.
     </p>
     <p>
       <button
@@ -19,17 +19,29 @@
       <template v-slot:modal-title>Continuing Application</template>
       <div class="d-block">
         <p>
-          <img src="img/Climb-Credit-Logo-small.png" class="float-right" width="200px" />
-          We are partnering with Climb Credit to provide you with world-class financing. We will send your information to Climb Credit to ease the application process.
+          <img
+            src="img/Climb-Credit-Logo-small.png"
+            class="float-right"
+            width="200px"
+          />
+          We are partnering with Climb Credit to provide you with world-class
+          financing. We will send your information to Climb Credit to ease the
+          application process.
         </p>
         <p>
-          <strong>Important:</strong> When given the option to choose a CodeX Academy program, you should choose:
+          <strong>Important:</strong> When given the option to choose a CodeX
+          Academy program, you should choose:
         </p>
         <div class="text-center mb-5">
-          <h3 class="plan-id">{{plan.climbName}}</h3>
+          <h3 class="plan-id">{{ plan.climbName }}</h3>
         </div>
       </div>
-      <b-button class="btn btn-primary" block @click="goToClimbCredit" :disabled="navigating">
+      <b-button
+        class="btn btn-primary"
+        block
+        @click="goToClimbCredit"
+        :disabled="navigating"
+      >
         <strong>Go to Climb Credit</strong>
       </b-button>
     </b-modal>
@@ -48,6 +60,7 @@ function getFormData(object) {
 
 async function generateUrl(baseUrl, amount, applicant) {
   var payload = {
+    id: applicant.learnerId,
     schoolId: "CO0397775611321", //required
     firstName: applicant.firstName, //optional
     lastName: applicant.lastName, //optional
