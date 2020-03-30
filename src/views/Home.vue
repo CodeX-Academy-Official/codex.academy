@@ -6,12 +6,15 @@
         <div class="col-1 d-none d-lg-block"></div>
         <div class="col stat shadow">
           <h1>76%</h1>
-          <p>of people think mentors are important, but only 37% have a mentor.</p>
+          <p>
+            of people think mentors are important, but only 37% have a mentor.
+          </p>
           <p>
             <a
               href="https://www.forbes.com/sites/christinecomaford/2019/07/03/new-study-76-of-people-think-mentors-are-important-but-only-37-have-one/#4faa11cc4329"
               target="_blank"
-            >Learn More</a>
+              >Learn More</a
+            >
           </p>
         </div>
         <div class="col stat shadow">
@@ -24,7 +27,8 @@
             <a
               href="https://www.cnbc.com/2019/07/16/nine-in-10-workers-who-have-a-mentor-say-they-are-happy-in-their-jobs.html"
               target="_blank"
-            >Learn More</a>
+              >Learn More</a
+            >
           </p>
         </div>
         <div class="col stat shadow">
@@ -34,23 +38,28 @@
             <a
               href="https://universe.byu.edu/2017/02/22/interns-more-likely-to-be-hired-as-full-time-employees/"
               target="_blank"
-            >Learn More</a>
+              >Learn More</a
+            >
           </p>
         </div>
         <div class="col-1 d-none d-lg-block"></div>
       </div>
 
-      <h1 class="section-title mt-4">Success is the ONLY option</h1>
-      <h4 class="section-subtitle text-muted mb-5">CodeX Academy's Six Pillars of Learning</h4>
+      <h1 class="section-title mt-5">Success is the ONLY option</h1>
+      <h4 class="section-subtitle text-muted mb-5">
+        CodeX Academy's Six Pillars of Learning
+      </h4>
       <Pillars :pillars="getMethods" />
 
-      <div class="text-center mb-5"></div>
-      <h1 class="heading">CodeX Academy Has Flexible Programs</h1>
-      <PlanCompareTable />
+      <div class="text-center mb-5">
+        <h1 class="heading">CodeX Academy Has Flexible Programs</h1>
+        <PlanCompareTable />
+      </div>
 
-      <div class="text-center mb-5"></div>
-      <h1 class="heading">CodeX Academy Is a Great Experience</h1>
-      <TestimonialsCarousel />
+      <div class="text-center mb-5">
+        <h1 class="heading">CodeX Academy Is a Great Experience</h1>
+        <TestimonialsCarousel />
+      </div>
     </div>
   </div>
 </template>

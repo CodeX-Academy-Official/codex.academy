@@ -23,10 +23,13 @@
           <p>
             <router-link to="/contact">Contact</router-link>
           </p>
+          <p>
+            <router-link to="/financial-aid">Financial Aid</router-link>
+          </p>
         </div>
 
         <div class="col-6 col-md-2">
-          <h4>Plans</h4>
+          <h4>Programs</h4>
           <p>
             <router-link to="/plans">Compare</router-link>
           </p>
@@ -59,6 +62,9 @@
           <p>
             <router-link to="/findplan">Help Me Decide</router-link>
           </p>
+          <p>
+            <router-link to="/contact">Contact Us</router-link>
+          </p>
         </div>
 
         <div class="col col-md-2">
@@ -87,12 +93,18 @@
           </a>
         </div>
         <div class="col-1">
-          <a href="https://www.instagram.com/codexacademyonline/" target="_blank">
+          <a
+            href="https://www.instagram.com/codexacademyonline/"
+            target="_blank"
+          >
             <font-awesome-icon :icon="faInstagram" class="fa-2x" />
           </a>
         </div>
         <div class="col-1">
-          <a href="https://www.youtube.com/channel/UCUKP1GrIaI-dcuV1IlK7x8Q" target="_blank">
+          <a
+            href="https://www.youtube.com/channel/UCUKP1GrIaI-dcuV1IlK7x8Q"
+            target="_blank"
+          >
             <font-awesome-icon :icon="faYoutubeSquare" class="fa-2x" />
           </a>
         </div>

@@ -3,12 +3,16 @@ import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 import VueYouTube from "vue-youtube";
 import VueGtag from "vue-gtag";
 import Hotjar from "vue-hotjar";
 import Vuelidate from "vuelidate";
+import bootstrapFontAwesome from "./bootstrapFontAwesome";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
+Vue.component("font-awesome-icon", FontAwesomeIcon);
+bootstrapFontAwesome();
 
 Vue.use(Vuelidate);
 
@@ -28,8 +32,6 @@ Vue.use(
 Vue.use(VueYouTube);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
-
-Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 Vue.config.productionTip = false;
 
