@@ -24,7 +24,7 @@
       <p>Learning to code takes daily commitment. CodeX Academy gives you the tools and support to stay engaged.</p>
       <ul>
         <li>Meet with your mentor to go over battle plan, compare notes and clear up any blockers you have.</li>
-        <li>Study course material independely</li>
+        <li>Study course material independently</li>
         <li>Connect with your fellow learners in the community chat</li>
         <li>Master the "just-in-time" skills needed to reach the next micro-certification</li>
       </ul>
@@ -53,7 +53,7 @@
       extra="How does CodeX Academy help me land my first job as a software developer?"
     >
       <p>CodeX Academy gives you access to resume-building internship, not as an errand runner but as an actual software developer.</p>
-      <p>Depending on your certification level, you will be given the opportunty to apply to a number of internships. After spending 3 to 6 months using your newfound skills in a professional internship, you'll have the experience and clout needed to win the coveted "first job!"</p>
+      <p>Depending on your certification level, you will be given the opportunity to apply to a number of internships. After spending 3 to 6 months using your newfound skills in a professional internship, you'll have the experience and clout needed to win the coveted "first job!"</p>
     </TimelineItem>
 
     <TimelineItem

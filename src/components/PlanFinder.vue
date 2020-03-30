@@ -4,7 +4,7 @@
       <h3 class="mb-3">Just a few questions...</h3>
       <div class="form-group">
         <label for="exampleFormControlInput1">
-          What level software developer to you want to be when you finish
+          What level software developer do you want to be when you finish
           studying?
         </label>
         <select
@@ -37,7 +37,7 @@
       <div v-if="mentoring == 'yes'">
         <div class="form-group">
           <label for="exampleFormControlSelect1"
-            >In how many months do hope to graduate?</label
+            >In how many months do you hope to graduate in?</label
           >
           <select
             class="form-control"
