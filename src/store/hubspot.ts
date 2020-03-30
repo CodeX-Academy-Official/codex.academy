@@ -36,9 +36,8 @@ export async function sendToHubspot(
     //   }
     // }
   };
-  console.log(hubspotFormat);
   const url = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
   const result = await axios.post(url, hubspotFormat);
-  console.log(result);
+
   return result;
 }

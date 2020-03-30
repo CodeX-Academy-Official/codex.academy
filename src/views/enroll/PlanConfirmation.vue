@@ -30,26 +30,9 @@ export default {
       selectedPlan: {}
     };
   },
-  // methods: {
-  //   async startEnrollment(form) {
-  //     console.log(form);
-  //     this.$store.dispatch("enroll", form);
-  //     await sendToHubspot(
-  //       "7092117",
-  //       "c4c04dcc-7c42-4552-86df-cd3d25294c79",
-  //       form
-  //     );
-
-  //     var nextRoute = this.financialAid
-  //       ? "enroll-financialaid"
-  //       : "enroll-tuition";
-  //     this.$router.push(nextRoute);
-  //   }
-  // },
   computed: { ...mapGetters(["getSelectedPlan"]) },
   components: {
     PlanSpread
-    // EnrollForm
   },
   methods: {
     confirmPlan() {
@@ -73,8 +56,4 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/variables";
-
-// .hs-button {
-//   background-color: $primary;
-// }
 </style>
