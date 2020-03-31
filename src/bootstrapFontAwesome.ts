@@ -8,7 +8,15 @@ import {
   faTasks,
   faPercent,
   faUsers,
-  faQuoteLeft
+  faQuoteLeft,
+  faPencilRuler,
+  faLaptopCode,
+  faServer,
+  faUser,
+  faChessPawn,
+  faChessBishop,
+  faChessKnight,
+  faChessQueen
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function bootstrapper() {
@@ -21,6 +29,14 @@ export default function bootstrapper() {
     faClock,
     faPeopleCarry,
     faBriefcase,
-    faQuoteLeft
+    faQuoteLeft,
+    faServer,
+    faPencilRuler,
+    faLaptopCode,
+    faUser,
+    faChessPawn,
+    faChessBishop,
+    faChessKnight,
+    faChessQueen
   );
 }

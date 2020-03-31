@@ -9,6 +9,7 @@ import { technologies } from "./technologies";
 import { programs } from "./programs";
 import { programOptions } from "./programOptions";
 import { pathways } from "./pathways";
+import { certifications } from "./certifications";
 
 const vuexLocal = new VuexPersistence({
   storage: window.localStorage
@@ -28,6 +29,7 @@ export default new Vuex.Store({
     applicant: undefined,
     technologies,
     methods,
+    certifications,
     testimonials,
     pathways
   },
@@ -71,7 +73,8 @@ export default new Vuex.Store({
       const shuffled = shuffle(arr);
       return shuffled.slice(0, 3);
     },
-    getApplicant: state => state.applicant
+    getApplicant: state => state.applicant,
+    getCertifications: state => state.certifications
   },
   modules: {},
   plugins: [vuexLocal.plugin]

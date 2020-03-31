@@ -24,29 +24,5 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.btn-primary {
-  strong {
-    color: White;
-  }
-}
-
-.section-title {
-  text-transform: uppercase;
-  text-align: center;
-}
-.section-subtitle {
-  text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 3rem;
-  margin-top: 0rem;
-}
-
-@import "@/variables";
-@import "~bootstrap";
-@import "~bootstrap-vue";
+@import "app";
 </style>
