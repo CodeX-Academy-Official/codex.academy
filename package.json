@@ -26,6 +26,7 @@
     "core-js": "^3.6.4",
     "gh-pages": "^2.2.0",
     "register-service-worker": "^1.6.2",
+    "video.js": "^7.7.5",
     "vue": "^2.6.11",
     "vue-gtag": "^1.6.2",
     "vue-hotjar": "^1.0.1",
