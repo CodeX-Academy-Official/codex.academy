@@ -1,73 +1,36 @@
 <template>
-  <form>
+  <div>
+    <h3 class="mb-3">Just a few questions...</h3>
+
     <div class="survey">
-      <h3 class="mb-3">Just a few questions...</h3>
       <div class="form-group">
-        <label for="exampleFormControlInput1">
+        <p for="exampleFormControlInput1" class="text-center mb-3">
           What level software developer do you want to be when you finish
           studying?
-        </label>
-        <select
-          class="form-control"
-          id="exampleFormControlSelect1"
-          v-model="targetLevel"
-        >
-          <option value></option>
-          <option value="3">Front-End Developer (Level 3)</option>
-          <option value="6">Full-Stack Developer (Level 6)</option>
-          <option value="9">Full-Stack Agile Engineer (Level 9)</option>
-        </select>
+        </p>
+        <CertificationSelectorGroup :certifications="getCertifications" @onSelect="setTargetLevel" />
       </div>
 
       <div class="form-group" v-if="targetLevel">
-        <label for="exampleFormControlInput1"
-          >Do you plan on learning with a mentor?</label
-        >
-        <select
-          class="form-control"
-          id="exampleFormControlSelect1"
-          v-model="mentoring"
-        >
-          <option value></option>
-          <option value="yes">Yes, I want to work with a mentor!</option>
-          <option value="no">No, I plan on going it alone.</option>
-        </select>
+        <p class="text-center mb-3">Do you plan on learning with a mentor?</p>
+        <MentoringSelectorGroup @onSelect="setMentoring" />
       </div>
 
-      <div v-if="mentoring == 'yes'">
+      <div v-if="mentoring === 'yes'">
         <div class="form-group">
-          <label for="exampleFormControlSelect1"
-            >In how many months do you hope to graduate in?</label
-          >
-          <select
-            class="form-control"
-            id="exampleFormControlSelect1"
-            v-model="studyMonths"
-          >
-            <option></option>
-            <option v-if="targetLevel == '3'" value="3">3 months</option>
-            <option value="6">6 months</option>
-            <option value="9">9 months</option>
-            <option value="12">12 months</option>
-          </select>
+          <p class="text-center">In how many months do you hope to graduate?</p>
+          <StudyDurationGroup @onSelect="setStudyMonths" />
         </div>
       </div>
     </div>
-    <div
-      v-if="studyMonths && !hasSuggestedPlans"
-      class="alert alert-danger"
-      role="alert"
-    >
+    <div v-if="studyMonths && !hasSuggestedPlans" class="alert alert-danger" role="alert">
       <h1>Hmmmmm</h1>
       <p>
         It looks like we don't have any plans that would help you meet your goal
         of Level-{{ targetLevel }} Developer in {{ studyMonths }} months.
       </p>
     </div>
-    <div
-      v-if="(mentoring == 'no' || studyMonths) && hasSuggestedPlans"
-      class="mt-5"
-    >
+    <div v-if="(mentoring == 'no' || studyMonths) && hasSuggestedPlans" class="mt-5">
       <h3>Here are some programs that would work:</h3>
       <!-- <ul>
         <li>
@@ -99,15 +62,25 @@
         </div>
       </div>
     </div>
-  </form>
+  </div>
 </template>
 
 <script>
 import PlanCardHead from "@/components/PlanCardHead";
 import Unsplash from "@/components/Unsplash";
+import CertificationSelectorGroup from "@/components/CertificationSelectorGroup";
+import MentoringSelectorGroup from "@/components/MentoringSelectorGroup";
+import StudyDurationGroup from "@/components/StudyDurationGroup";
+import { mapGetters } from "vuex";
 
 export default {
-  components: { PlanCardHead, Unsplash },
+  components: {
+    PlanCardHead,
+    Unsplash,
+    CertificationSelectorGroup,
+    MentoringSelectorGroup,
+    StudyDurationGroup
+  },
   data: () => ({
     mentoring: false,
     mentorHours: false,
@@ -116,6 +89,7 @@ export default {
     plans: []
   }),
   computed: {
+    ...mapGetters(["getCertifications"]),
     hasSuggestedPlans() {
       return this.suggestedPlans.length > 0;
     },
@@ -178,8 +152,17 @@ export default {
     }
   },
   methods: {
+    setTargetLevel(cert) {
+      this.targetLevel = cert.level;
+    },
     selectPlan(plan) {
       this.$emit("planSelected", plan);
+    },
+    setMentoring(option) {
+      this.mentoring = option;
+    },
+    setStudyMonths(months) {
+      this.studyMonths = parseInt(months);
     }
   },
 

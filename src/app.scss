@@ -1,0 +1,38 @@
+@import "@/variables";
+@import "~bootstrap";
+@import "~bootstrap-vue";
+
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.btn-primary {
+  background-color: $primary;
+  border: none;
+  color: white;
+  font-weight: bolder;
+  strong {
+    color: White;
+  }
+}
+.btn-primary:hover {
+  color: white;
+}
+.btn-primary:active {
+  color: white;
+}
+.btn-primary:focus {
+  color: white;
+}
+
+.section-title {
+  text-transform: uppercase;
+  text-align: center;
+}
+.section-subtitle {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-top: 0rem;
+}
