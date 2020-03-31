@@ -61,6 +61,11 @@
         <TestimonialsCarousel />
       </div>
     </div>
+    <div class="row">
+      <div class="mx-auto">
+        <VideoPlayer mp4="video/2020-03-45s.mp4" :width="600" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -72,6 +77,7 @@ import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import PlanCompareTable from "@/components/PlanCompareTable";
 import Pillars from "@/components/Pillars";
 import { mapGetters } from "vuex";
+import VideoPlayer from "@/components/VideoPlayer";
 
 export default {
   name: "Home",
@@ -81,7 +87,8 @@ export default {
     IntroBlock,
     TestimonialsCarousel,
     PlanCompareTable,
-    Pillars
+    Pillars,
+    VideoPlayer
   },
   mounted() {
     // From testing, without a brief timeout, it won't work.
