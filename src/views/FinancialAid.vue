@@ -28,7 +28,7 @@
     </div>
 
     <div class="text-center">
-      <SelectPlanButton text="Enroll Now" buttonClass="btn-lg" />
+      <SelectPlanButton text="Apply Now" buttonClass="btn-lg" />
     </div>
 
     <div class="mt-5">

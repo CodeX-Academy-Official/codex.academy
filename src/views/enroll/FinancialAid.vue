@@ -6,14 +6,12 @@
       <li class="breadcrumb-item">
         <router-link to="/">Home</router-link>
       </li>
-      <li class="breadcrumb-item active">Enrollment</li>
+      <li class="breadcrumb-item active">Application</li>
       <li class="breadcrumb-item active">Financial Aid</li>
     </ol>
 
     <div class="row" v-if="selectedPlan && selectedPlan.paymentTypes">
-      <div class="col">
-        Stuff
-      </div>
+      <div class="col">Stuff</div>
       <div class="col-4 d-none d-lg-block">
         <PlanCard :plan="selectedPlan" :selectable="false" />
       </div>

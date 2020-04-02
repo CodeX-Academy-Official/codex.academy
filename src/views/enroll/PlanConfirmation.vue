@@ -23,26 +23,26 @@
         <tr>
           <th>Total:</th>
           <td>{{ dollars(selectedPlan.total) }}</td>
-        </tr> -->
+        </tr>-->
         <tr v-if="selectedPlan.isBootcamp">
           <th>Program Duration:</th>
           <td>{{ selectedPlan.durationMonths }} months</td>
         </tr>
         <tr>
           <th>Start Date:</th>
-          <td><input type="date" v-model="startDate" /></td>
+          <td>
+            <input type="date" v-model="startDate" />
+          </td>
         </tr>
       </table>
     </div>
     <p class="mt-4">
       <button class="btn btn-primary" @click="confirmPlan">
-        <strong>Yes, Enroll in This Program</strong>
+        <strong>Yes, Apply to This Program</strong>
       </button>
     </p>
     <p>
-      <button class="btn btn-secondary" @click="changePlan">
-        No, Change Program
-      </button>
+      <button class="btn btn-secondary" @click="changePlan">No, Change Program</button>
     </p>
   </div>
 </template>

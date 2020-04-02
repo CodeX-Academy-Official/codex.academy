@@ -6,12 +6,10 @@
         <div class="display-4">${{ price }}</div>
         <div class="font-italic">{{ plan.duration }}</div>
       </div>
-      <p class="card-text">
-        {{ plan.description }}
-      </p>
+      <p class="card-text">{{ plan.description }}</p>
     </div>
     <div class="card-footer">
-      <SelectPlanButton :plan="plan" text="Start Enrollment" />
+      <SelectPlanButton :plan="plan" text="Start Application" />
     </div>
   </div>
 </template>

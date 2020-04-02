@@ -9,13 +9,11 @@
     </div>
     <div class="col">
       <h3>{{ title }}</h3>
-      <p>
-        {{ description }}
-      </p>
+      <p>{{ description }}</p>
       <!-- <a class="btn btn-primary" href="#">
-        Enroll Now
+        Apply Now
         <span class="glyphicon glyphicon-chevron-right"></span>
-      </a> -->
+      </a>-->
     </div>
     <div v-if="icon && iconSide === 'right'" class="col-md-2 text-center">
       <font-awesome-icon :icon="getIcon(icon)" class="fa-7x" />

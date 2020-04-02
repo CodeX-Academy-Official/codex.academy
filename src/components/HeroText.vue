@@ -12,7 +12,7 @@
         <h3 class="mb-4">Learn to code in 6 months</h3>
         <SelectPlanButton
           :plan="getBootcamp6"
-          text="Enroll Now"
+          text="Apply Now"
           buttonClass="btn btn-primary btn-lg"
         />
       </div>

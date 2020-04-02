@@ -25,11 +25,7 @@ export default {
     plan: Object,
     selectable: Boolean
   },
-  methods: {
-    selectPlan(plan) {
-      this.$router.push({ name: "Enroll", query: { planId: plan.id } });
-    }
-  }
+  methods: {}
 };
 </script>
 
