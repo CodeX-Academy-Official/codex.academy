@@ -6,11 +6,11 @@
         name="With Mentor"
         icon="users"
         @onSelect="onSelect('yes')"
-        :active="isActive('yes')"
+        :active="!selected || isActive('yes')"
       >
         <p>
-          I understand how challenging it is to learn to code. I want to learn to
-          code with a mentor so I can make it to the finish line!
+          I understand how challenging it is to learn to code. I want to learn
+          to code with a mentor so I can make it to the finish line!
         </p>
       </CardSelector>
     </div>
@@ -20,7 +20,7 @@
         name="Alone"
         icon="user"
         @onSelect="onSelect('no')"
-        :active="isActive('no')"
+        :active="!selected || isActive('no')"
       >
         <p>
           I prefer to learn on my own. I understand learing to code is hard, but
