@@ -1,11 +1,7 @@
 <template>
   <div>
     <h3>Applicant Information</h3>
-    <EnrollForm
-      :plan="getSelectedPlan"
-      @enroll="next"
-      :initialApplicant="getApplicant"
-    />
+    <EnrollForm :plan="getSelectedPlan" @enroll="next" :initialApplicant="getApplicant" />
   </div>
 </template>
 
@@ -21,7 +17,8 @@ export default {
   },
   methods: {
     async next(applicant) {
-      await this.$store.dispatch("enroll", applicant);
+      const applicantWithStartDate = { ...applicant, startDate: getStartDate };
+      await this.$store.dispatch("enroll", applicantWithStartDate);
       this.$router.push("appfee");
     }
   },
