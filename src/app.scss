@@ -1,7 +1,14 @@
 @import "@/variables";
+
+$theme-colors: (
+  light: $lightGray
+);
 @import "~bootstrap";
 @import "~bootstrap-vue";
 
+body {
+  background-color: $superMuted;
+}
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -35,4 +42,11 @@
   text-align: center;
   margin-bottom: 3rem;
   margin-top: 0rem;
+}
+
+.breadcrumb {
+  background-color: $lightGray;
+  .breadcrumb-item {
+    // color: white;
+  }
 }

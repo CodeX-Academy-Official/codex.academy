@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import { scrollToHash } from "./scrollToHash";
 
 import Plans from "../views/Plans.vue";
 import Selfpaced from "../views/Selfpaced.vue";
@@ -25,6 +26,7 @@ import EnrollmentComplete from "../views/enroll/EnrollmentComplete.vue";
 import PaymentOptions from "../views/enroll/PaymentOptions.vue";
 import FinancialAid from "../views/enroll/FinancialAid.vue";
 import FinancialAidMarketing from "../views/FinancialAid.vue";
+import Curriculum from "../views/Curriculum.vue";
 
 Vue.use(VueRouter);
 
@@ -110,6 +112,11 @@ const routes = [
     component: Blog
   },
   {
+    path: "/curriculum",
+    name: "curriculum",
+    component: Curriculum
+  },
+  {
     path: "/findplan",
     component: FindPlan
   },
@@ -156,15 +163,15 @@ const router = new VueRouter({
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
-      const selector: any = document.querySelector(to.hash);
-      return window.scrollTo({
-        top: selector.offsetTop - 50,
-        behavior: "smooth"
-      });
+      scrollToHash(to.hash);
     } else {
       return { x: 0, y: 0 };
     }
   }
 });
+
+if (location.hash) {
+  scrollToHash(location.hash);
+}
 
 export default router;
