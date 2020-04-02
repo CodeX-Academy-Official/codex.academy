@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <form @submit.prevent="confirmPlan">
     <h3>Confirm Program</h3>
 
     <div class="table-responsive">
@@ -31,20 +31,25 @@
         <tr>
           <th>Start Date:</th>
           <td>
-            <input type="date" v-model="startDate" />
+            <input type="date" v-model="startDate" :class="{error:!isValid(startDate)}" />
+            <span
+              class="alert alert-danger ml-3"
+              role="alert"
+              v-if="!isValid(startDate)"
+            >Start date must be in the future.</span>
           </td>
         </tr>
       </table>
     </div>
     <p class="mt-4">
-      <button class="btn btn-primary" @click="confirmPlan">
+      <button class="btn btn-primary">
         <strong>Yes, Apply to This Program</strong>
       </button>
     </p>
     <p>
-      <button class="btn btn-secondary" @click="changePlan">No, Change Program</button>
+      <button class="btn btn-secondary" @click.prevent="changePlan">No, Change Program</button>
     </p>
-  </div>
+  </form>
 </template>
 
 <script>
@@ -53,9 +58,22 @@ import PlanSpread from "@/components/PlanSpread";
 import EnrollForm from "@/components/EnrollForm";
 import axios from "axios";
 import { mapGetters } from "vuex";
+import { required, minValue, maxValue } from "vuelidate/lib/validators";
 
 var defaultDate = new Date();
 defaultDate.setDate(defaultDate.getDate() + 7);
+
+function getFutureDate() {
+  var d = new Date();
+  d.setDate(d.getDate() + 365);
+  return d;
+}
+
+function getYesterday() {
+  var d = new Date();
+  d.setDate(d.getDate() - 1);
+  return d;
+}
 
 export default {
   data() {
@@ -71,13 +89,18 @@ export default {
     PlanSpread
   },
   methods: {
+    isValid(startDate) {
+      return new Date(startDate) > getYesterday();
+    },
     dollars(num) {
       if (!num) return;
       return "$" + num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     },
     confirmPlan() {
-      this.$store.dispatch("setStartDate", this.startDate);
-      this.$router.push("/enroll/applicant");
+      if (this.isValid(this.startDate)) {
+        this.$store.dispatch("setStartDate", this.startDate);
+        this.$router.push("/enroll/applicant");
+      }
     },
     changePlan() {
       this.$router.push("/findplan");
@@ -101,4 +124,13 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/variables";
+.error {
+  border-color: red;
+  background: #fdd;
+}
+
+.error:focus {
+  outline-color: #f99;
+}
+</style>
 </style>
