@@ -1,9 +1,7 @@
 <template>
   <div class="container">
     <!-- Page Heading/Breadcrumbs -->
-    <h1 class="mt-4 mb-3">
-      Our Team
-    </h1>
+    <h1 class="mt-4 mb-3">Our Team</h1>
 
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
@@ -18,9 +16,7 @@
           <img class="card-img-top" src="img/headshots/hs_phenry.jpeg" alt />
           <div class="card-body">
             <h4 class="card-title">Phil Henry</h4>
-            <h6 class="card-subtitle mb-2 text-muted">
-              Co-founder &amp; Director of Business Dev
-            </h6>
+            <h6 class="card-subtitle mb-2 text-muted">Co-founder &amp; Director of Business Dev</h6>
             <p class="card-text">
               Phillip Henry is the co-founder of CodeX Academy. Phillip is a
               serial entrepreneur with over 15 years of experience. Before
@@ -40,16 +36,10 @@
       </div>
       <div class="col-lg-4 mb-4">
         <div class="card h-100 text-center">
-          <img
-            class="card-img-top"
-            src="img/headshots/hs_bsommardahl.jpg"
-            alt
-          />
+          <img class="card-img-top" src="img/headshots/hs_bsommardahl.jpg" alt />
           <div class="card-body">
             <h4 class="card-title">Byron Sommardahl</h4>
-            <h6 class="card-subtitle mb-2 text-muted">
-              Co-founder &amp; Dean of Students
-            </h6>
+            <h6 class="card-subtitle mb-2 text-muted">Co-founder &amp; Dean of Students</h6>
             <p class="card-text">
               Byron has been developing software since he was 9 years old,
               getting an early start with his Commodore 64 computer. Since then,
@@ -75,9 +65,7 @@
           <img class="card-img-top" src="img/headshots/hs_cmorsing.jpg" alt />
           <div class="card-body">
             <h4 class="card-title">Christian Morsing</h4>
-            <h6 class="card-subtitle mb-2 text-muted">
-              Co-founder &amp; Director of Admission
-            </h6>
+            <h6 class="card-subtitle mb-2 text-muted">Co-founder &amp; Director of Admission</h6>
             <p class="card-text">
               Christian has a background in the wireless testing industry,
               building embedded systems for manufacturing.
@@ -88,7 +76,7 @@
               with Phil and then co-founded CodeX Academy in 2019.
             </p>
             <p>
-              As Director of Admissions, Christian handles student enrollment,
+              As Director of Admissions, Christian handles student applications and enrollment,
               initial onboarding, financial aid and student communication.
             </p>
           </div>

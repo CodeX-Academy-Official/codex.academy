@@ -17,7 +17,7 @@ export async function sendToHubspot(
     fields,
     context: {
       pageUri: "codex.academy/enroll",
-      pageName: "Enrollment Page"
+      pageName: "Application"
     }
     // legalConsentOptions: {
     //   consent: {

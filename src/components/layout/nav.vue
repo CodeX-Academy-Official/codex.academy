@@ -166,7 +166,7 @@
         </li>-->
 
         <li class="nav-item">
-          <SelectPlanButton text="Enroll" buttonClass="btn btn-primary btn-block nav-link" />
+          <SelectPlanButton text="Apply" buttonClass="btn btn-primary btn-block nav-link" />
         </li>
       </ul>
     </div>

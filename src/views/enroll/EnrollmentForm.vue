@@ -17,7 +17,10 @@ export default {
   },
   methods: {
     async next(applicant) {
-      const applicantWithStartDate = { ...applicant, startDate: getStartDate };
+      const applicantWithStartDate = {
+        ...applicant,
+        startDate: this.getStartDate
+      };
       await this.$store.dispatch("enroll", applicantWithStartDate);
       this.$router.push("appfee");
     }
