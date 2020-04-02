@@ -1,21 +1,33 @@
 <template>
   <div>
     <div class="row justify-content-md-center">
-      <div class="col-12 col-md-6 col-lg-4 mb-5" v-for="p in primaryPillars" :key="p.id">
-        <PillarPrimary :title="p.title" :subtitle="p.subtitle" :icon="icon(p.icon)">
-          <p>{{p.description}}</p>
+      <div
+        class="col-12 col-md-6 col-lg-4 mb-5"
+        v-for="p in primaryPillars"
+        :key="p.id"
+      >
+        <PillarPrimary
+          :title="p.title"
+          :subtitle="p.subtitle"
+          :icon="icon(p.icon)"
+        >
+          <p>{{ p.description }}</p>
         </PillarPrimary>
       </div>
     </div>
-    <div class="row">
-      <div class="col-12 col-md-6 col-lg-3" v-for="p in secondaryPillars" :key="p.id">
+    <div class="row secondary-pillars">
+      <div
+        class="col-12 col-md-6 col-lg-3"
+        v-for="p in secondaryPillars"
+        :key="p.id"
+      >
         <PillarSecondary
           :title="p.title"
           :subtitle="p.subtitle"
           :icon="icon(p.icon)"
           :accentColor="p.accentColor"
         >
-          <p>{{p.description}}</p>
+          <p>{{ p.description }}</p>
         </PillarSecondary>
       </div>
     </div>
@@ -59,5 +71,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style lang="scss"></style>

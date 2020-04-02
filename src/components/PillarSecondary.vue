@@ -1,12 +1,12 @@
 <template>
-  <div class="card secondary-primary" :class="accentColor">
+  <div class="card bg-transparent secondary-primary" :class="accentColor">
     <div class="icon">
       <font-awesome-icon :icon="icon" />
     </div>
     <div class="pillar-header">
-      <div class="pillar-title">{{title}}</div>
+      <div class="pillar-title">{{ title }}</div>
     </div>
-    <div class="pillar-subtitle">{{subtitle}}</div>
+    <div class="pillar-subtitle">{{ subtitle }}</div>
     <div class="pillar-body">
       <slot />
     </div>

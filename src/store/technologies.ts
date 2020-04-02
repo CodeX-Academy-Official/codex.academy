@@ -25,7 +25,8 @@ export const technologies = [
     name: "CSS3",
     logo: "css.png",
     info: "Control the way elements are displayed in the web browser",
-    url: "https://en.wikipedia.org/wiki/Cascading_Style_Sheets"
+    url: "https://en.wikipedia.org/wiki/Cascading_Style_Sheets",
+    level: 1
   },
   {
     order: 10,
@@ -39,7 +40,8 @@ export const technologies = [
     name: "ExpressJS",
     logo: "express.jpeg",
     info: "Lightweight but powerful NodeJS-based backend server",
-    url: "https://expressjs.com/"
+    url: "https://expressjs.com/",
+    level: 2
   },
   {
     order: 10,
@@ -53,28 +55,32 @@ export const technologies = [
     name: "Heroku",
     logo: "heroku.png",
     info: "Cloud-based web hosting platform",
-    url: "https://www.heroku.com/"
+    url: "https://www.heroku.com/",
+    level: 2
   },
   {
     order: 0,
     name: "HTML5",
     logo: "html.png",
     info: "Structure web pages and components",
-    url: "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5"
+    url: "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5",
+    level: 1
   },
   {
     order: 10,
     name: "Jest",
     logo: "jest.png",
     info: "Test javascript code and web components",
-    url: "https://jestjs.io/"
+    url: "https://jestjs.io/",
+    level: 3
   },
   {
     order: 1,
     name: "JavaScript",
     logo: "js.png",
     info: "",
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    level: 1
   },
   {
     order: 10,
@@ -88,7 +94,8 @@ export const technologies = [
     name: "NodeJS",
     logo: "node.webp",
     info: "",
-    url: "https://nodejs.org/"
+    url: "https://nodejs.org/",
+    level: 4
   },
   {
     order: 2,
@@ -130,7 +137,8 @@ export const technologies = [
     name: "Visual Studio Code",
     logo: "vscode.png",
     info: "",
-    url: "https://code.visualstudio.com/"
+    url: "https://code.visualstudio.com/",
+    level: 1
   },
   {
     order: 10,
@@ -144,14 +152,16 @@ export const technologies = [
     name: "Chrome",
     logo: "chrome.png",
     info: "",
-    url: "https://www.google.com/chrome/"
+    url: "https://www.google.com/chrome/",
+    level: 1
   },
   {
     order: 10,
     name: "Github",
     logo: "github.png",
     info: "",
-    url: "https://github.com"
+    url: "https://github.com",
+    level: 1
   },
   {
     order: 10,
@@ -165,6 +175,7 @@ export const technologies = [
     name: "Terminal",
     logo: "terminal.png",
     info: "",
-    url: "http://linuxcommand.org/"
+    url: "http://linuxcommand.org/",
+    level: 1
   }
 ];
