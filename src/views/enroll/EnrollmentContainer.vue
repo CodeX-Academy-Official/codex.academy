@@ -29,11 +29,9 @@
               >
             </li>
             <li :class="{ active: stage === 3 }">
-              <router-link to="/enroll/payment"
-                >Arrange Payment Information</router-link
-              >
+              <router-link to="/enroll/appfee">Pay Application Fee</router-link>
             </li>
-            <li :class="{ active: stage === 4 }">Start Orientation</li>
+            <li :class="{ active: stage === 4 }">Meet with Admissions</li>
           </ol>
         </div>
       </div>

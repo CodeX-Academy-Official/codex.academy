@@ -31,9 +31,7 @@ export default {
   },
   computed: {
     price() {
-      return numberWithCommas(
-        this.plan.price * (this.plan.durationMonths || 1)
-      );
+      return numberWithCommas(this.plan.total || this.plan.price);
     }
   }
 };

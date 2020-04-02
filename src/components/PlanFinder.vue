@@ -8,7 +8,10 @@
           What level software developer do you want to be when you finish
           studying?
         </p>
-        <CertificationSelectorGroup :certifications="getCertifications" @onSelect="setTargetLevel" />
+        <CertificationSelectorGroup
+          :certifications="getCertifications"
+          @onSelect="setTargetLevel"
+        />
       </div>
 
       <div class="form-group" v-if="targetLevel">
@@ -23,14 +26,21 @@
         </div>
       </div>
     </div>
-    <div v-if="studyMonths && !hasSuggestedPlans" class="alert alert-danger" role="alert">
+    <div
+      v-if="studyMonths && !hasSuggestedPlans"
+      class="alert alert-danger"
+      role="alert"
+    >
       <h1>Hmmmmm</h1>
       <p>
         It looks like we don't have any plans that would help you meet your goal
         of Level-{{ targetLevel }} Developer in {{ studyMonths }} months.
       </p>
     </div>
-    <div v-if="(mentoring == 'no' || studyMonths) && hasSuggestedPlans" class="mt-5">
+    <div
+      v-if="(mentoring == 'no' || studyMonths) && hasSuggestedPlans"
+      class="mt-5"
+    >
       <h3>Here are some programs that would work:</h3>
       <!-- <ul>
         <li>
@@ -124,9 +134,7 @@ export default {
             x.levelPerMonth * x.durationMonths >= targetLevel)
       );
 
-      return plans
-        .map(p => ({ ...p, total: p.price * p.durationMonths || this.months }))
-        .sort((a, b) => a.total - b.total);
+      return plans.map(p => ({ ...p })).sort((a, b) => a.total - b.total);
     },
     suggestedLevelPerMonth() {
       const targetLevel = parseInt(this.targetLevel);
