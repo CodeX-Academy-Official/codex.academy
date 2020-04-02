@@ -27,6 +27,7 @@ import PaymentOptions from "../views/enroll/PaymentOptions.vue";
 import FinancialAid from "../views/enroll/FinancialAid.vue";
 import FinancialAidMarketing from "../views/FinancialAid.vue";
 import Curriculum from "../views/Curriculum.vue";
+import ApplicationFee from "../views/enroll/ApplicationFee.vue";
 
 Vue.use(VueRouter);
 
@@ -135,6 +136,10 @@ const routes = [
       {
         path: "payment",
         component: PaymentOptions
+      },
+      {
+        path: "appfee",
+        component: ApplicationFee
       },
       {
         path: "climb",
