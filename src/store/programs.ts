@@ -21,6 +21,7 @@ const selfpaceds = [
     minimumWeeklyStudyHours: 10,
     levelPerMonth: 1 / 4,
     price: 400,
+    total: 400,
     duration: "per month",
     details: [
       "10 hour/week commitment",
@@ -47,6 +48,7 @@ const selfpaceds = [
     description: "Learning to code while holding your day-job.",
     minimumWeeklyStudyHours: 20,
     levelPerMonth: 1 / 2,
+    total: 800,
     price: 800,
     duration: "per month",
     details: [
@@ -74,6 +76,7 @@ const selfpaceds = [
     description: "Your full-time job is to learn to code.",
     minimumWeeklyStudyHours: 40,
     levelPerMonth: 1,
+    total: 1500,
     price: 1500,
     duration: "per month",
     details: [
@@ -102,6 +105,7 @@ const selfpaceds = [
     description: "Supercharged learning with extra mentor hours.",
     levelPerMonth: 1.2,
     minimumWeeklyStudyHours: 40,
+    total: 2800,
     price: 2800,
     duration: "per month",
     details: [
@@ -141,6 +145,7 @@ const bootcamps = [
     id: "bootcamp3",
     title: "3-Month Bootcamp",
     climbName: "Level 3 Developer",
+    startMonday: 1,
     durationMonths: 3,
     minimumWeeklyStudyHours: 40,
     levelPerMonth: 1,
@@ -170,9 +175,11 @@ const bootcamps = [
     id: "bootcamp6",
     title: "6-Month Bootcamp",
     climbName: "Level 6 Developer",
+    startMonday: 2,
     durationMonths: 6,
     minimumWeeklyStudyHours: 40,
     levelPerMonth: 1,
+    total: 9000,
     price: 1500,
     duration: "over 6 months",
     description:
@@ -199,9 +206,11 @@ const bootcamps = [
     id: "bootcamp9",
     title: "9-Month Bootcamp",
     climbName: "Level 9 Developer",
+    startMonday: 3,
     durationMonths: 9,
     minimumWeeklyStudyHours: 40,
     levelPerMonth: 1,
+    total: 13500,
     price: 1500,
     duration: "over 9 months",
     description:

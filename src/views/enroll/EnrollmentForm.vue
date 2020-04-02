@@ -14,7 +14,7 @@ import EnrollForm from "@/components/EnrollForm";
 import { mapGetters } from "vuex";
 export default {
   computed: {
-    ...mapGetters(["getSelectedPlan", "getApplicant"])
+    ...mapGetters(["getSelectedPlan", "getApplicant", "getStartDate"])
   },
   components: {
     EnrollForm
@@ -22,12 +22,12 @@ export default {
   methods: {
     async next(applicant) {
       await this.$store.dispatch("enroll", applicant);
-      this.$router.push("payment");
+      this.$router.push("appfee");
     }
   },
   mounted() {
-    if (!this.getSelectedPlan) {
-      this.$emit("changeStage", 1);
+    if (!this.getSelectedPlan || !this.getStartDate) {
+      this.$router.push("/enroll");
     }
   },
   created() {

@@ -19,10 +19,12 @@ Vue.use(Vuex);
 
 const SELECT_PLAN = "SELECT_PLAN";
 const ENROLL = "ENROLL";
+const SET_START_DATE = "SET_START_DATE";
 
 export default new Vuex.Store({
   state: {
     testMode: false,
+    startDate: false,
     plans: programs,
     planOptions: programOptions,
     selectedPlan: undefined,
@@ -39,9 +41,15 @@ export default new Vuex.Store({
     },
     [ENROLL](state: any, applicant) {
       state.applicant = applicant;
+    },
+    [SET_START_DATE](state: any, startDate) {
+      state.startDate = startDate;
     }
   },
   actions: {
+    setStartDate(context, startDate) {
+      context.commit(SET_START_DATE, startDate);
+    },
     selectPlan(context, planId) {
       context.commit(SELECT_PLAN, planId);
     },
@@ -74,6 +82,7 @@ export default new Vuex.Store({
       return shuffled.slice(0, 3);
     },
     getApplicant: state => state.applicant,
+    getStartDate: state => state.startDate,
     getCertifications: state => state.certifications
   },
   modules: {},
