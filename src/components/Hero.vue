@@ -66,17 +66,16 @@ export default {
   h3 {
     display: block;
     text-align: center;
-    line-height: 3.5rem;
     letter-spacing: 0.3rem;
     font-weight: 900;
     color: white;
     padding: 0px;
     text-transform: uppercase;
 
-    max-width: 16em;
+    max-width: 70vh;
     margin: 0;
     font-size: 7vh;
-    // margin-bottom: 0.5vh;
+    margin-bottom: 1.5vh;
   }
   h2 {
     font-size: 3vh;

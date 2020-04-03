@@ -1,37 +1,24 @@
 <template>
-  <div class="container">
-    <!-- Page Heading/Breadcrumbs -->
-    <h1 class="mt-4 mb-3">Self-Paced</h1>
+  <div>
+    <Hero unsplashId="IgUR1iX0mqM" height="40vh">
+      <h1>Self-Paced Programs</h1>
+      <h2>Learn at your own pace</h2>
+    </Hero>
+    <div class="container">
+      <div class="row mt-5">
+        <h3>Learning That Fits Your Needs</h3>
 
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item">
-        <router-link to="/">Home</router-link>
-      </li>
-      <li class="breadcrumb-item">
-        <router-link to="/plans">Programs</router-link>
-      </li>
-      <li class="breadcrumb-item active">Self-Paced</li>
-    </ol>
+        <p class>
+          At CodeX Academy, we believe the WORLD will be a better place if YOU are
+          coding! Because of that, we strive to provide the most flexible options
+          possible so that you have the best chance to learn.
+        </p>
+        <p>Our Self-Paced Programs provide you the chance to learn coding and make it stick ON YOUR TERMS. When you can go faster, you have the option to go faster. When you need to take more time, you have the freedom to stay with a concept longer. Your mentor will be with you at each step!</p>
+      </div>
 
-    <div class="row d-none d-lg-block mx-auto">
-      <Unsplash
-        imageId="oqStl2L5oxI"
-        description="Coffee-driven development"
-        width="1100"
-        height="200"
-      />
-    </div>
-
-    <div class="row mt-5">
-      <h4 class="text-center">
-        At CodeX Academy, we believe the WORLD will be a better place if YOU are
-        coding! Because of that, we strive to provide the most flexible options
-        possible so that you have the best chance to learn.
-      </h4>
-    </div>
-
-    <div class="row mt-5">
-      <SelfPacedTable />
+      <div class="row mt-5">
+        <SelfPacedTable />
+      </div>
     </div>
   </div>
 </template>
@@ -39,17 +26,16 @@
 <script>
 import SelfPacedTable from "@/components/SelfPacedTable";
 import Unsplash from "@/components/Unsplash";
+import Hero from "@/components/Hero";
 
 export default {
   components: {
     SelfPacedTable,
-    Unsplash
+    Unsplash,
+    Hero
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.header-image img {
-  // width: 100%;
-}
 </style>

@@ -1,37 +1,26 @@
 <template>
-  <div class="container">
-    <!-- Page Heading/Breadcrumbs -->
-    <h1 class="mt-4 mb-3">Bootcamps</h1>
+  <div>
+    <Hero unsplashId="y_6rqStQBYQ" height="40vh">
+      <h1>Coding Bootcamps</h1>
+      <h3>Full-time, Full-Immersion</h3>
+    </Hero>
+    <div class="container">
+      <div class="row mt-5">
+        <h3>Intense Intent and Direction</h3>
+        <p class>
+          Looking for an intense, immersive learning experience? CodeX Academy has
+          a few bootcamp options to choose from, depending on how far you want to
+          go.
+        </p>
+        <p>
+          Like our
+          <router-link to="/selfpaced">self-paced programs</router-link>, our bootcamps give you the opportunity to slow down and speed up as necessary. But, in a bootcamp, we have a specific goal in mind and we will push you to reach it!
+        </p>
+      </div>
 
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item">
-        <router-link to="/">Home</router-link>
-      </li>
-      <li class="breadcrumb-item">
-        <router-link to="/plans">Programs</router-link>
-      </li>
-      <li class="breadcrumb-item active">Bootcamps</li>
-    </ol>
-
-    <div class="row d-none d-lg-block mx-auto">
-      <Unsplash
-        imageId="oqStl2L5oxI"
-        description="Coffee-driven development"
-        width="1100"
-        height="200"
-      />
-    </div>
-
-    <div class="row mt-5">
-      <h4 class="text-center">
-        Looking for an intense, immersive learning experience? CodeX Academy has
-        a few bootcamp options to choose from, depending on how far you want to
-        go.
-      </h4>
-    </div>
-
-    <div class="row mt-5">
-      <BootcampsTable />
+      <div class="row mt-5">
+        <BootcampsTable />
+      </div>
     </div>
   </div>
 </template>
@@ -39,11 +28,13 @@
 <script>
 import BootcampsTable from "@/components/BootcampsTable";
 import Unsplash from "@/components/Unsplash";
+import Hero from "@/components/Hero";
 
 export default {
   components: {
     BootcampsTable,
-    Unsplash
+    Unsplash,
+    Hero
   }
 };
 </script>
