@@ -124,7 +124,7 @@ export default {
   computed: { ...mapGetters(["getMethods", "getApplicant"]) },
   methods: {
     async startApplication(applicant) {
-      await this.$store.dispatch("enroll", applicant);
+      await this.$store.dispatch("startApplication", applicant);
       this.hasApplied = true;
     },
   },
