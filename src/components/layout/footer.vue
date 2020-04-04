@@ -1,6 +1,6 @@
 <template>
   <!-- Footer -->
-  <footer class="py-5 bg-dark mt-5 text-white">
+  <footer class="py-5 bg-dark pt-5 text-white">
     <div class="text-center mb-5">
       <img src="img/logo/codex_hat_white_small.png" width="70" />
     </div>
@@ -93,18 +93,12 @@
           </a>
         </div>
         <div class="col-1">
-          <a
-            href="https://www.instagram.com/codexacademyonline/"
-            target="_blank"
-          >
+          <a href="https://www.instagram.com/codexacademyonline/" target="_blank">
             <font-awesome-icon :icon="faInstagram" class="fa-2x" />
           </a>
         </div>
         <div class="col-1">
-          <a
-            href="https://www.youtube.com/channel/UCUKP1GrIaI-dcuV1IlK7x8Q"
-            target="_blank"
-          >
+          <a href="https://www.youtube.com/channel/UCUKP1GrIaI-dcuV1IlK7x8Q" target="_blank">
             <font-awesome-icon :icon="faYoutubeSquare" class="fa-2x" />
           </a>
         </div>

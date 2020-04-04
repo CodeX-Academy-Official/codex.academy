@@ -1,5 +1,5 @@
 <template>
-  <section class="hero" :style="{'background-image': `url(${backgroundUrl})`, height}">
+  <section class="hero" :style="{'background-image': `url(${backgroundUrl})`, 'height': height}">
     <slot />
     <!-- <h1 class="hero-title">The Title of this Hero Module</h1> -->
   </section>
@@ -47,6 +47,8 @@ export default {
 // hero
 
 .hero {
+  overflow: visible;
+  height: auto;
   font-size: 3vh;
   text-shadow: 2px 2px 5px #333;
   display: flex;
@@ -63,25 +65,28 @@ export default {
 
   h1,
   h2,
-  h3 {
-    display: block;
+  h3,
+  h4,
+  h5 {
     text-align: center;
-    letter-spacing: 0.3rem;
-    font-weight: 900;
     color: white;
     padding: 0px;
-    text-transform: uppercase;
-
-    max-width: 70vh;
+    max-width: 80vw;
     margin: 0;
-    font-size: 7vh;
     margin-bottom: 1.5vh;
+    font-size: 8vw;
   }
   h2 {
-    font-size: 3vh;
+    font-size: 6vw;
   }
   h3 {
-    font-size: 2vh;
+    font-size: 4.5vw;
+  }
+  h4 {
+    font-size: 3vw;
+  }
+  h5 {
+    font-size: 1.5vw;
   }
 }
 </style>

@@ -29,98 +29,102 @@ import FinancialAidMarketing from "../views/FinancialAid.vue";
 import Curriculum from "../views/Curriculum.vue";
 import ApplicationFee from "../views/enroll/ApplicationFee.vue";
 import MeetWithAdmissions from "../views/enroll/MeetWithAdmissions.vue";
+import landingPageRoutes from "./landingPages";
+import policyRoutes from "./policyRoutes";
 
 Vue.use(VueRouter);
 
 const routes = [
+  ...landingPageRoutes,
+  ...policyRoutes,
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: Home,
   },
   {
     path: "/selfpaced",
     name: "Selfpaced",
-    component: Selfpaced
+    component: Selfpaced,
   },
   {
     path: "/bootcamps",
     name: "Bootcamps",
-    component: Bootcamps
+    component: Bootcamps,
   },
   {
     path: "/community",
     name: "Community",
-    component: Community
+    component: Community,
   },
   {
     path: "/plans",
     name: "Plans",
-    component: Plans
+    component: Plans,
   },
   {
     path: "/faqs",
     name: "FAQs",
-    component: FAQs
+    component: FAQs,
   },
   {
     path: "/testimonials",
     name: "Testimonials",
-    component: Testimonials
+    component: Testimonials,
   },
   {
     path: "/pathways",
     name: "Pathways",
-    component: Pathways
+    component: Pathways,
   },
   {
     path: "/howitworks",
     name: "HowItWorks",
-    component: HowItWorks
+    component: HowItWorks,
   },
   {
     path: "/method",
     name: "Method",
-    component: Method
+    component: Method,
   },
   {
     path: "/financial-aid",
     name: "Financial Aid",
-    component: FinancialAidMarketing
+    component: FinancialAidMarketing,
   },
   {
     path: "/contact",
     name: "Contact",
-    component: Contact
+    component: Contact,
   },
   {
     path: "/admissions-call-back-requested",
     name: "AdmissionsCallBack",
-    component: AdmissionsCallBack
+    component: AdmissionsCallBack,
   },
   {
     path: "/admissions-call-back",
     name: "AdmissionsCallBackSetup",
-    component: AdmissionsCallBackSetup
+    component: AdmissionsCallBackSetup,
   },
   {
     path: "/call-back",
     name: "CallBack",
-    component: CallBack
+    component: CallBack,
   },
   {
     path: "/blog",
     name: "Blog",
-    component: Blog
+    component: Blog,
   },
   {
     path: "/curriculum",
     name: "curriculum",
-    component: Curriculum
+    component: Curriculum,
   },
   {
     path: "/findplan",
-    component: FindPlan
+    component: FindPlan,
   },
   {
     path: "/enroll",
@@ -128,34 +132,34 @@ const routes = [
     children: [
       {
         path: "",
-        component: PlanConfirmation
+        component: PlanConfirmation,
       },
       {
         path: "applicant",
-        component: EnrollmentForm
+        component: EnrollmentForm,
       },
       {
         path: "payment",
-        component: PaymentOptions
+        component: PaymentOptions,
       },
       {
         path: "appfee",
-        component: ApplicationFee
+        component: ApplicationFee,
       },
       {
         path: "climb",
-        component: FinancialAid
+        component: FinancialAid,
       },
       {
         path: "admissions",
-        component: MeetWithAdmissions
-      }
-    ]
+        component: MeetWithAdmissions,
+      },
+    ],
   },
   {
     path: "/enrollment-complete",
     name: "EnrollmentComplete",
-    component: EnrollmentComplete
+    component: EnrollmentComplete,
   },
   {
     path: "/team",
@@ -163,8 +167,9 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ "../views/Team.vue")
-  }
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Team.vue"),
+  },
 ];
 
 const router = new VueRouter({
@@ -177,7 +182,7 @@ const router = new VueRouter({
     } else {
       return { x: 0, y: 0 };
     }
-  }
+  },
 });
 
 if (location.hash) {
