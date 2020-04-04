@@ -18,14 +18,11 @@
             <router-link to="/team">Team</router-link>
           </p>-->
           <p>
-            <router-link to="/about">About</router-link>
+            <router-link to="/team">Team</router-link>
           </p>
-          <p>
+          <!-- <p>
             <router-link to="/contact">Contact</router-link>
-          </p>
-          <p>
-            <router-link to="/financial-aid">Financial Aid</router-link>
-          </p>
+          </p> -->
         </div>
 
         <div class="col-6 col-md-2">
@@ -34,7 +31,7 @@
             <router-link to="/plans">Compare</router-link>
           </p>
           <p>
-            <router-link to="/plans/selfpaced">Self-Paced</router-link>
+            <router-link to="/selfpaced">Self-Paced</router-link>
           </p>
           <p>
             <router-link to="/bootcamps">Bootcamps</router-link>
@@ -47,7 +44,13 @@
         <div class="col-6 col-md-2">
           <h4>How It Works</h4>
           <p>
-            <router-link to="/howitworks">A Week at CodeX</router-link>
+            <router-link to="/howitworks#formula">Formula</router-link>
+          </p>
+          <p>
+            <router-link to="/howitworks#curriculum">Curriculum</router-link>
+          </p>
+          <p>
+            <router-link to="/howitworks#timeline">Sample Timeline</router-link>
           </p>
           <p>
             <router-link to="/howitworks#tech">Our Technologies</router-link>
@@ -60,14 +63,17 @@
             <router-link to="/faqs">FAQs</router-link>
           </p>
           <p>
+            <router-link to="/contact">Contact Us</router-link>
+          </p>
+          <p>
             <router-link to="/findplan">Help Me Decide</router-link>
           </p>
           <p>
-            <router-link to="/contact">Contact Us</router-link>
+            <router-link to="/financial-aid">Financial Aid</router-link>
           </p>
         </div>
 
-        <div class="col col-md-2">
+        <!-- <div class="col col-md-2">
           <h4>Legal</h4>
           <p>
             <router-link to="/privacy">Privacy</router-link>
@@ -75,7 +81,7 @@
           <p>
             <router-link to="/terms-of-use">Terms of Use</router-link>
           </p>
-        </div>
+        </div> -->
       </div>
     </div>
     <div>
