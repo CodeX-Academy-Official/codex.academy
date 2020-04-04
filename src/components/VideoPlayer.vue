@@ -1,5 +1,5 @@
 <template>
-  <video ref="videoPlayer" class="video-js"></video>
+  <video ref="videoPlayer" class="video-js mx-auto"></video>
 </template>
 
 <script>
@@ -12,7 +12,8 @@ export default {
     autoplan: Boolean,
     controls: { type: Boolean, default: true },
     mp4: String,
-    width: Number
+    width: Number,
+    poster: String
   },
   data() {
     return {
@@ -24,6 +25,8 @@ export default {
       autoplay: this.autoplay,
       controls: this.controls,
       width: this.width,
+      responsive: true,
+      poster: this.poster,
       sources: [
         {
           src: this.mp4,
@@ -36,7 +39,7 @@ export default {
       this.$refs.videoPlayer,
       options,
       function onPlayerReady() {
-        console.log("onPlayerReady", this);
+        // console.log("onPlayerReady", this);
       }
     );
   },

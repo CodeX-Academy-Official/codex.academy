@@ -2,48 +2,7 @@
   <div class="home-page">
     <HeroCarousel />
     <div class="container">
-      <div class="row text-center">
-        <div class="col-1 d-none d-lg-block"></div>
-        <div class="col stat shadow">
-          <h1>76%</h1>
-          <p>
-            of people think mentors are important, but only 37% have a mentor.
-          </p>
-          <p>
-            <a
-              href="https://www.forbes.com/sites/christinecomaford/2019/07/03/new-study-76-of-people-think-mentors-are-important-but-only-37-have-one/#4faa11cc4329"
-              target="_blank"
-              >Learn More</a
-            >
-          </p>
-        </div>
-        <div class="col stat shadow">
-          <h1>9</h1>
-          <p>
-            out of 10 workers who have a career mentor say they are happy in
-            their jobs.
-          </p>
-          <p>
-            <a
-              href="https://www.cnbc.com/2019/07/16/nine-in-10-workers-who-have-a-mentor-say-they-are-happy-in-their-jobs.html"
-              target="_blank"
-              >Learn More</a
-            >
-          </p>
-        </div>
-        <div class="col stat shadow">
-          <h1>65%</h1>
-          <p>of paid interns get a job offer.</p>
-          <p>
-            <a
-              href="https://universe.byu.edu/2017/02/22/interns-more-likely-to-be-hired-as-full-time-employees/"
-              target="_blank"
-              >Learn More</a
-            >
-          </p>
-        </div>
-        <div class="col-1 d-none d-lg-block"></div>
-      </div>
+      <Stats />
 
       <h1 class="section-title mt-5">Success is the ONLY option</h1>
       <h4 class="section-subtitle text-muted mb-5">
@@ -61,9 +20,13 @@
         <TestimonialsCarousel />
       </div>
     </div>
-    <div class="row">
+    <div class="row mb-5">
       <div class="mx-auto">
-        <VideoPlayer mp4="video/2020-03-45s.mp4" :width="600" />
+        <VideoPlayer
+          mp4="video/2020-03-45s.mp4"
+          :width="600"
+          poster="img/commercial/24-weeks.png"
+        />
       </div>
     </div>
   </div>
@@ -78,6 +41,7 @@ import PlanCompareTable from "@/components/PlanCompareTable";
 import Pillars from "@/components/Pillars";
 import { mapGetters } from "vuex";
 import VideoPlayer from "@/components/VideoPlayer";
+import Stats from "@/components/Stats";
 
 export default {
   name: "Home",
@@ -88,7 +52,8 @@ export default {
     TestimonialsCarousel,
     PlanCompareTable,
     Pillars,
-    VideoPlayer
+    VideoPlayer,
+    Stats,
   },
   mounted() {
     // From testing, without a brief timeout, it won't work.
@@ -98,12 +63,12 @@ export default {
   },
   computed: { ...mapGetters(["getMethods"]) },
   methods: {
-    scrollTo: function(hashtag) {
+    scrollTo: function (hashtag) {
       setTimeout(() => {
         location.href = hashtag;
       }, TIMEOUT);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -130,20 +95,6 @@ export default {
   }
   hr {
     margin: 2rem 0;
-  }
-
-  .stat {
-    background-color: #eee;
-    border: #bbb solid 1px;
-    padding: 2rem;
-    margin: 2rem;
-    color: $navyBlue;
-
-    h1 {
-      color: navyBlue;
-      font-size: 4rem;
-      font-weight: bolder;
-    }
   }
 }
 </style>

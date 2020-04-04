@@ -1,7 +1,7 @@
 @import "@/variables";
 
 $theme-colors: (
-  light: $lightGray
+  light: $lightGray,
 );
 @import "~bootstrap";
 @import "~bootstrap-vue";
@@ -49,4 +49,24 @@ body {
   .breadcrumb-item {
     // color: white;
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  letter-spacing: 0.3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 5vh;
+  margin-bottom: 2vh;
+}
+h2 {
+  font-size: 3vh;
+  letter-spacing: 0.2rem;
+}
+h3 {
+  font-size: 2vh;
+  letter-spacing: 0.2rem;
 }
