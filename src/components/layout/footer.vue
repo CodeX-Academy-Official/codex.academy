@@ -93,12 +93,18 @@
           </a>
         </div>
         <div class="col-1">
-          <a href="https://www.instagram.com/codexacademyonline/" target="_blank">
+          <a
+            href="https://www.instagram.com/codexacademyonline/"
+            target="_blank"
+          >
             <font-awesome-icon :icon="faInstagram" class="fa-2x" />
           </a>
         </div>
         <div class="col-1">
-          <a href="https://www.youtube.com/channel/UCUKP1GrIaI-dcuV1IlK7x8Q" target="_blank">
+          <a
+            href="https://www.youtube.com/channel/UCUKP1GrIaI-dcuV1IlK7x8Q"
+            target="_blank"
+          >
             <font-awesome-icon :icon="faYoutubeSquare" class="fa-2x" />
           </a>
         </div>
@@ -116,7 +122,7 @@ import {
   faFacebookSquare,
   faInstagram,
   faTwitterSquare,
-  faYoutubeSquare
+  faYoutubeSquare,
 } from "@fortawesome/fontawesome-free-brands";
 
 export default {
@@ -124,11 +130,14 @@ export default {
     faFacebookSquare,
     faInstagram,
     faTwitterSquare,
-    faYoutubeSquare
-  })
+    faYoutubeSquare,
+  }),
 };
 </script>
 <style lang="scss" scoped>
+footer {
+  margin-top: 3em;
+}
 .text-white {
   h4 {
     color: white;
