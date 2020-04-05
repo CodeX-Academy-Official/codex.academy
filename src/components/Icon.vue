@@ -1,20 +1,34 @@
 <template>
-  <img svg-inline class="icon" :src="src" :alt="name" />
+  <inline-svg
+    id="svg1"
+    :src="require(`./svg/noun/${name}.svg`)"
+    width="100"
+    height="100"
+    :fill="true"
+    :aria-label="name"
+    @loaded="loaded($event)"
+    @error="error($event)"
+  ></inline-svg>
 </template>
 
 <script>
+import InlineSvg from "vue-inline-svg";
+
+// Your component
 export default {
-  props: {
-    name: { type: String, default: "agile" }
+  components: {
+    InlineSvg,
   },
-  computed: {
-    src() {
-      return `img/noun/${this.name.toLowerCase()}.svg`;
-    }
-  }
+  props: {
+    name: { type: String, default: "happy" },
+  },
+  methods: {
+    error(ev) {
+      console.error(ev);
+    },
+    loaded(ev) {},
+  },
 };
 </script>
-
-//Docs: https://www.npmjs.com/package/vue-svg-inline-loader
 
 <style></style>

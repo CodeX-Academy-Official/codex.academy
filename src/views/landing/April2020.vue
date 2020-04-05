@@ -54,6 +54,9 @@
         </div>
       </div>
     </div>
+    <div class="container mt-5">
+      <Stats />
+    </div>
 
     <div class="bg-light mt-5 border">
       <div class>
