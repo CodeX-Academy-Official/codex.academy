@@ -2,7 +2,7 @@ const planCommonDetails = [
   "Self-Paced",
   "Unlimited Learning Pathway Access",
   "24/7 Community Chat Access",
-  "Build a Portfolio"
+  "Build a Portfolio",
 ];
 
 const mentorDrivenCommonDetails = [
@@ -10,7 +10,7 @@ const mentorDrivenCommonDetails = [
   ...planCommonDetails,
   "Internship Opportunities",
   "Certifications Included",
-  "Career Counseling"
+  "Career Counseling",
 ];
 
 const selfpaceds = [
@@ -27,7 +27,7 @@ const selfpaceds = [
       "10 hour/week commitment",
       ...mentorDrivenCommonDetails,
       "2 hours/week live 1:1 mentoring",
-      "Up to 3 Evaluations/month"
+      "Up to 3 Evaluations/month",
     ],
     isSelfpaced: true,
     isMentoring: true,
@@ -35,12 +35,12 @@ const selfpaceds = [
       {
         type: "creditCard",
         url: "https://app.hubspot.com/sales-checkout/tpi4vFUd",
-        testUrl: "https://app.hubspot.com/sales-checkout/test_OqVDtXse"
+        testUrl: "https://app.hubspot.com/sales-checkout/test_OqVDtXse",
       },
       {
-        type: "callBack"
-      }
-    ]
+        type: "callBack",
+      },
+    ],
   },
   {
     id: "selfpaced5",
@@ -55,7 +55,7 @@ const selfpaceds = [
       "20 hour/week commitment",
       ...mentorDrivenCommonDetails,
       "5 hours/week live 1:1 mentoring",
-      "Up to 5 Evaluations/month"
+      "Up to 5 Evaluations/month",
     ],
     isSelfpaced: true,
     isMentoring: true,
@@ -63,12 +63,12 @@ const selfpaceds = [
       {
         type: "creditCard",
         url: "https://app.hubspot.com/sales-checkout/wBN890ZZ",
-        testUrl: "https://app.hubspot.com/sales-checkout/test_fi5hBGei"
+        testUrl: "https://app.hubspot.com/sales-checkout/test_fi5hBGei",
       },
       {
-        type: "callBack"
-      }
-    ]
+        type: "callBack",
+      },
+    ],
   },
   {
     id: "selfpaced10",
@@ -83,7 +83,7 @@ const selfpaceds = [
       "40 hour/week commitment",
       ...mentorDrivenCommonDetails,
       "10 hours/week live 1:1 mentoring",
-      "Up to 10 Evaluations/month"
+      "Up to 10 Evaluations/month",
     ],
     primary: true,
     isSelfpaced: true,
@@ -92,12 +92,12 @@ const selfpaceds = [
       {
         type: "creditCard",
         url: "https://app.hubspot.com/sales-checkout/lTFpUJBC",
-        testUrl: "https://app.hubspot.com/sales-checkout/test_9bmF4PDE"
+        testUrl: "https://app.hubspot.com/sales-checkout/test_9bmF4PDE",
       },
       {
-        type: "callBack"
-      }
-    ]
+        type: "callBack",
+      },
+    ],
   },
   {
     id: "selfpaced20",
@@ -112,7 +112,7 @@ const selfpaceds = [
       "40-50 hour/week commitment",
       ...mentorDrivenCommonDetails,
       "20 hours/week live 1:1 mentoring",
-      "Up to 20 Evaluations/month"
+      "Up to 20 Evaluations/month",
     ],
     isSelfpaced: true,
     isMentoring: true,
@@ -120,13 +120,13 @@ const selfpaceds = [
       {
         type: "creditCard",
         url: "https://app.hubspot.com/sales-checkout/3IILq-Ug",
-        testUrl: "https://app.hubspot.com/sales-checkout/test_Q2LszpvP"
+        testUrl: "https://app.hubspot.com/sales-checkout/test_Q2LszpvP",
       },
       {
-        type: "callBack"
-      }
-    ]
-  }
+        type: "callBack",
+      },
+    ],
+  },
 ];
 
 const bootcampCommonDetails = [
@@ -137,7 +137,7 @@ const bootcampCommonDetails = [
   "Build a Portfolio",
   "Internship Opportunities",
   "Career Counseling",
-  "10 hours/week live 1:1 mentoring"
+  "10 hours/week live 1:1 mentoring",
 ];
 
 const bootcamps = [
@@ -159,17 +159,17 @@ const bootcamps = [
     isMentoring: true,
     paymentTypes: [
       {
-        type: "climb"
+        type: "climb",
       },
       {
         type: "creditCard",
         url: "https://app.hubspot.com/sales-checkout/npnCjJOv",
-        testUrl: "https://app.hubspot.com/sales-checkout/test_AIL7qMLK"
+        testUrl: "https://app.hubspot.com/sales-checkout/test_AIL7qMLK",
       },
       {
-        type: "callBack"
-      }
-    ]
+        type: "callBack",
+      },
+    ],
   },
   {
     id: "bootcamp6",
@@ -190,17 +190,17 @@ const bootcamps = [
     isMentoring: true,
     paymentTypes: [
       {
-        type: "climb"
+        type: "climb",
       },
       {
         type: "creditCard",
         url: "https://app.hubspot.com/sales-checkout/mSpPTv7B",
-        testUrl: "https://app.hubspot.com/sales-checkout/test_jQz_nidL"
+        testUrl: "https://app.hubspot.com/sales-checkout/test_jQz_nidL",
       },
       {
-        type: "callBack"
-      }
-    ]
+        type: "callBack",
+      },
+    ],
   },
   {
     id: "bootcamp9",
@@ -220,24 +220,26 @@ const bootcamps = [
     isMentoring: true,
     paymentTypes: [
       {
-        type: "climb"
+        type: "climb",
       },
       {
         type: "creditCard",
         url: "https://app.hubspot.com/sales-checkout/1P9YipN5",
-        testUrl: "https://app.hubspot.com/sales-checkout/test_GaKZU8H-"
+        testUrl: "https://app.hubspot.com/sales-checkout/test_GaKZU8H-",
       },
       {
-        type: "callBack"
-      }
-    ]
-  }
+        type: "callBack",
+      },
+    ],
+  },
 ];
 
 const community = [
   {
     id: "community",
     title: "Community Plan",
+    description:
+      "Independent learning with access to curriculum and developer community.",
     price: 50,
     duration: "per month",
     details: ["Independent Study", ...planCommonDetails],
@@ -247,13 +249,13 @@ const community = [
       {
         type: "creditCard",
         url: "https://app.hubspot.com/sales-checkout/YkUECPjJ",
-        testUrl: "https://app.hubspot.com/sales-checkout/test_D3sgM1ph"
+        testUrl: "https://app.hubspot.com/sales-checkout/test_D3sgM1ph",
       },
       {
-        type: "callBack"
-      }
-    ]
-  }
+        type: "callBack",
+      },
+    ],
+  },
 ];
 
 export const programs = [...bootcamps, ...selfpaceds, ...community];
