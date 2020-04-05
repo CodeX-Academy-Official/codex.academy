@@ -242,6 +242,8 @@ const community = [
       "Independent learning with access to curriculum and developer community.",
     price: 50,
     duration: "per month",
+    description:
+    "Learning to code at your own pace.",
     details: ["Independent Study", ...planCommonDetails],
     primary: false,
     isMentoring: false,

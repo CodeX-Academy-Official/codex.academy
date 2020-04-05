@@ -58,11 +58,17 @@
       />
     </div>
 
-    <div class="cta">
-      <button class="btn btn-lg btn-cta btn-block text-uppercase" type="submit">Start Application</button>
-    </div>
-    <div class="privacy text-center mt-3">
-      <router-link to="/policy/privacy">Privacy Policy</router-link>
+          <div class="cta">
+            <button
+              class="btn btn-lg btn-cta btn-block text-uppercase"
+              type="submit"
+            >Enroll</button>
+          </div>
+          <div class="privacy text-small text-center mt-3">
+            <router-link to="/policy/privacy">Privacy Policy</router-link>
+          </div>
+        </form>
+      </div>
     </div>
   </form>
 </template>

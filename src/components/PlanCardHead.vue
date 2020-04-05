@@ -9,7 +9,7 @@
       <p class="card-text">{{ plan.description }}</p>
     </div>
     <div class="card-footer">
-      <SelectPlanButton :plan="plan" text="Start Application" />
+      <SelectPlanButton :plan="plan" text="Enroll" />
     </div>
   </div>
 </template>

@@ -24,7 +24,7 @@
 
     <div class="row">
       <div class="col text-center">
-        <SelectPlanButton :plan="getCommunityPlan" text="Start Application" />
+        <SelectPlanButton :plan="getCommunityPlan" text="Enroll" />
       </div>
     </div>
 
@@ -151,7 +151,7 @@
 
     <div class="row">
       <div class="col text-center">
-        <SelectPlanButton :plan="getCommunityPlan" text="Start Application" />
+        <SelectPlanButton :plan="getCommunityPlan" text="Enroll" />
       </div>
     </div>
     <div class="mb-5"></div>
