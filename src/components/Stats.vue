@@ -39,7 +39,7 @@
     <div class="col">
       <div class="stat">
         <div class="row number justify-content-center fucia">
-          <Icon name="moneyBag" />
+          <Icon name="moneybag" />
           <div class="title">65%</div>
         </div>
         <p>of paid interns get a job offer.</p>
@@ -81,6 +81,9 @@ export default {
   .number {
     margin: 0px auto;
 
+    svg {
+      width: 90px;
+    }
     .title {
       margin: 0px;
       display: inline;
@@ -92,22 +95,6 @@ export default {
     img {
       width: 80px;
       margin: 0px;
-    }
-  }
-
-  .lilac {
-    color: $lilac;
-  }
-
-  .periwinkle {
-    color: $periwinkle;
-  }
-  .fucia {
-    color: $fucia;
-    object {
-      svg {
-        fill: $fucia;
-      }
     }
   }
 }

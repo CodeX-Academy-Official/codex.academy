@@ -1,15 +1,14 @@
 <template>
   <inline-svg
-    :src="src"
-    @loaded="loaded($event)"
-    @error="error($event)"
+    id="svg1"
+    :src="require(`./svg/noun/${name}.svg`)"
     width="100"
     height="100"
-    fill="black"
+    :fill="true"
     :aria-label="name"
+    @loaded="loaded($event)"
+    @error="error($event)"
   ></inline-svg>
-
-  <!-- <img svg-inline class="icon" :src="src" :alt="name" /> -->
 </template>
 
 <script>
@@ -21,23 +20,13 @@ export default {
     InlineSvg,
   },
   props: {
-    name: { type: String, default: "agile" },
-  },
-  computed: {
-    src() {
-      //return `img/noun/${this.name.toLowerCase()}.svg`;
-      //const path = `@/components/svg/noun/${this.name.toLowerCase()}.svg`;
-      const path = "./svg/noun/happy.svg";
-      return require(path);
-    },
+    name: { type: String, default: "happy" },
   },
   methods: {
     error(ev) {
       console.error(ev);
     },
-    loaded(ev) {
-      console.log(ev);
-    },
+    loaded(ev) {},
   },
 };
 </script>
