@@ -3,30 +3,30 @@
     <HeroCarousel />
     <div class="container">
       <Stats />
-
-      <h1 class="section-title mt-5">Success is the ONLY option</h1>
-      <h4 class="section-subtitle text-muted mb-5">
-        CodeX Academy's Six Pillars of Learning
-      </h4>
-      <Pillars :pillars="getMethods" />
-
+    </div>
+    <div class="bg-lilac pb-5 pt-5">
+      <div class="container">
+        <h1 class="section-title">Success is the ONLY option</h1>
+        <h4 class="section-subtitle text-muted mb-5">CodeX Academy's Six Pillars of Learning</h4>
+        <Pillars :pillars="getMethods" />
+      </div>
+    </div>
+    <!-- <div class="container">
       <div class="text-center mb-5">
         <h1 class="heading">CodeX Academy Has Flexible Programs</h1>
         <PlanCompareTable />
       </div>
-
-      <div class="text-center mb-5">
+    </div>-->
+    <div class>
+      <CommercialSection :maxWidth="600">
+        <h1>Check this out</h1>
+        <h4>Welcome to our full-service software development school!</h4>
+      </CommercialSection>
+    </div>
+    <div class="container">
+      <div class="text-center pt-5 pb-5">
         <h1 class="heading">CodeX Academy Is a Great Experience</h1>
         <TestimonialsCarousel />
-      </div>
-    </div>
-    <div class="row mb-5">
-      <div class="mx-auto">
-        <VideoPlayer
-          mp4="video/2020-03-45s.mp4"
-          :width="600"
-          poster="img/commercial/24-weeks.png"
-        />
       </div>
     </div>
   </div>
@@ -40,8 +40,8 @@ import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import PlanCompareTable from "@/components/PlanCompareTable";
 import Pillars from "@/components/Pillars";
 import { mapGetters } from "vuex";
-import VideoPlayer from "@/components/VideoPlayer";
 import Stats from "@/components/Stats";
+import CommercialSection from "@/components/CommercialSection";
 
 export default {
   name: "Home",
@@ -52,8 +52,8 @@ export default {
     TestimonialsCarousel,
     PlanCompareTable,
     Pillars,
-    VideoPlayer,
     Stats,
+    CommercialSection
   },
   mounted() {
     // From testing, without a brief timeout, it won't work.
@@ -63,12 +63,12 @@ export default {
   },
   computed: { ...mapGetters(["getMethods"]) },
   methods: {
-    scrollTo: function (hashtag) {
+    scrollTo: function(hashtag) {
       setTimeout(() => {
         location.href = hashtag;
       }, TIMEOUT);
-    },
-  },
+    }
+  }
 };
 </script>
 
