@@ -73,15 +73,15 @@
           </p>
         </div>
 
-        <!-- <div class="col col-md-2">
+        <div class="col col-md-2">
           <h4>Legal</h4>
           <p>
-            <router-link to="/privacy">Privacy</router-link>
+            <router-link to="/policy/privacy">Privacy</router-link>
           </p>
-          <p>
+          <!-- <p>
             <router-link to="/terms-of-use">Terms of Use</router-link>
-          </p>
-        </div> -->
+          </p> -->
+        </div>
       </div>
     </div>
     <div>
