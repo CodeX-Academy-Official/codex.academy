@@ -11,6 +11,12 @@ import Vuelidate from "vuelidate";
 import bootstrapFontAwesome from "./bootstrapFontAwesome";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
+import Default from "@/components/layout/Default.vue";
+import NoNavbar from "@/components/layout/NoNavbar.vue";
+
+Vue.component("default-layout", Default);
+Vue.component("no-navbar-layout", NoNavbar);
+
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 bootstrapFontAwesome();
 
@@ -18,13 +24,13 @@ Vue.use(Vuelidate);
 
 Vue.use(Hotjar, {
   id: "1739723",
-  isProduction: true
+  isProduction: true,
 });
 
 Vue.use(
   VueGtag,
   {
-    config: { id: "UA-158800537-1" }
+    config: { id: "UA-158800537-1" },
   },
   router
 );
@@ -35,10 +41,10 @@ Vue.use(IconsPlugin);
 
 Vue.config.productionTip = false;
 
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
   new Vue({
     router,
     store,
-    render: h => h(App)
+    render: (h) => h(App),
   }).$mount("#app");
 });

@@ -51,6 +51,9 @@ body {
   }
 }
 
+.bg-navyblue {
+  background-color: $navyBlue;
+}
 h1,
 h2,
 h3,
@@ -92,4 +95,12 @@ h5 {
 .fucia {
   color: $fucia;
   fill: $fucia;
+}
+
+.bg-periwinkle {
+  background-color: $periwinkle-soft;
+}
+
+.bg-lilac {
+  background-color: $lilac-soft;
 }

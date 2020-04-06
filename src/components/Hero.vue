@@ -1,7 +1,12 @@
 <template>
-  <section class="hero" :style="{'background-image': `url(${backgroundUrl})`, 'height': height}">
-    <slot />
-    <!-- <h1 class="hero-title">The Title of this Hero Module</h1> -->
+  <section
+    class="hero-wrapper"
+    :style="{'background-image': `url(${backgroundUrl})`, 'height': height}"
+    :class="heroClass"
+  >
+    <div class="hero h-100" :style="{'background-color': backgroundColor}">
+      <slot />
+    </div>
   </section>
 </template>
 
@@ -12,7 +17,9 @@ import { generateUnsplashUrl } from "../utils/unsplash";
 export default {
   props: {
     unsplashId: String,
-    height: String
+    height: String,
+    heroClass: String,
+    backgroundColor: String
   },
   components: {
     HeroText
@@ -25,27 +32,10 @@ export default {
 };
 </script>
 
-<style lang="scss">
-#header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+<style lang="scss" >
+.hero-wrapper {
+  background-position: center;
 }
-
-#logo {
-  text-decoration: none;
-  color: white;
-  font-size: 5vh;
-  font-weight: bold;
-}
-
-#menu-icon {
-  font-family: Geneva, sans-serif;
-  font-size: 6vh;
-}
-
-// hero
-
 .hero {
   overflow: visible;
   height: auto;
@@ -57,11 +47,9 @@ export default {
   justify-content: center;
   height: 100vh;
   padding: 1em;
+
   box-sizing: border-box;
   color: white;
-  background: url(https://images.unsplash.com/photo-1500417148159-68083bd7333a)
-    center center no-repeat;
-  background-size: cover;
 
   h1,
   h2,
