@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container pt-4">
     <!-- <IntroBlock /> -->
     <h1 class="mt-4 mb-3">CodeX Academy Programs</h1>
 

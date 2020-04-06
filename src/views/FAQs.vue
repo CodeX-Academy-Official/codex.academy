@@ -1,6 +1,6 @@
 <template>
   <!-- Page Content -->
-  <div class="container">
+  <div class="container pt-4">
     <!-- Page Heading/Breadcrumbs -->
     <h1 class="mt-4 mb-3">Frequently Asked Questions</h1>
 
@@ -30,10 +30,7 @@
         <img src="img/learner-flow.png" class="img-fluid" />
       </QAndA>
 
-      <QAndA
-        id="faq2"
-        question="What technologies will I learn at CodeX Academy?"
-      >
+      <QAndA id="faq2" question="What technologies will I learn at CodeX Academy?">
         <p>
           A “Full-Stack Developer” is someone who can build world-changing apps
           and websites from top to bottom, from what you can see to all the
@@ -55,9 +52,10 @@
           CodeX Academy partners with Climb Credit to offer special financing
           for any learning plan for a minimum of 3 months. For more information,
           see
-          <a href="https://climbcredit.com/students" target="_blank"
-            >Climb Credit</a
-          >.
+          <a
+            href="https://climbcredit.com/students"
+            target="_blank"
+          >Climb Credit</a>.
         </p>
       </QAndA>
 
@@ -67,7 +65,9 @@
           ability to stay committed to independent study and meeting with
           mentors. We get it! If you need to pause your enrollment at any time,
           just send an email to
-          <a href="mailto:admissions@codex.academy">Admissions</a> any time and
+          <a
+            href="mailto:admissions@codex.academy"
+          >Admissions</a> any time and
           request it. We will make sure to pause your monthly payments and you
           can resume at any time.
         </p>
@@ -76,7 +76,9 @@
           monthly payments, but it may be possible to "make-up" any lost time
           when you resume your enrollment later on. To check eligibility or if
           you have any questions, please email.
-          <a href="mailto:admissions@codex.academy">Admissions</a>.
+          <a
+            href="mailto:admissions@codex.academy"
+          >Admissions</a>.
         </p>
       </QAndA>
 
