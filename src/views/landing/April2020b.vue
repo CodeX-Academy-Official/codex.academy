@@ -1,48 +1,64 @@
 <template>
   <div>
-    <Hero unsplashId="XJXWbfSo2f0" height="30vh">
-      <div class="d-xs-block d-sm-none text-center">
-        <h1>learn to code</h1>
-        <h3>in only 6 months</h3>
-      </div>
-      <div class="d-none d-sm-block text-center">
-        <h2>learn to code</h2>
-        <h4>in only 6 months</h4>
+    <Hero unsplashId="XJXWbfSo2f0" height="100vh" heroClass="hero-overlay">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="d-xs-block d-sm-none text-center">
+              <h1>learn to code</h1>
+              <h3>in only 6 months</h3>
+            </div>
+            <div class="d-none d-sm-block text-center">
+              <h2>learn to code</h2>
+              <h4>in only 6 months</h4>
+            </div>
+          </div>
+
+          <div class="col">
+            <StartApplicationForm @submitted="startApplication" v-if="!hasApplied" />
+            <div class="border bg-light p-4 mb-5" v-if="hasApplied">
+              <h3>Congratulations</h3>
+              <p>
+                You are on your way to starting a new career. We have received
+                your applicatoin! You should check your email for next steps.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </Hero>
+    <div class="container mt-5 text-center">
+      <h2>Take a closer look</h2>
+      <h4>Numbers don't lie.</h4>
+      <div class="mb-5 mt-5">
+        <Stats />
+      </div>
+    </div>
+
+    <div class="container mt-5 text-center">
+      <h2>Knowledge is Power</h2>
+      <h4>Some of the technologies you'll be learning</h4>
+      <div class="mb-5 mt-5">
+        <Top10Tech />
+      </div>
+    </div>
+
     <div class="mt-5">
       <CommercialSection>
         <h2>Check this out</h2>
         <h4>Welcome to our full-service software development school!</h4>
       </CommercialSection>
     </div>
-    <div class="container">
-      <div>
-        <div>
-          <PillarsBlock :pillars="getMethods" v-if="!hasApplied" />
-        </div>
-        <div class="col-12 col-sm-8 col-md-5 col-lg-4">
-          <StartApplicationForm @submitted="startApplication" v-if="!hasApplied" />
-          <div class="border bg-light p-4 mb-5" v-if="hasApplied">
-            <h3>Congratulations</h3>
-            <p>
-              You are on your way to starting a new career. We have received
-              your applicatoin! You should check your email for next steps.
-            </p>
-          </div>
-          <PillarsBlock :pillars="getMethods" v-if="hasApplied" />
-        </div>
-      </div>
-    </div>
-    <div class="container mt-5">
-      <Stats />
-    </div>
 
-    <div class="bg-light mt-5 border">
+    <div class="mt-5">
       <div class>
         <div class="container">
-          <div class="pt-5">
-            <TestimonialsCarousel />
+          <div class="pt-5 text-center">
+            <h2>Let's avoid bragging</h2>
+            <h4>Here is what others have to say.</h4>
+            <div class="mt-5">
+              <TestimonialsCarousel />
+            </div>
           </div>
         </div>
       </div>
@@ -57,6 +73,7 @@ import StartApplicationForm from "@/views/landing/StartApplicationForm";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import Stats from "@/components/Stats";
 import { mapGetters } from "vuex";
+import Top10Tech from "./Top10Tech";
 
 const PillarsBlock = {
   props: {
@@ -85,7 +102,8 @@ export default {
     TestimonialsCarousel,
     Stats,
     PillarsBlock,
-    CommercialSection
+    CommercialSection,
+    Top10Tech
   },
   data: () => ({
     hasApplied: false
@@ -104,4 +122,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.hero-overlay {
+  background: none;
+}
+</style>

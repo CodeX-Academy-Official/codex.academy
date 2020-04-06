@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <navHeader />
-    <router-view />
-    <Footer />
+    <component :is="layout">
+      <router-view />
+    </component>
   </div>
 </template>
 
@@ -10,15 +10,18 @@
 import navHeader from "./components/layout/nav";
 import Footer from "./components/layout/footer";
 
+const default_layout = "default";
+
 export default {
   beforeCreate() {
     if (this.$route.query.p) {
       this.$router.push(this.$route.query.p);
     }
   },
-  components: {
-    navHeader,
-    Footer
+  computed: {
+    layout() {
+      return (this.$route.meta.layout || default_layout) + "-layout";
+    }
   }
 };
 </script>

@@ -1,7 +1,10 @@
 <template>
-  <section class="hero" :style="{'background-image': `url(${backgroundUrl})`, 'height': height}">
+  <section
+    class="hero"
+    :style="{'background-image': `url(${backgroundUrl})`, 'height': height}"
+    :class="heroClass"
+  >
     <slot />
-    <!-- <h1 class="hero-title">The Title of this Hero Module</h1> -->
   </section>
 </template>
 
@@ -12,7 +15,8 @@ import { generateUnsplashUrl } from "../utils/unsplash";
 export default {
   props: {
     unsplashId: String,
-    height: String
+    height: String,
+    heroClass: String
   },
   components: {
     HeroText
@@ -57,6 +61,7 @@ export default {
   justify-content: center;
   height: 100vh;
   padding: 1em;
+
   box-sizing: border-box;
   color: white;
   background: url(https://images.unsplash.com/photo-1500417148159-68083bd7333a)
