@@ -47,7 +47,7 @@
             <h3>Congratulations</h3>
             <p>
               You are on your way to starting a new career. We have received
-              your applicatoin! You should check your email for next steps.
+              your application! You should check your email for next steps.
             </p>
           </div>
           <PillarsBlock :pillars="getMethods" v-if="hasApplied" />
