@@ -1,78 +1,68 @@
 <template>
-  <form class="start-application-form">
-    <div class="card shadow">
-      <div class="card-body">
-        <h3 class="card-title text-center">Get Started Learning</h3>
-        <form @submit.prevent="submitForm">
-          <div class="form-label-group">
-            <label for="inputUserame">First Name</label>
-            <input
-              type="text"
-              name="firstName"
-              class="form-control"
-              placeholder="First Name"
-              v-model="firstName"
-              required
-            />
-          </div>
-          <div class="form-label-group">
-            <label for="inputUserame">Last Name</label>
-            <input
-              type="text"
-              name="lastName"
-              class="form-control"
-              placeholder="Last Name"
-              v-model="lastName"
-              required
-            />
-          </div>
-          <div class="form-label-group">
-            <label for="inputEmail">Email address</label>
-            <input
-              type="email"
-              class="form-control"
-              placeholder="Email address"
-              name="email"
-              v-model="email"
-              required
-              autofocus
-            />
-          </div>
+  <form @submit.prevent="submitForm">
+    <div class="form-label-group">
+      <label for="inputUserame">First Name</label>
+      <input
+        type="text"
+        name="firstName"
+        class="form-control"
+        placeholder="First Name"
+        v-model="firstName"
+        required
+      />
+    </div>
+    <div class="form-label-group">
+      <label for="inputUserame">Last Name</label>
+      <input
+        type="text"
+        name="lastName"
+        class="form-control"
+        placeholder="Last Name"
+        v-model="lastName"
+        required
+      />
+    </div>
+    <div class="form-label-group">
+      <label for="inputEmail">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        placeholder="Email address"
+        name="email"
+        v-model="email"
+        required
+        autofocus
+      />
+    </div>
 
-          <div class="form-label-group">
-            <label for="inputUserame">Phone Number</label>
-            <input
-              type="tel"
-              name="phone"
-              class="form-control"
-              placeholder="Phone Number"
-              v-model="phone"
-              autofocus
-            />
-          </div>
+    <div class="form-label-group">
+      <label for="inputUserame">Phone Number</label>
+      <input
+        type="tel"
+        name="phone"
+        class="form-control"
+        placeholder="Phone Number"
+        v-model="phone"
+        autofocus
+      />
+    </div>
 
-          <div class="form-label-group">
-            <label for="inputPassword">Desired Start Date</label>
-            <input
-              type="date"
-              id="inputPassword"
-              class="form-control"
-              placeholder="yyyy-MM-dd"
-              v-model="startDate"
-            />
-          </div>
+    <div class="form-label-group">
+      <label for="inputPassword">Desired Start Date</label>
+      <input
+        type="date"
+        id="inputPassword"
+        class="form-control"
+        placeholder="yyyy-MM-dd"
+        v-model="startDate"
+      />
+    </div>
 
-          <div class="cta">
-            <button
-              class="btn btn-lg btn-cta btn-block text-uppercase"
-              type="submit"
-            >Start Application</button>
-          </div>
-          <div class="privacy text-small text-center mt-3">
-            <router-link to="/policy/privacy">Privacy Policy</router-link>
-          </div>
-        </form>
-      </div>
+    <div class="cta">
+      <button class="btn btn-lg btn-cta btn-block text-uppercase" type="submit">Start Application</button>
+    </div>
+    <div class="privacy text-center mt-3">
+      <router-link to="/policy/privacy">Privacy Policy</router-link>
     </div>
   </form>
 </template>

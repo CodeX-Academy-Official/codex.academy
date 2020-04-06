@@ -1,10 +1,12 @@
 <template>
   <section
-    class="hero"
+    class="hero-wrapper"
     :style="{'background-image': `url(${backgroundUrl})`, 'height': height}"
     :class="heroClass"
   >
-    <slot />
+    <div class="hero h-100" :style="{'background-color': backgroundColor}">
+      <slot />
+    </div>
   </section>
 </template>
 
@@ -16,7 +18,8 @@ export default {
   props: {
     unsplashId: String,
     height: String,
-    heroClass: String
+    heroClass: String,
+    backgroundColor: String
   },
   components: {
     HeroText
@@ -29,27 +32,10 @@ export default {
 };
 </script>
 
-<style lang="scss">
-#header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+<style lang="scss" >
+.hero-wrapper {
+  background-position: center;
 }
-
-#logo {
-  text-decoration: none;
-  color: white;
-  font-size: 5vh;
-  font-weight: bold;
-}
-
-#menu-icon {
-  font-family: Geneva, sans-serif;
-  font-size: 6vh;
-}
-
-// hero
-
 .hero {
   overflow: visible;
   height: auto;
@@ -64,9 +50,6 @@ export default {
 
   box-sizing: border-box;
   color: white;
-  background: url(https://images.unsplash.com/photo-1500417148159-68083bd7333a)
-    center center no-repeat;
-  background-size: cover;
 
   h1,
   h2,

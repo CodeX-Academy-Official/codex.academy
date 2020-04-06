@@ -8,6 +8,7 @@
     :aria-label="name"
     @loaded="loaded($event)"
     @error="error($event)"
+    :class="iconClass"
   ></inline-svg>
 </template>
 
@@ -17,17 +18,18 @@ import InlineSvg from "vue-inline-svg";
 // Your component
 export default {
   components: {
-    InlineSvg,
+    InlineSvg
   },
   props: {
     name: { type: String, default: "happy" },
+    iconClass: String
   },
   methods: {
     error(ev) {
       console.error(ev);
     },
-    loaded(ev) {},
-  },
+    loaded(ev) {}
+  }
 };
 </script>
 
