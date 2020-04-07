@@ -8,29 +8,29 @@
       <Logo color="white" :width="150" class="top-left" />
 
       <div class="container">
-        <div class="row">
-          <div class="col big-message">
+        <div class="row h-100">
+          <div class="col my-auto big-message">
             <div class="d-sm-block d-md-none text-center">
-              <h3 class="text-left">Here, you will</h3>
-              <h1 class="text-left action">Build your dream</h1>
+              <h3 class="text-left">Learn to code</h3>
+              <h1 class="text-left action">In 6 Months</h1>
             </div>
             <div class="d-none d-md-block text-center">
-              <h4 class="text-left">Here, you will</h4>
-              <h2 class="text-left action">Build your dream</h2>
+              <h4 class="text-left">Learn to code</h4>
+              <h2 class="text-left action">In 6 Months</h2>
             </div>
             <div class="checklist">
-              <div class="title">Our success formula is based on:</div>
+              <div class="title">We'll help you do it with:</div>
               <div class="item">
                 <Icon name="checkbox" />
-                <span>One-on-one Mentoring</span>
+                <span>Daily mentoring sessions</span>
               </div>
               <div class="item">
                 <Icon name="checkbox" />
-                <span>Micro-Certifications</span>
+                <span>Hyperfocused curriculum</span>
               </div>
               <div class="item">
                 <Icon name="checkbox" />
-                <span>Internship</span>
+                <span>An amazing internship opportunity</span>
               </div>
             </div>
           </div>
@@ -78,6 +78,11 @@
       </div>
     </div>
 
+    <CommercialSection>
+      <h1>How it Works</h1>
+      <h3>Welcome to our full-service software development school!</h3>
+    </CommercialSection>
+
     <div class="bg-lilac pt-5 pb-5">
       <div class="container text-center">
         <h1>Knowledge is Power</h1>
@@ -88,17 +93,12 @@
       </div>
     </div>
 
-    <CommercialSection>
-      <h1>Check this out</h1>
-      <h3>Welcome to our full-service software development school!</h3>
-    </CommercialSection>
-
     <div class="mt-5">
       <div class>
         <div class="container">
           <div class="pt-5 text-center">
-            <h1>Let's avoid bragging</h1>
-            <h3>Here is what others have to say.</h3>
+            <h1>Here is what others have to say</h1>
+            <h3>CodeX Academy is a great experience!</h3>
             <div class="mt-5">
               <TestimonialsCarousel />
             </div>
@@ -190,9 +190,9 @@ export default {
   }
 
   .checklist {
-    font-size: 5vw;
-    @media (min-width: 800px) {
-      font-size: 2.5vw;
+    font-size: 2vw;
+    @media (max-width: 800px) {
+      font-size: 3vw;
     }
 
     .title {
