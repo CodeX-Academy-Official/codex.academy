@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 class="mb-3">Just a few questions...</h3>
+    <h3 class="mb-3 text-center">Just a few questions...</h3>
 
     <div class="survey">
       <div class="form-group">
@@ -8,10 +8,7 @@
           What level software developer do you want to be when you finish
           studying?
         </p>
-        <CertificationSelectorGroup
-          :certifications="getCertifications"
-          @onSelect="setTargetLevel"
-        />
+        <CertificationSelectorGroup :certifications="getCertifications" @onSelect="setTargetLevel" />
       </div>
 
       <div class="form-group" v-if="targetLevel">
@@ -26,21 +23,14 @@
         </div>
       </div>
     </div>
-    <div
-      v-if="studyMonths && !hasSuggestedPlans"
-      class="alert alert-danger"
-      role="alert"
-    >
+    <div v-if="studyMonths && !hasSuggestedPlans" class="alert alert-danger" role="alert">
       <h1>Hmmmmm</h1>
       <p>
         It looks like we don't have any plans that would help you meet your goal
         of Level-{{ targetLevel }} Developer in {{ studyMonths }} months.
       </p>
     </div>
-    <div
-      v-if="(mentoring == 'no' || studyMonths) && hasSuggestedPlans"
-      class="mt-5"
-    >
+    <div v-if="(mentoring == 'no' || studyMonths) && hasSuggestedPlans" class="mt-5 text-center">
       <h3>Here are some programs that would work:</h3>
       <!-- <ul>
         <li>
@@ -56,7 +46,7 @@
 
       <div v-if="bootcamps.length > 0" class="mt-5">
         <h3 class="mb-4 subtitle">Bootcamps</h3>
-        <div class="row">
+        <div class="row justify-content-center">
           <div v-for="plan in bootcamps" :key="plan.id" class="col col-md-4">
             <PlanCardHead :plan="plan" />
           </div>
@@ -65,7 +55,7 @@
 
       <div v-if="selfPaced.length > 0" class="mt-5">
         <h3 class="mb-4 subtitle">Self-Paced</h3>
-        <div class="row">
+        <div class="row justify-content-center">
           <div v-for="plan in selfPaced" :key="plan.id" class="col col-md-4">
             <PlanCardHead :plan="plan" />
           </div>
