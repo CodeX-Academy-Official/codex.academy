@@ -40,13 +40,7 @@
               <h5 class="card-title text-center">Get Started Learning</h5>
               <StartApplicationForm @submitted="startApplication" />
             </div>
-            <div class="thanks-box" v-if="hasApplied">
-              <h3>Thanks</h3>
-              <p>
-                You are on your way to starting a new career. We have received
-                your application! You should check your email for next steps.
-              </p>
-            </div>
+            <Thanks v-if="hasApplied" />
           </div>
         </div>
       </div>
@@ -59,13 +53,7 @@
             <h2 class="card-title text-center">Get Started Learning</h2>
             <StartApplicationForm @submitted="startApplication" />
           </div>
-          <div class="thanks-box" v-if="hasApplied">
-            <h2 class="text-center">Thanks</h2>
-            <p>
-              You are on your way to starting a new career. We have received
-              your application! You should check your email for next steps.
-            </p>
-          </div>
+          <Thanks v-if="hasApplied" />
         </div>
       </div>
     </div>
@@ -122,6 +110,7 @@ import { mapGetters } from "vuex";
 import Technologies from "@/components/Technologies";
 import Icon from "@/components/Icon";
 import Logo from "@/components/Logo";
+import SelectPlanButton from "@/components/SelectPlanButton";
 
 const PillarsBlock = {
   props: {
@@ -143,9 +132,36 @@ const PillarsBlock = {
   }
 };
 
+const Thanks = {
+  components: { SelectPlanButton },
+  render() {
+    return (
+      <div class="thanks-box">
+        <h3>Thanks</h3>
+        <p>
+          You are on your way to starting a new career. We have received your
+          application! You should check your email for next steps.
+        </p>
+        <p>
+          If you'd like to continue your application by selecting a program, be
+          our guest!
+        </p>
+        <p>
+          <SelectPlanButton
+            class="mx-auto"
+            text="Continue Application >>"
+            buttonClass="btn btn-primary nav-link"
+          />
+        </p>
+      </div>
+    );
+  }
+};
+
 export default {
   components: {
     Hero,
+    Thanks,
     StartApplicationForm,
     TestimonialsCarousel,
     Stats,
