@@ -1,26 +1,25 @@
 <template>
-  <div class="container pt-4">
-    <!-- Page Heading/Breadcrumbs -->
-    <h1 class="mt-5 mb-3">How it Works</h1>
+  <div>
+    <Hero :unsplashIds="['-fGqsewtsJY','u_RiRTA_TtY','xRDuEeG1TVI']" height="40vh">
+      <h2>How it Works</h2>
+      <h5>What makes CodeX Academy Tick?</h5>
+    </Hero>
+    <div class="container mt-5 pt-5">
+      <!-- Page Heading/Breadcrumbs -->
 
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item">
-        <router-link to="/">Home</router-link>
-      </li>
-      <li class="breadcrumb-item active">How it Works</li>
-    </ol>
+      <Pillars :pillars="getMethods" />
+      <!-- <h2 id="formula" class="section-title mt-5 mb-5">The CodeX Academy Formula</h2>
+      <Formula />-->
 
-    <h2 id="formula" class="section-title mt-5 mb-5">The CodeX Academy Formula</h2>
-    <Formula />
+      <h2 id="curriculum" class="section-title mt-5 mb-5">The CodeX Academy Curriculum</h2>
+      <CurriculumTable />
 
-    <h2 id="curriculum" class="section-title mt-5 mb-5">The CodeX Academy Curriculum</h2>
-    <CurriculumTable />
+      <h2 id="timeline" class="section-title mt-5 mb-5">Start Strong, Finish Stronger</h2>
+      <Timeline />
 
-    <h2 id="timeline" class="section-title mt-5 mb-5">Start Strong, Finish Stronger</h2>
-    <Timeline />
-
-    <h2 id="tech" class="section-title mt-5 mb-5">Our Technologies and Tools</h2>
-    <Technologies />
+      <h2 id="tech" class="section-title mt-5 mb-5">Our Technologies and Tools</h2>
+      <Technologies />
+    </div>
   </div>
 </template>
 
@@ -31,15 +30,21 @@ import MethodCardList from "@/components/MethodCardList";
 import Timeline from "@/components/Timeline";
 import Formula from "@/components/Formula";
 import CurriculumTable from "@/components/CurriculumTable";
+import Pillars from "@/components/Pillars";
+import Hero from "@/components/Hero";
+import { mapGetters } from "vuex";
 
 export default {
+  computed: { ...mapGetters(["getMethods"]) },
   components: {
     Technologies,
     Unsplash,
     MethodCardList,
     Timeline,
     Formula,
-    CurriculumTable
+    CurriculumTable,
+    Pillars,
+    Hero
   }
 };
 </script>

@@ -156,6 +156,11 @@ export default {
       .icon {
         width: 50px;
         margin: 0px auto;
+
+        svg {
+          width: 50px;
+          height: 50px;
+        }
       }
       .name {
         margin-top: 10px;

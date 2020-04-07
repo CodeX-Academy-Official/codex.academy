@@ -241,6 +241,7 @@ const community = [
     description:
       "Independent learning with access to curriculum and developer community.",
     price: 50,
+    minimumWeeklyStudyHours: 0,
     duration: "per month",
     details: ["Independent Study", ...planCommonDetails],
     primary: false,

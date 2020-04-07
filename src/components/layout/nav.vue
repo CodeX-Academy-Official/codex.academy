@@ -42,10 +42,10 @@
             aria-expanded="false"
           >Programs</a>
           <div class="dropdown-menu">
-            <div class="nav-item">
+            <!-- <div class="nav-item">
               <router-link to="/plans" class="nav-link">Compare</router-link>
             </div>
-            <div class="dropdown-divider"></div>
+            <div class="dropdown-divider"></div>-->
             <div class="nav-item">
               <router-link to="/selfpaced" class="nav-link">Self-Paced</router-link>
             </div>
@@ -96,7 +96,7 @@
           >How It Works</a>
           <div class="dropdown-menu">
             <div class="nav-item">
-              <router-link :to="{path:'/howitworks', hash:'#formula'}" class="nav-link">Formula</router-link>
+              <router-link :to="{path:'/howitworks', hash:'#formula'}" class="nav-link">Six Pillars</router-link>
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
