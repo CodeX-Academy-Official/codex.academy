@@ -162,6 +162,7 @@ export default {
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", applicant);
+      await this.$store.dispatch("setStartDate", applicant.startDate);
       this.hasApplied = true;
     }
   },
