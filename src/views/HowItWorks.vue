@@ -32,6 +32,9 @@
         Our Technologies and Tools
       </h2>
       <Technologies />
+
+      <h2 id="tech" class="section-title mt-5 mb-5">Meet Our Internship Partners</h2>
+      <InternshipPartners />
     </div>
   </div>
 </template>
@@ -45,6 +48,7 @@ import Formula from "@/components/Formula";
 import CurriculumTable from "@/components/CurriculumTable";
 import Pillars from "@/components/Pillars";
 import Hero from "@/components/Hero";
+import InternshipPartners from "@/components/InternshipPartners";
 import { mapGetters } from "vuex";
 
 export default {
@@ -58,7 +62,8 @@ export default {
     CurriculumTable,
     Pillars,
     Hero,
-  },
+    InternshipPartners
+  }
 };
 </script>
 
