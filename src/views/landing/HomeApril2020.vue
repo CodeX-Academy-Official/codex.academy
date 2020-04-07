@@ -88,7 +88,10 @@
         <h1>Knowledge is Power</h1>
         <h3>Some of the technologies you'll be learning</h3>
         <div class="mb-5 mt-5">
-          <Technologies :includeName="true" />
+          <Technologies :includeName="true" :onlyImportant="true" />
+          <div class="text-center">
+            <router-link class="btn btn-secondary" to="/howitworks#tech">See More Technologies</router-link>
+          </div>
         </div>
       </div>
     </div>
