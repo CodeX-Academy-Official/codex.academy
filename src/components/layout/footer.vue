@@ -5,30 +5,24 @@
       <img src="img/logo/codex_hat_white_small.png" width="70" />
     </div>
     <div class="container">
-      <div class="row justify-content-md-center">
+      <div class="row justify-content-md-center text-center">
         <div class="col-6 col-md-2">
-          <h4>CODEX</h4>
+          <h4>CODEX Academy</h4>
           <p>
             <router-link to="/">Home</router-link>
           </p>
-          <!-- <p>
-            <router-link to="/financial-aid">Financial Aid</router-link>
-          </p>-->
-          <!-- <p>
-            <router-link to="/team">Team</router-link>
-          </p>-->
           <p>
             <router-link to="/team">Team</router-link>
           </p>
-          <!-- <p>
-            <router-link to="/contact">Contact</router-link>
-          </p> -->
+          <p>
+            <router-link to="/financial-aid">Financial Aid</router-link>
+          </p>
         </div>
 
         <div class="col-6 col-md-2">
           <h4>Programs</h4>
           <p>
-            <router-link to="/plans">Compare</router-link>
+            <router-link to="/findplan">Help Me Decide</router-link>
           </p>
           <p>
             <router-link to="/selfpaced">Self-Paced</router-link>
@@ -44,7 +38,7 @@
         <div class="col-6 col-md-2">
           <h4>How It Works</h4>
           <p>
-            <router-link to="/howitworks#formula">Formula</router-link>
+            <router-link to="/howitworks#pillars">Six Pillars</router-link>
           </p>
           <p>
             <router-link to="/howitworks#curriculum">Curriculum</router-link>
@@ -65,12 +59,6 @@
           <p>
             <router-link to="/contact">Contact Us</router-link>
           </p>
-          <p>
-            <router-link to="/findplan">Help Me Decide</router-link>
-          </p>
-          <p>
-            <router-link to="/financial-aid">Financial Aid</router-link>
-          </p>
         </div>
 
         <div class="col col-md-2">
@@ -80,7 +68,7 @@
           </p>
           <!-- <p>
             <router-link to="/terms-of-use">Terms of Use</router-link>
-          </p> -->
+          </p>-->
         </div>
       </div>
     </div>
@@ -99,18 +87,12 @@
           </a>
         </div>
         <div class="col-1">
-          <a
-            href="https://www.instagram.com/codexacademyonline/"
-            target="_blank"
-          >
+          <a href="https://www.instagram.com/codexacademyonline/" target="_blank">
             <font-awesome-icon :icon="faInstagram" class="fa-2x" />
           </a>
         </div>
         <div class="col-1">
-          <a
-            href="https://www.youtube.com/channel/UCUKP1GrIaI-dcuV1IlK7x8Q"
-            target="_blank"
-          >
+          <a href="https://www.youtube.com/channel/UCUKP1GrIaI-dcuV1IlK7x8Q" target="_blank">
             <font-awesome-icon :icon="faYoutubeSquare" class="fa-2x" />
           </a>
         </div>
@@ -128,7 +110,7 @@ import {
   faFacebookSquare,
   faInstagram,
   faTwitterSquare,
-  faYoutubeSquare,
+  faYoutubeSquare
 } from "@fortawesome/fontawesome-free-brands";
 
 export default {
@@ -136,8 +118,8 @@ export default {
     faFacebookSquare,
     faInstagram,
     faTwitterSquare,
-    faYoutubeSquare,
-  }),
+    faYoutubeSquare
+  })
 };
 </script>
 <style lang="scss" scoped>

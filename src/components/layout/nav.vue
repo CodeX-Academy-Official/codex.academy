@@ -96,7 +96,7 @@
           >How It Works</a>
           <div class="dropdown-menu">
             <div class="nav-item">
-              <router-link :to="{path:'/howitworks', hash:'#formula'}" class="nav-link">Six Pillars</router-link>
+              <router-link :to="{path:'/howitworks', hash:'#pillars'}" class="nav-link">Six Pillars</router-link>
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
