@@ -88,7 +88,7 @@
         <h1>Knowledge is Power</h1>
         <h3>Some of the technologies you'll be learning</h3>
         <div class="mb-5 mt-5">
-          <Top10Tech :width="50" />
+          <Technologies :includeName="true" />
         </div>
       </div>
     </div>
@@ -116,7 +116,7 @@ import StartApplicationForm from "@/views/landing/StartApplicationForm";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import Stats from "@/components/Stats";
 import { mapGetters } from "vuex";
-import Top10Tech from "./Top10Tech";
+import Technologies from "@/components/Technologies";
 import Icon from "@/components/Icon";
 import Logo from "@/components/Logo";
 
@@ -148,7 +148,7 @@ export default {
     Stats,
     PillarsBlock,
     CommercialSection,
-    Top10Tech,
+    Technologies,
     Icon,
     Logo
   },
