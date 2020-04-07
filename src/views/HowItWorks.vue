@@ -7,7 +7,7 @@
     <div class="container mt-5 pt-5">
       <!-- Page Heading/Breadcrumbs -->
 
-      <Pillars :pillars="getMethods" />
+      <Pillars id="pillars" :pillars="getMethods" />
       <!-- <h2 id="formula" class="section-title mt-5 mb-5">The CodeX Academy Formula</h2>
       <Formula />-->
 
