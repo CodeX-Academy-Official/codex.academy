@@ -1,24 +1,13 @@
 <template>
   <form @submit.prevent="submitForm">
     <div class="form-label-group">
-      <label for="inputUserName">First Name</label>
+      <label for="inputUserName">Name</label>
       <input
         type="text"
-        name="firstName"
+        name="name"
         class="form-control"
-        placeholder="First Name"
-        v-model="firstName"
-        required
-      />
-    </div>
-    <div class="form-label-group">
-      <label for="inputUserName">Last Name</label>
-      <input
-        type="text"
-        name="lastName"
-        class="form-control"
-        placeholder="Last Name"
-        v-model="lastName"
+        placeholder="Name"
+        v-model="name"
         required
       />
     </div>
@@ -35,7 +24,7 @@
       />
     </div>
 
-    <div class="form-label-group">
+    <!-- <div class="form-label-group">
       <label for="inputUserName">Phone Number</label>
       <input
         type="tel"
@@ -45,7 +34,7 @@
         v-model="phone"
         autofocus
       />
-    </div>
+    </div>-->
 
     <div class="form-label-group">
       <label for="inputPassword">Desired Start Date</label>
@@ -76,19 +65,19 @@ function oneWeekFromToday() {
 }
 export default {
   data: () => ({
-    firstName: "",
-    lastName: "",
+    name: "",
     email: "",
-    phone: "",
     startDate: oneWeekFromToday()
   }),
   methods: {
     submitForm() {
+      const nameParts = this.name.trim().split(" ");
+      const lastName = nameParts[nameParts.length - 1];
+      const firstName = this.name.replace(lastName, "").trim();
       this.$emit("submitted", {
-        firstName: this.firstName,
-        lastName: this.lastName,
+        firstName,
+        lastName,
         email: this.email,
-        phone: this.phone,
         startDate: this.startDate
       });
     }
