@@ -40,7 +40,7 @@
               <h3>Thanks</h3>
               <p>
                 You are on your way to starting a new career. We have received
-                your applicatoin! You should check your email for next steps.
+                your application! You should check your email for next steps.
               </p>
             </div>
           </div>
@@ -59,7 +59,7 @@
             <h2 class="text-center">Thanks</h2>
             <p>
               You are on your way to starting a new career. We have received
-              your applicatoin! You should check your email for next steps.
+              your application! You should check your email for next steps.
             </p>
           </div>
         </div>

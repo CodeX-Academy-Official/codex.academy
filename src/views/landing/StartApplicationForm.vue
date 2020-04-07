@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="submitForm">
     <div class="form-label-group">
-      <label for="inputUserame">First Name</label>
+      <label for="inputUserName">First Name</label>
       <input
         type="text"
         name="firstName"
@@ -12,7 +12,7 @@
       />
     </div>
     <div class="form-label-group">
-      <label for="inputUserame">Last Name</label>
+      <label for="inputUserName">Last Name</label>
       <input
         type="text"
         name="lastName"
@@ -36,7 +36,7 @@
     </div>
 
     <div class="form-label-group">
-      <label for="inputUserame">Phone Number</label>
+      <label for="inputUserName">Phone Number</label>
       <input
         type="tel"
         name="phone"
@@ -74,7 +74,6 @@ function oneWeekFromToday() {
   const formatted = d.toISOString().split("T")[0];
   return formatted;
 }
-
 export default {
   data: () => ({
     firstName: "",
@@ -104,10 +103,8 @@ export default {
     color: white;
     font-weight: 900;
   }
-
   .form-label-group {
     margin-bottom: 10px;
-
     label {
       font-size: 0.7em;
       margin-bottom: 0px;
