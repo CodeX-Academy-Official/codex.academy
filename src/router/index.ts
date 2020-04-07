@@ -31,6 +31,7 @@ import ApplicationFee from "../views/enroll/ApplicationFee.vue";
 import MeetWithAdmissions from "../views/enroll/MeetWithAdmissions.vue";
 import landingPageRoutes from "./landingPages";
 import policyRoutes from "./policyRoutes";
+import HomeApril2020 from "../views/landing/HomeApril2020.vue";
 
 Vue.use(VueRouter);
 
@@ -40,7 +41,7 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home,
+    component: HomeApril2020,
   },
   {
     path: "/selfpaced",

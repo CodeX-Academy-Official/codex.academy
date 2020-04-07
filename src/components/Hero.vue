@@ -17,6 +17,7 @@ import { generateUnsplashUrl } from "../utils/unsplash";
 export default {
   props: {
     unsplashId: String,
+    unsplashIds: Array,
     height: String,
     heroClass: String,
     backgroundColor: String
@@ -26,7 +27,13 @@ export default {
   },
   computed: {
     backgroundUrl() {
-      return generateUnsplashUrl(this.unsplashId, "1600", "900");
+      let id = this.unsplashId;
+      if (this.unsplashIds) {
+        id = this.unsplashIds[
+          Math.floor(Math.random() * this.unsplashIds.length)
+        ];
+      }
+      return generateUnsplashUrl(id, "1600", "900");
     }
   }
 };

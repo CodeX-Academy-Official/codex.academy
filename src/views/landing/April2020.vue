@@ -13,12 +13,8 @@
     <div class="container mt-5">
       <div class="row justify-content-center">
         <div class="col col-sm-12 col-md-7 col-lg-80010011">
-          <h2 class="d-none d-sm-block text-center">
-            It's time for a new career!
-          </h2>
-          <h3 class="d-xs-block d-sm-none text-center">
-            It's time for a new career!
-          </h3>
+          <h2 class="d-none d-sm-block text-center">It's time for a new career!</h2>
+          <h3 class="d-xs-block d-sm-none text-center">It's time for a new career!</h3>
           <div class="mb-5 text-center">
             <div class="d-none d-xl-block">
               <Commercial :width="620" />
@@ -39,10 +35,7 @@
           <PillarsBlock :pillars="getMethods" v-if="!hasApplied" />
         </div>
         <div class="col-12 col-sm-8 col-md-5 col-lg-4">
-          <StartApplicationForm
-            @submitted="startApplication"
-            v-if="!hasApplied"
-          />
+          <StartApplicationForm @submitted="startApplication" v-if="!hasApplied" />
           <div class="border bg-light p-4 mb-5" v-if="hasApplied">
             <h3>Congratulations</h3>
             <p>
@@ -80,10 +73,10 @@ import { mapGetters } from "vuex";
 
 const PillarsBlock = {
   props: {
-    pillars: Array,
+    pillars: Array
   },
   render() {
-    const items = this.pillars.map((p) => (
+    const items = this.pillars.map(p => (
       <li>
         <strong>{p.title}</strong> - {p.subtitle}
       </li>
@@ -95,7 +88,7 @@ const PillarsBlock = {
         <ul>{items}</ul>
       </div>
     );
-  },
+  }
 };
 
 const Commercial = {
@@ -108,7 +101,7 @@ const Commercial = {
         poster="img/commercial/24-weeks.png"
       />
     );
-  },
+  }
 };
 
 export default {
@@ -119,22 +112,22 @@ export default {
     TestimonialsCarousel,
     Stats,
     PillarsBlock,
-    Commercial,
+    Commercial
   },
   data: () => ({
-    hasApplied: false,
+    hasApplied: false
   }),
   computed: { ...mapGetters(["getMethods", "getApplicant"]) },
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", applicant);
       this.hasApplied = true;
-    },
+    }
   },
   mounted() {
     const applicant = this.getApplicant;
     this.hasApplied = applicant;
-  },
+  }
 };
 </script>
 

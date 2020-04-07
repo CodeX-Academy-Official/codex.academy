@@ -1,6 +1,10 @@
 <template>
   <div>
-    <Hero unsplashId="vdXMSiX-n6M" height="100vh" backgroundColor="rgba(25, 32, 71,0.7)">
+    <Hero
+      :unsplashIds="['vdXMSiX-n6M','Qg-r7OxZN7A', 'YK0HPwWDJ1I']"
+      height="100vh"
+      backgroundColor="rgba(25, 32, 71,0.7)"
+    >
       <Logo color="white" :width="150" class="top-left" />
 
       <div class="container">

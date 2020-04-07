@@ -37,13 +37,22 @@ export const methods = [
   },
   {
     id: "4",
-    title: "Remote",
-    subtitle: "From the Comfort of Anywhere",
+    title: "Incremental Learning",
+    subtitle: "Learn what you need, only when you need it",
     description:
-      "CodeX Academy is 100% remote. That means you can learn to code from just about anywhere. All you need is a computer, internet, power and a comfortable spot.",
+      "The CodeX Academy curriculum is designed to take advantage of how your brain accumulates and retains new information. There's a LOT to learn with programming. We introduce you to thin slices of each relevant technology, just in time for a project to make it stick. ",
     icon: "faTv",
     accentColor: "lilac",
   },
+  // {
+  //   id: "4",
+  //   title: "Remote",
+  //   subtitle: "From the Comfort of Anywhere",
+  //   description:
+  //     "CodeX Academy is 100% remote. That means you can learn to code from just about anywhere. All you need is a computer, internet, power and a comfortable spot.",
+  //   icon: "faTv",
+  //   accentColor: "lilac",
+  // },
   {
     id: "5",
     title: "Mastery-Based",
