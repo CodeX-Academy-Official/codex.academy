@@ -250,7 +250,7 @@ export default {
       margin-bottom: 10px;
 
       label {
-        font-size: 0.5em;
+        //font-size: 0.5em;
         text-transform: capitalize;
         margin-bottom: 0px;
       }
@@ -259,7 +259,7 @@ export default {
       margin-top: 20px;
     }
     .privacy {
-      font-size: 0.5em;
+      font-size: 0.8em;
       text-shadow: none;
       a {
         color: #eee;
