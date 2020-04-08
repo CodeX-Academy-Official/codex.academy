@@ -6,15 +6,12 @@
           <Icon name="mentor" />
           <div class="title">76%</div>
         </div>
-        <p>
-          of people think mentors are important, but only 37% have a mentor.
-        </p>
+        <p>of people think mentors are important, but only 37% have a mentor.</p>
         <p>
           <a
             href="https://www.forbes.com/sites/christinecomaford/2019/07/03/new-study-76-of-people-think-mentors-are-important-but-only-37-have-one/#4faa11cc4329"
             target="_blank"
-            >Learn More</a
-          >
+          >Learn More</a>
         </p>
       </div>
     </div>
@@ -22,17 +19,14 @@
       <div class="stat">
         <div class="row number justify-content-center lilac">
           <Icon name="happy" />
-          <div class="title">9/10</div>
+          <div class="title">84%</div>
         </div>
-        <p>
-          workers who have a career mentor say they are happy in their jobs.
-        </p>
+        <p>of employers think coding school graduates are just as or even more prepared than those with computer science degrees.</p>
         <p>
           <a
-            href="https://www.cnbc.com/2019/07/16/nine-in-10-workers-who-have-a-mentor-say-they-are-happy-in-their-jobs.html"
+            href="http://blog.indeed.com/2017/05/02/what-employers-think-about-coding-bootcamp/"
             target="_blank"
-            >Learn More</a
-          >
+          >Learn More</a>
         </p>
       </div>
     </div>
@@ -40,15 +34,14 @@
       <div class="stat">
         <div class="row number justify-content-center fucia">
           <Icon name="moneybag" />
-          <div class="title">65%</div>
+          <div class="title">57%</div>
         </div>
-        <p>of paid interns get a job offer.</p>
+        <p>increase in salary after coding bootcamp with an undergraduate degree.</p>
         <p>
           <a
-            href="https://universe.byu.edu/2017/02/22/interns-more-likely-to-be-hired-as-full-time-employees/"
+            href="https://www.coursereport.com/blog/web-developer-salaries-after-coding-bootcamps"
             target="_blank"
-            >Learn More</a
-          >
+          >Learn More</a>
         </p>
       </div>
     </div>
@@ -60,8 +53,8 @@ import Icon from "@/components/Icon";
 
 export default {
   components: {
-    Icon,
-  },
+    Icon
+  }
 };
 </script>
 
