@@ -45,6 +45,8 @@ export default {
 
 img {
   border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
   width: 60%;
 }
 p {
