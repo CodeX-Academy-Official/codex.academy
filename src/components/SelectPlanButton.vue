@@ -1,9 +1,5 @@
 <template>
-  <button
-    class="btn btn-primary program-select-button"
-    :class="buttonClass"
-    @click="selectPlan"
-  >
+  <button class="btn btn-primary program-select-button" :class="buttonClass" @click="selectPlan">
     <strong>{{ text }}</strong>
   </button>
 </template>
@@ -18,7 +14,10 @@ export default {
   methods: {
     selectPlan() {
       this.$store.dispatch("selectPlan", this.plan);
-      this.$router.push("/enroll");
+      const hasProgram = this.$store.getters.getSelectedPlan;
+      if (hasProgram) return this.$router.push("/enroll");
+
+      this.$router.push("/findplan");
     }
   }
 };

@@ -1,5 +1,5 @@
 <template>
-  <div class="d-block" :style="{width: width}" :class="{white: color==='white'}">
+  <div class :style="{width: width}" :class="{white: color==='white'}">
     <img :src="src" :width="width" />
   </div>
 </template>

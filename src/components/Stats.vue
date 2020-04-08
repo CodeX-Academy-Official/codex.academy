@@ -2,21 +2,6 @@
   <div class="row justify-content-md-center">
     <div class="col">
       <div class="stat">
-        <div class="row number justify-content-center periwinkle">
-          <Icon name="mentor" />
-          <div class="title">76%</div>
-        </div>
-        <p>of people think mentors are important, but only 37% have a mentor.</p>
-        <p>
-          <a
-            href="https://www.forbes.com/sites/christinecomaford/2019/07/03/new-study-76-of-people-think-mentors-are-important-but-only-37-have-one/#4faa11cc4329"
-            target="_blank"
-          >Learn More</a>
-        </p>
-      </div>
-    </div>
-    <div class="col">
-      <div class="stat">
         <div class="row number justify-content-center lilac">
           <Icon name="happy" />
           <div class="title">84%</div>
@@ -40,6 +25,21 @@
         <p>
           <a
             href="https://www.coursereport.com/blog/web-developer-salaries-after-coding-bootcamps"
+            target="_blank"
+          >Learn More</a>
+        </p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="stat">
+        <div class="row number justify-content-center periwinkle">
+          <Icon name="mentor" />
+          <div class="title">76%</div>
+        </div>
+        <p>of people think mentors are important, but only 37% have a mentor.</p>
+        <p>
+          <a
+            href="https://www.forbes.com/sites/christinecomaford/2019/07/03/new-study-76-of-people-think-mentors-are-important-but-only-37-have-one/#4faa11cc4329"
             target="_blank"
           >Learn More</a>
         </p>

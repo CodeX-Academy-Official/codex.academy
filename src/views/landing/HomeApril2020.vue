@@ -5,17 +5,17 @@
       height="100vh"
       backgroundColor="rgba(25, 32, 71,0.7)"
     >
-      <Logo color="white" :width="150" class="top-left" />
+      <Logo color="white" :width="150" class="landing-logo" />
 
       <div class="container">
         <div class="row h-100">
           <div class="col my-auto big-message">
             <div class="d-sm-block d-md-none text-center">
-              <h3 class="text-left">Learn to code</h3>
-              <h1 class="text-left action">In 6 Months</h1>
+              <h4 class="text-left action">Learn to code</h4>
+              <h2 class="text-left action">In 6 Months</h2>
             </div>
             <div class="d-none d-md-block text-center">
-              <h4 class="text-left">Learn to code</h4>
+              <h4 class="text-left action">Learn to code</h4>
               <h2 class="text-left action">In 6 Months</h2>
             </div>
             <div class="checklist">
@@ -59,8 +59,8 @@
     </div>
 
     <div class="container mt-5 text-center">
-      <h1>Take a closer look</h1>
-      <h3>Numbers don't lie.</h3>
+      <h1>Opportunity Awaits</h1>
+      <h3>Your Options Are Looking Good</h3>
       <div class="pb-5 pb-5">
         <Stats />
       </div>
@@ -89,7 +89,7 @@
         <div class="container">
           <div class="pt-5 text-center">
             <h1>Here is what others have to say</h1>
-            <h3>CodeX Academy is a great experience!</h3>
+            <h3>CodeX Academy is a valuable experience!</h3>
             <div class="mt-5">
               <TestimonialsCarousel />
             </div>
@@ -192,7 +192,7 @@ export default {
 <style lang="scss">
 @import "@/variables";
 
-.top-left {
+.landing-logo {
   position: absolute;
   top: 2.6vh;
   left: 6vw;
@@ -210,9 +210,9 @@ export default {
   }
 
   .checklist {
-    font-size: 2vw;
+    font-size: 1.6rem;
     @media (max-width: 800px) {
-      font-size: 3vw;
+      font-size: 1.4rem;
     }
 
     .title {

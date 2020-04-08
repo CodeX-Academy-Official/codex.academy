@@ -42,11 +42,11 @@ export default {
 <style lang="scss" >
 .hero-wrapper {
   background-position: center;
+  background-size: cover;
 }
 .hero {
   overflow: visible;
   height: auto;
-  font-size: 3vh;
   text-shadow: 2px 2px 5px #333;
   display: flex;
   flex-direction: column;
@@ -57,7 +57,9 @@ export default {
 
   box-sizing: border-box;
   color: white;
+  font-size: 1rem;
 
+  
   h1,
   h2,
   h3,
@@ -69,19 +71,19 @@ export default {
     max-width: 80vw;
     margin: 0;
     margin-bottom: 1.5vh;
-    font-size: 8vw;
+    font-size: 6rem;
   }
   h2 {
-    font-size: 6vw;
+    font-size: 4rem;
   }
   h3 {
-    font-size: 4.5vw;
+    font-size: 3rem;
   }
   h4 {
-    font-size: 3vw;
+    font-size: 2rem;
   }
   h5 {
-    font-size: 1.5vw;
+    font-size: 1rem;
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="default-layout">
     <navHeader />
     <div class="under-nav">
       <slot />
@@ -20,8 +20,14 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.under-nav {
-  margin-top: 72px;
+<style lang="scss" >
+.default-layout {
+  .under-nav {
+    margin-top: 72px;
+  }
+  .landing-logo {
+    display: none;
+    background-color: red;
+  }
 }
 </style>
