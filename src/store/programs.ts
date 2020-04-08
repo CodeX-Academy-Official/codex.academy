@@ -26,7 +26,7 @@ const selfpaceds = [
     details: [
       "10 hour/week commitment",
       ...mentorDrivenCommonDetails,
-      "2 hours/week live 1:1 mentoring",
+      "1 hour/week live 1:1 mentoring",
       "Up to 3 Evaluations/month",
     ],
     isSelfpaced: true,
@@ -54,7 +54,7 @@ const selfpaceds = [
     details: [
       "20 hour/week commitment",
       ...mentorDrivenCommonDetails,
-      "5 hours/week live 1:1 mentoring",
+      "2 hours/week live 1:1 mentoring",
       "Up to 5 Evaluations/month",
     ],
     isSelfpaced: true,
@@ -82,7 +82,7 @@ const selfpaceds = [
     details: [
       "40 hour/week commitment",
       ...mentorDrivenCommonDetails,
-      "10 hours/week live 1:1 mentoring",
+      "5 hours/week live 1:1 mentoring",
       "Up to 10 Evaluations/month",
     ],
     primary: true,
@@ -111,7 +111,7 @@ const selfpaceds = [
     details: [
       "40-50 hour/week commitment",
       ...mentorDrivenCommonDetails,
-      "20 hours/week live 1:1 mentoring",
+      "10 hours/week live 1:1 mentoring",
       "Up to 20 Evaluations/month",
     ],
     isSelfpaced: true,
@@ -131,13 +131,13 @@ const selfpaceds = [
 
 const bootcampCommonDetails = [
   "40-50 hour/week commitment",
-  "Mentor-Driven",
+  "1-on-1 Mentoring",
   "Unlimited Learning Pathway Access",
   "24/7 Community Chat Access",
   "Build a Portfolio",
   "Internship Opportunities",
   "Career Counseling",
-  "10 hours/week live 1:1 mentoring",
+  "5 hours/week live 1:1 mentoring",
 ];
 
 const bootcamps = [
