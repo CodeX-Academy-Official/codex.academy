@@ -33,7 +33,7 @@ export default {
           Math.floor(Math.random() * this.unsplashIds.length)
         ];
       }
-      return generateUnsplashUrl(id, "1600", "900");
+      return generateUnsplashUrl(id, "1600", "1200");
     }
   }
 };

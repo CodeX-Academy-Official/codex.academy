@@ -19,7 +19,7 @@
               <h2 class="text-left action">In 6 Months</h2>
             </div>
             <div class="checklist">
-              <div class="title">We'll help you do it with:</div>
+              <div class="title">We'll help you do it!</div>
               <div class="item">
                 <Icon name="checkbox" />
                 <span>Daily mentoring sessions</span>
@@ -30,14 +30,14 @@
               </div>
               <div class="item">
                 <Icon name="checkbox" />
-                <span>An amazing internship opportunity</span>
+                <span>Walk into an internship</span>
               </div>
             </div>
           </div>
 
           <div class="col-5 d-none d-md-block">
             <div class="start-application-form" v-if="!hasApplied">
-              <h5 class="card-title text-center">Get Started Learning</h5>
+              <h5 class="card-title text-center">Sign Up Today</h5>
               <StartApplicationForm @submitted="startApplication" />
             </div>
             <Thanks v-if="hasApplied" />
@@ -194,7 +194,7 @@ export default {
 
 .top-left {
   position: absolute;
-  top: 3vh;
+  top: 2.6vh;
   left: 6vw;
 }
 .hero {
