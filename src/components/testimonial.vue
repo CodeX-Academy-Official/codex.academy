@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="headshot d-flex">
+    <div class="headshot d-flex circle">
       <img :src="headshot" class="img-fluid mx-auto mb-4" />
     </div>
     <p class="text-center pl-3 pr-3 stars">
@@ -45,8 +45,8 @@ export default {
 
 img {
   border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
+  -webkit-transform: translateZ(0);
+  -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
   width: 60%;
 }
 p {
