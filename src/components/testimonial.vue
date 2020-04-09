@@ -45,8 +45,8 @@ export default {
 
 img {
   border-radius: 50%;
-  -webkit-transform: translateZ(0);
-  -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
   width: 60%;
 }
 p {
