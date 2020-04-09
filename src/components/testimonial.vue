@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="headshot d-flex circle">
+    <div class="headshot circle">
       <img :src="headshot" class="img-fluid mx-auto mb-4" />
     </div>
     <p class="text-center pl-3 pr-3 stars">
