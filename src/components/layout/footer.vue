@@ -22,6 +22,9 @@
         <div class="col-6 col-md-2">
           <h4>Programs</h4>
           <p>
+            <router-link to="/programs/overview">Overview</router-link>
+          </p>
+          <p>
             <router-link to="/findplan">Help Me Decide</router-link>
           </p>
           <p>

@@ -42,10 +42,10 @@
             aria-expanded="false"
           >Programs</a>
           <div class="dropdown-menu">
-            <!-- <div class="nav-item">
-              <router-link to="/plans" class="nav-link">Compare</router-link>
+            <div class="nav-item">
+              <router-link to="/programs/overview" class="nav-link">Overview</router-link>
             </div>
-            <div class="dropdown-divider"></div>-->
+            <div class="dropdown-divider"></div>
             <div class="nav-item">
               <router-link to="/selfpaced" class="nav-link">Self-Paced</router-link>
             </div>
