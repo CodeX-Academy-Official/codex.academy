@@ -3,7 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import { scrollToHash } from "./scrollToHash";
 
-import Plans from "../views/Plans.vue";
+import ProgramOverview from "../views/ProgramOverview.vue";
 import Selfpaced from "../views/Selfpaced.vue";
 import Bootcamps from "../views/Bootcamps.vue";
 import Community from "../views/Community.vue";
@@ -59,9 +59,9 @@ const routes = [
     component: Community,
   },
   {
-    path: "/plans",
-    name: "Plans",
-    component: Plans,
+    path: "/programs/overview",
+    name: "ProgramOverview",
+    component: ProgramOverview,
   },
   {
     path: "/faqs",
