@@ -2,7 +2,7 @@
   <div>
     <Hero unsplashId="IgUR1iX0mqM" height="40vh">
       <h2>Self-Paced Programs</h2>
-      <h4>Learn at your own pace</h4>
+      <h5>Learn at your own pace</h5>
     </Hero>
     <div class="container">
       <div class="row mt-5">
@@ -38,8 +38,8 @@ export default {
   components: {
     SelfPacedTable,
     Unsplash,
-    Hero,
-  },
+    Hero
+  }
 };
 </script>
 

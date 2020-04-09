@@ -59,7 +59,6 @@ export default {
   color: white;
   font-size: 1rem;
 
-  
   h1,
   h2,
   h3,
@@ -71,19 +70,34 @@ export default {
     max-width: 80vw;
     margin: 0;
     margin-bottom: 1.5vh;
-    font-size: 6rem;
+    font-size: 8vw;
+    @media (max-width: 800px) {
+      font-size: 10vw;
+    }
   }
   h2 {
-    font-size: 4rem;
+    font-size: 6vw;
+    @media (max-width: 700px) {
+      font-size: 7vw;
+    }
   }
   h3 {
-    font-size: 3rem;
+    font-size: 4.5vw;
+    @media (max-width: 800px) {
+      font-size: 5.5vw;
+    }
   }
   h4 {
-    font-size: 2rem;
+    font-size: 3vw;
+    @media (max-width: 800px) {
+      font-size: 4vw;
+    }
   }
   h5 {
-    font-size: 1rem;
+    font-size: 1.5vw;
+    @media (max-width: 800px) {
+      font-size: 3vw;
+    }
   }
 }
 </style>

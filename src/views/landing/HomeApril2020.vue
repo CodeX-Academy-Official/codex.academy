@@ -1,6 +1,7 @@
 <template>
   <div>
     <Hero
+      class="april2020-landing-hero"
       :unsplashIds="['vdXMSiX-n6M','Qg-r7OxZN7A', 'YK0HPwWDJ1I']"
       height="100vh"
       backgroundColor="rgba(25, 32, 71,0.7)"
@@ -176,7 +177,7 @@ export default {
   top: 2.6vh;
   left: 6vw;
 }
-.hero {
+.april2020-landing-hero {
   .thanks-box {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 5px;
@@ -244,6 +245,26 @@ export default {
         color: #eee;
       }
     }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-size: 6rem;
+  }
+  h2 {
+    font-size: 4rem;
+  }
+  h3 {
+    font-size: 3rem;
+  }
+  h4 {
+    font-size: 2rem;
+  }
+  h5 {
+    font-size: 1rem;
   }
 }
 </style>

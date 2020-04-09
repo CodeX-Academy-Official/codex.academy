@@ -2,7 +2,7 @@
   <div>
     <Hero unsplashId="y_6rqStQBYQ" height="40vh">
       <h2>Coding Bootcamps</h2>
-      <h4>Full-time, Full-Immersion</h4>
+      <h5>Full-time, Full-Immersion</h5>
     </Hero>
     <div class="container">
       <div class="row mt-5">
@@ -37,7 +37,7 @@ export default {
   components: {
     BootcampsTable,
     Unsplash,
-    Hero,
-  },
+    Hero
+  }
 };
 </script>
