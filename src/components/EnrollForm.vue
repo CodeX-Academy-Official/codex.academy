@@ -57,12 +57,7 @@
       </div>
       <div class="form-group col-md-4">
         <label for="inputAddress2">Apartment, Suite, Floor #:</label>
-        <input
-          type="text"
-          class="form-control"
-          id="inputAddress2"
-          v-model="applicant.address2"
-        />
+        <input type="text" class="form-control" id="inputAddress2" v-model="applicant.address2" />
       </div>
     </div>
     <div class="form-row">
@@ -168,10 +163,23 @@
         <select class="form-control" id="gender" v-model="applicant.gender">
           <option value="Male">Male</option>
           <option value="Female">Female</option>
-          <option value="Other / Prefer not to answer"
-            >Other / Prefer not to answer</option
-          >
+          <option value="Other / Prefer not to answer">Other / Prefer not to answer</option>
         </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col form-label-group">
+        <label>Financial Aid:</label>
+        <div class="form-check financial-aid">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            v-model="applicant.financialAid"
+            id="financialAid"
+          />
+          <label class="form-check-label" for="financialAid">I want financial aid.</label>
+        </div>
       </div>
     </div>
     <!-- <div class="form-group">
@@ -250,15 +258,14 @@
       </div>
     </div>-->
 
-    <button type="submit" class="btn btn-primary">
-      <strong>Yes, This is Me</strong>
-    </button>
-    <div
-      class="alert alert-danger mt-3"
-      v-if="$v.applicant.$invalid && $v.applicant.$dirty"
-    >
-      Please check the form to make sure all required fields have been filled
-      in.
+    <div class="mt-3">
+      <button type="submit" class="btn btn-primary">
+        <strong>Yes, This is Me</strong>
+      </button>
+      <div class="alert alert-danger mt-3" v-if="$v.applicant.$invalid && $v.applicant.$dirty">
+        Please check the form to make sure all required fields have been filled
+        in.
+      </div>
     </div>
   </form>
 </template>
@@ -343,5 +350,16 @@ export default {
 
 .error:focus {
   outline-color: #f99;
+}
+.financial-aid {
+  label {
+    font-size: 1.2em;
+    padding-left: 10px;
+    text-transform: inherit;
+  }
+  input {
+    height: 20px;
+    width: 20px;
+  }
 }
 </style>
