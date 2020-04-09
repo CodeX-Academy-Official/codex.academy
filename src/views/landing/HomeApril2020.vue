@@ -40,7 +40,7 @@
               <h5 class="card-title text-center">Sign Up Today</h5>
               <StartApplicationForm @submitted="startApplication" />
             </div>
-            <Thanks v-if="hasApplied" />
+            <Thanks v-if="hasApplied" @startOver="clearApplicant" />
           </div>
         </div>
       </div>
@@ -53,7 +53,7 @@
             <h2 class="card-title text-center">Get Started Learning</h2>
             <StartApplicationForm @submitted="startApplication" />
           </div>
-          <Thanks v-if="hasApplied" />
+          <Thanks v-if="hasApplied" @startOver="clearApplicant" />
         </div>
       </div>
     </div>
@@ -104,6 +104,7 @@
 import Hero from "@/components/Hero";
 import CommercialSection from "@/components/./CommercialSection";
 import StartApplicationForm from "@/views/landing/StartApplicationForm";
+import Thanks from "@/views/landing/Thanks";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import Stats from "@/components/Stats";
 import { mapGetters } from "vuex";
@@ -132,32 +133,6 @@ const PillarsBlock = {
   }
 };
 
-const Thanks = {
-  components: { SelectPlanButton },
-  render() {
-    return (
-      <div class="thanks-box">
-        <h3>Thanks</h3>
-        <p>
-          You are on your way to starting a new career. We have received your
-          application! You should check your email for next steps.
-        </p>
-        <p>
-          If you'd like to continue your application by selecting a program, be
-          our guest!
-        </p>
-        <p>
-          <SelectPlanButton
-            class="mx-auto"
-            text="Continue Application >>"
-            buttonClass="btn btn-primary nav-link"
-          />
-        </p>
-      </div>
-    );
-  }
-};
-
 export default {
   components: {
     Hero,
@@ -169,7 +144,8 @@ export default {
     CommercialSection,
     Technologies,
     Icon,
-    Logo
+    Logo,
+    Thanks
   },
   data: () => ({
     hasApplied: false
@@ -180,6 +156,9 @@ export default {
       await this.$store.dispatch("startApplication", applicant);
       await this.$store.dispatch("setStartDate", applicant.startDate);
       this.hasApplied = true;
+    },
+    clearApplicant() {
+      this.hasApplied = false;
     }
   },
   mounted() {

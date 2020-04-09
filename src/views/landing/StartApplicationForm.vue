@@ -38,13 +38,7 @@
 
     <div class="form-label-group">
       <label for="inputPassword">Desired Start Date</label>
-      <input
-        type="date"
-        id="inputPassword"
-        class="form-control"
-        placeholder="yyyy-MM-dd"
-        v-model="startDate"
-      />
+      <input type="date" class="form-control" placeholder="yyyy-MM-dd" v-model="startDate" />
     </div>
 
     <div class="cta">
