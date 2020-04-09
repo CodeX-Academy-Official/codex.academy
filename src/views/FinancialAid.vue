@@ -58,22 +58,22 @@ export default {
         title: "Safe and Fast",
         icon: "tv",
         description:
-          "Online Application. Pre-approval in minutes. Applying does not affect credit score.",
+          "Online Application. Pre-approval in minutes. Applying does not affect credit score."
       },
       {
         title: "Flexible Terms",
         icon: "percent",
         description:
-          "Flexible terms and fixed interest rates for the life of your loan.",
+          "Flexible terms and fixed interest rates for the life of your loan."
       },
       {
         title: "Co-Borrower",
         icon: "users",
         description:
-          "Add a qualifying co-borrower to your application for a better rate.",
-      },
-    ],
-  }),
+          "Add a qualifying co-borrower to your application for a better rate."
+      }
+    ]
+  })
 };
 </script>
 
