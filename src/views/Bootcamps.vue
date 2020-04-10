@@ -21,8 +21,12 @@
         </p>
       </div>
 
-      <div class="row mt-5">
+      <div class="d-none d-sm-block d-md-none row mt-5">
         <BootcampsTable />
+      </div>
+
+      <div class="d-none d-md-block mt-3">
+        <BootcampsTableNew />
       </div>
     </div>
   </div>
@@ -32,12 +36,14 @@
 import BootcampsTable from "@/components/BootcampsTable";
 import Unsplash from "@/components/Unsplash";
 import Hero from "@/components/Hero";
+import BootcampsTableNew from "@/components/BootcampsTableNew";
 
 export default {
   components: {
     BootcampsTable,
     Unsplash,
-    Hero
+    Hero,
+    BootcampsTableNew
   }
 };
 </script>
