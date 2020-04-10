@@ -45,6 +45,7 @@ export default {
   background-size: cover;
 }
 .hero {
+  position: relative;
   overflow: visible;
   height: auto;
   text-shadow: 2px 2px 5px #333;

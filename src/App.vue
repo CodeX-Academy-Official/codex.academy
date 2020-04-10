@@ -7,9 +7,6 @@
 </template>
 
 <script>
-import navHeader from "./components/layout/nav";
-import Footer from "./components/layout/footer";
-
 const default_layout = "default";
 
 export default {
@@ -18,6 +15,7 @@ export default {
       this.$router.push(this.$route.query.p);
     }
   },
+
   computed: {
     layout() {
       return (this.$route.meta.layout || default_layout) + "-layout";
