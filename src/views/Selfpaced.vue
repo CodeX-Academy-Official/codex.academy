@@ -22,8 +22,12 @@
         </p>
       </div>
 
-      <div class="row mt-5">
+      <div class="d-block d-md-none row mt-5">
         <SelfPacedTable />
+      </div>
+
+      <div class="d-none d-md-block mt-3">
+        <ProgramTable :programs="getSelfPaced" title="Self-Paced" />
       </div>
     </div>
   </div>
@@ -33,12 +37,19 @@
 import SelfPacedTable from "@/components/SelfPacedTable";
 import Unsplash from "@/components/Unsplash";
 import Hero from "@/components/Hero";
+import ProgramTable from "@/components/ProgramTable";
+
+import { mapGetters } from "vuex";
 
 export default {
   components: {
     SelfPacedTable,
     Unsplash,
-    Hero
+    Hero,
+    ProgramTable
+  },
+  computed: {
+    ...mapGetters(["getSelfPaced"])
   }
 };
 </script>

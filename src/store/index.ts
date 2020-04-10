@@ -77,6 +77,9 @@ export default new Vuex.Store({
     getPlan: state => (planId: string) =>
       state.plans.find((x: any) => x.id === planId),
     getPlans: state => state.plans,
+    getBootcamps: state => state.plans.filter((x: any) => x.isBootcamp),
+    getSelfPaced: state =>
+      state.plans.filter((x: any) => x.isMentoring && !x.isBootcamp),
     getPlanOptions: state => state.planOptions,
     getPathways: state => state.pathways,
     getTechnologies: state =>

@@ -44,10 +44,6 @@
 import SelectPlanButton from "@/components/SelectPlanButton";
 import Money from "@/components/Money";
 
-function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
 export default {
   props: {
     plan: Object,
@@ -59,7 +55,7 @@ export default {
   },
   computed: {
     price() {
-      return numberWithCommas(this.plan.total || this.plan.price);
+      return this.plan.total || this.plan.price;
     }
   }
 };
