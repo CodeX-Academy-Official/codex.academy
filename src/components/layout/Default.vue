@@ -1,9 +1,10 @@
 <template>
   <div class="default-layout">
-    <navHeader />
-    <div class="under-nav">
-      <slot />
+    <div class="sticky-top">
+      <DeadlineAlert />
+      <navHeader />
     </div>
+    <slot />
     <Footer />
   </div>
 </template>
@@ -11,16 +12,18 @@
 <script>
 import navHeader from "./nav";
 import Footer from "./footer";
+import DeadlineAlert from "./DeadlineAlert";
 
 export default {
   components: {
+    DeadlineAlert,
     navHeader,
-    Footer
-  }
+    Footer,
+  },
 };
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 .default-layout {
   .under-nav {
     margin-top: 72px;

@@ -1,6 +1,6 @@
 <template>
   <!-- Navigation -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <!-- <div class="container"> -->
     <router-link class="navbar-brand" to="/">
       <img class="logo" src="img/logo/horizontal_logo.png" alt="CodeX Academy Logo" />

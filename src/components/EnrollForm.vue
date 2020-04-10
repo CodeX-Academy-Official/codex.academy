@@ -57,7 +57,12 @@
       </div>
       <div class="form-group col-md-4">
         <label for="inputAddress2">Apartment, Suite, Floor #:</label>
-        <input type="text" class="form-control" id="inputAddress2" v-model="applicant.address2" />
+        <input
+          type="text"
+          class="form-control"
+          id="inputAddress2"
+          v-model="applicant.address2"
+        />
       </div>
     </div>
     <div class="form-row">
@@ -163,7 +168,9 @@
         <select class="form-control" id="gender" v-model="applicant.gender">
           <option value="Male">Male</option>
           <option value="Female">Female</option>
-          <option value="Other / Prefer not to answer">Other / Prefer not to answer</option>
+          <option value="Other / Prefer not to answer"
+            >Other / Prefer not to answer</option
+          >
         </select>
       </div>
     </div>
@@ -178,7 +185,9 @@
             v-model="applicant.financialAid"
             id="financialAid"
           />
-          <label class="form-check-label" for="financialAid">I want financial aid.</label>
+          <label class="form-check-label" for="financialAid"
+            >I want financial aid.</label
+          >
         </div>
       </div>
     </div>
@@ -262,7 +271,10 @@
       <button type="submit" class="btn btn-primary">
         <strong>Yes, This is Me</strong>
       </button>
-      <div class="alert alert-danger mt-3" v-if="$v.applicant.$invalid && $v.applicant.$dirty">
+      <div
+        class="alert alert-danger mt-3"
+        v-if="$v.applicant.$invalid && $v.applicant.$dirty"
+      >
         Please check the form to make sure all required fields have been filled
         in.
       </div>
@@ -276,7 +288,7 @@ import { required, minLength, between } from "vuelidate/lib/validators";
 export default {
   props: {
     plan: Object,
-    initialApplicant: Object
+    initialApplicant: Object,
   },
   data: () => ({
     applicant: {
@@ -288,39 +300,39 @@ export default {
       city: "",
       state: "",
       zip: "",
-      dateOfBirth: ""
-    }
+      dateOfBirth: "",
+    },
   }),
   validations: {
     applicant: {
       firstName: {
-        required
+        required,
       },
       lastName: {
-        required
+        required,
       },
       email: {
-        required
+        required,
       },
       phone: {
-        required
+        required,
       },
       address1: {
-        required
+        required,
       },
       city: {
-        required
+        required,
       },
       state: {
-        required
+        required,
       },
       zip: {
-        required
+        required,
       },
       dateOfBirth: {
-        required
-      }
-    }
+        required,
+      },
+    },
   },
   methods: {
     submitForm() {
@@ -332,13 +344,13 @@ export default {
     isValid(validation) {
       return {
         error: validation.$error,
-        dirty: validation.$dirty
+        dirty: validation.$dirty,
       };
-    }
+    },
   },
   created() {
     if (this.initialApplicant) this.applicant = this.initialApplicant;
-  }
+  },
 };
 </script>
 

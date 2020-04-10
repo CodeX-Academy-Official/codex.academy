@@ -5,8 +5,8 @@ export function scrollToHash(hash: string) {
   const selector: any = document.querySelector(clean);
   if (selector) {
     return window.scrollTo({
-      top: selector.offsetTop - 100,
-      behavior: "smooth"
+      top: selector.offsetTop - 135,
+      behavior: "smooth",
     });
   }
 }

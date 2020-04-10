@@ -59,9 +59,7 @@ import EnrollForm from "@/components/EnrollForm";
 import axios from "axios";
 import { mapGetters } from "vuex";
 import { required, minValue, maxValue } from "vuelidate/lib/validators";
-
-var defaultDate = new Date();
-defaultDate.setDate(defaultDate.getDate() + 7);
+import { getNextDeadlineFormatted } from "@/utils/dates";
 
 function getFutureDate() {
   var d = new Date();
@@ -79,7 +77,7 @@ export default {
   data() {
     return {
       selectedPlan: {},
-      startDate: defaultDate.toISOString().split("T")[0]
+      startDate: getNextDeadlineFormatted()
     };
   },
   computed: {
