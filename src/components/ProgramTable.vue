@@ -23,12 +23,37 @@
           {{ p.description }}
         </td>
       </tr>
+      <tr>
+        <th>
+          Weekly 1:1 Mentoring
+        </th>
+        <td v-for="p in programs" :key="p.id">
+          {{ p.mentorHoursPerWeek }} hours
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Weekly Commitment
+        </th>
+        <td v-for="p in programs" :key="p.id">
+          {{ p.minimumWeeklyStudyHours }} hours
+        </td>
+      </tr>
       <Row
         v-for="p in programs[0].details"
         :key="p"
         :name="p"
         :programs="programs"
       />
+
+      <tr>
+        <th>
+          Monthly Micro-Certification Evaluations
+        </th>
+        <td v-for="p in programs" :key="p.id">
+          {{ p.monthlyEvaluations }}
+        </td>
+      </tr>
     </tbody>
     <tfoot>
       <tr>
