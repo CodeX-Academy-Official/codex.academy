@@ -5,7 +5,7 @@
     <div class="table-responsive">
       <table class="table">
         <tr>
-          <th>Program:</th>
+          <th style="width: 30%">Program:</th>
           <td>{{ selectedPlan.title }}</td>
         </tr>
         <tr>
@@ -16,13 +16,17 @@
           <th>Weekly Commitment:</th>
           <td>{{ selectedPlan.minimumWeeklyStudyHours }} hours</td>
         </tr>
+        <tr>
+          <th>Weekly Mentor Hours:</th>
+          <td>{{ selectedPlan.mentorHoursPerWeek }} hours</td>
+        </tr>
         <!-- <tr>
           <th>Monthly:</th>
-          <td>{{ dollars(selectedPlan.price) }}</td>
+          <td><Money :amount="selectedPlan.price" /></td>
         </tr>
         <tr>
           <th>Total:</th>
-          <td>{{ dollars(selectedPlan.total) }}</td>
+          <td><Money :amount="selectedPlan.total" /></td>
         </tr>-->
         <tr v-if="selectedPlan.isBootcamp">
           <th>Program Duration:</th>
@@ -88,10 +92,6 @@ export default {
   methods: {
     isValid(startDate) {
       return new Date(startDate) > getYesterday();
-    },
-    dollars(num) {
-      if (!num) return;
-      return "$" + num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     },
     confirmPlan() {
       if (this.isValid(this.startDate)) {

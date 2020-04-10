@@ -1,22 +1,32 @@
 <template>
   <div class="h-100">
-    <div class="card" v-bind:class="{ 'card-outline-primary': plan.primary }" v-if="plan">
+    <div
+      class="card"
+      v-bind:class="{ 'card-outline-primary': plan.primary }"
+      v-if="plan"
+    >
       <h3
         class="card-header text-center"
         v-bind:class="{
           'bg-primary': plan.primary,
           'text-white': plan.primary
         }"
-      >{{ plan.title }}</h3>
+      >
+        {{ plan.title }}
+      </h3>
       <div class="text-center mt-4">
-        <div class="display-4">${{ price }}</div>
+        <div class="display-4"><Money :amount="price" /></div>
         <div class="font-italic">{{ plan.duration }}</div>
       </div>
       <ul class="list-group list-group-flush text-center mt-4">
         <li class="list-group-item" v-if="plan.description">
           <div class="plan-description">{{ plan.description }}</div>
         </li>
-        <li class="list-group-item" v-for="d in plan.details" :key="d.text || d">
+        <li
+          class="list-group-item"
+          v-for="d in plan.details"
+          :key="d.text || d"
+        >
           <div :class="d.css">{{ d.text || d }}</div>
         </li>
         <li class="list-group-item" v-if="selectable">
@@ -32,6 +42,7 @@
 
 <script>
 import SelectPlanButton from "@/components/SelectPlanButton";
+import Money from "@/components/Money";
 
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -43,7 +54,8 @@ export default {
     selectable: Boolean
   },
   components: {
-    SelectPlanButton
+    SelectPlanButton,
+    Money
   },
   computed: {
     price() {

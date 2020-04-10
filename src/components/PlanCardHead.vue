@@ -3,7 +3,7 @@
     <h4 class="card-header text-center">{{ plan.title }}</h4>
     <div class="card-body">
       <div class="text-center mt-4 mb-4">
-        <div class="display-4">${{ price }}</div>
+        <div class="display-4"><Money :amount="price" /></div>
         <div class="font-italic">{{ plan.duration }}</div>
       </div>
       <p class="card-text">{{ plan.description }}</p>
@@ -15,21 +15,21 @@
 </template>
 
 <script>
+import Money from "@/components/Money";
 import SelectPlanButton from "@/components/SelectPlanButton";
-function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
+
 export default {
   props: {
     plan: Object,
     selectable: Boolean
   },
   components: {
-    SelectPlanButton
+    SelectPlanButton,
+    Money
   },
   computed: {
     price() {
-      return numberWithCommas(this.plan.total || this.plan.price);
+      return this.plan.total || this.plan.price;
     }
   }
 };

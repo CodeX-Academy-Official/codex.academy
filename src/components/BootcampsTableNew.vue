@@ -5,7 +5,7 @@
         <th><h2>Bootcamps</h2></th>
         <th v-for="p in plans" :key="p.id">
           <h3 class="duration">{{ p.durationMonths }}-Month</h3>
-          <h1 class="price">{{ p.total }}</h1>
+          <h1 class="price"><Money :amount="p.total" /></h1>
         </th>
       </tr>
     </thead>
@@ -38,7 +38,7 @@
 <script>
 import Icon from "@/components/Icon";
 import SelectPlanButton from "@/components/SelectPlanButton";
-import { dollars } from "@/utils/money";
+import Money from "@/components/Money";
 
 const Row = {
   props: {
@@ -67,16 +67,12 @@ const Row = {
 export default {
   components: {
     Row,
-    SelectPlanButton
+    SelectPlanButton,
+    Money
   },
   computed: {
     plans() {
-      return this.$store.state.plans
-        .filter(x => x.isBootcamp)
-        .map(x => {
-          x.total = dollars(x.total);
-          return x;
-        });
+      return this.$store.state.plans.filter(x => x.isBootcamp);
     }
   }
 };
