@@ -183,9 +183,9 @@
             class="form-check-input"
             type="checkbox"
             v-model="applicant.financialAid"
-            id="financialAid"
+            id="financialAidLong"
           />
-          <label class="form-check-label" for="financialAid"
+          <label class="form-check-label" for="financialAidLong"
             >I want financial aid.</label
           >
         </div>
@@ -288,7 +288,7 @@ import { required, minLength, between } from "vuelidate/lib/validators";
 export default {
   props: {
     plan: Object,
-    initialApplicant: Object,
+    initialApplicant: Object
   },
   data: () => ({
     applicant: {
@@ -300,39 +300,39 @@ export default {
       city: "",
       state: "",
       zip: "",
-      dateOfBirth: "",
-    },
+      dateOfBirth: ""
+    }
   }),
   validations: {
     applicant: {
       firstName: {
-        required,
+        required
       },
       lastName: {
-        required,
+        required
       },
       email: {
-        required,
+        required
       },
       phone: {
-        required,
+        required
       },
       address1: {
-        required,
+        required
       },
       city: {
-        required,
+        required
       },
       state: {
-        required,
+        required
       },
       zip: {
-        required,
+        required
       },
       dateOfBirth: {
-        required,
-      },
-    },
+        required
+      }
+    }
   },
   methods: {
     submitForm() {
@@ -344,13 +344,13 @@ export default {
     isValid(validation) {
       return {
         error: validation.$error,
-        dirty: validation.$dirty,
+        dirty: validation.$dirty
       };
-    },
+    }
   },
   created() {
     if (this.initialApplicant) this.applicant = this.initialApplicant;
-  },
+  }
 };
 </script>
 

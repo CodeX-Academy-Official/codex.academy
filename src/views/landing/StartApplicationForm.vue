@@ -54,9 +54,9 @@
           class="form-check-input"
           type="checkbox"
           v-model="financialAid"
-          id="financialAid"
+          id="financialAidShort"
         />
-        <label class="form-check-label" for="financialAid"
+        <label class="form-check-label" for="financialAidShort"
           >I want financial aid.</label
         >
       </div>
@@ -81,7 +81,7 @@ export default {
     name: "",
     email: "",
     financialAid: true,
-    startDate: getNextDeadlineFormatted(),
+    startDate: getNextDeadlineFormatted()
   }),
   methods: {
     submitForm() {
@@ -93,10 +93,10 @@ export default {
         lastName,
         financialAid: this.financialAid,
         email: this.email,
-        startDate: this.startDate,
+        startDate: this.startDate
       });
-    },
-  },
+    }
+  }
 };
 </script>
 
