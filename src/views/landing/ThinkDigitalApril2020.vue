@@ -6,7 +6,17 @@
       height="100vh"
       backgroundColor="rgba(25, 32, 71,0.7)"
     >
-      <Logo color="white" :width="150" class="landing-logo" />
+      <div class="landing-logo">
+        <Logo color="white" :width="150" /><Icon
+          name="plusByHand"
+          size="50"
+          style="margin-left: 15px;"
+        />
+        <img
+          src="https://thinkdigital.academy/wp-content/uploads/2019/05/logo-think-digital-website.png"
+          style="filter: brightness(0) invert(1); width: 150px; margin-bottom: 10px;"
+        />
+      </div>
 
       <div class="container">
         <div class="row h-100">
@@ -156,8 +166,10 @@ export default {
   computed: { ...mapGetters(["getMethods", "getApplicant"]) },
   methods: {
     async startApplication(applicant) {
+      const hsForm = "1441c2f7-cad9-435d-bfb1-224695fb3258";
       await this.$store.dispatch("startApplication", {
-        applicant: { ...applicant, source: "CodeX Academy April 2020" }
+        applicant: { ...applicant, source: "Think Digital April 2020" },
+        hsForm
       });
       await this.$store.dispatch("setStartDate", applicant.startDate);
       this.hasApplied = true;
@@ -180,6 +192,7 @@ export default {
   position: absolute;
   top: 2.6vh;
   left: 6vw;
+  fill: White;
 }
 .april2020-landing-hero {
   .thanks-box {

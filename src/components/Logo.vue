@@ -1,7 +1,7 @@
 <template>
-  <div class :style="{width: width}" :class="{white: color==='white'}">
+  <span class :style="{ width: width }" :class="{ white: color === 'white' }">
     <img :src="src" :width="width" />
-  </div>
+  </span>
 </template>
 
 <script>
