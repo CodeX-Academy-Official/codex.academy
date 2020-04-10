@@ -21,12 +21,12 @@
         </p>
       </div>
 
-      <div class="d-none d-sm-block d-md-none row mt-5">
+      <div class="d-block d-md-none row mt-5">
         <BootcampsTable />
       </div>
 
       <div class="d-none d-md-block mt-3">
-        <BootcampsTableNew />
+        <ProgramTable :programs="getBootcamps" title="Bootcamps" />
       </div>
     </div>
   </div>
@@ -36,14 +36,18 @@
 import BootcampsTable from "@/components/BootcampsTable";
 import Unsplash from "@/components/Unsplash";
 import Hero from "@/components/Hero";
-import BootcampsTableNew from "@/components/BootcampsTableNew";
+import ProgramTable from "@/components/ProgramTable";
+import { mapGetters } from "vuex";
 
 export default {
   components: {
     BootcampsTable,
     Unsplash,
     Hero,
-    BootcampsTableNew
+    ProgramTable
+  },
+  computed: {
+    ...mapGetters(["getBootcamps"])
   }
 };
 </script>

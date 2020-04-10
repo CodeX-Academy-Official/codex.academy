@@ -2,10 +2,15 @@
   <table class="table program-table">
     <thead>
       <tr>
-        <th><h2>Bootcamps</h2></th>
-        <th v-for="p in plans" :key="p.id">
-          <h3 class="duration">{{ p.durationMonths }}-Month</h3>
+        <th>
+          <h2 class="text-center">{{ title }}</h2>
+        </th>
+        <th v-for="p in programs" :key="p.id">
+          <h3 class="duration" v-if="p.durationMonths">
+            {{ p.durationMonths }}-Month
+          </h3>
           <h1 class="price"><Money :amount="p.total" /></h1>
+          <h3 class="text-center" v-if="!p.durationMonths">{{ p.duration }}</h3>
         </th>
       </tr>
     </thead>
@@ -14,18 +19,23 @@
         <th>
           Description
         </th>
-        <td v-for="p in plans" :key="p.id">
+        <td v-for="p in programs" :key="p.id">
           {{ p.description }}
         </td>
       </tr>
-      <Row v-for="p in plans[0].details" :key="p" :name="p" />
+      <Row
+        v-for="p in programs[0].details"
+        :key="p"
+        :name="p"
+        :programs="programs"
+      />
     </tbody>
     <tfoot>
       <tr>
         <td>
           Need help? <router-link to="/findplan">Help Me Decide</router-link>
         </td>
-        <td v-for="p in plans" :key="p.id">
+        <td v-for="p in programs" :key="p.id">
           <SelectPlanButton :plan="p" text="Apply" />
         </td>
       </tr>
@@ -42,23 +52,21 @@ import Money from "@/components/Money";
 
 const Row = {
   props: {
-    name: String
+    name: String,
+    programs: Array
   },
   components: { Icon },
   render() {
     const iconSize = 20;
+    const tds = this.programs.map(x => (
+      <td>
+        <Icon name="check" size={iconSize} color="green" />
+      </td>
+    ));
     return (
       <tr>
         <th>{this.name}</th>
-        <td>
-          <Icon name="check" size={iconSize} color="green" />
-        </td>
-        <td>
-          <Icon name="check" size={iconSize} color="green" />
-        </td>
-        <td>
-          <Icon name="check" size={iconSize} color="green" />
-        </td>
+        {tds}
       </tr>
     );
   }
@@ -70,10 +78,9 @@ export default {
     SelectPlanButton,
     Money
   },
-  computed: {
-    plans() {
-      return this.$store.state.plans.filter(x => x.isBootcamp);
-    }
+  props: {
+    programs: Array,
+    title: String
   }
 };
 </script>
@@ -87,6 +94,7 @@ export default {
   thead {
     tr {
       th {
+        width: 300px;
         border-top: none;
 
         .duration {
@@ -115,7 +123,6 @@ export default {
 
     td,
     th {
-      width: 25%;
       text-align: center;
       border: none;
       padding: 15px;
