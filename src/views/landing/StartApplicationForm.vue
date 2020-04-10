@@ -70,7 +70,7 @@ export default {
   data: () => ({
     name: "",
     email: "",
-    financialAid: true,
+    financialAid: false,
     startDate: oneWeekFromToday()
   }),
   methods: {

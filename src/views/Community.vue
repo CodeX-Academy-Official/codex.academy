@@ -70,7 +70,7 @@
               If there's SO much community-driven (and even free) learning material
               on the internet for coding, why aren't more people learning? Part of
               it probably because learning to code is hard! It's not for the faint
-              of heart. It takes discipline, focus, determination and resillience.
+              of heart. It takes discipline, focus, determination and resilience.
               But how do you know where to start? What happens when you learn a
               certain technology? What's next? How do you know when to stop learning
               about a certain thing (so that you don't lose the information from
