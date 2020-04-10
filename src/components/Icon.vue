@@ -2,8 +2,8 @@
   <inline-svg
     id="svg1"
     :src="require(`./svg/noun/${name}.svg`)"
-    width="100"
-    height="100"
+    :width="size"
+    :height="size"
     :fill="true"
     :aria-label="name"
     @loaded="loaded($event)"
@@ -22,7 +22,8 @@ export default {
   },
   props: {
     name: { type: String, default: "happy" },
-    iconClass: String
+    iconClass: String,
+    size: { type: Number, default: 100 }
   },
   methods: {
     error(ev) {
