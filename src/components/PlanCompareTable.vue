@@ -1,7 +1,7 @@
 <template>
   <!-- Content Row -->
   <div class="row mb-4">
-    <div class="col col-md-4 text-center" v-for="plan in plans" :key="plan.id">
+    <div class="col-12 col-md-4 text-center mb-5" v-for="plan in plans" :key="plan.id">
       <PlanCompare :plan="plan" :selectable="true" />
     </div>
   </div>
