@@ -22,12 +22,22 @@
         <li class="list-group-item" v-if="plan.description">
           <div class="plan-description">{{ plan.description }}</div>
         </li>
+        <li class="list-group-item">
+          {{ plan.mentorHoursPerWeek }} Hours Weekly 1:1 Mentoring
+        </li>
+        <li class="list-group-item">
+          {{ plan.minimumWeeklyStudyHours }} Hours Weekly Study Commitment
+        </li>
+
         <li
           class="list-group-item"
           v-for="d in plan.details"
           :key="d.text || d"
         >
           <div :class="d.css">{{ d.text || d }}</div>
+        </li>
+        <li class="list-group-item">
+          {{ plan.monthlyEvaluations }} Monthly Micro-Certification Evaluations
         </li>
         <li class="list-group-item" v-if="selectable">
           <SelectPlanButton :plan="plan" text="Apply" />

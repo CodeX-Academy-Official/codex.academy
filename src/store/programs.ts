@@ -6,10 +6,8 @@ const planCommonDetails = [
 ];
 
 const mentorDrivenCommonDetails = [
-  "Mentor-Driven",
   ...planCommonDetails,
   "Internship Opportunities",
-  "Certifications Included",
   "Career Counseling"
 ];
 
@@ -20,16 +18,16 @@ const selfpaceds = [
     description: "Learning to code at a very relaxed pace.",
     minimumWeeklyStudyHours: 10,
     mentorHoursPerWeek: 1,
-
+    monthlyEvaluations: 3,
     levelPerMonth: 1 / 4,
     price: 400,
     total: 400,
     duration: "per month",
     details: [
-      "10 hour/week commitment",
-      ...mentorDrivenCommonDetails,
-      "1 hour/week live 1:1 mentoring",
-      "Up to 3 Evaluations/month"
+      //"10 hour/week commitment",
+      ...mentorDrivenCommonDetails
+      //"1 hour/week live 1:1 mentoring",
+      //"Up to 3 Evaluations/month"
     ],
     isSelfpaced: true,
     isMentoring: true,
@@ -51,14 +49,15 @@ const selfpaceds = [
     minimumWeeklyStudyHours: 20,
     mentorHoursPerWeek: 2,
     levelPerMonth: 1 / 2,
+    monthlyEvaluations: 5,
     total: 800,
     price: 800,
     duration: "per month",
     details: [
-      "20 hour/week commitment",
-      ...mentorDrivenCommonDetails,
-      "2 hours/week live 1:1 mentoring",
-      "Up to 5 Evaluations/month"
+      //"20 hour/week commitment",
+      ...mentorDrivenCommonDetails
+      //"2 hours/week live 1:1 mentoring",
+      //"Up to 5 Evaluations/month"
     ],
     isSelfpaced: true,
     isMentoring: true,
@@ -80,14 +79,15 @@ const selfpaceds = [
     minimumWeeklyStudyHours: 40,
     mentorHoursPerWeek: 5,
     levelPerMonth: 1,
+    monthlyEvaluations: 10,
     total: 1500,
     price: 1500,
     duration: "per month",
     details: [
-      "40 hour/week commitment",
-      ...mentorDrivenCommonDetails,
-      "5 hours/week live 1:1 mentoring",
-      "Up to 10 Evaluations/month"
+      //"40 hour/week commitment",
+      ...mentorDrivenCommonDetails
+      //"5 hours/week live 1:1 mentoring",
+      //"Up to 10 Evaluations/month"
     ],
     primary: true,
     isSelfpaced: true,
@@ -110,14 +110,15 @@ const selfpaceds = [
     levelPerMonth: 1.2,
     minimumWeeklyStudyHours: 40,
     mentorHoursPerWeek: 10,
+    monthlyEvaluations: 20,
     total: 2800,
     price: 2800,
     duration: "per month",
     details: [
-      "40-50 hour/week commitment",
-      ...mentorDrivenCommonDetails,
-      "10 hours/week live 1:1 mentoring",
-      "Up to 20 Evaluations/month"
+      //"40-50 hour/week commitment",
+      ...mentorDrivenCommonDetails
+      //"10 hours/week live 1:1 mentoring",
+      //"Up to 20 Evaluations/month"
     ],
     isSelfpaced: true,
     isMentoring: true,
@@ -135,14 +136,12 @@ const selfpaceds = [
 ];
 
 const bootcampCommonDetails = [
-  "40-50 hour/week commitment",
-  "1-on-1 Mentoring",
   "Unlimited Learning Pathway Access",
   "24/7 Community Chat Access",
   "Build a Portfolio",
   "Internship Opportunities",
-  "Career Counseling",
-  "5 hours/week live 1:1 mentoring"
+  "Career Counseling"
+  //"5 hours/week live 1:1 mentoring"
 ];
 
 const bootcamps = [
@@ -154,13 +153,14 @@ const bootcamps = [
     durationMonths: 3,
     mentorHoursPerWeek: 5,
     minimumWeeklyStudyHours: 40,
+    monthlyEvaluations: 10,
     levelPerMonth: 1,
     price: 1500,
     total: 4500,
     duration: "over 3 months",
     description:
       "Graduates able to develop and deploy simple web applications using HTML, CSS, JavaScript and JQuery.",
-    details: [...bootcampCommonDetails, "Up to 30 Micro-Certifications"],
+    details: [...bootcampCommonDetails],
     isBootcamp: true,
     isMentoring: true,
     paymentTypes: [
@@ -186,12 +186,13 @@ const bootcamps = [
     minimumWeeklyStudyHours: 40,
     mentorHoursPerWeek: 5,
     levelPerMonth: 1,
+    monthlyEvaluations: 10,
     total: 9000,
     price: 1500,
     duration: "over 6 months",
     description:
       "Graduates able to develop challenging full-stack data-driven web applications using best practices in technologies like ReactJS and NodeJS.",
-    details: [...bootcampCommonDetails, "Up to 60 Micro-Certifications"],
+    details: [...bootcampCommonDetails],
     primary: true,
     isBootcamp: true,
     isMentoring: true,
@@ -217,13 +218,14 @@ const bootcamps = [
     durationMonths: 9,
     mentorHoursPerWeek: 5,
     minimumWeeklyStudyHours: 40,
+    monthlyEvaluations: 10,
     levelPerMonth: 1,
     total: 13500,
     price: 1500,
     duration: "over 9 months",
     description:
       "Graduates able to develop complex, secure and well-engineered full-stack web applications using multiple front-end and back-end technologies.",
-    details: [...bootcampCommonDetails, "Up to 90 Micro-Certifications"],
+    details: [...bootcampCommonDetails],
     isBootcamp: true,
     isMentoring: true,
     paymentTypes: [
