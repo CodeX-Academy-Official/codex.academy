@@ -58,7 +58,6 @@ import PlanSpread from "@/components/PlanSpread";
 import EnrollForm from "@/components/EnrollForm";
 import axios from "axios";
 import { mapGetters } from "vuex";
-import { required, minValue, maxValue } from "vuelidate/lib/validators";
 import { getNextDeadlineFormatted } from "@/utils/dates";
 
 function getFutureDate() {

@@ -6,18 +6,19 @@
         <input
           type="text"
           class="form-control"
-          v-model.trim="$v.applicant.firstName.$model"
-          :class="isValid($v.applicant.firstName)"
+          v-model.trim="applicant.firstName"
+          :class="isValid(applicant.firstName)"
+          required
         />
       </div>
-
       <div class="form-group col">
         <label for="inputEmail4">Last Name:</label>
         <input
           type="text"
           class="form-control"
-          v-model.trim="$v.applicant.lastName.$model"
-          :class="isValid($v.applicant.lastName)"
+          v-model.trim="applicant.lastName"
+          :class="isValid(applicant.lastName)"
+          required
         />
       </div>
     </div>
@@ -28,8 +29,9 @@
           type="email"
           class="form-control"
           id="inputEmail4"
-          v-model.trim="$v.applicant.email.$model"
-          :class="isValid($v.applicant.email)"
+          v-model.trim="applicant.email"
+          :class="isValid(applicant.email)"
+          required
         />
       </div>
       <div class="form-group col-md-6">
@@ -38,8 +40,9 @@
           type="tel"
           class="form-control"
           id="phone"
-          v-model.trim="$v.applicant.phone.$model"
-          :class="isValid($v.applicant.phone)"
+          v-model.trim="applicant.phone"
+          :class="isValid(applicant.phone)"
+          required
         />
       </div>
     </div>
@@ -51,8 +54,9 @@
           type="text"
           class="form-control"
           id="inputAddress"
-          v-model.trim="$v.applicant.address1.$model"
-          :class="isValid($v.applicant.address1)"
+          v-model.trim="applicant.address1"
+          :class="isValid(applicant.address1)"
+          required
         />
       </div>
       <div class="form-group col-md-4">
@@ -72,8 +76,9 @@
           type="text"
           class="form-control"
           id="inputCity"
-          v-model.trim="$v.applicant.city.$model"
-          :class="isValid($v.applicant.city)"
+          v-model.trim="applicant.city"
+          :class="isValid(applicant.city)"
+          required
         />
       </div>
       <div class="form-group col-md-4">
@@ -82,8 +87,9 @@
           class="form-control"
           id="inputState"
           name="state"
-          v-model.trim="$v.applicant.state.$model"
-          :class="isValid($v.applicant.state)"
+          v-model.trim="applicant.state"
+          :class="isValid(applicant.state)"
+          required
         >
           <option value></option>
           <option value="AK">Alaska</option>
@@ -146,8 +152,9 @@
           type="text"
           class="form-control"
           id="inputZip"
-          v-model.trim="$v.applicant.zip.$model"
-          :class="isValid($v.applicant.zip)"
+          v-model.trim="applicant.zip"
+          :class="isValid(applicant.zip)"
+          required
         />
       </div>
     </div>
@@ -159,8 +166,9 @@
           type="date"
           class="form-control"
           id="inputDob"
-          v-model.trim="$v.applicant.dateOfBirth.$model"
-          :class="isValid($v.applicant.dateOfBirth)"
+          v-model.trim="applicant.dateOfBirth"
+          :class="isValid(applicant.dateOfBirth)"
+          required
         />
       </div>
       <div class="form-group col-md-6">
@@ -271,10 +279,7 @@
       <button type="submit" class="btn btn-primary">
         <strong>Yes, This is Me</strong>
       </button>
-      <div
-        class="alert alert-danger mt-3"
-        v-if="$v.applicant.$invalid && $v.applicant.$dirty"
-      >
+      <div class="alert alert-danger mt-3" v-if="false">
         Please check the form to make sure all required fields have been filled
         in.
       </div>
@@ -283,8 +288,6 @@
 </template>
 
 <script>
-import { required, minLength, between } from "vuelidate/lib/validators";
-
 export default {
   props: {
     plan: Object,
@@ -303,49 +306,13 @@ export default {
       dateOfBirth: ""
     }
   }),
-  validations: {
-    applicant: {
-      firstName: {
-        required
-      },
-      lastName: {
-        required
-      },
-      email: {
-        required
-      },
-      phone: {
-        required
-      },
-      address1: {
-        required
-      },
-      city: {
-        required
-      },
-      state: {
-        required
-      },
-      zip: {
-        required
-      },
-      dateOfBirth: {
-        required
-      }
-    }
-  },
+
   methods: {
     submitForm() {
-      this.$v.applicant.$touch();
-      if (!this.$v.applicant.$invalid) {
-        this.$emit("enroll", this.applicant);
-      }
+      this.$emit("enroll", this.applicant);
     },
-    isValid(validation) {
-      return {
-        error: validation.$error,
-        dirty: validation.$dirty
-      };
+    isValid() {
+      return true;
     }
   },
   created() {

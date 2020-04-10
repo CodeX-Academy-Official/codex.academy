@@ -54,7 +54,7 @@
           class="form-check-input"
           type="checkbox"
           v-model="financialAid"
-          id="financialAidShort"
+          name="financialAidShort"
         />
         <label class="form-check-label" for="financialAidShort"
           >I want financial aid.</label

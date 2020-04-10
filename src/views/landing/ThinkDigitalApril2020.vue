@@ -9,7 +9,7 @@
       <div class="landing-logo">
         <Logo color="white" :width="150" /><Icon
           name="plusByHand"
-          size="50"
+          :size="50"
           style="margin-left: 15px;"
         />
         <img

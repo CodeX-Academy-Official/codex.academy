@@ -7,7 +7,6 @@ import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 import VueYouTube from "vue-youtube";
 import VueGtag from "vue-gtag";
 import Hotjar from "vue-hotjar";
-import Vuelidate from "vuelidate";
 import bootstrapFontAwesome from "./bootstrapFontAwesome";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -19,8 +18,6 @@ Vue.component("no-navbar-layout", NoNavbar);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 bootstrapFontAwesome();
-
-Vue.use(Vuelidate);
 
 Vue.use(Hotjar, {
   id: "1739723",
