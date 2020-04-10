@@ -9,6 +9,7 @@
     @loaded="loaded($event)"
     @error="error($event)"
     :class="iconClass"
+    :style="{ fill: color }"
   ></inline-svg>
 </template>
 
@@ -23,7 +24,8 @@ export default {
   props: {
     name: { type: String, default: "happy" },
     iconClass: String,
-    size: { type: Number, default: 100 }
+    size: { type: Number, default: 100 },
+    color: String
   },
   methods: {
     error(ev) {
