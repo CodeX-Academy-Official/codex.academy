@@ -10,7 +10,7 @@
 
 <script>
 import TopAlert from "@/components/TopAlert";
-import { getMondays } from "@/utils/dates";
+import { getNextDeadline } from "@/utils/dates";
 import moment from "moment";
 
 export default {
@@ -24,10 +24,7 @@ export default {
     seconds: 28,
   }),
   mounted() {
-    const deadline = moment()
-      .endOf("month")
-      .startOf("isoweek")
-      .set({ hour: 10 });
+    const deadline = getNextDeadline();
 
     function setDeadline(vm) {
       var diffTime = deadline.diff(moment());

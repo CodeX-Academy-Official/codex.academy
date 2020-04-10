@@ -38,20 +38,34 @@
 
     <div class="form-label-group">
       <label for="inputPassword">Desired Start Date</label>
-      <input type="date" class="form-control" placeholder="yyyy-MM-dd" v-model="startDate" />
+      <input
+        type="date"
+        class="form-control"
+        placeholder="yyyy-MM-dd"
+        v-model="startDate"
+      />
     </div>
 
     <div class="form-label-group">
       <label for="inputPassword">Financial Aid</label>
 
       <div class="form-check financial-aid">
-        <input class="form-check-input" type="checkbox" v-model="financialAid" id="financialAid" />
-        <label class="form-check-label" for="financialAid">I want financial aid.</label>
+        <input
+          class="form-check-input"
+          type="checkbox"
+          v-model="financialAid"
+          id="financialAid"
+        />
+        <label class="form-check-label" for="financialAid"
+          >I want financial aid.</label
+        >
       </div>
     </div>
 
     <div class="cta">
-      <button class="btn btn-lg btn-cta btn-block text-uppercase" type="submit">Start Application</button>
+      <button class="btn btn-lg btn-cta btn-block text-uppercase" type="submit">
+        Start Application
+      </button>
     </div>
     <div class="privacy text-center mt-3">
       <router-link to="/policy/privacy">Privacy Policy</router-link>
@@ -60,18 +74,14 @@
 </template>
 
 <script>
-function oneWeekFromToday() {
-  var d = new Date();
-  d.setDate(d.getDate() + 7);
-  const formatted = d.toISOString().split("T")[0];
-  return formatted;
-}
+import { getNextDeadlineFormatted } from "@/utils/dates";
+
 export default {
   data: () => ({
     name: "",
     email: "",
     financialAid: true,
-    startDate: oneWeekFromToday()
+    startDate: getNextDeadlineFormatted(),
   }),
   methods: {
     submitForm() {
@@ -83,10 +93,10 @@ export default {
         lastName,
         financialAid: this.financialAid,
         email: this.email,
-        startDate: this.startDate
+        startDate: this.startDate,
       });
-    }
-  }
+    },
+  },
 };
 </script>
 

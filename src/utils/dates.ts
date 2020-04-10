@@ -1,19 +1,16 @@
-export function getMondays(d: Date) {
-  var month = d.getMonth(),
-    mondays = [];
+import moment from "moment";
 
-  d.setDate(1);
+export function getNextDeadline() {
+  const m = moment()
+    .endOf("month")
+    .startOf("isoWeek");
 
-  // Get the first Monday in the month
-  while (d.getDay() !== 1) {
-    d.setDate(d.getDate() + 1);
-  }
+  m.set({ hour: 10 });
 
-  // Get all the other Mondays in the month
-  while (d.getMonth() === month) {
-    mondays.push(new Date(d.getTime()));
-    d.setDate(d.getDate() + 7);
-  }
-
-  return mondays;
+  return m;
+}
+export function getNextDeadlineFormatted() {
+  const d = getNextDeadline();
+  const formatted = d.toISOString().split("T")[0];
+  return formatted;
 }
