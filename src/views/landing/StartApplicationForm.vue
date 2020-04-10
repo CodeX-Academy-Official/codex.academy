@@ -86,9 +86,8 @@ export default {
   data: () => ({
     name: "",
     email: "",
-    promoCode: "COVID19",
-    financialAid: true,
-    startDate: getNextDeadlineFormatted(),
+    financialAid: false,
+    startDate: oneWeekFromToday()
   }),
   computed: {
     ...mapGetters(["getPromoCodesDisplay"]),
