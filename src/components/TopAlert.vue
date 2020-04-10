@@ -14,16 +14,16 @@ import Icon from "@/components/Icon";
 
 export default {
   components: {
-    Icon,
+    Icon
   },
   data: () => ({
-    showAlert: true,
+    showAlert: true
   }),
   methods: {
     closeAlert() {
       this.showAlert = false;
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -32,8 +32,6 @@ export default {
 
 .top-alert {
   display: block;
-  //position: absolute;
-  //top: 0px;
   width: 100%;
   background-color: $fucia;
   color: white;
