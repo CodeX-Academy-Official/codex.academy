@@ -1,6 +1,6 @@
 import Vue from "vue";
 import App from "./App.vue";
-import "./registerServiceWorker";
+// import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
@@ -24,13 +24,13 @@ Vue.use(Vuelidate);
 
 Vue.use(Hotjar, {
   id: "1739723",
-  isProduction: true,
+  isProduction: true
 });
 
 Vue.use(
   VueGtag,
   {
-    config: { id: "UA-158800537-1" },
+    config: { id: "UA-158800537-1" }
   },
   router
 );
@@ -41,10 +41,10 @@ Vue.use(IconsPlugin);
 
 Vue.config.productionTip = false;
 
-window.addEventListener("load", function () {
+window.addEventListener("load", function() {
   new Vue({
     router,
     store,
-    render: (h) => h(App),
+    render: h => h(App)
   }).$mount("#app");
 });
