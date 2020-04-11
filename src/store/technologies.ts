@@ -41,7 +41,7 @@ export const technologies = [
   {
     order: 10,
     name: "ExpressJS",
-    logo: "express.jpeg",
+    logo: "ExpressJS.png",
     info: "Lightweight but powerful NodeJS-based backend server",
     url: "https://expressjs.com/",
     level: 2
@@ -98,7 +98,7 @@ export const technologies = [
   {
     order: 3,
     name: "NodeJS",
-    logo: "node.webp",
+    logo: "node.png",
     info: "",
     url: "https://nodejs.org/",
     level: 4,
