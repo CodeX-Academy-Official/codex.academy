@@ -3,7 +3,11 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <!-- <div class="container"> -->
     <router-link class="navbar-brand" to="/">
-      <img class="logo" src="img/logo/horizontal_logo.png" alt="CodeX Academy Logo" />
+      <img
+        class="logo"
+        src="img/logo/horizontal_logo.png"
+        alt="CodeX Academy Logo"
+      />
     </router-link>
     <button
       class="navbar-toggler navbar-toggler-right"
@@ -40,26 +44,37 @@
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
-          >Programs</a>
+            >Programs</a
+          >
           <div class="dropdown-menu">
             <div class="nav-item">
-              <router-link to="/programs/overview" class="nav-link">Overview</router-link>
+              <router-link to="/programs/overview" class="nav-link"
+                >Overview</router-link
+              >
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
-              <router-link to="/selfpaced" class="nav-link">Self-Paced</router-link>
+              <router-link to="/selfpaced" class="nav-link"
+                >Self-Paced</router-link
+              >
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
-              <router-link to="/bootcamps" class="nav-link">Bootcamps</router-link>
+              <router-link to="/bootcamps" class="nav-link"
+                >Bootcamps</router-link
+              >
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
-              <router-link to="/community" class="nav-link">Community</router-link>
+              <router-link to="/community" class="nav-link"
+                >Community</router-link
+              >
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
-              <router-link to="/findplan" class="nav-link">Help Me Decide</router-link>
+              <router-link to="/findplan" class="nav-link"
+                >Help Me Decide</router-link
+              >
             </div>
           </div>
         </li>
@@ -93,28 +108,39 @@
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
-          >How It Works</a>
+            >How It Works</a
+          >
           <div class="dropdown-menu">
             <div class="nav-item">
-              <router-link :to="{path:'/howitworks', hash:'#pillars'}" class="nav-link">Six Pillars</router-link>
+              <router-link
+                :to="{ path: '/howitworks', hash: '#pillars' }"
+                class="nav-link"
+                >Six Pillars</router-link
+              >
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
               <router-link
-                :to="{path:'/howitworks', hash:'#curriculum'}"
+                :to="{ path: '/howitworks', hash: '#curriculum' }"
                 class="nav-link"
-              >Curriculum</router-link>
+                >Curriculum</router-link
+              >
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
               <router-link
-                :to="{path:'/howitworks', hash:'#timeline'}"
+                :to="{ path: '/howitworks', hash: '#timeline' }"
                 class="nav-link"
-              >Sample Timeline</router-link>
+                >Timeline</router-link
+              >
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
-              <router-link :to="{path:'/howitworks', hash:'#tech'}" class="nav-link">Technologies</router-link>
+              <router-link
+                :to="{ path: '/howitworks', hash: '#tech' }"
+                class="nav-link"
+                >Technologies</router-link
+              >
             </div>
           </div>
         </li>
@@ -125,7 +151,9 @@
           >
         </li>-->
         <li class="nav-item">
-          <router-link to="/financial-aid" class="nav-link">Financial Aid</router-link>
+          <router-link to="/financial-aid" class="nav-link"
+            >Financial Aid</router-link
+          >
         </li>
 
         <li class="nav-item dropdown">
@@ -137,7 +165,8 @@
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
-          >About</a>
+            >About</a
+          >
           <div class="dropdown-menu">
             <div class="nav-item">
               <router-link to="/faqs" class="nav-link">FAQs</router-link>
@@ -148,7 +177,9 @@
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
-              <router-link to="/contact" class="nav-link">Contact Us</router-link>
+              <router-link to="/contact" class="nav-link"
+                >Contact Us</router-link
+              >
             </div>
           </div>
         </li>
@@ -166,7 +197,10 @@
         </li>-->
 
         <li class="nav-item">
-          <SelectPlanButton text="Apply" buttonClass="btn btn-primary btn-block nav-link" />
+          <SelectPlanButton
+            text="Apply"
+            buttonClass="btn btn-primary btn-block nav-link"
+          />
         </li>
       </ul>
     </div>

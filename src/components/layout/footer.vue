@@ -47,7 +47,7 @@
             <router-link to="/howitworks#curriculum">Curriculum</router-link>
           </p>
           <p>
-            <router-link to="/howitworks#timeline">Sample Timeline</router-link>
+            <router-link to="/howitworks#timeline">Timeline</router-link>
           </p>
           <p>
             <router-link to="/howitworks#tech">Our Technologies</router-link>
@@ -90,12 +90,18 @@
           </a>
         </div>
         <div class="col-1">
-          <a href="https://www.instagram.com/codexacademyonline/" target="_blank">
+          <a
+            href="https://www.instagram.com/codexacademyonline/"
+            target="_blank"
+          >
             <font-awesome-icon :icon="faInstagram" class="fa-2x" />
           </a>
         </div>
         <div class="col-1">
-          <a href="https://www.youtube.com/channel/UCUKP1GrIaI-dcuV1IlK7x8Q" target="_blank">
+          <a
+            href="https://www.youtube.com/channel/UCUKP1GrIaI-dcuV1IlK7x8Q"
+            target="_blank"
+          >
             <font-awesome-icon :icon="faYoutubeSquare" class="fa-2x" />
           </a>
         </div>
