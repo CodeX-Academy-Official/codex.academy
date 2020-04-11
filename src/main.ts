@@ -9,6 +9,21 @@ import VueGtag from "vue-gtag";
 import Hotjar from "vue-hotjar";
 import bootstrapFontAwesome from "./bootstrapFontAwesome";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import VueScrollTo from "vue-scrollto";
+
+Vue.use(VueScrollTo, {
+  container: "body",
+  duration: 500,
+  easing: "ease",
+  offset: -180,
+  force: true,
+  cancelable: true,
+  onStart: false,
+  onDone: false,
+  onCancel: false,
+  x: false,
+  y: true
+});
 
 import Default from "@/components/layout/Default.vue";
 import NoNavbar from "@/components/layout/NoNavbar.vue";

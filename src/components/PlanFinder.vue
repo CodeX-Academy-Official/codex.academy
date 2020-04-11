@@ -11,12 +11,12 @@
         <CertificationSelectorGroup :certifications="getCertifications" @onSelect="setTargetLevel" />
       </div>
 
-      <div class="form-group" v-if="targetLevel">
+      <div id="select-mentoring" class="form-group" v-if="targetLevel">
         <p class="text-center mb-3">Do you plan on learning with a mentor?</p>
         <MentoringSelectorGroup @onSelect="setMentoring" />
       </div>
 
-      <div v-if="mentoring === 'yes'">
+      <div id="select-duration" v-if="mentoring === 'yes'">
         <div class="form-group">
           <p class="text-center">In how many months do you hope to graduate?</p>
           <StudyDurationGroup @onSelect="setStudyMonths" />
@@ -30,7 +30,11 @@
         of Level-{{ targetLevel }} Developer in {{ studyMonths }} months.
       </p>
     </div>
-    <div v-if="(mentoring == 'no' || studyMonths) && hasSuggestedPlans" class="mt-5 text-center">
+    <div
+      id="display-programs"
+      v-if="(mentoring == 'no' || studyMonths) && hasSuggestedPlans"
+      class="mt-5 text-center"
+    >
       <h3>Here are some programs that would work:</h3>
       <!-- <ul>
         <li>
@@ -152,15 +156,20 @@ export default {
   methods: {
     setTargetLevel(cert) {
       this.targetLevel = cert.level;
+      setTimeout(() => this.$scrollTo("#select-mentoring"), 300);
     },
     selectPlan(plan) {
       this.$emit("planSelected", plan);
     },
     setMentoring(option) {
       this.mentoring = option;
+      if (option === "yes")
+        setTimeout(() => this.$scrollTo("#select-duration"), 300);
+      else setTimeout(() => this.$scrollTo("#display-programs"), 300);
     },
     setStudyMonths(months) {
       this.studyMonths = parseInt(months);
+      setTimeout(() => this.$scrollTo("#display-programs"), 300);
     }
   },
 
