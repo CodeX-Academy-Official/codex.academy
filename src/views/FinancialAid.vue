@@ -5,7 +5,6 @@
       <h5>We've got you covered</h5>
     </Hero>
     <div class="container mt-5">
-      <!-- Page Heading/Breadcrumbs -->
       <h1 class="section-title">Tuition Financing from Climb Credit</h1>
       <p class="mb-5 text-center">
         CodeX Academy partners with Climb Credit to offer special financing for
