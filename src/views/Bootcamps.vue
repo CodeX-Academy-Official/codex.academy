@@ -5,7 +5,7 @@
       <h5>Full-time, Full-Immersion</h5>
     </Hero>
     <div class="container">
-      <div class="row mt-5">
+      <div class="mt-5">
         <h2>Intense Intent and Direction</h2>
         <p class>
           Looking for an intense, immersive learning experience? CodeX Academy
@@ -21,7 +21,7 @@
         </p>
       </div>
 
-      <div class="d-block d-md-none row mt-5">
+      <div class="d-block d-md-none mt-5">
         <BootcampsTable />
       </div>
 

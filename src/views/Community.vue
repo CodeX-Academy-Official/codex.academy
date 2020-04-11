@@ -9,7 +9,7 @@
       <h5>Independent Study, Community Support</h5>
     </Hero>
     <div class="container mt-5">
-      <div class="container pt-4">
+      <div class="pt-4">
         <p>
           For those who are interested in learning to code, but want to take a
           more self-guided approach, we have the Community Plan. This plan gives
@@ -22,10 +22,7 @@
 
         <div class="row">
           <div class="col text-center">
-            <SelectPlanButton
-              :plan="getCommunityPlan"
-              text="Start Application"
-            />
+            <SelectPlanButton :plan="getCommunityPlan" text="Start Application" />
           </div>
         </div>
 
@@ -155,10 +152,7 @@
 
         <div class="row">
           <div class="col text-center">
-            <SelectPlanButton
-              :plan="getCommunityPlan"
-              text="Start Application"
-            />
+            <SelectPlanButton :plan="getCommunityPlan" text="Start Application" />
           </div>
         </div>
         <div class="mb-5"></div>
@@ -174,7 +168,7 @@ import Hero from "@/components/Hero";
 
 export default {
   components: { SelectPlanButton, Hero },
-  computed: { ...mapGetters(["getCommunityPlan"]) },
+  computed: { ...mapGetters(["getCommunityPlan"]) }
 };
 </script>
 <style lang="scss" scoped>

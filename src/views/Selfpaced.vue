@@ -5,7 +5,7 @@
       <h5>Learn at your own pace</h5>
     </Hero>
     <div class="container">
-      <div class="row mt-5">
+      <div class="mt-5">
         <h2>Learning That Fits Your Needs</h2>
 
         <p class>
@@ -22,7 +22,7 @@
         </p>
       </div>
 
-      <div class="d-block d-md-none row mt-5">
+      <div class="d-block d-md-none mt-5">
         <SelfPacedTable />
       </div>
 
