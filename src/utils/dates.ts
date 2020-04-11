@@ -2,6 +2,7 @@ import moment from "moment";
 
 export function getNextDeadline() {
   const m = moment()
+    .utc()
     .endOf("month")
     .startOf("isoWeek");
 
