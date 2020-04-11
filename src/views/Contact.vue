@@ -16,7 +16,7 @@
     <!-- Content Row -->
     <div class="row">
       <!-- Map Column -->
-      <div class="col-lg-8 mb-4">
+      <div class="d-none d-md-block col-lg-8 mb-4">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3229.115837963044!2d-86.80483454921519!3d35.96859332166829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88647be79adcee43%3A0x7bd99dc54e8c34f6!2s1612%20Westgate%20Cir%20STE%20222%2C%20Brentwood%2C%20TN%2037027!5e0!3m2!1sen!2sus!4v1584842178261!5m2!1sen!2sus"
           width="600"
