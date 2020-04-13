@@ -89,7 +89,7 @@ const Step = {
   },
   methods: {
     click() {
-      if (this.clickable && !this.disabled) {
+      if (!this.active && this.clickable && !this.disabled) {
         this.$emit("click", this.number);
       }
     }
