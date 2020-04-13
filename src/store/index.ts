@@ -20,6 +20,8 @@ Vue.use(Vuex);
 const SELECT_PLAN = "SELECT_PLAN";
 const ENROLL = "ENROLL";
 const SET_START_DATE = "SET_START_DATE";
+const APPLY_COUPON_CODE = "APPLY_COUPON_CODE";
+const PAY_APP_FEE = "PAY_APP_FEE";
 
 export default new Vuex.Store({
   state: {
@@ -29,11 +31,13 @@ export default new Vuex.Store({
     planOptions: programOptions,
     selectedPlan: undefined,
     applicant: undefined,
+    couponCodes: [],
     technologies,
     methods,
     certifications,
     testimonials,
-    pathways
+    pathways,
+    appFeePaid: undefined
   },
   mutations: {
     [SELECT_PLAN](state: any, planId) {
@@ -44,6 +48,12 @@ export default new Vuex.Store({
     },
     [SET_START_DATE](state: any, startDate) {
       state.startDate = startDate;
+    },
+    [APPLY_COUPON_CODE](state: any, couponCode) {
+      state.couponCodes.push(couponCode);
+    },
+    [PAY_APP_FEE](state: any) {
+      state.appFeePaid = new Date();
     }
   },
   actions: {
@@ -67,6 +77,15 @@ export default new Vuex.Store({
         "c4c04dcc-7c42-4552-86df-cd3d25294c79",
         applicantWithId
       );
+    },
+    applyCoupon({ commit, state }, couponCode) {
+      const hasCouponCode = state.couponCodes.indexOf(couponCode) > -1;
+      if (!hasCouponCode) {
+        commit(APPLY_COUPON_CODE, couponCode);
+      }
+    },
+    payAppFee({ commit }) {
+      commit(PAY_APP_FEE);
     }
   },
   getters: {
@@ -92,7 +111,9 @@ export default new Vuex.Store({
     },
     getApplicant: state => state.applicant,
     getStartDate: state => state.startDate,
-    getCertifications: state => state.certifications
+    getCertifications: state => state.certifications,
+    getCouponCodes: state => state.couponCodes,
+    getApplicationFee: state => state.appFeePaid
   },
   modules: {},
   plugins: [vuexLocal.plugin]

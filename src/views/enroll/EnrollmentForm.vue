@@ -1,7 +1,11 @@
 <template>
   <div>
     <h3>Applicant Information</h3>
-    <EnrollForm :plan="getSelectedPlan" @enroll="next" :initialApplicant="getApplicant" />
+    <EnrollForm
+      :plan="getSelectedPlan"
+      @enroll="next"
+      :initialApplicant="getApplicant"
+    />
   </div>
 </template>
 
@@ -22,16 +26,8 @@ export default {
         startDate: this.getStartDate
       };
       await this.$store.dispatch("enroll", applicantWithStartDate);
-      this.$router.push("appfee");
+      this.$emit("completed", 2);
     }
-  },
-  mounted() {
-    if (!this.getSelectedPlan || !this.getStartDate) {
-      this.$router.push("/enroll");
-    }
-  },
-  created() {
-    this.$emit("changeStage", 2);
   }
 };
 </script>

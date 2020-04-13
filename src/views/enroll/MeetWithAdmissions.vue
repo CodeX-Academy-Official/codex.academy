@@ -17,9 +17,6 @@ export default {
   data: () => ({ selectedPlan: {} }),
   mounted() {
     this.selectedPlan = this.$store.getters.getSelectedPlan;
-  },
-  created() {
-    this.$emit("changeStage", 4);
   }
 };
 </script>
