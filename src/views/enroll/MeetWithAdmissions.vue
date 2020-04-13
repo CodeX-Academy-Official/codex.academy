@@ -7,7 +7,17 @@
         <strong>{{ selectedPlan.title }}</strong> has been received and is
         currently processing.
       </p>
-      <p>Please check your email for information on your next steps.</p>
+      <p>
+        Your next step is to meet with an admissions counsellor to discuss your
+        application and payment options.
+      </p>
+      <p>
+        <a
+          href="https://meetings.hubspot.com/christian253/codex-academy-program-selection"
+          class="btn btn-primary"
+          >Schedule a Meeting</a
+        >
+      </p>
     </div>
   </div>
 </template>
