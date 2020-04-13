@@ -2,7 +2,7 @@
   <div class="card h-100">
     <img class="card-img-top" :src="plan.imgSrc" :alt="plan.title" />
     <div class="card-body">
-      <h5 class="card-title">{{ plan.title }}</h5>
+      <h4 class="card-title">{{ plan.title }}</h4>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item price">{{ plan.price }}</li>
