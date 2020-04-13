@@ -15,13 +15,13 @@ import moment from "moment";
 
 export default {
   components: {
-    TopAlert,
+    TopAlert
   },
   data: () => ({
-    days: 15,
+    days: 5,
     hours: 10,
     minutes: 35,
-    seconds: 28,
+    seconds: 28
   }),
   mounted() {
     const deadline = getNextDeadline();
@@ -40,7 +40,7 @@ export default {
 
     const interval = 1000;
     setInterval(() => setDeadline(this), interval);
-  },
+  }
 };
 </script>
 
