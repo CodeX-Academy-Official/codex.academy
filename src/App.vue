@@ -20,6 +20,11 @@ export default {
     layout() {
       return (this.$route.meta.layout || default_layout) + "-layout";
     }
+  },
+  mounted() {
+    if (this.$route.query.coupon) {
+      this.$store.dispatch("applyCoupon", this.$route.query.coupon);
+    }
   }
 };
 </script>

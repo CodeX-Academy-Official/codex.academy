@@ -1,6 +1,10 @@
 <template>
   <div>
-    <Hero unsplashId="gnyA8vd3Otc" height="20vh" backgroundColor="rgba(25, 32, 71,0.7)">
+    <Hero
+      unsplashId="gnyA8vd3Otc"
+      height="20vh"
+      backgroundColor="rgba(25, 32, 71,0.7)"
+    >
       <h2>Application</h2>
       <h5>Just a few steps</h5>
     </Hero>
@@ -13,22 +17,42 @@
               just a few steps away from starting a new career!
             </p>
             <h4>Application Steps:</h4>
-            <ol class="steps">
-              <li :class="{ active: stage === 1 }">
-                <router-link to="/enroll">Select/Confirm Program</router-link>
-              </li>
-              <li :class="{ active: stage === 2 }">
-                <router-link to="/enroll/applicant">Enter Applicant Information</router-link>
-              </li>
-              <li :class="{ active: stage === 3 }">
-                <router-link to="/enroll/appfee">Pay Application Fee</router-link>
-              </li>
-              <li :class="{ active: stage === 4 }">Meet with Admissions</li>
-            </ol>
+            <Step
+              :number="1"
+              name="Select/Confirm Program"
+              @click="navigateToStage"
+              :clickable="true"
+              :active="routeHas('/enroll')"
+            />
+            <Step
+              :number="2"
+              name="Enter Applicant Information"
+              @click="navigateToStage"
+              :clickable="getStartDate !== undefined"
+              :active="routeHas('/enroll/applicant')"
+            />
+            <Step
+              :number="3"
+              name="Pay Application Fee"
+              @click="navigateToStage"
+              :clickable="getApplicant !== undefined"
+              :disabled="hasCouponForWaivedAppFee"
+              :active="routeHas('/enroll/appfee')"
+            />
+            <Step
+              :number="4"
+              name="Meet with Admissions"
+              @click="navigateToStage"
+              :clickable="
+                (getApplicant !== undefined && hasCouponForWaivedAppFee) ||
+                  getApplicationFee !== undefined
+              "
+              :active="routeHas('/enroll/admissions')"
+            />
           </div>
         </div>
         <div class="col">
-          <router-view @changeStage="changeStage" />
+          <router-view @completed="finishedStage" />
         </div>
       </div>
     </div>
@@ -37,17 +61,97 @@
 
 <script>
 import Hero from "@/components/Hero";
+import { mapGetters } from "vuex";
 
-export default {
-  components: { Hero },
-  data: () => ({
-    stage: 1
-  }),
+const Step = {
+  props: {
+    number: Number,
+    name: String,
+    clickable: Boolean,
+    active: Boolean,
+    disabled: Boolean
+  },
+  render(createElement) {
+    const clickable = this.clickable ? "link " : "";
+    const active = this.active ? "active " : "";
+    const disabled = this.disabled ? "exempt" : "";
+    const classes = disabled || active || clickable;
+    return createElement(
+      "div",
+      {
+        on: {
+          click: this.click
+        },
+        class: classes.trim()
+      },
+      [`${this.number}. ${this.name}`]
+    );
+  },
   methods: {
-    changeStage(newStage) {
-      this.stage = newStage;
+    click() {
+      if (this.clickable && !this.disabled) {
+        this.$emit("click", this.number);
+      }
     }
   }
+};
+
+const stages = {
+  1: "/enroll",
+  2: "/enroll/applicant",
+  3: "/enroll/appfee",
+  4: "/enroll/admissions"
+};
+
+export default {
+  components: { Hero, Step },
+  data: () => ({
+    stage: 1,
+    hasCouponForWaivedAppFee: false
+  }),
+  computed: {
+    ...mapGetters([
+      "getSelectedPlan",
+      "getApplicant",
+      "getApplicationFee",
+      "getStartDate"
+    ])
+  },
+  methods: {
+    routeHas(path) {
+      return this.$route.path === path;
+    },
+    finishedStage(stage) {
+      let newStage = stage + 1;
+      if (newStage === 3 && this.hasCouponForWaivedAppFee) {
+        newStage = 4;
+      }
+      this.navigateToStage(newStage);
+    },
+    navigateToStage(stage) {
+      if (this.stage === stage) return;
+      this.stage = stage;
+      return this.$router.push(stages[this.stage]);
+    }
+    // updateStages() {
+    //   const stageArray = Object.keys(stages).map(key => {
+    //     return { key, value: stages[key] };
+    //   });
+    //   const stage = stageArray.find(x => {
+    //     return x.value === this.$route.path;
+    //   });
+    //   this.stage = stage.key;
+    // }
+  },
+  mounted() {
+    this.hasCouponForWaivedAppFee =
+      this.$store.getters.getCouponCodes.indexOf("covid19") > -1;
+  }
+  // watch: {
+  //   "$route.path": function(id) {
+  //     this.updateStages();
+  //   }
+  // }
 };
 </script>
 
@@ -57,15 +161,17 @@ export default {
   background-color: #f8f9fa;
   padding: 10px;
 }
-.steps li a {
-  text-decoration: none;
-  color: inherit;
-}
-.steps li {
+.steps {
   color: #333;
 }
-li.active {
+.active {
   color: $primary;
   font-weight: bold;
+}
+.exempt {
+  text-decoration: line-through;
+}
+.link {
+  cursor: pointer;
 }
 </style>

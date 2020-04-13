@@ -96,7 +96,7 @@ export default {
     confirmPlan() {
       if (this.isValid(this.startDate)) {
         this.$store.dispatch("setStartDate", this.startDate);
-        this.$router.push("/enroll/applicant");
+        this.$emit("completed", 1);        
       }
     },
     changePlan() {
@@ -113,9 +113,7 @@ export default {
       this.startDate = this.$store.getters.getStartDate;
     }
   },
-  created() {
-    this.$emit("changeStage", 1);
-  }
+  
 };
 </script>
 
