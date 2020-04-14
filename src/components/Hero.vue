@@ -1,10 +1,13 @@
 <template>
   <section
     class="hero-wrapper"
-    :style="{'background-image': `url(${backgroundUrl})`, 'height': height}"
+    :style="{
+      'background-image': `url(${backgroundUrl})`,
+      'min-height': height
+    }"
     :class="heroClass"
   >
-    <div class="hero h-100" :style="{'background-color': backgroundColor}">
+    <div class="hero h-100" :style="{ 'background-color': backgroundColor }">
       <slot />
     </div>
   </section>
@@ -39,7 +42,7 @@ export default {
 };
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 .hero-wrapper {
   background-position: center;
   background-size: cover;
@@ -53,7 +56,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   padding: 1em;
 
   box-sizing: border-box;
