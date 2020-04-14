@@ -88,6 +88,12 @@ export default {
     ...mapGetters(["getPromoCodesDisplay"])
   },
   methods: {
+    track() {
+      this.$gtag.event("conversion", {
+        event_label: "Landing Page Form Filled",
+        send_to: "AW-650985233/XLT-CKLD_8wBEJH-tLYC"
+      });
+    },
     submitForm() {
       const nameParts = this.name.trim().split(" ");
       const lastName = nameParts[nameParts.length - 1];
@@ -100,6 +106,7 @@ export default {
         startDate: this.startDate,
         promoCodes: this.getPromoCodesDisplay
       });
+      this.track();
     }
   }
 };
