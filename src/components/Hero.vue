@@ -7,7 +7,13 @@
     }"
     :class="heroClass"
   >
-    <div class="hero h-100" :style="{ 'background-color': backgroundColor }">
+    <div
+      class="hero h-100"
+      :style="{
+        'min-height': height,
+        'background-color': backgroundColor
+      }"
+    >
       <slot />
     </div>
   </section>
@@ -56,7 +62,6 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
   padding: 1em;
 
   box-sizing: border-box;
