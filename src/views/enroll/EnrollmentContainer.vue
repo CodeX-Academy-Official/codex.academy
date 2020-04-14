@@ -117,9 +117,7 @@ export default {
       "getPromoCodesDisplay"
     ]),
     shouldWaiveAppFee() {
-      return (
-        (this.getPromoCodesDisplay || "").toLowerCase().indexOf("covid19") > -1
-      );
+      return this.getPromoCodesDisplay.indexOf("covid19") > -1;
     }
   },
   methods: {

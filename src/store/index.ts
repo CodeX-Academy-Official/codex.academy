@@ -114,7 +114,10 @@ export default new Vuex.Store({
     getCertifications: state => state.certifications,
     getPromoCodes: state => state.promoCodes,
     getPromoCodesDisplay: state =>
-      (state.promoCodes || []).reverse().join(", "),
+      (state.promoCodes || [])
+        .reverse()
+        .join(", ")
+        .toLowerCase(),
     getApplicationFee: state => state.appFeePaid
   },
   modules: {},
