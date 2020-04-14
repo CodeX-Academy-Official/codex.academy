@@ -42,7 +42,8 @@ Vue.use(Hotjar, {
 Vue.use(
   VueGtag,
   {
-    config: { id: "UA-158800537-1" }
+    config: { id: "UA-158800537-1" },
+    includes: [{ id: "AW-650985233", params: { send_page_views: false } }]
   },
   router
 );
