@@ -20,7 +20,7 @@ Vue.use(Vuex);
 const SELECT_PLAN = "SELECT_PLAN";
 const ENROLL = "ENROLL";
 const SET_START_DATE = "SET_START_DATE";
-const APPLY_COUPON_CODE = "APPLY_COUPON_CODE";
+const APPLY_PROMO_CODE = "APPLY_PROMO_CODE";
 const PAY_APP_FEE = "PAY_APP_FEE";
 
 export default new Vuex.Store({
@@ -31,7 +31,7 @@ export default new Vuex.Store({
     planOptions: programOptions,
     selectedPlan: undefined,
     applicant: undefined,
-    couponCodes: [],
+    promoCodes: [],
     technologies,
     methods,
     certifications,
@@ -49,8 +49,8 @@ export default new Vuex.Store({
     [SET_START_DATE](state: any, startDate) {
       state.startDate = startDate;
     },
-    [APPLY_COUPON_CODE](state: any, couponCode) {
-      state.couponCodes.push(couponCode);
+    [APPLY_PROMO_CODE](state: any, promoCode) {
+      state.promoCodes.push(promoCode);
     },
     [PAY_APP_FEE](state: any) {
       state.appFeePaid = new Date();
@@ -78,10 +78,10 @@ export default new Vuex.Store({
         applicantWithId
       );
     },
-    applyCoupon({ commit, state }, couponCode) {
-      const hasCouponCode = state.couponCodes.indexOf(couponCode) > -1;
-      if (!hasCouponCode) {
-        commit(APPLY_COUPON_CODE, couponCode);
+    applyPromoCode({ commit, state }, promoCode) {
+      const hasPromoCodeCode = state.promoCodes.indexOf(promoCode) > -1;
+      if (!hasPromoCodeCode) {
+        commit(APPLY_PROMO_CODE, promoCode);
       }
     },
     payAppFee({ commit }) {
@@ -112,7 +112,7 @@ export default new Vuex.Store({
     getApplicant: state => state.applicant,
     getStartDate: state => state.startDate,
     getCertifications: state => state.certifications,
-    getCouponCodes: state => state.couponCodes,
+    getPromoCodes: state => state.promoCodes,
     getApplicationFee: state => state.appFeePaid
   },
   modules: {},

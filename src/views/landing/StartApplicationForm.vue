@@ -75,6 +75,7 @@
 
 <script>
 import { getNextDeadlineFormatted } from "@/utils/dates";
+import { mapGetters } from "vuex";
 
 export default {
   data: () => ({
@@ -83,6 +84,9 @@ export default {
     financialAid: true,
     startDate: getNextDeadlineFormatted()
   }),
+  computed: {
+    ...mapGetters(["getPromoCodes"])
+  },
   methods: {
     submitForm() {
       const nameParts = this.name.trim().split(" ");
@@ -93,7 +97,8 @@ export default {
         lastName,
         financialAid: this.financialAid,
         email: this.email,
-        startDate: this.startDate
+        startDate: this.startDate,
+        promoCodes: this.getPromoCodes.join(",")
       });
     }
   }

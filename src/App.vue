@@ -22,8 +22,8 @@ export default {
     }
   },
   mounted() {
-    if (this.$route.query.coupon) {
-      this.$store.dispatch("applyCoupon", this.$route.query.coupon);
+    if (this.$route.query.promo) {
+      this.$store.dispatch("applyPromoCode", this.$route.query.promo);
     }
   }
 };
