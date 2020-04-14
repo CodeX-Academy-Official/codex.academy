@@ -23,6 +23,7 @@ export default {
     async next(applicant) {
       const applicantWithStartDate = {
         ...applicant,
+        promoCodes: this.getPromoCodes.join(","),
         startDate: this.getStartDate
       };
       await this.$store.dispatch("enroll", applicantWithStartDate);

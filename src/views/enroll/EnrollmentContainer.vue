@@ -36,7 +36,7 @@
               name="Pay Application Fee"
               @click="navigateToStage"
               :clickable="getApplicant !== undefined"
-              :disabled="hasCouponForWaivedAppFee"
+              :disabled="shouldWaiveAppFee"
               :active="routeHas('/enroll/appfee')"
             />
             <Step
@@ -44,7 +44,7 @@
               name="Meet with Admissions"
               @click="navigateToStage"
               :clickable="
-                (getApplicant !== undefined && hasCouponForWaivedAppFee) ||
+                (getApplicant !== undefined && shouldWaiveAppFee) ||
                   getApplicationFee !== undefined
               "
               :active="routeHas('/enroll/admissions')"
@@ -106,8 +106,7 @@ const stages = {
 export default {
   components: { Hero, Step },
   data: () => ({
-    stage: 1,
-    hasCouponForWaivedAppFee: false
+    stage: 1
   }),
   computed: {
     ...mapGetters([
@@ -115,7 +114,10 @@ export default {
       "getApplicant",
       "getApplicationFee",
       "getStartDate"
-    ])
+    ]),
+    shouldWaiveAppFee() {
+      return this.$store.getters.getPromoCodes.indexOf("covid19") > -1;
+    }
   },
   methods: {
     routeHas(path) {
@@ -123,7 +125,7 @@ export default {
     },
     finishedStage(stage) {
       let newStage = stage + 1;
-      if (newStage === 3 && this.hasCouponForWaivedAppFee) {
+      if (newStage === 3 && this.shouldWaiveAppFee) {
         newStage = 4;
       }
       this.navigateToStage(newStage);
@@ -133,6 +135,7 @@ export default {
       this.stage = stage;
       return this.$router.push(stages[this.stage]);
     }
+
     // updateStages() {
     //   const stageArray = Object.keys(stages).map(key => {
     //     return { key, value: stages[key] };
@@ -142,10 +145,6 @@ export default {
     //   });
     //   this.stage = stage.key;
     // }
-  },
-  mounted() {
-    this.hasCouponForWaivedAppFee =
-      this.$store.getters.getCouponCodes.indexOf("covid19") > -1;
   }
   // watch: {
   //   "$route.path": function(id) {

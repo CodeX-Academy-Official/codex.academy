@@ -35,12 +35,32 @@
         <tr>
           <th>Start Date:</th>
           <td>
-            <input type="date" v-model="startDate" :class="{error:!isValid(startDate)}" />
+            <input
+              type="date"
+              v-model="startDate"
+              :class="{ error: !isValid(startDate) }"
+            />
             <span
               class="alert alert-danger ml-3"
               role="alert"
               v-if="!isValid(startDate)"
-            >Start date must be in the future.</span>
+              >Start date must be in the future.</span
+            >
+          </td>
+        </tr>
+        <tr>
+          <th>Promo Code:</th>
+          <td>
+            <input style="width: 100px" v-model="promoCode" />
+            <button
+              class="btn btn-sm btn-outline-secondary"
+              @click.prevent="applyPromoCode"
+            >
+              Apply
+            </button>
+            <p v-if="getPromoCodes" class="small muted">
+              {{ getPromoCodes.join(", ") }} applied
+            </p>
           </td>
         </tr>
       </table>
@@ -51,7 +71,9 @@
       </button>
     </p>
     <p>
-      <button class="btn btn-secondary" @click.prevent="changePlan">No, Change Program</button>
+      <button class="btn btn-secondary" @click.prevent="changePlan">
+        No, Change Program
+      </button>
     </p>
   </form>
 </template>
@@ -80,11 +102,12 @@ export default {
   data() {
     return {
       selectedPlan: {},
-      startDate: getNextDeadlineFormatted()
+      startDate: getNextDeadlineFormatted(),
+      promoCode: ""
     };
   },
   computed: {
-    ...mapGetters(["getSelectedPlan", "getStartDate"])
+    ...mapGetters(["getSelectedPlan", "getStartDate", "getPromoCodes"])
   },
   components: {
     PlanSpread
@@ -95,12 +118,18 @@ export default {
     },
     confirmPlan() {
       if (this.isValid(this.startDate)) {
+        this.applyPromoCode();
         this.$store.dispatch("setStartDate", this.startDate);
-        this.$emit("completed", 1);        
+        this.$emit("completed", 1);
       }
     },
     changePlan() {
       this.$router.push("/findplan");
+    },
+    applyPromoCode() {
+      if (!this.promoCode) return;
+      this.$store.dispatch("applyPromoCode", this.promoCode);
+      this.promoCode = "";
     }
   },
   mounted() {
@@ -112,8 +141,7 @@ export default {
     if (this.$store.getters.getStartDate) {
       this.startDate = this.$store.getters.getStartDate;
     }
-  },
-  
+  }
 };
 </script>
 
@@ -127,5 +155,4 @@ export default {
 .error:focus {
   outline-color: #f99;
 }
-</style>
 </style>
