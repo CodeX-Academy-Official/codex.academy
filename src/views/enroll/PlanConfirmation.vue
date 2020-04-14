@@ -53,7 +53,7 @@
           <td>
             <input style="width: 100px" v-model="promoCode" />
             <button
-              class="btn btn-sm btn-outline-secondary"
+              class="btn btn-sm btn-outline-secondary ml-2"
               @click.prevent="applyPromoCode"
             >
               Apply

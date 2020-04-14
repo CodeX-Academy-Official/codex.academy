@@ -34,9 +34,17 @@
                 <span>Walk into an internship</span>
               </div>
             </div>
+
+            <div class="d-none d-lg-block">
+              <Covid19Promo style="max-width: 450px;" class="mt-5" />
+            </div>
+
+            <div class="d-block d-lg-none">
+              <Covid19Promo style="max-width: 450px;" class="mx-auto mt-5" />
+            </div>
           </div>
 
-          <div class="col-5 d-none d-md-block">
+          <div class="col-5 d-none d-lg-block">
             <div class="start-application-form" v-if="!hasApplied">
               <h5 class="card-title text-center">Sign Up Today</h5>
               <StartApplicationForm @submitted="startApplication" />
@@ -47,7 +55,7 @@
       </div>
     </Hero>
 
-    <div class="container d-block d-md-none mt-5">
+    <div class="container d-block d-lg-none mt-5">
       <div class="row justify-content-center">
         <div class="col-10 bg-periwinkle shadow border p-4">
           <div class="start-application-form" v-if="!hasApplied">
@@ -115,6 +123,7 @@ import Technologies from "@/components/Technologies";
 import Icon from "@/components/Icon";
 import Logo from "@/components/Logo";
 import SelectPlanButton from "@/components/SelectPlanButton";
+import Covid19Promo from "@/components/Covid19Promo";
 
 const PillarsBlock = {
   props: {
@@ -148,7 +157,8 @@ export default {
     Technologies,
     Icon,
     Logo,
-    Thanks
+    Thanks,
+    Covid19Promo
   },
   data: () => ({
     hasApplied: false
