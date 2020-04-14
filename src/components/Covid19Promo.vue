@@ -43,7 +43,7 @@ export default {
     }
 
     .title {
-      font-size: 2em;
+      font-size: 1.8em;
       font-weight: 900;
       line-height: 1em;
     }
@@ -62,18 +62,18 @@ export default {
 
     .promo {
       text-align: center;
-      font-size: 1.2em;
+      font-size: 1.1em;
       font-weight: 800;
 
       @media screen and (max-width: 400px) {
-        font-size: 1em;
+        font-size: 0.9em;
       }
     }
 
     .promo-lg {
-      font-size: 1.6em;
+      font-size: 1.4em;
       @media screen and (max-width: 400px) {
-        font-size: 1.4em;
+        font-size: 1.2em;
       }
     }
 
