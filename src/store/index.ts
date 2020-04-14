@@ -113,6 +113,8 @@ export default new Vuex.Store({
     getStartDate: state => state.startDate,
     getCertifications: state => state.certifications,
     getPromoCodes: state => state.promoCodes,
+    getPromoCodesDisplay: state =>
+      (state.promoCodes || []).reverse().join(", "),
     getApplicationFee: state => state.appFeePaid
   },
   modules: {},

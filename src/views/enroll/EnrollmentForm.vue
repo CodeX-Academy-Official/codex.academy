@@ -14,7 +14,12 @@ import EnrollForm from "@/components/EnrollForm";
 import { mapGetters } from "vuex";
 export default {
   computed: {
-    ...mapGetters(["getSelectedPlan", "getApplicant", "getStartDate"])
+    ...mapGetters([
+      "getSelectedPlan",
+      "getApplicant",
+      "getStartDate",
+      "getPromoCodesDisplay"
+    ])
   },
   components: {
     EnrollForm
@@ -23,7 +28,7 @@ export default {
     async next(applicant) {
       const applicantWithStartDate = {
         ...applicant,
-        promoCodes: this.getPromoCodes.join(","),
+        promoCodes: this.getPromoCodesDisplay,
         startDate: this.getStartDate
       };
       await this.$store.dispatch("enroll", applicantWithStartDate);

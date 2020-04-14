@@ -58,8 +58,8 @@
             >
               Apply
             </button>
-            <p v-if="getPromoCodes" class="small muted">
-              {{ getPromoCodes.join(", ") }} applied
+            <p v-if="getPromoCodesDisplay" class="small muted">
+              {{ getPromoCodesDisplay }} applied
             </p>
           </td>
         </tr>
@@ -107,7 +107,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["getSelectedPlan", "getStartDate", "getPromoCodes"])
+    ...mapGetters(["getSelectedPlan", "getStartDate", "getPromoCodesDisplay"])
   },
   components: {
     PlanSpread

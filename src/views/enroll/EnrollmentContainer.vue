@@ -113,10 +113,11 @@ export default {
       "getSelectedPlan",
       "getApplicant",
       "getApplicationFee",
-      "getStartDate"
+      "getStartDate",
+      "getPromoCodesDisplay"
     ]),
     shouldWaiveAppFee() {
-      return this.$store.getters.getPromoCodes.indexOf("covid19") > -1;
+      return this.getPromoCodesDisplay.indexOf("covid19") > -1;
     }
   },
   methods: {

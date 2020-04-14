@@ -85,7 +85,7 @@ export default {
     startDate: getNextDeadlineFormatted()
   }),
   computed: {
-    ...mapGetters(["getPromoCodes"])
+    ...mapGetters(["getPromoCodesDisplay"])
   },
   methods: {
     submitForm() {
@@ -98,7 +98,7 @@ export default {
         financialAid: this.financialAid,
         email: this.email,
         startDate: this.startDate,
-        promoCodes: this.getPromoCodes.join(",")
+        promoCodes: this.getPromoCodesDisplay
       });
     }
   }
