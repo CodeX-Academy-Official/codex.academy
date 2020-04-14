@@ -117,7 +117,9 @@ export default {
       "getPromoCodesDisplay"
     ]),
     shouldWaiveAppFee() {
-      return this.getPromoCodesDisplay.indexOf("covid19") > -1;
+      return (
+        (this.getPromoCodesDisplay || "").toLowerCase().indexOf("covid19") > -1
+      );
     }
   },
   methods: {
@@ -136,22 +138,7 @@ export default {
       this.stage = stage;
       return this.$router.push(stages[this.stage]);
     }
-
-    // updateStages() {
-    //   const stageArray = Object.keys(stages).map(key => {
-    //     return { key, value: stages[key] };
-    //   });
-    //   const stage = stageArray.find(x => {
-    //     return x.value === this.$route.path;
-    //   });
-    //   this.stage = stage.key;
-    // }
   }
-  // watch: {
-  //   "$route.path": function(id) {
-  //     this.updateStages();
-  //   }
-  // }
 };
 </script>
 
