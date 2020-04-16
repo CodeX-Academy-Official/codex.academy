@@ -69,7 +69,7 @@ const Step = {
     name: String,
     clickable: Boolean,
     active: Boolean,
-    disabled: Boolean
+    disabled: Boolean,
   },
   render(createElement) {
     const clickable = this.clickable ? "link " : "";
@@ -80,9 +80,9 @@ const Step = {
       "div",
       {
         on: {
-          click: this.click
+          click: this.click,
         },
-        class: classes.trim()
+        class: classes.trim(),
       },
       [`${this.number}. ${this.name}`]
     );
@@ -92,21 +92,21 @@ const Step = {
       if (!this.active && this.clickable && !this.disabled) {
         this.$emit("click", this.number);
       }
-    }
-  }
+    },
+  },
 };
 
 const stages = {
   1: "/enroll",
   2: "/enroll/applicant",
   3: "/enroll/appfee",
-  4: "/enroll/admissions"
+  4: "/enroll/admissions",
 };
 
 export default {
   components: { Hero, Step },
   data: () => ({
-    stage: 1
+    stage: 1,
   }),
   computed: {
     ...mapGetters([
@@ -114,11 +114,11 @@ export default {
       "getApplicant",
       "getApplicationFee",
       "getStartDate",
-      "getPromoCodesDisplay"
+      "getPromoCodesDisplay",
     ]),
     shouldWaiveAppFee() {
       return this.getPromoCodesDisplay.indexOf("covid19") > -1;
-    }
+    },
   },
   methods: {
     routeHas(path) {
@@ -135,8 +135,8 @@ export default {
       if (this.stage === stage) return;
       this.stage = stage;
       return this.$router.push(stages[this.stage]);
-    }
-  }
+    },
+  },
 };
 </script>
 

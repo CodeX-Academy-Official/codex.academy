@@ -4,7 +4,7 @@
       <h3>Time to Meet with Admissions</h3>
       <p>
         Your application for
-        <strong>{{ selectedPlan.title }}</strong> has been received and is
+        <strong>{{ getSelectedPlan.title }}</strong> has been received and is
         currently processing.
       </p>
       <p>
@@ -23,11 +23,11 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
-  data: () => ({ selectedPlan: {} }),
-  mounted() {
-    this.selectedPlan = this.$store.getters.getSelectedPlan;
-  }
+  computed: {
+    ...mapGetters(["getSelectedPlan"]),
+  },
 };
 </script>
 
