@@ -99,6 +99,12 @@
           <router-link to="/call-back" class="nav-link">Learn More</router-link>
         </li>-->
 
+        <li class="nav-item">
+          <router-link to="/financial-aid" class="nav-link"
+            >Financial Aid</router-link
+          >
+        </li>
+
         <li class="nav-item dropdown">
           <a
             href="#"
@@ -108,14 +114,12 @@
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
-            >How It Works</a
+            >About</a
           >
           <div class="dropdown-menu">
             <div class="nav-item">
-              <router-link
-                :to="{ path: '/howitworks', hash: '#pillars' }"
-                class="nav-link"
-                >Six Pillars</router-link
+              <router-link :to="{ path: '/howitworks' }" class="nav-link"
+                >How It Works</router-link
               >
             </div>
             <div class="dropdown-divider"></div>
@@ -150,13 +154,8 @@
             >How It Works</router-link
           >
         </li>-->
-        <li class="nav-item">
-          <router-link to="/financial-aid" class="nav-link"
-            >Financial Aid</router-link
-          >
-        </li>
 
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
           <a
             href="#"
             class="nav-link dropdown-toggle"
@@ -182,7 +181,7 @@
               >
             </div>
           </div>
-        </li>
+        </li> -->
 
         <!-- <li class="nav-item">
           <router-link to="/testimonials" class="nav-link"
@@ -216,20 +215,20 @@ import { mapGetters } from "vuex";
 export default {
   name: "NavBar",
   data: () => ({
-    isOpen: false
+    isOpen: false,
   }),
   computed: { ...mapGetters(["getBootcamp6"]) },
   components: { SelectPlanButton, separator },
   methods: {
     toggleMenu() {
       this.isOpen = !this.isOpen;
-    }
+    },
   },
   watch: {
     $route() {
       this.isOpen = false;
-    }
-  }
+    },
+  },
 };
 </script>
 

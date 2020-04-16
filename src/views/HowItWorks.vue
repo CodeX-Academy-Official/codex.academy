@@ -1,23 +1,36 @@
 <template>
   <div>
-    <Hero :unsplashIds="['-fGqsewtsJY','u_RiRTA_TtY','xRDuEeG1TVI']" height="40vh">
+    <Hero
+      :unsplashIds="['-fGqsewtsJY', 'u_RiRTA_TtY', 'xRDuEeG1TVI']"
+      height="40vh"
+    >
       <h2>How it Works</h2>
       <h5>What makes CodeX Academy Tick?</h5>
     </Hero>
     <div class="container mt-5 pt-5">
       <!-- Page Heading/Breadcrumbs -->
 
+      <h1 class="text-center">Our 6 Pillars of Success</h1>
+      <h2 id="curriculum" class="section-title mb-5">
+        A direct path for learning to code
+      </h2>
       <Pillars id="pillars" :pillars="getMethods" />
       <!-- <h2 id="formula" class="section-title mt-5 mb-5">The CodeX Academy Formula</h2>
       <Formula />-->
 
-      <h2 id="curriculum" class="section-title mt-5 mb-5">The CodeX Academy Curriculum</h2>
+      <h2 id="curriculum" class="section-title mt-5 mb-5">
+        The CodeX Academy Curriculum
+      </h2>
       <CurriculumTable />
 
-      <h2 id="timeline" class="section-title mt-5 mb-5">Start Strong, Finish Stronger</h2>
+      <h2 id="timeline" class="section-title mt-5 mb-5">
+        Start Strong, Finish Stronger
+      </h2>
       <Timeline />
 
-      <h2 id="tech" class="section-title mt-5 mb-5">Our Technologies and Tools</h2>
+      <h2 id="tech" class="section-title mt-5 mb-5">
+        Our Technologies and Tools
+      </h2>
       <Technologies />
     </div>
   </div>
@@ -44,8 +57,8 @@ export default {
     Formula,
     CurriculumTable,
     Pillars,
-    Hero
-  }
+    Hero,
+  },
 };
 </script>
 
