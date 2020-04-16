@@ -37,6 +37,11 @@
     </div>-->
 
     <div class="form-label-group">
+      <label for="promoCode">Promo Code</label>
+      <input class="form-control" v-model="promoCode" />
+    </div>
+
+    <!-- <div class="form-label-group">
       <label for="inputPassword">Desired Start Date</label>
       <input
         type="date"
@@ -44,7 +49,7 @@
         placeholder="yyyy-MM-dd"
         v-model="startDate"
       />
-    </div>
+    </div> -->
 
     <div class="form-label-group">
       <label for="inputPassword">Financial Aid</label>
@@ -81,34 +86,36 @@ export default {
   data: () => ({
     name: "",
     email: "",
+    promoCode: "COVID19",
     financialAid: true,
-    startDate: getNextDeadlineFormatted()
+    startDate: getNextDeadlineFormatted(),
   }),
   computed: {
-    ...mapGetters(["getPromoCodesDisplay"])
+    ...mapGetters(["getPromoCodesDisplay"]),
   },
   methods: {
     track() {
       this.$gtag.event("conversion", {
         event_label: "Landing Page Form Filled",
-        send_to: "AW-650985233/XLT-CKLD_8wBEJH-tLYC"
+        send_to: "AW-650985233/XLT-CKLD_8wBEJH-tLYC",
       });
     },
     submitForm() {
       const nameParts = this.name.trim().split(" ");
       const lastName = nameParts[nameParts.length - 1];
       const firstName = this.name.replace(lastName, "").trim();
+      this.$store.dispatch("applyPromoCode", this.promoCode);
       this.$emit("submitted", {
         firstName,
         lastName,
         financialAid: this.financialAid,
         email: this.email,
         startDate: this.startDate,
-        promoCodes: this.getPromoCodesDisplay
+        promoCodes: this.getPromoCodesDisplay,
       });
       this.track();
-    }
-  }
+    },
+  },
 };
 </script>
 

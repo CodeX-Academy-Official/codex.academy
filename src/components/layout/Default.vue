@@ -1,7 +1,7 @@
 <template>
   <div class="default-layout">
     <div class="sticky-top">
-      <DeadlineAlert />
+      <!-- <DeadlineAlert /> -->
       <navHeader />
     </div>
     <slot />

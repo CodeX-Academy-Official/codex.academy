@@ -1,8 +1,8 @@
 <template>
   <div class="no-nav-layout">
-    <div class="sticky-top">
+    <!-- <div class="sticky-top">
       <DeadlineAlert />
-    </div>
+    </div> -->
     <slot />
     <Footer />
   </div>
@@ -15,11 +15,9 @@ import DeadlineAlert from "./DeadlineAlert";
 export default {
   components: {
     DeadlineAlert,
-    Footer
-  }
+    Footer,
+  },
 };
 </script>
 
-<style lang="scss">
-</style>
-
+<style lang="scss"></style>

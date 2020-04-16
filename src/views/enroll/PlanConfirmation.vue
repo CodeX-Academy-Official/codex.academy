@@ -59,7 +59,7 @@
               Apply
             </button>
             <p v-if="getPromoCodesDisplay" class="small muted">
-              {{ getPromoCodesDisplay }} applied
+              {{ getPromoCodesDisplay.toUpperCase() }} applied
             </p>
           </td>
         </tr>
@@ -103,14 +103,14 @@ export default {
     return {
       selectedPlan: {},
       startDate: getNextDeadlineFormatted(),
-      promoCode: ""
+      promoCode: "",
     };
   },
   computed: {
-    ...mapGetters(["getSelectedPlan", "getStartDate", "getPromoCodesDisplay"])
+    ...mapGetters(["getSelectedPlan", "getStartDate", "getPromoCodesDisplay"]),
   },
   components: {
-    PlanSpread
+    PlanSpread,
   },
   methods: {
     isValid(startDate) {
@@ -130,7 +130,7 @@ export default {
       if (!this.promoCode) return;
       this.$store.dispatch("applyPromoCode", this.promoCode);
       this.promoCode = "";
-    }
+    },
   },
   mounted() {
     this.selectedPlan = this.$store.getters.getSelectedPlan;
@@ -141,7 +141,7 @@ export default {
     if (this.$store.getters.getStartDate) {
       this.startDate = this.$store.getters.getStartDate;
     }
-  }
+  },
 };
 </script>
 
