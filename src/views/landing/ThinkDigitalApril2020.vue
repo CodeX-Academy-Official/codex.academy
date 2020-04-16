@@ -1,7 +1,7 @@
 <template>
   <div>
     <Hero
-      class="april2020-landing-hero"
+      class="think-digital-april2020-landing-hero"
       :unsplashIds="['vdXMSiX-n6M', 'Qg-r7OxZN7A', 'YK0HPwWDJ1I']"
       height="100vh"
       backgroundColor="rgba(25, 32, 71,0.7)"
@@ -128,10 +128,10 @@ import SelectPlanButton from "@/components/SelectPlanButton";
 
 const PillarsBlock = {
   props: {
-    pillars: Array
+    pillars: Array,
   },
   render() {
-    const items = this.pillars.map(p => (
+    const items = this.pillars.map((p) => (
       <li>
         <strong>{p.title}</strong> - {p.subtitle}
       </li>
@@ -143,7 +143,7 @@ const PillarsBlock = {
         <ul>{items}</ul>
       </div>
     );
-  }
+  },
 };
 
 export default {
@@ -158,10 +158,10 @@ export default {
     Technologies,
     Icon,
     Logo,
-    Thanks
+    Thanks,
   },
   data: () => ({
-    hasApplied: false
+    hasApplied: false,
   }),
   computed: { ...mapGetters(["getMethods", "getApplicant"]) },
   methods: {
@@ -169,19 +169,19 @@ export default {
       const hsForm = "1441c2f7-cad9-435d-bfb1-224695fb3258";
       await this.$store.dispatch("startApplication", {
         applicant: { ...applicant, source: "Think Digital April 2020" },
-        hsForm
+        hsForm,
       });
       await this.$store.dispatch("setStartDate", applicant.startDate);
       this.hasApplied = true;
     },
     clearApplicant() {
       this.hasApplied = false;
-    }
+    },
   },
   mounted() {
     const applicant = this.getApplicant;
     this.hasApplied = applicant;
-  }
+  },
 };
 </script>
 
@@ -194,7 +194,7 @@ export default {
   left: 6vw;
   fill: White;
 }
-.april2020-landing-hero {
+.think-digital-april2020-landing-hero {
   .thanks-box {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 5px;
@@ -247,8 +247,6 @@ export default {
       margin-bottom: 10px;
 
       label {
-        //font-size: 0.5em;
-        text-transform: capitalize;
         margin-bottom: 0px;
       }
     }

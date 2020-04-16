@@ -249,7 +249,7 @@ export default {
 
       label {
         //font-size: 0.5em;
-        text-transform: capitalize;
+        //text-transform: capitalize;
         margin-bottom: 0px;
       }
     }
