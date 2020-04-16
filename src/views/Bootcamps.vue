@@ -21,11 +21,11 @@
         </p>
       </div>
 
-      <div class="d-block d-md-none mt-5">
+      <div class="d-block d-lg-none mt-5">
         <BootcampsTable />
       </div>
 
-      <div class="d-none d-md-block mt-3">
+      <div class="d-none d-lg-block mt-3">
         <ProgramTable :programs="getBootcamps" title="Bootcamps" />
       </div>
     </div>
@@ -44,10 +44,10 @@ export default {
     BootcampsTable,
     Unsplash,
     Hero,
-    ProgramTable
+    ProgramTable,
   },
   computed: {
-    ...mapGetters(["getBootcamps"])
-  }
+    ...mapGetters(["getBootcamps"]),
+  },
 };
 </script>
