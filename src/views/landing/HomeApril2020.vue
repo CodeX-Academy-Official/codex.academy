@@ -33,6 +33,10 @@
                 <Icon name="checkbox" />
                 <span>Walk into an internship</span>
               </div>
+              <div class="item">
+                <Icon name="checkbox" />
+                <span>Programs as low as $400/mo</span>
+              </div>
             </div>
 
             <div class="d-none d-lg-block">
@@ -44,7 +48,7 @@
             </div>
           </div>
 
-          <div class="col-5 d-none d-lg-block">
+          <div class="col-5 d-none d-lg-block my-auto">
             <div class="start-application-form" v-if="!hasApplied">
               <h5 class="card-title text-center">Sign Up Today</h5>
               <StartApplicationForm @submitted="startApplication" />
@@ -127,10 +131,10 @@ import Covid19Promo from "@/components/Covid19Promo";
 
 const PillarsBlock = {
   props: {
-    pillars: Array
+    pillars: Array,
   },
   render() {
-    const items = this.pillars.map(p => (
+    const items = this.pillars.map((p) => (
       <li>
         <strong>{p.title}</strong> - {p.subtitle}
       </li>
@@ -142,7 +146,7 @@ const PillarsBlock = {
         <ul>{items}</ul>
       </div>
     );
-  }
+  },
 };
 
 export default {
@@ -158,28 +162,28 @@ export default {
     Icon,
     Logo,
     Thanks,
-    Covid19Promo
+    Covid19Promo,
   },
   data: () => ({
-    hasApplied: false
+    hasApplied: false,
   }),
   computed: { ...mapGetters(["getMethods", "getApplicant"]) },
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", {
-        applicant: { ...applicant, source: "CodeX Academy April 2020" }
+        applicant: { ...applicant, source: "CodeX Academy April 2020" },
       });
       await this.$store.dispatch("setStartDate", applicant.startDate);
       this.hasApplied = true;
     },
     clearApplicant() {
       this.hasApplied = false;
-    }
+    },
   },
   mounted() {
     const applicant = this.getApplicant;
     this.hasApplied = applicant;
-  }
+  },
 };
 </script>
 
