@@ -14,7 +14,7 @@ export const internshipPartners = [
   // {
   //   name: "Google",
   //   logo: "img/internships/google.png",
-  //   url: "https://careers.google.com/students/",
+  //   url: "https://careers.google.com/sktudents/",
   // },
   {
     name: "Hero Unit",

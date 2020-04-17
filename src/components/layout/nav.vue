@@ -146,6 +146,14 @@
                 >Technologies</router-link
               >
             </div>
+            <div class="dropdown-divider"></div>
+            <div class="nav-item">
+              <router-link
+                :to="{ path: '/howitworks', hash: '#internships' }"
+                class="nav-link"
+                >Internships</router-link
+              >
+            </div>
           </div>
         </li>
 
