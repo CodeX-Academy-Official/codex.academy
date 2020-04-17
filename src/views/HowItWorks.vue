@@ -18,20 +18,40 @@
       <!-- <h2 id="formula" class="section-title mt-5 mb-5">The CodeX Academy Formula</h2>
       <Formula />-->
 
-      <h2 id="curriculum" class="section-title mt-5 mb-5">
+      <h1 id="curriculum" class="text-center mt-5">
         The CodeX Academy Curriculum
+      </h1>
+      <h2 id="curriculum" class="section-title mb-5">
+        What you can expect, Month to Month
       </h2>
       <CurriculumTable />
 
-      <h2 id="timeline" class="section-title mt-5 mb-5">
+      <h1 id="timeline" class="text-center mt-5">
         Start Strong, Finish Stronger
+      </h1>
+      <h2 id="curriculum" class="section-title mb-5">
+        A Typical Learner Timeline
       </h2>
       <Timeline />
 
-      <h2 id="tech" class="section-title mt-5 mb-5">
+      <h1 id="tech" class="text-center mt-5">
         Our Technologies and Tools
+      </h1>
+      <h2 id="curriculum" class="section-title mb-5">
+        Only the most popular
       </h2>
       <Technologies />
+
+      <h1 id="internships" class="text-center mt-5">
+        Meet Our Internship Partners
+      </h1>
+      <h2 id="curriculum" class="section-title mb-5">
+        Start your career strong
+      </h2>
+      <InternshipPartners />
+      <!-- <p class="pl-4 pr-4 text-center">
+        Our Biz Dev team works daily to find more and more internship partners.
+      </p> -->
     </div>
   </div>
 </template>
@@ -45,6 +65,7 @@ import Formula from "@/components/Formula";
 import CurriculumTable from "@/components/CurriculumTable";
 import Pillars from "@/components/Pillars";
 import Hero from "@/components/Hero";
+import InternshipPartners from "@/components/InternshipPartners";
 import { mapGetters } from "vuex";
 
 export default {
@@ -58,6 +79,7 @@ export default {
     CurriculumTable,
     Pillars,
     Hero,
+    InternshipPartners,
   },
 };
 </script>

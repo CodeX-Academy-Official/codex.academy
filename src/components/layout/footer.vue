@@ -39,9 +39,9 @@
         </div>
 
         <div class="col-12 col-md-2 mb-5">
-          <h4>How It Works</h4>
+          <h4>About Us</h4>
           <p>
-            <router-link to="/howitworks#pillars">Six Pillars</router-link>
+            <router-link to="/howitworks">How It Works</router-link>
           </p>
           <p>
             <router-link to="/howitworks#curriculum">Curriculum</router-link>
@@ -51,6 +51,11 @@
           </p>
           <p>
             <router-link to="/howitworks#tech">Our Technologies</router-link>
+          </p>
+          <p>
+            <router-link :to="{ path: '/howitworks', hash: '#internships' }"
+              >Internships</router-link
+            >
           </p>
         </div>
 
@@ -119,7 +124,7 @@ import {
   faFacebookSquare,
   faInstagram,
   faTwitterSquare,
-  faYoutubeSquare
+  faYoutubeSquare,
 } from "@fortawesome/fontawesome-free-brands";
 
 export default {
@@ -127,8 +132,8 @@ export default {
     faFacebookSquare,
     faInstagram,
     faTwitterSquare,
-    faYoutubeSquare
-  })
+    faYoutubeSquare,
+  }),
 };
 </script>
 <style lang="scss" scoped>
