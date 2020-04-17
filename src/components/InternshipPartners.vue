@@ -1,7 +1,27 @@
 <template>
   <div class="row justify-content-md-center">
-    <div class="col-2" v-for="i in getInternshipPartners" :key="i.name">
-      <img class="img-fluid" :src="`${i.logo}`" />
+    <div
+      class="col-6 col-sm-4 col-md-3 col-lg-2 internship"
+      @click="open(i)"
+      v-for="i in getInternshipPartners"
+      :key="i.name"
+    >
+      <div
+        class="logo"
+        :class="{ needsBorder: i.needsBorder }"
+        :style="{ 'background-image': `url(${i.logo})` }"
+      ></div>
+      <p class="mt-2 text-center text-muted">
+        <small>{{ i.name }}</small>
+      </p>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3 col-lg-2 internship">
+      <div class="logo d-flex">
+        <h3 class="text-center">Constantly Adding More!</h3>
+      </div>
+      <p class="mt-2 text-center text-muted">
+        <small>Check back tomorrow!</small>
+      </p>
     </div>
   </div>
 </template>
@@ -10,17 +30,37 @@
 import { mapGetters } from "vuex";
 export default {
   computed: {
-    ...mapGetters(["getInternshipPartners"])
-  }
+    ...mapGetters(["getInternshipPartners"]),
+  },
+  methods: {
+    open(internship) {
+      window.open(internship.url, "_blank");
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-// .logo img {
-//   object-fit: none; /* Do not scale the image */
-//   object-position: center; /* Center the image within the element */
-//   width: 100%;
-//   max-height: 50px;
-//   margin-bottom: 1rem;
-// }
+.internship {
+  cursor: pointer;
+  padding: 10px;
+
+  .logo {
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .needsBorder {
+    background-color: white;
+    padding: 5px;
+    border: solid 1px #ddd;
+  }
+}
+
+.internship:hover {
+  border: 1px solid #ccc;
+  margin: 0px;
+  background-color: #ddd;
+}
 </style>
