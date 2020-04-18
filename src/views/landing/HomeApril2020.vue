@@ -91,9 +91,7 @@
         <div class="mb-5 mt-5">
           <Technologies :includeName="true" :onlyImportant="true" />
           <div class="text-center">
-            <router-link class="btn btn-secondary" to="/howitworks#tech"
-              >See More Technologies</router-link
-            >
+            <router-link class="btn btn-secondary" to="/howitworks#tech">See More Technologies</router-link>
           </div>
         </div>
       </div>
@@ -131,10 +129,10 @@ import Covid19Promo from "@/components/Covid19Promo";
 
 const PillarsBlock = {
   props: {
-    pillars: Array,
+    pillars: Array
   },
   render() {
-    const items = this.pillars.map((p) => (
+    const items = this.pillars.map(p => (
       <li>
         <strong>{p.title}</strong> - {p.subtitle}
       </li>
@@ -146,7 +144,7 @@ const PillarsBlock = {
         <ul>{items}</ul>
       </div>
     );
-  },
+  }
 };
 
 export default {
@@ -162,28 +160,29 @@ export default {
     Icon,
     Logo,
     Thanks,
-    Covid19Promo,
+    Covid19Promo
   },
   data: () => ({
-    hasApplied: false,
+    hasApplied: false
   }),
   computed: { ...mapGetters(["getMethods", "getApplicant"]) },
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", {
-        applicant: { ...applicant, source: "CodeX Academy April 2020" },
+        applicant: { ...applicant, source: "CodeX Academy April 2020" }
       });
       await this.$store.dispatch("setStartDate", applicant.startDate);
       this.hasApplied = true;
+      this.$router.push("/findplan");
     },
     clearApplicant() {
       this.hasApplied = false;
-    },
+    }
   },
   mounted() {
     const applicant = this.getApplicant;
     this.hasApplied = applicant;
-  },
+  }
 };
 </script>
 
