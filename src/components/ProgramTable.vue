@@ -6,59 +6,39 @@
           <h2 class="text-center">{{ title }}</h2>
         </th>
         <th v-for="p in programs" :key="p.id">
-          <h3 class="duration" v-if="p.durationMonths">
-            {{ p.durationMonths }}-Month
-          </h3>
-          <h1 class="price"><Money :amount="p.total" /></h1>
-          <h3 class="text-center" v-if="!p.durationMonths">{{ p.duration }}</h3>
+          <h5 class="duration" v-if="p.durationMonths">{{ p.durationMonths }}-Month</h5>
+          <h1 class="price">
+            <Money :amount="p.total" />
+          </h1>
+          <h5 class="text-center" v-if="!p.durationMonths">{{ p.duration }}</h5>
         </th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <th>
-          Description
-        </th>
-        <td v-for="p in programs" :key="p.id">
-          {{ p.description }}
-        </td>
+        <th>Description</th>
+        <td v-for="p in programs" :key="p.id">{{ p.description }}</td>
       </tr>
       <tr>
-        <th>
-          Weekly 1:1 Mentoring
-        </th>
-        <td v-for="p in programs" :key="p.id">
-          {{ p.mentorHoursPerWeek }} hours
-        </td>
+        <th>Weekly 1:1 Mentoring</th>
+        <td v-for="p in programs" :key="p.id">{{ p.mentorHoursPerWeek }} hours</td>
       </tr>
       <tr>
-        <th>
-          Weekly Commitment
-        </th>
-        <td v-for="p in programs" :key="p.id">
-          {{ p.minimumWeeklyStudyHours }} hours
-        </td>
+        <th>Weekly Commitment</th>
+        <td v-for="p in programs" :key="p.id">{{ p.minimumWeeklyStudyHours }} hours</td>
       </tr>
-      <Row
-        v-for="p in programs[0].details"
-        :key="p"
-        :name="p"
-        :programs="programs"
-      />
+      <Row v-for="p in programs[0].details" :key="p" :name="p" :programs="programs" />
 
       <tr>
-        <th>
-          Monthly Micro-Certification Evaluations
-        </th>
-        <td v-for="p in programs" :key="p.id">
-          {{ p.monthlyEvaluations }}
-        </td>
+        <th>Monthly Micro-Certification Evaluations</th>
+        <td v-for="p in programs" :key="p.id">{{ p.monthlyEvaluations }}</td>
       </tr>
     </tbody>
     <tfoot>
       <tr>
         <td>
-          Need help? <router-link to="/findplan">Help Me Decide</router-link>
+          Need help?
+          <router-link to="/findplan">Help Me Decide</router-link>
         </td>
         <td v-for="p in programs" :key="p.id">
           <SelectPlanButton :plan="p" text="Apply" />
