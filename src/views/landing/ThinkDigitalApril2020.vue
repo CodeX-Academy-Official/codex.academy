@@ -6,28 +6,21 @@
       height="100vh"
       backgroundColor="rgba(25, 32, 71,0.7)"
     >
-      <div class="landing-logo">
-        <Logo color="white" :width="150" /><Icon
-          name="plusByHand"
-          :size="50"
-          style="margin-left: 15px;"
-        />
-        <img
-          src="https://thinkdigital.academy/wp-content/uploads/2019/05/logo-think-digital-website.png"
-          style="filter: brightness(0) invert(1); width: 150px; margin-bottom: 10px;"
-        />
-      </div>
-
       <div class="container">
         <div class="row h-100">
           <div class="col my-auto big-message">
-            <div class="d-sm-block d-md-none text-center">
-              <h4 class="text-left action">Learn to code</h4>
-              <h2 class="text-left action">In 6 Months</h2>
+            <div class="landing-logo mb-5">
+              <Logo color="white" :width="150" class="d-inline" />
+              <Icon name="plusByHand" :size="50" style="margin-left: 15px;" color="white" />
+              <img
+                src="https://thinkdigital.academy/wp-content/uploads/2019/05/logo-think-digital-website.png"
+                style="filter: brightness(0) invert(1); width: 150px; margin-bottom: 10px;"
+              />
             </div>
-            <div class="d-none d-md-block text-center">
-              <h4 class="text-left action">Learn to code</h4>
-              <h2 class="text-left action">In 6 Months</h2>
+
+            <div class>
+              <h3 class="text-left action">Learn to code</h3>
+              <h1 class="text-left action">In 6 Months</h1>
             </div>
             <div class="checklist">
               <div class="title">We'll help you do it!</div>
@@ -89,9 +82,7 @@
         <div class="mb-5 mt-5">
           <Technologies :includeName="true" :onlyImportant="true" />
           <div class="text-center">
-            <router-link class="btn btn-secondary" to="/howitworks#tech"
-              >See More Technologies</router-link
-            >
+            <router-link class="btn btn-secondary" to="/howitworks#tech">See More Technologies</router-link>
           </div>
         </div>
       </div>
@@ -128,10 +119,10 @@ import SelectPlanButton from "@/components/SelectPlanButton";
 
 const PillarsBlock = {
   props: {
-    pillars: Array,
+    pillars: Array
   },
   render() {
-    const items = this.pillars.map((p) => (
+    const items = this.pillars.map(p => (
       <li>
         <strong>{p.title}</strong> - {p.subtitle}
       </li>
@@ -143,7 +134,7 @@ const PillarsBlock = {
         <ul>{items}</ul>
       </div>
     );
-  },
+  }
 };
 
 export default {
@@ -158,10 +149,10 @@ export default {
     Technologies,
     Icon,
     Logo,
-    Thanks,
+    Thanks
   },
   data: () => ({
-    hasApplied: false,
+    hasApplied: false
   }),
   computed: { ...mapGetters(["getMethods", "getApplicant"]) },
   methods: {
@@ -169,19 +160,19 @@ export default {
       const hsForm = "1441c2f7-cad9-435d-bfb1-224695fb3258";
       await this.$store.dispatch("startApplication", {
         applicant: { ...applicant, source: "Think Digital April 2020" },
-        hsForm,
+        hsForm
       });
       await this.$store.dispatch("setStartDate", applicant.startDate);
       this.hasApplied = true;
     },
     clearApplicant() {
       this.hasApplied = false;
-    },
+    }
   },
   mounted() {
     const applicant = this.getApplicant;
     this.hasApplied = applicant;
-  },
+  }
 };
 </script>
 
@@ -189,10 +180,10 @@ export default {
 @import "@/variables";
 
 .landing-logo {
-  position: absolute;
-  top: 2.6vh;
-  left: 6vw;
-  fill: White;
+  // position: absolute;
+  // top: 2.6vh;
+  // left: 6vw;
+  // fill: White;
 }
 .think-digital-april2020-landing-hero {
   .thanks-box {
@@ -267,19 +258,19 @@ export default {
   h3,
   h4,
   h5 {
-    font-size: 6rem;
+    font-size: 3.2em;
   }
   h2 {
-    font-size: 4rem;
+    font-size: 2em;
   }
   h3 {
-    font-size: 3rem;
+    font-size: 1.5em;
   }
   h4 {
-    font-size: 2rem;
+    font-size: 1.25rem;
   }
   h5 {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 }
 </style>

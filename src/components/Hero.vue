@@ -60,7 +60,7 @@ export default {
   text-shadow: 2px 2px 5px #333;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  //align-items: center;
   justify-content: center;
   padding: 1em;
 
