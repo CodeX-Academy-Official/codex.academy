@@ -17,6 +17,7 @@ const routes: Array<any> = [
       {
         path: "202004s",
         component: StudentApril2020,
+        meta: { layout: "no-navbar" },
       },
       {
         path: "202004",

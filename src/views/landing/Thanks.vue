@@ -1,14 +1,7 @@
 <template>
   <div class="thanks-box">
     <h3>Thanks</h3>
-    <p>
-      You are on your way to starting a new career. We have received your
-      application! You should check your email for next steps.
-    </p>
-    <p>
-      If you'd like to continue your application by selecting a program, be
-      our guest!
-    </p>
+    <p>Now it's time to choose your program. Click the button below to find the program that's right for you!</p>
     <p>
       <SelectPlanButton
         class="mx-auto"
