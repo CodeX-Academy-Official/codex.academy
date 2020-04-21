@@ -77,7 +77,7 @@ export default {
     color: white;
     padding: 0px;
     max-width: 80vw;
-    margin: 0;
+    margin: 0px auto;
     margin-bottom: 1.5vh;
     font-size: 8vw;
     @media (max-width: 800px) {
