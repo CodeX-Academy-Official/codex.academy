@@ -17,14 +17,25 @@ function getNextMonday(): moment.Moment {
 
   return nextMonday;
 }
-export function getNextDeadline() {
+export function getNextDeadline(): Date | moment.Moment {
   const m = getNextMonday();
   m.set({ hour: 8 });
   return m;
 }
 
 export function getNextDeadlineFormatted() {
-  const d = getNextDeadline();
+  return formatted(getNextDeadline());
+}
+
+export function formatted(d: Date | moment.Moment) {
   const formatted = d.toISOString().split("T")[0];
   return formatted;
+}
+
+export function today() {
+  return moment();
+}
+
+export function centuryAgo() {
+  return moment().subtract(100, "years");
 }
