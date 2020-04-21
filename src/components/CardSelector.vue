@@ -4,20 +4,14 @@
       <div class="icon mb-3 text-center" v-if="icon">
         <font-awesome-icon :icon="['fas', icon]" />
       </div>
-      <h4 class="card-title text-center" v-if="name">{{ name }}</h4>
-      <p
-        class="card-text text-muted small"
-        :class="{ 'text-center': !name }"
-        v-if="description"
-      >
+      <h5 class="card-title text-center" v-if="name">{{ name }}</h5>
+      <p class="card-text text-muted small" :class="{ 'text-center': !name }" v-if="description">
         {{ description }}
         <slot />
       </p>
     </div>
     <div class="card-footer text-center">
-      <button class="btn btn-primary" @click.prevent="buttonClick">
-        {{ buttonText }}
-      </button>
+      <button class="btn btn-primary" @click.prevent="buttonClick">{{ buttonText }}</button>
     </div>
   </div>
 </template>

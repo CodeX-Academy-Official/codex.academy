@@ -17,7 +17,7 @@
     </div>
     <div class="col-6 col-sm-4 col-md-3 col-lg-2 internship">
       <div class="logo d-flex">
-        <h3 class="text-center">Constantly Adding More!</h3>
+        <h5 class="text-center" style="font-size: .9em">Constantly Adding More!</h5>
       </div>
       <p class="mt-2 text-center text-muted">
         <small>Check back tomorrow!</small>
@@ -30,13 +30,13 @@
 import { mapGetters } from "vuex";
 export default {
   computed: {
-    ...mapGetters(["getInternshipPartners"]),
+    ...mapGetters(["getInternshipPartners"])
   },
   methods: {
     open(internship) {
       window.open(internship.url, "_blank");
-    },
-  },
+    }
+  }
 };
 </script>
 

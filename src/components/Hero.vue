@@ -85,7 +85,6 @@ export default {
     padding: 0px;
     max-width: 80vw;
     margin: 0px auto;
-    margin-bottom: 1.5vh;
     font-size: 5em;
   }
   h2 {
