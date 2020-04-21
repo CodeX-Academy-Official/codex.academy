@@ -66,7 +66,14 @@ export default {
 
   box-sizing: border-box;
   color: white;
+
   font-size: 1rem;
+  @media (max-width: 800px) {
+    font-size: 0.9rem;
+  }
+  @media (max-width: 500px) {
+    font-size: 0.8rem;
+  }
 
   h1,
   h2,
@@ -79,34 +86,19 @@ export default {
     max-width: 80vw;
     margin: 0px auto;
     margin-bottom: 1.5vh;
-    font-size: 8vw;
-    @media (max-width: 800px) {
-      font-size: 10vw;
-    }
+    font-size: 5em;
   }
   h2 {
-    font-size: 6vw;
-    @media (max-width: 700px) {
-      font-size: 7vw;
-    }
+    font-size: 4em;
   }
   h3 {
-    font-size: 4.5vw;
-    @media (max-width: 800px) {
-      font-size: 5.5vw;
-    }
+    font-size: 3.2em;
   }
   h4 {
-    font-size: 3vw;
-    @media (max-width: 800px) {
-      font-size: 4vw;
-    }
+    font-size: 2.5em;
   }
   h5 {
-    font-size: 1.5vw;
-    @media (max-width: 800px) {
-      font-size: 3vw;
-    }
+    font-size: 1.3em;
   }
 }
 </style>

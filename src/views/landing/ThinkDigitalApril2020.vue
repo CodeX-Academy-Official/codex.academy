@@ -258,7 +258,8 @@ export default {
   h3,
   h4,
   h5 {
-    font-size: 3.2em;
+    font-size: 4.2em;
+    margin: 0px;
   }
   h2 {
     font-size: 2em;

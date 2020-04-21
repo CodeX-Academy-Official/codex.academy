@@ -253,5 +253,26 @@ export default {
       }
     }
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-size: 4.2em;
+    margin: 0;
+  }
+  h2 {
+    font-size: 2em;
+  }
+  h3 {
+    font-size: 1.5em;
+  }
+  h4 {
+    font-size: 1.25rem;
+  }
+  h5 {
+    font-size: 1.1rem;
+  }
 }
 </style>
