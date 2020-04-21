@@ -6,18 +6,13 @@
       height="100vh"
       backgroundColor="rgba(25, 32, 71,0.7)"
     >
-      <Logo color="white" :width="150" class="landing-logo" />
-
       <div class="container">
         <div class="row h-100">
           <div class="col my-auto big-message">
-            <div class="d-sm-block d-md-none text-center">
-              <h4 class="text-left action">Learn to code</h4>
-              <h2 class="text-left action">In 6 Months</h2>
-            </div>
-            <div class="d-none d-md-block text-center">
-              <h4 class="text-left action">Learn to code</h4>
-              <h2 class="text-left action">In 6 Months</h2>
+            <Logo color="white" :width="150" class="landing-logo mb-3" />
+            <div class>
+              <h3 class="text-left action">Learn to code</h3>
+              <h1 class="text-left action">In 6 Months</h1>
             </div>
             <div class="checklist">
               <div class="title">We'll help you do it!</div>
@@ -189,11 +184,6 @@ export default {
 <style lang="scss">
 @import "@/variables";
 
-.landing-logo {
-  position: absolute;
-  top: 2.6vh;
-  left: 6vw;
-}
 .april2020-landing-hero {
   .thanks-box {
     background-color: rgba(255, 255, 255, 0.3);
@@ -262,26 +252,6 @@ export default {
         color: #eee;
       }
     }
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    font-size: 6rem;
-  }
-  h2 {
-    font-size: 4rem;
-  }
-  h3 {
-    font-size: 3rem;
-  }
-  h4 {
-    font-size: 2rem;
-  }
-  h5 {
-    font-size: 1rem;
   }
 }
 </style>

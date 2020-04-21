@@ -1,23 +1,18 @@
 <template>
   <div>
     <Hero
-      class="april2020-landing-hero"
+      class="april2020s-landing-hero"
       :unsplashIds="['vdXMSiX-n6M', 'Qg-r7OxZN7A', 'YK0HPwWDJ1I']"
       height="100vh"
       backgroundColor="rgba(25, 32, 71,0.7)"
     >
-      <Logo color="white" :width="150" class="landing-logo" />
-
       <div class="container">
         <div class="row h-100">
           <div class="col my-auto big-message">
-            <div class="d-sm-block d-md-none text-center">
-              <h4 class="text-left action">Forget College</h4>
-              <h2 class="text-left action">Learn to Code in 6 months</h2>
-            </div>
-            <div class="d-none d-md-block text-center">
-              <h4 class="text-left action">Forget College</h4>
-              <h2 class="text-left action">Learn to Code in 6 months</h2>
+            <Logo color="white" :width="150" class="landing-logo mb-3" />
+            <div class>
+              <h3 class="text-left action">Forget College</h3>
+              <h1 class="text-left action">Learn to Code in 6 months</h1>
             </div>
             <div class="checklist">
               <div class="title">We'll help you do it!</div>
@@ -35,7 +30,7 @@
               </div>
               <div class="item">
                 <Icon name="checkbox" />
-                <span>Financial Aid Available!</span>
+                <span>Financial Aid Available</span>
               </div>
             </div>
 
@@ -189,12 +184,7 @@ export default {
 <style lang="scss">
 @import "@/variables";
 
-.landing-logo {
-  position: absolute;
-  top: 2.6vh;
-  left: 6vw;
-}
-.april2020-landing-hero {
+.april2020s-landing-hero {
   .thanks-box {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 5px;
@@ -203,6 +193,7 @@ export default {
   .big-message {
     .action {
       color: $primary;
+      max-width: 500px;
     }
   }
 
@@ -269,19 +260,19 @@ export default {
   h3,
   h4,
   h5 {
-    font-size: 6rem;
+    font-size: 3.2em;
   }
   h2 {
-    font-size: 4rem;
+    font-size: 2em;
   }
   h3 {
-    font-size: 3rem;
+    font-size: 1.5em;
   }
   h4 {
-    font-size: 2rem;
+    font-size: 1.25rem;
   }
   h5 {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 }
 </style>
