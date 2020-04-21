@@ -61,12 +61,7 @@
       </div>
       <div class="form-group col-md-4">
         <label for="inputAddress2">Apartment, Suite, Floor #:</label>
-        <input
-          type="text"
-          class="form-control"
-          id="inputAddress2"
-          v-model="applicant.address2"
-        />
+        <input type="text" class="form-control" id="inputAddress2" v-model="applicant.address2" />
       </div>
     </div>
     <div class="form-row">
@@ -169,6 +164,8 @@
           v-model.trim="applicant.dateOfBirth"
           :class="isValid(applicant.dateOfBirth)"
           required
+          :min="dateMin"
+          :max="dateMax"
         />
       </div>
       <div class="form-group col-md-6">
@@ -176,9 +173,7 @@
         <select class="form-control" id="gender" v-model="applicant.gender">
           <option value="Male">Male</option>
           <option value="Female">Female</option>
-          <option value="Other / Prefer not to answer"
-            >Other / Prefer not to answer</option
-          >
+          <option value="Other / Prefer not to answer">Other / Prefer not to answer</option>
         </select>
       </div>
     </div>
@@ -193,9 +188,7 @@
             v-model="applicant.financialAid"
             id="financialAidLong"
           />
-          <label class="form-check-label" for="financialAidLong"
-            >I want financial aid.</label
-          >
+          <label class="form-check-label" for="financialAidLong">I want financial aid.</label>
         </div>
       </div>
     </div>
@@ -288,6 +281,8 @@
 </template>
 
 <script>
+import { today, centuryAgo, formatted } from "@/utils/dates";
+
 export default {
   props: {
     plan: Object,
@@ -306,7 +301,14 @@ export default {
       dateOfBirth: ""
     }
   }),
-
+  computed: {
+    dateMin() {
+      return formatted(centuryAgo());
+    },
+    dateMax() {
+      return formatted(today());
+    }
+  },
   methods: {
     submitForm() {
       this.$emit("enroll", this.applicant);
