@@ -64,7 +64,7 @@
 
     <div class="container mt-5 text-center">
       <h1>Opportunity Awaits</h1>
-      <h3>Your Options Are Looking Good</h3>
+      <h5>Your Options Are Looking Good</h5>
       <div class="pb-5 pb-5">
         <Stats />
       </div>
@@ -72,13 +72,13 @@
 
     <CommercialSection>
       <h1>How it Works</h1>
-      <h3>Welcome to our full-service software development school!</h3>
+      <h5>Welcome to our full-service software development school!</h5>
     </CommercialSection>
 
     <div class="bg-lilac pt-5 pb-5">
       <div class="container text-center">
         <h1>Knowledge is Power</h1>
-        <h3>Some of the technologies you'll be learning</h3>
+        <h5>Some of the technologies you'll be learning</h5>
         <div class="mb-5 mt-5">
           <Technologies :includeName="true" :onlyImportant="true" />
           <div class="text-center">
@@ -93,7 +93,7 @@
         <div class="container">
           <div class="pt-5 text-center">
             <h1>Here is what others have to say</h1>
-            <h3>CodeX Academy is a valuable experience!</h3>
+            <h5>CodeX Academy is a valuable experience!</h5>
             <div class="mt-5">
               <TestimonialsCarousel />
             </div>
@@ -258,7 +258,8 @@ export default {
   h3,
   h4,
   h5 {
-    font-size: 3.2em;
+    font-size: 4.2em;
+    margin: 0px;
   }
   h2 {
     font-size: 2em;
