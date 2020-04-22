@@ -66,96 +66,49 @@
       </div>
     </div>
 
-    <div class="container mt-5 text-center">
-      <h1>Opportunity Awaits</h1>
-      <h5>Your Options Are Looking Good</h5>
-      <div class="pb-5 pb-5">
-        <Stats />
-      </div>
-    </div>
+    <StatsSection />
 
-    <CommercialSection>
-      <h1>How it Works</h1>
-      <h5>Welcome to our full-service software development school!</h5>
-    </CommercialSection>
+    <CommercialSection />
 
-    <div class="bg-lilac pt-5 pb-5">
-      <div class="container text-center">
-        <h1>Knowledge is Power</h1>
-        <h5>Some of the technologies you'll be learning</h5>
-        <div class="mb-5 mt-5">
-          <Technologies :includeName="true" :onlyImportant="true" />
-          <div class="text-center">
-            <router-link class="btn btn-secondary" to="/howitworks#tech">See More Technologies</router-link>
-          </div>
-        </div>
-      </div>
-    </div>
+    <TechSection />
 
-    <div class="mt-5">
-      <div class>
-        <div class="container">
-          <div class="pt-5 text-center">
-            <h1>Here is what others have to say</h1>
-            <h5>CodeX Academy is a valuable experience!</h5>
-            <div class="mt-5">
-              <TestimonialsCarousel />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <TestimonialsSection class="pb-5" />
+
+    <InternshipPartnersSection />
   </div>
 </template>
 
 <script>
 import Hero from "@/components/Hero";
-import CommercialSection from "@/components/./CommercialSection";
 import StartApplicationForm from "@/views/landing/StartApplicationForm";
 import Thanks from "@/views/landing/Thanks";
-import TestimonialsCarousel from "@/components/TestimonialsCarousel";
-import Stats from "@/components/Stats";
 import { mapGetters } from "vuex";
-import Technologies from "@/components/Technologies";
 import Icon from "@/components/Icon";
 import Logo from "@/components/Logo";
 import SelectPlanButton from "@/components/SelectPlanButton";
 import Covid19Promo from "@/components/Covid19Promo";
 
-const PillarsBlock = {
-  props: {
-    pillars: Array
-  },
-  render() {
-    const items = this.pillars.map(p => (
-      <li>
-        <strong>{p.title}</strong> - {p.subtitle}
-      </li>
-    ));
-    return (
-      <div class="d-none d-md-block">
-        <h3>Give us 6 Months, We'll give you a new career!</h3>
-        <p>Here's how we will do it:</p>
-        <ul>{items}</ul>
-      </div>
-    );
-  }
-};
+import TechSection from "@/components/sections/tech";
+import CommercialSection from "@/components/sections/CommercialSection";
+import StatsSection from "@/components/sections/StatsSection";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import InternshipPartnersSection from "@/components/sections/InternshipPartnersSection";
 
 export default {
   components: {
     Hero,
     Thanks,
     StartApplicationForm,
-    TestimonialsCarousel,
-    Stats,
-    PillarsBlock,
-    CommercialSection,
-    Technologies,
     Icon,
     Logo,
     Thanks,
-    Covid19Promo
+    Covid19Promo,
+
+    TechSection,
+    StatsSection,
+    TestimonialsSection,
+    CommercialSection,
+    InternshipPartnersSection
   },
   data: () => ({
     hasApplied: false

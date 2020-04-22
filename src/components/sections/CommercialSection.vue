@@ -1,6 +1,8 @@
 <template>
   <div class="commercial-section bg-navyblue pt-5 pb-5">
-    <slot />
+    <h1>How it Works</h1>
+    <h5>Welcome to our full-service software development school!</h5>
+
     <div class="container mt-5 mb-5">
       <div class="d-none d-xl-block">
         <VideoPlayer :mp4="video" :width="1100" :poster="poster" />

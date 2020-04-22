@@ -1,15 +1,14 @@
 <template>
   <div class="pb-5">
-    <Hero unsplashId="XJXWbfSo2f0" height="40vh">
-      <h2>Financial Aid</h2>
-      <h5>We've got you covered</h5>
+    <Hero unsplashId="DuHKoV44prg" height="25em">
+      <h2>Deferred Payment</h2>
+      <h5>Learn Now, Pay Later</h5>
     </Hero>
     <div class="container mt-5">
-      <h1 class="section-title">Tuition Financing from Climb Credit</h1>
-      <p class="mb-5 text-center">
-        CodeX Academy partners with Climb Credit to offer special financing for
-        any learning plan for a minimum of 3 months.
-      </p>
+      <h1 class="section-title">Defer 75% of Tuition until ????</h1>
+      <p
+        class="mb-5 text-center"
+      >CodeX Academy lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultricies dictum tempus. Vivamus vel ligula sit amet magna egestas suscipit at sed lorem. Vestibulum vel ullamcorper dolor. Pellentesque condimentum egestas aliquam. Fusce fermentum tincidunt efficitur. Nam consequat massa ante, et aliquam erat semper quis. Curabitur rhoncus cursus lectus, nec gravida orci consectetur non. Ut porta lacinia neque vel vehicula.</p>
       <div class="row mx-auto">
         <div class="col-12 col-md-4" v-for="r in reasons" :key="r.title">
           <div class="w-75 mx-auto text-center mb-5">
