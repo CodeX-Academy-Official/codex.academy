@@ -30,7 +30,9 @@
               </div>
               <div class="item">
                 <Icon name="checkbox" />
-                <span>Payments deferred until your first job</span>
+                <span>
+                  <strong>Pay ZERO tuition until your first job</strong>
+                </span>
               </div>
             </div>
 
