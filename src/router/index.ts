@@ -26,6 +26,7 @@ import EnrollmentComplete from "../views/enroll/EnrollmentComplete.vue";
 import PaymentOptions from "../views/enroll/PaymentOptions.vue";
 import FinancialAid from "../views/enroll/FinancialAid.vue";
 import FinancialAidMarketing from "../views/FinancialAid.vue";
+import DeferredPaymentMarketing from "../views/DeferredPayment.vue";
 import Curriculum from "../views/Curriculum.vue";
 import ApplicationFee from "../views/enroll/ApplicationFee.vue";
 import MeetWithAdmissions from "../views/enroll/MeetWithAdmissions.vue";
@@ -92,6 +93,10 @@ const routes = [
     path: "/financial-aid",
     name: "Financial Aid",
     component: FinancialAidMarketing,
+  },
+  {
+    path: "/deferred-payment",
+    component: DeferredPaymentMarketing,
   },
   {
     path: "/contact",

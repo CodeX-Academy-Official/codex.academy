@@ -23,15 +23,9 @@
 
       <h1 id="tech" class="text-center mt-5">Our Technologies and Tools</h1>
       <h5 id="curriculum" class="section-title mb-5">Only the most popular</h5>
-      <Technologies />
-
-      <h1 id="internships" class="text-center mt-5">Meet Our Internship Partners</h1>
-      <h5 id="curriculum" class="section-title mb-5">Start your career strong</h5>
-      <InternshipPartners />
-      <!-- <p class="pl-4 pr-4 text-center">
-        Our Biz Dev team works daily to find more and more internship partners.
-      </p>-->
+      <Technologies class="pb-5" />
     </div>
+    <InternshipPartnersSection />
   </div>
 </template>
 
@@ -44,7 +38,7 @@ import Formula from "@/components/Formula";
 import CurriculumTable from "@/components/CurriculumTable";
 import Pillars from "@/components/Pillars";
 import Hero from "@/components/Hero";
-import InternshipPartners from "@/components/InternshipPartners";
+import InternshipPartnersSection from "@/components/sections/InternshipPartnersSection";
 import { mapGetters } from "vuex";
 
 export default {
@@ -58,7 +52,7 @@ export default {
     CurriculumTable,
     Pillars,
     Hero,
-    InternshipPartners
+    InternshipPartnersSection
   }
 };
 </script>

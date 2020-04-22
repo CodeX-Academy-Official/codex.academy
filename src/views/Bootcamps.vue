@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="pb-5">
     <Hero unsplashId="y_6rqStQBYQ" height="40vh">
       <h2>Coding Bootcamps</h2>
       <h5>Full-time, Full-Immersion</h5>
@@ -44,10 +44,10 @@ export default {
     BootcampsTable,
     Unsplash,
     Hero,
-    ProgramTable,
+    ProgramTable
   },
   computed: {
-    ...mapGetters(["getBootcamps"]),
-  },
+    ...mapGetters(["getBootcamps"])
+  }
 };
 </script>

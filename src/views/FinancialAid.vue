@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="financing pb-5">
     <Hero unsplashId="XJXWbfSo2f0" height="40vh">
       <h2>Financial Aid</h2>
       <h5>We've got you covered</h5>
@@ -79,18 +79,20 @@ export default {
 <style lang="scss">
 @import "@/variables";
 
-.beach-ball {
-  background-color: $fucia;
-  border-radius: 50%;
-  background-image: linear-gradient($primary, $fucia);
-  text-align: center;
-  width: 100px;
+.financing {
+  .beach-ball {
+    background-color: $fucia;
+    border-radius: 50%;
+    background-image: linear-gradient($primary, $fucia);
+    text-align: center;
+    width: 100px;
 
-  color: white;
+    color: white;
 
-  svg {
-    font-size: 3em;
-    height: 100px;
+    svg {
+      font-size: 3em;
+      height: 100px;
+    }
   }
 }
 </style>

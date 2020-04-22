@@ -1,6 +1,6 @@
 <template>
   <!-- Footer -->
-  <footer class="py-5 bg-dark pt-5 text-white">
+  <footer class="py-5 bg-dark text-white">
     <div class="text-center mb-5">
       <img src="img/logo/codex_hat_white_small.png" width="70" />
     </div>
@@ -15,7 +15,10 @@
             <router-link to="/team">Team</router-link>
           </p>
           <p>
-            <router-link to="/financial-aid">Financial Aid</router-link>
+            <router-link to="/faqs">FAQs</router-link>
+          </p>
+          <p>
+            <router-link to="/contact">Contact Us</router-link>
           </p>
         </div>
 
@@ -39,6 +42,15 @@
         </div>
 
         <div class="col-12 col-md-2 mb-5">
+          <h4>Financial Aid</h4>
+          <p>
+            <router-link to="/financial-aid">Financing</router-link>
+          </p>
+          <p>
+            <router-link to="/deferred-payment">Deferred Payment</router-link>
+          </p>
+        </div>
+        <div class="col-12 col-md-2 mb-5">
           <h4>About Us</h4>
           <p>
             <router-link to="/howitworks">How It Works</router-link>
@@ -53,19 +65,7 @@
             <router-link to="/howitworks#tech">Our Technologies</router-link>
           </p>
           <p>
-            <router-link :to="{ path: '/howitworks', hash: '#internships' }"
-              >Internships</router-link
-            >
-          </p>
-        </div>
-
-        <div class="col-12 col-md-2 mb-5">
-          <h4>Help</h4>
-          <p>
-            <router-link to="/faqs">FAQs</router-link>
-          </p>
-          <p>
-            <router-link to="/contact">Contact Us</router-link>
+            <router-link :to="{ path: '/howitworks', hash: '#internships' }">Internships</router-link>
           </p>
         </div>
 
@@ -95,18 +95,12 @@
           </a>
         </div>
         <div class="col-1">
-          <a
-            href="https://www.instagram.com/codexacademyonline/"
-            target="_blank"
-          >
+          <a href="https://www.instagram.com/codexacademyonline/" target="_blank">
             <font-awesome-icon :icon="faInstagram" class="fa-2x" />
           </a>
         </div>
         <div class="col-1">
-          <a
-            href="https://www.youtube.com/channel/UCUKP1GrIaI-dcuV1IlK7x8Q"
-            target="_blank"
-          >
+          <a href="https://www.youtube.com/channel/UCUKP1GrIaI-dcuV1IlK7x8Q" target="_blank">
             <font-awesome-icon :icon="faYoutubeSquare" class="fa-2x" />
           </a>
         </div>
@@ -124,7 +118,7 @@ import {
   faFacebookSquare,
   faInstagram,
   faTwitterSquare,
-  faYoutubeSquare,
+  faYoutubeSquare
 } from "@fortawesome/fontawesome-free-brands";
 
 export default {
@@ -132,13 +126,12 @@ export default {
     faFacebookSquare,
     faInstagram,
     faTwitterSquare,
-    faYoutubeSquare,
-  }),
+    faYoutubeSquare
+  })
 };
 </script>
 <style lang="scss" scoped>
 footer {
-  margin-top: 3em;
 }
 .text-white {
   h4 {
