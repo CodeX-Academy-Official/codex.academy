@@ -27,6 +27,7 @@ import PaymentOptions from "../views/enroll/PaymentOptions.vue";
 import FinancialAid from "../views/enroll/FinancialAid.vue";
 import FinancialAidMarketing from "../views/FinancialAid.vue";
 import DeferredPaymentMarketing from "../views/DeferredPayment.vue";
+import ISAPaymentMarketing from "../views/ISA.vue";
 import Curriculum from "../views/Curriculum.vue";
 import ApplicationFee from "../views/enroll/ApplicationFee.vue";
 import MeetWithAdmissions from "../views/enroll/MeetWithAdmissions.vue";
@@ -97,6 +98,10 @@ const routes = [
   {
     path: "/deferred-payment",
     component: DeferredPaymentMarketing,
+  },
+  {
+    path: "/isa",
+    component: ISAPaymentMarketing,
   },
   {
     path: "/contact",
