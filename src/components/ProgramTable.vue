@@ -29,6 +29,7 @@
       </tr>
       <Row v-for="p in programs[0].details" :key="p" :name="p" :programs="programs" />
 
+      <Row name="Financial Aid Available" :programs="programs" v-if="programs[0].isBootcamp" />
       <tr>
         <th>Monthly Micro-Certification Evaluations</th>
         <td v-for="p in programs" :key="p.id">{{ p.monthlyEvaluations }}</td>
@@ -40,6 +41,7 @@
           Need help?
           <router-link to="/findplan">Help Me Decide</router-link>
         </td>
+
         <td v-for="p in programs" :key="p.id">
           <SelectPlanButton :plan="p" text="Apply" />
         </td>
