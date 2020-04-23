@@ -1,4 +1,4 @@
-# website
+# CodeX Academy Website
 
 ## Project setup
 ```
