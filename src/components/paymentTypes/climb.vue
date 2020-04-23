@@ -19,11 +19,7 @@
       <template v-slot:modal-title>Continuing Application</template>
       <div class="d-block">
         <p>
-          <img
-            src="img/Climb-Credit-Logo-small.png"
-            class="float-right"
-            width="200px"
-          />
+          <img src="img/Climb-Credit-Logo-small.png" class="float-right" width="200px" />
           We are partnering with Climb Credit to provide you with world-class
           financing. We will send your information to Climb Credit to ease the
           application process.
@@ -33,15 +29,10 @@
           Academy program, you should choose:
         </p>
         <div class="text-center mb-5">
-          <h3 class="plan-id">{{ plan.climbName }}</h3>
+          <h3 class="program-name">{{ programName }}</h3>
         </div>
       </div>
-      <b-button
-        class="btn btn-primary"
-        block
-        @click="goToClimbCredit"
-        :disabled="navigating"
-      >
+      <b-button class="btn btn-primary" block @click="goToClimbCredit" :disabled="navigating">
         <strong>Go to Climb Credit</strong>
       </b-button>
     </b-modal>
@@ -101,7 +92,8 @@ export default {
     paymentType: Object,
     number: Number,
     css: String,
-    plan: Object
+    programTotal: Number,
+    programName: String
   },
   data: () => ({
     url: false,
@@ -115,7 +107,7 @@ export default {
       let baseUrl = "https://climbcredit.com/api/pre-populate";
       if (this.$store.state.testMode)
         baseUrl = "https://pikachu.pub.shipit-climbcredit.com/api/pre-populate";
-      const url = await generateUrl(baseUrl, this.plan.amount, applicant);
+      const url = await generateUrl(baseUrl, this.programTotal, applicant);
       if (url) {
         window.open(url, "_self");
       }
@@ -125,7 +117,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.plan-id {
+.program-name {
   background-color: lightpink;
   padding: 10px;
   display: inline;

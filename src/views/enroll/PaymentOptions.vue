@@ -12,7 +12,8 @@
           v-if="paymentType.type === 'climb'"
           :paymentType="paymentType"
           :number="index + 1"
-          :plan="selectedPlan"
+          :programName="paymentType.programName"
+          :programTotal="selectedPlan.total"
           css="paymentType ml-4"
         />
         <CreditCard
