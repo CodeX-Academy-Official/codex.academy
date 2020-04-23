@@ -47,7 +47,7 @@
             <router-link to="/financial-aid">Financing</router-link>
           </p>
           <p>
-            <router-link to="/deferred-payment">Deferred Payment</router-link>
+            <router-link to="/isa">Income Sharing</router-link>
           </p>
         </div>
         <div class="col-12 col-md-2 mb-5">
