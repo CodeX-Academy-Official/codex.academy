@@ -30,17 +30,17 @@
               </div>
               <div class="item">
                 <Icon name="checkbox" />
-                <span>Financial Aid Available</span>
+                <span>Pay ZERO until your first job</span>
               </div>
             </div>
 
-            <div class="d-none d-lg-block">
+            <!-- <div class="d-none d-lg-block">
               <Covid19Promo style="max-width: 450px;" class="mt-5" />
             </div>
 
             <div class="d-block d-lg-none">
               <Covid19Promo style="max-width: 450px;" class="mx-auto mt-5" />
-            </div>
+            </div>-->
           </div>
 
           <div class="col-5 d-none d-lg-block my-auto">
