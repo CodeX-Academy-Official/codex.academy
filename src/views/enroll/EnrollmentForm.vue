@@ -1,11 +1,7 @@
 <template>
   <div>
     <h3>Applicant Information</h3>
-    <EnrollForm
-      :plan="getSelectedPlan"
-      @enroll="next"
-      :initialApplicant="getApplicant"
-    />
+    <EnrollForm :plan="getSelectedPlan" @enroll="next" :initialApplicant="getApplicant" />
   </div>
 </template>
 
@@ -25,13 +21,16 @@ export default {
     EnrollForm
   },
   methods: {
-    async next(applicant) {
-      const applicantWithStartDate = {
-        ...applicant,
+    async next(info) {
+      const program = this.getSelectedPlan || {};
+      const applicant = {
+        ...info,
         promoCodes: this.getPromoCodesDisplay,
-        startDate: this.getStartDate
+        startDate: this.getStartDate,
+        selectedProgram: program.title,
+        selectedProgramTotal: program.total
       };
-      await this.$store.dispatch("enroll", applicantWithStartDate);
+      await this.$store.dispatch("enroll", applicant);
       this.$emit("completed", 2);
     }
   }
