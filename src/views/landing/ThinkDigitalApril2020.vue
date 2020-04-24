@@ -36,6 +36,12 @@
                 <Icon name="checkbox" />
                 <span>Walk into an internship</span>
               </div>
+              <div class="item">
+                <Icon name="checkbox" />
+                <span>
+                  <strong>Only $4000</strong>
+                </span>
+              </div>
             </div>
           </div>
 

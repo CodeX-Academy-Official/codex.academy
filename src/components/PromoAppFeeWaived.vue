@@ -7,12 +7,7 @@
       </div>
       <div class="col-12 col-md-8 promos">
         <div class="row justify-content-center h-100">
-          <div class="col-5 promo my-auto">Application Fee Waived</div>
-          <div class="plus my-auto">+</div>
-          <div class="col-5 promo promo-lg my-auto">
-            30% Off
-            <span class="subtext">on all programs</span>
-          </div>
+          <div class="col promo my-auto">$50 Application Fee Waived</div>
         </div>
       </div>
     </div>
@@ -61,11 +56,11 @@ export default {
 
     .promo {
       text-align: center;
-      font-size: 1.1em;
+      font-size: 1.3em;
       font-weight: 800;
 
       @media screen and (max-width: 400px) {
-        font-size: 0.9em;
+        padding: 1em;
       }
     }
 

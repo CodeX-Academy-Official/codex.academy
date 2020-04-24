@@ -30,17 +30,19 @@
               </div>
               <div class="item">
                 <Icon name="checkbox" />
-                <span>Pay ZERO until your first job</span>
+                <span>
+                  <strong>Pay ZERO until your first job</strong>
+                </span>
               </div>
             </div>
 
-            <!-- <div class="d-none d-lg-block">
-              <Covid19Promo style="max-width: 450px;" class="mt-5" />
+            <div class="d-none d-lg-block">
+              <PromoAppFeeWaived style="max-width: 450px;" class="mt-5" />
             </div>
 
             <div class="d-block d-lg-none">
-              <Covid19Promo style="max-width: 450px;" class="mx-auto mt-5" />
-            </div>-->
+              <PromoAppFeeWaived style="max-width: 450px;" class="mx-auto mt-5" />
+            </div>
           </div>
 
           <div class="col-5 d-none d-lg-block my-auto">
@@ -84,7 +86,7 @@ import { mapGetters } from "vuex";
 import Icon from "@/components/Icon";
 import Logo from "@/components/Logo";
 import SelectPlanButton from "@/components/SelectPlanButton";
-import Covid19Promo from "@/components/Covid19Promo";
+import PromoAppFeeWaived from "@/components/PromoAppFeeWaived";
 import TechSection from "@/components/sections/tech";
 import CommercialSection from "@/components/sections/CommercialSection";
 import StatsSection from "@/components/sections/StatsSection";
@@ -98,7 +100,7 @@ export default {
     Icon,
     Logo,
     Thanks,
-    Covid19Promo,
+    PromoAppFeeWaived,
 
     TechSection,
     StatsSection,
