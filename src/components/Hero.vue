@@ -1,22 +1,26 @@
 <template>
-  <section
+  <progressive-background
     class="hero-wrapper"
+    :src="backgroundUrl"
     :style="{
-      'background-image': `url(${backgroundUrl})`,
-      'min-height': height
+      'min-height': height,
     }"
     :class="heroClass"
+    :fallback="fallback"
+    :placeholder="fallback"
+    no-ratio
   >
     <div
+      slot="content"
       class="hero h-100"
       :style="{
         'min-height': height,
-        'background-color': backgroundColor
+        'background-color': backgroundColor,
       }"
     >
       <slot />
     </div>
-  </section>
+  </progressive-background>
 </template>
 
 <script>
@@ -29,12 +33,23 @@ export default {
     unsplashIds: Array,
     height: String,
     heroClass: String,
-    backgroundColor: String
+    backgroundColor: String,
   },
   components: {
-    HeroText
+    HeroText,
   },
   computed: {
+    fallback() {
+      let imgs = [
+        "/img/code.jpg",
+        "/img/kid-coding.jpg",
+        "/img/desk.jpg",
+        "/img/100-days-of-code.jpg",
+      ];
+      const img = imgs[Math.floor(Math.random() * imgs.length)];
+      return img;
+    },
+
     backgroundUrl() {
       let id = this.unsplashId;
       if (this.unsplashIds) {
@@ -43,8 +58,8 @@ export default {
         ];
       }
       return generateUnsplashUrl(id, "1600", "1200");
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -52,6 +67,7 @@ export default {
 .hero-wrapper {
   background-position: center;
   background-size: cover;
+  position: relative;
 }
 .hero {
   position: relative;

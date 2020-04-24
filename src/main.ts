@@ -10,6 +10,9 @@ import Hotjar from "vue-hotjar";
 import bootstrapFontAwesome from "./bootstrapFontAwesome";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import VueScrollTo from "vue-scrollto";
+import VueProgressiveImage from "vue-progressive-image";
+
+Vue.use(VueProgressiveImage);
 
 Vue.use(VueScrollTo, {
   container: "body",
@@ -22,7 +25,7 @@ Vue.use(VueScrollTo, {
   onDone: false,
   onCancel: false,
   x: false,
-  y: true
+  y: true,
 });
 
 import Default from "@/components/layout/Default.vue";
@@ -36,14 +39,14 @@ bootstrapFontAwesome();
 
 Vue.use(Hotjar, {
   id: "1739723",
-  isProduction: true
+  isProduction: true,
 });
 
 Vue.use(
   VueGtag,
   {
     config: { id: "UA-158800537-1" },
-    includes: [{ id: "AW-650985233", params: { send_page_views: false } }]
+    includes: [{ id: "AW-650985233", params: { send_page_views: false } }],
   },
   router
 );
@@ -58,6 +61,6 @@ window.addEventListener("load", function() {
   new Vue({
     router,
     store,
-    render: h => h(App)
+    render: (h) => h(App),
   }).$mount("#app");
 });

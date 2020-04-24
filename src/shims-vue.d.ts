@@ -4,3 +4,5 @@ declare module "*.vue" {
 }
 
 declare module "vue-hotjar";
+
+declare module "vue-progressive-image";
