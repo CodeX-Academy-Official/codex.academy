@@ -8,5 +8,8 @@ workflows:
   welcome:
     jobs:
       - welcome/run
+  notify:
+    jobs: 
       - slack/notify-on-failure:
+          channel: website
           only_for_branches: master
