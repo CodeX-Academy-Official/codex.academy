@@ -10,6 +10,7 @@ workflows:
       - welcome/run
   notify:
     jobs: 
-      - slack/notify-on-failure:
+      - slack/status:
           channel: website
+          fail_only: true
           only_for_branches: master
