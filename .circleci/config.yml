@@ -8,5 +8,4 @@ workflows:
   welcome:
     jobs:
       - welcome/run
-      - slack/status:
-          fail_only: true
+      - slack/status
