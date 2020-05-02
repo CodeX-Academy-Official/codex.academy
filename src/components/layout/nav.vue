@@ -27,11 +27,11 @@
           <router-link to="/" class="nav-link">Home</router-link>
         </li>
 
-        <!-- <li class="nav-item">
-          <router-link to="/plans" class="nav-link">Plans</router-link>
-        </li>-->
+        <li class="nav-item">
+          <router-link to="/programs" class="nav-link">Programs</router-link>
+        </li>
 
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
           <a
             href="#"
             class="nav-link dropdown-toggle"
@@ -44,25 +44,37 @@
           <div class="dropdown-menu">
             <div class="nav-item">
               <router-link to="/programs/overview" class="nav-link">Overview</router-link>
-            </div>
-            <div class="dropdown-divider"></div>
+        </div>-->
+        <!-- <div class="dropdown-divider"></div>
             <div class="nav-item">
-              <router-link to="/selfpaced" class="nav-link">Self-Paced</router-link>
-            </div>
-            <div class="dropdown-divider"></div>
+              <router-link to="/selfpaced" class="nav-link"
+                >Self-Paced</router-link
+              >
+        </div>-->
+        <!-- <div class="dropdown-divider"></div>
             <div class="nav-item">
-              <router-link to="/bootcamps" class="nav-link">Bootcamps</router-link>
-            </div>
-            <div class="dropdown-divider"></div>
+              <router-link to="/bootcamps" class="nav-link"
+                >Bootcamps</router-link
+              >
+        </div>-->
+        <!-- <div class="dropdown-divider"></div>
             <div class="nav-item">
-              <router-link to="/community" class="nav-link">Community</router-link>
-            </div>
-            <div class="dropdown-divider"></div>
+              <router-link to="/programs" class="nav-link">Programs</router-link>
+        </div>-->
+        <!-- <div class="dropdown-divider"></div>
             <div class="nav-item">
-              <router-link to="/findplan" class="nav-link">Help Me Decide</router-link>
-            </div>
-          </div>
-        </li>
+              <router-link to="/community" class="nav-link"
+                >Community</router-link
+              >
+        </div>-->
+        <!-- <div class="dropdown-divider"></div>
+            <div class="nav-item">
+              <router-link to="/findplan" class="nav-link"
+                >Help Me Decide</router-link
+              >
+        </div>-->
+        <!-- </div>
+        </li>-->
 
         <!-- <li class="nav-item">
         <separator />

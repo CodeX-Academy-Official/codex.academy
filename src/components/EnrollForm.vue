@@ -268,10 +268,13 @@
       </div>
     </div>-->
 
-    <div class="mt-3">
-      <button type="submit" class="btn btn-primary">
-        <strong>Yes, This is Me</strong>
-      </button>
+    <div class>
+      <p class="mt-4 text-center">
+        <button class="btn btn-primary">
+          <strong>Continue Application</strong>
+        </button>
+      </p>
+
       <div class="alert alert-danger mt-3" v-if="false">
         Please check the form to make sure all required fields have been filled
         in.
@@ -311,7 +314,7 @@ export default {
   },
   methods: {
     submitForm() {
-      this.$emit("enroll", this.applicant);
+      this.$emit("applicationFormSubmitted", this.applicant);
     },
     isValid() {
       return true;

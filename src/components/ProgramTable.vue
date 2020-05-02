@@ -56,6 +56,7 @@
 import Icon from "@/components/Icon";
 import SelectPlanButton from "@/components/SelectPlanButton";
 import Money from "@/components/Money";
+import { mapGetters } from "vuex";
 
 const Row = {
   props: {

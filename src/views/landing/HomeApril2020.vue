@@ -123,7 +123,7 @@ export default {
       });
       await this.$store.dispatch("setStartDate", applicant.startDate);
       this.hasApplied = true;
-      this.$router.push("/findplan");
+      this.$router.push("/programs");
     },
     clearApplicant() {
       this.hasApplied = false;

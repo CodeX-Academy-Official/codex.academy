@@ -6,6 +6,8 @@ import { scrollToHash } from "./scrollToHash";
 import ProgramOverview from "../views/ProgramOverview.vue";
 import Selfpaced from "../views/Selfpaced.vue";
 import Bootcamps from "../views/Bootcamps.vue";
+import Programs from "../views/Programs.vue";
+
 import Community from "../views/Community.vue";
 import FindPlan from "../views/FindPlan.vue";
 
@@ -54,6 +56,11 @@ const routes = [
     path: "/bootcamps",
     name: "Bootcamps",
     component: Bootcamps,
+  },
+  {
+    path: "/programs",
+    name: "Programs",
+    component: Programs,
   },
   {
     path: "/community",
@@ -135,7 +142,7 @@ const routes = [
   },
   {
     path: "/findplan",
-    component: FindPlan,
+    component: Programs,
   },
   {
     path: "/enroll",
