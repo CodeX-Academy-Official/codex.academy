@@ -4,6 +4,9 @@
       <h2>Developer Programs</h2>
       <h5>Your New Career Awaits</h5>
     </Hero>
+    <div v-if="getApplicant" class="text-center bg-periwinkle pt-4 pb-4">
+      <h4>Please select a program</h4>
+    </div>
     <div class="container">
       <!-- <div class="mt-5">
         <h2>Intense Intent and Direction</h2>
@@ -58,7 +61,7 @@ export default {
     CertificationCard
   },
   computed: {
-    ...mapGetters(["getCertifications", "getBootcampFeatures"])
+    ...mapGetters(["getCertifications", "getBootcampFeatures", "getApplicant"])
   },
   methods: {
     certificationSelected(cert) {
