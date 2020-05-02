@@ -106,7 +106,7 @@ export default {
   }),
   computed: {
     ...mapGetters([
-      "getSelectedPlan",
+      "getCertification",
       "getApplicant",
       "getApplicationFee",
       "getStartDate",

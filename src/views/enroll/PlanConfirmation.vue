@@ -1,36 +1,55 @@
 <template>
-  <form @submit.prevent="confirmPlan">
+  <form @submit.prevent="confirmProgram">
     <h3>Confirm Program</h3>
 
     <div class="table-responsive">
       <table class="table">
         <tr>
           <th style="width: 30%">Program:</th>
-          <td>{{ selectedPlan.title }}</td>
+          <td>
+            <select
+              id="program"
+              class="inputLikeText"
+              placeholder="Select a Certification"
+              v-model="certification"
+            >
+              <option v-for="c in getCertifications" :key="c.name" :value="c">{{c.name}}</option>
+            </select>
+          </td>
         </tr>
         <tr>
           <th>Description:</th>
-          <td>{{ selectedPlan.description }}</td>
+          <td>{{ certification.description }}</td>
         </tr>
         <tr>
-          <th>Weekly Commitment:</th>
-          <td>{{ selectedPlan.minimumWeeklyStudyHours }} hours</td>
+          <th>Weekly Study:</th>
+          <td>
+            <select
+              id="studyHours"
+              class="inputLikeText"
+              placeholder="Weekly Study Hours"
+              v-model="studyHours"
+            >
+              <option :value="10">10 Hours/Week or Less</option>
+              <option :value="20">Around 20 Hours/Week</option>
+              <option :value="30">Around 30 Hours/Week</option>
+              <option :value="40">40 Hours/Week or More</option>
+            </select>
+          </td>
         </tr>
         <tr>
           <th>Weekly Mentor Hours:</th>
-          <td>{{ selectedPlan.mentorHoursPerWeek }} hours</td>
-        </tr>
-        <!-- <tr>
-          <th>Monthly:</th>
-          <td><Money :amount="selectedPlan.price" /></td>
+          <td>
+            <span title="Calculated from your weekly study hours.">{{ calculatedMentorHours }} hours</span>
+          </td>
         </tr>
         <tr>
-          <th>Total:</th>
-          <td><Money :amount="selectedPlan.total" /></td>
-        </tr>-->
-        <tr v-if="selectedPlan.isBootcamp">
-          <th>Program Duration:</th>
-          <td>{{ selectedPlan.durationMonths }} months</td>
+          <th>Approximate Program Duration:</th>
+          <td>
+            <span
+              title="Calculated from your weekly study hours."
+            >{{ calculatedProgramMonths }} months</span>
+          </td>
         </tr>
         <tr>
           <th>Start Date:</th>
@@ -38,41 +57,35 @@
             <input
               type="date"
               v-model="startDate"
+              class="inputLikeText"
               :class="{ error: !isValid(startDate) }"
             />
             <span
               class="alert alert-danger ml-3"
               role="alert"
               v-if="!isValid(startDate)"
-              >Start date must be in the future.</span
-            >
+            >Start date must be in the future.</span>
           </td>
         </tr>
         <tr>
           <th>Promo Code:</th>
           <td>
-            <input style="width: 100px" v-model="promoCode" />
+            <input style="width: 100px" class="inputLikeText" v-model="promoCode" />
             <button
               class="btn btn-sm btn-outline-secondary ml-2"
               @click.prevent="applyPromoCode"
-            >
-              Apply
-            </button>
-            <p v-if="getPromoCodesDisplay" class="small muted">
-              {{ getPromoCodesDisplay.toUpperCase() }} applied
-            </p>
+            >Apply</button>
+            <p
+              v-if="getPromoCodesDisplay"
+              class="small muted"
+            >{{ getPromoCodesDisplay.toUpperCase() }} applied</p>
           </td>
         </tr>
       </table>
     </div>
-    <p class="mt-4">
+    <p class="mt-4 text-center">
       <button class="btn btn-primary">
-        <strong>Yes, Apply to This Program</strong>
-      </button>
-    </p>
-    <p>
-      <button class="btn btn-secondary" @click.prevent="changePlan">
-        No, Change Program
+        <strong>Continue Application</strong>
       </button>
     </p>
   </form>
@@ -101,25 +114,44 @@ function getYesterday() {
 export default {
   data() {
     return {
-      selectedPlan: {},
+      certification: {},
       startDate: getNextDeadlineFormatted(),
       promoCode: "",
+      studyHours: 40
     };
   },
   computed: {
-    ...mapGetters(["getSelectedPlan", "getStartDate", "getPromoCodesDisplay"]),
+    ...mapGetters([
+      "getCertification",
+      "getCertifications",
+      "getStartDate",
+      "getPromoCodesDisplay"
+    ]),
+    calculatedMentorHours() {
+      return this.studyHours / 8;
+    },
+    calculatedProgramMonths() {
+      const weeks = this.certification.studyHours / this.studyHours;
+      return (weeks / 52) * 12;
+    }
   },
   components: {
-    PlanSpread,
+    PlanSpread
   },
   methods: {
     isValid(startDate) {
       return new Date(startDate) > getYesterday();
     },
-    confirmPlan() {
+    confirmProgram() {
       if (this.isValid(this.startDate)) {
         this.applyPromoCode();
-        this.$store.dispatch("setStartDate", this.startDate);
+        this.$store.dispatch("setProgram", {
+          startDate: this.startDate,
+          weeklyStudyHours: this.studyHours,
+          weeklyMentorHours: this.calculatedMentorHours,
+          months: this.calculatedProgramMonths,
+          ...this.certification
+        });
         this.$emit("completed", 1);
       }
     },
@@ -130,18 +162,18 @@ export default {
       if (!this.promoCode) return;
       this.$store.dispatch("applyPromoCode", this.promoCode);
       this.promoCode = "";
-    },
+    }
   },
   mounted() {
-    this.selectedPlan = this.$store.getters.getSelectedPlan;
-    if (!this.selectedPlan) {
-      this.$router.push("/findplan");
+    this.certification = this.getCertification;
+    if (!this.certification) {
+      this.$router.push("/programs");
     }
 
     if (this.$store.getters.getStartDate) {
       this.startDate = this.$store.getters.getStartDate;
     }
-  },
+  }
 };
 </script>
 
@@ -154,5 +186,10 @@ export default {
 
 .error:focus {
   outline-color: #f99;
+}
+.inputLikeText {
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px #eee;
 }
 </style>

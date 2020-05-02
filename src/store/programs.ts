@@ -135,7 +135,7 @@ const selfpaceds = [
   },
 ];
 
-const bootcampCommonDetails = [
+export const bootcampFeatures = [
   "Unlimited Learning Pathway Access",
   "24/7 Community Chat Access",
   "Build a Portfolio",
@@ -159,7 +159,7 @@ const bootcamps = [
     duration: "over 3 months",
     description:
       "Graduates able to develop and deploy simple web applications using HTML, CSS, JavaScript and JQuery.",
-    details: [...bootcampCommonDetails],
+    details: [...bootcampFeatures],
     isBootcamp: true,
     isMentoring: true,
     paymentTypes: [
@@ -191,7 +191,7 @@ const bootcamps = [
     duration: "over 6 months",
     description:
       "Graduates able to develop challenging full-stack data-driven web applications using best practices in technologies like ReactJS and NodeJS.",
-    details: [...bootcampCommonDetails],
+    details: [...bootcampFeatures],
     primary: true,
     isBootcamp: true,
     isMentoring: true,
@@ -224,7 +224,7 @@ const bootcamps = [
     duration: "over 9 months",
     description:
       "Graduates able to develop complex, secure and well-engineered full-stack web applications using multiple front-end and back-end technologies.",
-    details: [...bootcampCommonDetails],
+    details: [...bootcampFeatures],
     isBootcamp: true,
     isMentoring: true,
     paymentTypes: [

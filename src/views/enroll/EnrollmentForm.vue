@@ -1,7 +1,11 @@
 <template>
   <div>
     <h3>Applicant Information</h3>
-    <EnrollForm :plan="getSelectedPlan" @enroll="next" :initialApplicant="getApplicant" />
+    <EnrollForm
+      :plan="getProgram"
+      @applicationFormSubmitted="next"
+      :initialApplicant="getApplicant"
+    />
   </div>
 </template>
 
@@ -10,25 +14,21 @@ import EnrollForm from "@/components/EnrollForm";
 import { mapGetters } from "vuex";
 export default {
   computed: {
-    ...mapGetters([
-      "getSelectedPlan",
-      "getApplicant",
-      "getStartDate",
-      "getPromoCodesDisplay"
-    ])
+    ...mapGetters(["getProgram", "getApplicant", "getPromoCodesDisplay"])
   },
   components: {
     EnrollForm
   },
   methods: {
-    async next(info) {
-      const program = this.getSelectedPlan || {};
+    async next(formData) {
+      const p = this.getProgram || {};
+      const programFields = {};
+      Object.keys(p).forEach(key => (programFields[`program_${key}`] = p[key]));
+
       const applicant = {
-        ...info,
-        promoCodes: this.getPromoCodesDisplay,
-        startDate: this.getStartDate,
-        selectedProgram: program.title,
-        selectedProgramTotal: program.total
+        ...formData,
+        ...programFields,
+        promoCodes: this.getPromoCodesDisplay
       };
       await this.$store.dispatch("enroll", applicant);
       this.$emit("completed", 2);

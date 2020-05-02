@@ -6,14 +6,14 @@ import { sendToHubspot } from "./hubspot";
 import { testimonials } from "./testimonials";
 import { methods } from "./pillars";
 import { technologies } from "./technologies";
-import { programs } from "./programs";
+import { programs, bootcampFeatures } from "./programs";
 import { programOptions } from "./programOptions";
 import { pathways } from "./pathways";
 import { certifications } from "./certifications";
 import { internshipPartners } from "./internshipPartners";
 
 const vuexLocal = new VuexPersistence({
-  storage: window.localStorage
+  storage: window.localStorage,
 });
 
 Vue.use(Vuex);
@@ -23,6 +23,8 @@ const ENROLL = "ENROLL";
 const SET_START_DATE = "SET_START_DATE";
 const APPLY_PROMO_CODE = "APPLY_PROMO_CODE";
 const PAY_APP_FEE = "PAY_APP_FEE";
+const SET_CERTIFICATION = "SET_CERTIFICATION";
+const SET_PROGRAM = "SET_PROGRAM";
 
 export default new Vuex.Store({
   state: {
@@ -36,12 +38,21 @@ export default new Vuex.Store({
     technologies,
     methods,
     certifications,
+    certification: undefined,
+    program: undefined,
     testimonials,
     pathways,
     appFeePaid: undefined,
     internshipPartners,
+    bootcampFeatures,
   },
   mutations: {
+    [SET_PROGRAM](state: any, program) {
+      state.program = program;
+    },
+    [SET_CERTIFICATION](state: any, cert) {
+      state.certification = cert;
+    },
     [SELECT_PLAN](state: any, planId) {
       state.selectedPlan = planId;
     },
@@ -56,9 +67,15 @@ export default new Vuex.Store({
     },
     [PAY_APP_FEE](state: any) {
       state.appFeePaid = new Date();
-    }
+    },
   },
   actions: {
+    setProgram(context, program) {
+      context.commit(SET_PROGRAM, program);
+    },
+    setCertification(context, cert) {
+      context.commit(SET_CERTIFICATION, cert);
+    },
     setStartDate(context, startDate) {
       context.commit(SET_START_DATE, startDate);
     },
@@ -88,41 +105,44 @@ export default new Vuex.Store({
     },
     payAppFee({ commit }) {
       commit(PAY_APP_FEE);
-    }
+    },
   },
   getters: {
-    getSelectedPlan: state => state.selectedPlan,
-    getBootcamp6: state => state.plans.find((x: any) => x.id == "bootcamp6"),
-    getCommunityPlan: state =>
+    getCertification: (state) => state.certification,
+    getProgram: (state) => state.program,
+    getSelectedPlan: (state) => state.selectedPlan,
+    getBootcamp6: (state) => state.plans.find((x: any) => x.id == "bootcamp6"),
+    getCommunityPlan: (state) =>
       state.plans.find((x: any) => x.id == "community"),
-    getPlan: state => (planId: string) =>
+    getPlan: (state) => (planId: string) =>
       state.plans.find((x: any) => x.id === planId),
-    getPlans: state => state.plans,
-    getBootcamps: state => state.plans.filter((x: any) => x.isBootcamp),
-    getSelfPaced: state =>
+    getPlans: (state) => state.plans,
+    getBootcamps: (state) => state.plans.filter((x: any) => x.isBootcamp),
+    getSelfPaced: (state) =>
       state.plans.filter((x: any) => x.isMentoring && !x.isBootcamp),
-    getPlanOptions: state => state.planOptions,
-    getPathways: state => state.pathways,
-    getTechnologies: state =>
+    getPlanOptions: (state) => state.planOptions,
+    getPathways: (state) => state.pathways,
+    getTechnologies: (state) =>
       state.technologies.sort((a: any, b: any) => a.order - b.order),
-    getMethods: state => state.methods,
-    getThreeTestimonials: state => {
+    getMethods: (state) => state.methods,
+    getThreeTestimonials: (state) => {
       const arr = state.testimonials;
       const shuffled = shuffle(arr);
       return shuffled.slice(0, 3);
     },
-    getApplicant: state => state.applicant,
-    getStartDate: state => state.startDate,
-    getCertifications: state => state.certifications,
+    getApplicant: (state) => state.applicant,
+    getStartDate: (state) => state.startDate,
+    getCertifications: (state) => state.certifications,
     getInternshipPartners: (state) => state.internshipPartners,
-    getPromoCodes: state => state.promoCodes,
-    getPromoCodesDisplay: state =>
+    getPromoCodes: (state) => state.promoCodes,
+    getPromoCodesDisplay: (state) =>
       (state.promoCodes || [])
         .reverse()
         .join(", ")
         .toLowerCase(),
-    getApplicationFee: state => state.appFeePaid
+    getApplicationFee: (state) => state.appFeePaid,
+    getBootcampFeatures: (state) => state.bootcampFeatures,
   },
   modules: {},
-  plugins: [vuexLocal.plugin]
+  plugins: [vuexLocal.plugin],
 });

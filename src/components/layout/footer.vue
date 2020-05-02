@@ -25,16 +25,16 @@
         <div class="col-12 col-md-2 mb-5">
           <h4>Programs</h4>
           <p>
-            <router-link to="/programs/overview">Overview</router-link>
+            <router-link to="/programs">Overview</router-link>
           </p>
           <p>
-            <router-link to="/findplan">Help Me Decide</router-link>
+            <router-link to="/programs/" disabled>Front-End Developer</router-link>
           </p>
           <p>
-            <router-link to="/selfpaced">Self-Paced</router-link>
+            <router-link to="/programs/" disabled>Full-Stack Developer</router-link>
           </p>
           <p>
-            <router-link to="/bootcamps">Bootcamps</router-link>
+            <router-link to="/programs/" disabled>Full-Stack Engineer</router-link>
           </p>
           <p>
             <router-link to="/community">Community</router-link>
@@ -47,7 +47,7 @@
             <router-link to="/financial-aid">Financing</router-link>
           </p>
           <p>
-            <router-link to="/isa">Income Sharing</router-link>
+            <router-link to="/isa">ISAs</router-link>
           </p>
         </div>
         <div class="col-12 col-md-2 mb-5">

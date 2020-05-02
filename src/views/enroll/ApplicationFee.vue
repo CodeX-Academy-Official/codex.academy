@@ -4,8 +4,8 @@
     <div v-if="!getApplicationFee">
       <p>
         To complete your applicaion for
-        <strong>{{ getSelectedPlan.title }}</strong
-        >, please submit a ${{ amount }} application fee using the button below.
+        <strong>{{ getProgram.name }}</strong>
+        , please submit a ${{ amount }} application fee using the button below.
       </p>
       <p>
         <i>This payment is made using a secure payment portal by Stripe.</i>
@@ -17,9 +17,7 @@
         Your application fee has been paid and applied to your account. A
         receipt has been sent to your email address.
       </p>
-      <router-link to="/enroll/admissions" class="btn btn-primary"
-        >Meet with Admissions</router-link
-      >
+      <router-link to="/enroll/admissions" class="btn btn-primary">Meet with Admissions</router-link>
     </div>
   </div>
 </template>
@@ -30,7 +28,7 @@ import PayAppFee from "@/components/PayAppFee";
 
 export default {
   computed: {
-    ...mapGetters(["getSelectedPlan", "getApplicationFee", "getApplicant"])
+    ...mapGetters(["getProgram", "getApplicationFee", "getApplicant"])
   },
   data: () => ({
     amount: 50
