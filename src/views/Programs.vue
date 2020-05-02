@@ -29,12 +29,23 @@
           title="Programs"
         />
       </div>
+      <div class="mt-5 d-lg-none">
+        <CertificationCard
+          class="mb-5"
+          v-for="c in getCertifications"
+          :key="c.name"
+          :features="getBootcampFeatures"
+          :certification="c"
+          @certificationSelected="certificationSelected"
+        />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import CertificationTable from "@/components/CertificationTable";
+import CertificationCard from "@/components/CertificationCard";
 import Unsplash from "@/components/Unsplash";
 import Hero from "@/components/Hero";
 import { mapGetters } from "vuex";
@@ -43,7 +54,8 @@ export default {
   components: {
     CertificationTable,
     Unsplash,
-    Hero
+    Hero,
+    CertificationCard
   },
   computed: {
     ...mapGetters(["getCertifications", "getBootcampFeatures"])
