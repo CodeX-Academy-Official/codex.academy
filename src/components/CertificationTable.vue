@@ -53,7 +53,7 @@
         <CheckRow :items="certifications" name="ISA Available" />
         <CheckRow :items="certifications" name="Financing Available" />
         <tr>
-          <th>Up-Front Price</th>
+          <th>Tuition</th>
           <td v-for="c in certifications" :key="c.id">
             <p class="price">
               <strong>
