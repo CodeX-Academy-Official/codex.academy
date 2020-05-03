@@ -72,10 +72,11 @@
               <strong v-if="!getApplicant">Start Application</strong>
               <strong v-if="getApplicant">Select Program</strong>
             </a>
+            <p class="mt-3">
+              <router-link :to="certLearnMoreUrl(c)">Learn More</router-link>
+            </p>
           </td>
         </tr>
-
-        <tr></tr>
       </tfoot>
     </table>
   </div>
@@ -127,6 +128,11 @@ export default {
   methods: {
     selectCertification(cert) {
       this.$emit("certificationSelected", cert);
+    },
+    certLearnMoreUrl(cert) {
+      const name = cert.name.toLowerCase();
+      const nameWithDashes = name.replace(" ", "-");
+      return `/programs/${nameWithDashes}`;
     }
   }
 };

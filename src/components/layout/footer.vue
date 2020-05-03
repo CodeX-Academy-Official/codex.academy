@@ -28,13 +28,13 @@
             <router-link to="/programs">Overview</router-link>
           </p>
           <p>
-            <router-link to="/programs/front-end-dev" disabled>Front-End Developer</router-link>
+            <router-link to="/programs/front-end-developer" disabled>Front-End Developer</router-link>
           </p>
           <p>
-            <router-link to="/programs/full-stack-dev" disabled>Full-Stack Developer</router-link>
+            <router-link to="/programs/full-stack-developer" disabled>Full-Stack Developer</router-link>
           </p>
           <p>
-            <router-link to="/programs/" disabled>Full-Stack Engineer</router-link>
+            <router-link to="/programs/full-stack-engineer" disabled>Full-Stack Engineer</router-link>
           </p>
           <p>
             <router-link to="/community">Community</router-link>
