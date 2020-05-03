@@ -18,17 +18,28 @@ import TechLogo from "@/components/TechLogo";
 import { mapGetters } from "vuex";
 
 export default {
-  props: { useNoun: Boolean, includeName: Boolean, onlyImportant: Boolean },
+  props: {
+    useNoun: Boolean,
+    includeName: Boolean,
+    onlyImportant: Boolean,
+    certification: String
+  },
   components: {
     TechLogo
   },
   computed: {
+    ...mapGetters(["getTechnologies"]),
     techs() {
+      if (this.certification) {
+        return this.getTechnologies.filter(
+          x => x.certifications.indexOf(this.certification) > -1
+        );
+      }
       if (this.onlyImportant) {
-        return this.$store.getters.getTechnologies.filter(x => x.important);
+        return this.getTechnologies.filter(x => x.important);
       }
 
-      return this.$store.getters.getTechnologies;
+      return this.getTechnologies;
     }
   }
 };

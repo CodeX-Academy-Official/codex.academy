@@ -1,5 +1,5 @@
 <template>
-  <div class="h-100">
+  <div class>
     <div class="card" v-bind:class="{ 'card-outline-primary': certification.recommended }">
       <h5
         class="card-header text-center"
@@ -24,13 +24,14 @@
         <li class="list-group-item">{{ certification.levels }} Months Full-Time</li>
         <li class="list-group-item">{{ certification.levels * 2 }}+ Months Part-Time</li>
 
-        <li class="list-group-item">ISA Available</li>
-        <li class="list-group-item">Financing Available</li>
-
         <li class="list-group-item">
           Tuition:
           <Money :amount="certification.price" />
         </li>
+        <li class="list-group-item">
+          <strong>Or pay ZERO until your first job!</strong>
+        </li>
+
         <li class="list-group-item">
           <a @click="selectCertification()" class="btn btn-primary">
             <strong v-if="!getApplicant">Start Application</strong>
@@ -51,8 +52,7 @@ import Icon from "@/components/Icon";
 export default {
   props: {
     certification: Object,
-    features: Array,
-    selectable: Boolean
+    features: Array
   },
   components: {
     Money,

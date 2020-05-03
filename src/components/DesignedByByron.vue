@@ -1,0 +1,36 @@
+<template>
+  <div class="designed-by row">
+    <div class="headshot">
+      <img class="fluid-img" src="img/headshots/hs_bsommardahl.jpg" />
+    </div>
+    <div class="col">
+      <h5>Mastery Transfer Initiated</h5>
+      <div>
+        CodeX Academy Developer Programs are designed by
+        <strong>Byron Sommardahl</strong>, a veteran Agile Full-Stack Software Engineer with more than 30 years of development experience.
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style lang="scss" >
+.designed-by {
+  .headshot {
+    width: 110px;
+    img {
+      object-fit: cover;
+      border-radius: 50%;
+      height: 100px;
+      width: 100px;
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+      border: 1px solid #bbb;
+      padding: 2px;
+    }
+  }
+}
+</style>
