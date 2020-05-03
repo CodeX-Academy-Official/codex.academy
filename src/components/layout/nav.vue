@@ -39,15 +39,15 @@
           >Programs</a>
           <div class="dropdown-menu">
             <div class="nav-item">
-              <router-link to="/programs/front-end-dev" class="nav-link">Front-End Developer</router-link>
+              <router-link to="/programs/front-end-developer" class="nav-link">Front-End Developer</router-link>
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
-              <router-link to="/programs/full-stack-dev" class="nav-link">Full-Stack Developer</router-link>
+              <router-link to="/programs/full-stack-developer" class="nav-link">Full-Stack Developer</router-link>
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
-              <router-link to="/programs/full-stack-eng" class="nav-link">Full-Stack Engineer</router-link>
+              <router-link to="/programs/full-stack-engineer" class="nav-link">Full-Stack Engineer</router-link>
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
