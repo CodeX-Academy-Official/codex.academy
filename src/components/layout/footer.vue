@@ -31,7 +31,7 @@
             <router-link to="/programs/" disabled>Front-End Developer</router-link>
           </p>
           <p>
-            <router-link to="/programs/" disabled>Full-Stack Developer</router-link>
+            <router-link to="/programs/full-stack-dev" disabled>Full-Stack Developer</router-link>
           </p>
           <p>
             <router-link to="/programs/" disabled>Full-Stack Engineer</router-link>

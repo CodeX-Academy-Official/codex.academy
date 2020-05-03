@@ -1,7 +1,13 @@
+import {
+  FULL_STACK_ENGINEER,
+  FULL_STACK_DEVELOPER,
+  FRONT_END_DEVELOPER,
+} from "./constants";
+
 export const certifications = [
   {
     id: 1,
-    name: "Front-End Developer",
+    name: FRONT_END_DEVELOPER,
     description:
       "Graduates able to develop and deploy simple web applications using HTML, CSS, JavaScript and JQuery.",
     studyHours: 520,
@@ -14,7 +20,7 @@ export const certifications = [
   },
   {
     id: 2,
-    name: "Full-Stack Developer",
+    name: FULL_STACK_DEVELOPER,
     description:
       "Graduates able to develop challenging full-stack data-driven web applications using best practices in technologies like ReactJS and NodeJS.",
     recommended: true,
@@ -28,7 +34,7 @@ export const certifications = [
   },
   {
     id: 3,
-    name: "Full-Stack Engineer",
+    name: FULL_STACK_ENGINEER,
     description:
       "Graduates able to develop complex, secure and well-engineered full-stack web applications using multiple front-end and back-end technologies.",
     studyHours: 1560,

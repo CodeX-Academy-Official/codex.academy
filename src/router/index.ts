@@ -6,7 +6,6 @@ import { scrollToHash } from "./scrollToHash";
 import ProgramOverview from "../views/ProgramOverview.vue";
 import Selfpaced from "../views/Selfpaced.vue";
 import Bootcamps from "../views/Bootcamps.vue";
-import Programs from "../views/Programs.vue";
 
 import Community from "../views/Community.vue";
 import FindPlan from "../views/FindPlan.vue";
@@ -35,6 +34,7 @@ import ApplicationFee from "../views/enroll/ApplicationFee.vue";
 import MeetWithAdmissions from "../views/enroll/MeetWithAdmissions.vue";
 import landingPageRoutes from "./landingPages";
 import policyRoutes from "./policyRoutes";
+import proogramRoutes from "./progamRoutes";
 import HomeApril2020 from "../views/landing/HomeApril2020.vue";
 
 Vue.use(VueRouter);
@@ -42,6 +42,7 @@ Vue.use(VueRouter);
 const routes = [
   ...landingPageRoutes,
   ...policyRoutes,
+  ...proogramRoutes,
   {
     path: "/",
     name: "Home",
@@ -56,11 +57,6 @@ const routes = [
     path: "/bootcamps",
     name: "Bootcamps",
     component: Bootcamps,
-  },
-  {
-    path: "/programs",
-    name: "Programs",
-    component: Programs,
   },
   {
     path: "/community",
@@ -142,7 +138,7 @@ const routes = [
   },
   {
     path: "/findplan",
-    component: Programs,
+    redirect: "/programs",
   },
   {
     path: "/enroll",
