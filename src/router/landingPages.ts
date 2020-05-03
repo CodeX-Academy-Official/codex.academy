@@ -1,5 +1,4 @@
 import LandingContainer from "../views/landing/LandingContainer.vue";
-import April2020 from "../views/landing/April2020.vue";
 import HomeApril2020 from "../views/landing/HomeApril2020.vue";
 import StudentApril2020 from "../views/landing/StudentApril2020.vue";
 import ThinkDigitalApril2020 from "../views/landing/ThinkDigitalApril2020.vue";
@@ -11,10 +10,6 @@ const routes: Array<any> = [
     name: "Landing",
     component: LandingContainer,
     children: [
-      {
-        path: "april2020",
-        component: April2020,
-      },
       {
         path: "202004s",
         component: StudentApril2020,
