@@ -153,11 +153,7 @@ export const technologies = [
     logo: "pg.png",
     info: "",
     url: "https://www.postgresql.org/",
-    certifications: [
-      FULL_STACK_ENGINEER,
-      FULL_STACK_DEVELOPER,
-      FRONT_END_DEVELOPER,
-    ],
+    certifications: [FULL_STACK_ENGINEER, FULL_STACK_DEVELOPER],
     important: true,
   },
   {
