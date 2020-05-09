@@ -11,6 +11,7 @@ import { programOptions } from "./programOptions";
 import { pathways } from "./pathways";
 import { certifications } from "./certifications";
 import { internshipPartners } from "./internshipPartners";
+import { paymentTypes } from "./paymentTypes";
 
 const vuexLocal = new VuexPersistence({
   storage: window.localStorage,
@@ -45,6 +46,7 @@ export default new Vuex.Store({
     appFeePaid: undefined,
     internshipPartners,
     bootcampFeatures,
+    paymentTypes,
   },
   mutations: {
     [SET_PROGRAM](state: any, program) {
@@ -142,6 +144,8 @@ export default new Vuex.Store({
         .toLowerCase(),
     getApplicationFee: (state) => state.appFeePaid,
     getBootcampFeatures: (state) => state.bootcampFeatures,
+    getPaymentTypes: (state) => (program: any, applicant: any) =>
+      state.paymentTypes.filter((x: any) => x.worksWith(program, applicant)),
   },
   modules: {},
   plugins: [vuexLocal.plugin],

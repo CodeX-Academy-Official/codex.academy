@@ -5,7 +5,7 @@
       <h5>Please Choose One</h5>
       <div
         class="payment-option"
-        v-for="(paymentType, index) in selectedPlan.paymentTypes"
+        v-for="(paymentType, index) in paymentTypes"
         :key="paymentType.type"
       >
         <Climb
@@ -13,7 +13,15 @@
           :paymentType="paymentType"
           :number="index + 1"
           :programName="paymentType.programName"
-          :programTotal="selectedPlan.total"
+          :programTotal="getProgram.total"
+          css="paymentType ml-4"
+        />
+        <Leif
+          v-if="paymentType.type === 'leif'"
+          :paymentType="paymentType"
+          :number="index + 1"
+          :programName="paymentType.programName"
+          :programTotal="getProgram.total"
           css="paymentType ml-4"
         />
         <CreditCard
@@ -57,8 +65,10 @@
 import PlanCard from "@/components/PlanCard";
 import HubspotForm from "@/components/HubspotForm";
 import CreditCard from "@/components/paymentTypes/creditCard";
+import Leif from "@/components/paymentTypes/leif";
 import CallBack from "@/components/paymentTypes/callback";
 import Climb from "@/components/paymentTypes/climb";
+import { mapGetters } from "vuex";
 
 export default {
   components: {
@@ -66,21 +76,21 @@ export default {
     HubspotForm,
     CreditCard,
     CallBack,
-    Climb
+    Climb,
+    Leif
   },
-  data: () => ({
-    selectedPlan: false
-  }),
+  computed: {
+    ...mapGetters(["getProgram", "getApplicant", "getPaymentTypes"]),
+    paymentTypes() {
+      return this.getPaymentTypes(this.getProgram, this.getApplicant);
+    }
+  },
   created() {
-    const applicant = this.$store.getters.getApplicant;
+    const applicant = this.getApplicant;
     if (!applicant) {
       this.$router.push("applicant");
     }
-    this.selectedPlan = {
-      ...this.$store.getters.getSelectedPlan,
-      primary: true
-    };
-    this.$emit("changeStage", 3);
+    //this.$emit("changeStage", 3);
   }
 };
 </script>
