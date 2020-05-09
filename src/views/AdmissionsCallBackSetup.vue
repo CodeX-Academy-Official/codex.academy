@@ -6,7 +6,7 @@
       <li class="breadcrumb-item">
         <router-link to="/">Home</router-link>
       </li>
-      <li class="breadcrumb-item active">Application</li>
+      <li class="breadcrumb-item active">Application Process</li>
       <li class="breadcrumb-item active">Call-Back</li>
     </ol>
 
@@ -14,9 +14,6 @@
       <div class="col">
         <p>Please let us know how to contact you and when. We'll give you a call back as soon as possible.</p>
         <HubspotForm formId="e7360a11-ca18-4b36-a73b-b8ccdce4f3e7" />
-      </div>
-      <div class="col-4 d-none d-lg-block">
-        <PlanCard :plan="selectedPlan" :selectable="false" />
       </div>
     </div>
   </div>
@@ -31,14 +28,11 @@ export default {
     HubspotForm,
     PlanCard
   },
-  data: () => ({
-    selectedPlan: false
-  }),
+  data: () => ({}),
   created() {
-    if (!this.$store.state.selectedPlan) {
+    if (!this.$store.getters.getProgram) {
       this.$router.push("/");
     }
-    this.selectedPlan = { ...this.$store.state.selectedPlan, primary: true };
   }
 };
 </script>
