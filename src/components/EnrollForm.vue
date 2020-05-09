@@ -7,7 +7,7 @@
           type="text"
           class="form-control"
           v-model.trim="applicant.firstName"
-          :class="isValid(applicant.firstName)"
+          :class="(applicant.firstName)"
           required
         />
       </div>
@@ -17,7 +17,7 @@
           type="text"
           class="form-control"
           v-model.trim="applicant.lastName"
-          :class="isValid(applicant.lastName)"
+          :class="(applicant.lastName)"
           required
         />
       </div>
@@ -30,7 +30,7 @@
           class="form-control"
           id="inputEmail4"
           v-model.trim="applicant.email"
-          :class="isValid(applicant.email)"
+          :class="(applicant.email)"
           required
         />
       </div>
@@ -41,7 +41,7 @@
           class="form-control"
           id="phone"
           v-model.trim="applicant.phone"
-          :class="isValid(applicant.phone)"
+          :class="(applicant.phone)"
           required
         />
       </div>
@@ -55,7 +55,7 @@
           class="form-control"
           id="inputAddress"
           v-model.trim="applicant.address1"
-          :class="isValid(applicant.address1)"
+          :class="(applicant.address1)"
           required
         />
       </div>
@@ -72,7 +72,7 @@
           class="form-control"
           id="inputCity"
           v-model.trim="applicant.city"
-          :class="isValid(applicant.city)"
+          :class="(applicant.city)"
           required
         />
       </div>
@@ -82,7 +82,7 @@
           class="form-control"
           type="text"
           v-model.trim="applicant.state"
-          :class="isValid(applicant.state)"
+          :class="(applicant.state)"
         />
       </div>
       <div class="form-group col-md-2">
@@ -92,7 +92,7 @@
           class="form-control"
           id="inputZip"
           v-model.trim="applicant.zip"
-          :class="isValid(applicant.zip)"
+          :class="(applicant.zip)"
           required
         />
       </div>
@@ -104,7 +104,7 @@
           class="form-control"
           id="inputCountry"
           v-model.trim="applicant.country"
-          :class="isValid(applicant.country)"
+          :class="(applicant.country)"
           required
         />
       </div>
@@ -118,7 +118,7 @@
           class="form-control"
           id="inputDob"
           v-model.trim="applicant.dateOfBirth"
-          :class="isValid(applicant.dateOfBirth)"
+          :class="(applicant.dateOfBirth)"
           required
           :min="dateMin"
           :max="dateMax"
@@ -134,7 +134,7 @@
       </div>
     </div>
 
-    <div class="form-row">
+    <!-- <div class="form-row">
       <div class="col form-label-group">
         <label>Financial Aid:</label>
         <div class="form-check financial-aid">
@@ -147,7 +147,7 @@
           <label class="form-check-label" for="financialAidLong">I want financial aid.</label>
         </div>
       </div>
-    </div>
+    </div>-->
     <!-- <div class="form-group">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="gridCheck" v-model="applicant.financialAid" />
@@ -257,6 +257,7 @@ export default {
       city: "",
       state: "",
       zip: "",
+      country: "United States",
       dateOfBirth: ""
     }
   }),
@@ -271,9 +272,6 @@ export default {
   methods: {
     submitForm() {
       this.$emit("applicationFormSubmitted", this.applicant);
-    },
-    isValid() {
-      return true;
     }
   },
   created() {

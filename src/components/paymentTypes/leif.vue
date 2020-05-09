@@ -1,16 +1,15 @@
 <template>
   <div :class="css">
-    <h3>{{ number }}. Apply for Income Sharing Agreement</h3>
+    <h3>{{ number }}. Pay nothing until you get a job</h3>
 
     <p>
       Pay nothing until you get a job making
-      <Money :amount="paymentType.minimumSalary" />or more! We partner with Leif Financial to make this possible. To apply for an ISA to cover your tuition.
-      please click the button below.
+      <Money :amount="paymentType.minimumSalary" />&nbsp;or more! We partner with Leif Financial to make this possible. After you get a great job, you'll pay a low percentage of your salary each month for the first 2 to 4 years.
     </p>
     <p>
-      <a :href="paymentType.url" class="btn btn-primary">
+      <button @click.prevent="goToLeif" class="btn btn-primary">
         <strong>Apply for ISA</strong>
-      </a>
+      </button>
     </p>
   </div>
 </template>
@@ -27,7 +26,23 @@ export default {
     programTotal: Number,
     programName: String
   },
-  components: { Money }
+  components: { Money },
+  methods: {
+    async goToLeif() {
+      const applicant = this.$store.getters.getApplicant;
+
+      const payload = {
+        email: applicant.email,
+        applyingForIsa: true,
+        applyingForClimb: false,
+        payingByCreditCard: false
+      };
+      await this.$store.dispatch("setPaymentInfo", payload);
+
+      const url = this.paymentType.url;
+      window.open(url, "_self");
+    }
+  }
 };
 </script>
 

@@ -30,6 +30,13 @@
           :number="index + 1"
           css="paymentType ml-4"
         />
+        <CreditCardPreSetup
+          v-if="paymentType.type === 'creditCard-pre'"
+          :paymentType="paymentType"
+          :number="index + 1"
+          css="paymentType ml-4"
+          @paymentScheduled="next"
+        />
         <CallBack
           v-if="paymentType.type === 'callBack'"
           :number="index + 1"
@@ -65,6 +72,7 @@
 import PlanCard from "@/components/PlanCard";
 import HubspotForm from "@/components/HubspotForm";
 import CreditCard from "@/components/paymentTypes/creditCard";
+import CreditCardPreSetup from "@/components/paymentTypes/creditCardPresetup";
 import Leif from "@/components/paymentTypes/leif";
 import CallBack from "@/components/paymentTypes/callback";
 import Climb from "@/components/paymentTypes/climb";
@@ -75,6 +83,7 @@ export default {
     PlanCard,
     HubspotForm,
     CreditCard,
+    CreditCardPreSetup,
     CallBack,
     Climb,
     Leif
@@ -82,7 +91,10 @@ export default {
   computed: {
     ...mapGetters(["getProgram", "getApplicant", "getPaymentTypes"]),
     paymentTypes() {
-      return this.getPaymentTypes(this.getProgram, this.getApplicant);
+      const paymentTypes = this.getPaymentTypes;
+      const program = this.getProgram;
+      const applicant = this.getApplicant;
+      return paymentTypes.filter(x => x.worksWith(program, applicant));
     }
   },
   created() {
@@ -91,6 +103,11 @@ export default {
       this.$router.push("applicant");
     }
     //this.$emit("changeStage", 3);
+  },
+  methods: {
+    next() {
+      this.$emit("completed", 4);
+    }
   }
 };
 </script>

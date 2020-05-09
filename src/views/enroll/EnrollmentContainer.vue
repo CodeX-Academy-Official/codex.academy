@@ -17,31 +17,42 @@
               :number="1"
               name="Select/Confirm Program"
               @click="navigateToStage"
-              :clickable="true"
+              :clickable="true && !completedProcess"
               :active="routeHas('/enroll')"
             />
             <Step
               :number="2"
               name="Enter Applicant Information"
               @click="navigateToStage"
-              :clickable="getStartDate !== undefined"
+              :clickable="getStartDate !== undefined && !completedProcess"
               :active="routeHas('/enroll/applicant')"
             />
             <Step
               :number="3"
               name="Pay Application Fee"
               @click="navigateToStage"
-              :clickable="getApplicant !== undefined"
+              :clickable="getApplicant !== undefined && !completedProcess"
               :disabled="shouldWaiveAppFee"
               :active="routeHas('/enroll/appfee')"
             />
+
             <Step
               :number="4"
+              name="Arrange Tuition Payment"
+              @click="navigateToStage"
+              :clickable="(getApplicant !== undefined && !completedProcess)"
+              :active="routeHas('/enroll/payment')"
+            />
+
+            <Step
+              :number="5"
               name="Meet with Admissions"
               @click="navigateToStage"
               :clickable="
                 (getApplicant !== undefined && shouldWaiveAppFee) ||
-                  getApplicationFee !== undefined
+                  getApplicationFee !== undefined || 
+                  getPaymentInfo !== undefined
+
               "
               :active="routeHas('/enroll/admissions')"
             />
@@ -67,6 +78,7 @@ const Step = {
     active: Boolean,
     disabled: Boolean
   },
+
   render(createElement) {
     const clickable = this.clickable ? "link " : "";
     const active = this.active ? "active " : "";
@@ -96,7 +108,8 @@ const stages = {
   1: "/enroll",
   2: "/enroll/applicant",
   3: "/enroll/appfee",
-  4: "/enroll/admissions"
+  4: "/enroll/payment",
+  5: "/enroll/admissions"
 };
 
 export default {
@@ -110,10 +123,17 @@ export default {
       "getApplicant",
       "getApplicationFee",
       "getStartDate",
-      "getPromoCodesDisplay"
+      "getPromoCodesDisplay",
+      "getPaymentInfo"
     ]),
     shouldWaiveAppFee() {
-      return this.getPromoCodesDisplay.indexOf("covid19") > -1;
+      return true;
+      //return this.getPromoCodesDisplay.indexOf("covid19") > -1;
+    },
+    completedProcess() {
+      return (
+        this.routeHas("/enroll/complete") || this.routeHas("/enroll/admissions")
+      );
     }
   },
   methods: {

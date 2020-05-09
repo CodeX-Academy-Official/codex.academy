@@ -26,6 +26,7 @@ const APPLY_PROMO_CODE = "APPLY_PROMO_CODE";
 const PAY_APP_FEE = "PAY_APP_FEE";
 const SET_CERTIFICATION = "SET_CERTIFICATION";
 const SET_PROGRAM = "SET_PROGRAM";
+const SCHEDULE_CARD_PAYMENT = "SCHEDULE_CARD_PAYMENT";
 
 export default new Vuex.Store({
   state: {
@@ -47,8 +48,12 @@ export default new Vuex.Store({
     internshipPartners,
     bootcampFeatures,
     paymentTypes,
+    paymentInfo: undefined,
   },
   mutations: {
+    [SCHEDULE_CARD_PAYMENT](state: any, paymentInfo) {
+      state.paymentInfo = paymentInfo;
+    },
     [SET_PROGRAM](state: any, program) {
       state.program = program;
     },
@@ -72,6 +77,11 @@ export default new Vuex.Store({
     },
   },
   actions: {
+    async setPaymentInfo({ commit }, paymentInfo) {
+      const formId = "a69ff037-472e-4b81-a35d-1a91b59787d7";
+      commit(SCHEDULE_CARD_PAYMENT, paymentInfo);
+      await sendToHubspot("7092117", formId, paymentInfo);
+    },
     setProgram(context, program) {
       context.commit(SET_PROGRAM, program);
     },
@@ -144,8 +154,8 @@ export default new Vuex.Store({
         .toLowerCase(),
     getApplicationFee: (state) => state.appFeePaid,
     getBootcampFeatures: (state) => state.bootcampFeatures,
-    getPaymentTypes: (state) => (program: any, applicant: any) =>
-      state.paymentTypes.filter((x: any) => x.worksWith(program, applicant)),
+    getPaymentTypes: (state) => state.paymentTypes,
+    getPaymentInfo: (state) => state.paymentInfo,
   },
   modules: {},
   plugins: [vuexLocal.plugin],

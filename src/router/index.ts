@@ -168,12 +168,12 @@ const routes = [
         path: "admissions",
         component: MeetWithAdmissions,
       },
+      {
+        path: "complete",
+        name: "EnrollmentComplete",
+        component: EnrollmentComplete,
+      },
     ],
-  },
-  {
-    path: "/enrollment-complete",
-    name: "EnrollmentComplete",
-    component: EnrollmentComplete,
   },
   {
     path: "/team",

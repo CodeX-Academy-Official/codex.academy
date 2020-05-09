@@ -1,18 +1,15 @@
 <template>
   <div :class="css">
-    <h3>{{ number }}. Apply for Financial Aid</h3>
+    <h3>{{ number }}. Small monthly payments while you learn</h3>
 
-    <p>
-      You can apply for financial aid through our partner, Climb Credit. Please
-      click the button below to apply.
-    </p>
+    <p>You can apply for financing through our partner, Climb Credit, and pay small interest-only payments while you are enrolled. Pay off the rest of the loan monthly after you graduate.</p>
     <p>
       <button
         class="btn btn-primary"
         @click="$bvModal.show('modal-climb-credit')"
         :disabled="navigating"
       >
-        <strong>Apply for Financial Aid</strong>
+        <strong>Apply for Financing</strong>
       </button>
     </p>
     <b-modal id="modal-climb-credit" hide-footer>
@@ -103,6 +100,14 @@ export default {
     async goToClimbCredit() {
       this.navigating = true;
       const applicant = this.$store.getters.getApplicant;
+
+      const payload = {
+        email: applicant.email,
+        applyingForClimb: true,
+        applyingForIsa: false,
+        payingByCreditCard: false
+      };
+      this.$store.dispatch("setPaymentInfo", payload);
 
       let baseUrl = "https://climbcredit.com/api/pre-populate";
       if (this.$store.state.testMode)
