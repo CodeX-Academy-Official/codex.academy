@@ -53,7 +53,7 @@
     <div class="mt-5 pb-5 bg-lilac">
       <div class="container">
         <h2 class="text-center pt-5">Technologies you will Master</h2>
-        <h5 class="text-center mb-5">In the Full-Stack Devloper Program</h5>
+        <h5 class="text-center mb-5">In the {{certification.name}} Program</h5>
         <Technologies :certification="certName" :includeName="true" />
 
         <div class="text-center">
