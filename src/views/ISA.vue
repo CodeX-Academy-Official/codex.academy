@@ -1,12 +1,12 @@
 <template>
   <div class="deferred-payment">
     <Hero unsplashId="DuHKoV44prg" height="25em">
-      <h2>Pay Zero Tuition</h2>
-      <h5>Until your first job</h5>
+      <h2>Income Share Agreement</h2>
+      <h5>You learn, we take the risk</h5>
     </Hero>
     <div class="container mt-5">
       <div class="text-center">
-        <h1 class="section-title">Let us take the risk for you</h1>
+        <h1 class="section-title">Pay ZERO until your first job!</h1>
         <h4></h4>
       </div>
       <p class="mb-5 text-left">
@@ -14,7 +14,7 @@
         Sign up with the ISA Plan and we won't charge tuition until you land your first job. Interested? See terms and conditions below.
       </p>
       <div class="row mx-auto">
-        <div class="col-12 col-md-4" v-for="r in reasons" :key="r.title">
+        <div class="col-12 col-md-6" v-for="r in reasons" :key="r.title">
           <div class="w-75 mx-auto text-center mb-5">
             <div class="beach-ball mx-auto mb-3">
               <div class="pt-3">
@@ -82,22 +82,22 @@ export default {
   data: () => ({
     reasons: [
       {
-        title: "10% Deposit",
-        icon: "fraction",
-        description: "Pay a refundable deposit of only 10% up-front."
-      },
-      {
         title: "Zero Tuition",
         icon: "okay",
         description:
-          "You will pay ZERO tuition until you land your first job making $40k or more."
+          "You will pay ZERO tuition until you land your first job making an impressive salary."
       },
       {
-        title: "3 Years",
+        title: "Small Payments",
         icon: "money",
         description:
-          "We'll charge you 10% of your income for your first three years on the job to pay off your tuition!"
+          "We'll charge you 10% of your income for an agreed-upon period of time to pay off your tuition!"
       }
+      // {
+      //   title: "Five Years",
+      //   icon: "fraction",
+      //   description: "Pay a refundable deposit of only 10% up-front."
+      // }
     ]
   })
 };
