@@ -37,10 +37,11 @@
 
       <h3 class="mt-4">Arrange Payment Information</h3>
 
-      <h5>Please Choose One</h5>
+      <h5 v-if="paymentTypes.length > 1">Please Choose One</h5>
       <div class="row justify-content-center">
         <div
           class="payment-option col-12 col-sm-6 col-lg-4"
+          :class="{'col-lg-8': paymentTypes.length < 2 }"
           v-for="(paymentType, index) in paymentTypes"
           :key="paymentType.type"
         >

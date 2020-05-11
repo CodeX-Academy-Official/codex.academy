@@ -12,6 +12,7 @@ import { pathways } from "./pathways";
 import { certifications } from "./certifications";
 import { internshipPartners } from "./internshipPartners";
 import { paymentTypes } from "./paymentTypes";
+import { countries } from "./countries";
 
 const vuexLocal = new VuexPersistence({
   storage: window.localStorage,
@@ -49,6 +50,7 @@ export default new Vuex.Store({
     bootcampFeatures,
     paymentTypes,
     paymentInfo: undefined,
+    countries,
   },
   mutations: {
     [SCHEDULE_CARD_PAYMENT](state: any, paymentInfo) {
@@ -156,6 +158,8 @@ export default new Vuex.Store({
     getBootcampFeatures: (state) => state.bootcampFeatures,
     getPaymentTypes: (state) => state.paymentTypes,
     getPaymentInfo: (state) => state.paymentInfo,
+    getCountries: (state) =>
+      state.countries.filter((x: any) => x.country.length < 25),
   },
   modules: {},
   plugins: [vuexLocal.plugin],
