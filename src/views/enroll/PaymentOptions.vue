@@ -1,47 +1,84 @@
 <template>
-  <div class="row">
-    <div class="col">
-      <h3>Arrange Payment Information</h3>
+  <div class>
+    <div class="text-center">
+      <div class="row bg-lilac border shadow p-3 justify-content-center">
+        <div class="col-6 col-lg-2 text-center">
+          <strong class="table-title">Target Certification</strong>
+          <p>{{getProgram.name}}</p>
+        </div>
+
+        <div class="col-6 col-lg-2 text-center">
+          <strong class="table-title">Tuition</strong>
+          <p>
+            <Money :amount="getProgram.price" />
+          </p>
+        </div>
+
+        <div class="col-6 col-lg-2 text-center">
+          <strong class="table-title">Weekly Hours</strong>
+          <p>{{getProgram.weeklyStudyHours}}</p>
+        </div>
+
+        <div class="col-6 col-lg-2 text-center">
+          <strong class="table-title">Program Duration</strong>
+          <p>{{getProgram.months}} Months</p>
+        </div>
+
+        <div class="col-6 col-lg-2 text-center">
+          <strong class="table-title">Start Date</strong>
+          <p>{{getProgram.startDate}}</p>
+        </div>
+
+        <div class="col-6 col-lg-2 text-center">
+          <strong class="table-title">&nbsp;</strong>
+          <router-link to="/enroll" class="btn btn-secondary">Change</router-link>
+        </div>
+      </div>
+
+      <h3 class="mt-4">Arrange Payment Information</h3>
+
       <h5>Please Choose One</h5>
-      <div
-        class="payment-option"
-        v-for="(paymentType, index) in paymentTypes"
-        :key="paymentType.type"
-      >
-        <Climb
-          v-if="paymentType.type === 'climb'"
-          :paymentType="paymentType"
-          :number="index + 1"
-          :programName="paymentType.programName"
-          :programTotal="getProgram.total"
-          css="paymentType ml-4"
-        />
-        <Leif
-          v-if="paymentType.type === 'leif'"
-          :paymentType="paymentType"
-          :number="index + 1"
-          :programName="paymentType.programName"
-          :programTotal="getProgram.total"
-          css="paymentType ml-4"
-        />
-        <CreditCard
-          v-if="paymentType.type === 'creditCard'"
-          :paymentType="paymentType"
-          :number="index + 1"
-          css="paymentType ml-4"
-        />
-        <CreditCardPreSetup
-          v-if="paymentType.type === 'creditCard-pre'"
-          :paymentType="paymentType"
-          :number="index + 1"
-          css="paymentType ml-4"
-          @paymentScheduled="next"
-        />
-        <CallBack
-          v-if="paymentType.type === 'callBack'"
-          :number="index + 1"
-          css="paymentType ml-4"
-        />
+      <div class="row justify-content-center">
+        <div
+          class="payment-option col-12 col-sm-6 col-lg-4"
+          v-for="(paymentType, index) in paymentTypes"
+          :key="paymentType.type"
+        >
+          <Climb
+            v-if="paymentType.type === 'climb'"
+            :paymentType="paymentType"
+            :number="index + 1"
+            :programName="paymentType.programName"
+            :programTotal="getProgram.total"
+            css="paymentType ml-4"
+          />
+          <Leif
+            v-if="paymentType.type === 'leif'"
+            :paymentType="paymentType"
+            :number="index + 1"
+            :programName="paymentType.programName"
+            :programTotal="getProgram.total"
+            css="paymentType ml-4"
+          />
+          <!-- <CreditCard
+            v-if="paymentType.type === 'creditCard'"
+            :paymentType="paymentType"
+            :number="index + 1"
+            css="paymentType ml-4"
+          />-->
+          <CreditCardPreSetup
+            v-if="paymentType.type === 'creditCard'"
+            :paymentType="paymentType"
+            :number="index + 1"
+            css="paymentType ml-4"
+            @paymentScheduled="next"
+          />
+          <CallBack
+            v-if="paymentType.type === 'callBack'"
+            :number="index + 1"
+            css="paymentType ml-4"
+          />
+        </div>
       </div>
       <!-- <div v-if="selectedPlan.paymentTypes.financing">
           <hr class="mt-5 mb-5" />
@@ -76,6 +113,8 @@ import CreditCardPreSetup from "@/components/paymentTypes/creditCardPresetup";
 import Leif from "@/components/paymentTypes/leif";
 import CallBack from "@/components/paymentTypes/callback";
 import Climb from "@/components/paymentTypes/climb";
+import Money from "@/components/Money";
+
 import { mapGetters } from "vuex";
 
 export default {
@@ -86,7 +125,8 @@ export default {
     CreditCardPreSetup,
     CallBack,
     Climb,
-    Leif
+    Leif,
+    Money
   },
   computed: {
     ...mapGetters(["getProgram", "getApplicant", "getPaymentTypes"]),
@@ -118,5 +158,19 @@ export default {
   h3 {
     font-size: 1.1rem;
   }
+  h1.paymentTypeAmount {
+    font-size: 2.1em;
+    margin: 0px 0px;
+  }
+  .card-header {
+    height: 100px;
+  }
+  .around-money {
+    font-size: 0.8em;
+  }
+}
+.table-title {
+  height: 55px;
+  display: block;
 }
 </style>

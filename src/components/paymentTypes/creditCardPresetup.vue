@@ -1,17 +1,25 @@
 <template>
-  <div :class="css">
-    <h3>{{ number }}. Monthly Credit Card Payments</h3>
-
-    <p>If you'd rather pay on a monthly basis, you can set up a monthly subscription using your credit or debit card. For this, we use a service called Stripe.</p>
-    <p>
+  <div class="card h-100">
+    <div class="card-header">
+      <h5 class="card-title">Monthly Tuition</h5>
+    </div>
+    <div class="card-body">
+      <span class="around-money">You pay</span>
+      <h1 class="paymentTypeAmount">
+        <Money :amount="paymentType.monthlyCharge" />
+      </h1>
+      <span class="around-money">per month</span>
+      <p class="mt-3 card-text text-muted">Monthly tuition payments on your credit or debit card.</p>
+    </div>
+    <div class="card-footer">
       <button
-        class="btn btn-primary"
+        class="btn btn-primary btn-block"
         @click="$bvModal.show('modal-credit-card-pre-setup')"
         :disabled="navigating"
       >
-        <strong>Set Up Subscription</strong>
+        <strong>Subscribe</strong>
       </button>
-    </p>
+    </div>
 
     <b-modal id="modal-credit-card-pre-setup" hide-footer>
       <template v-slot:modal-title>Payment Scheduling</template>
@@ -53,6 +61,7 @@
 
 <script>
 import axios from "axios";
+import Money from "@/components/Money";
 
 export default {
   props: {
@@ -62,6 +71,7 @@ export default {
     programTotal: Number,
     programName: String
   },
+  components: { Money },
   data: () => ({
     nameOnCard: "",
     last4Digits: "",

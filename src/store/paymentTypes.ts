@@ -19,6 +19,7 @@ const climbOptions = [
   {
     type: "climb",
     programName: "Front-End Developer",
+    startingMonthlyPayments: 250,
     worksWith: (program: any, applicant: any) => {
       return climb(program, applicant, "Front-End Developer");
     },
@@ -26,6 +27,7 @@ const climbOptions = [
   {
     type: "climb",
     programName: "Full-Stack Developer",
+    startingMonthlyPayments: 250,
     worksWith: (program: any, applicant: any) => {
       return climb(program, applicant, "Full-Stack Developer");
     },
@@ -33,6 +35,7 @@ const climbOptions = [
   {
     type: "climb",
     programName: "Full-Stack Engineer",
+    startingMonthlyPayments: 250,
     worksWith: (program: any, applicant: any) => {
       return climb(program, applicant, "Full-Stack Engineer");
     },
@@ -125,6 +128,7 @@ const creditCardOptions = [
     type: "creditCard",
     url: "https://app.hubspot.com/sales-checkout/mSpPTv7B",
     testUrl: "https://app.hubspot.com/sales-checkout/test_jQz_nidL",
+    monthlyCharge: 1500,
     worksWith: (program: any, applicant: any) => {
       const perMonth = program.price / program.months;
       return perMonth > 1500 * 0.5; //anything higher than half-time
@@ -134,6 +138,7 @@ const creditCardOptions = [
     type: "creditCard",
     // url: "https://app.hubspot.com/sales-checkout/wBN890ZZ",
     // testUrl: "https://app.hubspot.com/sales-checkout/test_fi5hBGei",
+    monthlyCharge: 1500 * 0.75,
     worksWith: (program: any, applicant: any) => {
       return false; //not yet implemented in HS
       const perMonth = program.price / program.months;
@@ -144,6 +149,7 @@ const creditCardOptions = [
     type: "creditCard",
     url: "https://app.hubspot.com/sales-checkout/wBN890ZZ",
     testUrl: "https://app.hubspot.com/sales-checkout/test_fi5hBGei",
+    monthlyCharge: 1500 * 0.5,
     worksWith: (program: any, applicant: any) => {
       const perMonth = program.price / program.months;
       return perMonth === 1500 * 0.5;
@@ -153,6 +159,7 @@ const creditCardOptions = [
     type: "creditCard",
     url: "https://app.hubspot.com/sales-checkout/tpi4vFUd",
     testUrl: "https://app.hubspot.com/sales-checkout/test_OqVDtXse",
+    monthlyCharge: 1500 * 0.25,
     worksWith: (program: any, applicant: any) => {
       const perMonth = program.price / program.months;
       return perMonth === 1500 * 0.25;
@@ -163,13 +170,7 @@ const creditCardOptions = [
 export const paymentTypes = [
   ...leifPaymentOptions,
   ...climbOptions,
-  //...creditCardOptions,
-  {
-    type: "creditCard-pre",
-    worksWith: (program: any, applicant: any) => {
-      return true;
-    },
-  },
+  ...creditCardOptions,
   //   {
   //     type: "callBack",
   //     worksWith: (program: any, applicant: any) => {

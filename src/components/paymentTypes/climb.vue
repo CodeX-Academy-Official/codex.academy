@@ -1,17 +1,27 @@
 <template>
-  <div :class="css">
-    <h3>{{ number }}. Small monthly payments while you learn</h3>
-
-    <p>You can apply for financing through our partner, Climb Credit, and pay small interest-only payments while you are enrolled. Pay off the rest of the loan monthly after you graduate.</p>
-    <p>
+  <div class="card h-100">
+    <div class="card-header">
+      <h5 class="card-title">Student Loan</h5>
+    </div>
+    <div class="card-body">
+      <span class="around-money">Payments as low as</span>
+      <h1 class="paymentTypeAmount">
+        <Money :amount="paymentType.startingMonthlyPayments" />
+      </h1>
+      <span class="around-money">per month</span>
+      <p
+        class="mt-3 card-text text-muted"
+      >Small interest-only payments while you learn, normal payments after you graduate.</p>
+    </div>
+    <div class="card-footer">
       <button
-        class="btn btn-primary"
+        class="card-link btn btn-primary btn-block"
         @click="$bvModal.show('modal-climb-credit')"
         :disabled="navigating"
       >
-        <strong>Apply for Financing</strong>
+        <strong>Apply</strong>
       </button>
-    </p>
+    </div>
     <b-modal id="modal-climb-credit" hide-footer>
       <template v-slot:modal-title>Continuing Application</template>
       <div class="d-block">
@@ -38,6 +48,7 @@
 
 <script>
 import axios from "axios";
+import Money from "@/components/Money";
 
 function getFormData(object) {
   var queryString = Object.keys(object)
@@ -92,6 +103,7 @@ export default {
     programTotal: Number,
     programName: String
   },
+  components: { Money },
   data: () => ({
     url: false,
     navigating: false

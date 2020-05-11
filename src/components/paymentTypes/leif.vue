@@ -1,16 +1,22 @@
 <template>
-  <div :class="css">
-    <h3>{{ number }}. Pay nothing until you get a job</h3>
+  <div class="card h-100">
+    <div class="card-header">
+      <h5 class="card-title">Income Share Agreement</h5>
+    </div>
+    <div class="card-body">
+      <span class="around-money">You pay</span>
+      <h1 class="paymentTypeAmount">$0</h1>
+      <span class="around-money">until you get a job</span>
 
-    <p>
-      Pay nothing until you get a job making
-      <Money :amount="paymentType.minimumSalary" />&nbsp;or more! We partner with Leif Financial to make this possible. After you get a great job, you'll pay a low percentage of your salary each month for the first 2 to 4 years.
-    </p>
-    <p>
-      <button @click.prevent="goToLeif" class="btn btn-primary">
-        <strong>Apply for ISA</strong>
+      <p
+        class="mt-3 card-text text-muted"
+      >Pay tuition back in small monthly payments after you get a great job.</p>
+    </div>
+    <div class="card-footer">
+      <button @click.prevent="goToLeif" class="btn btn-primary btn-block">
+        <strong>Apply</strong>
       </button>
-    </p>
+    </div>
   </div>
 </template>
 
