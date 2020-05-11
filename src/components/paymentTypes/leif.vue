@@ -39,9 +39,7 @@ export default {
 
       const payload = {
         email: applicant.email,
-        applyingForIsa: true,
-        applyingForClimb: false,
-        payingByCreditCard: false
+        paymentType: "leif"
       };
       await this.$store.dispatch("setPaymentInfo", payload);
 
