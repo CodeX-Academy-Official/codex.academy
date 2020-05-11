@@ -34,7 +34,7 @@ import ApplicationFee from "../views/enroll/ApplicationFee.vue";
 import MeetWithAdmissions from "../views/enroll/MeetWithAdmissions.vue";
 import landingPageRoutes from "./landingPages";
 import policyRoutes from "./policyRoutes";
-import proogramRoutes from "./progamRoutes";
+import programRoutes from "./programRoutes";
 import HomeApril2020 from "../views/landing/HomeApril2020.vue";
 
 Vue.use(VueRouter);
@@ -42,7 +42,7 @@ Vue.use(VueRouter);
 const routes = [
   ...landingPageRoutes,
   ...policyRoutes,
-  ...proogramRoutes,
+  ...programRoutes,
   {
     path: "/",
     name: "Home",
