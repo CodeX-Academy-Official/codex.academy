@@ -4,10 +4,9 @@ import VuexPersistence from "vuex-persist";
 import { shuffle } from "./utils";
 import { sendToHubspot } from "./hubspot";
 import { testimonials } from "./testimonials";
-import { methods } from "./pillars";
+import { pillars } from "./pillars";
 import { technologies } from "./technologies";
-import { programs, bootcampFeatures } from "./programs";
-import { programOptions } from "./programOptions";
+import { bootcampFeatures } from "./programs";
 import { pathways } from "./pathways";
 import { certifications } from "./certifications";
 import { internshipPartners } from "./internshipPartners";
@@ -33,24 +32,13 @@ export default new Vuex.Store({
   state: {
     testMode: false,
     startDate: false,
-    plans: programs,
-    planOptions: programOptions,
     selectedPlan: undefined,
     applicant: undefined,
     promoCodes: [],
-    technologies,
-    methods,
-    certifications,
     certification: undefined,
     program: undefined,
-    testimonials,
-    pathways,
     appFeePaid: undefined,
-    internshipPartners,
-    bootcampFeatures,
-    paymentTypes,
     paymentInfo: undefined,
-    countries,
   },
   mutations: {
     [SCHEDULE_CARD_PAYMENT](state: any, paymentInfo) {
@@ -135,19 +123,19 @@ export default new Vuex.Store({
     getSelfPaced: (state) =>
       state.plans.filter((x: any) => x.isMentoring && !x.isBootcamp),
     getPlanOptions: (state) => state.planOptions,
-    getPathways: (state) => state.pathways,
+    getPathways: (state) => pathways,
     getTechnologies: (state) =>
-      state.technologies.sort((a: any, b: any) => a.order - b.order),
-    getMethods: (state) => state.methods,
+      technologies.sort((a: any, b: any) => a.order - b.order),
+    getMethods: (state) => pillars,
     getThreeTestimonials: (state) => {
-      const arr = state.testimonials;
+      const arr = testimonials;
       const shuffled = shuffle(arr);
       return shuffled.slice(0, 3);
     },
     getApplicant: (state) => state.applicant,
     getStartDate: (state) => state.startDate,
-    getCertifications: (state) => state.certifications,
-    getInternshipPartners: (state) => state.internshipPartners,
+    getCertifications: (state) => certifications,
+    getInternshipPartners: (state) => internshipPartners,
     getPromoCodes: (state) => state.promoCodes,
     getPromoCodesDisplay: (state) =>
       (state.promoCodes || [])
@@ -155,11 +143,10 @@ export default new Vuex.Store({
         .join(", ")
         .toLowerCase(),
     getApplicationFee: (state) => state.appFeePaid,
-    getBootcampFeatures: (state) => state.bootcampFeatures,
-    getPaymentTypes: (state) => state.paymentTypes,
+    getBootcampFeatures: (state) => bootcampFeatures,
+    getPaymentTypes: (state) => paymentTypes,
     getPaymentInfo: (state) => state.paymentInfo,
-    getCountries: (state) =>
-      state.countries.filter((x: any) => x.country.length < 25),
+    getCountries: () => countries.filter((x: any) => x.country.length < 25),
   },
   modules: {},
   plugins: [vuexLocal.plugin],

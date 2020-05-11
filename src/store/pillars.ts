@@ -1,4 +1,4 @@
-export const methods = [
+export const pillars = [
   {
     id: "2",
     title: "Mentorship",
