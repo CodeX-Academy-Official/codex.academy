@@ -115,9 +115,7 @@ export default {
 
       const payload = {
         email: applicant.email,
-        applyingForClimb: true,
-        applyingForIsa: false,
-        payingByCreditCard: false
+        paymentType: "climb"
       };
       this.$store.dispatch("setPaymentInfo", payload);
 

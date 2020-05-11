@@ -88,9 +88,7 @@ export default {
         nameOnCard: this.nameOnCard,
         paymentDayOfTheMonth: this.paymentDayOfTheMonth,
         last4Digits: this.last4Digits,
-        payingByCreditCard: true,
-        applyingForIsa: false,
-        applyingForClimb: false
+        paymentType: "stripe"
       };
       this.$store.dispatch("setPaymentInfo", payload);
       this.$emit("paymentScheduled", payload);
