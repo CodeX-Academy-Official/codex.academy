@@ -148,9 +148,10 @@ export default {
       this.navigateToStage(newStage);
     },
     navigateToStage(stage) {
-      if (this.stage === stage) return;
       this.stage = stage;
-      return this.$router.push(stages[this.stage]);
+      const route = stages[this.stage];
+      if (this.$route.path == route) return;
+      return this.$router.push(route);
     }
   }
 };

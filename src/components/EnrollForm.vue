@@ -99,14 +99,18 @@
 
       <div class="form-group col-md-3">
         <label for="inputCountry">Country</label>
-        <input
+        <!-- </div> -->
+        <select v-model="applicant.country" class="form-control">
+          <option v-for="c in getCountries" :key="c.country" :value="c.country">{{c.country}}</option>
+        </select>
+        <!-- <input
           type="text"
           class="form-control"
           id="inputCountry"
           v-model.trim="applicant.country"
           :class="(applicant.country)"
           required
-        />
+        />-->
       </div>
     </div>
 
@@ -241,6 +245,7 @@
 
 <script>
 import { today, centuryAgo, formatted } from "@/utils/dates";
+import { mapGetters } from "vuex";
 
 export default {
   props: {
@@ -262,6 +267,7 @@ export default {
     }
   }),
   computed: {
+    ...mapGetters(["getCountries"]),
     dateMin() {
       return formatted(centuryAgo());
     },
