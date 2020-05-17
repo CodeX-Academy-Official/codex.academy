@@ -1,3 +1,5 @@
+import { Plan } from "@/types/Plan";
+
 const planCommonDetails = [
   "Self-Paced",
   "Unlimited Learning Pathway Access",
@@ -11,13 +13,26 @@ const mentorDrivenCommonDetails = [
   "Career Counseling",
 ];
 
-const selfpaceds = [
+export function mapToActivePlan(plan: any, startDate: Date): Plan {
+  return {
+    id: plan.id,
+    name: plan.title,
+    description: plan.description,
+    startDate,
+    studyHours: plan.studyHours,
+    mentorHours: plan.mentorHours,
+    months: 1,
+    price: plan.price,
+  };
+}
+
+export const selfPacedPlans = [
   {
     id: "selfpaced2",
-    title: "Casual",
+    title: "Light-Support Monthly",
     description: "Learning to code at a very relaxed pace.",
-    minimumWeeklyStudyHours: 10,
-    mentorHoursPerWeek: 1,
+    studyHours: 10,
+    mentorHours: 1,
     monthlyEvaluations: 3,
     levelPerMonth: 1 / 4,
     price: 400,
@@ -44,10 +59,10 @@ const selfpaceds = [
   },
   {
     id: "selfpaced5",
-    title: "Part-Time",
+    title: "Medium Support Monthly",
     description: "Learning to code while holding your day-job.",
-    minimumWeeklyStudyHours: 20,
-    mentorHoursPerWeek: 2,
+    studyHours: 20,
+    mentorHours: 2,
     levelPerMonth: 1 / 2,
     monthlyEvaluations: 5,
     total: 800,
@@ -74,10 +89,10 @@ const selfpaceds = [
   },
   {
     id: "selfpaced10",
-    title: "Full-Time",
+    title: "Daily Support Monthly",
     description: "Your full-time job is to learn to code.",
-    minimumWeeklyStudyHours: 40,
-    mentorHoursPerWeek: 5,
+    studyHours: 40,
+    mentorHours: 5,
     levelPerMonth: 1,
     monthlyEvaluations: 10,
     total: 1500,
@@ -105,11 +120,11 @@ const selfpaceds = [
   },
   {
     id: "selfpaced20",
-    title: "Overtime",
+    title: "Hyper Support Monthly",
     description: "Supercharged learning with extra mentor hours.",
     levelPerMonth: 1.2,
-    minimumWeeklyStudyHours: 40,
-    mentorHoursPerWeek: 10,
+    studyHours: 40,
+    mentorHours: 10,
     monthlyEvaluations: 20,
     total: 2800,
     price: 2800,
@@ -150,8 +165,8 @@ const bootcamps = [
     title: "3-Month Bootcamp",
     startMonday: 1,
     durationMonths: 3,
-    mentorHoursPerWeek: 5,
-    minimumWeeklyStudyHours: 40,
+    mentorHours: 5,
+    studyHours: 40,
     monthlyEvaluations: 10,
     levelPerMonth: 1,
     price: 1500,
@@ -182,8 +197,8 @@ const bootcamps = [
     title: "6-Month Bootcamp",
     startMonday: 2,
     durationMonths: 6,
-    minimumWeeklyStudyHours: 40,
-    mentorHoursPerWeek: 5,
+    studyHours: 40,
+    mentorHours: 5,
     levelPerMonth: 1,
     monthlyEvaluations: 10,
     total: 9000,
@@ -215,8 +230,8 @@ const bootcamps = [
     title: "9-Month Bootcamp",
     startMonday: 3,
     durationMonths: 9,
-    mentorHoursPerWeek: 5,
-    minimumWeeklyStudyHours: 40,
+    mentorHours: 5,
+    studyHours: 40,
     monthlyEvaluations: 10,
     levelPerMonth: 1,
     total: 13500,
@@ -251,8 +266,8 @@ const community = [
     description:
       "Independent learning with access to curriculum and developer community.",
     price: 50,
-    mentorHoursPerWeek: 0,
-    minimumWeeklyStudyHours: 0,
+    mentorHours: 0,
+    studyHours: 0,
     duration: "per month",
     details: ["Independent Study", ...planCommonDetails],
     primary: false,
@@ -270,4 +285,4 @@ const community = [
   },
 ];
 
-export const programs = [...bootcamps, ...selfpaceds, ...community];
+export const programs = [...bootcamps, ...selfPacedPlans, ...community];

@@ -2,7 +2,7 @@
   <!-- Content Row -->
   <div class="row">
     <div class="col-lg-3 mb-4 plans-table" v-for="plan in plans" :key="plan.id">
-      <PlanCard :plan="plan" :selectable="true" />
+      <PlanCard :plan="plan" :selectable="true" @selected="selected" />
     </div>
   </div>
   <!-- /.row -->
@@ -12,12 +12,15 @@
 import PlanCard from "@/components/PlanCard";
 
 export default {
+  props: {
+    plans: Array
+  },
   components: {
     PlanCard
   },
-  computed: {
-    plans() {
-      return this.$store.state.plans.filter(x => x.isSelfpaced);
+  methods: {
+    selected(plan) {
+      this.$emit("selected", plan);
     }
   }
 };

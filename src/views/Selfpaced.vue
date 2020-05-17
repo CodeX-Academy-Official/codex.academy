@@ -4,8 +4,12 @@
       <h2>Self-Paced Programs</h2>
       <h5>Learn at your own pace</h5>
     </Hero>
+    <div v-if="getApplicant" class="text-center bg-periwinkle pt-4 pb-4">
+      <h4>Please select a program</h4>
+    </div>
+
     <div class="container">
-      <div class="mt-5">
+      <!-- <div class="mt-5">
         <h2>Learning That Fits Your Needs</h2>
 
         <p class>
@@ -20,36 +24,44 @@
           freedom to stay with a concept longer. Your mentor will be with you at
           each step!
         </p>
-      </div>
+      </div>-->
 
       <div class="d-block d-md-none mt-5">
-        <SelfPacedTable />
+        <SelfPacedCards :plans="getSelfPaced" @selected="selected" />
       </div>
 
       <div class="d-none d-md-block mt-3">
-        <ProgramTable :programs="getSelfPaced" title="Self-Paced" />
+        <MonthlyPlanTable :plans="getSelfPaced" title="Monthly" @selected="selected" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import SelfPacedTable from "@/components/SelfPacedTable";
+import SelfPacedCards from "@/components/SelfPacedCards";
 import Unsplash from "@/components/Unsplash";
 import Hero from "@/components/Hero";
-import ProgramTable from "@/components/ProgramTable";
+import MonthlyPlanTable from "@/components/MonthlyPlanTable";
+import { mapToActivePlan } from "@/store/plans";
 
 import { mapGetters } from "vuex";
 
 export default {
   components: {
-    SelfPacedTable,
+    SelfPacedCards,
     Unsplash,
     Hero,
-    ProgramTable
+    MonthlyPlanTable
   },
   computed: {
-    ...mapGetters(["getSelfPaced"])
+    ...mapGetters(["getSelfPaced", "getStartDate", "getApplicant"])
+  },
+  methods: {
+    selected(plan) {
+      const mappedPlan = mapToActivePlan(plan, this.getStartDate);
+      this.$store.dispatch("setActivePlan", mappedPlan);
+      this.$router.push("/enroll");
+    }
   }
 };
 </script>

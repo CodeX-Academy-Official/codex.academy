@@ -8,18 +8,18 @@
           <th style="width: 30%">Program:</th>
           <td>
             <select
-              id="program"
+              id="activePlan"
               class="inputLikeText"
-              placeholder="Select a Certification"
-              v-model="certification"
+              placeholder="Select a Program"
+              v-model="activePlan"
             >
-              <option v-for="c in getCertifications" :key="c.name" :value="c">{{c.name}}</option>
+              <option v-for="c in availablePrograms" :key="c.name" :value="c">{{ c.name }}</option>
             </select>
           </td>
         </tr>
         <tr>
           <th>Description:</th>
-          <td>{{ certification.description }}</td>
+          <td>{{ activePlan.description }}</td>
         </tr>
         <tr>
           <th>Weekly Study:</th>
@@ -43,7 +43,7 @@
             <span title="Calculated from your weekly study hours.">{{ calculatedMentorHours }} hours</span>
           </td>
         </tr>
-        <tr>
+        <tr v-if="calculatedProgramMonths > 1">
           <th>Approximate Program Duration:</th>
           <td>
             <span
@@ -98,6 +98,7 @@ import EnrollForm from "@/components/EnrollForm";
 import axios from "axios";
 import { mapGetters } from "vuex";
 import { getNextDeadlineFormatted } from "@/utils/dates";
+import { mapToActivePlan } from "../../store/plans";
 
 function getFutureDate() {
   var d = new Date();
@@ -114,7 +115,7 @@ function getYesterday() {
 export default {
   data() {
     return {
-      certification: {},
+      activePlan: {},
       startDate: getNextDeadlineFormatted(),
       promoCode: "",
       studyHours: 40
@@ -122,16 +123,28 @@ export default {
   },
   computed: {
     ...mapGetters([
-      "getCertification",
+      "getActivePlan",
       "getCertifications",
       "getStartDate",
-      "getPromoCodesDisplay"
+      "getPromoCodesDisplay",
+      "getMonthlyPlans"
     ]),
+    isMonthly() {
+      return this.activePlan && this.activePlan.months === 1;
+    },
+    availablePrograms() {
+      if (this.isMonthly) {
+        return this.getMonthlyPlans.map(x =>
+          mapToActivePlan(x, this.getStartDate)
+        );
+      }
+      return this.getCertifications;
+    },
     calculatedMentorHours() {
       return this.studyHours / 8;
     },
     calculatedProgramMonths() {
-      const weeks = this.certification.studyHours / this.studyHours;
+      const weeks = this.activePlan.studyHours / this.studyHours;
       return (weeks / 52) * 12;
     }
   },
@@ -145,12 +158,14 @@ export default {
     confirmProgram() {
       if (this.isValid(this.startDate)) {
         this.applyPromoCode();
-        this.$store.dispatch("setProgram", {
+        const activePlan = mapToActivePlan(this.activePlan, this.startDate);
+
+        this.$store.dispatch("setActivePlan", {
           startDate: this.startDate,
-          weeklyStudyHours: this.studyHours,
-          weeklyMentorHours: this.calculatedMentorHours,
+          studyHours: this.studyHours,
+          mentorHours: this.calculatedMentorHours,
           months: this.calculatedProgramMonths,
-          ...this.certification
+          ...this.activePlan
         });
         this.$emit("completed", 1);
       }
@@ -165,10 +180,12 @@ export default {
     }
   },
   mounted() {
-    this.certification = this.getCertification;
-    if (!this.certification) {
+    this.activePlan = this.getActivePlan;
+    if (!this.activePlan) {
       this.$router.push("/programs");
     }
+
+    //if active plan is monthly, prepopulate differently
 
     if (this.$store.getters.getStartDate) {
       this.startDate = this.$store.getters.getStartDate;

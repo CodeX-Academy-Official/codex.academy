@@ -49,7 +49,7 @@
         placeholder="yyyy-MM-dd"
         v-model="startDate"
       />
-    </div> -->
+    </div>-->
 
     <div class="form-label-group">
       <label for="inputPassword">Financial Aid</label>
@@ -61,16 +61,12 @@
           v-model="financialAid"
           name="financialAidShort"
         />
-        <label class="form-check-label" for="financialAidShort"
-          >I want financial aid.</label
-        >
+        <label class="form-check-label" for="financialAidShort">I want financial aid.</label>
       </div>
     </div>
 
     <div class="cta">
-      <button class="btn btn-lg btn-cta btn-block text-uppercase" type="submit">
-        Start Application
-      </button>
+      <button class="btn btn-lg btn-cta btn-block text-uppercase" type="submit">Start Application</button>
     </div>
     <div class="privacy text-center mt-3">
       <router-link to="/policy/privacy">Privacy Policy</router-link>
@@ -83,21 +79,21 @@ import { getNextDeadlineFormatted } from "@/utils/dates";
 import { mapGetters } from "vuex";
 
 export default {
+  props: { promoCode: String },
   data: () => ({
     name: "",
     email: "",
-    promoCode: "COVID19",
     financialAid: true,
-    startDate: getNextDeadlineFormatted(),
+    startDate: getNextDeadlineFormatted()
   }),
   computed: {
-    ...mapGetters(["getPromoCodesDisplay"]),
+    ...mapGetters(["getPromoCodesDisplay"])
   },
   methods: {
     track() {
       this.$gtag.event("conversion", {
         event_label: "Landing Page Form Filled",
-        send_to: "AW-650985233/XLT-CKLD_8wBEJH-tLYC",
+        send_to: "AW-650985233/XLT-CKLD_8wBEJH-tLYC"
       });
     },
     submitForm() {
@@ -111,11 +107,11 @@ export default {
         financialAid: this.financialAid,
         email: this.email,
         startDate: this.startDate,
-        promoCodes: this.getPromoCodesDisplay,
+        promoCodes: this.getPromoCodesDisplay
       });
       this.track();
-    },
-  },
+    }
+  }
 };
 </script>
 

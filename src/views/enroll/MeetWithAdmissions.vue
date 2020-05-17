@@ -4,7 +4,7 @@
       <h3>Time to Meet with Admissions</h3>
       <p>
         Your application for
-        <strong>{{ getProgram.name }}</strong> has been received and is
+        <strong>{{ getActivePlan.name }}</strong> has been received and is
         currently processing.
       </p>
       <p>
@@ -25,7 +25,7 @@
 import { mapGetters } from "vuex";
 export default {
   computed: {
-    ...mapGetters(["getProgram"])
+    ...mapGetters(["getActivePlan"])
   }
 };
 </script>

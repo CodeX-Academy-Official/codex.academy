@@ -5,7 +5,7 @@
         <th>
           <h2 class="text-center">{{ title }}</h2>
         </th>
-        <th v-for="p in programs" :key="p.id">
+        <th v-for="p in plans" :key="p.id">
           <h5 class="duration" v-if="p.durationMonths">{{ p.durationMonths }}-Month</h5>
           <h1 class="price">
             <Money :amount="p.total" />
@@ -17,33 +17,33 @@
     <tbody>
       <tr>
         <th>Description</th>
-        <td v-for="p in programs" :key="p.id">{{ p.description }}</td>
+        <td v-for="p in plans" :key="p.id">{{ p.description }}</td>
       </tr>
       <tr>
         <th>Weekly 1:1 Mentoring</th>
-        <td v-for="p in programs" :key="p.id">{{ p.mentorHoursPerWeek }} hours</td>
+        <td v-for="p in plans" :key="p.id">{{ p.mentorHours }} hours</td>
       </tr>
       <tr>
         <th>Weekly Commitment</th>
-        <td v-for="p in programs" :key="p.id">{{ p.minimumWeeklyStudyHours }} hours</td>
+        <td v-for="p in plans" :key="p.id">{{ p.studyHours }} hours</td>
       </tr>
-      <Row v-for="p in programs[0].details" :key="p" :name="p" :programs="programs" />
+      <Row v-for="p in plans[0].details" :key="p" :name="p" :plans="plans" />
 
-      <Row name="Financial Aid Available" :programs="programs" v-if="programs[0].isBootcamp" />
       <tr>
         <th>Monthly Micro-Certification Evaluations</th>
-        <td v-for="p in programs" :key="p.id">{{ p.monthlyEvaluations }}</td>
+        <td v-for="p in plans" :key="p.id">{{ p.monthlyEvaluations }}</td>
       </tr>
     </tbody>
     <tfoot>
       <tr>
-        <td>
-          Need help?
-          <router-link to="/findplan">Help Me Decide</router-link>
-        </td>
-
-        <td v-for="p in programs" :key="p.id">
-          <SelectPlanButton :plan="p" text="Apply" />
+        <td></td>
+        <td v-for="p in plans" :key="p.id">
+          <SelectPlanButton
+            :plan="p"
+            :text="getApplicant ? 'Select Program' : 'Start Application'"
+            :raiseEvent="true"
+            @selected="selected"
+          />
         </td>
       </tr>
 
@@ -61,12 +61,12 @@ import { mapGetters } from "vuex";
 const Row = {
   props: {
     name: String,
-    programs: Array
+    plans: Array
   },
   components: { Icon },
   render() {
     const iconSize = 20;
-    const tds = this.programs.map(x => (
+    const tds = this.plans.map(x => (
       <td>
         <Icon name="check" size={iconSize} color="green" />
       </td>
@@ -83,12 +83,20 @@ const Row = {
 export default {
   components: {
     Row,
-    SelectPlanButton,
-    Money
+    Money,
+    SelectPlanButton
+  },
+  computed: {
+    ...mapGetters(["getApplicant"])
   },
   props: {
-    programs: Array,
+    plans: Array,
     title: String
+  },
+  methods: {
+    selected(plan) {
+      this.$emit("selected", plan);
+    }
   }
 };
 </script>

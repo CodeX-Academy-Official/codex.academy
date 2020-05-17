@@ -4,29 +4,29 @@
       <div class="row bg-lilac border shadow p-3 justify-content-center">
         <div class="col-6 col-lg-2 text-center">
           <strong class="table-title">Target Certification</strong>
-          <p>{{getProgram.name}}</p>
+          <p>{{getActivePlan.name}}</p>
         </div>
 
         <div class="col-6 col-lg-2 text-center">
           <strong class="table-title">Tuition</strong>
           <p>
-            <Money :amount="getProgram.price" />
+            <Money :amount="getActivePlan.price" />
           </p>
         </div>
 
         <div class="col-6 col-lg-2 text-center">
           <strong class="table-title">Weekly Hours</strong>
-          <p>{{getProgram.weeklyStudyHours}}</p>
+          <p>{{getActivePlan.studyHours}}</p>
         </div>
 
         <div class="col-6 col-lg-2 text-center">
           <strong class="table-title">Program Duration</strong>
-          <p>{{getProgram.months}} Months</p>
+          <p>{{getActivePlan.months}} Months</p>
         </div>
 
         <div class="col-6 col-lg-2 text-center">
           <strong class="table-title">Start Date</strong>
-          <p>{{getProgram.startDate}}</p>
+          <p>{{getActivePlan.startDate}}</p>
         </div>
 
         <div class="col-6 col-lg-2 text-center">
@@ -50,7 +50,7 @@
             :paymentType="paymentType"
             :number="index + 1"
             :programName="paymentType.programName"
-            :programTotal="getProgram.total"
+            :programTotal="getActivePlan.total"
             css="paymentType ml-4"
           />
           <Leif
@@ -58,7 +58,7 @@
             :paymentType="paymentType"
             :number="index + 1"
             :programName="paymentType.programName"
-            :programTotal="getProgram.total"
+            :programTotal="getActivePlan.total"
             css="paymentType ml-4"
           />
           <!-- <CreditCard
@@ -130,10 +130,10 @@ export default {
     Money
   },
   computed: {
-    ...mapGetters(["getProgram", "getApplicant", "getPaymentTypes"]),
+    ...mapGetters(["getActivePlan", "getApplicant", "getPaymentTypes"]),
     paymentTypes() {
       const paymentTypes = this.getPaymentTypes;
-      const program = this.getProgram;
+      const program = this.getActivePlan;
       const applicant = this.getApplicant;
       return paymentTypes.filter(x => x.worksWith(program, applicant));
     }

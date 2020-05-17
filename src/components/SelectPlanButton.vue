@@ -9,15 +9,21 @@ export default {
   props: {
     plan: Object,
     text: String,
-    buttonClass: { type: String, required: false }
+    buttonClass: { type: String, required: false },
+    raiseEvent: Boolean
   },
   methods: {
     selectPlan() {
-      this.$store.dispatch("selectPlan", this.plan);
-      const hasProgram = this.$store.getters.getSelectedPlan;
-      if (hasProgram) return this.$router.push("/enroll");
+      if (this.raiseEvent) {
+        this.$emit("selected", this.plan);
+      } else {
+        this.$store.dispatch("setActivePlan", this.plan);
 
-      this.$router.push("/findplan");
+        const hasProgram = this.$store.getters.getSelectedPlan;
+        if (hasProgram) return this.$router.push("/enroll");
+
+        this.$router.push("/findplan");
+      }
     }
   }
 };

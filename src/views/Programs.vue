@@ -64,8 +64,8 @@ export default {
     ...mapGetters(["getCertifications", "getBootcampFeatures", "getApplicant"])
   },
   methods: {
-    certificationSelected(cert) {
-      this.$store.dispatch("setCertification", cert);
+    certificationSelected(plan) {
+      this.$store.dispatch("setActivePlan", plan);
       this.$router.push("/enroll");
     }
   }

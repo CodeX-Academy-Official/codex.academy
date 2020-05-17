@@ -101,7 +101,7 @@ export default {
   },
   methods: {
     certificationSelected(cert) {
-      this.$store.dispatch("setCertification", cert);
+      this.$store.dispatch("setActivePlan", cert);
       this.$router.push("/enroll");
     }
   }
