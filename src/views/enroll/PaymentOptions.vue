@@ -68,7 +68,7 @@
             css="paymentType ml-4"
           />
           <CreditCardPreSetup
-            v-if="paymentType.type === 'creditCardpre'"
+            v-if="paymentType.type === 'creditCardPre'"
             :paymentType="paymentType"
             :number="index + 1"
             css="paymentType ml-4"

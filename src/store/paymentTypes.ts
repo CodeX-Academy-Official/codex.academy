@@ -158,7 +158,7 @@ const lowMonthly = [
 const creditCardOptions = [
   ...lowMonthly,
   {
-    type: "creditCard",
+    type: "creditCardPre",
     url: "https://app.hubspot.com/sales-checkout/tpi4vFUd",
     testUrl: "https://app.hubspot.com/sales-checkout/test_OqVDtXse",
     monthlyCharge: 400,
@@ -167,7 +167,7 @@ const creditCardOptions = [
     },
   },
   {
-    type: "creditCard",
+    type: "creditCardPre",
     url: "https://app.hubspot.com/sales-checkout/wBN890ZZ",
     testUrl: "https://app.hubspot.com/sales-checkout/test_fi5hBGei",
     monthlyCharge: 800,
@@ -176,7 +176,7 @@ const creditCardOptions = [
     },
   },
   {
-    type: "creditCard",
+    type: "creditCardPre",
     url: "https://app.hubspot.com/sales-checkout/3IILq-Ug",
     testUrl: "https://app.hubspot.com/sales-checkout/test_Q2LszpvP",
     monthlyCharge: 2800,
@@ -185,7 +185,7 @@ const creditCardOptions = [
     },
   },
   {
-    type: "creditCard",
+    type: "creditCardPre",
     url: "https://app.hubspot.com/sales-checkout/mSpPTv7B",
     testUrl: "https://app.hubspot.com/sales-checkout/test_jQz_nidL",
     monthlyCharge: 1500,
@@ -199,18 +199,17 @@ const creditCardOptions = [
     },
   },
   {
-    type: "creditCard",
+    type: "creditCardPre",
     // url: "https://app.hubspot.com/sales-checkout/wBN890ZZ",
     // testUrl: "https://app.hubspot.com/sales-checkout/test_fi5hBGei",
     monthlyCharge: 1500 * 0.75,
     worksWith: (plan: Plan, applicant: any) => {
-      return false; //not yet implemented in HS
-      //const perMonth = plan.price / plan.months;
-      //return perMonth === 1500 * 0.75;
+      const perMonth = plan.price / plan.months;
+      return perMonth === 1500 * 0.75;
     },
   },
   {
-    type: "creditCard",
+    type: "creditCardPre",
     url: "https://app.hubspot.com/sales-checkout/wBN890ZZ",
     testUrl: "https://app.hubspot.com/sales-checkout/test_fi5hBGei",
     monthlyCharge: 1500 * 0.5,
@@ -220,7 +219,7 @@ const creditCardOptions = [
     },
   },
   {
-    type: "creditCard",
+    type: "creditCardPre",
     url: "https://app.hubspot.com/sales-checkout/tpi4vFUd",
     testUrl: "https://app.hubspot.com/sales-checkout/test_OqVDtXse",
     monthlyCharge: 1500 * 0.25,
