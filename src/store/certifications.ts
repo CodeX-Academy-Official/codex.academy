@@ -3,6 +3,22 @@ import {
   FULL_STACK_DEVELOPER,
   FRONT_END_DEVELOPER,
 } from "./constants";
+import { Plan } from "@/types/Plan";
+
+export function mapCertificationToPlan(cert: any, startDate: Date): Plan {
+  return {
+    id: cert.id,
+    name: cert.name,
+    description: cert.description,
+    startDate: startDate,
+    studyHours: 0,
+    totalStudyHours: cert.studyHours,
+    mentorHours: cert.mentorHours / 5,
+    price: cert.price,
+    months: 0,
+    isMonthly: false,
+  };
+}
 
 export const certifications = [
   {

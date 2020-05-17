@@ -78,13 +78,14 @@ import { mapGetters } from "vuex";
 import CertificationCard from "@/components/CertificationCard";
 import Unsplash from "@/components/Unsplash";
 import SalaryBlock from "@/components/SalaryBlock";
+import { mapCertificationToPlan } from "../../store/certifications";
 
 export default {
   data: () => ({
     certName: FRONT_END_DEVELOPER
   }),
   computed: {
-    ...mapGetters(["getCertifications", "getBootcampFeatures"]),
+    ...mapGetters(["getCertifications", "getBootcampFeatures", "getStartDate"]),
     certification() {
       return this.getCertifications.find(x => x.name === FRONT_END_DEVELOPER);
     }
@@ -101,7 +102,10 @@ export default {
   },
   methods: {
     certificationSelected(cert) {
-      this.$store.dispatch("setActivePlan", cert);
+      this.$store.dispatch(
+        "setActivePlan",
+        mapCertificationToPlan(cert, this.getStartDate)
+      );
       this.$router.push("/enroll");
     }
   }

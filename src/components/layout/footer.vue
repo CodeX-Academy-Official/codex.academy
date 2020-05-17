@@ -25,7 +25,8 @@
         <div class="col-12 col-md-2 mb-5">
           <h4>Programs</h4>
           <p>
-            <router-link to="/programs">Overview</router-link>
+            <router-link v-if="!isLowMonthly" to="/programs">Overview</router-link>
+            <router-link v-if="isLowMonthly" to="/programs/low-monthly">Overview</router-link>
           </p>
           <p>
             <router-link to="/programs/front-end-developer" disabled>Front-End Developer</router-link>
@@ -41,7 +42,7 @@
           </p>
         </div>
 
-        <div class="col-12 col-md-2 mb-5">
+        <div class="col-12 col-md-2 mb-5" v-if="!isLowMonthly">
           <h4>Financial Aid</h4>
           <p>
             <router-link to="/financial-aid">Financing</router-link>
@@ -120,6 +121,7 @@ import {
   faTwitterSquare,
   faYoutubeSquare
 } from "@fortawesome/fontawesome-free-brands";
+import { mapGetters } from "vuex";
 
 export default {
   data: () => ({
@@ -127,7 +129,10 @@ export default {
     faInstagram,
     faTwitterSquare,
     faYoutubeSquare
-  })
+  }),
+  computed: {
+    ...mapGetters(["isLowMonthly"])
+  }
 };
 </script>
 <style lang="scss" scoped>

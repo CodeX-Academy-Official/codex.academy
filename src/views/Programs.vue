@@ -52,6 +52,7 @@ import CertificationCard from "@/components/CertificationCard";
 import Unsplash from "@/components/Unsplash";
 import Hero from "@/components/Hero";
 import { mapGetters } from "vuex";
+import { mapCertificationToPlan } from "@/store/certifications";
 
 export default {
   components: {
@@ -61,11 +62,19 @@ export default {
     CertificationCard
   },
   computed: {
-    ...mapGetters(["getCertifications", "getBootcampFeatures", "getApplicant"])
+    ...mapGetters([
+      "getCertifications",
+      "getBootcampFeatures",
+      "getApplicant",
+      "getStartDate"
+    ])
   },
   methods: {
-    certificationSelected(plan) {
-      this.$store.dispatch("setActivePlan", plan);
+    certificationSelected(cert) {
+      this.$store.dispatch(
+        "setActivePlan",
+        mapCertificationToPlan(cert, this.getStartDate)
+      );
       this.$router.push("/enroll");
     }
   }

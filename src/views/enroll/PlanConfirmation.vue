@@ -11,9 +11,10 @@
               id="activePlan"
               class="inputLikeText"
               placeholder="Select a Program"
-              v-model="activePlan"
+              v-model="activePlanId"
+              @change="changedActivePlan"
             >
-              <option v-for="c in availablePrograms" :key="c.name" :value="c">{{ c.name }}</option>
+              <option v-for="c in availablePrograms" :key="c.name" :value="c.id">{{ c.name }}</option>
             </select>
           </td>
         </tr>
@@ -25,6 +26,7 @@
           <th>Weekly Study:</th>
           <td>
             <select
+              v-if="!isMonthly"
               id="studyHours"
               class="inputLikeText"
               placeholder="Weekly Study Hours"
@@ -35,6 +37,7 @@
               <option :value="30">Around 30 Hours/Week</option>
               <option :value="40">40 Hours/Week or More</option>
             </select>
+            <p v-if="isMonthly">{{studyHours}} Hours/Week</p>
           </td>
         </tr>
         <tr>
@@ -99,6 +102,7 @@ import axios from "axios";
 import { mapGetters } from "vuex";
 import { getNextDeadlineFormatted } from "@/utils/dates";
 import { mapToActivePlan } from "../../store/plans";
+import { mapCertificationToPlan } from "../../store/certifications";
 
 function getFutureDate() {
   var d = new Date();
@@ -115,6 +119,7 @@ function getYesterday() {
 export default {
   data() {
     return {
+      activePlanId: 0,
       activePlan: {},
       startDate: getNextDeadlineFormatted(),
       promoCode: "",
@@ -127,24 +132,26 @@ export default {
       "getCertifications",
       "getStartDate",
       "getPromoCodesDisplay",
-      "getMonthlyPlans"
+      "getSelfPaced"
     ]),
     isMonthly() {
-      return this.activePlan && this.activePlan.months === 1;
+      return this.activePlan && this.activePlan.isMonthly;
     },
     availablePrograms() {
       if (this.isMonthly) {
-        return this.getMonthlyPlans.map(x =>
+        return this.getSelfPaced.map(x =>
           mapToActivePlan(x, this.getStartDate)
         );
       }
-      return this.getCertifications;
+      return this.getCertifications.map(x =>
+        mapCertificationToPlan(x, this.getStartDate)
+      );
     },
     calculatedMentorHours() {
       return this.studyHours / 8;
     },
     calculatedProgramMonths() {
-      const weeks = this.activePlan.studyHours / this.studyHours;
+      const weeks = this.activePlan.totalStudyHours / this.studyHours;
       return (weeks / 52) * 12;
     }
   },
@@ -152,6 +159,14 @@ export default {
     PlanSpread
   },
   methods: {
+    changedActivePlan() {
+      if (this.isMonthly) {
+        this.studyHours = this.activePlan.studyHours;
+      }
+      this.activePlan = this.availablePrograms.find(
+        x => x.id === this.activePlanId
+      );
+    },
     isValid(startDate) {
       return new Date(startDate) > getYesterday();
     },
@@ -161,11 +176,11 @@ export default {
         const activePlan = mapToActivePlan(this.activePlan, this.startDate);
 
         this.$store.dispatch("setActivePlan", {
+          ...this.activePlan,
           startDate: this.startDate,
           studyHours: this.studyHours,
           mentorHours: this.calculatedMentorHours,
-          months: this.calculatedProgramMonths,
-          ...this.activePlan
+          months: this.calculatedProgramMonths
         });
         this.$emit("completed", 1);
       }
@@ -182,10 +197,10 @@ export default {
   mounted() {
     this.activePlan = this.getActivePlan;
     if (!this.activePlan) {
-      this.$router.push("/programs");
+      this.$router.push("/");
     }
 
-    //if active plan is monthly, prepopulate differently
+    this.activePlanId = this.activePlan.id;
 
     if (this.$store.getters.getStartDate) {
       this.startDate = this.$store.getters.getStartDate;

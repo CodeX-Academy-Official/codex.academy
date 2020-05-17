@@ -15,11 +15,11 @@
         </div>
 
         <div class="col-6 col-lg-2 text-center">
-          <strong class="table-title">Weekly Hours</strong>
+          <strong class="table-title">Weekly Study Hours</strong>
           <p>{{getActivePlan.studyHours}}</p>
         </div>
 
-        <div class="col-6 col-lg-2 text-center">
+        <div class="col-6 col-lg-2 text-center" v-if="getActivePlan.months>1">
           <strong class="table-title">Program Duration</strong>
           <p>{{getActivePlan.months}} Months</p>
         </div>

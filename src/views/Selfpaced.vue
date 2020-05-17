@@ -5,7 +5,7 @@
       <h5>Learn at your own pace</h5>
     </Hero>
     <div v-if="getApplicant" class="text-center bg-periwinkle pt-4 pb-4">
-      <h4>Please select a program</h4>
+      <h4>Please select a plan</h4>
     </div>
 
     <div class="container">

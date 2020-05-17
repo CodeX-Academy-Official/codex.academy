@@ -20,13 +20,13 @@ const vuexLocal = new VuexPersistence({
 
 Vue.use(Vuex);
 
-const SELECT_PLAN = "SELECT_PLAN";
 const ENROLL = "ENROLL";
 const SET_START_DATE = "SET_START_DATE";
 const APPLY_PROMO_CODE = "APPLY_PROMO_CODE";
 const PAY_APP_FEE = "PAY_APP_FEE";
 const SET_ACTIVE_PLAN = "SET_ACTIVE_PLAN";
 const SCHEDULE_CARD_PAYMENT = "SCHEDULE_CARD_PAYMENT";
+const SET_PRICE_CLASS = "SET_PRICE_CLASS";
 
 export default new Vuex.Store({
   state: {
@@ -36,6 +36,8 @@ export default new Vuex.Store({
     promoCodes: [],
     appFeePaid: undefined,
     paymentInfo: undefined,
+    priceClass: undefined,
+    activePlan: undefined,
   },
   mutations: {
     [SCHEDULE_CARD_PAYMENT](state: any, paymentInfo) {
@@ -56,8 +58,14 @@ export default new Vuex.Store({
     [PAY_APP_FEE](state: any) {
       state.appFeePaid = new Date();
     },
+    [SET_PRICE_CLASS](state: any, priceClass: string) {
+      state.priceClass = priceClass;
+    },
   },
   actions: {
+    setPriceClass(context, priceClass: string) {
+      context.commit(SET_PRICE_CLASS, priceClass);
+    },
     async setPaymentInfo({ commit }, paymentInfo) {
       const formId = "a69ff037-472e-4b81-a35d-1a91b59787d7";
       commit(SCHEDULE_CARD_PAYMENT, paymentInfo);
@@ -96,8 +104,15 @@ export default new Vuex.Store({
   },
   getters: {
     getActivePlan: (state): Plan => state.activePlan,
-    getSelfPaced: () => selfPacedPlans,
-    getMonthlyPlans: () => selfPacedPlans,
+    getSelfPaced: (state) => {
+      if (state.priceClass) {
+        return selfPacedPlans.filter(
+          (x: any) => x.priceClass === state.priceClass
+        );
+      }
+
+      return selfPacedPlans;
+    },
     getPathways: () => pathways,
     getTechnologies: () =>
       technologies.sort((a: any, b: any) => a.order - b.order),
@@ -122,6 +137,8 @@ export default new Vuex.Store({
     getPaymentTypes: () => paymentTypes,
     getPaymentInfo: (state) => state.paymentInfo,
     getCountries: () => countries.filter((x: any) => x.country.length < 25),
+    isLowMonthly: (state) => state.priceClass === "low-monthly",
+    getPriceClass: (state) => state.priceClass,
   },
   modules: {},
   plugins: [vuexLocal.plugin],

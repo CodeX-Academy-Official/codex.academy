@@ -126,6 +126,7 @@ export default {
   mounted() {
     const applicant = this.getApplicant;
     this.hasApplied = applicant;
+    this.$store.dispatch("setPriceClass", "low-monthly");
   }
 };
 </script>

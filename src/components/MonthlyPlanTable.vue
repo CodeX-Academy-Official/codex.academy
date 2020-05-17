@@ -16,6 +16,10 @@
     </thead>
     <tbody>
       <tr>
+        <th>Name</th>
+        <td v-for="p in plans" :key="p.id">{{ p.title }}</td>
+      </tr>
+      <tr>
         <th>Description</th>
         <td v-for="p in plans" :key="p.id">{{ p.description }}</td>
       </tr>
@@ -40,7 +44,7 @@
         <td v-for="p in plans" :key="p.id">
           <SelectPlanButton
             :plan="p"
-            :text="getApplicant ? 'Select Program' : 'Start Application'"
+            :text="getApplicant ? 'Select Monthly Plan' : 'Start Application'"
             :raiseEvent="true"
             @selected="selected"
           />
