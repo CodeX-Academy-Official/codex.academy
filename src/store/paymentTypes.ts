@@ -1,3 +1,5 @@
+import { Plan } from "@/types/Plan";
+
 function isInUSA(applicant: any) {
   if (!applicant) return false;
   const applicantInUSA =
@@ -5,12 +7,12 @@ function isInUSA(applicant: any) {
   return applicantInUSA;
 }
 
-function climb(program: any, applicant: any, programName: string) {
+function climb(program: Plan, applicant: any, programName: string) {
   const applicantInUSA = isInUSA(applicant);
   if (!applicantInUSA) return false;
   const programIsFrontEnd = program.name.indexOf(programName) > -1;
   if (!programIsFrontEnd) return false;
-  const isFullTime = program.weeklyStudyHours >= 30;
+  const isFullTime = program.studyHours >= 30;
   if (!isFullTime) return false;
   return true;
 }
@@ -20,7 +22,7 @@ const climbOptions = [
     type: "climb",
     programName: "Front-End Developer",
     startingMonthlyPayments: 250,
-    worksWith: (program: any, applicant: any) => {
+    worksWith: (program: Plan, applicant: any) => {
       return climb(program, applicant, "Front-End Developer");
     },
   },
@@ -28,7 +30,7 @@ const climbOptions = [
     type: "climb",
     programName: "Full-Stack Developer",
     startingMonthlyPayments: 250,
-    worksWith: (program: any, applicant: any) => {
+    worksWith: (program: Plan, applicant: any) => {
       return climb(program, applicant, "Full-Stack Developer");
     },
   },
@@ -36,7 +38,7 @@ const climbOptions = [
     type: "climb",
     programName: "Full-Stack Engineer",
     startingMonthlyPayments: 250,
-    worksWith: (program: any, applicant: any) => {
+    worksWith: (program: Plan, applicant: any) => {
       return climb(program, applicant, "Full-Stack Engineer");
     },
   },
@@ -45,12 +47,12 @@ const climbOptions = [
 const fullTime = true;
 const partTime = false;
 function leif(
-  program: any,
+  program: Plan,
   applicant: any,
   programName: string,
   requiresFullTime: boolean
 ) {
-  const isFullTime = program.weeklyStudyHours >= 30;
+  const isFullTime = program.studyHours >= 30;
   if (requiresFullTime && !isFullTime) return false;
   if (!requiresFullTime && isFullTime) return false;
   const applicantInUSA = isInUSA(applicant);
@@ -67,7 +69,7 @@ const leifPaymentOptions = [
     ratePercent: 10,
     termMonths: 24,
     url: "https://leif.org/commit?product_id=5ea9f9b405af553e40c404d6",
-    worksWith: (program: any, applicant: any) => {
+    worksWith: (program: Plan, applicant: any) => {
       return leif(program, applicant, "Front-End Developer", fullTime);
     },
   },
@@ -77,7 +79,7 @@ const leifPaymentOptions = [
     ratePercent: 10,
     termMonths: 24,
     url: "https://leif.org/commit?product_id=5ea9faa086aac87083c404ea",
-    worksWith: (program: any, applicant: any) => {
+    worksWith: (program: Plan, applicant: any) => {
       return leif(program, applicant, "Front-End Developer", partTime);
     },
   },
@@ -87,7 +89,7 @@ const leifPaymentOptions = [
     ratePercent: 10,
     termMonths: 36,
     url: "https://leif.org/commit?product_id=5ea9f8f5562d30bc52c404d8",
-    worksWith: (program: any, applicant: any) => {
+    worksWith: (program: Plan, applicant: any) => {
       return leif(program, applicant, "Full-Stack Developer", fullTime);
     },
   },
@@ -97,7 +99,7 @@ const leifPaymentOptions = [
     minimumSalary: 40000,
     ratePercent: 10,
     termMonths: 36,
-    worksWith: (program: any, applicant: any) => {
+    worksWith: (program: Plan, applicant: any) => {
       return leif(program, applicant, "Full-Stack Developer", partTime);
     },
   },
@@ -107,7 +109,7 @@ const leifPaymentOptions = [
     minimumSalary: 50000,
     ratePercent: 10,
     termMonths: 42,
-    worksWith: (program: any, applicant: any) => {
+    worksWith: (program: Plan, applicant: any) => {
       return leif(program, applicant, "Full-Stack Engineer", fullTime);
     },
   },
@@ -117,21 +119,77 @@ const leifPaymentOptions = [
     minimumSalary: 50000,
     ratePercent: 10,
     termMonths: 42,
-    worksWith: (program: any, applicant: any) => {
+    worksWith: (program: Plan, applicant: any) => {
       return leif(program, applicant, "Full-Stack Engineer", partTime);
     },
   },
 ];
 
+const lowMonthly = [
+  {
+    type: "creditCard",
+    monthlyCharge: 100,
+    worksWith: (plan: Plan, applicant: any) => {
+      return plan.price === 100;
+    },
+  },
+  {
+    type: "creditCard",
+    monthlyCharge: 300,
+    worksWith: (plan: Plan, applicant: any) => {
+      return plan.price === 300;
+    },
+  },
+  {
+    type: "creditCard",
+    monthlyCharge: 500,
+    worksWith: (plan: Plan, applicant: any) => {
+      return plan.price === 500;
+    },
+  },
+];
+
 const creditCardOptions = [
+  ...lowMonthly,
+  {
+    type: "creditCard",
+    url: "https://app.hubspot.com/sales-checkout/tpi4vFUd",
+    testUrl: "https://app.hubspot.com/sales-checkout/test_OqVDtXse",
+    monthlyCharge: 400,
+    worksWith: (plan: Plan, applicant: any) => {
+      return plan.price === 400;
+    },
+  },
+  {
+    type: "creditCard",
+    url: "https://app.hubspot.com/sales-checkout/wBN890ZZ",
+    testUrl: "https://app.hubspot.com/sales-checkout/test_fi5hBGei",
+    monthlyCharge: 800,
+    worksWith: (plan: Plan, applicant: any) => {
+      return plan.price === 800;
+    },
+  },
+  {
+    type: "creditCard",
+    url: "https://app.hubspot.com/sales-checkout/3IILq-Ug",
+    testUrl: "https://app.hubspot.com/sales-checkout/test_Q2LszpvP",
+    monthlyCharge: 2800,
+    worksWith: (plan: Plan, applicant: any) => {
+      return plan.price === 2800;
+    },
+  },
   {
     type: "creditCard",
     url: "https://app.hubspot.com/sales-checkout/mSpPTv7B",
     testUrl: "https://app.hubspot.com/sales-checkout/test_jQz_nidL",
     monthlyCharge: 1500,
-    worksWith: (program: any, applicant: any) => {
-      const perMonth = program.price / program.months;
-      return perMonth > 1500 * 0.5; //anything higher than half-time
+    worksWith: (plan: Plan, applicant: any) => {
+      if (plan.price === 1500) {
+        return true;
+      }
+
+      const perMonth = plan.price / plan.months;
+      return perMonth === 1500;
     },
   },
   {
@@ -139,10 +197,10 @@ const creditCardOptions = [
     // url: "https://app.hubspot.com/sales-checkout/wBN890ZZ",
     // testUrl: "https://app.hubspot.com/sales-checkout/test_fi5hBGei",
     monthlyCharge: 1500 * 0.75,
-    worksWith: (program: any, applicant: any) => {
+    worksWith: (plan: Plan, applicant: any) => {
       return false; //not yet implemented in HS
-      const perMonth = program.price / program.months;
-      return perMonth === 1500 * 0.75;
+      //const perMonth = plan.price / plan.months;
+      //return perMonth === 1500 * 0.75;
     },
   },
   {
@@ -150,8 +208,8 @@ const creditCardOptions = [
     url: "https://app.hubspot.com/sales-checkout/wBN890ZZ",
     testUrl: "https://app.hubspot.com/sales-checkout/test_fi5hBGei",
     monthlyCharge: 1500 * 0.5,
-    worksWith: (program: any, applicant: any) => {
-      const perMonth = program.price / program.months;
+    worksWith: (plan: Plan, applicant: any) => {
+      const perMonth = plan.price / plan.months;
       return perMonth === 1500 * 0.5;
     },
   },
@@ -160,8 +218,8 @@ const creditCardOptions = [
     url: "https://app.hubspot.com/sales-checkout/tpi4vFUd",
     testUrl: "https://app.hubspot.com/sales-checkout/test_OqVDtXse",
     monthlyCharge: 1500 * 0.25,
-    worksWith: (program: any, applicant: any) => {
-      const perMonth = program.price / program.months;
+    worksWith: (plan: Plan, applicant: any) => {
+      const perMonth = plan.price / plan.months;
       return perMonth === 1500 * 0.25;
     },
   },
@@ -173,7 +231,7 @@ export const paymentTypes = [
   ...creditCardOptions,
   //   {
   //     type: "callBack",
-  //     worksWith: (program: any, applicant: any) => {
+  //     worksWith: (program: Plan, applicant: any) => {
   //       return true;
   //     },
   //   },

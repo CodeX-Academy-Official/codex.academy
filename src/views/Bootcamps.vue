@@ -26,7 +26,7 @@
       </div>
 
       <div class="d-none d-lg-block mt-3">
-        <ProgramTable :programs="getBootcamps" title="Bootcamps" />
+        <MonthlyPlanTable :plans="getBootcamps" title="Bootcamps" />
       </div>
     </div>
   </div>
@@ -36,7 +36,7 @@
 import BootcampsTable from "@/components/BootcampsTable";
 import Unsplash from "@/components/Unsplash";
 import Hero from "@/components/Hero";
-import ProgramTable from "@/components/ProgramTable";
+import MonthlyPlanTable from "@/components/MonthlyPlanTable";
 import { mapGetters } from "vuex";
 
 export default {
@@ -44,7 +44,7 @@ export default {
     BootcampsTable,
     Unsplash,
     Hero,
-    ProgramTable
+    MonthlyPlanTable
   },
   computed: {
     ...mapGetters(["getBootcamps"])

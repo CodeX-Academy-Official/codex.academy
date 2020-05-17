@@ -4,7 +4,7 @@
     <div v-if="!getApplicationFee">
       <p>
         To complete your applicaion for
-        <strong>{{ getProgram.name }}</strong>
+        <strong>{{ getActivePlan.name }}</strong>
         , please submit a ${{ amount }} application fee using the button below.
       </p>
       <p>
@@ -28,7 +28,7 @@ import PayAppFee from "@/components/PayAppFee";
 
 export default {
   computed: {
-    ...mapGetters(["getProgram", "getApplicationFee", "getApplicant"])
+    ...mapGetters(["getActivePlan", "getApplicationFee", "getApplicant"])
   },
   data: () => ({
     amount: 50

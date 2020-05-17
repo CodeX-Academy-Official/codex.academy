@@ -30,7 +30,7 @@ export default {
   },
   data: () => ({}),
   created() {
-    if (!this.$store.getters.getProgram) {
+    if (!this.$store.getters.getActivePlan) {
       this.$router.push("/");
     }
   }

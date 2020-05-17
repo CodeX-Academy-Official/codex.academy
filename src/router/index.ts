@@ -49,16 +49,6 @@ const routes = [
     component: HomeApril2020,
   },
   {
-    path: "/selfpaced",
-    name: "Selfpaced",
-    component: Selfpaced,
-  },
-  {
-    path: "/bootcamps",
-    name: "Bootcamps",
-    component: Bootcamps,
-  },
-  {
     path: "/community",
     name: "Community",
     component: Community,
