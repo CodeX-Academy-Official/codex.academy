@@ -33,9 +33,14 @@
       </tr>
       <Row v-for="p in plans[0].details" :key="p" :name="p" :plans="plans" />
 
-      <tr>
+      <tr v-if="plans.find(x=> x.monthlyEvaluations>0)">
         <th>Monthly Micro-Certification Evaluations</th>
         <td v-for="p in plans" :key="p.id">{{ p.monthlyEvaluations }}</td>
+      </tr>
+
+      <tr v-if="plans.filter(x=> x.monthlyProjectEvals>0).length">
+        <th>Monthly Project Evaluations</th>
+        <td v-for="p in plans" :key="p.id">{{ p.monthlyProjectEvals }}</td>
       </tr>
     </tbody>
     <tfoot>
