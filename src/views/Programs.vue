@@ -66,7 +66,8 @@ export default {
       "getCertifications",
       "getBootcampFeatures",
       "getApplicant",
-      "getStartDate"
+      "getStartDate",
+      "isLowMonthly"
     ])
   },
   methods: {
@@ -76,6 +77,11 @@ export default {
         mapCertificationToPlan(cert, this.getStartDate)
       );
       this.$router.push("/enroll");
+    }
+  },
+  mounted() {
+    if (this.isLowMonthly) {
+      this.$router.push("/programs/low-monthly");
     }
   }
 };

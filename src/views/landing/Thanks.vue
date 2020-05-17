@@ -3,7 +3,7 @@
     <h3>Thanks</h3>
     <p>Now it's time to choose your program. Click the button below to find the program that's right for you!</p>
     <p class="text-center">
-      <router-link to="programs" class="btn btn-primary">
+      <router-link to="/programs" class="btn btn-primary">
         <strong>Continue Application >></strong>
       </router-link>
     </p>

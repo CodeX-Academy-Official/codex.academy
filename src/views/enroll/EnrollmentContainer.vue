@@ -46,15 +46,9 @@
 
             <Step
               :number="5"
-              name="Meet with Admissions"
-              @click="navigateToStage"
-              :clickable="
-                (getApplicant !== undefined && shouldWaiveAppFee) ||
-                  getApplicationFee !== undefined || 
-                  getPaymentInfo !== undefined
-
-              "
-              :active="routeHas('/enroll/admissions')"
+              name="Start Learning"
+              :clickable="false"
+              :active="routeHas('/enroll/complete')"
             />
           </div>
         </div>
@@ -109,7 +103,7 @@ const stages = {
   2: "/enroll/applicant",
   3: "/enroll/appfee",
   4: "/enroll/payment",
-  5: "/enroll/admissions"
+  5: "/enroll/complete"
 };
 
 export default {

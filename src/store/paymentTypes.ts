@@ -128,6 +128,8 @@ const leifPaymentOptions = [
 const lowMonthly = [
   {
     type: "creditCard",
+    url: "https://app.hubspot.com/sales-checkout/h7GdbUcj",
+    testUrl: "https://app.hubspot.com/sales-checkout/test_HOYd1nva",
     monthlyCharge: 100,
     worksWith: (plan: Plan, applicant: any) => {
       return plan.price === 100;
@@ -135,6 +137,8 @@ const lowMonthly = [
   },
   {
     type: "creditCard",
+    url: "https://app.hubspot.com/sales-checkout/jVIi5tqq",
+    testUrl: "https://app.hubspot.com/sales-checkout/test_ezF3nEz-",
     monthlyCharge: 300,
     worksWith: (plan: Plan, applicant: any) => {
       return plan.price === 300;
@@ -142,6 +146,8 @@ const lowMonthly = [
   },
   {
     type: "creditCard",
+    url: "https://app.hubspot.com/sales-checkout/EmnkUpln",
+    testUrl: "https://app.hubspot.com/sales-checkout/test_GEp1bO_R",
     monthlyCharge: 500,
     worksWith: (plan: Plan, applicant: any) => {
       return plan.price === 500;

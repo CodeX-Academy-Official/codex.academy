@@ -61,14 +61,14 @@
             :programTotal="getActivePlan.total"
             css="paymentType ml-4"
           />
-          <!-- <CreditCard
+          <CreditCard
             v-if="paymentType.type === 'creditCard'"
             :paymentType="paymentType"
             :number="index + 1"
             css="paymentType ml-4"
-          />-->
+          />
           <CreditCardPreSetup
-            v-if="paymentType.type === 'creditCard'"
+            v-if="paymentType.type === 'creditCardpre'"
             :paymentType="paymentType"
             :number="index + 1"
             css="paymentType ml-4"
