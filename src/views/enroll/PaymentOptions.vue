@@ -3,7 +3,7 @@
     <div class="text-center">
       <div class="row bg-lilac border shadow p-3 justify-content-center">
         <div class="col-6 col-lg-2 text-center">
-          <strong class="table-title">Target Certification</strong>
+          <strong class="table-title">Program</strong>
           <p>{{getActivePlan.name}}</p>
         </div>
 
@@ -15,12 +15,12 @@
         </div>
 
         <div class="col-6 col-lg-2 text-center">
-          <strong class="table-title">Weekly Study Hours</strong>
-          <p>{{getActivePlan.studyHours}}</p>
+          <strong class="table-title">Study Hours</strong>
+          <p>{{getActivePlan.studyHours}} Hours/Week</p>
         </div>
 
         <div class="col-6 col-lg-2 text-center" v-if="getActivePlan.months>1">
-          <strong class="table-title">Program Duration</strong>
+          <strong class="table-title">Duration</strong>
           <p>{{getActivePlan.months}} Months</p>
         </div>
 
