@@ -12,9 +12,9 @@
       <p class="mt-3 card-text text-muted">Monthly tuition payments on your credit or debit card.</p>
     </div>
     <div class="card-footer">
-      <a :href="url" class="btn btn-primary btn-block">
+      <button @click="click" class="btn btn-primary btn-block">
         <strong>Subscribe</strong>
-      </a>
+      </button>
     </div>
   </div>
 </template>
@@ -29,11 +29,20 @@ export default {
     css: String
   },
   components: { Money },
-  computed: {
-    url() {
-      return this.$store.state.testMode
+  methods: {
+    click() {
+      const applicant = this.$store.getters.getApplicant;
+
+      const payload = {
+        email: applicant.email,
+        paymentType: "stripe"
+      };
+      this.$store.dispatch("setPaymentInfo", payload);
+
+      const url = this.$store.state.testMode
         ? this.paymentType.testUrl
         : this.paymentType.url;
+      window.open(url, "_self");
     }
   }
 };
