@@ -48,7 +48,11 @@
           <div class="col-5 d-none d-lg-block my-auto">
             <div class="start-application-form" v-if="!hasApplied">
               <h5 class="card-title text-center">Sign Up Today</h5>
-              <StartApplicationForm @submitted="startApplication" promoCode="COVID19" />
+              <StartApplicationForm
+                @submitted="startApplication"
+                hasPromoCode="COVID19"
+                :offerFinancialAid="true"
+              />
             </div>
             <Thanks v-if="hasApplied" @startOver="clearApplicant" />
           </div>
@@ -61,7 +65,11 @@
         <div class="col-10 bg-periwinkle shadow border p-4">
           <div class="start-application-form" v-if="!hasApplied">
             <h2 class="card-title text-center">Get Started Learning</h2>
-            <StartApplicationForm @submitted="startApplication" promoCode="COVID19" />
+            <StartApplicationForm
+              @submitted="startApplication"
+              hasPromoCode="COVID19"
+              :offerFinancialAid="true"
+            />
           </div>
           <Thanks v-if="hasApplied" @startOver="clearApplicant" />
         </div>
