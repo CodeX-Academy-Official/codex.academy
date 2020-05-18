@@ -1,7 +1,7 @@
 <template>
   <div class="pb-5">
     <Hero unsplashId="IgUR1iX0mqM" height="40vh">
-      <h2>Self-Paced Programs</h2>
+      <h2>Monthly Plans</h2>
       <h5>Learn at your own pace</h5>
     </Hero>
     <div v-if="getApplicant" class="text-center bg-periwinkle pt-4 pb-4">
