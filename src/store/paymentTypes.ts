@@ -128,6 +128,8 @@ const leifPaymentOptions = [
 const lowMonthly = [
   {
     type: "creditCard",
+    url: "https://app.hubspot.com/sales-checkout/h7GdbUcj",
+    testUrl: "https://app.hubspot.com/sales-checkout/test_HOYd1nva",
     monthlyCharge: 100,
     worksWith: (plan: Plan, applicant: any) => {
       return plan.price === 100;
@@ -135,6 +137,8 @@ const lowMonthly = [
   },
   {
     type: "creditCard",
+    url: "https://app.hubspot.com/sales-checkout/jVIi5tqq",
+    testUrl: "https://app.hubspot.com/sales-checkout/test_ezF3nEz-",
     monthlyCharge: 300,
     worksWith: (plan: Plan, applicant: any) => {
       return plan.price === 300;
@@ -142,6 +146,8 @@ const lowMonthly = [
   },
   {
     type: "creditCard",
+    url: "https://app.hubspot.com/sales-checkout/EmnkUpln",
+    testUrl: "https://app.hubspot.com/sales-checkout/test_GEp1bO_R",
     monthlyCharge: 500,
     worksWith: (plan: Plan, applicant: any) => {
       return plan.price === 500;
@@ -152,7 +158,7 @@ const lowMonthly = [
 const creditCardOptions = [
   ...lowMonthly,
   {
-    type: "creditCard",
+    type: "creditCardPre",
     url: "https://app.hubspot.com/sales-checkout/tpi4vFUd",
     testUrl: "https://app.hubspot.com/sales-checkout/test_OqVDtXse",
     monthlyCharge: 400,
@@ -161,7 +167,7 @@ const creditCardOptions = [
     },
   },
   {
-    type: "creditCard",
+    type: "creditCardPre",
     url: "https://app.hubspot.com/sales-checkout/wBN890ZZ",
     testUrl: "https://app.hubspot.com/sales-checkout/test_fi5hBGei",
     monthlyCharge: 800,
@@ -170,7 +176,7 @@ const creditCardOptions = [
     },
   },
   {
-    type: "creditCard",
+    type: "creditCardPre",
     url: "https://app.hubspot.com/sales-checkout/3IILq-Ug",
     testUrl: "https://app.hubspot.com/sales-checkout/test_Q2LszpvP",
     monthlyCharge: 2800,
@@ -179,7 +185,7 @@ const creditCardOptions = [
     },
   },
   {
-    type: "creditCard",
+    type: "creditCardPre",
     url: "https://app.hubspot.com/sales-checkout/mSpPTv7B",
     testUrl: "https://app.hubspot.com/sales-checkout/test_jQz_nidL",
     monthlyCharge: 1500,
@@ -193,18 +199,17 @@ const creditCardOptions = [
     },
   },
   {
-    type: "creditCard",
+    type: "creditCardPre",
     // url: "https://app.hubspot.com/sales-checkout/wBN890ZZ",
     // testUrl: "https://app.hubspot.com/sales-checkout/test_fi5hBGei",
     monthlyCharge: 1500 * 0.75,
     worksWith: (plan: Plan, applicant: any) => {
-      return false; //not yet implemented in HS
-      //const perMonth = plan.price / plan.months;
-      //return perMonth === 1500 * 0.75;
+      const perMonth = plan.price / plan.months;
+      return perMonth === 1500 * 0.75;
     },
   },
   {
-    type: "creditCard",
+    type: "creditCardPre",
     url: "https://app.hubspot.com/sales-checkout/wBN890ZZ",
     testUrl: "https://app.hubspot.com/sales-checkout/test_fi5hBGei",
     monthlyCharge: 1500 * 0.5,
@@ -214,7 +219,7 @@ const creditCardOptions = [
     },
   },
   {
-    type: "creditCard",
+    type: "creditCardPre",
     url: "https://app.hubspot.com/sales-checkout/tpi4vFUd",
     testUrl: "https://app.hubspot.com/sales-checkout/test_OqVDtXse",
     monthlyCharge: 1500 * 0.25,

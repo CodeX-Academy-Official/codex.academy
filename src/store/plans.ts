@@ -2,8 +2,9 @@ import { Plan } from "@/types/Plan";
 
 const planCommonDetails = [
   "Self-Paced",
+  "Expert-Curated Content",
   "Unlimited Learning Pathway Access",
-  "24/7 Community Chat Access",
+  "24/7 Mentor Chat Access",
   "Build a Portfolio",
 ];
 
@@ -42,7 +43,7 @@ const lowMonthly = [
     price: 100,
     total: 100,
     duration: "per month",
-    details: [...planCommonDetails],
+    details: [...mentorDrivenCommonDetails],
     isSelfpaced: true,
     isMentoring: true,
   },
@@ -59,7 +60,7 @@ const lowMonthly = [
     price: 300,
     total: 300,
     duration: "per month",
-    details: [...planCommonDetails],
+    details: [...mentorDrivenCommonDetails],
     isSelfpaced: true,
     isMentoring: true,
   },
@@ -76,7 +77,7 @@ const lowMonthly = [
     price: 500,
     total: 500,
     duration: "per month",
-    details: [...planCommonDetails],
+    details: [...mentorDrivenCommonDetails],
     isSelfpaced: true,
     isMentoring: true,
   },
