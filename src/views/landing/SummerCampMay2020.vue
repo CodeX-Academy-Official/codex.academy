@@ -1,8 +1,8 @@
 <template>
   <div>
     <Hero
-      class="april2020-landing-hero"
-      :unsplashIds="['vdXMSiX-n6M', 'Qg-r7OxZN7A', 'YK0HPwWDJ1I']"
+      class="april2020s-landing-hero"
+      :unsplashIds="['LIaLQ2SIQuk', 'ix9I7kfMpcc', 'wGqz5YSqsfk']"
       height="100vh"
       backgroundColor="rgba(25, 32, 71,0.7)"
     >
@@ -11,50 +11,41 @@
           <div class="col my-auto big-message">
             <Logo color="white" :width="150" class="landing-logo mb-3" />
             <div class>
-              <h3 class="text-left action">Learn to code</h3>
-              <h1 class="text-left action">In 6 Months</h1>
+              <h3 class="text-left action">Beat the Heat, Learn to Code</h3>
+              <h1 class="text-left action">
+                Summer
+                Bootcamp
+              </h1>
             </div>
             <div class="checklist">
-              <div class="title">We'll help you do it!</div>
+              <div class="title">Take back your summer!</div>
               <div class="item">
                 <Icon name="checkbox" />
-                <span>Daily mentoring sessions</span>
+                <span>Daily Classes and Mentoring</span>
               </div>
               <div class="item">
                 <Icon name="checkbox" />
-                <span>Hyperfocused curriculum</span>
+                <span>World-Class Mentors</span>
               </div>
               <div class="item">
                 <Icon name="checkbox" />
-                <span>Walk into an internship</span>
+                <span>100% Remote</span>
               </div>
               <div class="item">
                 <Icon name="checkbox" />
                 <span>
-                  <strong>Pay ZERO until your first job</strong>
+                  <strong>Ages 12 and Up</strong>
                 </span>
               </div>
-            </div>
-
-            <div class="d-none d-lg-block">
-              <PromoAppFeeWaived style="max-width: 450px;" class="mt-5" />
-            </div>
-
-            <div class="d-block d-lg-none">
-              <PromoAppFeeWaived style="max-width: 450px;" class="mx-auto mt-5" />
             </div>
           </div>
 
           <div class="col-5 d-none d-lg-block my-auto">
             <div class="start-application-form" v-if="!hasApplied">
               <h5 class="card-title text-center">Sign Up Today</h5>
-              <StartApplicationForm
-                @submitted="startApplication"
-                hasPromoCode="COVID19"
-                :offerFinancialAid="true"
-              />
+              <StartApplicationForm @submitted="startApplication" :offerFinancialAid="false" />
             </div>
-            <Thanks v-if="hasApplied" @startOver="clearApplicant" />
+            <Thanks v-if="hasApplied" @startOver="clearApplicant" :offerFinancialAid="false" />
           </div>
         </div>
       </div>
@@ -65,26 +56,16 @@
         <div class="col-10 bg-periwinkle shadow border p-4">
           <div class="start-application-form" v-if="!hasApplied">
             <h2 class="card-title text-center">Get Started Learning</h2>
-            <StartApplicationForm
-              @submitted="startApplication"
-              hasPromoCode="COVID19"
-              :offerFinancialAid="true"
-            />
+            <StartApplicationForm @submitted="startApplication" />
           </div>
           <Thanks v-if="hasApplied" @startOver="clearApplicant" />
         </div>
       </div>
     </div>
 
-    <StatsSection />
-
-    <CommercialSection />
-
     <TechSection />
 
-    <TestimonialsSection class="pb-5" />
-
-    <InternshipPartnersSection />
+    <TestimonialsSection />
   </div>
 </template>
 
@@ -96,13 +77,11 @@ import { mapGetters } from "vuex";
 import Icon from "@/components/Icon";
 import Logo from "@/components/Logo";
 import SelectPlanButton from "@/components/SelectPlanButton";
-import PromoAppFeeWaived from "@/components/PromoAppFeeWaived";
-
+import Promo25OffMonthly from "@/components/Promo25OffMonthly";
 import TechSection from "@/components/sections/tech";
 import CommercialSection from "@/components/sections/CommercialSection";
 import StatsSection from "@/components/sections/StatsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
-import InternshipPartnersSection from "@/components/sections/InternshipPartnersSection";
 
 export default {
   components: {
@@ -112,13 +91,11 @@ export default {
     Icon,
     Logo,
     Thanks,
-    PromoAppFeeWaived,
-
+    Promo25OffMonthly,
     TechSection,
     StatsSection,
     TestimonialsSection,
-    CommercialSection,
-    InternshipPartnersSection
+    CommercialSection
   },
   data: () => ({
     hasApplied: false
@@ -127,11 +104,11 @@ export default {
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", {
-        applicant: { ...applicant, source: "CodeX Academy April 2020" }
+        applicant: { ...applicant, source: "Summer-Camp May 2020" }
       });
       await this.$store.dispatch("setStartDate", applicant.startDate);
       this.hasApplied = true;
-      this.$router.push("/programs");
+      this.$router.push("/programs/low-monthly");
     },
     clearApplicant() {
       this.hasApplied = false;
@@ -140,6 +117,7 @@ export default {
   mounted() {
     const applicant = this.getApplicant;
     this.hasApplied = applicant;
+    //this.$store.dispatch("setPriceClass", "low-monthly");
   }
 };
 </script>
@@ -147,7 +125,7 @@ export default {
 <style lang="scss">
 @import "@/variables";
 
-.april2020-landing-hero {
+.april2020s-landing-hero {
   .thanks-box {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 5px;
@@ -223,7 +201,7 @@ export default {
   h4,
   h5 {
     font-size: 4.2em;
-    margin: 0;
+    margin: 0px;
   }
   h2 {
     font-size: 2em;

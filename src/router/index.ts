@@ -166,6 +166,10 @@ const routes = [
     ],
   },
   {
+    path: "/enrollment-complete",
+    redirect: "/enroll/complete",
+  },
+  {
     path: "/team",
     name: "Team",
     // route level code-splitting

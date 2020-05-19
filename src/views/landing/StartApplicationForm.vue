@@ -36,7 +36,7 @@
       />
     </div>-->
 
-    <div class="form-label-group">
+    <div class="form-label-group" v-if="promoCode">
       <label for="promoCode">Promo Code</label>
       <input class="form-control" v-model="promoCode" />
     </div>
@@ -51,10 +51,10 @@
       />
     </div>-->
 
-    <div class="form-label-group">
+    <div class="form-label-group" v-if="offerFinancialAid">
       <label for="inputPassword">Financial Aid</label>
 
-      <div class="form-check financial-aid">
+      <div class="form-check financial-aid" v-if="offerFinancialAid">
         <input
           class="form-check-input"
           type="checkbox"
@@ -79,15 +79,19 @@ import { getNextDeadlineFormatted } from "@/utils/dates";
 import { mapGetters } from "vuex";
 
 export default {
-  props: { promoCode: String },
+  props: { hasPromoCode: String, offerFinancialAid: Boolean },
   data: () => ({
     name: "",
     email: "",
     financialAid: true,
+    promoCode: "",
     startDate: getNextDeadlineFormatted()
   }),
   computed: {
     ...mapGetters(["getPromoCodesDisplay"])
+  },
+  mounted() {
+    this.promoCode = this.hasPromoCode;
   },
   methods: {
     track() {
