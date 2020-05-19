@@ -13,15 +13,15 @@
             <div class>
               <h3 class="text-left action">Beat the Heat, Learn to Code</h3>
               <h1 class="text-left action">
-                Coding
-                <br />Summer-Camp
+                Summer
+                Bootcamp
               </h1>
             </div>
             <div class="checklist">
               <div class="title">Take back your summer!</div>
               <div class="item">
                 <Icon name="checkbox" />
-                <span>Daily classes and mentoring</span>
+                <span>Daily Classes and Mentoring</span>
               </div>
               <div class="item">
                 <Icon name="checkbox" />
@@ -34,7 +34,7 @@
               <div class="item">
                 <Icon name="checkbox" />
                 <span>
-                  <strong>Middle and High School Students</strong>
+                  <strong>Ages 12 and Up</strong>
                 </span>
               </div>
             </div>
@@ -62,10 +62,6 @@
         </div>
       </div>
     </div>
-
-    <StatsSection />
-
-    <CommercialSection />
 
     <TechSection />
 
