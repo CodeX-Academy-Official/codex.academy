@@ -14,6 +14,14 @@
               <h3 class="text-left action">Fast-Track Yourself</h3>
               <h1 class="text-left action">Learn to Code in 6 months</h1>
             </div>
+
+            <div class="d-none d-lg-block">
+              <Promo25OffMonthly style="max-width: 450px;" class="mt-5" />
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6 my-auto">
+            <!-- <div class="start-application-form"> -->
             <div class="checklist">
               <div class="title">We'll help you do it!</div>
               <div class="item">
@@ -31,25 +39,20 @@
               <div class="item">
                 <Icon name="checkbox" />
                 <span>
-                  <strong>Low Monthly Payments</strong>
+                  <strong>100% Remote</strong>
                 </span>
               </div>
             </div>
 
-            <div class="d-none d-lg-block">
-              <Promo25OffMonthly style="max-width: 450px;" class="mt-5" />
-            </div>
+            <router-link
+              class="btn btn-lg btn-primary mt-5"
+              to="/programs/low-monthly"
+              >Select a Monthly Plan</router-link
+            >
+            <!-- </div> -->
 
-            <div class="d-block d-lg-none">
-              <Promo25OffMonthly
-                style="max-width: 450px;"
-                class="mx-auto mt-5"
-              />
-            </div>
-          </div>
-
-          <div class="col-5 d-none d-lg-block my-auto">
-            <div class="start-application-form" v-if="!hasApplied">
+            <!-- <Promo25OffMonthly style="max-width: 450px;" class="mt-5" /> -->
+            <!-- <div class="start-application-form" v-if="!hasApplied">
               <h5 class="card-title text-center">Sign Up Today</h5>
               <StartApplicationForm
                 @submitted="startApplication"
@@ -57,35 +60,46 @@
                 :offerFinancialAid="false"
               />
             </div>
-            <Thanks v-if="hasApplied" @startOver="clearApplicant" />
+            <Thanks v-if="hasApplied" @startOver="clearApplicant" /> -->
           </div>
         </div>
+      </div>
+
+      <div class="container d-block d-lg-none mt-3">
+        <Promo25OffMonthly style="max-width: 450px;" class="mt-5" />
       </div>
     </Hero>
 
-    <div class="container d-block d-lg-none mt-5">
-      <div class="row justify-content-center">
-        <div class="col-10 bg-periwinkle shadow border p-4">
-          <div class="start-application-form" v-if="!hasApplied">
-            <h2 class="card-title text-center">Get Started Learning</h2>
-            <StartApplicationForm
-              @submitted="startApplication"
-              hasPromoCode="TAKE25"
-              :offerFinancialAid="false"
-            />
-          </div>
-          <Thanks v-if="hasApplied" @startOver="clearApplicant" />
-        </div>
-      </div>
-    </div>
-
     <StatsSection />
 
+    <div class="text-center mb-5">
+      <router-link
+        class="btn btn-lg btn-primary mt-5"
+        to="/programs/low-monthly"
+        >Select a Monthly Plan</router-link
+      >
+    </div>
+
     <CommercialSection />
+
+    <div class="text-center mb-5">
+      <router-link
+        class="btn btn-lg btn-primary mt-5"
+        to="/programs/low-monthly"
+        >Select a Monthly Plan</router-link
+      >
+    </div>
 
     <TechSection />
 
     <TestimonialsSection />
+    <div class="text-center mb-5">
+      <router-link
+        class="btn btn-lg btn-primary mt-5"
+        to="/programs/low-monthly"
+        >Select a Monthly Plan</router-link
+      >
+    </div>
   </div>
 </template>
 

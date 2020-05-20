@@ -127,11 +127,14 @@ export default {
     ]),
     shouldWaiveAppFee() {
       const validPromos = ["COVID19", "TAKE25"];
-      const matches = validPromos.filter((value) =>
-        this.getPromoCodes.includes(value)
-      );
+      const matches = validPromos
+        .map((x) => x.toLowerCase())
+        .filter((value) =>
+          this.getPromoCodes.map((x) => x.toLowerCase()).includes(value)
+        );
       if (matches.length > 0) return true;
-      if (this.getActivePlan && this.getActivePlan.appFee) return false;
+      if (this.getActivePlan && this.getActivePlan.appFee === false)
+        return true;
       return false;
     },
     completedProcess() {
