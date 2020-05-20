@@ -11,9 +11,7 @@
           <p>
             <router-link to="/">Home</router-link>
           </p>
-          <p v-if="isLowMonthly">
-            <router-link to="/programs/low-monthly">Monthly Plans</router-link>
-          </p>
+
           <p>
             <router-link to="/team">Team</router-link>
           </p>
@@ -25,28 +23,37 @@
           </p>
         </div>
 
-        <div class="col-12 col-md-2 mb-5" v-if="!isLowMonthly">
+        <div class="col-12 col-md-2 mb-5">
           <h4>Programs</h4>
-          <p>
+          <p v-if="!isLowMonthly">
             <router-link to="/programs">Overview</router-link>
           </p>
-          <p>
+          <p v-if="!isLowMonthly">
             <router-link to="/programs/front-end-developer" disabled
               >Front-End Developer</router-link
             >
           </p>
-          <p>
+          <p v-if="!isLowMonthly">
             <router-link to="/programs/full-stack-developer" disabled
               >Full-Stack Developer</router-link
             >
           </p>
-          <p>
+          <p v-if="!isLowMonthly">
             <router-link to="/programs/full-stack-engineer" disabled
               >Full-Stack Engineer</router-link
             >
           </p>
-          <p>
-            <router-link to="/community">Community</router-link>
+          <p v-if="isLowMonthly">
+            <router-link to="/programs/low-monthly">Monthly Plans</router-link>
+          </p>
+          <p v-if="isLowMonthly">
+            <router-link to="/programs/low-monthly">Light-Support</router-link>
+          </p>
+          <p v-if="isLowMonthly">
+            <router-link to="/programs/low-monthly">Medium-Support</router-link>
+          </p>
+          <p v-if="isLowMonthly">
+            <router-link to="/programs/low-monthly">High-Support</router-link>
           </p>
         </div>
 
