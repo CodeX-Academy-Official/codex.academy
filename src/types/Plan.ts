@@ -5,7 +5,7 @@ export interface Plan {
   description: string;
   startDate: Date;
   studyHours: number;
-  mentorHours: number;
+  mentorSessions: number;
   totalStudyHours: number;
   price: number;
   months: number;

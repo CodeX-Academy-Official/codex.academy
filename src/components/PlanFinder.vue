@@ -8,7 +8,10 @@
           What level software developer do you want to be when you finish
           studying?
         </p>
-        <CertificationSelectorGroup :certifications="getCertifications" @onSelect="setTargetLevel" />
+        <CertificationSelectorGroup
+          :certifications="getCertifications"
+          @onSelect="setTargetLevel"
+        />
       </div>
 
       <div id="select-mentoring" class="form-group" v-if="targetLevel">
@@ -17,7 +20,9 @@
       </div>
 
       <div id="select-commitment" class="form-group" v-if="mentoring === 'yes'">
-        <p class="text-center mb-3">How many hours per week can you commit to studying?</p>
+        <p class="text-center mb-3">
+          How many hours per week can you commit to studying?
+        </p>
         <StudyCommitmentGroup @onSelect="setCommitment" />
       </div>
 
@@ -28,7 +33,11 @@
         </div>
       </div>
     </div>
-    <div v-if="studyMonths && !hasSuggestedPlans" class="alert alert-danger" role="alert">
+    <div
+      v-if="studyMonths && !hasSuggestedPlans"
+      class="alert alert-danger"
+      role="alert"
+    >
       <h1>Hmmmmm</h1>
       <p>
         It looks like we don't have any plans that would help you meet your goal
@@ -90,15 +99,15 @@ export default {
     CertificationSelectorGroup,
     MentoringSelectorGroup,
     StudyDurationGroup,
-    StudyCommitmentGroup
+    StudyCommitmentGroup,
   },
   data: () => ({
     mentoring: false,
-    mentorHours: false,
+    mentorSessions: false,
     studyMonths: false,
     targetLevel: false,
     studyCommitment: false,
-    plans: []
+    plans: [],
   }),
   computed: {
     ...mapGetters(["getCertifications"]),
@@ -106,10 +115,10 @@ export default {
       return this.suggestedPlans.length > 0;
     },
     bootcamps() {
-      return this.suggestedPlans.filter(x => x.isBootcamp).splice(0, 3);
+      return this.suggestedPlans.filter((x) => x.isBootcamp).splice(0, 3);
     },
     selfPaced() {
-      return this.suggestedPlans.filter(x => !x.isBootcamp).splice(0, 3);
+      return this.suggestedPlans.filter((x) => !x.isBootcamp).splice(0, 3);
     },
     months() {
       const studyMonths = parseInt(this.studyMonths);
@@ -120,7 +129,7 @@ export default {
       const isIndependent = this.mentoring == "no";
 
       if (isIndependent) {
-        return this.plans.filter(x => !x.isMentoring);
+        return this.plans.filter((x) => !x.isMentoring);
       }
 
       const studyHours = this.suggestedHours;
@@ -128,7 +137,7 @@ export default {
       const targetLevel = parseInt(this.targetLevel);
 
       let plans = this.plans.filter(
-        x =>
+        (x) =>
           x.levelPerMonth >= suggestedLevelPerMonth &&
           x.minimumWeeklyStudyHours >= studyHours &&
           (!x.durationMonths || x.durationMonths <= this.months) &&
@@ -136,7 +145,7 @@ export default {
             x.levelPerMonth * x.durationMonths >= targetLevel)
       );
 
-      return plans.map(p => ({ ...p })).sort((a, b) => a.total - b.total);
+      return plans.map((p) => ({ ...p })).sort((a, b) => a.total - b.total);
     },
     suggestedLevelPerMonth() {
       const targetLevel = parseInt(this.targetLevel);
@@ -159,7 +168,7 @@ export default {
       const levelHours = targetLevel * 40;
       const studyHours = levelHours / studyMonths;
       return studyHours;
-    }
+    },
   },
   methods: {
     setTargetLevel(cert) {
@@ -182,12 +191,12 @@ export default {
     setStudyMonths(months) {
       this.studyMonths = parseInt(months);
       setTimeout(() => this.$scrollTo("#display-programs"), 300);
-    }
+    },
   },
 
   mounted() {
     this.plans = this.$store.getters.getPlans;
-  }
+  },
 };
 </script>
 

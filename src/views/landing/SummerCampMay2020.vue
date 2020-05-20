@@ -223,7 +223,7 @@ export default {
         startDate,
         studyHours: 20,
         totalStudyHours: 20,
-        mentorHours: 3,
+        mentorSessions: 3,
         price: 150,
         months: 0,
         appFee: true,
