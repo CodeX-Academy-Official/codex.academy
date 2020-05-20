@@ -219,13 +219,17 @@ export default {
       this.$router.push("/");
     }
 
-    this.activePlanId = this.activePlan.id;
-    if (this.activePlan.studyHours)
-      this.studyHours = this.activePlan.studyHours;
-    if (this.activePlan.startDate) this.startDate = this.activePlan.startDate;
+    if (this.activePlan) {
+      this.activePlanId = this.activePlan.id;
 
-    if (this.$store.getters.getStartDate) {
-      this.startDate = this.$store.getters.getStartDate;
+      if (this.activePlan.studyHours)
+        this.studyHours = this.activePlan.studyHours;
+
+      if (this.activePlan.startDate) this.startDate = this.activePlan.startDate;
+    }
+
+    if (this.getStartDate) {
+      this.startDate = this.getStartDate;
     }
   },
 };

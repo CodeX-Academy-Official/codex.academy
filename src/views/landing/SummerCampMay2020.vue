@@ -173,7 +173,7 @@
 import Hero from "@/components/Hero";
 import StartApplicationForm from "@/views/landing/StartApplicationForm";
 import Thanks from "@/views/landing/Thanks";
-import { getNextDeadlineAfter } from "@/utils/dates";
+import { getNextDeadlineAfter, formatted } from "@/utils/dates";
 import { mapGetters } from "vuex";
 import Icon from "@/components/Icon";
 import Logo from "@/components/Logo";
@@ -211,7 +211,7 @@ export default {
       await this.$store.dispatch("startApplication", {
         applicant: { ...applicant, source: "Summer-Camp May 2020" },
       });
-      const startDate = getNextDeadlineAfter("5-30-2020");
+      const startDate = formatted(getNextDeadlineAfter("5-30-2020"));
       await this.$store.dispatch("setStartDate", startDate);
       this.hasApplied = true;
 

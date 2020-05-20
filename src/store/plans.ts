@@ -2,7 +2,6 @@ import { Plan } from "@/types/Plan";
 
 const planCommonDetails = [
   "Self-Paced",
-  "Expert-Curated Content",
   "Unlimited Learning Pathway Access",
   "24/7 Mentor Chat Access",
   "Build a Portfolio",
@@ -37,7 +36,7 @@ const lowMonthly = [
     id: "lowMonthly1",
     title: "Light-Support Monthly",
     description: "Community Learning with Mentor Chat Support",
-    studyHours: 30,
+    studyHours: 10,
     mentorHours: 0,
     monthlyEvaluations: 0,
     monthlyProjectEvals: 1,
@@ -54,7 +53,7 @@ const lowMonthly = [
     id: "lowMonthly2",
     title: "Medium-Support Monthly",
     description: "Community Learning with Weekly 1:1 Mentor Sessions",
-    studyHours: 30,
+    studyHours: 20,
     mentorHours: 1,
     monthlyEvaluations: 0,
     monthlyProjectEvals: 1,
