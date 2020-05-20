@@ -32,6 +32,8 @@ export function getNextDeadlineFormatted() {
 }
 
 export function formatted(d: Date | moment.Moment) {
+  if (!d) return "";
+
   const formatted = d.toISOString().split("T")[0];
   return formatted;
 }
