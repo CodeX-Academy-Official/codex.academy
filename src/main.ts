@@ -11,6 +11,7 @@ import bootstrapFontAwesome from "./bootstrapFontAwesome";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import VueScrollTo from "vue-scrollto";
 import VueProgressiveImage from "vue-progressive-image";
+import Rollbar from "vue-rollbar";
 
 Vue.use(VueProgressiveImage);
 
@@ -51,9 +52,35 @@ Vue.use(
   router
 );
 
+Vue.use(Rollbar, {
+  accessToken: "8e73588e9df640c5bc4c1e2c9f081107",
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+  enabled: true,
+  source_map_enabled: true,
+  environment: "production",
+  payload: {
+    client: {
+      javascript: {
+        code_version: "1.0",
+      },
+    },
+  },
+});
+
 Vue.use(VueYouTube);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
+
+Vue.config.errorHandler = (err) => {
+  console.log("Exception: ", err);
+  const v: any = Vue;
+  v.rollbar.error(err);
+};
+
+window.onerror = function(message, source, lineno, colno, error) {
+  console.log("Exception: ", error);
+};
 
 Vue.config.productionTip = false;
 
