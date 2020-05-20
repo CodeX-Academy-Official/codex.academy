@@ -7,7 +7,7 @@
         <tr>
           <th style="width: 30%">Program:</th>
           <td>
-            <span v-if="activePlan.isFixed">{{activePlan.name}}</span>
+            <span v-if="activePlan.isFixed">{{ activePlan.name }}</span>
             <select
               id="activePlan"
               class="inputLikeText"
@@ -16,7 +16,12 @@
               @change="changedActivePlan"
               v-if="!activePlan.isFixed"
             >
-              <option v-for="c in availablePrograms" :key="c.name" :value="c.id">{{ c.name }}</option>
+              <option
+                v-for="c in availablePrograms"
+                :key="c.name"
+                :value="c.id"
+                >{{ c.name }}</option
+              >
             </select>
           </td>
         </tr>
@@ -39,21 +44,25 @@
               <option :value="30">Around 30 Hours/Week</option>
               <option :value="40">40 Hours/Week or More</option>
             </select>
-            <p v-if="isMonthly || activePlan.isFixed">{{studyHours}} Hours/Week</p>
+            <p v-if="isMonthly || activePlan.isFixed">
+              {{ studyHours }} Hours/Week
+            </p>
           </td>
         </tr>
         <tr>
           <th>Weekly Mentor Hours:</th>
           <td>
-            <span title="Calculated from your weekly study hours.">{{ calculatedMentorHours }} hours</span>
+            <span title="Calculated from your weekly study hours."
+              >{{ calculatedMentorHours }} hours</span
+            >
           </td>
         </tr>
         <tr v-if="calculatedProgramMonths > 1">
           <th>Approximate Program Duration:</th>
           <td>
-            <span
-              title="Calculated from your weekly study hours."
-            >{{ calculatedProgramMonths }} months</span>
+            <span title="Calculated from your weekly study hours."
+              >{{ calculatedProgramMonths }} months</span
+            >
           </td>
         </tr>
         <tr>
@@ -65,25 +74,32 @@
               class="inputLikeText"
               :class="{ error: !isValid(startDate) }"
             />
-            <span
-              class="alert alert-danger ml-3"
+            <div
+              class="mt-2 text-danger"
               role="alert"
-              v-if="!isValid(startDate)"
-            >Start date must be in the future.</span>
+              v-if="startDate && !isValid(startDate)"
+            >
+              Start date must be in the future.
+            </div>
           </td>
         </tr>
         <tr>
           <th>Promo Code:</th>
           <td>
-            <input style="width: 100px" class="inputLikeText" v-model="promoCode" />
+            <input
+              style="width: 100px"
+              class="inputLikeText"
+              v-model="promoCode"
+            />
             <button
               class="btn btn-sm btn-outline-secondary ml-2"
               @click.prevent="applyPromoCode"
-            >Apply</button>
-            <p
-              v-if="getPromoCodesDisplay"
-              class="small muted"
-            >{{ getPromoCodesDisplay.toUpperCase() }} applied</p>
+            >
+              Apply
+            </button>
+            <p v-if="getPromoCodesDisplay" class="small muted">
+              {{ getPromoCodesDisplay.toUpperCase() }} applied
+            </p>
           </td>
         </tr>
       </table>
@@ -102,7 +118,7 @@ import PlanSpread from "@/components/PlanSpread";
 import EnrollForm from "@/components/EnrollForm";
 import axios from "axios";
 import { mapGetters } from "vuex";
-import { getNextDeadlineFormatted } from "@/utils/dates";
+import { getNextDeadlineFormatted, getNextDeadline } from "@/utils/dates";
 import { mapToActivePlan } from "../../store/plans";
 import { mapCertificationToPlan } from "../../store/certifications";
 
@@ -125,7 +141,7 @@ export default {
       activePlan: {},
       startDate: getNextDeadlineFormatted(),
       promoCode: "",
-      studyHours: 40
+      studyHours: 40,
     };
   },
   computed: {
@@ -134,31 +150,32 @@ export default {
       "getCertifications",
       "getStartDate",
       "getPromoCodesDisplay",
-      "getSelfPaced"
+      "getSelfPaced",
     ]),
     isMonthly() {
       return this.activePlan && this.activePlan.isMonthly;
     },
     availablePrograms() {
       if (this.isMonthly) {
-        return this.getSelfPaced.map(x =>
+        return this.getSelfPaced.map((x) =>
           mapToActivePlan(x, this.getStartDate)
         );
       }
-      return this.getCertifications.map(x =>
+      return this.getCertifications.map((x) =>
         mapCertificationToPlan(x, this.getStartDate)
       );
     },
     calculatedMentorHours() {
+      if (this.activePlan.isFixed) return this.activePlan.mentorHours;
       return this.studyHours / 8;
     },
     calculatedProgramMonths() {
       const weeks = this.activePlan.totalStudyHours / this.studyHours;
       return (weeks / 52) * 12;
-    }
+    },
   },
   components: {
-    PlanSpread
+    PlanSpread,
   },
   methods: {
     changedActivePlan() {
@@ -166,7 +183,7 @@ export default {
         this.studyHours = this.activePlan.studyHours;
       }
       this.activePlan = this.availablePrograms.find(
-        x => x.id === this.activePlanId
+        (x) => x.id === this.activePlanId
       );
     },
     isValid(startDate) {
@@ -182,7 +199,7 @@ export default {
           startDate: this.startDate,
           studyHours: this.studyHours,
           mentorHours: this.calculatedMentorHours,
-          months: this.calculatedProgramMonths
+          months: this.calculatedProgramMonths,
         });
         this.$emit("completed", 1);
       }
@@ -194,7 +211,7 @@ export default {
       if (!this.promoCode) return;
       this.$store.dispatch("applyPromoCode", this.promoCode);
       this.promoCode = "";
-    }
+    },
   },
   mounted() {
     this.activePlan = this.getActivePlan;
@@ -203,13 +220,14 @@ export default {
     }
 
     this.activePlanId = this.activePlan.id;
-    this.studyHours = this.activePlan.studyHours;
-    this.startDate = this.activePlan.startDate;
+    if (this.activePlan.studyHours)
+      this.studyHours = this.activePlan.studyHours;
+    if (this.activePlan.startDate) this.startDate = this.activePlan.startDate;
 
     if (this.$store.getters.getStartDate) {
       this.startDate = this.$store.getters.getStartDate;
     }
-  }
+  },
 };
 </script>
 

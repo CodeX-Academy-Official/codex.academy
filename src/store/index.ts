@@ -27,6 +27,7 @@ const PAY_APP_FEE = "PAY_APP_FEE";
 const SET_ACTIVE_PLAN = "SET_ACTIVE_PLAN";
 const SCHEDULE_CARD_PAYMENT = "SCHEDULE_CARD_PAYMENT";
 const SET_PRICE_CLASS = "SET_PRICE_CLASS";
+const SET_PROGRAM_TITLE = "SET_PROGRAM_TITLE";
 
 export default new Vuex.Store({
   state: {
@@ -61,10 +62,16 @@ export default new Vuex.Store({
     [SET_PRICE_CLASS](state: any, priceClass: string) {
       state.priceClass = priceClass;
     },
+    [SET_PROGRAM_TITLE](state: any, title: string) {
+      state.programTitle = title;
+    },
   },
   actions: {
     setPriceClass(context, priceClass: string) {
       context.commit(SET_PRICE_CLASS, priceClass);
+    },
+    setProgramTitle(context, title: string) {
+      context.commit(SET_PROGRAM_TITLE, title);
     },
     async setPaymentInfo({ commit }, paymentInfo) {
       const formId = "a69ff037-472e-4b81-a35d-1a91b59787d7";
@@ -139,6 +146,7 @@ export default new Vuex.Store({
     getCountries: () => countries.filter((x: any) => x.country.length < 25),
     isLowMonthly: (state) => state.priceClass === "low-monthly",
     getPriceClass: (state) => state.priceClass,
+    getProgramTitle: (state) => state.programTitle,
   },
   modules: {},
   plugins: [vuexLocal.plugin],
