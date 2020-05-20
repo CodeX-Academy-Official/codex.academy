@@ -20,19 +20,27 @@
 
         <tr>
           <th>Total Study Hours</th>
-          <td v-for="c in certifications" :key="c.id">{{ c.studyHours }} Hours</td>
+          <td v-for="c in certifications" :key="c.id">
+            {{ c.studyHours }} Hours
+          </td>
         </tr>
         <tr>
-          <th>Total Mentor Hours</th>
-          <td v-for="c in certifications" :key="c.id">{{ c.mentorHours }} Hours</td>
+          <th>Total Mentor Sessions</th>
+          <td v-for="c in certifications" :key="c.id">
+            {{ c.mentorSessions }} Sessions
+          </td>
         </tr>
         <tr>
           <th>Human Evaluations</th>
-          <td v-for="c in certifications" :key="c.id">Up to {{ c.evaluations }} Evaluations</td>
+          <td v-for="c in certifications" :key="c.id">
+            Up to {{ c.evaluations }} Evaluations
+          </td>
         </tr>
         <tr>
           <th>Micro-Certification Levels</th>
-          <td v-for="c in certifications" :key="c.id">{{ c.levels }} Micro-Certifications</td>
+          <td v-for="c in certifications" :key="c.id">
+            {{ c.levels }} Micro-Certifications
+          </td>
         </tr>
         <CheckRow
           v-for="feature in features"
@@ -47,7 +55,9 @@
         </tr>
         <tr>
           <th>Part-Time Schedule</th>
-          <td v-for="c in certifications" :key="c.id">{{ c.levels * 2 }} Months</td>
+          <td v-for="c in certifications" :key="c.id">
+            {{ c.levels * 2 }} Months
+          </td>
         </tr>
 
         <CheckRow :items="certifications" name="ISA Available" />
@@ -91,12 +101,12 @@ import { mapGetters } from "vuex";
 const CheckRow = {
   props: {
     name: String,
-    items: Array
+    items: Array,
   },
   components: { Icon },
   render() {
     const iconSize = 20;
-    const tds = this.items.map(x => (
+    const tds = this.items.map((x) => (
       <td>
         <Icon name="check" size={iconSize} color="green" />
       </td>
@@ -107,23 +117,23 @@ const CheckRow = {
         {tds}
       </tr>
     );
-  }
+  },
 };
 
 export default {
   props: {
     certifications: Array,
     features: Array,
-    title: String
+    title: String,
   },
   components: {
     CheckRow,
     Icon,
     SelectPlanButton,
-    Money
+    Money,
   },
   computed: {
-    ...mapGetters(["getApplicant"])
+    ...mapGetters(["getApplicant"]),
   },
   methods: {
     selectCertification(cert) {
@@ -133,8 +143,8 @@ export default {
       const name = cert.name.toLowerCase();
       const nameWithDashes = name.replace(" ", "-");
       return `/programs/${nameWithDashes}`;
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss">

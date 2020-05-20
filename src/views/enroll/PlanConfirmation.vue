@@ -50,10 +50,10 @@
           </td>
         </tr>
         <tr>
-          <th>Weekly Mentor Hours:</th>
+          <th>Weekly Mentor Sessions:</th>
           <td>
             <span title="Calculated from your weekly study hours."
-              >{{ calculatedMentorHours }} hours</span
+              >{{ calculatedMentorSessions }} sessions</span
             >
           </td>
         </tr>
@@ -165,9 +165,9 @@ export default {
         mapCertificationToPlan(x, this.getStartDate)
       );
     },
-    calculatedMentorHours() {
-      if (this.activePlan.isFixed) return this.activePlan.mentorHours;
-      return this.studyHours / 8;
+    calculatedMentorSessions() {
+      if (this.activePlan.isFixed) return this.activePlan.mentorSessions;
+      return this.studyHours / 4;
     },
     calculatedProgramMonths() {
       const weeks = this.activePlan.totalStudyHours / this.studyHours;
@@ -198,7 +198,7 @@ export default {
           ...this.activePlan,
           startDate: this.startDate,
           studyHours: this.studyHours,
-          mentorHours: this.calculatedMentorHours,
+          mentorSessions: this.calculatedMentorSessions,
           months: this.calculatedProgramMonths,
         });
         this.$emit("completed", 1);

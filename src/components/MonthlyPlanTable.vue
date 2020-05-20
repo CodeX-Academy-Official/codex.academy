@@ -6,7 +6,9 @@
           <h2 class="text-center">{{ title }}</h2>
         </th>
         <th v-for="p in plans" :key="p.id">
-          <h5 class="duration" v-if="p.durationMonths">{{ p.durationMonths }}-Month</h5>
+          <h5 class="duration" v-if="p.durationMonths">
+            {{ p.durationMonths }}-Month
+          </h5>
           <h1 class="price">
             <Money :amount="p.total" />
           </h1>
@@ -25,7 +27,7 @@
       </tr>
       <tr>
         <th>Weekly 1:1 Mentoring</th>
-        <td v-for="p in plans" :key="p.id">{{ p.mentorHours }} hours</td>
+        <td v-for="p in plans" :key="p.id">{{ p.mentorSessions }} sessions</td>
       </tr>
       <tr>
         <th>Weekly Commitment</th>
@@ -33,12 +35,12 @@
       </tr>
       <Row v-for="p in plans[0].details" :key="p" :name="p" :plans="plans" />
 
-      <tr v-if="plans.find(x=> x.monthlyEvaluations>0)">
+      <tr v-if="plans.find((x) => x.monthlyEvaluations > 0)">
         <th>Monthly Micro-Certification Evaluations</th>
         <td v-for="p in plans" :key="p.id">{{ p.monthlyEvaluations }}</td>
       </tr>
 
-      <tr v-if="plans.filter(x=> x.monthlyProjectEvals>0).length">
+      <tr v-if="plans.filter((x) => x.monthlyProjectEvals > 0).length">
         <th>Monthly Project Evaluations</th>
         <td v-for="p in plans" :key="p.id">{{ p.monthlyProjectEvals }}</td>
       </tr>
@@ -70,12 +72,12 @@ import { mapGetters } from "vuex";
 const Row = {
   props: {
     name: String,
-    plans: Array
+    plans: Array,
   },
   components: { Icon },
   render() {
     const iconSize = 20;
-    const tds = this.plans.map(x => (
+    const tds = this.plans.map((x) => (
       <td>
         <Icon name="check" size={iconSize} color="green" />
       </td>
@@ -86,27 +88,27 @@ const Row = {
         {tds}
       </tr>
     );
-  }
+  },
 };
 
 export default {
   components: {
     Row,
     Money,
-    SelectPlanButton
+    SelectPlanButton,
   },
   computed: {
-    ...mapGetters(["getApplicant"])
+    ...mapGetters(["getApplicant"]),
   },
   props: {
     plans: Array,
-    title: String
+    title: String,
   },
   methods: {
     selected(plan) {
       this.$emit("selected", plan);
-    }
-  }
+    },
+  },
 };
 </script>
 
