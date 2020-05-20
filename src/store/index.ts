@@ -122,7 +122,8 @@ export default new Vuex.Store({
         hsForm: "c4c04dcc-7c42-4552-86df-cd3d25294c79",
       });
     },
-    applyPromoCode({ commit, state }, promoCode) {
+    applyPromoCode({ commit, state }, promoCodeInput) {
+      const promoCode = (promoCodeInput || "").trim();
       const hasPromoCodeCode = state.promoCodes.indexOf(promoCode) > -1;
       if (!hasPromoCodeCode) {
         commit(APPLY_PROMO_CODE, promoCode);
