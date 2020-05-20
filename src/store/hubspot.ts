@@ -6,10 +6,10 @@ export async function sendToHubspot(
   payload: any
 ) {
   const fields = [
-    ...Object.keys(payload).map(key => ({
+    ...Object.keys(payload).map((key) => ({
       name: key.toLowerCase(),
-      value: payload[key]
-    }))
+      value: payload[key],
+    })),
   ];
 
   const hubspotFormat = {
@@ -17,8 +17,8 @@ export async function sendToHubspot(
     fields,
     context: {
       pageUri: "codex.academy/enroll",
-      pageName: "Application"
-    }
+      pageName: "Application",
+    },
     // legalConsentOptions: {
     //   consent: {
     //     // Include this object when GDPR options are enabled

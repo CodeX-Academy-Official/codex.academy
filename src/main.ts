@@ -76,6 +76,9 @@ Vue.config.errorHandler = (err) => {
   console.log("Exception: ", err);
   const v: any = Vue;
   v.rollbar.error(err);
+  //reset local storage
+  store.dispatch("reset");
+  window.open("/");
 };
 
 window.onerror = function(message, source, lineno, colno, error) {

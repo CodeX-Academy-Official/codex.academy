@@ -200,6 +200,7 @@ export default {
           studyHours: this.studyHours,
           mentorSessions: this.calculatedMentorSessions,
           months: this.calculatedProgramMonths,
+          test: 123,
         });
         this.$emit("completed", 1);
       }

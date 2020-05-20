@@ -1,5 +1,5 @@
 import Vue from "vue";
-import Vuex from "vuex";
+import Vuex, { ActionContext } from "vuex";
 import VuexPersistence from "vuex-persist";
 import { shuffle } from "./utils";
 import { sendToHubspot } from "./hubspot";
@@ -28,6 +28,27 @@ const SET_ACTIVE_PLAN = "SET_ACTIVE_PLAN";
 const SCHEDULE_CARD_PAYMENT = "SCHEDULE_CARD_PAYMENT";
 const SET_PRICE_CLASS = "SET_PRICE_CLASS";
 const SET_PROGRAM_TITLE = "SET_PROGRAM_TITLE";
+const RESET = "RESET";
+
+async function sendToHubspotAndTrackErrors(
+  portalId: string,
+  formId: string,
+  payload: any
+) {
+  try {
+    return await sendToHubspot(portalId, formId, payload);
+  } catch (error) {
+    const v: any = Vue;
+    v.rollbar.error(error);
+    throw error;
+  }
+}
+async function sendApplication({ context, applicant, hsForm }: any) {
+  const formId = hsForm || "56d6a407-24b7-4a6b-be49-45d4dbc6eea5";
+  const applicantWithId = { ...applicant, learnerId: Date.now() };
+  context.commit(ENROLL, applicantWithId);
+  await sendToHubspotAndTrackErrors("7092117", formId, applicantWithId);
+}
 
 export default new Vuex.Store({
   state: {
@@ -41,6 +62,10 @@ export default new Vuex.Store({
     activePlan: undefined,
   },
   mutations: {
+    [RESET](state: any) {
+      state.applicant = null;
+      state.activePlan = null;
+    },
     [SCHEDULE_CARD_PAYMENT](state: any, paymentInfo) {
       state.paymentInfo = paymentInfo;
     },
@@ -67,6 +92,9 @@ export default new Vuex.Store({
     },
   },
   actions: {
+    reset({ commit }) {
+      commit(RESET);
+    },
     setPriceClass(context, priceClass: string) {
       context.commit(SET_PRICE_CLASS, priceClass);
     },
@@ -76,7 +104,7 @@ export default new Vuex.Store({
     async setPaymentInfo({ commit }, paymentInfo) {
       const formId = "a69ff037-472e-4b81-a35d-1a91b59787d7";
       commit(SCHEDULE_CARD_PAYMENT, paymentInfo);
-      await sendToHubspot("7092117", formId, paymentInfo);
+      await sendToHubspotAndTrackErrors("7092117", formId, paymentInfo);
     },
     setActivePlan(context, plan: Plan) {
       context.commit(SET_ACTIVE_PLAN, plan);
@@ -85,19 +113,14 @@ export default new Vuex.Store({
       context.commit(SET_START_DATE, startDate);
     },
     async startApplication(context: any, { applicant, hsForm }: any) {
-      const formId = hsForm || "56d6a407-24b7-4a6b-be49-45d4dbc6eea5";
-      const applicantWithId = { ...applicant, learnerId: Date.now() };
-      context.commit(ENROLL, applicantWithId);
-      await sendToHubspot("7092117", formId, applicantWithId);
+      await sendApplication({ context, applicant, hsForm });
     },
     async enroll(context, applicant) {
-      const applicantWithId = { ...applicant, learnerId: Date.now() };
-      context.commit(ENROLL, applicantWithId);
-      await sendToHubspot(
-        "7092117",
-        "c4c04dcc-7c42-4552-86df-cd3d25294c79",
-        applicantWithId
-      );
+      await sendApplication({
+        context,
+        applicant,
+        hsForm: "c4c04dcc-7c42-4552-86df-cd3d25294c79",
+      });
     },
     applyPromoCode({ commit, state }, promoCode) {
       const hasPromoCodeCode = state.promoCodes.indexOf(promoCode) > -1;
