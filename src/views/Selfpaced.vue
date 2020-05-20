@@ -38,9 +38,9 @@
 </template>
 
 <script>
-import SelfPacedCards from "@/components/SelfPacedCards";
 import Unsplash from "@/components/Unsplash";
 import Hero from "@/components/Hero";
+import SelfPacedCards from "@/components/SelfPacedCards";
 import MonthlyPlanTable from "@/components/MonthlyPlanTable";
 import { mapToActivePlan } from "@/store/plans";
 

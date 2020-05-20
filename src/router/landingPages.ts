@@ -23,10 +23,12 @@ const routes: Array<any> = [
       {
         path: "in202005",
         component: IndiaMay2020,
+        meta: { layout: "no-navbar" },
       },
       {
         path: "camp202005",
         component: SummerCampMay2020,
+        meta: { layout: "no-navbar" },
       },
     ],
   },

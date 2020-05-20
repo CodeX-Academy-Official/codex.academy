@@ -9,4 +9,6 @@ export interface Plan {
   totalStudyHours: number;
   price: number;
   months: number;
+  isFixed: boolean;
+  appFee: boolean;
 }

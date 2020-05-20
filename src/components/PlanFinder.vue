@@ -16,7 +16,12 @@
         <MentoringSelectorGroup @onSelect="setMentoring" />
       </div>
 
-      <div id="select-duration" v-if="mentoring === 'yes'">
+      <div id="select-commitment" class="form-group" v-if="mentoring === 'yes'">
+        <p class="text-center mb-3">How many hours per week can you commit to studying?</p>
+        <StudyCommitmentGroup @onSelect="setCommitment" />
+      </div>
+
+      <div id="select-duration" v-if="studyCommitment">
         <div class="form-group">
           <p class="text-center">In how many months do you hope to graduate?</p>
           <StudyDurationGroup @onSelect="setStudyMonths" />
@@ -74,6 +79,7 @@ import PlanCardHead from "@/components/PlanCardHead";
 import Unsplash from "@/components/Unsplash";
 import CertificationSelectorGroup from "@/components/CertificationSelectorGroup";
 import MentoringSelectorGroup from "@/components/MentoringSelectorGroup";
+import StudyCommitmentGroup from "@/components/StudyCommitmentGroup";
 import StudyDurationGroup from "@/components/StudyDurationGroup";
 import { mapGetters } from "vuex";
 
@@ -83,13 +89,15 @@ export default {
     Unsplash,
     CertificationSelectorGroup,
     MentoringSelectorGroup,
-    StudyDurationGroup
+    StudyDurationGroup,
+    StudyCommitmentGroup
   },
   data: () => ({
     mentoring: false,
     mentorHours: false,
     studyMonths: false,
     targetLevel: false,
+    studyCommitment: false,
     plans: []
   }),
   computed: {
@@ -158,13 +166,17 @@ export default {
       this.targetLevel = cert.level;
       setTimeout(() => this.$scrollTo("#select-mentoring"), 300);
     },
+    setCommitment(hours) {
+      this.studyCommitment = hours;
+      setTimeout(() => this.$scrollTo("#select-duration"), 300);
+    },
     selectPlan(plan) {
       this.$emit("planSelected", plan);
     },
     setMentoring(option) {
       this.mentoring = option;
       if (option === "yes")
-        setTimeout(() => this.$scrollTo("#select-duration"), 300);
+        setTimeout(() => this.$scrollTo("#select-commitment"), 300);
       else setTimeout(() => this.$scrollTo("#display-programs"), 300);
     },
     setStudyMonths(months) {

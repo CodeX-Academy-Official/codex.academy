@@ -17,6 +17,8 @@ export function mapCertificationToPlan(cert: any, startDate: Date): Plan {
     price: cert.price,
     months: 0,
     isMonthly: false,
+    isFixed: false,
+    appFee: true,
   };
 }
 

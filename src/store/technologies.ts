@@ -140,6 +140,20 @@ export const technologies = [
     certifications: [FULL_STACK_ENGINEER, FULL_STACK_DEVELOPER],
   },
   {
+    order: 3,
+    name: "Firebase",
+    logo: "firebase.png",
+    info: "",
+    url: "https://firebase.google.com/",
+    level: 4,
+    important: true,
+    certifications: [
+      FULL_STACK_ENGINEER,
+      FULL_STACK_DEVELOPER,
+      FRONT_END_DEVELOPER,
+    ],
+  },
+  {
     order: 2,
     name: "NPM - Node Package Manager",
     logo: "npm.png",

@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="submitForm">
     <div class="form-label-group">
-      <label for="inputUserName">Name</label>
+      <label for="inputUserName">Applicant Name</label>
       <input
         type="text"
         name="name"
