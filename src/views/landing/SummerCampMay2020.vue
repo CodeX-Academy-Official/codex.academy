@@ -96,7 +96,7 @@
     </div>
 
     <div class="row justify-content-center p-5">
-      <div class="col-12 col-md-8">
+      <div class="col-12 col-sm-10 col-lg-8">
         <DesignedByByron />
       </div>
     </div>
@@ -105,7 +105,7 @@
       <div class="container">
         <h2 class="text-center mb-5">What's the 411 on CodeX Camp?</h2>
         <div class="row">
-          <div class="col">
+          <div class="col-12 col-md-6">
             <p>
               CodeX Academy presents "CodeX Camp", a remote summer day-camp for
               kids designed to teach them how to code and create web
@@ -123,7 +123,7 @@
               <li>Challenging, But Incredibly Fun and Fulfilling</li>
             </ul>
           </div>
-          <div class="col">
+          <div class="col-12 col-md-6">
             <h5>Can I handle this camp?</h5>
             <p>
               We believe any person has the capacity to learn to code, but it's

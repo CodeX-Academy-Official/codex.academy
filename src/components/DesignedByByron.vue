@@ -7,7 +7,13 @@
       <h5>Mastery Transfer Initiated</h5>
       <div>
         CodeX Academy Developer Programs are designed by
-        <strong>Byron Sommardahl</strong>, a veteran Agile Full-Stack Software Engineer with more than 30 years of development experience. Byron is from Nashville, TN where he runs the technical arms of three successful tech startups.
+
+        <a href="https://www.linkedin.com/in/sommardahl/" target="_blank"
+          >Byron Sommardahl</a
+        >, a veteran full-stack software engineer, Agile leader, architect and
+        CTO with more than 30 years of development experience. Byron is from
+        Nashville, TN where he runs the technical arms of three successful tech
+        startups.
       </div>
     </div>
   </div>
@@ -17,7 +23,7 @@
 export default {};
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 .designed-by {
   .headshot {
     width: 110px;
