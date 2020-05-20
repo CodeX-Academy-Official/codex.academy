@@ -73,10 +73,11 @@ Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 
 Vue.config.errorHandler = (err) => {
+  if (location.hostname === "localhost") throw err;
+
   console.log("Exception: ", err);
   const v: any = Vue;
   v.rollbar.error(err);
-  //reset local storage
   store.dispatch("reset");
   window.open("/");
 };
