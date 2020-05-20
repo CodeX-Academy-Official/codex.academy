@@ -26,7 +26,7 @@ export function mapToActivePlan(plan: any, startDate: Date): Plan {
     months: 0,
     isMonthly: true,
     isFixed: true,
-    appFee: true,
+    appFee: plan.appFee,
   };
 }
 
@@ -47,6 +47,7 @@ const lowMonthly = [
     details: [...mentorDrivenCommonDetails],
     isSelfpaced: true,
     isMentoring: true,
+    appFee: false,
   },
   {
     priceClass: "low-monthly",
@@ -64,6 +65,7 @@ const lowMonthly = [
     details: [...mentorDrivenCommonDetails],
     isSelfpaced: true,
     isMentoring: true,
+    appFee: false,
   },
   {
     priceClass: "low-monthly",
@@ -81,6 +83,7 @@ const lowMonthly = [
     details: [...mentorDrivenCommonDetails],
     isSelfpaced: true,
     isMentoring: true,
+    appFee: false,
   },
 ];
 
@@ -97,6 +100,7 @@ export const selfPacedPlans = [
     price: 400,
     total: 400,
     duration: "per month",
+    appFee: true,
     details: [
       //"10 hour/week commitment",
       ...mentorDrivenCommonDetails,
@@ -126,6 +130,7 @@ export const selfPacedPlans = [
     monthlyEvaluations: 5,
     total: 800,
     price: 800,
+    appFee: true,
     duration: "per month",
     details: [
       //"20 hour/week commitment",
@@ -157,6 +162,7 @@ export const selfPacedPlans = [
     total: 1500,
     price: 1500,
     duration: "per month",
+    appFee: true,
     details: [
       //"40 hour/week commitment",
       ...mentorDrivenCommonDetails,
@@ -187,6 +193,7 @@ export const selfPacedPlans = [
     monthlyEvaluations: 20,
     total: 2800,
     price: 2800,
+    appFee: true,
     duration: "per month",
     details: [
       //"40-50 hour/week commitment",

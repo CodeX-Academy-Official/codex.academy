@@ -133,7 +133,8 @@ export default {
           this.getPromoCodes.map((x) => x.toLowerCase()).includes(value)
         );
       if (matches.length > 0) return true;
-      if (this.getActivePlan && this.getActivePlan.appFee) return false;
+      if (this.getActivePlan && this.getActivePlan.appFee === false)
+        return true;
       return false;
     },
     completedProcess() {
