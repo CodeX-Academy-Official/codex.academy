@@ -145,6 +145,11 @@ export default {
     }
     //this.$emit("changeStage", 3);
   },
+  mounted() {
+    if (this.paymentTypes.length === 0) {
+      this.$emit("completed", 4);
+    }
+  },
   methods: {
     next() {
       this.$emit("completed", 4);

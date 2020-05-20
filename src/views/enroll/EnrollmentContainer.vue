@@ -10,7 +10,7 @@
           <div class="sidebar">
             <p>
               We're happy you have chosen to enroll with CodeX Academy. You're
-              just a few steps away from starting a new career!
+              just a few steps away from a bright future in coding!
             </p>
             <h4>Application Steps:</h4>
             <Step
@@ -114,14 +114,15 @@ export default {
   computed: {
     ...mapGetters([
       "getApplicant",
+      "getActivePlan",
       "getApplicationFee",
       "getStartDate",
       "getPromoCodesDisplay",
       "getPaymentInfo"
     ]),
     shouldWaiveAppFee() {
-      return true;
-      //return this.getPromoCodesDisplay.indexOf("covid19") > -1;
+      if (this.getActivePlan && this.getActivePlan.appFee) return false;
+      return this.getPromoCodesDisplay.indexOf("covid19") > -1;
     },
     completedProcess() {
       return (

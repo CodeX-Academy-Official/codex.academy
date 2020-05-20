@@ -7,12 +7,14 @@
         <tr>
           <th style="width: 30%">Program:</th>
           <td>
+            <span v-if="activePlan.isFixed">{{activePlan.name}}</span>
             <select
               id="activePlan"
               class="inputLikeText"
               placeholder="Select a Program"
               v-model="activePlanId"
               @change="changedActivePlan"
+              v-if="!activePlan.isFixed"
             >
               <option v-for="c in availablePrograms" :key="c.name" :value="c.id">{{ c.name }}</option>
             </select>
@@ -26,7 +28,7 @@
           <th>Weekly Study:</th>
           <td>
             <select
-              v-if="!isMonthly"
+              v-if="!isMonthly && !activePlan.isFixed"
               id="studyHours"
               class="inputLikeText"
               placeholder="Weekly Study Hours"
@@ -37,7 +39,7 @@
               <option :value="30">Around 30 Hours/Week</option>
               <option :value="40">40 Hours/Week or More</option>
             </select>
-            <p v-if="isMonthly">{{studyHours}} Hours/Week</p>
+            <p v-if="isMonthly || activePlan.isFixed">{{studyHours}} Hours/Week</p>
           </td>
         </tr>
         <tr>
@@ -201,6 +203,8 @@ export default {
     }
 
     this.activePlanId = this.activePlan.id;
+    this.studyHours = this.activePlan.studyHours;
+    this.startDate = this.activePlan.startDate;
 
     if (this.$store.getters.getStartDate) {
       this.startDate = this.$store.getters.getStartDate;

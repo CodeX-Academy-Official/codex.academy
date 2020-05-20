@@ -26,6 +26,8 @@ export function mapToActivePlan(plan: any, startDate: Date): Plan {
     price: plan.price,
     months: 0,
     isMonthly: true,
+    isFixed: false,
+    appFee: true,
   };
 }
 

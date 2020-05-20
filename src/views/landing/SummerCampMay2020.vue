@@ -12,13 +12,9 @@
             <Logo color="white" :width="150" class="landing-logo mb-3" />
             <div class>
               <h3 class="text-left action">Beat the Heat, Learn to Code</h3>
-              <h1 class="text-left action">
-                Summer
-                Bootcamp
-              </h1>
+              <h1 class="text-left action">CodeX Camp</h1>
             </div>
             <div class="checklist">
-              <div class="title">Take back your summer!</div>
               <div class="item">
                 <Icon name="checkbox" />
                 <span>Daily Classes and Mentoring</span>
@@ -33,8 +29,12 @@
               </div>
               <div class="item">
                 <Icon name="checkbox" />
+                <span>Ages 12 and Up</span>
+              </div>
+              <div class="item">
+                <Icon name="checkbox" />
                 <span>
-                  <strong>Ages 12 and Up</strong>
+                  <strong>Only $150/week</strong>
                 </span>
               </div>
             </div>
@@ -45,7 +45,17 @@
               <h5 class="card-title text-center">Sign Up Today</h5>
               <StartApplicationForm @submitted="startApplication" :offerFinancialAid="false" />
             </div>
-            <Thanks v-if="hasApplied" @startOver="clearApplicant" :offerFinancialAid="false" />
+            <div v-if="hasApplied" class="text-center">
+              <h3 class="mb-3">Thanks!</h3>
+              <p
+                class="mb-3"
+              >You have started an application, but still lack a bit more. Let's get moving!</p>
+              <router-link to="/enroll" class="btn btn-primary">Continue Application</router-link>
+              <p class="mt-3">
+                <button class="btn btn-secondary" @click="clearApplicant">Sign Up Someone Else</button>
+              </p>
+            </div>
+            <!-- <Thanks v-if="hasApplied" @startOver="clearApplicant" :offerFinancialAid="false" /> -->
           </div>
         </div>
       </div>
@@ -58,14 +68,77 @@
             <h2 class="card-title text-center">Get Started Learning</h2>
             <StartApplicationForm @submitted="startApplication" />
           </div>
-          <Thanks v-if="hasApplied" @startOver="clearApplicant" />
+          <div v-if="hasApplied" class="text-center">
+            <h3 class="mb-3">Thanks!</h3>
+            <p
+              class="mb-3"
+            >You have started an application, but still lack a bit more. Let's get moving!</p>
+            <router-link to="/enroll" class="btn btn-primary">Continue Application</router-link>
+            <p class="mt-3">
+              <button class="btn btn-secondary" @click="clearApplicant">Sign Up Someone Else</button>
+            </p>
+          </div>
         </div>
       </div>
     </div>
 
-    <TechSection />
+    <div class="row justify-content-center p-5">
+      <div class="col-12 col-md-8">
+        <DesignedByByron />
+      </div>
+    </div>
+
+    <div class="pt-5 pb-5 bg-periwinkle">
+      <div class="container">
+        <h2 class="text-center mb-5">What's the 411 on CodeX Camp?</h2>
+        <div class="row">
+          <div class="col">
+            <p>CodeX Academy presents "CodeX Camp", a remote summer day-camp for kids designed to teach them how to code and create web applications.</p>
+
+            <ul>
+              <li>$50 Application Fee</li>
+              <li>Only $150/week</li>
+              <li>Ages 12 and Up</li>
+              <li>Flexible Daytime Hours</li>
+              <li>Take as Many Weeks as You Want</li>
+              <li>Full-Remote, Learn From Home</li>
+              <li>Self-Paced, Independent Study with Mentor Support</li>
+              <li>Challenging, But Incredibly Fun and Fulfilling</li>
+            </ul>
+          </div>
+          <div class="col">
+            <h5>Can I handle this camp?</h5>
+            <p>We believe any person has the capacity to learn to code, but it's definitely not as easy as basket weaving. As you consider if you can handle this camp, ask yourself the following questions:</p>
+            <ul>
+              <li>Am I willing to work hard to learn a valuable skill?</li>
+              <li>Am I able to sit quietly and work through tough problems?</li>
+              <li>Can I stick to a task and see it through, even it takes extra patience?</li>
+            </ul>
+            <p>If you answer yes to these questions, you can probably handle CodeX Camp.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5 mb-5">
+      <h2 class="text-center">What Happens at CodeX Camp</h2>
+      <h5 class="text-center mb-5">A day in the life of a CodeX Camper</h5>
+      <CampDayTimeline />
+    </div>
+
+    <div class="pt-5 pb-5 bg-lilac">
+      <div class="container">
+        <h2 class="text-center mb-5">Technologies and Tools we Teach</h2>
+        <Technologies certification="Front-End Developer" :includeName="true" />
+      </div>
+    </div>
 
     <TestimonialsSection />
+
+    <div class="container mt-5 mb-5">
+      <h2 class="text-center">CodeX Academy is more than Camp</h2>
+      <h5 class="text-center">Check out the links below</h5>
+    </div>
   </div>
 </template>
 
@@ -73,18 +146,22 @@
 import Hero from "@/components/Hero";
 import StartApplicationForm from "@/views/landing/StartApplicationForm";
 import Thanks from "@/views/landing/Thanks";
+import { getNextDeadlineAfter } from "@/utils/dates";
 import { mapGetters } from "vuex";
 import Icon from "@/components/Icon";
 import Logo from "@/components/Logo";
 import SelectPlanButton from "@/components/SelectPlanButton";
 import Promo25OffMonthly from "@/components/Promo25OffMonthly";
-import TechSection from "@/components/sections/tech";
+import Technologies from "@/components/Technologies";
 import CommercialSection from "@/components/sections/CommercialSection";
 import StatsSection from "@/components/sections/StatsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import CampDayTimeline from "@/components/CampDayTimeline";
+import DesignedByByron from "@/components/DesignedByByron";
 
 export default {
   components: {
+    CampDayTimeline,
     Hero,
     Thanks,
     StartApplicationForm,
@@ -92,10 +169,11 @@ export default {
     Logo,
     Thanks,
     Promo25OffMonthly,
-    TechSection,
+    Technologies,
     StatsSection,
     TestimonialsSection,
-    CommercialSection
+    CommercialSection,
+    DesignedByByron
   },
   data: () => ({
     hasApplied: false
@@ -106,9 +184,29 @@ export default {
       await this.$store.dispatch("startApplication", {
         applicant: { ...applicant, source: "Summer-Camp May 2020" }
       });
-      await this.$store.dispatch("setStartDate", applicant.startDate);
+      const startDate = getNextDeadlineAfter("5-30-2020");
+      await this.$store.dispatch("setStartDate", startDate);
       this.hasApplied = true;
-      this.$router.push("/programs/low-monthly");
+
+      const campPlan = {
+        id: "camp2020",
+        name: "CodeX Camp 2020",
+        description:
+          'CodeX Academy presents "CodeX Camp", a remote summer day-camp for kids designed to teach them how to code and create web applications.',
+        startDate,
+        studyHours: 20,
+        totalStudyHours: 20,
+        mentorHours: 3,
+        price: 150,
+        months: 0,
+        appFee: true,
+        isMonthly: false,
+        isFixed: true
+      };
+
+      this.$store.dispatch("setActivePlan", campPlan);
+
+      this.$router.push("/enroll");
     },
     clearApplicant() {
       this.hasApplied = false;
@@ -117,7 +215,6 @@ export default {
   mounted() {
     const applicant = this.getApplicant;
     this.hasApplied = applicant;
-    //this.$store.dispatch("setPriceClass", "low-monthly");
   }
 };
 </script>
