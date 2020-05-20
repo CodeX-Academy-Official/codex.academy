@@ -41,7 +41,10 @@
             </div>
 
             <div class="d-block d-lg-none">
-              <Promo25OffMonthly style="max-width: 450px;" class="mx-auto mt-5" />
+              <Promo25OffMonthly
+                style="max-width: 450px;"
+                class="mx-auto mt-5"
+              />
             </div>
           </div>
 
@@ -112,16 +115,16 @@ export default {
     TechSection,
     StatsSection,
     TestimonialsSection,
-    CommercialSection
+    CommercialSection,
   },
   data: () => ({
-    hasApplied: false
+    hasApplied: false,
   }),
   computed: { ...mapGetters(["getMethods", "getApplicant"]) },
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", {
-        applicant: { ...applicant, source: "India May 2020" }
+        applicant: { ...applicant, source: "India May 2020" },
       });
       await this.$store.dispatch("setStartDate", applicant.startDate);
       this.hasApplied = true;
@@ -129,13 +132,14 @@ export default {
     },
     clearApplicant() {
       this.hasApplied = false;
-    }
+    },
   },
   mounted() {
     const applicant = this.getApplicant;
     this.hasApplied = applicant;
     this.$store.dispatch("setPriceClass", "low-monthly");
-  }
+    this.$store.dispatch("setProgramTitle", "CodeX Academy India");
+  },
 };
 </script>
 

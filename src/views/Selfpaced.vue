@@ -1,7 +1,9 @@
 <template>
   <div class="pb-5">
     <Hero unsplashId="IgUR1iX0mqM" height="40vh">
-      <h2>Monthly Plans</h2>
+      <h2>
+        {{ this.getProgramTitle ? this.getProgramTitle : "Monthly Plans" }}
+      </h2>
       <h5>Learn at your own pace</h5>
     </Hero>
     <div v-if="getApplicant" class="text-center bg-periwinkle pt-4 pb-4">
@@ -31,7 +33,11 @@
       </div>
 
       <div class="d-none d-md-block mt-3">
-        <MonthlyPlanTable :plans="getSelfPaced" title="Monthly" @selected="selected" />
+        <MonthlyPlanTable
+          :plans="getSelfPaced"
+          title="Monthly"
+          @selected="selected"
+        />
       </div>
     </div>
   </div>
@@ -51,18 +57,23 @@ export default {
     SelfPacedCards,
     Unsplash,
     Hero,
-    MonthlyPlanTable
+    MonthlyPlanTable,
   },
   computed: {
-    ...mapGetters(["getSelfPaced", "getStartDate", "getApplicant"])
+    ...mapGetters([
+      "getSelfPaced",
+      "getStartDate",
+      "getApplicant",
+      "getProgramTitle",
+    ]),
   },
   methods: {
     selected(plan) {
       const mappedPlan = mapToActivePlan(plan, this.getStartDate);
       this.$store.dispatch("setActivePlan", mappedPlan);
       this.$router.push("/enroll");
-    }
-  }
+    },
+  },
 };
 </script>
 

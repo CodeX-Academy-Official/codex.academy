@@ -11,7 +11,7 @@ export function mapCertificationToPlan(cert: any, startDate: Date): Plan {
     name: cert.name,
     description: cert.description,
     startDate: startDate,
-    studyHours: 0,
+    studyHours: 40,
     totalStudyHours: cert.studyHours,
     mentorHours: cert.mentorHours / 5,
     price: cert.price,
