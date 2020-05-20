@@ -43,16 +43,24 @@
           <div class="col-5 d-none d-lg-block my-auto">
             <div class="start-application-form" v-if="!hasApplied">
               <h5 class="card-title text-center">Sign Up Today</h5>
-              <StartApplicationForm @submitted="startApplication" :offerFinancialAid="false" />
+              <StartApplicationForm
+                @submitted="startApplication"
+                :offerFinancialAid="false"
+              />
             </div>
             <div v-if="hasApplied" class="text-center">
               <h3 class="mb-3">Thanks!</h3>
-              <p
-                class="mb-3"
-              >You have started an application, but still lack a bit more. Let's get moving!</p>
-              <router-link to="/enroll" class="btn btn-primary">Continue Application</router-link>
+              <p class="mb-3">
+                You have started an application, but still lack a bit more.
+                Let's get moving!
+              </p>
+              <router-link to="/enroll" class="btn btn-primary"
+                >Continue Application</router-link
+              >
               <p class="mt-3">
-                <button class="btn btn-secondary" @click="clearApplicant">Sign Up Someone Else</button>
+                <button class="btn btn-secondary" @click="clearApplicant">
+                  Sign Up Someone Else
+                </button>
               </p>
             </div>
             <!-- <Thanks v-if="hasApplied" @startOver="clearApplicant" :offerFinancialAid="false" /> -->
@@ -70,12 +78,17 @@
           </div>
           <div v-if="hasApplied" class="text-center">
             <h3 class="mb-3">Thanks!</h3>
-            <p
-              class="mb-3"
-            >You have started an application, but still lack a bit more. Let's get moving!</p>
-            <router-link to="/enroll" class="btn btn-primary">Continue Application</router-link>
+            <p class="mb-3">
+              You have started an application, but still lack a bit more. Let's
+              get moving!
+            </p>
+            <router-link to="/enroll" class="btn btn-primary"
+              >Continue Application</router-link
+            >
             <p class="mt-3">
-              <button class="btn btn-secondary" @click="clearApplicant">Sign Up Someone Else</button>
+              <button class="btn btn-secondary" @click="clearApplicant">
+                Sign Up Someone Else
+              </button>
             </p>
           </div>
         </div>
@@ -93,7 +106,11 @@
         <h2 class="text-center mb-5">What's the 411 on CodeX Camp?</h2>
         <div class="row">
           <div class="col">
-            <p>CodeX Academy presents "CodeX Camp", a remote summer day-camp for kids designed to teach them how to code and create web applications.</p>
+            <p>
+              CodeX Academy presents "CodeX Camp", a remote summer day-camp for
+              kids designed to teach them how to code and create web
+              applications.
+            </p>
 
             <ul>
               <li>$50 Application Fee</li>
@@ -108,13 +125,23 @@
           </div>
           <div class="col">
             <h5>Can I handle this camp?</h5>
-            <p>We believe any person has the capacity to learn to code, but it's definitely not as easy as basket weaving. As you consider if you can handle this camp, ask yourself the following questions:</p>
+            <p>
+              We believe any person has the capacity to learn to code, but it's
+              definitely not as easy as basket weaving. As you consider if you
+              can handle this camp, ask yourself the following questions:
+            </p>
             <ul>
               <li>Am I willing to work hard to learn a valuable skill?</li>
               <li>Am I able to sit quietly and work through tough problems?</li>
-              <li>Can I stick to a task and see it through, even it takes extra patience?</li>
+              <li>
+                Can I stick to a task and see it through, even it takes extra
+                patience?
+              </li>
             </ul>
-            <p>If you answer yes to these questions, you can probably handle CodeX Camp.</p>
+            <p>
+              If you answer yes to these questions, you can probably handle
+              CodeX Camp.
+            </p>
           </div>
         </div>
       </div>
@@ -173,16 +200,16 @@ export default {
     StatsSection,
     TestimonialsSection,
     CommercialSection,
-    DesignedByByron
+    DesignedByByron,
   },
   data: () => ({
-    hasApplied: false
+    hasApplied: false,
   }),
   computed: { ...mapGetters(["getMethods", "getApplicant"]) },
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", {
-        applicant: { ...applicant, source: "Summer-Camp May 2020" }
+        applicant: { ...applicant, source: "Summer-Camp May 2020" },
       });
       const startDate = getNextDeadlineAfter("5-30-2020");
       await this.$store.dispatch("setStartDate", startDate);
@@ -201,7 +228,7 @@ export default {
         months: 0,
         appFee: true,
         isMonthly: false,
-        isFixed: true
+        isFixed: true,
       };
 
       this.$store.dispatch("setActivePlan", campPlan);
@@ -210,12 +237,12 @@ export default {
     },
     clearApplicant() {
       this.hasApplied = false;
-    }
+    },
   },
   mounted() {
     const applicant = this.getApplicant;
     this.hasApplied = applicant;
-  }
+  },
 };
 </script>
 
