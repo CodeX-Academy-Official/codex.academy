@@ -43,10 +43,7 @@
           <div class="col-5 d-none d-lg-block my-auto">
             <div class="start-application-form" v-if="!hasApplied">
               <h5 class="card-title text-center">Sign Up Today</h5>
-              <StartApplicationForm
-                @submitted="startApplication"
-                :offerFinancialAid="false"
-              />
+              <StartApplicationForm @submitted="startApplication" :offerFinancialAid="false" />
             </div>
             <div v-if="hasApplied" class="text-center">
               <h3 class="mb-3">Thanks!</h3>
@@ -54,13 +51,9 @@
                 You have started an application, but still lack a bit more.
                 Let's get moving!
               </p>
-              <router-link to="/enroll" class="btn btn-primary"
-                >Continue Application</router-link
-              >
+              <router-link to="/enroll" class="btn btn-primary">Continue Application</router-link>
               <p class="mt-3">
-                <button class="btn btn-secondary" @click="clearApplicant">
-                  Sign Up Someone Else
-                </button>
+                <button class="btn btn-secondary" @click="clearApplicant">Sign Up Someone Else</button>
               </p>
             </div>
             <!-- <Thanks v-if="hasApplied" @startOver="clearApplicant" :offerFinancialAid="false" /> -->
@@ -82,13 +75,9 @@
               You have started an application, but still lack a bit more. Let's
               get moving!
             </p>
-            <router-link to="/enroll" class="btn btn-primary"
-              >Continue Application</router-link
-            >
+            <router-link to="/enroll" class="btn btn-primary">Continue Application</router-link>
             <p class="mt-3">
-              <button class="btn btn-secondary" @click="clearApplicant">
-                Sign Up Someone Else
-              </button>
+              <button class="btn btn-secondary" @click="clearApplicant">Sign Up Someone Else</button>
             </p>
           </div>
         </div>
@@ -200,16 +189,16 @@ export default {
     StatsSection,
     TestimonialsSection,
     CommercialSection,
-    DesignedByByron,
+    DesignedByByron
   },
   data: () => ({
-    hasApplied: false,
+    hasApplied: false
   }),
   computed: { ...mapGetters(["getMethods", "getApplicant"]) },
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", {
-        applicant: { ...applicant, source: "Summer-Camp May 2020" },
+        applicant: { ...applicant, source: "Summer-Camp May 2020" }
       });
       const startDate = formatted(getNextDeadlineAfter("5-30-2020"));
       await this.$store.dispatch("setStartDate", startDate);
@@ -226,9 +215,9 @@ export default {
         mentorSessions: 3,
         price: 150,
         months: 0,
-        appFee: true,
+        appFee: false,
         isMonthly: false,
-        isFixed: true,
+        isFixed: true
       };
 
       this.$store.dispatch("setActivePlan", campPlan);
@@ -237,12 +226,12 @@ export default {
     },
     clearApplicant() {
       this.hasApplied = false;
-    },
+    }
   },
   mounted() {
     const applicant = this.getApplicant;
     this.hasApplied = applicant;
-  },
+  }
 };
 </script>
 
