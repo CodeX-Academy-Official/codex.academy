@@ -27,7 +27,7 @@ export const internshipPartners = [
     url: "https://fortyau.com/",
   },
   {
-    name: "Complete Running",
+    name: "Compete Running",
     logo: "img/internships/complete-running.png",
     url: "https://competerunning.com",
     needsBorder: true,
