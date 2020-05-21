@@ -69,12 +69,18 @@
             :number="index + 1"
             css="paymentType ml-4"
           />
-          <CreditCard
+          <StripeCheckout
             v-if="paymentType.type === 'creditCard'"
             :paymentType="paymentType"
             :number="index + 1"
             css="paymentType ml-4"
           />
+          <!-- <CreditCard
+            v-if="paymentType.type === 'creditCard'"
+            :paymentType="paymentType"
+            :number="index + 1"
+            css="paymentType ml-4"
+          /> -->
           <CodeXInstallments
             v-if="paymentType.type === 'codex-installments'"
             :paymentType="paymentType"
@@ -126,6 +132,7 @@
 <script>
 import PlanCard from "@/components/PlanCard";
 import HubspotForm from "@/components/HubspotForm";
+import StripeCheckout from "@/components/paymentTypes/StripeCheckout";
 import CreditCard from "@/components/paymentTypes/creditCard";
 import CreditCardCamp from "@/components/paymentTypes/creditCardCamp";
 import CreditCardPreSetup from "@/components/paymentTypes/creditCardPresetup";
@@ -141,6 +148,7 @@ export default {
   components: {
     PlanCard,
     HubspotForm,
+    StripeCheckout,
     CreditCard,
     CreditCardCamp,
     CreditCardPreSetup,
