@@ -247,7 +247,7 @@ const installments = [
 
 const campOptions = [
   {
-    type: "creditCard",
+    type: "creditCard-camp",
     url: "https://app.hubspot.com/sales-checkout/eWHZ2i5J",
     testUrl: "https://app.hubspot.com/sales-checkout/test_e8TjGc2d",
     monthlyCharge: 600,

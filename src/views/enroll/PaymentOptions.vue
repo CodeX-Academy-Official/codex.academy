@@ -63,6 +63,12 @@
             :programTotal="getActivePlan.price"
             css="paymentType ml-4"
           />
+          <CreditCardCamp
+            v-if="paymentType.type === 'creditCard-camp'"
+            :paymentType="paymentType"
+            :number="index + 1"
+            css="paymentType ml-4"
+          />
           <CreditCard
             v-if="paymentType.type === 'creditCard'"
             :paymentType="paymentType"
@@ -121,6 +127,7 @@
 import PlanCard from "@/components/PlanCard";
 import HubspotForm from "@/components/HubspotForm";
 import CreditCard from "@/components/paymentTypes/creditCard";
+import CreditCardCamp from "@/components/paymentTypes/creditCardCamp";
 import CreditCardPreSetup from "@/components/paymentTypes/creditCardPresetup";
 import CodeXInstallments from "@/components/paymentTypes/CodeXInstallments";
 import Leif from "@/components/paymentTypes/leif";
@@ -135,6 +142,7 @@ export default {
     PlanCard,
     HubspotForm,
     CreditCard,
+    CreditCardCamp,
     CreditCardPreSetup,
     CodeXInstallments,
     CallBack,
