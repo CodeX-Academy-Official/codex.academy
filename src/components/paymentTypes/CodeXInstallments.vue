@@ -1,7 +1,7 @@
 <template>
   <div class="card h-100">
     <div class="card-header">
-      <h5 class="card-title">Monthly Tuition</h5>
+      <h5 class="card-title">Student Loan</h5>
     </div>
     <div class="card-body">
       <span class="around-money">You pay</span>
@@ -10,21 +10,22 @@
       </h1>
       <span class="around-money">per month</span>
       <p class="mt-3 card-text text-muted">
-        Monthly tuition payments on your credit or debit card.
+        Monthly installments on your tuition amount with your credit or debit
+        card.
       </p>
     </div>
     <div class="card-footer">
       <button
         class="btn btn-primary btn-block"
-        @click="$bvModal.show('modal-credit-card-pre-setup')"
+        @click="$bvModal.show('modal-installments-setup')"
         :disabled="navigating"
       >
-        <strong>Subscribe</strong>
+        <strong>Apply for Financing</strong>
       </button>
     </div>
 
-    <b-modal id="modal-credit-card-pre-setup" hide-footer>
-      <template v-slot:modal-title>Payment Scheduling</template>
+    <b-modal id="modal-installments-setup" hide-footer>
+      <template v-slot:modal-title>Card You Will Use</template>
       <form @submit.prevent="schedulePayment">
         <div class="d-block">
           <div class="form-row">
@@ -49,23 +50,29 @@
                 maxlength="4"
               />
             </div>
-            <div class="form-group col-md-6">
-              <label for="paymentDayOfTheMonth"
-                >Payment Day of the Month:</label
-              >
-              <select
-                class="form-control"
-                id="paymentDayOfTheMonth"
-                v-model="paymentDayOfTheMonth"
-              >
-                <option :value="1">1st</option>
-                <option :value="15">15th</option>
-              </select>
-            </div>
           </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Program</th>
+                <th>Program Duration</th>
+                <th>Loan Term</th>
+                <th>Loan Total</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>{{ programName }}</td>
+                <td>{{ programTotal / 1500 }} Months</td>
+                <td>{{ programTotal / 500 }} Months</td>
+                <td><Money :amount="programTotal" /></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <button class="btn btn-primary btn-block" :disabled="navigating">
-          <strong>Pre-Schedule Payments</strong>
+          <strong>Apply for Financing</strong>
         </button>
       </form>
     </b-modal>
@@ -99,9 +106,8 @@ export default {
       const payload = {
         email: applicant.email,
         nameOnCard: this.nameOnCard,
-        paymentDayOfTheMonth: this.paymentDayOfTheMonth,
         last4Digits: this.last4Digits,
-        paymentType: "stripe",
+        paymentType: "codex-installments",
       };
       this.$store.dispatch("setPaymentInfo", payload);
       this.$emit("paymentScheduled", payload);
