@@ -245,11 +245,25 @@ const installments = [
   },
 ];
 
+const campOptions = [
+  {
+    type: "creditCard",
+    url: "https://app.hubspot.com/sales-checkout/eWHZ2i5J",
+    testUrl: "https://app.hubspot.com/sales-checkout/test_e8TjGc2d",
+    monthlyCharge: 600,
+    worksWith: (plan: Plan, applicant: any) => {
+      if (plan.id !== "camp2020") return false;
+      return true;
+    },
+  },
+];
+
 export const paymentTypes = [
   ...leifPaymentOptions,
   ...climbOptions,
   ...creditCardOptions,
   ...installments,
+  ...campOptions,
   //   {
   //     type: "callBack",
   //     worksWith: (program: Plan, applicant: any) => {
