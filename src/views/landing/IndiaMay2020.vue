@@ -39,7 +39,14 @@
               <div class="item">
                 <Icon name="checkbox" />
                 <span>
-                  <strong>100% Remote</strong>
+                  100% Remote
+                </span>
+              </div>
+
+              <div class="item">
+                <Icon name="checkbox" />
+                <span>
+                  <strong>Free Trial Week</strong>
                 </span>
               </div>
             </div>
