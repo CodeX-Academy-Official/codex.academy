@@ -230,10 +230,26 @@ const creditCardOptions = [
   },
 ];
 
+const installments = [
+  {
+    type: "codex-installments",
+    url: "https://app.hubspot.com/sales-checkout/WVjSMExg",
+    testUrl: "https://app.hubspot.com/sales-checkout/test_AysK9wYz",
+    monthlyCharge: 500,
+    worksWith: (plan: Plan, applicant: any) => {
+      if (isInUSA(applicant)) return false;
+      if (plan.price < 3000) return false;
+
+      return true;
+    },
+  },
+];
+
 export const paymentTypes = [
   ...leifPaymentOptions,
   ...climbOptions,
   ...creditCardOptions,
+  ...installments,
   //   {
   //     type: "callBack",
   //     worksWith: (program: Plan, applicant: any) => {

@@ -4,7 +4,7 @@
       <div class="row bg-lilac border shadow p-3 justify-content-center">
         <div class="col-6 col-lg-2 text-center">
           <strong class="table-title">Program</strong>
-          <p>{{getActivePlan.name}}</p>
+          <p>{{ getActivePlan.name }}</p>
         </div>
 
         <div class="col-6 col-lg-2 text-center">
@@ -16,22 +16,24 @@
 
         <div class="col-6 col-lg-2 text-center">
           <strong class="table-title">Study Hours</strong>
-          <p>{{getActivePlan.studyHours}} Hours/Week</p>
+          <p>{{ getActivePlan.studyHours }} Hours/Week</p>
         </div>
 
-        <div class="col-6 col-lg-2 text-center" v-if="getActivePlan.months>1">
+        <div class="col-6 col-lg-2 text-center" v-if="getActivePlan.months > 1">
           <strong class="table-title">Duration</strong>
-          <p>{{getActivePlan.months}} Months</p>
+          <p>{{ getActivePlan.months }} Months</p>
         </div>
 
         <div class="col-6 col-lg-2 text-center">
           <strong class="table-title">Start Date</strong>
-          <p>{{getActivePlan.startDate}}</p>
+          <p>{{ getActivePlan.startDate }}</p>
         </div>
 
         <div class="col-6 col-lg-2 text-center">
           <strong class="table-title">&nbsp;</strong>
-          <router-link to="/enroll" class="btn btn-secondary">Change</router-link>
+          <router-link to="/enroll" class="btn btn-secondary"
+            >Change</router-link
+          >
         </div>
       </div>
 
@@ -41,7 +43,7 @@
       <div class="row justify-content-center">
         <div
           class="payment-option col-12 col-sm-6 col-lg-4"
-          :class="{'col-lg-8': paymentTypes.length < 2 }"
+          :class="{ 'col-lg-8': paymentTypes.length < 2 }"
           v-for="(paymentType, index) in paymentTypes"
           :key="paymentType.type"
         >
@@ -50,7 +52,7 @@
             :paymentType="paymentType"
             :number="index + 1"
             :programName="paymentType.programName"
-            :programTotal="getActivePlan.total"
+            :programTotal="getActivePlan.price"
             css="paymentType ml-4"
           />
           <Leif
@@ -58,7 +60,7 @@
             :paymentType="paymentType"
             :number="index + 1"
             :programName="paymentType.programName"
-            :programTotal="getActivePlan.total"
+            :programTotal="getActivePlan.price"
             css="paymentType ml-4"
           />
           <CreditCard
@@ -66,6 +68,15 @@
             :paymentType="paymentType"
             :number="index + 1"
             css="paymentType ml-4"
+          />
+          <CodeXInstallments
+            v-if="paymentType.type === 'codex-installments'"
+            :paymentType="paymentType"
+            :number="index + 1"
+            css="paymentType ml-4"
+            :programName="getActivePlan.name"
+            :programTotal="getActivePlan.price"
+            @paymentScheduled="next"
           />
           <CreditCardPreSetup
             v-if="paymentType.type === 'creditCardPre'"
@@ -111,6 +122,7 @@ import PlanCard from "@/components/PlanCard";
 import HubspotForm from "@/components/HubspotForm";
 import CreditCard from "@/components/paymentTypes/creditCard";
 import CreditCardPreSetup from "@/components/paymentTypes/creditCardPresetup";
+import CodeXInstallments from "@/components/paymentTypes/CodeXInstallments";
 import Leif from "@/components/paymentTypes/leif";
 import CallBack from "@/components/paymentTypes/callback";
 import Climb from "@/components/paymentTypes/climb";
@@ -124,10 +136,11 @@ export default {
     HubspotForm,
     CreditCard,
     CreditCardPreSetup,
+    CodeXInstallments,
     CallBack,
     Climb,
     Leif,
-    Money
+    Money,
   },
   computed: {
     ...mapGetters(["getActivePlan", "getApplicant", "getPaymentTypes"]),
@@ -135,8 +148,8 @@ export default {
       const paymentTypes = this.getPaymentTypes;
       const program = this.getActivePlan;
       const applicant = this.getApplicant;
-      return paymentTypes.filter(x => x.worksWith(program, applicant));
-    }
+      return paymentTypes.filter((x) => x.worksWith(program, applicant));
+    },
   },
   created() {
     const applicant = this.getApplicant;
@@ -153,8 +166,8 @@ export default {
   methods: {
     next() {
       this.$emit("completed", 4);
-    }
-  }
+    },
+  },
 };
 </script>
 
