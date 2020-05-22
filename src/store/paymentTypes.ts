@@ -247,8 +247,8 @@ const creditCardOptions = [
 const installments = [
   {
     type: "codex-installments",
-    url: "https://app.hubspot.com/sales-checkout/WVjSMExg",
-    testUrl: "https://app.hubspot.com/sales-checkout/test_AysK9wYz",
+    stripePlanId: "plan_HJi6V12NZXKYN0",
+    testStripePlanId: "plan_HKIEVCRChizWeQ",
     monthlyCharge: 500,
     worksWith: (plan: Plan, applicant: any) => {
       if (isInUSA(applicant)) return false;
