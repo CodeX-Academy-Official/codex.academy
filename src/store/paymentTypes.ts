@@ -125,41 +125,41 @@ const leifPaymentOptions = [
   },
 ];
 
-const stripeCreditCard = [
+// const stripeCreditCard = [
+//   {
+//     type: "stripeCreditCard",
+//     stripePlanId: "plan_HJTuA9lhMNXIQF",
+//     testStripePlanId: "plan_GlVXLoyCgmQxjW",
+//     monthlyCharge: 1500,
+//     worksWith: (plan: Plan, applicant: any) => {
+//       return plan.price / plan.months === 1500;
+//     },
+//   },
+// ];
+
+const internationalSupportCreditCard = [
   {
     type: "stripeCreditCard",
-    stripePlanId: "plan_HJTuA9lhMNXIQF",
-    testStripePlanId: "plan_GlVXLoyCgmQxjW",
-    monthlyCharge: 1500,
-    worksWith: (plan: Plan, applicant: any) => {
-      return plan.price / plan.months === 1500;
-    },
-  },
-];
-
-const lowMonthly = [
-  {
-    type: "creditCard",
-    url: "https://app.hubspot.com/sales-checkout/h7GdbUcj",
-    testUrl: "https://app.hubspot.com/sales-checkout/test_HOYd1nva",
+    stripePlanId: "plan_HKHieufyiMV3LK",
+    testStripePlanId: "plan_HKHk0SA8zoVa7u",
     monthlyCharge: 100,
     worksWith: (plan: Plan, applicant: any) => {
       return plan.price === 100;
     },
   },
   {
-    type: "creditCard",
-    url: "https://app.hubspot.com/sales-checkout/jVIi5tqq",
-    testUrl: "https://app.hubspot.com/sales-checkout/test_ezF3nEz-",
+    type: "stripeCreditCard",
+    stripePlanId: "plan_HKHiZDlGalUlVv",
+    testStripePlanId: "plan_HKHkI369XDcDLA",
     monthlyCharge: 300,
     worksWith: (plan: Plan, applicant: any) => {
       return plan.price === 300;
     },
   },
   {
-    type: "creditCard",
-    url: "https://app.hubspot.com/sales-checkout/EmnkUpln",
-    testUrl: "https://app.hubspot.com/sales-checkout/test_GEp1bO_R",
+    type: "stripeCreditCard",
+    stripePlanId: "plan_HKHi8KrWnTYpkF",
+    testStripePlanId: "plan_HKHl6m7bGvQUgH",
     monthlyCharge: 500,
     worksWith: (plan: Plan, applicant: any) => {
       return plan.price === 500;
@@ -168,38 +168,40 @@ const lowMonthly = [
 ];
 
 const creditCardOptions = [
-  ...lowMonthly,
   {
-    type: "creditCardPre",
-    url: "https://app.hubspot.com/sales-checkout/tpi4vFUd",
-    testUrl: "https://app.hubspot.com/sales-checkout/test_OqVDtXse",
+    type: "stripeCreditCard",
+    stripePlanId: "plan_GfCj106qZLQXBr",
+    testStripePlanId: "plan_GlodVF5i54MCil",
     monthlyCharge: 400,
     worksWith: (plan: Plan, applicant: any) => {
       return plan.price === 400;
     },
   },
   {
-    type: "creditCardPre",
-    url: "https://app.hubspot.com/sales-checkout/wBN890ZZ",
-    testUrl: "https://app.hubspot.com/sales-checkout/test_fi5hBGei",
+    type: "stripeCreditCard",
+    stripePlanId: "plan_GfCj7I6nKHJIoY",
+    testStripePlanId: "plan_GlOujit9Muz8ts",
     monthlyCharge: 800,
     worksWith: (plan: Plan, applicant: any) => {
       return plan.price === 800;
     },
   },
   {
-    type: "creditCardPre",
-    url: "https://app.hubspot.com/sales-checkout/3IILq-Ug",
-    testUrl: "https://app.hubspot.com/sales-checkout/test_Q2LszpvP",
+    type: "stripeCreditCard",
+    stripePlanId: "plan_HJTw629gIrNNl9",
+    testStripePlanId: "plan_GrQE3VeRF49qCN",
     monthlyCharge: 2800,
     worksWith: (plan: Plan, applicant: any) => {
-      return plan.price === 2800;
+      if (plan.price === 2800) return true;
+
+      const perMonth = plan.price / plan.months;
+      return perMonth === 2800;
     },
   },
   {
-    type: "creditCardPre",
-    url: "https://app.hubspot.com/sales-checkout/mSpPTv7B",
-    testUrl: "https://app.hubspot.com/sales-checkout/test_jQz_nidL",
+    type: "stripeCreditCard",
+    stripePlanId: "plan_HJTuA9lhMNXIQF",
+    testStripePlanId: "plan_GlVXLoyCgmQxjW",
     monthlyCharge: 1500,
     worksWith: (plan: Plan, applicant: any) => {
       if (plan.price === 1500) {
@@ -211,9 +213,9 @@ const creditCardOptions = [
     },
   },
   {
-    type: "creditCardPre",
-    url: "https://app.hubspot.com/sales-checkout/rfhDkvY-",
-    testUrl: "https://app.hubspot.com/sales-checkout/test_nNvYy-hv",
+    type: "stripeCreditCard",
+    stripePlanId: "plan_HKHq87esyCOr27",
+    testStripePlanId: "plan_HKHpgiFqx1EZ2G",
     monthlyCharge: 1500 * 0.75,
     worksWith: (plan: Plan, applicant: any) => {
       const perMonth = plan.price / plan.months;
@@ -221,9 +223,9 @@ const creditCardOptions = [
     },
   },
   {
-    type: "creditCardPre",
-    url: "https://app.hubspot.com/sales-checkout/wBN890ZZ",
-    testUrl: "https://app.hubspot.com/sales-checkout/test_fi5hBGei",
+    type: "stripeCreditCard",
+    stripePlanId: "plan_HKHXom1iK8Lxw5",
+    testStripePlanId: "plan_HKHYvMpV1FJvaG",
     monthlyCharge: 1500 * 0.5,
     worksWith: (plan: Plan, applicant: any) => {
       const perMonth = plan.price / plan.months;
@@ -231,9 +233,9 @@ const creditCardOptions = [
     },
   },
   {
-    type: "creditCardPre",
-    url: "https://app.hubspot.com/sales-checkout/tpi4vFUd",
-    testUrl: "https://app.hubspot.com/sales-checkout/test_OqVDtXse",
+    type: "stripeCreditCard",
+    stripePlanId: "plan_HKHaZ1KlbEyj9j",
+    testStripePlanId: "plan_HKHZK56OUbvYWO",
     monthlyCharge: 1500 * 0.25,
     worksWith: (plan: Plan, applicant: any) => {
       const perMonth = plan.price / plan.months;
@@ -274,9 +276,9 @@ export const paymentTypes = [
   ...leifPaymentOptions,
   ...climbOptions,
   ...creditCardOptions,
+  ...internationalSupportCreditCard,
   ...installments,
   ...campOptions,
-  ...stripeCreditCard,
   //   {
   //     type: "callBack",
   //     worksWith: (program: Plan, applicant: any) => {
