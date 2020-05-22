@@ -36,21 +36,5 @@ export default {
     css: String,
   },
   components: { Money, StripeCheckoutButton },
-  methods: {
-    click() {
-      const applicant = this.$store.getters.getApplicant;
-
-      const payload = {
-        email: applicant.email,
-        paymentType: "stripe",
-      };
-      this.$store.dispatch("setPaymentInfo", payload);
-
-      const url = this.$store.state.testMode
-        ? this.paymentType.testUrl
-        : this.paymentType.url;
-      window.open(url, "_self");
-    },
-  },
 };
 </script>

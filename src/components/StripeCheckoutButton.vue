@@ -25,7 +25,7 @@
 
 <script>
 import { StripeCheckout } from "vue-stripe-checkout";
-
+import { encode } from "@/utils/paymentToken";
 const STRIPE_PK_LIVE = "pk_live_xvkqBqkXopjLV7pNaIrhD5mt00gewNRWaX";
 const STRIPE_PK_TEST = "pk_test_X6aBGRLfCVNriOGJWcO7iHGV00OnZpy4KQ";
 
@@ -39,15 +39,23 @@ export default {
     loading: false,
   }),
   computed: {
+    paymentToken() {
+      const payload = {
+        paymentType: this.paymentType.type,
+        email: this.applicant.email,
+      };
+      const encoded = encode(payload);
+      return encoded;
+    },
     successUrl() {
       return `${window.location.origin}/${
         this.$router.resolve({ name: "enroll-complete" }).href
-      }`;
+      }?token=${this.paymentToken}`;
     },
     cancelUrl() {
       return `${window.location.origin}/${
         this.$router.resolve({ name: "enroll-payment" }).href
-      }`;
+      }?token=${this.paymentToken}`;
     },
     publishableKey() {
       return this.$store.state.testMode ? STRIPE_PK_TEST : STRIPE_PK_LIVE;
