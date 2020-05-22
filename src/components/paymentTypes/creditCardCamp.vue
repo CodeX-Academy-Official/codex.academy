@@ -14,38 +14,27 @@
       </p>
     </div>
     <div class="card-footer">
-      <button @click="click" class="btn btn-primary btn-block">
-        <strong>Subscribe</strong>
-      </button>
+      <StripeCheckoutButton
+        :isSubscription="true"
+        :paymentType="paymentType"
+        :applicant="applicant"
+        ><strong>Subscribe</strong></StripeCheckoutButton
+      >
     </div>
   </div>
 </template>
 
 <script>
 import Money from "@/components/Money";
+import StripeCheckoutButton from "@/components/StripeCheckoutButton";
 
 export default {
   props: {
     paymentType: Object,
+    applicant: Object,
     number: Number,
     css: String,
   },
-  components: { Money },
-  methods: {
-    click() {
-      const applicant = this.$store.getters.getApplicant;
-
-      const payload = {
-        email: applicant.email,
-        paymentType: "stripe",
-      };
-      this.$store.dispatch("setPaymentInfo", payload);
-
-      const url = this.$store.state.testMode
-        ? this.paymentType.testUrl
-        : this.paymentType.url;
-      window.open(url, "_self");
-    },
-  },
+  components: { Money, StripeCheckoutButton },
 };
 </script>
