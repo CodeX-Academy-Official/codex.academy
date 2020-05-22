@@ -79,6 +79,23 @@
           </div>
         </li>
 
+        <li class="nav-item dropdown" v-if="isLowMonthly">
+          <a
+            href="#"
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Financial Aid</a>
+          <div class="dropdown-menu">
+            <div class="nav-item">
+              <router-link to="/financing/codex" class="nav-link">Student Loans</router-link>
+            </div>
+          </div>
+        </li>
+
         <!-- <li class="nav-item">
           <router-link to="/financial-aid" class="nav-link">Financial Aid</router-link>
         </li>-->
