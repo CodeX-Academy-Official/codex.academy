@@ -213,9 +213,15 @@ const creditCardOptions = [
     },
   },
   {
+<<<<<<< 1a611bade5ee3152b4bad25bf40256a46262df4a
+    type: "creditCardPre",
+    url: "https://app.hubspot.com/sales-checkout/rfhDkvY-",
+    testUrl: "https://app.hubspot.com/sales-checkout/test_nNvYy-hv",
+=======
     type: "stripeCreditCard",
     stripePlanId: "plan_HKHq87esyCOr27",
     testStripePlanId: "plan_HKHpgiFqx1EZ2G",
+>>>>>>> Replacing old credit card payment options with new stripe options.
     monthlyCharge: 1500 * 0.75,
     worksWith: (plan: Plan, applicant: any) => {
       const perMonth = plan.price / plan.months;
@@ -247,8 +253,8 @@ const creditCardOptions = [
 const installments = [
   {
     type: "codex-installments",
-    stripePlanId: "plan_HJi6V12NZXKYN0",
-    testStripePlanId: "plan_HKIEVCRChizWeQ",
+    url: "https://app.hubspot.com/sales-checkout/WVjSMExg",
+    testUrl: "https://app.hubspot.com/sales-checkout/test_AysK9wYz",
     monthlyCharge: 500,
     worksWith: (plan: Plan, applicant: any) => {
       if (isInUSA(applicant)) return false;
@@ -262,8 +268,8 @@ const installments = [
 const campOptions = [
   {
     type: "creditCard-camp",
-    stripePlanId: "plan_HKIW5IOMiw4C4p",
-    testStripePlanId: "plan_HKIWadWTfsvFVJ",
+    url: "https://app.hubspot.com/sales-checkout/eWHZ2i5J",
+    testUrl: "https://app.hubspot.com/sales-checkout/test_e8TjGc2d",
     monthlyCharge: 600,
     worksWith: (plan: Plan, applicant: any) => {
       if (plan.id !== "camp2020") return false;
@@ -278,7 +284,11 @@ export const paymentTypes = [
   ...creditCardOptions,
   ...internationalSupportCreditCard,
   ...installments,
+<<<<<<< 1a611bade5ee3152b4bad25bf40256a46262df4a
   ...campOptions,
+  ...stripeCreditCard,
+=======
+>>>>>>> Replacing old credit card payment options with new stripe options.
   //   {
   //     type: "callBack",
   //     worksWith: (program: Plan, applicant: any) => {
