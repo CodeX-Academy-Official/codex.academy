@@ -200,8 +200,8 @@ const creditCardOptions = [
   },
   {
     type: "creditCardPre",
-    // url: "https://app.hubspot.com/sales-checkout/wBN890ZZ",
-    // testUrl: "https://app.hubspot.com/sales-checkout/test_fi5hBGei",
+    url: "https://app.hubspot.com/sales-checkout/rfhDkvY-",
+    testUrl: "https://app.hubspot.com/sales-checkout/test_nNvYy-hv",
     monthlyCharge: 1500 * 0.75,
     worksWith: (plan: Plan, applicant: any) => {
       const perMonth = plan.price / plan.months;
