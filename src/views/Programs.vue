@@ -67,7 +67,7 @@ export default {
       "getBootcampFeatures",
       "getApplicant",
       "getStartDate",
-      "isLowMonthly"
+      "isInternational"
     ])
   },
   methods: {
@@ -80,8 +80,8 @@ export default {
     }
   },
   mounted() {
-    if (this.isLowMonthly) {
-      this.$router.push("/programs/low-monthly");
+    if (this.isInternational) {
+      this.$router.push("/programs/international");
     }
   }
 };

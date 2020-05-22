@@ -16,7 +16,8 @@ import {
   faChessPawn,
   faChessBishop,
   faChessKnight,
-  faChessQueen
+  faChessQueen,
+  faDollarSign,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function bootstrapper() {
@@ -37,6 +38,7 @@ export default function bootstrapper() {
     faChessPawn,
     faChessBishop,
     faChessKnight,
-    faChessQueen
+    faChessQueen,
+    faDollarSign
   );
 }

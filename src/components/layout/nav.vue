@@ -27,9 +27,13 @@
           <router-link to="/" class="nav-link">Home</router-link>
         </li>
         <li class="nav-item">
-          <router-link v-if="isLowMonthly" to="/programs/low-monthly" class="nav-link">Monthly Plans</router-link>
+          <router-link
+            v-if="isInternational"
+            to="/programs/international"
+            class="nav-link"
+          >Monthly Plans</router-link>
         </li>
-        <li class="nav-item dropdown" v-if="!isLowMonthly">
+        <li class="nav-item dropdown" v-if="!isInternational">
           <a
             href="#"
             class="nav-link dropdown-toggle"
@@ -58,7 +62,7 @@
           </div>
         </li>
 
-        <li class="nav-item dropdown" v-if="!isLowMonthly">
+        <li class="nav-item dropdown" v-if="!isInternational">
           <a
             href="#"
             class="nav-link dropdown-toggle"
@@ -75,6 +79,23 @@
             <div class="dropdown-divider"></div>
             <div class="nav-item">
               <router-link to="/financial-aid" class="nav-link">Financing</router-link>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown" v-if="isInternational">
+          <a
+            href="#"
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Financial Aid</a>
+          <div class="dropdown-menu">
+            <div class="nav-item">
+              <router-link to="/financing/codex" class="nav-link">Student Loans</router-link>
             </div>
           </div>
         </li>
@@ -193,7 +214,7 @@ export default {
   data: () => ({
     isOpen: false
   }),
-  computed: { ...mapGetters(["getBootcamp6", "isLowMonthly"]) },
+  computed: { ...mapGetters(["getBootcamp6", "isInternational"]) },
   components: { SelectPlanButton, separator },
   methods: {
     toggleMenu() {

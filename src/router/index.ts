@@ -27,6 +27,7 @@ import EnrollmentComplete from "../views/enroll/EnrollmentComplete.vue";
 import PaymentOptions from "../views/enroll/PaymentOptions.vue";
 import FinancialAid from "../views/enroll/FinancialAid.vue";
 import FinancialAidMarketing from "../views/FinancialAid.vue";
+import CodeXStudentLoan from "../views/CodeXStudentLoan.vue";
 import DeferredPaymentMarketing from "../views/DeferredPayment.vue";
 import ISAPaymentMarketing from "../views/ISA.vue";
 import Curriculum from "../views/Curriculum.vue";
@@ -87,6 +88,10 @@ const routes = [
     path: "/financial-aid",
     name: "Financial Aid",
     component: FinancialAidMarketing,
+  },
+  {
+    path: "/financing/codex",
+    component: CodeXStudentLoan,
   },
   {
     path: "/deferred-payment",

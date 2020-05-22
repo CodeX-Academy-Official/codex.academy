@@ -25,39 +25,40 @@
 
         <div class="col-12 col-md-2 mb-5">
           <h4>Programs</h4>
-          <p v-if="!isLowMonthly">
+          <p v-if="!isInternational">
             <router-link to="/programs">Overview</router-link>
           </p>
-          <p v-if="!isLowMonthly">
-            <router-link to="/programs/front-end-developer" disabled
-              >Front-End Developer</router-link
-            >
+          <p v-if="!isInternational">
+            <router-link to="/programs/front-end-developer" disabled>Front-End Developer</router-link>
           </p>
-          <p v-if="!isLowMonthly">
-            <router-link to="/programs/full-stack-developer" disabled
-              >Full-Stack Developer</router-link
-            >
+          <p v-if="!isInternational">
+            <router-link to="/programs/full-stack-developer" disabled>Full-Stack Developer</router-link>
           </p>
-          <p v-if="!isLowMonthly">
-            <router-link to="/programs/full-stack-engineer" disabled
-              >Full-Stack Engineer</router-link
-            >
+          <p v-if="!isInternational">
+            <router-link to="/programs/full-stack-engineer" disabled>Full-Stack Engineer</router-link>
           </p>
-          <p v-if="isLowMonthly">
-            <router-link to="/programs/low-monthly">Monthly Plans</router-link>
+          <p v-if="isInternational">
+            <router-link to="/programs/international">Monthly Plans</router-link>
           </p>
-          <p v-if="isLowMonthly">
-            <router-link to="/programs/low-monthly">Light-Support</router-link>
+          <p v-if="isInternational">
+            <router-link to="/programs/international">Light-Support</router-link>
           </p>
-          <p v-if="isLowMonthly">
-            <router-link to="/programs/low-monthly">Medium-Support</router-link>
+          <p v-if="isInternational">
+            <router-link to="/programs/international">Medium-Support</router-link>
           </p>
-          <p v-if="isLowMonthly">
-            <router-link to="/programs/low-monthly">High-Support</router-link>
+          <p v-if="isInternational">
+            <router-link to="/programs/international">High-Support</router-link>
           </p>
         </div>
 
-        <div class="col-12 col-md-2 mb-5" v-if="!isLowMonthly">
+        <div class="col-12 col-md-2 mb-5" v-if="isInternational">
+          <h4>Financial Aid</h4>
+          <p>
+            <router-link to="/financing/codex" class="nav-link">Student Loans</router-link>
+          </p>
+        </div>
+
+        <div class="col-12 col-md-2 mb-5" v-if="!isInternational">
           <h4>Financial Aid</h4>
           <p>
             <router-link to="/financial-aid">Financing</router-link>
@@ -81,9 +82,7 @@
             <router-link to="/howitworks#tech">Our Technologies</router-link>
           </p>
           <p>
-            <router-link :to="{ path: '/howitworks', hash: '#internships' }"
-              >Internships</router-link
-            >
+            <router-link :to="{ path: '/howitworks', hash: '#internships' }">Internships</router-link>
           </p>
         </div>
 
@@ -113,18 +112,12 @@
           </a>
         </div>
         <div class="col-1">
-          <a
-            href="https://www.instagram.com/codexacademyonline/"
-            target="_blank"
-          >
+          <a href="https://www.instagram.com/codexacademyonline/" target="_blank">
             <font-awesome-icon :icon="faInstagram" class="fa-2x" />
           </a>
         </div>
         <div class="col-1">
-          <a
-            href="https://www.youtube.com/channel/UCUKP1GrIaI-dcuV1IlK7x8Q"
-            target="_blank"
-          >
+          <a href="https://www.youtube.com/channel/UCUKP1GrIaI-dcuV1IlK7x8Q" target="_blank">
             <font-awesome-icon :icon="faYoutubeSquare" class="fa-2x" />
           </a>
         </div>
@@ -142,7 +135,7 @@ import {
   faFacebookSquare,
   faInstagram,
   faTwitterSquare,
-  faYoutubeSquare,
+  faYoutubeSquare
 } from "@fortawesome/fontawesome-free-brands";
 import { mapGetters } from "vuex";
 
@@ -151,11 +144,11 @@ export default {
     faFacebookSquare,
     faInstagram,
     faTwitterSquare,
-    faYoutubeSquare,
+    faYoutubeSquare
   }),
   computed: {
-    ...mapGetters(["isLowMonthly"]),
-  },
+    ...mapGetters(["isInternational"])
+  }
 };
 </script>
 <style lang="scss" scoped>

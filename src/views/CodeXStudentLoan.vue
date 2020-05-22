@@ -5,11 +5,12 @@
       <h5>We've got you covered</h5>
     </Hero>
     <div class="container mt-5">
-      <h1 class="section-title">Tuition Financing from Climb Credit</h1>
-      <p class="mb-5 text-center">
-        CodeX Academy partners with Climb Credit to offer special financing for
-        any learning plan for a minimum of 3 months.
-      </p>
+      <h1 class="section-title">Tuition Financing from CodeX Academy</h1>
+
+      <p
+        class="mb-5 text-center"
+      >CodeX Academy offers the following loan terms to help those who need smaller payments and to spread their tuition out over time. This loan is offered at 0% interest for the life of the loan. If you choose this option, we ask that you pay the first payment of $500 up front. Afterwards, an admissions counselor will reach out with more specific loan terms.</p>
+
       <div class="row mx-auto">
         <div class="col-12 col-md-4" v-for="r in reasons" :key="r.title">
           <div class="w-75 mx-auto text-center mb-5">
@@ -26,17 +27,17 @@
         <SelectPlanButton text="Apply Now" buttonClass="btn-lg" />
       </div>
 
-      <div class="mt-5">
+      <!-- <div class="mt-5">
         <Quote
           text="The loan process with Climb Credit has simply set the bar for loan companies.
 Climb takes the ‘whole person’ and ‘whole profile’ into account."
           author="Tonia, IL"
         />
-      </div>
+      </div>-->
 
       <div class="mt-5 text-center">
         <h3>Sample Loan</h3>
-        <SampleLoan :sampleData="sampleData" :disclaimer="disclaimer" />
+        <SampleLoan :sampleData="sampleData" />
       </div>
     </div>
   </div>
@@ -48,9 +49,17 @@ import Quote from "@/components/Quote";
 import SampleLoan from "@/components/SampleLoan";
 import SelectPlanButton from "@/components/SelectPlanButton";
 import Hero from "@/components/Hero";
+import Money from "@/components/Money";
 
 export default {
-  components: { FontAwesomeIcon, Quote, SampleLoan, SelectPlanButton, Hero },
+  components: {
+    FontAwesomeIcon,
+    Quote,
+    SampleLoan,
+    SelectPlanButton,
+    Hero,
+    Money
+  },
   data: () => ({
     reasons: [
       {
@@ -60,16 +69,14 @@ export default {
           "Online Application. Pre-approval in minutes. Applying does not affect credit score."
       },
       {
-        title: "Flexible Terms",
+        title: "0% Interest",
         icon: "percent",
-        description:
-          "Flexible terms and fixed interest rates for the life of your loan."
+        description: "Pay no interest for the life of the loan."
       },
       {
-        title: "Co-Borrower",
-        icon: "users",
-        description:
-          "Add a qualifying co-borrower to your application for a better rate."
+        title: "Easy Payments",
+        icon: "dollar-sign",
+        description: "Low monthly payments as you pay off your loan."
       }
     ],
     sampleData: [
@@ -82,42 +89,23 @@ export default {
       },
       {
         title: "Term (months)",
-        content: "45",
+        content: "18",
         footnote: "2",
         footnoteText:
-          "Sample 42-month term includes 42 months of principal and interest payments. Terms vary by program."
+          "Sample 18-month term includes 18 months of principal payments. Terms vary by program."
       },
       {
         title: "Interest Rate",
-        content: "7.49%",
+        content: "0%",
         footnote: "3",
-        footnoteText:
-          "Interest rates range from 6.99%-13.99%. Actual interest rates may vary based on a number of factors."
+        footnoteText: "Interest rate is 0%, really. No strings attached."
       },
       {
-        title: "APR",
-        content: "9.8%",
-        footnote: "4",
-        footnoteText:
-          "APRs on loans range from 9.87%-17.01%. An annual percentage rate (APR) in the annual rate charged for borrowing and is expressed as a percentage that represents the actual yearly cost of funds over the term of a loan. The APR includes a 5% origination fee."
-      },
-      {
-        title: "Interest-Only Pmt",
-        content: "$59",
-        footnote: ""
-      },
-      {
-        title: "Principal & Interest Pmt",
-        content: "$294",
+        title: "Monthly Payment",
+        content: "$500",
         footnote: ""
       }
-    ],
-    disclaimer:
-      "Loan approval subject to full underwriting. Loans are originated by Climb \
-      Investco, LLC (Registered as Climb Credit Investco, LLC in Florida). Code \
-      X Academy does not endorse loans originated by Climb Investco, LLC and \
-      Climb Investco, LLC is not affiliated with Code X Academy. California \
-      Finance Lender #60DBO-44527. NMLS Consumer Access (NMLS# 1240013)."
+    ]
   })
 };
 </script>
