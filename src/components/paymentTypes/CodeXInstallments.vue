@@ -24,57 +24,45 @@
       </button>
     </div>
 
-    <b-modal id="modal-installments-setup" hide-footer>
+    <b-modal id="modal-installments-setup" size="lg" hide-footer>
       <template v-slot:modal-title>Card You Will Use</template>
-      <form @submit.prevent="schedulePayment">
-        <div class="d-block">
-          <div class="form-row">
-            <div class="form-group col">
-              <label for="nameOnCard">Name on Card:</label>
-              <input
-                type="text"
-                class="form-control"
-                v-model.trim="nameOnCard"
-                required
-              />
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group col">
-              <label for="last4Digits">Last 4 Digits on Card:</label>
-              <input
-                type="text"
-                class="form-control"
-                v-model.trim="last4Digits"
-                required
-                maxlength="4"
-              />
-            </div>
-          </div>
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Program</th>
-                <th>Program Duration</th>
-                <th>Loan Term</th>
-                <th>Loan Total</th>
-              </tr>
-            </thead>
+      <div class="d-block">
+        <p>CodeX Academy offers the following loan terms to help those who need smaller payments and to spread their tuition out over time. This loan is offered at 0% interest for the life of the loan. If you choose this option, we ask that you pay the first payment of $500 up front. Afterwards, an admissions counselor will reach out with more specific loan terms.</p>
+        <table class="table text-center">
+          <thead>
+            <tr>
+              <th>Program</th>
+              <th>Program Duration</th>
+              <th>Loan Term</th>
+              <th>Monthly Payments</th>
+              <th>Interest Rate</th>
+              <th>Loan Total</th>
+            </tr>
+          </thead>
 
-            <tbody>
-              <tr>
-                <td>{{ programName }}</td>
-                <td>{{ programTotal / 1500 }} Months</td>
-                <td>{{ programTotal / 500 }} Months</td>
-                <td><Money :amount="programTotal" /></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <button class="btn btn-primary btn-block" :disabled="navigating">
-          <strong>Apply for Financing</strong>
-        </button>
-      </form>
+          <tbody>
+            <tr>
+              <td>{{ programName }}</td>
+              <td>{{ programTotal / 1500 }} Months</td>
+              <td>{{ programTotal / 500 }} Months</td>
+              <td>
+                <Money :amount="500" />
+              </td>
+              <td>0%</td>
+              <td>
+                <Money :amount="programTotal" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <StripeCheckoutButton
+        :isSubscription="true"
+        :paymentType="paymentType"
+        :applicant="applicant"
+      >
+        <strong>Pay First Payment</strong>
+      </StripeCheckoutButton>
     </b-modal>
   </div>
 </template>
@@ -82,21 +70,23 @@
 <script>
 import axios from "axios";
 import Money from "@/components/Money";
+import StripeCheckoutButton from "@/components/StripeCheckoutButton";
 
 export default {
   props: {
     paymentType: Object,
+    applicant: Object,
     number: Number,
     css: String,
     programTotal: Number,
-    programName: String,
+    programName: String
   },
-  components: { Money },
+  components: { Money, StripeCheckoutButton },
   data: () => ({
     nameOnCard: "",
     last4Digits: "",
     paymentDayOfTheMonth: 1,
-    navigating: false,
+    navigating: false
   }),
   methods: {
     async schedulePayment() {
@@ -107,12 +97,12 @@ export default {
         email: applicant.email,
         nameOnCard: this.nameOnCard,
         last4Digits: this.last4Digits,
-        paymentType: "codex-installments",
+        paymentType: "codex-installments"
       };
       this.$store.dispatch("setPaymentInfo", payload);
       this.$emit("paymentScheduled", payload);
-    },
-  },
+    }
+  }
 };
 </script>
 
