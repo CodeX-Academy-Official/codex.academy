@@ -44,13 +44,12 @@
         <div
           class="payment-option col-12 col-sm-6 col-lg-4"
           :class="{ 'col-lg-8': paymentTypes.length < 2 }"
-          v-for="(paymentType, index) in paymentTypes"
+          v-for="paymentType in paymentTypes"
           :key="paymentType.type"
         >
           <Climb
             v-if="paymentType.type === 'climb'"
             :paymentType="paymentType"
-            :number="index + 1"
             :programName="paymentType.programName"
             :programTotal="getActivePlan.price"
             css="paymentType ml-4"
@@ -58,7 +57,6 @@
           <Leif
             v-if="paymentType.type === 'leif'"
             :paymentType="paymentType"
-            :number="index + 1"
             :programName="paymentType.programName"
             :programTotal="getActivePlan.price"
             css="paymentType ml-4"
@@ -69,16 +67,15 @@
             :number="index + 1"
             css="paymentType ml-4"
           />
-          <CreditCard
-            v-if="paymentType.type === 'creditCard'"
+          <StripeCreditCard
+            v-if="paymentType.type === 'stripeCreditCard'"
             :paymentType="paymentType"
-            :number="index + 1"
+            :applicant="getApplicant"
             css="paymentType ml-4"
           />
           <CodeXInstallments
             v-if="paymentType.type === 'codex-installments'"
             :paymentType="paymentType"
-            :number="index + 1"
             css="paymentType ml-4"
             :programName="getActivePlan.name"
             :programTotal="getActivePlan.price"
@@ -87,13 +84,11 @@
           <CreditCardPreSetup
             v-if="paymentType.type === 'creditCardPre'"
             :paymentType="paymentType"
-            :number="index + 1"
             css="paymentType ml-4"
             @paymentScheduled="next"
           />
           <CallBack
             v-if="paymentType.type === 'callBack'"
-            :number="index + 1"
             css="paymentType ml-4"
           />
         </div>
@@ -126,6 +121,7 @@
 <script>
 import PlanCard from "@/components/PlanCard";
 import HubspotForm from "@/components/HubspotForm";
+import StripeCreditCard from "@/components/paymentTypes/StripeCreditCard";
 import CreditCard from "@/components/paymentTypes/creditCard";
 import CreditCardCamp from "@/components/paymentTypes/creditCardCamp";
 import CreditCardPreSetup from "@/components/paymentTypes/creditCardPresetup";
@@ -141,6 +137,7 @@ export default {
   components: {
     PlanCard,
     HubspotForm,
+    StripeCreditCard,
     CreditCard,
     CreditCardCamp,
     CreditCardPreSetup,
