@@ -143,6 +143,7 @@ const routes = [
         component: EnrollmentForm,
       },
       {
+        name: "enroll-payment",
         path: "payment",
         component: PaymentOptions,
       },
@@ -159,8 +160,8 @@ const routes = [
         component: MeetWithAdmissions,
       },
       {
+        name: "enroll-complete",
         path: "complete",
-        name: "EnrollmentComplete",
         component: EnrollmentComplete,
       },
     ],

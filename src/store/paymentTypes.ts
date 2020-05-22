@@ -125,6 +125,18 @@ const leifPaymentOptions = [
   },
 ];
 
+const stripeCreditCard = [
+  {
+    type: "stripeCreditCard",
+    stripePlanId: "plan_HJTuA9lhMNXIQF",
+    testStripePlanId: "plan_GlVXLoyCgmQxjW",
+    monthlyCharge: 1500,
+    worksWith: (plan: Plan, applicant: any) => {
+      return plan.price / plan.months === 1500;
+    },
+  },
+];
+
 const lowMonthly = [
   {
     type: "creditCard",
@@ -264,6 +276,7 @@ export const paymentTypes = [
   ...creditCardOptions,
   ...installments,
   ...campOptions,
+  ...stripeCreditCard,
   //   {
   //     type: "callBack",
   //     worksWith: (program: Plan, applicant: any) => {
