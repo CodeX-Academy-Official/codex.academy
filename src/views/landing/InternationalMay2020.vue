@@ -139,7 +139,7 @@ export default {
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", {
-        applicant: { ...applicant, source: "India May 2020" }
+        applicant: { ...applicant, source: "Low-Monthly May 2020" }
       });
       await this.$store.dispatch("setStartDate", applicant.startDate);
       this.hasApplied = true;
@@ -153,7 +153,7 @@ export default {
     const applicant = this.getApplicant;
     this.hasApplied = applicant;
     this.$store.dispatch("setPriceClass", "international");
-    this.$store.dispatch("setProgramTitle", "CodeX Academy India");
+    this.$store.dispatch("setProgramTitle", "CodeX Academy International");
   }
 };
 </script>

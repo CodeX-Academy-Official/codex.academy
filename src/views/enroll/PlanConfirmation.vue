@@ -16,12 +16,7 @@
               @change="changedActivePlan"
               v-if="!activePlan.isFixed"
             >
-              <option
-                v-for="c in availablePrograms"
-                :key="c.name"
-                :value="c.id"
-                >{{ c.name }}</option
-              >
+              <option v-for="c in availablePrograms" :key="c.name" :value="c.id">{{ c.name }}</option>
             </select>
           </td>
         </tr>
@@ -44,25 +39,23 @@
               <option :value="30">Around 30 Hours/Week</option>
               <option :value="40">40 Hours/Week or More</option>
             </select>
-            <p v-if="isMonthly || activePlan.isFixed">
-              {{ studyHours }} Hours/Week
-            </p>
+            <p v-if="isMonthly || activePlan.isFixed">{{ studyHours }} Hours/Week</p>
           </td>
         </tr>
         <tr>
           <th>Weekly Mentor Sessions:</th>
           <td>
-            <span title="Calculated from your weekly study hours."
-              >{{ calculatedMentorSessions }} sessions</span
-            >
+            <span
+              title="Calculated from your weekly study hours."
+            >{{ calculatedMentorSessions }} sessions</span>
           </td>
         </tr>
         <tr v-if="calculatedProgramMonths > 1">
           <th>Approximate Program Duration:</th>
           <td>
-            <span title="Calculated from your weekly study hours."
-              >{{ calculatedProgramMonths }} months</span
-            >
+            <span
+              title="Calculated from your weekly study hours."
+            >{{ calculatedProgramMonths }} months</span>
           </td>
         </tr>
         <tr>
@@ -78,28 +71,21 @@
               class="mt-2 text-danger"
               role="alert"
               v-if="startDate && !isValid(startDate)"
-            >
-              Start date must be in the future.
-            </div>
+            >Start date must be in the future.</div>
           </td>
         </tr>
         <tr>
           <th>Promo Code:</th>
           <td>
-            <input
-              style="width: 100px"
-              class="inputLikeText"
-              v-model="promoCode"
-            />
+            <input style="width: 100px" class="inputLikeText" v-model="promoCode" />
             <button
               class="btn btn-sm btn-outline-secondary ml-2"
               @click.prevent="applyPromoCode"
-            >
-              Apply
-            </button>
-            <p v-if="getPromoCodesDisplay" class="small muted">
-              {{ getPromoCodesDisplay.toUpperCase() }} applied
-            </p>
+            >Apply</button>
+            <p
+              v-if="getPromoCodesDisplay"
+              class="small muted"
+            >{{ getPromoCodesDisplay.toUpperCase() }} applied</p>
           </td>
         </tr>
       </table>
@@ -141,7 +127,7 @@ export default {
       activePlan: {},
       startDate: getNextDeadlineFormatted(),
       promoCode: "",
-      studyHours: 40,
+      studyHours: 40
     };
   },
   computed: {
@@ -150,18 +136,18 @@ export default {
       "getCertifications",
       "getStartDate",
       "getPromoCodesDisplay",
-      "getSelfPaced",
+      "getInternational"
     ]),
     isMonthly() {
       return this.activePlan && this.activePlan.isMonthly;
     },
     availablePrograms() {
       if (this.isMonthly) {
-        return this.getSelfPaced.map((x) =>
+        return this.getInternational.map(x =>
           mapToActivePlan(x, this.getStartDate)
         );
       }
-      return this.getCertifications.map((x) =>
+      return this.getCertifications.map(x =>
         mapCertificationToPlan(x, this.getStartDate)
       );
     },
@@ -172,10 +158,10 @@ export default {
     calculatedProgramMonths() {
       const weeks = this.activePlan.totalStudyHours / this.studyHours;
       return (weeks / 52) * 12;
-    },
+    }
   },
   components: {
-    PlanSpread,
+    PlanSpread
   },
   methods: {
     changedActivePlan() {
@@ -183,7 +169,7 @@ export default {
         this.studyHours = this.activePlan.studyHours;
       }
       this.activePlan = this.availablePrograms.find(
-        (x) => x.id === this.activePlanId
+        x => x.id === this.activePlanId
       );
     },
     isValid(startDate) {
@@ -199,7 +185,7 @@ export default {
           startDate: this.startDate,
           studyHours: this.studyHours,
           mentorSessions: this.calculatedMentorSessions,
-          months: this.calculatedProgramMonths,
+          months: this.calculatedProgramMonths
         });
         this.$emit("completed", 1);
       }
@@ -211,7 +197,7 @@ export default {
       if (!this.promoCode) return;
       this.$store.dispatch("applyPromoCode", this.promoCode);
       this.promoCode = "";
-    },
+    }
   },
   mounted() {
     this.activePlan = this.getActivePlan;
@@ -231,7 +217,7 @@ export default {
     if (this.getStartDate) {
       this.startDate = this.getStartDate;
     }
-  },
+  }
 };
 </script>
 

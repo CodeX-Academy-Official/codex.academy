@@ -6,7 +6,7 @@ import { sendToHubspot } from "./hubspot";
 import { testimonials } from "./testimonials";
 import { pillars } from "./pillars";
 import { technologies } from "./technologies";
-import { selfPacedPlans, bootcampFeatures } from "./plans";
+import { internationalPlans, bootcampFeatures } from "./plans";
 import { pathways } from "./pathways";
 import { certifications } from "./certifications";
 import { internshipPartners } from "./internshipPartners";
@@ -135,14 +135,14 @@ export default new Vuex.Store({
   },
   getters: {
     getActivePlan: (state): Plan => state.activePlan,
-    getSelfPaced: (state) => {
+    getInternational: (state) => {
       if (state.priceClass) {
-        return selfPacedPlans.filter(
+        return internationalPlans.filter(
           (x: any) => x.priceClass === state.priceClass
         );
       }
 
-      return selfPacedPlans;
+      return internationalPlans;
     },
     getPathways: () => pathways,
     getTechnologies: () =>
@@ -168,7 +168,7 @@ export default new Vuex.Store({
     getPaymentTypes: () => paymentTypes,
     getPaymentInfo: (state) => state.paymentInfo,
     getCountries: () => countries.filter((x: any) => x.country.length < 25),
-    isLowMonthly: (state) => state.priceClass === "low-monthly",
+    isInternational: (state) => state.priceClass === "international",
     getPriceClass: (state) => state.priceClass,
     getProgramTitle: (state) => state.programTitle,
   },

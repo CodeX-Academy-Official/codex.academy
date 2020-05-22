@@ -10,7 +10,7 @@ const routes: Array<any> = [
     component: Programs,
   },
   {
-    path: "/programs/low-monthly",
+    path: "/programs/international",
     component: SelfPacedPlans,
   },
   { path: "/programs/full-stack-developer", component: FullStackDeveloper },
