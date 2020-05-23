@@ -94,10 +94,11 @@ export default {
       const applicant = this.$store.getters.getApplicant;
 
       const payload = {
+        payment_type: "fin",
+        payment_vendor: "codex",
         email: applicant.email,
         nameOnCard: this.nameOnCard,
-        last4Digits: this.last4Digits,
-        paymentType: "codex-installments"
+        last4Digits: this.last4Digits
       };
       this.$store.dispatch("setPaymentInfo", payload);
       this.$emit("paymentScheduled", payload);

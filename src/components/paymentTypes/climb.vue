@@ -114,8 +114,9 @@ export default {
       const applicant = this.$store.getters.getApplicant;
 
       const payload = {
-        email: applicant.email,
-        paymentType: "climb"
+        payment_type: "fin",
+        payment_vendor: "climb",
+        email: applicant.email
       };
       this.$store.dispatch("setPaymentInfo", payload);
 

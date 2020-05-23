@@ -118,7 +118,6 @@
 import PlanCard from "@/components/PlanCard";
 import HubspotForm from "@/components/HubspotForm";
 import StripeCreditCard from "@/components/paymentTypes/StripeCreditCard";
-import CreditCard from "@/components/paymentTypes/creditCard";
 import CreditCardCamp from "@/components/paymentTypes/creditCardCamp";
 import CreditCardPreSetup from "@/components/paymentTypes/creditCardPresetup";
 import CodeXInstallments from "@/components/paymentTypes/CodeXInstallments";
@@ -134,7 +133,6 @@ export default {
     PlanCard,
     HubspotForm,
     StripeCreditCard,
-    CreditCard,
     CreditCardCamp,
     CreditCardPreSetup,
     CodeXInstallments,

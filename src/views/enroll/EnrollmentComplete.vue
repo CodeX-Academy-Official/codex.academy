@@ -22,6 +22,6 @@ export default {
       const paymentInfo = decode(token);
       this.$store.dispatch("setPaymentInfo", paymentInfo);
     }
-  },
+  }
 };
 </script>

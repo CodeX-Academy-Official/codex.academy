@@ -22,7 +22,6 @@
 <script>
 import PlanCard from "@/components/PlanCard";
 import HubspotForm from "@/components/HubspotForm";
-import CreditCard from "@/components/paymentTypes/creditCard";
 import CallBack from "@/components/paymentTypes/callback";
 import Climb from "@/components/paymentTypes/climb";
 
@@ -30,7 +29,6 @@ export default {
   components: {
     PlanCard,
     HubspotForm,
-    CreditCard,
     CallBack,
     Climb
   },
