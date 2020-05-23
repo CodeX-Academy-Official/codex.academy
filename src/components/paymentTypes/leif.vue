@@ -38,8 +38,9 @@ export default {
       const applicant = this.$store.getters.getApplicant;
 
       const payload = {
-        email: applicant.email,
-        paymentType: "leif"
+        payment_type: "isa",
+        payment_vendor: "leif",
+        email: applicant.email
       };
       await this.$store.dispatch("setPaymentInfo", payload);
 

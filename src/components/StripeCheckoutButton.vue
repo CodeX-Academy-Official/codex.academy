@@ -11,11 +11,7 @@
       @loading="loading = $event"
     >
       <template slot="checkout-button">
-        <button
-          @click="checkout"
-          class="btn btn-primary btn-block"
-          :disabled="loading"
-        >
+        <button @click="checkout" class="btn btn-primary btn-block" :disabled="loading">
           <slot>Pay</slot>
         </button>
       </template>
@@ -32,17 +28,18 @@ const STRIPE_PK_TEST = "pk_test_X6aBGRLfCVNriOGJWcO7iHGV00OnZpy4KQ";
 export default {
   props: {
     applicant: Object,
-    paymentType: Object,
+    paymentType: Object
   },
   components: { StripeCheckout },
   data: () => ({
-    loading: false,
+    loading: false
   }),
   computed: {
     paymentToken() {
       const payload = {
-        paymentType: this.paymentType.type,
-        email: this.applicant.email,
+        payment_type: "cc",
+        payment_vendor: "stripe",
+        email: this.applicant.email
       };
       const encoded = encode(payload);
       return encoded;
@@ -67,13 +64,13 @@ export default {
     },
     items() {
       return [{ plan: this.planId, quantity: 1 }];
-    },
+    }
   },
   methods: {
     checkout() {
       this.loading = true;
       this.$refs.checkoutRef.redirectToCheckout();
-    },
-  },
+    }
+  }
 };
 </script>

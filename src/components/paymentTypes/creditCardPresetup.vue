@@ -9,9 +9,7 @@
         <Money :amount="paymentType.monthlyCharge" />
       </h1>
       <span class="around-money">per month</span>
-      <p class="mt-3 card-text text-muted">
-        Monthly tuition payments on your credit or debit card.
-      </p>
+      <p class="mt-3 card-text text-muted">Monthly tuition payments on your credit or debit card.</p>
     </div>
     <div class="card-footer">
       <button
@@ -30,12 +28,7 @@
           <div class="form-row">
             <div class="form-group col">
               <label for="nameOnCard">Name on Card:</label>
-              <input
-                type="text"
-                class="form-control"
-                v-model.trim="nameOnCard"
-                required
-              />
+              <input type="text" class="form-control" v-model.trim="nameOnCard" required />
             </div>
           </div>
           <div class="form-row">
@@ -50,14 +43,8 @@
               />
             </div>
             <div class="form-group col-md-6">
-              <label for="paymentDayOfTheMonth"
-                >Payment Day of the Month:</label
-              >
-              <select
-                class="form-control"
-                id="paymentDayOfTheMonth"
-                v-model="paymentDayOfTheMonth"
-              >
+              <label for="paymentDayOfTheMonth">Payment Day of the Month:</label>
+              <select class="form-control" id="paymentDayOfTheMonth" v-model="paymentDayOfTheMonth">
                 <option :value="1">1st</option>
                 <option :value="15">15th</option>
               </select>
@@ -82,14 +69,14 @@ export default {
     number: Number,
     css: String,
     programTotal: Number,
-    programName: String,
+    programName: String
   },
   components: { Money },
   data: () => ({
     nameOnCard: "",
     last4Digits: "",
     paymentDayOfTheMonth: 1,
-    navigating: false,
+    navigating: false
   }),
   methods: {
     async schedulePayment() {
@@ -97,16 +84,18 @@ export default {
       const applicant = this.$store.getters.getApplicant;
 
       const payload = {
+        payment_type: "cc",
+        payment_vendor: "unknown",
         email: applicant.email,
         nameOnCard: this.nameOnCard,
         paymentDayOfTheMonth: this.paymentDayOfTheMonth,
         last4Digits: this.last4Digits,
-        paymentType: "stripe",
+        paymentType: "stripe"
       };
       this.$store.dispatch("setPaymentInfo", payload);
       this.$emit("paymentScheduled", payload);
-    },
-  },
+    }
+  }
 };
 </script>
 
