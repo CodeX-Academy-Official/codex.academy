@@ -23,6 +23,7 @@ import Pathways from "../views/Pathways.vue";
 import EnrollmentContainer from "../views/enroll/EnrollmentContainer.vue";
 import PlanConfirmation from "../views/enroll/PlanConfirmation.vue";
 import EnrollmentForm from "../views/enroll/EnrollmentForm.vue";
+import WaitForApproval from "../views/enroll/WaitForApproval.vue";
 import EnrollmentComplete from "../views/enroll/EnrollmentComplete.vue";
 import PaymentOptions from "../views/enroll/PaymentOptions.vue";
 import FinancialAid from "../views/enroll/FinancialAid.vue";
@@ -146,6 +147,10 @@ const routes = [
       {
         path: "applicant",
         component: EnrollmentForm,
+      },
+      {
+        path: "waitForApproval",
+        component: WaitForApproval,
       },
       {
         name: "enroll-payment",
