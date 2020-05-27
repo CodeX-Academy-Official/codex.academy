@@ -1,10 +1,6 @@
 <template>
   <div class="pb-5">
-    <Hero
-      unsplashId="gnyA8vd3Otc"
-      height="20vh"
-      backgroundColor="rgba(25, 32, 71,0.7)"
-    >
+    <Hero unsplashId="gnyA8vd3Otc" height="20vh" backgroundColor="rgba(25, 32, 71,0.7)">
       <h2>Application</h2>
       <h5>Just a few steps</h5>
     </Hero>
@@ -42,14 +38,21 @@
 
             <Step
               :number="4"
-              name="Arrange Tuition Payment"
+              name="Application Approval"
               @click="navigateToStage"
               :clickable="getApplicant !== undefined && !completedProcess"
-              :active="routeHas('/enroll/payment')"
+              :active="routeHas('/enroll/waitForApproval')"
             />
 
             <Step
               :number="5"
+              name="Arrange Tuition Payment"
+              :clickable="false"
+              :active="routeHas('/enroll/payment')"
+            />
+
+            <Step
+              :number="6"
               name="Start Learning"
               :clickable="false"
               :active="routeHas('/enroll/complete')"
@@ -74,7 +77,7 @@ const Step = {
     name: String,
     clickable: Boolean,
     active: Boolean,
-    disabled: Boolean,
+    disabled: Boolean
   },
 
   render(createElement) {
@@ -86,9 +89,9 @@ const Step = {
       "div",
       {
         on: {
-          click: this.click,
+          click: this.click
         },
-        class: classes.trim(),
+        class: classes.trim()
       },
       [`${this.number}. ${this.name}`]
     );
@@ -98,22 +101,23 @@ const Step = {
       if (!this.active && this.clickable && !this.disabled) {
         this.$emit("click", this.number);
       }
-    },
-  },
+    }
+  }
 };
 
 const stages = {
   1: "/enroll",
   2: "/enroll/applicant",
   3: "/enroll/appfee",
-  4: "/enroll/payment",
-  5: "/enroll/complete",
+  4: "/enroll/waitForApproval",
+  5: "/enroll/payment",
+  6: "/enroll/complete"
 };
 
 export default {
   components: { Hero, Step },
   data: () => ({
-    stage: 1,
+    stage: 1
   }),
   computed: {
     ...mapGetters([
@@ -123,15 +127,15 @@ export default {
       "getStartDate",
       "getPromoCodesDisplay",
       "getPromoCodes",
-      "getPaymentInfo",
+      "getPaymentInfo"
     ]),
     shouldWaiveAppFee() {
       const validPromos = ["COVID19", "TAKE25"];
       const promoCodesInStore = this.getPromoCodes || [];
       const matches = validPromos
-        .map((x) => x.toLowerCase())
-        .filter((value) =>
-          promoCodesInStore.map((x) => (x || "").toLowerCase()).includes(value)
+        .map(x => x.toLowerCase())
+        .filter(value =>
+          promoCodesInStore.map(x => (x || "").toLowerCase()).includes(value)
         );
       if (matches.length > 0) return true;
       if (this.getActivePlan && this.getActivePlan.appFee === false)
@@ -142,7 +146,7 @@ export default {
       return (
         this.routeHas("/enroll/complete") || this.routeHas("/enroll/admissions")
       );
-    },
+    }
   },
   methods: {
     routeHas(path) {
@@ -160,8 +164,8 @@ export default {
       const route = stages[this.stage];
       if (this.$route.path == route) return;
       return this.$router.push(route);
-    },
-  },
+    }
+  }
 };
 </script>
 
