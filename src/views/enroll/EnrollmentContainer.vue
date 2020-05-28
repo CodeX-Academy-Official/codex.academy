@@ -39,8 +39,7 @@
             <Step
               :number="4"
               name="Application Approval"
-              @click="navigateToStage"
-              :clickable="getApplicant !== undefined && !completedProcess"
+              :clickable="false"
               :active="routeHas('/enroll/waitForApproval')"
             />
 
