@@ -149,7 +149,7 @@ export default {
     this.hasApplied = applicant;
     this.$store.dispatch("setPriceClass", "international");
     this.$store.dispatch("setHomepage", this.$route.fullPath);
-    this.$store.dispatch("setProgramTitle", "CodeX Academy International");
+    this.$store.dispatch("setProgramTitle", "Talently");
   }
 };
 </script>
