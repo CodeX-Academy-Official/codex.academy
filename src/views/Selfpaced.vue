@@ -2,7 +2,7 @@
   <div class="pb-5">
     <Hero unsplashId="IgUR1iX0mqM" height="40vh">
       <h2>{{ this.getProgramTitle ? this.getProgramTitle : "CodeX Academy International" }}</h2>
-      <h5>Learn at your own pace</h5>
+      <h5>Level up at your own pace</h5>
     </Hero>
     <div v-if="getApplicant" class="text-center bg-periwinkle pt-4 pb-4">
       <h4>Please select a plan</h4>
