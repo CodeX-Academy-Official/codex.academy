@@ -13,6 +13,8 @@
             <div class>
               <h3 class="text-left action">Level up your skills</h3>
               <h1 class="text-left action">Ready to hire in 6 months</h1>
+              <h3 class="text-left action">Or less!</h3>
+              
             </div>
 
             <!-- <div class="d-none d-lg-block">
@@ -26,11 +28,11 @@
               <div class="title">We'll help you do it!</div>
               <div class="item">
                 <Icon name="checkbox" />
-                <span>Daily mentoring sessions</span>
+                <span>Live 1:1 Mentoring Sessions</span>
               </div>
               <div class="item">
                 <Icon name="checkbox" />
-                <span>Hyperfocused curriculum</span>
+                <span>Targetted Curriculum</span>
               </div>
               <div class="item">
                 <Icon name="checkbox" />
@@ -146,6 +148,7 @@ export default {
     const applicant = this.getApplicant;
     this.hasApplied = applicant;
     this.$store.dispatch("setPriceClass", "international");
+    this.$store.dispatch("setHomepage", this.$route.fullPath);
     this.$store.dispatch("setProgramTitle", "CodeX Academy International");
   }
 };

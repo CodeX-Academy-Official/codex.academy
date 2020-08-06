@@ -2,9 +2,9 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <!-- <div class="container"> -->
-    <router-link class="navbar-brand" to="/">
+    <a href="#" class="navbar-brand" @click.prevent="goHome">
       <img class="logo" src="img/logo/horizontal_logo.png" alt="CodeX Academy Logo" />
-    </router-link>
+    </a>
     <button
       class="navbar-toggler navbar-toggler-right"
       type="button"
@@ -24,7 +24,7 @@
     >
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <router-link to="/" class="nav-link">Home</router-link>
+          <a href="#" @click.prevent="goHome" class="nav-link">Home</a>
         </li>
         <li class="nav-item">
           <router-link
@@ -214,11 +214,17 @@ export default {
   data: () => ({
     isOpen: false
   }),
-  computed: { ...mapGetters(["getBootcamp6", "isInternational"]) },
+  computed: { ...mapGetters(["getBootcamp6", "isInternational", "getHomepage"]) },
   components: { SelectPlanButton, separator },
   methods: {
     toggleMenu() {
       this.isOpen = !this.isOpen;
+    },
+    goHome(){
+      var home = this.$store.state.homepage || "/";
+      if(this.$route.fullPath!==home) {
+        this.$router.push(home);
+      }
     }
   },
   watch: {

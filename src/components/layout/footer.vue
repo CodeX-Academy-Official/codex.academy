@@ -9,7 +9,7 @@
         <div class="col-12 col-md-2 mb-5">
           <h4>CODEX Academy</h4>
           <p>
-            <router-link to="/">Home</router-link>
+            <a href="#" @click.prevent="goHome">Home</a>            
           </p>
 
           <p>
@@ -147,7 +147,15 @@ export default {
     faYoutubeSquare
   }),
   computed: {
-    ...mapGetters(["isInternational"])
+    ...mapGetters(["isInternational", "getHomepage"])
+  },
+  methods:{
+    goHome(){
+      var home = this.$store.state.homepage || "/";
+      if(this.$route.fullPath!==home) {
+        this.$router.push(home);
+      }
+    }
   }
 };
 </script>

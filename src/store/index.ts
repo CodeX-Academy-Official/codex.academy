@@ -29,6 +29,7 @@ const SCHEDULE_CARD_PAYMENT = "SCHEDULE_CARD_PAYMENT";
 const SET_PRICE_CLASS = "SET_PRICE_CLASS";
 const SET_PROGRAM_TITLE = "SET_PROGRAM_TITLE";
 const RESET = "RESET";
+const SET_HOME_PAGE = "SET_HOME_PAGE";
 
 async function sendToHubspotAndTrackErrors(
   portalId: string,
@@ -90,6 +91,9 @@ export default new Vuex.Store({
     [SET_PROGRAM_TITLE](state: any, title: string) {
       state.programTitle = title;
     },
+    [SET_HOME_PAGE](state: any, homepage: string){
+      state.homepage = homepage;
+    }
   },
   actions: {
     reset({ commit }) {
@@ -97,6 +101,9 @@ export default new Vuex.Store({
     },
     setPriceClass(context, priceClass: string) {
       context.commit(SET_PRICE_CLASS, priceClass);
+    },
+    setHomepage(context, homepage: string){
+      context.commit(SET_HOME_PAGE, homepage);
     },
     setProgramTitle(context, title: string) {
       context.commit(SET_PROGRAM_TITLE, title);
@@ -171,6 +178,10 @@ export default new Vuex.Store({
     isInternational: (state) => state.priceClass === "international",
     getPriceClass: (state) => state.priceClass,
     getProgramTitle: (state) => state.programTitle,
+    getHomepage: (state) => {
+      const home = state.homepage;
+      return home || "/";
+    }
   },
   modules: {},
   plugins: [vuexLocal.plugin],
