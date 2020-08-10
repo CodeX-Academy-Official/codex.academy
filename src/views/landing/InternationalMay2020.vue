@@ -83,6 +83,7 @@
       >Select a Monthly Plan</router-link>
     </div>
 
+    <InternshipPartnersSection/>
     <CommercialSection />
 
     <div class="text-center mb-5">
@@ -117,6 +118,7 @@ import TechSection from "@/components/sections/tech";
 import CommercialSection from "@/components/sections/CommercialSection";
 import StatsSection from "@/components/sections/StatsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import InternshipPartnersSection from "@/components/sections/InternshipPartnersSection";
 
 export default {
   components: {
@@ -130,7 +132,8 @@ export default {
     TechSection,
     StatsSection,
     TestimonialsSection,
-    CommercialSection
+    CommercialSection,
+    InternshipPartnersSection
   },
   data: () => ({
     hasApplied: false
