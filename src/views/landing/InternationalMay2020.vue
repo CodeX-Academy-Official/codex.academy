@@ -84,6 +84,7 @@
     </div>
 
     <InternshipPartnersSection/>
+    
     <CommercialSection />
 
     <div class="text-center mb-5">
