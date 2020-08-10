@@ -15,9 +15,9 @@
               <h1 class="text-left action">Learn to Code in 6 months</h1>
             </div>
 
-            <div class="d-none d-lg-block">
+            <!-- <div class="d-none d-lg-block">
               <Promo25OffMonthly style="max-width: 450px;" class="mt-5" />
-            </div>
+            </div> -->
           </div>
 
           <div class="col-12 col-lg-6 my-auto">
@@ -69,9 +69,9 @@
         </div>
       </div>
 
-      <div class="container d-block d-lg-none mt-3">
+      <!-- <div class="container d-block d-lg-none mt-3">
         <Promo25OffMonthly style="max-width: 450px;" class="mt-5" />
-      </div>
+      </div> -->
     </Hero>
 
     <StatsSection />
