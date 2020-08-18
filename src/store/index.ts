@@ -30,6 +30,7 @@ const SET_PRICE_CLASS = "SET_PRICE_CLASS";
 const SET_PROGRAM_TITLE = "SET_PROGRAM_TITLE";
 const RESET = "RESET";
 const SET_HOME_PAGE = "SET_HOME_PAGE";
+const SET_SOURCE = "SET_SOURCE";
 
 async function sendToHubspotAndTrackErrors(
   portalId: string,
@@ -46,7 +47,8 @@ async function sendToHubspotAndTrackErrors(
 }
 async function sendApplication({ context, applicant, hsForm }: any) {
   const formId = hsForm || "56d6a407-24b7-4a6b-be49-45d4dbc6eea5";
-  const applicantWithId = { ...applicant, learnerId: Date.now() };
+  const source = context.state.source || applicant.source;
+  const applicantWithId = { ...applicant, learnerId: Date.now(), source };
   context.commit(ENROLL, applicantWithId);
   await sendToHubspotAndTrackErrors("7092117", formId, applicantWithId);
 }
@@ -61,6 +63,7 @@ export default new Vuex.Store({
     paymentInfo: undefined,
     priceClass: undefined,
     activePlan: undefined,
+    source: undefined
   },
   mutations: {
     [RESET](state: any) {
@@ -78,6 +81,9 @@ export default new Vuex.Store({
     },
     [SET_START_DATE](state: any, startDate) {
       state.startDate = startDate;
+    },
+    [SET_SOURCE](state: any, source: string) {
+      state.source = source;
     },
     [APPLY_PROMO_CODE](state: any, promoCode) {
       state.promoCodes.push(promoCode);
@@ -118,6 +124,9 @@ export default new Vuex.Store({
     },
     setStartDate(context, startDate) {
       context.commit(SET_START_DATE, startDate);
+    },
+    setSource(context, source) {
+      context.commit(SET_SOURCE, source);
     },
     async startApplication(context: any, { applicant, hsForm }: any) {
       await sendApplication({ context, applicant, hsForm });

@@ -5,6 +5,7 @@ import IndiaMay2020 from "../views/landing/IndiaMay2020.vue";
 import SummerCampMay2020 from "../views/landing/SummerCampMay2020.vue";
 import InternationalMay2020 from "../views/landing/InternationalMay2020.vue";
 import TalentlyAug2020 from "../views/landing/TalentlyAug2020.vue";
+import PathriseAug2020 from "../views/landing/PathriseAug2020.vue";
 
 const routes: Array<any> = [
   {
@@ -40,6 +41,10 @@ const routes: Array<any> = [
         path: "talently202008",
         component: TalentlyAug2020,
       },
+      {
+        path: "pathrise1202008",
+        component: PathriseAug2020
+      }
     ],
   },
 ];

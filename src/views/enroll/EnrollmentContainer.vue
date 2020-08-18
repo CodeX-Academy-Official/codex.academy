@@ -129,7 +129,7 @@ export default {
       "getPaymentInfo"
     ]),
     shouldWaiveAppFee() {
-      const validPromos = ["COVID19", "TAKE25"];
+      const validPromos = ["COVID19", "TAKE25", "PATHRISE"];
       const promoCodesInStore = this.getPromoCodes || [];
       const matches = validPromos
         .map(x => x.toLowerCase())
