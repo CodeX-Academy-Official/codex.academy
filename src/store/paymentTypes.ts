@@ -143,49 +143,49 @@ const leifPathrisePaymentOptions = [
     minimumSalary: 30000,
     ratePercent: 10,
     termMonths: 24,
-    url: "https://leif.org/commit?product_id=5ea9f9b405af553e40c404d6",
+    url: "https://leif.org/commit?product_id=5f4518c487b9307d95dc1da0",
     worksWith: (program: Plan, applicant: any) => {
       
       return isPathrise(applicant) 
               && leif(program, applicant, "Front-End Developer", fullTime);
     },
   },
-  {
-    type: "leif-pathrise",
-    minimumSalary: 30000,
-    ratePercent: 10,
-    termMonths: 24,
-    url: "https://leif.org/commit?product_id=5ea9faa086aac87083c404ea",
-    worksWith: (program: Plan, applicant: any) => {
-      return isPathrise(applicant) 
-      && leif(program, applicant, "Front-End Developer", partTime);
-    },
-  },
+  // {
+  //   type: "leif-pathrise",
+  //   minimumSalary: 30000,
+  //   ratePercent: 10,
+  //   termMonths: 24,
+  //   url: "https://leif.org/commit?product_id=5ea9faa086aac87083c404ea",
+  //   worksWith: (program: Plan, applicant: any) => {
+  //     return isPathrise(applicant) 
+  //     && leif(program, applicant, "Front-End Developer", partTime);
+  //   },
+  // },
   {
     type: "leif-pathrise",
     minimumSalary: 40000,
     ratePercent: 10,
     termMonths: 36,
-    url: "https://leif.org/commit?product_id=5ea9f8f5562d30bc52c404d8",
+    url: "https://leif.org/commit?product_id=5f45185987b9307d95dc1d97",
     worksWith: (program: Plan, applicant: any) => {
       return isPathrise(applicant) 
       && leif(program, applicant, "Full-Stack Developer", fullTime);
     },
   },
+  // {
+  //   type: "leif-pathrise",
+  //   url: "https://leif.org/commit?product_id=5ea9fa7a574769e4d5c404f7",
+  //   minimumSalary: 40000,
+  //   ratePercent: 10,
+  //   termMonths: 36,
+  //   worksWith: (program: Plan, applicant: any) => {
+  //     return isPathrise(applicant) 
+  //     && leif(program, applicant, "Full-Stack Developer", partTime);
+  //   },
+  // },
   {
     type: "leif-pathrise",
-    url: "https://leif.org/commit?product_id=5ea9fa7a574769e4d5c404f7",
-    minimumSalary: 40000,
-    ratePercent: 10,
-    termMonths: 36,
-    worksWith: (program: Plan, applicant: any) => {
-      return isPathrise(applicant) 
-      && leif(program, applicant, "Full-Stack Developer", partTime);
-    },
-  },
-  {
-    type: "leif-pathrise",
-    url: "https://leif.org/commit?product_id=5ea9f95286aac87083c404df",
+    url: "https://leif.org/commit?product_id=5f4518975b4dd6ce73dc1f7b",
     minimumSalary: 50000,
     ratePercent: 10,
     termMonths: 42,
@@ -194,17 +194,17 @@ const leifPathrisePaymentOptions = [
       && leif(program, applicant, "Full-Stack Engineer", fullTime);
     },
   },
-  {
-    type: "leif-pathrise",
-    url: "https://leif.org/commit?product_id=5ea9fac786aac87083c404ee",
-    minimumSalary: 50000,
-    ratePercent: 10,
-    termMonths: 42,
-    worksWith: (program: Plan, applicant: any) => {
-      return isPathrise(applicant) 
-      && leif(program, applicant, "Full-Stack Engineer", partTime);
-    },
-  },
+  // {
+  //   type: "leif-pathrise",
+  //   url: "https://leif.org/commit?product_id=5ea9fac786aac87083c404ee",
+  //   minimumSalary: 50000,
+  //   ratePercent: 10,
+  //   termMonths: 42,
+  //   worksWith: (program: Plan, applicant: any) => {
+  //     return isPathrise(applicant) 
+  //     && leif(program, applicant, "Full-Stack Engineer", partTime);
+  //   },
+  // },
 ];
 
 // const stripeCreditCard = [
