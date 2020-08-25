@@ -59,6 +59,13 @@
             :programTotal="getActivePlan.price"
             css="paymentType ml-4"
           />
+          <LeifPathrise
+            v-if="paymentType.type === 'leif-pathrise'"
+            :paymentType="paymentType"
+            :programName="paymentType.programName"
+            :programTotal="getActivePlan.price"
+            css="paymentType ml-4"
+          />
           <CreditCardCamp
             v-if="paymentType.type === 'creditCard-camp'"
             :paymentType="paymentType"
@@ -122,6 +129,7 @@ import CreditCardCamp from "@/components/paymentTypes/creditCardCamp";
 import CreditCardPreSetup from "@/components/paymentTypes/creditCardPresetup";
 import CodeXInstallments from "@/components/paymentTypes/CodeXInstallments";
 import Leif from "@/components/paymentTypes/leif";
+import LeifPathrise from "@/components/paymentTypes/leif-pathrise";
 import CallBack from "@/components/paymentTypes/callback";
 import Climb from "@/components/paymentTypes/climb";
 import Money from "@/components/Money";
@@ -139,6 +147,7 @@ export default {
     CallBack,
     Climb,
     Leif,
+    LeifPathrise,
     Money
   },
   computed: {
