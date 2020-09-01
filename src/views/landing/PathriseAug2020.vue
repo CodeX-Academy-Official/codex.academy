@@ -11,29 +11,36 @@
           <div class="col my-auto big-message">
             <Logo color="white" :width="150" class="landing-logo mb-3" />
             <div class>
-              <h3 class="text-left action">Level up your skills</h3>
-              <h1 class="text-left action">Ready to hire in 6 months</h1>
-              <h3 class="text-left action">Or less!</h3>
+              <h3 class="text-left action">Get ready</h3>
+              <h1 class="text-left action">Level-up your skills</h1>
+              <h3 class="text-left action">Land a job</h3>
               
             </div>
             <div class="checklist">
               <div class="title">We'll help you do it!</div>
               <div class="item">
                 <Icon name="checkbox" />
+                <span>Modern, Marketable Skills</span>
+              </div>
+              <div class="item">
+                <Icon name="checkbox" />
                 <span>Live 1:1 Mentoring Sessions</span>
-              </div>
-              <div class="item">
-                <Icon name="checkbox" />
-                <span>Targetted Curriculum</span>
-              </div>
-              <div class="item">
-                <Icon name="checkbox" />
-                <span>World-Class Mentors</span>
               </div>
               <div class="item">
                 <Icon name="checkbox" />
                 <span>100% Remote</span>
               </div>
+              <div class="item">
+                <Icon name="checkbox" />
+                <span>Internships</span>
+              </div>
+              <div class="item">
+                <Icon name="checkbox" />
+                <span>Take the time you need</span>
+              </div>
+              
+              
+              
             </div>
 
             

@@ -44,11 +44,13 @@ const routes: Array<any> = [
       },
       {
         path: "pathrise1202008",
-        component: PathriseAug2020
+        component: PathriseAug2020,
+        meta: { source: "Pathrise1", setHomepage: true}
       },
       {
         path: "pathriseint1202008",
-        component: InternationalPathriseAug2020
+        component: InternationalPathriseAug2020,
+        meta: { source: "PathriseInt1"}
       }
     ],
   },
