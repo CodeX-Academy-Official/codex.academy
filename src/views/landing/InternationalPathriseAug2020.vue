@@ -1,7 +1,7 @@
 <template>
   <div>
     <Hero
-      class="april2020s-landing-hero"
+      class="pathrise-int-landing-hero"
       :unsplashIds="['vdXMSiX-n6M', 'Qg-r7OxZN7A', 'YK0HPwWDJ1I']"
       height="100vh"
       backgroundColor="rgba(25, 32, 71,0.7)"
@@ -20,6 +20,13 @@
             <!-- <div class="d-none d-lg-block">
               <Promo25OffMonthly style="max-width: 450px;" class="mt-5" />
             </div> -->
+
+            <div class="partner">
+              <p>In partnership with</p>
+              <a href="https://pathrise.com" target="_blank">
+                <img class="partner" src="img/partners/pathrise.svg" />
+              </a>
+            </div>
           </div>
 
           <div class="col-12 col-lg-6 my-auto">
@@ -42,12 +49,14 @@
                 <Icon name="checkbox" />
                 <span>100% Remote</span>
               </div>
+              
             </div>
 
             <router-link
               class="btn btn-lg btn-primary mt-5"
               to="/programs/international"
             >Select a Monthly Plan</router-link>
+            
             <!-- </div> -->
 
             <!-- <Promo25OffMonthly style="max-width: 450px;" class="mt-5" /> -->
@@ -162,7 +171,17 @@ export default {
 <style lang="scss">
 @import "@/variables";
 
-.april2020s-landing-hero {
+.pathrise-int-landing-hero {
+  .partner {
+    padding-top: 20px;
+    p {
+      margin-bottom: 0px;
+    }
+    text-align: center;
+    img {
+      width: 200px;
+    }
+  }
   .thanks-box {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 5px;

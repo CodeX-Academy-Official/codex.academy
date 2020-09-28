@@ -1,17 +1,12 @@
 <template>
   <div>
     <Hero
-      class="april2020s-landing-hero"
+      class="pathrise-landing-hero"
       :unsplashIds="['vdXMSiX-n6M', 'Qg-r7OxZN7A', 'YK0HPwWDJ1I']"
       height="100vh"
       backgroundColor="rgba(25, 32, 71,0.7)"
     >
       <div class="container">
-        <div
-        class="partner"
-        :style="{ 'background-image': `url(img/partners/pathrise.svg)` }"
-      ></div>
-      
         <div class="row h-100">
           <div class="col my-auto big-message">
             <Logo color="white" :width="150" class="landing-logo mb-3" />
@@ -19,7 +14,6 @@
               <h3 class="text-left action">Get ready</h3>
               <h1 class="text-left action">Level-up your skills</h1>
               <h3 class="text-left action">Land a job</h3>
-              
             </div>
             <div class="checklist">
               <div class="title">We'll help you do it!</div>
@@ -43,12 +37,7 @@
                 <Icon name="checkbox" />
                 <span>Take the time you need</span>
               </div>
-              
-              
-              
             </div>
-
-            
           </div>
 
           <div class="col-5 d-none d-lg-block my-auto">
@@ -61,6 +50,12 @@
               />
             </div>
             <Thanks v-if="hasApplied" @startOver="clearApplicant" />
+            <div class="partner">
+              <p>In partnership with</p>
+              <a href="https://pathrise.com" target="_blank">
+                <img class="partner" src="img/partners/pathrise.svg" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -78,6 +73,12 @@
             />
           </div>
           <Thanks v-if="hasApplied" @startOver="clearApplicant" />
+          <div class="partner">
+              <p>In partnership with</p>
+              <a href="https://pathrise.com" target="_blank">
+                <img class="partner" src="img/partners/pathrise.svg" />
+              </a>
+            </div>
         </div>
       </div>
     </div>
@@ -119,16 +120,16 @@ export default {
     TechSection,
     StatsSection,
     TestimonialsSection,
-    CommercialSection
+    CommercialSection,
   },
   data: () => ({
-    hasApplied: false
+    hasApplied: false,
   }),
   computed: { ...mapGetters(["getMethods", "getApplicant"]) },
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", {
-        applicant
+        applicant,
       });
       await this.$store.dispatch("setStartDate", applicant.startDate);
       this.hasApplied = true;
@@ -136,21 +137,34 @@ export default {
     },
     clearApplicant() {
       this.hasApplied = false;
-    }
+    },
   },
   mounted() {
     const applicant = this.getApplicant;
     this.hasApplied = applicant;
-    this.$store.dispatch("setSource", this.$store.getters.getSource || "Pathrise1");
-  }
+    this.$store.dispatch(
+      "setSource",
+      this.$store.getters.getSource || "Pathrise1"
+    );
+  },
 };
 </script>
 
 <style lang="scss">
 @import "@/variables";
 
-.partner { width: 500px; height: 500px; background: no-repeat; fill: white; }
-.april2020s-landing-hero {
+.pathrise-landing-hero {
+  .partner {
+    padding-top: 20px;
+    p {
+      margin-bottom: 0px;
+    }
+    text-align: center;
+    img {
+      width: 200px;
+    }
+  }
+
   .thanks-box {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 5px;
