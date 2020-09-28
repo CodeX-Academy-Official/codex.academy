@@ -45,6 +45,10 @@ export default {
           homePage = "/landing/talently202008";
         }
         this.$store.dispatch("setHomepage", homePage);
+
+        if(homePage !== this.$router.currentRoute){
+          this.$router.push(homePage);
+        }
       }
     }
   }
