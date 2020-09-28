@@ -1,15 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import store from "@/store";
 import { scrollToHash } from "./scrollToHash";
-
 import ProgramOverview from "../views/ProgramOverview.vue";
-import Selfpaced from "../views/Selfpaced.vue";
-import Bootcamps from "../views/Bootcamps.vue";
-
 import Community from "../views/Community.vue";
-import FindPlan from "../views/FindPlan.vue";
-
 import Contact from "../views/Contact.vue";
 import FAQs from "../views/FAQs.vue";
 import Blog from "../views/Blog.vue";
@@ -37,7 +31,6 @@ import MeetWithAdmissions from "../views/enroll/MeetWithAdmissions.vue";
 import landingPageRoutes from "./landingPages";
 import policyRoutes from "./policyRoutes";
 import programRoutes from "./programRoutes";
-import HomeApril2020 from "../views/landing/HomeApril2020.vue";
 
 Vue.use(VueRouter);
 
@@ -45,11 +38,7 @@ const routes = [
   ...landingPageRoutes,
   ...policyRoutes,
   ...programRoutes,
-  {
-    path: "/",
-    name: "Home",
-    component: HomeApril2020,
-  },
+  
   {
     path: "/community",
     name: "Community",
@@ -207,5 +196,11 @@ const router = new VueRouter({
 if (location.hash) {
   scrollToHash(location.hash);
 }
+
+router.beforeEach((to, from, next) => {
+  const homePage = store.state.homepage;
+  if(to.path==="/" && homePage) next({ path: homePage });
+  else next();
+})
 
 export default router;

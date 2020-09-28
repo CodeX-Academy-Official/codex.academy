@@ -209,7 +209,7 @@ export default {
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", {
-        applicant: { ...applicant, source: "Summer-Camp May 2020" },
+        applicant: { ...applicant, source: this.$store.getters.getSource || "Summer-Camp May 2020" },
       });
       const startDate = formatted(getNextDeadlineAfter("5-30-2020"));
       await this.$store.dispatch("setStartDate", startDate);

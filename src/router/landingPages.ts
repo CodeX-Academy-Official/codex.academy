@@ -10,6 +10,11 @@ import InternationalPathriseAug2020 from "../views/landing/InternationalPathrise
 
 const routes: Array<any> = [
   {
+    path: "/",
+    name: "Home",
+    component: HomeApril2020,
+  },
+  {
     path: "/landing",
     name: "Landing",
     component: LandingContainer,

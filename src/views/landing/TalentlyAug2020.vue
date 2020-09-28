@@ -134,7 +134,7 @@ export default {
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", {
-        applicant: { ...applicant, source: "Low-Monthly May 2020" }
+        applicant: { ...applicant }
       });
       await this.$store.dispatch("setStartDate", applicant.startDate);
       this.hasApplied = true;
@@ -147,9 +147,7 @@ export default {
   mounted() {
     const applicant = this.getApplicant;
     this.hasApplied = applicant;
-    this.$store.dispatch("setPriceClass", "international");
-    this.$store.dispatch("setHomepage", this.$route.fullPath);
-    this.$store.dispatch("setProgramTitle", "Talently");
+    
   }
 };
 </script>

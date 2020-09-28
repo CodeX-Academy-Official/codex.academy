@@ -7,6 +7,11 @@
       backgroundColor="rgba(25, 32, 71,0.7)"
     >
       <div class="container">
+        <div
+        class="partner"
+        :style="{ 'background-image': `url(img/partners/pathrise.svg)` }"
+      ></div>
+      
         <div class="row h-100">
           <div class="col my-auto big-message">
             <Logo color="white" :width="150" class="landing-logo mb-3" />
@@ -136,7 +141,7 @@ export default {
   mounted() {
     const applicant = this.getApplicant;
     this.hasApplied = applicant;
-    this.$store.dispatch("setSource", "Pathrise1");
+    this.$store.dispatch("setSource", this.$store.getters.getSource || "Pathrise1");
   }
 };
 </script>
@@ -144,6 +149,7 @@ export default {
 <style lang="scss">
 @import "@/variables";
 
+.partner { width: 500px; height: 500px; background: no-repeat; fill: white; }
 .april2020s-landing-hero {
   .thanks-box {
     background-color: rgba(255, 255, 255, 0.3);

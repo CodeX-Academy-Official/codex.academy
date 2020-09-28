@@ -25,6 +25,28 @@ export default {
     if (this.$route.query.promo) {
       this.$store.dispatch("applyPromoCode", this.$route.query.promo);
     }
+
+    const source = this.$route.query.utm_source;
+    if(source){
+      this.$store.dispatch("setSource", source);
+      //please remove source setting from target landing page
+    }
+  
+    const campaign = this.$route.query.utm_campaign;
+    if(campaign){
+      const isInternational = campaign.indexOf("-int-") > -1;
+      
+      if(isInternational) {
+        this.$store.dispatch("setPriceClass", "international");
+        this.$store.dispatch("setProgramTitle", "CodeX Academy International");
+        
+        let homePage = "/landing/int202005";
+        if(source=="talently"){
+          homePage = "/landing/talently202008";
+        }
+        this.$store.dispatch("setHomepage", homePage);
+      }
+    }
   }
 };
 </script>

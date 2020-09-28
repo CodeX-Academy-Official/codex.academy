@@ -127,7 +127,7 @@ export default {
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", {
-        applicant: { ...applicant, source: "CodeX Academy April 2020" }
+        applicant: { ...applicant }
       });
       await this.$store.dispatch("setStartDate", applicant.startDate);
       this.hasApplied = true;
