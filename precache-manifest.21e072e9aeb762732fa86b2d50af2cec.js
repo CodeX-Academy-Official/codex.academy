@@ -120,8 +120,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/about.2e593756.css"
   },
   {
-    "revision": "8089e59ce637d4b3a7f0",
-    "url": "/css/app.b70046d3.css"
+    "revision": "6f7660b34248fd738871",
+    "url": "/css/app.42bb76e2.css"
   },
   {
     "revision": "b9c83247ef7741fe9eda",
@@ -784,6 +784,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/okay.93ee6f48.svg"
   },
   {
+    "revision": "990d5c02f0e9248ca1d036bb869c64d4",
+    "url": "/img/partners/pathrise.svg"
+  },
+  {
     "revision": "73214d27f386bc3357bb97c1d3a76d1e",
     "url": "/img/percent.73214d27.svg"
   },
@@ -1012,7 +1016,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/zero.579b7008.svg"
   },
   {
-    "revision": "9e845b72b4604deb9ab0eab608fef277",
+    "revision": "5c07d603a68b1aa01300329b8b5b9347",
     "url": "/index.html"
   },
   {
@@ -1020,8 +1024,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/about.9df2d9e1.js"
   },
   {
-    "revision": "8089e59ce637d4b3a7f0",
-    "url": "/js/app.0b181449.js"
+    "revision": "6f7660b34248fd738871",
+    "url": "/js/app.f080a167.js"
   },
   {
     "revision": "b9c83247ef7741fe9eda",
