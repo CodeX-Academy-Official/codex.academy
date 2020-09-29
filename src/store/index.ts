@@ -47,7 +47,7 @@ async function sendToHubspotAndTrackErrors(
 }
 async function sendApplication({ context, applicant, hsForm }: any) {
   const formId = hsForm || "56d6a407-24b7-4a6b-be49-45d4dbc6eea5";
-  const source = context.state.source;
+  const source = context.state.source || "none";
   const applicantWithId = { ...applicant, learnerId: Date.now(), source };
   context.commit(ENROLL, applicantWithId);
   await sendToHubspotAndTrackErrors("7092117", formId, applicantWithId);
