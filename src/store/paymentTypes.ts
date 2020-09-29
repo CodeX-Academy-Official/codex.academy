@@ -63,7 +63,8 @@ function leif(
 }
 
 function isPathrise(applicant: any){
-  const is = applicant.source.toLowerCase().indexOf("pathrise")>-1;
+  const source = applicant.source || "none";
+  const is = source.toLowerCase().indexOf("pathrise")>-1;
   return is;
 }
 
