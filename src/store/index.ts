@@ -47,7 +47,7 @@ async function sendToHubspotAndTrackErrors(
 }
 async function sendApplication({ context, applicant, hsForm }: any) {
   const formId = hsForm || "56d6a407-24b7-4a6b-be49-45d4dbc6eea5";
-  const source = context.state.source || applicant.source;
+  const source = context.state.source;
   const applicantWithId = { ...applicant, learnerId: Date.now(), source };
   context.commit(ENROLL, applicantWithId);
   await sendToHubspotAndTrackErrors("7092117", formId, applicantWithId);
@@ -129,7 +129,11 @@ export default new Vuex.Store({
       context.commit(SET_SOURCE, source);
     },
     async startApplication(context: any, { applicant, hsForm }: any) {
-      await sendApplication({ context, applicant, hsForm });
+      await sendApplication({ 
+        context, 
+        applicant, 
+        hsForm 
+      });
     },
     async enroll(context, applicant) {
       await sendApplication({
