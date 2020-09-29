@@ -1,6 +1,5 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import store from "@/store";
 import { scrollToHash } from "./scrollToHash";
 import ProgramOverview from "../views/ProgramOverview.vue";
 import Community from "../views/Community.vue";
@@ -38,7 +37,6 @@ const routes = [
   ...landingPageRoutes,
   ...policyRoutes,
   ...programRoutes,
-  
   {
     path: "/community",
     name: "Community",
@@ -196,11 +194,5 @@ const router = new VueRouter({
 if (location.hash) {
   scrollToHash(location.hash);
 }
-
-router.beforeEach((to, from, next) => {
-  const homePage = store.state.homepage;
-  if(to.path==="/" && homePage) next({ path: homePage });
-  else next();
-})
 
 export default router;

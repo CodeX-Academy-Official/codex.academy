@@ -160,10 +160,10 @@ export default {
   mounted() {
     const applicant = this.getApplicant;
     this.hasApplied = applicant;
-    this.$store.dispatch("setPriceClass", "international");
-    this.$store.dispatch("setHomepage", this.$route.fullPath);
-    this.$store.dispatch("setProgramTitle", "CodeX Academy International");
-    this.$store.dispatch("setSource", "PathriseInt1");
+    // this.$store.dispatch("setPriceClass", "international");
+    // this.$store.dispatch("setHomepage", this.$route.fullPath);
+    // this.$store.dispatch("setProgramTitle", "CodeX Academy International");
+    // this.$store.dispatch("setSource", "PathriseInt1");
   }
 };
 </script>

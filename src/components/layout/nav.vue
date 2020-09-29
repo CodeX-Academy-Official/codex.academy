@@ -3,7 +3,11 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <!-- <div class="container"> -->
     <a href="#" class="navbar-brand" @click.prevent="goHome">
-      <img class="logo" src="img/logo/horizontal_logo.png" alt="CodeX Academy Logo" />
+      <img
+        class="logo"
+        src="img/logo/horizontal_logo.png"
+        alt="CodeX Academy Logo"
+      />
     </a>
     <button
       class="navbar-toggler navbar-toggler-right"
@@ -31,7 +35,8 @@
             v-if="isInternational"
             to="/programs/international"
             class="nav-link"
-          >Monthly Plans</router-link>
+            >Monthly Plans</router-link
+          >
         </li>
         <li class="nav-item dropdown" v-if="!isInternational">
           <a
@@ -42,18 +47,25 @@
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
-          >Programs</a>
+            >Programs</a
+          >
           <div class="dropdown-menu">
             <div class="nav-item">
-              <router-link to="/programs/front-end-developer" class="nav-link">Front-End Developer</router-link>
+              <router-link to="/programs/front-end-developer" class="nav-link"
+                >Front-End Developer</router-link
+              >
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
-              <router-link to="/programs/full-stack-developer" class="nav-link">Full-Stack Developer</router-link>
+              <router-link to="/programs/full-stack-developer" class="nav-link"
+                >Full-Stack Developer</router-link
+              >
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
-              <router-link to="/programs/full-stack-engineer" class="nav-link">Full-Stack Engineer</router-link>
+              <router-link to="/programs/full-stack-engineer" class="nav-link"
+                >Full-Stack Engineer</router-link
+              >
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
@@ -71,14 +83,19 @@
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
-          >Financial Aid</a>
+            >Financial Aid</a
+          >
           <div class="dropdown-menu">
             <div class="nav-item">
-              <router-link to="/ISA" class="nav-link">Income Sharing</router-link>
+              <router-link to="/ISA" class="nav-link"
+                >Income Sharing</router-link
+              >
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
-              <router-link to="/financial-aid" class="nav-link">Financing</router-link>
+              <router-link to="/financial-aid" class="nav-link"
+                >Financing</router-link
+              >
             </div>
           </div>
         </li>
@@ -92,10 +109,13 @@
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
-          >Financial Aid</a>
+            >Financial Aid</a
+          >
           <div class="dropdown-menu">
             <div class="nav-item">
-              <router-link to="/financing/codex" class="nav-link">Student Loans</router-link>
+              <router-link to="/financing/codex" class="nav-link"
+                >Student Loans</router-link
+              >
             </div>
           </div>
         </li>
@@ -113,38 +133,45 @@
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
-          >About</a>
+            >About</a
+          >
           <div class="dropdown-menu">
             <div class="nav-item">
-              <router-link :to="{ path: '/howitworks' }" class="nav-link">How It Works</router-link>
+              <router-link :to="{ path: '/howitworks' }" class="nav-link"
+                >How It Works</router-link
+              >
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
               <router-link
                 :to="{ path: '/howitworks', hash: '#curriculum' }"
                 class="nav-link"
-              >Curriculum</router-link>
+                >Curriculum</router-link
+              >
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
               <router-link
                 :to="{ path: '/howitworks', hash: '#timeline' }"
                 class="nav-link"
-              >Timeline</router-link>
+                >Timeline</router-link
+              >
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
               <router-link
                 :to="{ path: '/howitworks', hash: '#tech' }"
                 class="nav-link"
-              >Technologies</router-link>
+                >Technologies</router-link
+              >
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
               <router-link
                 :to="{ path: '/howitworks', hash: '#internships' }"
                 class="nav-link"
-              >Internships</router-link>
+                >Internships</router-link
+              >
             </div>
           </div>
         </li>
@@ -196,7 +223,10 @@
         </li>-->
 
         <li class="nav-item">
-          <SelectPlanButton text="Apply" buttonClass="btn btn-primary btn-block nav-link" />
+          <SelectPlanButton
+            text="Apply"
+            buttonClass="btn btn-primary btn-block nav-link"
+          />
         </li>
       </ul>
     </div>
@@ -212,26 +242,27 @@ import { mapGetters } from "vuex";
 export default {
   name: "NavBar",
   data: () => ({
-    isOpen: false
+    isOpen: false,
   }),
-  computed: { ...mapGetters(["getBootcamp6", "isInternational", "getHomepage"]) },
+  computed: {
+    ...mapGetters(["getBootcamp6", "isInternational", "getHomepage"]),
+  },
   components: { SelectPlanButton, separator },
   methods: {
     toggleMenu() {
       this.isOpen = !this.isOpen;
     },
-    goHome(){
-      var home = this.$store.state.homepage || "/";
-      if(this.$route.fullPath!==home) {
-        this.$router.push(home);
-      }
-    }
+    goHome() {
+      var home = "/";
+      if (this.$router.currentRoute.fullPath === home) return;
+      this.$router.push(home);
+    },
   },
   watch: {
     $route() {
       this.isOpen = false;
-    }
-  }
+    },
+  },
 };
 </script>
 
