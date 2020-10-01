@@ -6,6 +6,8 @@
         <input
           type="text"
           class="form-control"
+          name="fname"
+          autocomplete="given-name"
           v-model.trim="applicant.firstName"
           :class="(applicant.firstName)"
           required
@@ -16,6 +18,8 @@
         <input
           type="text"
           class="form-control"
+          name="lname"
+          autocomplete="family-name"
           v-model.trim="applicant.lastName"
           :class="(applicant.lastName)"
           required
@@ -27,6 +31,7 @@
         <label for="inputEmail4">Email:</label>
         <input
           type="email"
+          name="email"
           class="form-control"
           id="inputEmail4"
           v-model.trim="applicant.email"
@@ -40,6 +45,7 @@
           type="tel"
           class="form-control"
           id="phone"
+          name="phone"
           v-model.trim="applicant.phone"
           :class="(applicant.phone)"
           required
@@ -54,6 +60,7 @@
           type="text"
           class="form-control"
           id="inputAddress"
+          name="address"
           v-model.trim="applicant.address1"
           :class="(applicant.address1)"
           required
@@ -71,6 +78,7 @@
           type="text"
           class="form-control"
           id="inputCity"
+          name="city"
           v-model.trim="applicant.city"
           :class="(applicant.city)"
           required
@@ -81,6 +89,7 @@
         <input
           class="form-control"
           type="text"
+          name="state"
           v-model.trim="applicant.state"
           :class="(applicant.state)"
         />
@@ -91,6 +100,7 @@
           type="text"
           class="form-control"
           id="inputZip"
+          name="zip"
           v-model.trim="applicant.zip"
           :class="(applicant.zip)"
           required
@@ -121,6 +131,7 @@
           type="date"
           class="form-control"
           id="inputDob"
+          name="date"
           v-model.trim="applicant.dateOfBirth"
           :class="(applicant.dateOfBirth)"
           required
