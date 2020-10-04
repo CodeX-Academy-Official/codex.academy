@@ -153,11 +153,7 @@ export default new Vuex.Store({
     applyPromoCode({ commit, state }, promoCodeInput) {
       const newCodes = (promoCodeInput||"").split(",").map((x:string)=> x.trim().toUpperCase());
       const allCodes = [...newCodes, ...state.promoCodes];
-
-      function onlyUnique(value: string, index: number, self: string[]) {
-        return self.indexOf(value) === index;
-      }
-      const uniqueCodes = allCodes.filter(onlyUnique);
+      const uniqueCodes = [...new Set(allCodes)];
       commit(SET_PROMO_CODES, uniqueCodes);
     },
     payAppFee({ commit }) {
