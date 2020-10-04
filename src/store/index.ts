@@ -64,7 +64,7 @@ export default new Vuex.Store({
     paymentInfo: undefined,
     priceClass: undefined,
     activePlan: undefined,
-    source: undefined,
+    source: "CodeX Academy April 2020",
     audience: ""
   },
   mutations: {
