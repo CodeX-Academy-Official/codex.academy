@@ -18,7 +18,7 @@
             <h2>The Swiss Army Knife of Development</h2>
             <p
               class
-            >Being a Full-Stack Developer means you can be trusted with every development angle of a software application. You are able to develop and maintan features in all layers including the user interface, the browser logic, back-end API's, business domain and database. You are such a versatile developer that very seldom is it necessary to call in a specialist. You are plan A and plan B!</p>
+            >Being a Full-Stack Developer means you can be trusted with every development angle of a software application. You are able to develop and maintain features in all layers including the user interface, the browser logic, back-end API's, business domain and database. You are such a versatile developer that very seldom is it necessary to call in a specialist. You are plan A and plan B!</p>
           </div>
           <SalaryBlock
             :amount="105813"

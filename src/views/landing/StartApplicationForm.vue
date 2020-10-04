@@ -5,10 +5,11 @@
       <input
         type="text"
         name="name"
+        autocomplete="name"
         class="form-control"
         placeholder="Name"
         v-model="name"
-        required
+        required 
       />
     </div>
     <div class="form-label-group">
