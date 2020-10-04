@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-12 col-md-4 header">
         <div class="subtitle">Use Promo Code:</div>
-        <div class="title">COVID19</div>
+        <div class="title">{{ (code||"").toUpperCase() }}</div>
       </div>
       <div class="col-12 col-md-8 promos">
         <div class="row justify-content-center h-100">
@@ -23,6 +23,9 @@
 import Icon from "@/components/Icon";
 
 export default {
+  props: { 
+    code: String
+  },
   components: { Icon }
 };
 </script>

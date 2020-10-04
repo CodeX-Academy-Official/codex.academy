@@ -5,6 +5,8 @@
       v-else-if="international && source === 'pathrise'"
     />
     <PathriseAug2020 v-else-if="source === 'pathrise'" />
+    <LevelUpInternationalOct2020 v-else-if="levelup && international" />
+    <LevelUpOct2020 v-else-if="levelup" />
     <InternationalMay2020 v-else-if="international" />
     <HomeApril2020 v-else-if="loaded" />
   </div>
@@ -20,6 +22,8 @@ import InternationalMay2020 from "../views/landing/InternationalMay2020.vue";
 import TalentlyAug2020 from "../views/landing/TalentlyAug2020.vue";
 import PathriseAug2020 from "../views/landing/PathriseAug2020.vue";
 import InternationalPathriseAug2020 from "../views/landing/InternationalPathriseAug2020.vue";
+import LevelUpOct2020 from "../views/landing/LevelUpOct2020.vue";
+import LevelUpInternationalOct2020 from "../views/landing/LevelUpInternationalOct2020.vue";
 
 export default {
   components: {
@@ -28,13 +32,16 @@ export default {
     TalentlyAug2020,
     PathriseAug2020,
     InternationalPathriseAug2020,
+    LevelUpOct2020,
+    LevelUpInternationalOct2020,
   },
   data() {
     return {
       international: false,
+      levelup: false,
       campaign: false,
       source: false,
-      loaded: false
+      loaded: false,
     };
   },
   mounted() {
@@ -51,12 +58,17 @@ export default {
 
     if (this.campaign) {
       this.international = this.campaign.indexOf("-int-") > -1;
-
       if (this.international) {
         this.$store.dispatch("setPriceClass", "international");
         this.$store.dispatch("setProgramTitle", "CodeX Academy International");
       }
+
+      this.levelup = this.campaign.indexOf("-levelup-") > -1;
+      if (this.levelup) {
+        this.$store.dispatch("setAudience", "levelup");
+      }
     } else {
+      this.levelup = this.$store.state.audience === "levelup";
       this.international = this.$store.state.priceClass === "international";
     }
     this.loaded = true;

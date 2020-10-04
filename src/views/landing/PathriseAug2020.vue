@@ -68,17 +68,17 @@
             <h2 class="card-title text-center">Get Started Learning</h2>
             <StartApplicationForm
               @submitted="startApplication"
-              hasPromoCode="COVID19"
+              :hasPromoCode="getPromoCodesDisplay"
               :offerFinancialAid="true"
             />
           </div>
           <Thanks v-if="hasApplied" @startOver="clearApplicant" />
           <div class="partner">
-              <p>In partnership with</p>
-              <a href="https://pathrise.com" target="_blank">
-                <img class="partner" src="img/partners/pathrise.svg" />
-              </a>
-            </div>
+            <p>In partnership with</p>
+            <a href="https://pathrise.com" target="_blank">
+              <img class="partner" src="img/partners/pathrise.svg" />
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -125,7 +125,7 @@ export default {
   data: () => ({
     hasApplied: false,
   }),
-  computed: { ...mapGetters(["getMethods", "getApplicant"]) },
+  computed: { ...mapGetters(["getMethods", "getApplicant", "getPromoCodesDisplay"]) },
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", {

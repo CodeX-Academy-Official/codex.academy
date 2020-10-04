@@ -129,17 +129,19 @@ export default {
       "getPaymentInfo"
     ]),
     shouldWaiveAppFee() {
-      const validPromos = ["COVID19", "TAKE25", "PATHRISE"];
+      // const validPromos = ["COVID19", "TAKE25", "PATHRISE"];
       const promoCodesInStore = this.getPromoCodes || [];
-      const matches = validPromos
-        .map(x => x.toLowerCase())
-        .filter(value =>
-          promoCodesInStore.map(x => (x || "").toLowerCase()).includes(value)
-        );
-      if (matches.length > 0) return true;
-      if (this.getActivePlan && this.getActivePlan.appFee === false)
-        return true;
-      return false;
+      // const matches = validPromos
+      //   .map(x => x.toLowerCase())
+      //   .filter(value =>
+      //     promoCodesInStore.map(x => (x || "").toLowerCase()).includes(value)
+      //   );
+      // if (matches.length > 0) return true;
+      // allowing any promo code for now -Byron
+      return promoCodesInStore.length > 0;
+      // if (this.getActivePlan && this.getActivePlan.appFee === false)
+      //   return true;
+      // return false;
     },
     completedProcess() {
       return (

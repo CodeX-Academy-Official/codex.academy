@@ -91,7 +91,7 @@ export default {
     ...mapGetters(["getPromoCodesDisplay"])
   },
   mounted() {
-    this.promoCode = this.hasPromoCode;
+    this.promoCode = (this.hasPromoCode || "").toUpperCase();
   },
   methods: {
     track() {

@@ -135,7 +135,7 @@ export default {
   data: () => ({
     hasApplied: false
   }),
-  computed: { ...mapGetters(["getMethods", "getApplicant"]) },
+  computed: { ...mapGetters(["getMethods", "getApplicant", "getPromoCodesDisplay"]) },
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", {

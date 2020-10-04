@@ -37,11 +37,21 @@
             </div>
 
             <div class="d-none d-lg-block">
-              <PromoAppFeeWaived style="max-width: 450px;" class="mt-5" />
+              <PromoAppFeeWaived
+                v-if="getPromoCodesDisplay"
+                :code="getPromoCodesDisplay"
+                style="max-width: 450px"
+                class="mt-5"
+              />
             </div>
 
             <div class="d-block d-lg-none">
-              <PromoAppFeeWaived style="max-width: 450px;" class="mx-auto mt-5" />
+              <PromoAppFeeWaived
+                v-if="getPromoCodesDisplay"
+                :code="getPromoCodesDisplay"
+                style="max-width: 450px"
+                class="mx-auto mt-5"
+              />
             </div>
           </div>
 
@@ -50,7 +60,7 @@
               <h5 class="card-title text-center">Sign Up Today</h5>
               <StartApplicationForm
                 @submitted="startApplication"
-                hasPromoCode="COVID19"
+                :hasPromoCode="getPromoCodesDisplay"
                 :offerFinancialAid="true"
               />
             </div>
@@ -67,7 +77,7 @@
             <h2 class="card-title text-center">Get Started Learning</h2>
             <StartApplicationForm
               @submitted="startApplication"
-              hasPromoCode="COVID19"
+              :hasPromoCode="getPromoCodesDisplay"
               :offerFinancialAid="true"
             />
           </div>
@@ -118,16 +128,18 @@ export default {
     StatsSection,
     TestimonialsSection,
     CommercialSection,
-    InternshipPartnersSection
+    InternshipPartnersSection,
   },
   data: () => ({
-    hasApplied: false
+    hasApplied: false,
   }),
-  computed: { ...mapGetters(["getMethods", "getApplicant"]) },
+  computed: {
+    ...mapGetters(["getMethods", "getApplicant", "getPromoCodesDisplay"]),
+  },
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", {
-        applicant: { ...applicant }
+        applicant: { ...applicant },
       });
       await this.$store.dispatch("setStartDate", applicant.startDate);
       this.hasApplied = true;
@@ -135,12 +147,12 @@ export default {
     },
     clearApplicant() {
       this.hasApplied = false;
-    }
+    },
   },
   mounted() {
     const applicant = this.getApplicant;
     this.hasApplied = applicant;
-  }
+  },
 };
 </script>
 

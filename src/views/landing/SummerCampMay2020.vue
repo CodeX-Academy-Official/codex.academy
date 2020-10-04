@@ -45,6 +45,7 @@
               <h5 class="card-title text-center">Sign Up Today</h5>
               <StartApplicationForm
                 @submitted="startApplication"
+                :hasPromoCode="getPromoCodesDisplay"
                 :offerFinancialAid="false"
               />
             </div>
@@ -74,7 +75,10 @@
         <div class="col-10 bg-periwinkle shadow border p-4">
           <div class="start-application-form" v-if="!hasApplied">
             <h2 class="card-title text-center">Get Started Learning</h2>
-            <StartApplicationForm @submitted="startApplication" />
+            <StartApplicationForm
+              :hasPromoCode="getPromoCodesDisplay"
+              @submitted="startApplication"
+            />
           </div>
           <div v-if="hasApplied" class="text-center">
             <h3 class="mb-3">Thanks!</h3>
@@ -205,11 +209,14 @@ export default {
   data: () => ({
     hasApplied: false,
   }),
-  computed: { ...mapGetters(["getMethods", "getApplicant"]) },
+  computed: { ...mapGetters(["getMethods", "getApplicant", "getPromoCodesDisplay"]) },
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", {
-        applicant: { ...applicant, source: this.$store.getters.getSource || "Summer-Camp May 2020" },
+        applicant: {
+          ...applicant,
+          source: this.$store.getters.getSource || "Summer-Camp May 2020",
+        },
       });
       const startDate = formatted(getNextDeadlineAfter("5-30-2020"));
       await this.$store.dispatch("setStartDate", startDate);

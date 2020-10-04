@@ -1,7 +1,7 @@
 <template>
   <div>
     <Hero
-      class="april2020s-landing-hero"
+      class="level-up-int-landing-hero"
       :unsplashIds="['vdXMSiX-n6M', 'Qg-r7OxZN7A', 'YK0HPwWDJ1I']"
       height="100vh"
       backgroundColor="rgba(25, 32, 71,0.7)"
@@ -20,6 +20,13 @@
             <!-- <div class="d-none d-lg-block">
               <Promo25OffMonthly style="max-width: 450px;" class="mt-5" />
             </div> -->
+
+            <!-- <div class="partner">
+              <p>In partnership with</p>
+              <a href="https://partner.com" target="_blank">
+                <img class="partner" src="img/partners/partner.svg" />
+              </a>
+            </div> -->
           </div>
 
           <div class="col-12 col-lg-6 my-auto">
@@ -28,29 +35,40 @@
               <div class="title">We'll help you do it!</div>
               <div class="item">
                 <Icon name="checkbox" />
+                <span>Modern, Marketable Skills</span>
+              </div>
+              <div class="item">
+                <Icon name="checkbox" />
                 <span>Live 1:1 Mentoring Sessions</span>
               </div>
               <div class="item">
                 <Icon name="checkbox" />
-                <span>Targetted Curriculum</span>
-              </div>
+                <span>100% Online</span>
+              </div>            
               <div class="item">
                 <Icon name="checkbox" />
-                <span>World-Class Mentors</span>
+                <span>Any Experience Level</span>
               </div>
-              <div class="item">
-                <Icon name="checkbox" />
-                <span>100% Remote</span>
-              </div>
+              
             </div>
 
             <router-link
               class="btn btn-lg btn-primary mt-5"
               to="/programs/international"
             >Select a Monthly Plan</router-link>
+            
             <!-- </div> -->
 
-            
+            <!-- <Promo25OffMonthly style="max-width: 450px;" class="mt-5" /> -->
+            <!-- <div class="start-application-form" v-if="!hasApplied">
+              <h5 class="card-title text-center">Sign Up Today</h5>
+              <StartApplicationForm
+                @submitted="startApplication"
+                hasPromoCode="TAKE25"
+                :offerFinancialAid="false"
+              />
+            </div>
+            <Thanks v-if="hasApplied" @startOver="clearApplicant" />-->
           </div>
         </div>
       </div>
@@ -69,6 +87,8 @@
       >Select a Monthly Plan</router-link>
     </div>
 
+    <InternshipPartnersSection/>
+    
     <CommercialSection />
 
     <div class="text-center mb-5">
@@ -103,6 +123,7 @@ import TechSection from "@/components/sections/tech";
 import CommercialSection from "@/components/sections/CommercialSection";
 import StatsSection from "@/components/sections/StatsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import InternshipPartnersSection from "@/components/sections/InternshipPartnersSection";
 
 export default {
   components: {
@@ -116,16 +137,17 @@ export default {
     TechSection,
     StatsSection,
     TestimonialsSection,
-    CommercialSection
+    CommercialSection,
+    InternshipPartnersSection
   },
   data: () => ({
     hasApplied: false
   }),
-  computed: { ...mapGetters(["getMethods", "getApplicant"]) },
+  computed: { ...mapGetters(["getMethods", "getApplicant", "getPromoCodesDisplay"]) },
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", {
-        applicant: { ...applicant }
+        applicant
       });
       await this.$store.dispatch("setStartDate", applicant.startDate);
       this.hasApplied = true;
@@ -138,7 +160,6 @@ export default {
   mounted() {
     const applicant = this.getApplicant;
     this.hasApplied = applicant;
-    
   }
 };
 </script>
@@ -146,7 +167,17 @@ export default {
 <style lang="scss">
 @import "@/variables";
 
-.april2020s-landing-hero {
+.level-up-int-landing-hero {
+  .partner {
+    padding-top: 20px;
+    p {
+      margin-bottom: 0px;
+    }
+    text-align: center;
+    img {
+      width: 200px;
+    }
+  }
   .thanks-box {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 5px;

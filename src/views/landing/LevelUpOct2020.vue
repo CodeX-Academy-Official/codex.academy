@@ -1,7 +1,7 @@
 <template>
   <div>
     <Hero
-      class="april2020s-landing-hero"
+      class="level-up-landing-hero"
       :unsplashIds="['vdXMSiX-n6M', 'Qg-r7OxZN7A', 'YK0HPwWDJ1I']"
       height="100vh"
       backgroundColor="rgba(25, 32, 71,0.7)"
@@ -11,82 +11,81 @@
           <div class="col my-auto big-message">
             <Logo color="white" :width="150" class="landing-logo mb-3" />
             <div class>
-              <h3 class="text-left action">Level up your skills</h3>
-              <h1 class="text-left action">Ready to hire in 6 months</h1>
-              <h3 class="text-left action">Or less!</h3>
-              
+              <h3 class="text-left action">Get ready</h3>
+              <h1 class="text-left action">Level-up your skills</h1>
+              <h3 class="text-left action">Land a job</h3>
             </div>
-
-            <!-- <div class="d-none d-lg-block">
-              <Promo25OffMonthly style="max-width: 450px;" class="mt-5" />
-            </div> -->
-          </div>
-
-          <div class="col-12 col-lg-6 my-auto">
-            <!-- <div class="start-application-form"> -->
             <div class="checklist">
               <div class="title">We'll help you do it!</div>
+              <div class="item">
+                <Icon name="checkbox" />
+                <span>Modern, Marketable Skills</span>
+              </div>
               <div class="item">
                 <Icon name="checkbox" />
                 <span>Live 1:1 Mentoring Sessions</span>
               </div>
               <div class="item">
                 <Icon name="checkbox" />
-                <span>Targetted Curriculum</span>
-              </div>
+                <span>100% Online</span>
+              </div>            
               <div class="item">
                 <Icon name="checkbox" />
-                <span>World-Class Mentors</span>
-              </div>
-              <div class="item">
-                <Icon name="checkbox" />
-                <span>100% Remote</span>
+                <span>Any Experience Level</span>
               </div>
             </div>
+          </div>
 
-            <router-link
-              class="btn btn-lg btn-primary mt-5"
-              to="/programs/international"
-            >Select a Monthly Plan</router-link>
-            <!-- </div> -->
-
-            
+          <div class="col-5 d-none d-lg-block my-auto">
+            <div class="start-application-form" v-if="!hasApplied">
+              <h5 class="card-title text-center">Sign Up Today</h5>
+              <StartApplicationForm
+                @submitted="startApplication"
+                :hasPromoCode="getPromoCodesDisplay"
+                :offerFinancialAid="true"
+              />
+            </div>
+            <Thanks v-if="hasApplied" @startOver="clearApplicant" />
+            <!-- <div class="partner">
+              <p>In partnership with</p>
+              <a href="https://partner.com" target="_blank">
+                <img class="partner" src="img/partners/partner.svg" />
+              </a>
+            </div> -->
           </div>
         </div>
       </div>
-
-      <!-- <div class="container d-block d-lg-none mt-3">
-        <Promo25OffMonthly style="max-width: 450px;" class="mt-5" />
-      </div> -->
     </Hero>
+
+    <div class="container d-block d-lg-none mt-5">
+      <div class="row justify-content-center">
+        <div class="col-10 bg-periwinkle shadow border p-4">
+          <div class="start-application-form" v-if="!hasApplied">
+            <h2 class="card-title text-center">Get Started Learning</h2>
+            <StartApplicationForm
+              @submitted="startApplication"
+              :hasPromoCode="getPromoCodesDisplay"
+              :offerFinancialAid="true"
+            />
+          </div>
+          <Thanks v-if="hasApplied" @startOver="clearApplicant" />
+          <!-- <div class="partner">
+            <p>In partnership with</p>
+            <a href="https://partner.com" target="_blank">
+              <img class="partner" src="img/partners/partner.svg" />
+            </a>
+          </div> -->
+        </div>
+      </div>
+    </div>
 
     <StatsSection />
 
-    <div class="text-center mb-5">
-      <router-link
-        class="btn btn-lg btn-primary mt-5"
-        to="/programs/international"
-      >Select a Monthly Plan</router-link>
-    </div>
-
     <CommercialSection />
-
-    <div class="text-center mb-5">
-      <router-link
-        class="btn btn-lg btn-primary mt-5"
-        to="/programs/international"
-      >Select a Monthly Plan</router-link>
-    </div>
 
     <TechSection />
 
     <TestimonialsSection />
-    <div class="text-center mb-5">
-      <router-link
-        class="btn btn-lg btn-primary mt-5"
-        to="/programs/international"
-      >Select a Monthly Plan</router-link>
-    </div>
   </div>
 </template>
 
@@ -98,7 +97,7 @@ import { mapGetters } from "vuex";
 import Icon from "@/components/Icon";
 import Logo from "@/components/Logo";
 import SelectPlanButton from "@/components/SelectPlanButton";
-import Promo25OffMonthly from "@/components/Promo25OffMonthly";
+import PromoAppFeeWaived from "@/components/PromoAppFeeWaived";
 import TechSection from "@/components/sections/tech";
 import CommercialSection from "@/components/sections/CommercialSection";
 import StatsSection from "@/components/sections/StatsSection";
@@ -112,41 +111,53 @@ export default {
     Icon,
     Logo,
     Thanks,
-    Promo25OffMonthly,
+    PromoAppFeeWaived,
+
     TechSection,
     StatsSection,
     TestimonialsSection,
-    CommercialSection
+    CommercialSection,
   },
   data: () => ({
-    hasApplied: false
+    hasApplied: false,
   }),
-  computed: { ...mapGetters(["getMethods", "getApplicant"]) },
+  computed: { ...mapGetters(["getMethods", "getApplicant", "getPromoCodesDisplay"]) },
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", {
-        applicant: { ...applicant }
+        applicant,
       });
       await this.$store.dispatch("setStartDate", applicant.startDate);
       this.hasApplied = true;
-      this.$router.push("/programs/international");
+      this.$router.push("/findplan");
     },
     clearApplicant() {
       this.hasApplied = false;
-    }
+    },
   },
   mounted() {
     const applicant = this.getApplicant;
     this.hasApplied = applicant;
     
-  }
+  },
 };
 </script>
 
 <style lang="scss">
 @import "@/variables";
 
-.april2020s-landing-hero {
+.level-up-landing-hero {
+  .partner {
+    padding-top: 20px;
+    p {
+      margin-bottom: 0px;
+    }
+    text-align: center;
+    img {
+      width: 200px;
+    }
+  }
+
   .thanks-box {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 5px;

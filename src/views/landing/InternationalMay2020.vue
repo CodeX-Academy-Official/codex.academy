@@ -38,7 +38,7 @@
               </div>
               <div class="item">
                 <Icon name="checkbox" />
-                <span>100% Remote</span>
+                <span>100% Online</span>
               </div>
 
               <div class="item">
@@ -139,7 +139,7 @@ export default {
   data: () => ({
     hasApplied: false
   }),
-  computed: { ...mapGetters(["getMethods", "getApplicant"]) },
+  computed: { ...mapGetters(["getMethods", "getApplicant", "getPromoCodesDisplay"]) },
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", {

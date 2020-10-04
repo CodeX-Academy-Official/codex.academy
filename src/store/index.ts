@@ -31,6 +31,7 @@ const SET_PROGRAM_TITLE = "SET_PROGRAM_TITLE";
 const RESET = "RESET";
 const SET_HOME_PAGE = "SET_HOME_PAGE";
 const SET_SOURCE = "SET_SOURCE";
+const SET_AUDIENCE = "SET_AUDIENCE";
 
 async function sendToHubspotAndTrackErrors(
   portalId: string,
@@ -63,7 +64,8 @@ export default new Vuex.Store({
     paymentInfo: undefined,
     priceClass: undefined,
     activePlan: undefined,
-    source: undefined
+    source: undefined,
+    audience: ""
   },
   mutations: {
     [RESET](state: any) {
@@ -99,6 +101,9 @@ export default new Vuex.Store({
     },
     [SET_HOME_PAGE](state: any, homepage: string){
       state.homepage = homepage;
+    },
+    [SET_AUDIENCE](state: any, audience: string){
+      state.audience = audience;
     }
   },
   actions: {
@@ -107,6 +112,9 @@ export default new Vuex.Store({
     },
     setPriceClass(context, priceClass: string) {
       context.commit(SET_PRICE_CLASS, priceClass);
+    },
+    setAudience(context, audience: string){
+      context.commit(SET_AUDIENCE, audience);
     },
     setHomepage(context, homepage: string){
       context.commit(SET_HOME_PAGE, homepage);
@@ -154,7 +162,7 @@ export default new Vuex.Store({
     },
   },
   getters: {
-    getActivePlan: (state): Plan => state.activePlan,
+    getActivePlan: (state): Plan => state.activePlan || "CodeX Academy Program",
     getInternational: (state) => {
       if (state.priceClass) {
         return internationalPlans.filter(
@@ -182,7 +190,7 @@ export default new Vuex.Store({
       (state.promoCodes || [])
         .reverse()
         .join(", ")
-        .toLowerCase(),
+        .toUpperCase(),
     getApplicationFee: (state) => state.appFeePaid,
     getBootcampFeatures: () => bootcampFeatures,
     getPaymentTypes: () => paymentTypes,
