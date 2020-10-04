@@ -31,7 +31,9 @@
 
         <div class="col-6 col-lg-2 text-center">
           <strong class="table-title">&nbsp;</strong>
-          <router-link to="/enroll" class="btn btn-secondary">Change</router-link>
+          <router-link to="/enroll" class="btn btn-secondary"
+            >Change</router-link
+          >
         </div>
       </div>
 
@@ -93,7 +95,10 @@
             css="paymentType ml-4"
             @paymentScheduled="next"
           />
-          <CallBack v-if="paymentType.type === 'callBack'" css="paymentType ml-4" />
+          <CallBack
+            v-if="paymentType.type === 'callBack'"
+            css="paymentType ml-4"
+          />
         </div>
       </div>
       <!-- <div v-if="selectedPlan.paymentTypes.financing">
@@ -148,7 +153,7 @@ export default {
     Climb,
     Leif,
     LeifPathrise,
-    Money
+    Money,
   },
   computed: {
     ...mapGetters(["getActivePlan", "getApplicant", "getPaymentTypes"]),
@@ -156,15 +161,13 @@ export default {
       const paymentTypes = this.getPaymentTypes;
       const program = this.getActivePlan;
       const applicant = this.getApplicant;
-      return paymentTypes.filter(x => x.worksWith(program, applicant));
-    }
+      return paymentTypes.filter((x) => x.worksWith(program, applicant));
+    },
   },
   created() {
-    const applicant = this.getApplicant;
-    if (!applicant) {
+    if (!this.getApplicant || !this.getActivePlan) {
       this.$router.push("applicant");
     }
-    //this.$emit("changeStage", 3);
   },
   mounted() {
     if (this.paymentTypes.length === 0) {
@@ -174,8 +177,8 @@ export default {
   methods: {
     next() {
       this.$emit("completed", 4);
-    }
-  }
+    },
+  },
 };
 </script>
 

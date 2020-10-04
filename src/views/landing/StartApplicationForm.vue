@@ -37,7 +37,7 @@
       />
     </div>-->
 
-    <div class="form-label-group" v-if="promoCode">
+    <div class="form-label-group" v-if="hasPromoCode">
       <label for="promoCode">Promo Code</label>
       <input class="form-control" v-model="promoCode" />
     </div>

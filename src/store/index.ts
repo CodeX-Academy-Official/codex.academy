@@ -22,7 +22,7 @@ Vue.use(Vuex);
 
 const ENROLL = "ENROLL";
 const SET_START_DATE = "SET_START_DATE";
-const APPLY_PROMO_CODE = "APPLY_PROMO_CODE";
+const SET_PROMO_CODES = "SET_PROMO_CODES";
 const PAY_APP_FEE = "PAY_APP_FEE";
 const SET_ACTIVE_PLAN = "SET_ACTIVE_PLAN";
 const SCHEDULE_CARD_PAYMENT = "SCHEDULE_CARD_PAYMENT";
@@ -87,8 +87,8 @@ export default new Vuex.Store({
     [SET_SOURCE](state: any, source: string) {
       state.source = source;
     },
-    [APPLY_PROMO_CODE](state: any, promoCode) {
-      state.promoCodes.push(promoCode);
+    [SET_PROMO_CODES](state: any, promoCodes) {
+      state.promoCodes = promoCodes;
     },
     [PAY_APP_FEE](state: any) {
       state.appFeePaid = new Date();
@@ -99,10 +99,10 @@ export default new Vuex.Store({
     [SET_PROGRAM_TITLE](state: any, title: string) {
       state.programTitle = title;
     },
-    [SET_HOME_PAGE](state: any, homepage: string){
+    [SET_HOME_PAGE](state: any, homepage: string) {
       state.homepage = homepage;
     },
-    [SET_AUDIENCE](state: any, audience: string){
+    [SET_AUDIENCE](state: any, audience: string) {
       state.audience = audience;
     }
   },
@@ -113,10 +113,10 @@ export default new Vuex.Store({
     setPriceClass(context, priceClass: string) {
       context.commit(SET_PRICE_CLASS, priceClass);
     },
-    setAudience(context, audience: string){
+    setAudience(context, audience: string) {
       context.commit(SET_AUDIENCE, audience);
     },
-    setHomepage(context, homepage: string){
+    setHomepage(context, homepage: string) {
       context.commit(SET_HOME_PAGE, homepage);
     },
     setProgramTitle(context, title: string) {
@@ -137,10 +137,10 @@ export default new Vuex.Store({
       context.commit(SET_SOURCE, source);
     },
     async startApplication(context: any, { applicant, hsForm }: any) {
-      await sendApplication({ 
-        context, 
-        applicant, 
-        hsForm 
+      await sendApplication({
+        context,
+        applicant,
+        hsForm
       });
     },
     async enroll(context, applicant) {
@@ -151,11 +151,14 @@ export default new Vuex.Store({
       });
     },
     applyPromoCode({ commit, state }, promoCodeInput) {
-      const promoCode = (promoCodeInput || "").trim();
-      const hasPromoCodeCode = state.promoCodes.indexOf(promoCode) > -1;
-      if (!hasPromoCodeCode) {
-        commit(APPLY_PROMO_CODE, promoCode);
+      const newCodes = (promoCodeInput||"").split(",").map((x:string)=> x.trim().toUpperCase());
+      const allCodes = [...newCodes, ...state.promoCodes];
+
+      function onlyUnique(value: string, index: number, self: string[]) {
+        return self.indexOf(value) === index;
       }
+      const uniqueCodes = allCodes.filter(onlyUnique);
+      commit(SET_PROMO_CODES, uniqueCodes);
     },
     payAppFee({ commit }) {
       commit(PAY_APP_FEE);
