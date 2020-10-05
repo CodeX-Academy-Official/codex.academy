@@ -120,8 +120,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/about.2e593756.css"
   },
   {
-    "revision": "43f8f20110fa34a1b733",
-    "url": "/css/app.b6a22644.css"
+    "revision": "dd6c450e8b1bcec74a33",
+    "url": "/css/app.14335731.css"
   },
   {
     "revision": "4a86772632cf483b3706",
@@ -784,8 +784,32 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/okay.93ee6f48.svg"
   },
   {
+    "revision": "95bafbb3ce175ef0f94534d01279fcea",
+    "url": "/img/partners/arcdev.svg"
+  },
+  {
+    "revision": "4bf0022ac3732993213410241b69cdb0",
+    "url": "/img/partners/bairesdev.svg"
+  },
+  {
+    "revision": "d4a240026db8961d8fe776bce3b4c582",
+    "url": "/img/partners/flexiple.png"
+  },
+  {
+    "revision": "9d64918129039dbf2c1e4382adfe60a1",
+    "url": "/img/partners/outco.png"
+  },
+  {
     "revision": "990d5c02f0e9248ca1d036bb869c64d4",
     "url": "/img/partners/pathrise.svg"
+  },
+  {
+    "revision": "40180b5e643210c29ad7edbf40680355",
+    "url": "/img/partners/recruiterly.svg"
+  },
+  {
+    "revision": "de2026ad194f33f83de5f8a73a6a8e8c",
+    "url": "/img/partners/talently.svg"
   },
   {
     "revision": "73214d27f386bc3357bb97c1d3a76d1e",
@@ -1016,7 +1040,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/zero.579b7008.svg"
   },
   {
-    "revision": "167c803acccea219996ff6c7cb543b37",
+    "revision": "59fd12bea71397c90391f87338e9dcc4",
     "url": "/index.html"
   },
   {
@@ -1024,8 +1048,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/about.9df2d9e1.js"
   },
   {
-    "revision": "43f8f20110fa34a1b733",
-    "url": "/js/app.3673d657.js"
+    "revision": "dd6c450e8b1bcec74a33",
+    "url": "/js/app.59b86fb9.js"
   },
   {
     "revision": "4a86772632cf483b3706",
