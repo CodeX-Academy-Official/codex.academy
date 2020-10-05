@@ -21,12 +21,7 @@
               <Promo25OffMonthly style="max-width: 450px;" class="mt-5" />
             </div> -->
 
-            <!-- <div class="partner">
-              <p>In partnership with</p>
-              <a href="https://partner.com" target="_blank">
-                <img class="partner" src="img/partners/partner.svg" />
-              </a>
-            </div> -->
+            <PartneringWith :partner="getSource" />
           </div>
 
           <div class="col-12 col-lg-6 my-auto">
@@ -117,6 +112,7 @@ import Thanks from "@/views/landing/Thanks";
 import { mapGetters } from "vuex";
 import Icon from "@/components/Icon";
 import Logo from "@/components/Logo";
+import PartneringWith from "@/components/PartneringWith";
 import SelectPlanButton from "@/components/SelectPlanButton";
 import Promo25OffMonthly from "@/components/Promo25OffMonthly";
 import TechSection from "@/components/sections/tech";
@@ -134,6 +130,7 @@ export default {
     Logo,
     Thanks,
     Promo25OffMonthly,
+    PartneringWith,
     TechSection,
     StatsSection,
     TestimonialsSection,
@@ -143,7 +140,7 @@ export default {
   data: () => ({
     hasApplied: false
   }),
-  computed: { ...mapGetters(["getMethods", "getApplicant", "getPromoCodesDisplay"]) },
+  computed: { ...mapGetters(["getMethods", "getSource", "getApplicant", "getPromoCodesDisplay"]) },
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", {

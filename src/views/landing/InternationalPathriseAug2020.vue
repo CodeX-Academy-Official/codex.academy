@@ -47,7 +47,7 @@
               </div>
               <div class="item">
                 <Icon name="checkbox" />
-                <span>100% Remote</span>
+                <span>100% Online</span>
               </div>
               
             </div>

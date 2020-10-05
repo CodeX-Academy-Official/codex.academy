@@ -169,7 +169,7 @@ export default {
     faYoutubeSquare,
   }),
   computed: {
-    ...mapGetters(["isInternational", "getHomepage"]),
+    ...mapGetters(["isInternational"]),
   },
   methods: {
     goHome() {

@@ -50,12 +50,7 @@
               />
             </div>
             <Thanks v-if="hasApplied" @startOver="clearApplicant" />
-            <div class="partner">
-              <p>In partnership with</p>
-              <a href="https://pathrise.com" target="_blank">
-                <img class="partner" src="img/partners/pathrise.svg" />
-              </a>
-            </div>
+            <PartneringWith partner="pathrise" />
           </div>
         </div>
       </div>
@@ -73,12 +68,7 @@
             />
           </div>
           <Thanks v-if="hasApplied" @startOver="clearApplicant" />
-          <div class="partner">
-            <p>In partnership with</p>
-            <a href="https://pathrise.com" target="_blank">
-              <img class="partner" src="img/partners/pathrise.svg" />
-            </a>
-          </div>
+          <PartneringWith partner="pathrise" />
         </div>
       </div>
     </div>
@@ -102,6 +92,7 @@ import Icon from "@/components/Icon";
 import Logo from "@/components/Logo";
 import SelectPlanButton from "@/components/SelectPlanButton";
 import PromoAppFeeWaived from "@/components/PromoAppFeeWaived";
+import PartneringWith from "@/components/PartneringWith";
 import TechSection from "@/components/sections/tech";
 import CommercialSection from "@/components/sections/CommercialSection";
 import StatsSection from "@/components/sections/StatsSection";
@@ -116,7 +107,7 @@ export default {
     Logo,
     Thanks,
     PromoAppFeeWaived,
-
+    PartneringWith,
     TechSection,
     StatsSection,
     TestimonialsSection,
@@ -125,7 +116,9 @@ export default {
   data: () => ({
     hasApplied: false,
   }),
-  computed: { ...mapGetters(["getMethods", "getApplicant", "getPromoCodesDisplay"]) },
+  computed: {
+    ...mapGetters(["getMethods", "getApplicant", "getPromoCodesDisplay"]),
+  },
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", {
@@ -154,17 +147,6 @@ export default {
 @import "@/variables";
 
 .pathrise-landing-hero {
-  .partner {
-    padding-top: 20px;
-    p {
-      margin-bottom: 0px;
-    }
-    text-align: center;
-    img {
-      width: 200px;
-    }
-  }
-
   .thanks-box {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 5px;

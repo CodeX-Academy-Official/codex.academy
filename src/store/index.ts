@@ -29,7 +29,6 @@ const SCHEDULE_CARD_PAYMENT = "SCHEDULE_CARD_PAYMENT";
 const SET_PRICE_CLASS = "SET_PRICE_CLASS";
 const SET_PROGRAM_TITLE = "SET_PROGRAM_TITLE";
 const RESET = "RESET";
-const SET_HOME_PAGE = "SET_HOME_PAGE";
 const SET_SOURCE = "SET_SOURCE";
 const SET_AUDIENCE = "SET_AUDIENCE";
 
@@ -99,9 +98,6 @@ export default new Vuex.Store({
     [SET_PROGRAM_TITLE](state: any, title: string) {
       state.programTitle = title;
     },
-    [SET_HOME_PAGE](state: any, homepage: string) {
-      state.homepage = homepage;
-    },
     [SET_AUDIENCE](state: any, audience: string) {
       state.audience = audience;
     }
@@ -115,9 +111,6 @@ export default new Vuex.Store({
     },
     setAudience(context, audience: string) {
       context.commit(SET_AUDIENCE, audience);
-    },
-    setHomepage(context, homepage: string) {
-      context.commit(SET_HOME_PAGE, homepage);
     },
     setProgramTitle(context, title: string) {
       context.commit(SET_PROGRAM_TITLE, title);
@@ -199,10 +192,7 @@ export default new Vuex.Store({
     getPriceClass: (state) => state.priceClass,
     getSource: (state) => state.source,
     getProgramTitle: (state) => state.programTitle,
-    getHomepage: (state) => {
-      const home = state.homepage;
-      return home || "/";
-    }
+    
   },
   modules: {},
   plugins: [vuexLocal.plugin],

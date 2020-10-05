@@ -28,7 +28,7 @@
               <div class="item">
                 <Icon name="checkbox" />
                 <span>100% Online</span>
-              </div>            
+              </div>
               <div class="item">
                 <Icon name="checkbox" />
                 <span>Any Experience Level</span>
@@ -46,12 +46,7 @@
               />
             </div>
             <Thanks v-if="hasApplied" @startOver="clearApplicant" />
-            <!-- <div class="partner">
-              <p>In partnership with</p>
-              <a href="https://partner.com" target="_blank">
-                <img class="partner" src="img/partners/partner.svg" />
-              </a>
-            </div> -->
+            <PartneringWith :partner="getSource" />
           </div>
         </div>
       </div>
@@ -69,12 +64,7 @@
             />
           </div>
           <Thanks v-if="hasApplied" @startOver="clearApplicant" />
-          <!-- <div class="partner">
-            <p>In partnership with</p>
-            <a href="https://partner.com" target="_blank">
-              <img class="partner" src="img/partners/partner.svg" />
-            </a>
-          </div> -->
+          <PartneringWith :partner="getSource" />
         </div>
       </div>
     </div>
@@ -96,6 +86,7 @@ import Thanks from "@/views/landing/Thanks";
 import { mapGetters } from "vuex";
 import Icon from "@/components/Icon";
 import Logo from "@/components/Logo";
+import PartneringWith from "@/components/PartneringWith";
 import SelectPlanButton from "@/components/SelectPlanButton";
 import PromoAppFeeWaived from "@/components/PromoAppFeeWaived";
 import TechSection from "@/components/sections/tech";
@@ -112,7 +103,7 @@ export default {
     Logo,
     Thanks,
     PromoAppFeeWaived,
-
+    PartneringWith,
     TechSection,
     StatsSection,
     TestimonialsSection,
@@ -121,7 +112,14 @@ export default {
   data: () => ({
     hasApplied: false,
   }),
-  computed: { ...mapGetters(["getMethods", "getApplicant", "getPromoCodesDisplay"]) },
+  computed: {
+    ...mapGetters([
+      "getMethods",
+      "getSource",
+      "getApplicant",
+      "getPromoCodesDisplay",
+    ]),
+  },
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", {
@@ -138,7 +136,6 @@ export default {
   mounted() {
     const applicant = this.getApplicant;
     this.hasApplied = applicant;
-    
   },
 };
 </script>

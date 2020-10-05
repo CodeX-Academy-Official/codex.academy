@@ -245,7 +245,7 @@ export default {
     isOpen: false,
   }),
   computed: {
-    ...mapGetters(["getBootcamp6", "isInternational", "getHomepage"]),
+    ...mapGetters(["getBootcamp6", "isInternational"]),
   },
   components: { SelectPlanButton, separator },
   methods: {

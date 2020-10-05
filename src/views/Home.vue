@@ -1,11 +1,11 @@
 <template>
   <div>
-    <TalentlyAug2020 v-if="source === 'talently'" />
+    <!-- <TalentlyAug2020 v-if="source === 'talently'" />
     <InternationalPathriseAug2020
       v-else-if="international && source === 'pathrise'"
     />
-    <PathriseAug2020 v-else-if="source === 'pathrise'" />
-    <LevelUpInternationalOct2020 v-else-if="levelup && international" />
+    <PathriseAug2020 v-else-if="source === 'pathrise'" /> -->
+    <LevelUpInternationalOct2020 v-if="levelup && international" />
     <LevelUpOct2020 v-else-if="levelup" />
     <InternationalMay2020 v-else-if="international" />
     <HomeApril2020 v-else-if="loaded" />

@@ -14,9 +14,8 @@
               <h3 class="text-left action">Level up your skills</h3>
               <h1 class="text-left action">Ready to hire in 6 months</h1>
               <h3 class="text-left action">Or less!</h3>
-              
             </div>
-
+            <PartneringWith partner="talently" />
             <!-- <div class="d-none d-lg-block">
               <Promo25OffMonthly style="max-width: 450px;" class="mt-5" />
             </div> -->
@@ -47,10 +46,9 @@
             <router-link
               class="btn btn-lg btn-primary mt-5"
               to="/programs/international"
-            >Select a Monthly Plan</router-link>
+              >Select a Monthly Plan</router-link
+            >
             <!-- </div> -->
-
-            
           </div>
         </div>
       </div>
@@ -66,7 +64,8 @@
       <router-link
         class="btn btn-lg btn-primary mt-5"
         to="/programs/international"
-      >Select a Monthly Plan</router-link>
+        >Select a Monthly Plan</router-link
+      >
     </div>
 
     <CommercialSection />
@@ -75,7 +74,8 @@
       <router-link
         class="btn btn-lg btn-primary mt-5"
         to="/programs/international"
-      >Select a Monthly Plan</router-link>
+        >Select a Monthly Plan</router-link
+      >
     </div>
 
     <TechSection />
@@ -85,7 +85,8 @@
       <router-link
         class="btn btn-lg btn-primary mt-5"
         to="/programs/international"
-      >Select a Monthly Plan</router-link>
+        >Select a Monthly Plan</router-link
+      >
     </div>
   </div>
 </template>
@@ -99,6 +100,7 @@ import Icon from "@/components/Icon";
 import Logo from "@/components/Logo";
 import SelectPlanButton from "@/components/SelectPlanButton";
 import Promo25OffMonthly from "@/components/Promo25OffMonthly";
+import PartneringWith from "@/components/PartneringWith";
 import TechSection from "@/components/sections/tech";
 import CommercialSection from "@/components/sections/CommercialSection";
 import StatsSection from "@/components/sections/StatsSection";
@@ -116,16 +118,17 @@ export default {
     TechSection,
     StatsSection,
     TestimonialsSection,
-    CommercialSection
+    CommercialSection,
+    PartneringWith
   },
   data: () => ({
-    hasApplied: false
+    hasApplied: false,
   }),
   computed: { ...mapGetters(["getMethods", "getApplicant"]) },
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", {
-        applicant: { ...applicant }
+        applicant: { ...applicant },
       });
       await this.$store.dispatch("setStartDate", applicant.startDate);
       this.hasApplied = true;
@@ -133,13 +136,12 @@ export default {
     },
     clearApplicant() {
       this.hasApplied = false;
-    }
+    },
   },
   mounted() {
     const applicant = this.getApplicant;
     this.hasApplied = applicant;
-    
-  }
+  },
 };
 </script>
 
