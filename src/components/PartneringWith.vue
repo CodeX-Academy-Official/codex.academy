@@ -16,6 +16,7 @@ const partners = {
   recruiterly: { logo: "img/partners/recruiterly.svg", url: "https://recruiterly.com/" },
   bairesdev: { logo: "img/partners/bairesdev.svg", url: "https://bairesdev.com/" },
   arcdev: { logo: "img/partners/arcdev.svg", url: "https://arc.dev" },
+  lifeway: { logo: "img/partners/lifeway.svg", url: "https://lifeway.com" },
 };
 export default {
   props: { partner: String },
