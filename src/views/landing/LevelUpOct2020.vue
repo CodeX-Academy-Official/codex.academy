@@ -144,17 +144,7 @@ export default {
 @import "@/variables";
 
 .level-up-landing-hero {
-  .partner {
-    padding-top: 20px;
-    p {
-      margin-bottom: 0px;
-    }
-    text-align: center;
-    img {
-      width: 200px;
-    }
-  }
-
+  
   .thanks-box {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 5px;

@@ -1,9 +1,10 @@
 <template>
   <div class="partner" v-if="logo">
     <p>In partnership with</p>
-    <a :href="url" target="_blank">
+    <div><a :href="url" target="_blank">
       <img class="partner" :src="logo" />
     </a>
+    </div>
   </div>
 </template>
 
@@ -17,6 +18,7 @@ const partners = {
   bairesdev: { logo: "img/partners/bairesdev.svg", url: "https://bairesdev.com/" },
   arcdev: { logo: "img/partners/arcdev.svg", url: "https://arc.dev" },
   lifeway: { logo: "img/partners/lifeway.svg", url: "https://lifeway.com" },
+  dice: { logo: "img/partners/dice.svg", url: "https://dice.com" },
 };
 export default {
   props: { partner: String },
@@ -34,13 +36,13 @@ export default {
 <style lang="scss">
 @import "@/variables";
 .partner {
-  padding-top: 20px;
+  text-align: center;
   p {
+    margin-top: 20px;
     margin-bottom: 0px;
   }
-  text-align: center;
   img {
-    // width: 200px;
+    max-width: 200px;
     max-height: 100px;
   }
 }
