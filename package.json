@@ -8,6 +8,7 @@
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "deploy": "gh-pages -d dist",
+    "test": "jest --coverage",
     "predeploy": "cross-env NODE_ENV=production npm run build",
     "storybook:build": "vue-cli-service storybook:build -c config/storybook",
     "storybook": "vue-cli-service storybook:serve -p 6006 -c config/storybook"

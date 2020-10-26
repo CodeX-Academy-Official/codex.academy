@@ -1,13 +1,14 @@
 import { Plan } from "@/types/Plan";
+import { Applicant } from '@/types/Applicant';
 
-function isInUSA(applicant: any) {
+function isInUSA(applicant: Applicant) {
   if (!applicant) return false;
   const applicantInUSA =
     applicant.country === "USA" || applicant.country === "United States";
   return applicantInUSA;
 }
 
-function climb(program: Plan, applicant: any, programName: string) {
+function climb(program: Plan, applicant: Applicant, programName: string) {
   const applicantInUSA = isInUSA(applicant);
   if (!applicantInUSA) return false;
   const programIsFrontEnd = program.name.indexOf(programName) > -1;
@@ -22,7 +23,7 @@ const climbOptions = [
     type: "climb",
     programName: "Front-End Developer",
     startingMonthlyPayments: 250,
-    worksWith: (program: Plan, applicant: any) => {
+    worksWith: (program: Plan, applicant: Applicant) => {
       return climb(program, applicant, "Front-End Developer");
     },
   },
@@ -30,7 +31,7 @@ const climbOptions = [
     type: "climb",
     programName: "Full-Stack Developer",
     startingMonthlyPayments: 250,
-    worksWith: (program: Plan, applicant: any) => {
+    worksWith: (program: Plan, applicant: Applicant) => {
       return climb(program, applicant, "Full-Stack Developer");
     },
   },
@@ -38,7 +39,7 @@ const climbOptions = [
     type: "climb",
     programName: "Full-Stack Engineer",
     startingMonthlyPayments: 250,
-    worksWith: (program: Plan, applicant: any) => {
+    worksWith: (program: Plan, applicant: Applicant) => {
       return climb(program, applicant, "Full-Stack Engineer");
     },
   },
@@ -48,7 +49,7 @@ const fullTime = true;
 const partTime = false;
 function leif(
   program: Plan,
-  applicant: any,
+  applicant: Applicant,
   programName: string,
   requiresFullTime: boolean
 ) {
@@ -62,7 +63,7 @@ function leif(
   return true;
 }
 
-function isPathrise(applicant: any) {
+function isPathrise(applicant: Applicant) {
   const source = (applicant || {}).source || "none";
   const is = source.toLowerCase().indexOf("pathrise") > -1;
   return is;
@@ -75,7 +76,7 @@ const leifPaymentOptions = [
     ratePercent: 10,
     termMonths: 24,
     url: "https://leif.org/commit?product_id=5ea9f9b405af553e40c404d6",
-    worksWith: (program: Plan, applicant: any) => {
+    worksWith: (program: Plan, applicant: Applicant) => {
 
       return !isPathrise(applicant)
         && leif(program, applicant, "Front-End Developer", fullTime);
@@ -87,7 +88,7 @@ const leifPaymentOptions = [
     ratePercent: 10,
     termMonths: 24,
     url: "https://leif.org/commit?product_id=5ea9faa086aac87083c404ea",
-    worksWith: (program: Plan, applicant: any) => {
+    worksWith: (program: Plan, applicant: Applicant) => {
       return !isPathrise(applicant)
         && leif(program, applicant, "Front-End Developer", partTime);
     },
@@ -98,7 +99,7 @@ const leifPaymentOptions = [
     ratePercent: 10,
     termMonths: 36,
     url: "https://leif.org/commit?product_id=5ea9f8f5562d30bc52c404d8",
-    worksWith: (program: Plan, applicant: any) => {
+    worksWith: (program: Plan, applicant: Applicant) => {
       return !isPathrise(applicant)
         && leif(program, applicant, "Full-Stack Developer", fullTime);
     },
@@ -109,7 +110,7 @@ const leifPaymentOptions = [
     minimumSalary: 40000,
     ratePercent: 10,
     termMonths: 36,
-    worksWith: (program: Plan, applicant: any) => {
+    worksWith: (program: Plan, applicant: Applicant) => {
       return !isPathrise(applicant)
         && leif(program, applicant, "Full-Stack Developer", partTime);
     },
@@ -120,7 +121,7 @@ const leifPaymentOptions = [
     minimumSalary: 50000,
     ratePercent: 10,
     termMonths: 42,
-    worksWith: (program: Plan, applicant: any) => {
+    worksWith: (program: Plan, applicant: Applicant) => {
       return !isPathrise(applicant)
         && leif(program, applicant, "Full-Stack Engineer", fullTime);
     },
@@ -131,7 +132,7 @@ const leifPaymentOptions = [
     minimumSalary: 50000,
     ratePercent: 10,
     termMonths: 42,
-    worksWith: (program: Plan, applicant: any) => {
+    worksWith: (program: Plan, applicant: Applicant) => {
       return !isPathrise(applicant)
         && leif(program, applicant, "Full-Stack Engineer", partTime);
     },
@@ -145,7 +146,7 @@ const leifPathrisePaymentOptions = [
     ratePercent: 10,
     termMonths: 24,
     url: "https://leif.org/commit?product_id=5f451b8b87b9307d95dc1daa",
-    worksWith: (program: Plan, applicant: any) => {
+    worksWith: (program: Plan, applicant: Applicant) => {
 
       return isPathrise(applicant)
         && leif(program, applicant, "Front-End Developer", fullTime);
@@ -157,7 +158,7 @@ const leifPathrisePaymentOptions = [
   //   ratePercent: 10,
   //   termMonths: 24,
   //   url: "https://leif.org/commit?product_id=5ea9faa086aac87083c404ea",
-  //   worksWith: (program: Plan, applicant: any) => {
+  //   worksWith: (program: Plan, applicant: Applicant) => {
   //     return isPathrise(applicant) 
   //     && leif(program, applicant, "Front-End Developer", partTime);
   //   },
@@ -168,7 +169,7 @@ const leifPathrisePaymentOptions = [
     ratePercent: 10,
     termMonths: 36,
     url: "https://leif.org/commit?product_id=5f451b505b4dd6ce73dc1f80",
-    worksWith: (program: Plan, applicant: any) => {
+    worksWith: (program: Plan, applicant: Applicant) => {
       return isPathrise(applicant)
         && leif(program, applicant, "Full-Stack Developer", fullTime);
     },
@@ -179,7 +180,7 @@ const leifPathrisePaymentOptions = [
   //   minimumSalary: 40000,
   //   ratePercent: 10,
   //   termMonths: 36,
-  //   worksWith: (program: Plan, applicant: any) => {
+  //   worksWith: (program: Plan, applicant: Applicant) => {
   //     return isPathrise(applicant) 
   //     && leif(program, applicant, "Full-Stack Developer", partTime);
   //   },
@@ -190,7 +191,7 @@ const leifPathrisePaymentOptions = [
     minimumSalary: 50000,
     ratePercent: 10,
     termMonths: 42,
-    worksWith: (program: Plan, applicant: any) => {
+    worksWith: (program: Plan, applicant: Applicant) => {
       return isPathrise(applicant)
         && leif(program, applicant, "Full-Stack Engineer", fullTime);
     },
@@ -201,7 +202,7 @@ const leifPathrisePaymentOptions = [
   //   minimumSalary: 50000,
   //   ratePercent: 10,
   //   termMonths: 42,
-  //   worksWith: (program: Plan, applicant: any) => {
+  //   worksWith: (program: Plan, applicant: Applicant) => {
   //     return isPathrise(applicant) 
   //     && leif(program, applicant, "Full-Stack Engineer", partTime);
   //   },
@@ -214,7 +215,7 @@ const leifPathrisePaymentOptions = [
 //     stripePlanId: "plan_HJTuA9lhMNXIQF",
 //     testStripePlanId: "plan_GlVXLoyCgmQxjW",
 //     monthlyCharge: 1500,
-//     worksWith: (plan: Plan, applicant: any) => {
+//     worksWith: (plan: Plan, applicant: Applicant) => {
 //       return plan.price / plan.months === 1500;
 //     },
 //   },
@@ -226,7 +227,7 @@ const internationalSupportCreditCard = [
     stripePlanId: "plan_HKHieufyiMV3LK",
     testStripePlanId: "plan_HKHk0SA8zoVa7u",
     monthlyCharge: 100,
-    worksWith: (plan: Plan, applicant: any) => {
+    worksWith: (plan: Plan, applicant: Applicant) => {
       return plan.price === 100;
     },
   },
@@ -235,7 +236,7 @@ const internationalSupportCreditCard = [
     stripePlanId: "plan_HKHiZDlGalUlVv",
     testStripePlanId: "plan_HKHkI369XDcDLA",
     monthlyCharge: 300,
-    worksWith: (plan: Plan, applicant: any) => {
+    worksWith: (plan: Plan, applicant: Applicant) => {
       return plan.price === 300;
     },
   },
@@ -244,7 +245,7 @@ const internationalSupportCreditCard = [
     stripePlanId: "plan_HKHi8KrWnTYpkF",
     testStripePlanId: "plan_HKHl6m7bGvQUgH",
     monthlyCharge: 500,
-    worksWith: (plan: Plan, applicant: any) => {
+    worksWith: (plan: Plan, applicant: Applicant) => {
       return plan.price === 500;
     },
   },
@@ -256,7 +257,7 @@ const creditCardOptions = [
     stripePlanId: "plan_GfCj106qZLQXBr",
     testStripePlanId: "plan_GlodVF5i54MCil",
     monthlyCharge: 400,
-    worksWith: (plan: Plan, applicant: any) => {
+    worksWith: (plan: Plan, applicant: Applicant) => {
       return plan.price === 400;
     },
   },
@@ -265,7 +266,7 @@ const creditCardOptions = [
     stripePlanId: "plan_GfCj7I6nKHJIoY",
     testStripePlanId: "plan_GlOujit9Muz8ts",
     monthlyCharge: 800,
-    worksWith: (plan: Plan, applicant: any) => {
+    worksWith: (plan: Plan, applicant: Applicant) => {
       return plan.price === 800;
     },
   },
@@ -274,7 +275,7 @@ const creditCardOptions = [
     stripePlanId: "plan_HJTw629gIrNNl9",
     testStripePlanId: "plan_GrQE3VeRF49qCN",
     monthlyCharge: 2800,
-    worksWith: (plan: Plan, applicant: any) => {
+    worksWith: (plan: Plan, applicant: Applicant) => {
       if (plan.price === 2800) return true;
 
       const perMonth = plan.price / plan.months;
@@ -286,7 +287,7 @@ const creditCardOptions = [
     stripePlanId: "plan_HJTuA9lhMNXIQF",
     testStripePlanId: "plan_GlVXLoyCgmQxjW",
     monthlyCharge: 1500,
-    worksWith: (plan: Plan, applicant: any) => {
+    worksWith: (plan: Plan, applicant: Applicant) => {
       if (plan.price === 1500) {
         return true;
       }
@@ -300,7 +301,7 @@ const creditCardOptions = [
     stripePlanId: "plan_HKHq87esyCOr27",
     testStripePlanId: "plan_HKHpgiFqx1EZ2G",
     monthlyCharge: 1500 * 0.75,
-    worksWith: (plan: Plan, applicant: any) => {
+    worksWith: (plan: Plan, applicant: Applicant) => {
       const perMonth = plan.price / plan.months;
       return perMonth === 1500 * 0.75;
     },
@@ -310,7 +311,7 @@ const creditCardOptions = [
     stripePlanId: "plan_HKHXom1iK8Lxw5",
     testStripePlanId: "plan_HKHYvMpV1FJvaG",
     monthlyCharge: 1500 * 0.5,
-    worksWith: (plan: Plan, applicant: any) => {
+    worksWith: (plan: Plan, applicant: Applicant) => {
       const perMonth = plan.price / plan.months;
       return perMonth === 1500 * 0.5;
     },
@@ -320,7 +321,7 @@ const creditCardOptions = [
     stripePlanId: "plan_HKHaZ1KlbEyj9j",
     testStripePlanId: "plan_HKHZK56OUbvYWO",
     monthlyCharge: 1500 * 0.25,
-    worksWith: (plan: Plan, applicant: any) => {
+    worksWith: (plan: Plan, applicant: Applicant) => {
       const perMonth = plan.price / plan.months;
       return perMonth === 1500 * 0.25;
     },
@@ -333,23 +334,10 @@ const installments = [
     stripePlanId: "plan_HJi6V12NZXKYN0",
     testStripePlanId: "plan_HKIEVCRChizWeQ",
     monthlyCharge: 500,
-    worksWith: (plan: Plan, applicant: any) => {
+    worksWith: (plan: Plan, applicant: Applicant) => {
       if (isInUSA(applicant)) return false;
       if (plan.price < 3000) return false;
 
-      return true;
-    },
-  },
-];
-
-const campOptions = [
-  {
-    type: "creditCard-camp",
-    stripePlanId: "plan_HKIW5IOMiw4C4p",
-    testStripePlanId: "plan_HKIWadWTfsvFVJ",
-    monthlyCharge: 600,
-    worksWith: (plan: Plan, applicant: any) => {
-      if (plan.id !== "camp2020") return false;
       return true;
     },
   },
@@ -362,10 +350,9 @@ export const paymentTypes = [
   ...creditCardOptions,
   ...internationalSupportCreditCard,
   ...installments,
-  ...campOptions,
   //   {
   //     type: "callBack",
-  //     worksWith: (program: Plan, applicant: any) => {
+  //     worksWith: (program: Plan, applicant: Applicant) => {
   //       return true;
   //     },
   //   },
