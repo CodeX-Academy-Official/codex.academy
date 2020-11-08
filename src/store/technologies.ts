@@ -29,7 +29,7 @@ export const technologies = [
     info: "Powerful statically typed programming language",
     url: "https://docs.microsoft.com/en-us/dotnet/csharp/",
     important: true,
-    certifications: [FULL_STACK_ENGINEER],
+    certifications: [FULL_STACK_ENGINEER,FULL_STACK_DEVELOPER],
   },
   {
     order: 1,
