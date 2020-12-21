@@ -31,7 +31,7 @@
               <div class="item">
                 <Icon name="checkbox" />
                 <span>
-                  <strong>Pay ZERO until your first job</strong>
+                  <strong>ZERO up-front tuition!</strong>
                 </span>
               </div>
             </div>

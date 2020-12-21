@@ -34,16 +34,14 @@
               placeholder="Weekly Study Hours"
               v-model="studyHours"
             >
-              <option :value="10">10 Hours/Week or Less</option>
-              <option :value="20">Around 20 Hours/Week</option>
-              <option :value="30">Around 30 Hours/Week</option>
-              <option :value="40">40 Hours/Week or More</option>
+              <option :value="20">Part-Time (around 20 hours/week)</option>
+              <option :value="40">Full-Time (40 hours/week or more)</option>
             </select>
             <p v-if="isMonthly || activePlan.isFixed">{{ studyHours }} Hours/Week</p>
           </td>
         </tr>
         <tr>
-          <th>Weekly Mentor Sessions:</th>
+          <th>Weekly Live Sessions:</th>
           <td>
             <span
               title="Calculated from your weekly study hours."
@@ -51,13 +49,14 @@
           </td>
         </tr>
         <tr v-if="calculatedProgramMonths > 1">
-          <th>Approximate Program Duration:</th>
+          <th>Average Program Duration:</th>
           <td>
             <span
               title="Calculated from your weekly study hours."
             >{{ calculatedProgramMonths }} months</span>
           </td>
         </tr>
+        
         <tr>
           <th>Start Date:</th>
           <td>

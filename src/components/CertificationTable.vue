@@ -19,15 +19,21 @@
         </tr>
 
         <tr>
-          <th>Total Study Hours</th>
+          <th>Micro-Certification Levels</th>
           <td v-for="c in certifications" :key="c.id">
-            {{ c.studyHours }} Hours
+            {{ c.levels }} Micro-Certifications
           </td>
         </tr>
         <tr>
-          <th>Total Mentor Sessions</th>
+          <th>Study Hours</th>
           <td v-for="c in certifications" :key="c.id">
-            {{ c.mentorSessions }} Sessions
+            {{ c.studyHours }}+ Hours
+          </td>
+        </tr>
+        <tr>
+          <th>Live Sessions</th>
+          <td v-for="c in certifications" :key="c.id">
+            {{ c.mentorSessions }}+ Sessions
           </td>
         </tr>
         <tr>
@@ -36,34 +42,29 @@
             Up to {{ c.evaluations }} Evaluations
           </td>
         </tr>
-        <tr>
-          <th>Micro-Certification Levels</th>
-          <td v-for="c in certifications" :key="c.id">
-            {{ c.levels }} Micro-Certifications
-          </td>
-        </tr>
+        
         <CheckRow
           v-for="feature in features"
           :key="feature"
           :items="certifications"
           :name="feature"
         />
-
+        
         <tr>
-          <th>Full-Time Schedule</th>
+          <th>Average Full-Time Schedule</th>
           <td v-for="c in certifications" :key="c.id">{{ c.levels }} Months</td>
         </tr>
         <tr>
-          <th>Part-Time Schedule</th>
+          <th>Average Part-Time Schedule</th>
           <td v-for="c in certifications" :key="c.id">
             {{ c.levels * 2 }} Months
           </td>
         </tr>
 
         <CheckRow :items="certifications" name="ISA Available" />
-        <CheckRow :items="certifications" name="Financing Available" />
+        <CheckRow :items="certifications" name="Deferred Payment Available" />
         <tr>
-          <th>Tuition</th>
+          <th>Estimated Tuition</th>
           <td v-for="c in certifications" :key="c.id">
             <p class="price">
               <strong>

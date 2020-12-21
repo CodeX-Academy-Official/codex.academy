@@ -1,7 +1,7 @@
 <template>
   <div class="deferred-payment">
     <Hero unsplashId="DuHKoV44prg" height="25em">
-      <h2>Pay Zero Tuition</h2>
+      <h2>No up-front tuition</h2>
       <h5>Until your first job</h5>
     </Hero>
     <div class="container mt-5">

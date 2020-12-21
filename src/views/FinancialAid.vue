@@ -1,14 +1,15 @@
 <template>
   <div class="financing pb-5">
     <Hero unsplashId="XJXWbfSo2f0" height="40vh">
-      <h2>Financial Aid</h2>
-      <h5>We've got you covered</h5>
+      <h2>Financing Options</h2>
+      <h5>To Fund Your Education</h5>
     </Hero>
     <div class="container mt-5">
-      <h1 class="section-title">Tuition Financing from Climb Credit</h1>
+      <h1 class="section-title">Deferred Payment </h1>
       <p class="mb-5 text-center">
-        CodeX Academy partners with Climb Credit to offer special financing for
-        any learning plan for a minimum of 3 months.
+        CodeX Academy has partnered with Meritize to provide our students with financing options to fund your education. With a
+Meritize Loan, you can get credit for your merit and potentially improve your loan options by sharing your
+academic history, military background, or work experience. If approved, full deferment during school is available.
       </p>
       <div class="row mx-auto">
         <div class="col-12 col-md-4" v-for="r in reasons" :key="r.title">
@@ -26,18 +27,24 @@
         <SelectPlanButton text="Apply Now" buttonClass="btn-lg" />
       </div>
 
-      <div class="mt-5">
-        <Quote
-          text="The loan process with Climb Credit has simply set the bar for loan companies.
-Climb takes the ‘whole person’ and ‘whole profile’ into account."
-          author="Tonia, IL"
-        />
+      <div class="mt-5 row">
+        <div class="col">
+            <h3>Meritize Loans Difference</h3>
+            <ul>
+            <li>Check your loan options in minutes without affecting your credit score</li>
+            <li>Fixed and variable interest rates</li>
+            <li>Full deferment available for certain products</li>
+            <li>Free Career Services</li>
+            <li>0.25% Interest rate discount with autopay2</li>
+            <li>3-Month grace period</li>
+            </ul>
+        </div>
+        <div class="col"><img style="width:100%" src="https://meritize.com/wp-content/logos/Meritize-logo.png"/></div>
       </div>
-
-      <div class="mt-5 text-center">
-        <h3>Sample Loan</h3>
-        <SampleLoan :sampleData="sampleData" :disclaimer="disclaimer" />
+      <div class="mt-3 text-muted small text-left">
+      Terms and Conditions apply. Meritize branded loan products are educational loans issued by Blue Ridge Bank (“Bank”), National Association, Member FDIC. The Bank and Meritize reserve the right to modify or discontinue products and benefits at any time without notice. To qualify, a borrower must be a U.S. citizen, permanent resident, or hold a valid work authorization document, and meet the Bank’s underwriting requirements. If approved for a loan, the actual loan amount, term, payment, and APR amount of the loan that a customer qualifies for may vary based on credit determination, state law, and other factors.
       </div>
+    
     </div>
   </div>
 </template>
@@ -54,70 +61,24 @@ export default {
   data: () => ({
     reasons: [
       {
-        title: "Safe and Fast",
+        title: "Academy History",
         icon: "tv",
         description:
-          "Online Application. Pre-approval in minutes. Applying does not affect credit score."
+          "Share what you’ve learned in school by providing your transcripts, or HSE scores."
       },
       {
-        title: "Flexible Terms",
+        title: "Military Background",
         icon: "percent",
         description:
-          "Flexible terms and fixed interest rates for the life of your loan."
+          "Upload your military documents, such as your DD214, if you are a veteran."
       },
       {
-        title: "Co-Borrower",
+        title: "Work Experience",
         icon: "users",
         description:
-          "Add a qualifying co-borrower to your application for a better rate."
+          "Provide details of your work history and professional references."
       }
-    ],
-    sampleData: [
-      {
-        title: "Loan Amount",
-        content: "$9,000",
-        footnote: "1",
-        footnoteText:
-          "Finance up to tuition. The minimum loan amount is $3,000 or max loan if below $3,000."
-      },
-      {
-        title: "Term (months)",
-        content: "45",
-        footnote: "2",
-        footnoteText:
-          "Sample 42-month term includes 42 months of principal and interest payments. Terms vary by program."
-      },
-      {
-        title: "Interest Rate",
-        content: "7.49%",
-        footnote: "3",
-        footnoteText:
-          "Interest rates range from 6.99%-13.99%. Actual interest rates may vary based on a number of factors."
-      },
-      {
-        title: "APR",
-        content: "9.8%",
-        footnote: "4",
-        footnoteText:
-          "APRs on loans range from 9.87%-17.01%. An annual percentage rate (APR) in the annual rate charged for borrowing and is expressed as a percentage that represents the actual yearly cost of funds over the term of a loan. The APR includes a 5% origination fee."
-      },
-      {
-        title: "Interest-Only Pmt",
-        content: "$59",
-        footnote: ""
-      },
-      {
-        title: "Principal & Interest Pmt",
-        content: "$294",
-        footnote: ""
-      }
-    ],
-    disclaimer:
-      "Loan approval subject to full underwriting. Loans are originated by Climb \
-      Investco, LLC (Registered as Climb Credit Investco, LLC in Florida). Code \
-      X Academy does not endorse loans originated by Climb Investco, LLC and \
-      Climb Investco, LLC is not affiliated with Code X Academy. California \
-      Finance Lender #60DBO-44527. NMLS Consumer Access (NMLS# 1240013)."
+    ]
   })
 };
 </script>

@@ -73,12 +73,12 @@
         </div>
 
         <div class="col-12 col-md-2 mb-5" v-if="!isInternational">
-          <h4>Financial Aid</h4>
+          <h4>Financing</h4>
           <p>
-            <router-link to="/financial-aid">Financing</router-link>
+            <router-link to="/financial-aid">Deferred Payment</router-link>
           </p>
           <p>
-            <router-link to="/isa">ISAs</router-link>
+            <router-link to="/isa">Income Sharing</router-link>
           </p>
         </div>
         <div class="col-12 col-md-2 mb-5">

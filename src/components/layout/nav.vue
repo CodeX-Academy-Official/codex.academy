@@ -83,18 +83,18 @@
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
-            >Financial Aid</a
+            >Financing</a
           >
           <div class="dropdown-menu">
             <div class="nav-item">
-              <router-link to="/ISA" class="nav-link"
-                >Income Sharing</router-link
+              <router-link to="/financial-aid" class="nav-link"
+                >Deferred Payment</router-link
               >
             </div>
             <div class="dropdown-divider"></div>
             <div class="nav-item">
-              <router-link to="/financial-aid" class="nav-link"
-                >Financing</router-link
+              <router-link to="/ISA" class="nav-link"
+                >Income Sharing</router-link
               >
             </div>
           </div>

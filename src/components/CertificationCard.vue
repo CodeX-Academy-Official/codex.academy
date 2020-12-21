@@ -21,15 +21,15 @@
         </li>
 
         <li class="list-group-item" v-for="feature in features" :key="feature">{{ feature }}</li>
-        <li class="list-group-item">{{ certification.levels }} Months Full-Time</li>
-        <li class="list-group-item">{{ certification.levels * 2 }}+ Months Part-Time</li>
+        <li class="list-group-item">Average {{ certification.levels }} Months Full-Time</li>
+        <li class="list-group-item">Average {{ certification.levels * 2 }} Months Part-Time</li>
 
         <li class="list-group-item">
-          Tuition:
+          Estimated Tuition:
           <Money :amount="certification.price" />
         </li>
         <li class="list-group-item">
-          <strong>Or pay ZERO until your first job!</strong>
+          <strong>ZERO up-front tuition payments!</strong>
         </li>
 
         <li class="list-group-item">

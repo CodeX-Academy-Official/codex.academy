@@ -27,7 +27,7 @@ export const certifications = [
     id: 1,
     name: FRONT_END_DEVELOPER,
     description:
-      "Graduates able to develop and deploy simple web applications using HTML, CSS, JavaScript and JQuery.",
+      "Develop and deploy complex, dynamic front-end web applications using HTML, CSS, JavaScript and React.",
     studyHours: 520,
     levels: 3,
     icon: "pencil-ruler",
@@ -40,7 +40,7 @@ export const certifications = [
     id: 2,
     name: FULL_STACK_DEVELOPER,
     description:
-      "Graduates able to develop challenging full-stack data-driven web applications using best practices in technologies like ReactJS and NodeJS.",
+      "Develop challenging full-stack, data-driven web applications using best practices in technologies like React, NodeJS, TypeScript and C#.",
     recommended: true,
     studyHours: 1040,
     levels: 6,
@@ -54,7 +54,7 @@ export const certifications = [
     id: 3,
     name: FULL_STACK_ENGINEER,
     description:
-      "Graduates able to develop complex, secure and well-engineered full-stack web applications using multiple front-end and back-end technologies.",
+      "Develop complex, secure and well-engineered full-stack web applications using multiple front-end and back-end technologies.",
     studyHours: 1560,
     levels: 9,
     icon: "server",

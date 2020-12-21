@@ -11,6 +11,7 @@ const mentorDrivenCommonDetails = [
   ...planCommonDetails,
   "Internship Opportunities",
   "Career Counseling",
+  "Job Placement Services"
 ];
 
 export function mapToActivePlan(plan: any, startDate: Date): Plan {
@@ -220,8 +221,10 @@ export const bootcampFeatures = [
   "Unlimited Learning Pathway Access",
   "24/7 Community Chat Access",
   "Build a Portfolio",
+  "Credit for Previous Knowledge",
   "Internship Opportunities",
   "Career Counseling",
+  "Job Placement Services"
   //"5 hours/week live 1:1 mentoring"
 ];
 
