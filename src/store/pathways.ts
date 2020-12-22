@@ -1,6 +1,7 @@
 export const pathways = [
   {
     name: "Level 1",
+    program: "fed",
     description:
       "Able to build and deploy simple public websites using HTML and CSS.",
     badgeImageUrl: "img/badges/level1.png",
@@ -9,6 +10,7 @@ export const pathways = [
   },
   {
     name: "Level 2",
+    program: "fed",
     description:
       "Able to build and auto-deploy dynamic web applications using HTML, CSS and Javascript.",
     badgeImageUrl: "img/badges/level2.png",
@@ -17,6 +19,7 @@ export const pathways = [
   },
   {
     name: "Level 3",
+    program: "fed",
     description:
       "Able to build and auto-deploy responsive data-driven web applications using advanced HTML, CSS and Javascript.",
     badgeImageUrl: "img/badges/level3.png",
@@ -25,6 +28,7 @@ export const pathways = [
   },
   {
     name: "Level 4",
+    program: "fsd",
     description:
       "Able to build backend-driven web applications using HTML, CSS, Javascript and NodeJS.",
     badgeImageUrl: "img/badges/level4.png",
@@ -33,9 +37,42 @@ export const pathways = [
   },
   {
     name: "Level 5",
+    program: "fsd",
     description:
       "Able to build and deploy database-driven web applications using ReactJS and NodeJS.",
     badgeImageUrl: "img/badges/level5.png",
+    pathwayUrl: false
+  },
+  {
+    name: "Level 6",
+    program: "fsd",
+    description:
+      "",
+    badgeImageUrl: "img/badges/level6.png",
+    pathwayUrl: false
+  },
+  {
+    name: "Level 7",
+    program: "fse",
+    description:
+      "",
+    badgeImageUrl: "img/badges/level7.png",
+    pathwayUrl: false
+  },
+  {
+    name: "Level 8",
+    program: "fse",
+    description:
+      "",
+    badgeImageUrl: "img/badges/level8.png",
+    pathwayUrl: false
+  },
+  {
+    name: "Level 9",
+    program: "fse",
+    description:
+      "",
+    badgeImageUrl: "img/badges/level9.png",
     pathwayUrl: false
   }
 ];

@@ -23,7 +23,7 @@
         </div>
       </div>
     </div>
-    <h5>...more levels on the way!</h5>
+    
   </div>
 </template>
 
