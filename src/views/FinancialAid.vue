@@ -35,7 +35,7 @@ academic history, military background, or work experience. If approved, full def
             <li>Fixed and variable interest rates</li>
             <li>Full deferment available for certain products</li>
             <li>Free Career Services</li>
-            <li>0.25% Interest rate discount with autopay2</li>
+            <li>0.25% Interest rate discount with autopay</li>
             <li>3-Month grace period</li>
             </ul>
         </div>
