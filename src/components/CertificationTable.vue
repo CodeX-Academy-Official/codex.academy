@@ -7,7 +7,7 @@
             <h4 class="text-center">{{ title }}</h4>
           </th>
           <th v-for="c in certifications" :key="c.name">
-            <Icon :name="c.noun" :size="80" class="mb-3" />
+            <img :src="c.badgeUrl" :alt="c.name" style="width:40%" class="mb-4" />
             <h4 class="text-center">{{ c.name }}</h4>
           </th>
         </tr>
