@@ -24,8 +24,7 @@ export function mapCertificationToPlan(cert: any, startDate: Date): Plan {
 
 export const certifications = [
   {
-    id: 1,
-    designator: "fed",
+    id: "fed",
     name: FRONT_END_DEVELOPER,
     description:
       "Develop and deploy complex, dynamic front-end web applications using HTML, CSS, JavaScript and React.",
@@ -39,8 +38,7 @@ export const certifications = [
     price: 4500,
   },
   {
-    id: 2,
-    designator: "fsd",
+    id: "fsd",
     name: FULL_STACK_DEVELOPER,
     description:
       "Develop challenging full-stack, data-driven web applications using best practices in technologies like React, NodeJS, TypeScript and C#.",
@@ -55,8 +53,7 @@ export const certifications = [
     price: 9000,
   },
   {
-    id: 3,
-    designator: "fse",
+    id: "fse",
     name: FULL_STACK_ENGINEER,
     description:
       "Develop complex, secure and well-engineered full-stack web applications using multiple front-end and back-end technologies.",

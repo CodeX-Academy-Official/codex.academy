@@ -1,7 +1,7 @@
 export const pathways = [
   {
-    name: "Level 1",
-    program: "fed",
+    name: "Front-End Developer 1",
+    cert: "fed",
     description:
       "Able to build and deploy simple public websites using HTML and CSS.",
     badgeImageUrl: "img/badges/level1.png",
@@ -9,8 +9,8 @@ export const pathways = [
       "https://badgr.com/public/pathway/5df3b7bc46e0fb002140cd03/element/5df3b7bc46e0fb002140cd02"
   },
   {
-    name: "Level 2",
-    program: "fed",
+    name: "Front-End Developer  2",
+    cert: "fed",
     description:
       "Able to build and auto-deploy dynamic web applications using HTML, CSS and Javascript.",
     badgeImageUrl: "img/badges/level2.png",
@@ -18,8 +18,8 @@ export const pathways = [
       "https://badgr.com/public/pathway/5df50e9d46e0fb002140d64f/element/5df50e9d46e0fb002140d64e"
   },
   {
-    name: "Level 3",
-    program: "fed",
+    name: "Front-End Developer  3",
+    cert: "fed",
     description:
       "Able to build and auto-deploy responsive data-driven web applications using advanced HTML, CSS and Javascript.",
     badgeImageUrl: "img/badges/level3.png",
@@ -27,8 +27,8 @@ export const pathways = [
       "https://badgr.com/public/pathway/5e0f533246e0fb002739c4f1/element/5e0f533246e0fb002739c4f0"
   },
   {
-    name: "Level 4",
-    program: "fsd",
+    name: "Full-Stack Developer 4",
+    cert: "fsd",
     description:
       "Able to build backend-driven web applications using HTML, CSS, Javascript and NodeJS.",
     badgeImageUrl: "img/badges/level4.png",
@@ -36,43 +36,43 @@ export const pathways = [
       "https://badgr.com/public/pathway/5e0f7a9d46e0fb00221bc2b9/element/5e0f7a9d46e0fb00221bc2b8"
   },
   {
-    name: "Level 5",
-    program: "fsd",
+    name: "Full-Stack Developer 5",
+    cert: "fsd",
     description:
       "Able to build and deploy database-driven web applications using ReactJS and NodeJS.",
     badgeImageUrl: "img/badges/level5.png",
-    pathwayUrl: false
+    pathwayUrl: "https://badgr.com/public/pathway/5e0fb6a346e0fb002739c85b"
   },
   {
-    name: "Level 6",
-    program: "fsd",
+    name: "Full-Stack Developer 6",
+    cert: "fsd",
     description:
       "",
     badgeImageUrl: "img/badges/level6.png",
-    pathwayUrl: false
+    pathwayUrl: "https://badgr.com/public/pathway/5e0fb76446e0fb00221bc56b"
   },
   {
-    name: "Level 7",
-    program: "fse",
+    name: "Full-Stack Engineer 7",
+    cert: "fse",
     description:
       "",
     badgeImageUrl: "img/badges/level7.png",
-    pathwayUrl: false
+    pathwayUrl: "https://badgr.com/public/pathway/5f18a8fb4e528560cd3d7155"
   },
   {
-    name: "Level 8",
-    program: "fse",
+    name: "Full-Stack Engineer 8",
+    cert: "fse",
     description:
       "",
     badgeImageUrl: "img/badges/level8.png",
-    pathwayUrl: false
+    pathwayUrl: "https://badgr.com/public/pathway/5e0fc58846e0fb002739c897"
   },
   {
-    name: "Level 9",
-    program: "fse",
+    name: "Full-Stack Engineer 9",
+    cert: "fse",
     description:
       "",
     badgeImageUrl: "img/badges/level9.png",
-    pathwayUrl: false
+    pathwayUrl: "https://badgr.com/public/pathway/5f18a8fb4e528560cd3d7155"
   }
 ];
