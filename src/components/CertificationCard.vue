@@ -1,18 +1,13 @@
 <template>
   <div class>
     <div class="card" v-bind:class="{ 'card-outline-primary': certification.recommended }">
-      <h5
-        class="card-header text-center"
-        v-bind:class="{
-          'bg-primary': certification.recommended,
-          'text-white': certification.recommended
-        }"
-      >Developer Certification Program</h5>
       <div class="text-center mt-4">
-        <Icon :name="certification.noun" :size="80" class="mb-3" />
-        <div class>
-          <h4>{{certification.name}}</h4>
-        </div>
+         <img
+              class="card-img-top"
+              :src="certification.badgeUrl"
+              :alt="certification.name"
+              style="width: 70%"
+            />
         <div class="font-italic">{{ certification.duration }}</div>
       </div>
       <ul class="list-group list-group-flush text-center mt-4">

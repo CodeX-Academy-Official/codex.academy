@@ -5,17 +5,16 @@
       <h5>What makes CodeX Academy Tick?</h5>
     </Hero>
     <div class="container mt-5 pt-5">
-      <!-- Page Heading/Breadcrumbs -->
-
+    
       <h1 class="text-center">Our 6 Pillars of Success</h1>
-      <h5 id="curriculum" class="section-title mb-5">A direct path for learning to code</h5>
+      <h5 id="pillars" class="section-title mb-5">A direct path for learning to code</h5>
       <Pillars id="pillars" :pillars="getMethods" />
       <!-- <h2 id="formula" class="section-title mt-5 mb-5">The CodeX Academy Formula</h2>
       <Formula />-->
 
       <h1 id="curriculum" class="text-center mt-5">The CodeX Academy Curriculum</h1>
-      <h5 id="curriculum" class="section-title mb-5">What you can expect, Month to Month</h5>
-      <CurriculumTable />
+      <h5 id="curriculum" class="section-title mb-5">Build Mastery from Level to Level</h5>
+      <CurriculumCerts />
 
       <h1 id="timeline" class="text-center mt-5">Start Strong, Finish Stronger</h1>
       <h5 id="curriculum" class="section-title mb-5">A Typical Learner Timeline</h5>
@@ -40,6 +39,7 @@ import Pillars from "@/components/Pillars";
 import Hero from "@/components/Hero";
 import InternshipPartnersSection from "@/components/sections/InternshipPartnersSection";
 import { mapGetters } from "vuex";
+import CurriculumCerts from "@/components/CurriculumCerts";
 
 export default {
   computed: { ...mapGetters(["getMethods"]) },
@@ -50,6 +50,7 @@ export default {
     Timeline,
     Formula,
     CurriculumTable,
+    CurriculumCerts,
     Pillars,
     Hero,
     InternshipPartnersSection
