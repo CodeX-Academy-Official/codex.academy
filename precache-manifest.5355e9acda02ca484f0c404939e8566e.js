@@ -120,8 +120,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/about.2e593756.css"
   },
   {
-    "revision": "82ef6bedfcfb9cba1f56",
-    "url": "/css/app.4d464bee.css"
+    "revision": "1039af8acb7423773b0b",
+    "url": "/css/app.7f6a5ab3.css"
   },
   {
     "revision": "4a86772632cf483b3706",
@@ -156,24 +156,52 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/architecture.e2c7f522.svg"
   },
   {
-    "revision": "83034b1cc216465d6742a1f2b8dce8bf",
+    "revision": "66af440e677837e59f0ed10e9d67a495",
+    "url": "/img/badges/fed-master.png"
+  },
+  {
+    "revision": "77a5cddcff9f352bc0076adb3c238026",
+    "url": "/img/badges/fsd-master.png"
+  },
+  {
+    "revision": "f95d982b4e775dc43f965e57ec227fd8",
+    "url": "/img/badges/fse-master.png"
+  },
+  {
+    "revision": "1df77aec93f2f2be5e6b84be147a461c",
     "url": "/img/badges/level1.png"
   },
   {
-    "revision": "a6cf53488c3ab04cb37c54a351d1eb24",
+    "revision": "2e1b0bb7fac9722e3b0e5fc66460968a",
     "url": "/img/badges/level2.png"
   },
   {
-    "revision": "5d15b272b29e6e72fbdb79426476eab6",
+    "revision": "4ebb9c09f4d90ea6dc868272a6a1305c",
     "url": "/img/badges/level3.png"
   },
   {
-    "revision": "bd5237520a780e5637c88eb64aca5a79",
+    "revision": "54d8fc53f4f301868b9c2848f6f6a07b",
     "url": "/img/badges/level4.png"
   },
   {
-    "revision": "66ca97c86ee0bf0bfea9e60157a6f5bc",
+    "revision": "0c8e7408a2c2b8c2d2053cfbcf7a0cc5",
     "url": "/img/badges/level5.png"
+  },
+  {
+    "revision": "9d4b51e98ae3c06b998adfde8b86533d",
+    "url": "/img/badges/level6.png"
+  },
+  {
+    "revision": "220e800760441b51f904fc2ad87067ee",
+    "url": "/img/badges/level7.png"
+  },
+  {
+    "revision": "1d7d13d64be03d78b94577f6d5084052",
+    "url": "/img/badges/level8.png"
+  },
+  {
+    "revision": "699a0b2720a5d97458a7e83a443429bc",
+    "url": "/img/badges/level9.png"
   },
   {
     "revision": "ed74dde493e8f687c12d825b1de95d27",
@@ -1048,7 +1076,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/zero.579b7008.svg"
   },
   {
-    "revision": "d7bc350b3fb88239ed21912b63677b2d",
+    "revision": "45fdc46c84e07435771635631763707d",
     "url": "/index.html"
   },
   {
@@ -1056,8 +1084,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/about.9df2d9e1.js"
   },
   {
-    "revision": "82ef6bedfcfb9cba1f56",
-    "url": "/js/app.f90c0ac4.js"
+    "revision": "1039af8acb7423773b0b",
+    "url": "/js/app.e836a10e.js"
   },
   {
     "revision": "4a86772632cf483b3706",
