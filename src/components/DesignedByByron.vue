@@ -6,7 +6,7 @@
     <div class="col">
       <h5>Mastery Transfer Initiated</h5>
       <div>
-        CodeX Academy Developer Programs are designed by
+        CodeX Academy Developer Certifications are designed by
 
         <a href="https://www.linkedin.com/in/sommardahl/" target="_blank"
           >Byron Sommardahl</a

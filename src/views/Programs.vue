@@ -1,7 +1,7 @@
 <template>
   <div class="pb-5">
     <Hero unsplashId="y_6rqStQBYQ" height="40vh">
-      <h2>Developer Programs</h2>
+      <h2>Developer Certifications</h2>
       <h5>Your New Career Awaits</h5>
     </Hero>
     <div v-if="getApplicant" class="text-center bg-periwinkle pt-4 pb-4">
@@ -29,7 +29,7 @@
           :certifications="getCertifications"
           :features="getBootcampFeatures"
           @certificationSelected="certificationSelected"
-          title="Programs"
+          title="Certifications"
         />
       </div>
       <div class="mt-5 d-lg-none">

@@ -5,13 +5,13 @@
     <div class="table-responsive">
       <table class="table">
         <tr>
-          <th style="width: 30%">Program:</th>
+          <th style="width: 30%">Target Certification:</th>
           <td>
             <span v-if="activePlan.isFixed">{{ activePlan.name }}</span>
             <select
               id="activePlan"
               class="inputLikeText"
-              placeholder="Select a Program"
+              placeholder="Select a Certification"
               v-model="activePlanId"
               @change="changedActivePlan"
               v-if="!activePlan.isFixed"

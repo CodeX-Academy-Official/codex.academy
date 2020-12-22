@@ -47,7 +47,7 @@
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
-            >Programs</a
+            >Certifications</a
           >
           <div class="dropdown-menu">
             <div class="nav-item">

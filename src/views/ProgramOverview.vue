@@ -6,7 +6,7 @@
     </Hero>
     <div class="container mt-5">
       <h2>How will you learn to code?</h2>
-      <p>At CodeX Academy, we pride ourselves on how incredibly flexible our programs are. If you have the motivation to learn to code, we can help you do it no matter your circumstances! Full-time, part-time, one or two hours a week... the goal doesn't change, only the pace!</p>
+      <p>At CodeX Academy, we pride ourselves on how incredibly flexible our certifications are. If you have the motivation to learn to code, we can help you do it no matter your circumstances! Full-time, part-time, one or two hours a week... the goal doesn't change, only the pace!</p>
       <div class="mt-5">
         <PlanCompareTable />
       </div>

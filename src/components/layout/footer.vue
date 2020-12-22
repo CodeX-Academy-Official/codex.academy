@@ -24,7 +24,7 @@
         </div>
 
         <div class="col-12 col-md-2 mb-5">
-          <h4>Programs</h4>
+          <h4>Certifications</h4>
           <p v-if="!isInternational">
             <router-link to="/programs">Overview</router-link>
           </p>
