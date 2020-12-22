@@ -37,7 +37,7 @@ export const pillars = [
   },
   {
     id: "4",
-    title: "Incremental Learning",
+    title: "Just-In-Time Learning",
     subtitle: "Learn what you need, only when you need it",
     description:
       "The CodeX Academy curriculum is designed to take advantage of how your brain accumulates and retains new information. There's a LOT to learn with programming. We introduce you to thin slices of each relevant technology, just in time for a project to make it stick. ",
