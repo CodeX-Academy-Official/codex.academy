@@ -1,5 +1,5 @@
 <template>
-  <a @click="selected" class="btn btn-primary">
+  <a @click="selected" class="btn btn-primary" id="selectProgram">
     <strong>{{text}}</strong>
   </a>
 </template>

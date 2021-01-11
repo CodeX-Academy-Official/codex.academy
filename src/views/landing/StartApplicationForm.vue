@@ -3,6 +3,7 @@
     <div class="form-label-group">
       <label for="inputUserName">Applicant Name</label>
       <input
+        id="name"
         type="text"
         name="name"
         autocomplete="name"
@@ -15,6 +16,7 @@
     <div class="form-label-group">
       <label for="inputEmail">Email address</label>
       <input
+        id="email"
         type="email"
         class="form-control"
         placeholder="Email address"
@@ -57,6 +59,7 @@
 
       <div class="form-check financial-aid" v-if="offerFinancialAid">
         <input
+          id="finAid"
           class="form-check-input"
           type="checkbox"
           v-model="financialAid"
@@ -67,7 +70,11 @@
     </div>
 
     <div class="cta">
-      <button class="btn btn-lg btn-cta btn-block text-uppercase" type="submit">Start Application</button>
+      <button 
+        id="submit"
+        class="btn btn-lg btn-cta btn-block text-uppercase" 
+        type="submit">Start Application
+      </button>
     </div>
     <div class="privacy text-center mt-3">
       <router-link to="/policy/privacy">Privacy Policy</router-link>

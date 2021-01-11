@@ -7,7 +7,7 @@ def sleep(time_S):
 
 #test student
 
-LearnerName = "Christest MoreTest"
+LearnerName = "ChrisTest MoreTest"
 LearnerEmail = "christian+selTest@codex.Academy"
 promoVal = "TestPromo"
 phone = "615-123-4567"
@@ -40,30 +40,28 @@ assert "CodeX Academy" in myPageTitle
 ###########################################################
 # Step : Fill out Short form
 ###########################################################
-NameUrl   = '//*[@id="app"]/div/div[2]/div/div[2]/div/div/div/form/div[1]/input'
-EmailUrl  = '//*[@id="app"]/div/div[2]/div/div[2]/div/div/div/form/div[2]/input'
-submitUrl = '//*[@id="app"]/div/div[2]/div/div[2]/div/div/div/form/div[4]/button'
+NameUrl   = '//*[@id="name"]' #'//*[@id="app"]/div/div[2]/div/div[2]/div/div/div/form/div[1]/input'
+EmailUrl  = '//*[@id="email"]' #'//*[@id="app"]/div/div[2]/div/div[2]/div/div/div/form/div[2]/input'
+submitUrl = '//*[@id="submit"]'  #'//*[@id="app"]/div/div[2]/div/div[2]/div/div/div/form/div[4]/button'
 
 driver.find_element_by_xpath(NameUrl).send_keys(LearnerName)
 driver.find_element_by_xpath(EmailUrl).send_keys(LearnerEmail)
-
-sleep(1)
 driver.find_element_by_xpath(submitUrl).click()
 sleep(3)
 
 ###########################################################
 # Select Program
 ###########################################################
-programUrl = '//*[@id="app"]/div/div[2]/div[3]/div[2]/div[2]/div/ul/li[15]/a'
+programUrl = '//*[@id="prgmSelect"]/strong' #'//*[@id="app"]/div/div[2]/div[3]/div[2]/div[2]/div/ul/li[15]/a'
 driver.find_element_by_xpath(programUrl).click()
 sleep(3)
 
 ###########################################################
 # Confirm Program
 ###########################################################
-promoUrl          = '//*[@id="app"]/div/div[2]/div[2]/div/div[2]/form/div/table/tr[7]/td/input'
-applyPromoUrl     = '//*[@id="app"]/div/div[2]/div[2]/div/div[2]/form/div/table/tr[7]/td/button'
-confirmProgramUrl = '//*[@id="app"]/div/div[2]/div[2]/div/div[2]/form/p/button/strong'
+promoUrl          = '//*[@id="promoCode"]' #//*[@id="app"]/div/div[2]/div[2]/div/div[2]/form/div/table/tr[7]/td/input'
+applyPromoUrl     = '//*[@id="promoSubmit"]' #'//*[@id="app"]/div/div[2]/div[2]/div/div[2]/form/div/table/tr[7]/td/button'
+confirmProgramUrl = '//*[@id="ContinueApplication"]/strong' #'//*[@id="app"]/div/div[2]/div[2]/div/div[2]/form/p/button/strong'
 
 
 driver.find_element_by_xpath(promoUrl).send_keys(promoVal)
@@ -78,12 +76,12 @@ phoneUrl    = '//*[@id="phone"]'
 StAddrUrl   = '//*[@id="inputAddress"]'
 apartUrl    = '//*[@id="inputAddress2"]'
 cityUrl     = '//*[@id="inputCity"]'
-stateUrl    = '//*[@id="app"]/div/div[2]/div[2]/div/div[2]/div/form/div[4]/div[2]/input'
+stateUrl    = '//*[@id="inputState"]'  #'//*[@id="app"]/div/div[2]/div[2]/div/div[2]/div/form/div[4]/div[2]/input'
 zipUrl      = '//*[@id="inputZip"]'
-countryUrl  = '//*[@id="app"]/div/div[2]/div[2]/div/div[2]/div/form/div[4]/div[4]/select/option[225]'
+countryUrl  = '//*[@id="inputCountry"]'  #'//*[@id="app"]/div/div[2]/div[2]/div/div[2]/div/form/div[4]/div[4]/select/option[225]'
 DOBUrl      = '//*[@id="inputDob"]'
 genderUrl   = '//*[@id="gender"]/option[1]'
-submitUrlLF = '//*[@id="app"]/div/div[2]/div[2]/div/div[2]/div/form/div[6]/p/button/strong'
+submitUrlLF = '//*[@id="contApplication"]/strong' #'//*[@id="app"]/div/div[2]/div[2]/div/div[2]/div/form/div[6]/p/button/strong'
 
 driver.find_element_by_xpath(phoneUrl).send_keys(phone)
 driver.find_element_by_xpath(StAddrUrl).send_keys(StAddr)
@@ -102,6 +100,7 @@ sleep(3)
 ###########################################################
 # Step : Fill Out Payment information
 ###########################################################
+# Selecting ISA
 driver.get("https://www.codex.academy/#/enroll/payment")
 selectPaymentUrl = '//*[@id="app"]/div/div[2]/div[2]/div/div[2]/div/div/div[2]/div[1]/div/div[3]/button/strong'
 driver.find_element_by_xpath(selectPaymentUrl).click()
