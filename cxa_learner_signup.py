@@ -1,5 +1,6 @@
 import time
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 
 def sleep(time_S):
   time.sleep(time_S)
@@ -23,6 +24,7 @@ Gender = "male"
 
 # set driver path
 driver = webdriver.Chrome(executable_path="F:\\private\\CXA_test\chromedriver.exe")
+driver.set_page_load_timeout(5)
 # print(type(driver))
 
 # Set general
@@ -106,44 +108,53 @@ driver.find_element_by_xpath(selectPaymentUrl).click()
 sleep(3)
 
 
-###########################################################
-# Step : Fill Out learner form
-###########################################################
+# ###########################################################
+# # Step : Fill Out learner form
+# ###########################################################
+driver = webdriver.Chrome(executable_path="F:\\private\\CXA_test\chromedriver.exe")
 driver.get("https://share.hsforms.com/1YTZDfY5TT6-Me7FQTGdBhA480b9")
+
+
 EmailUrl      = '//*[@id="email-input"]'
 callByNameUrl = '//*[@id="called_by_name-input"]'
 linkedInUrl   = '//*[@id="linkedin_page-input"]'
 progExpUrl    = '//*[@id="programming_experience0-6136437d-8e53-4faf-8c7b-b1504c674184-label"]/span'
-submitUrl     = '//*[@id="hs-form-6136437d-8e53-4faf-8c7b-b1504c674184-81b70316-327c-4909-a56b-49312cc3bc3a"]/div[2]/button'
 
 driver.find_element_by_xpath(EmailUrl).send_keys(LearnerEmail)
 driver.find_element_by_xpath(callByNameUrl).send_keys(LearnerName)
-driver.find_element_by_xpath(callByNameUrl).send_keys("none")
+driver.find_element_by_xpath(linkedInUrl).send_keys("none")
 driver.find_element_by_xpath(progExpUrl).click()
-# driver.find_element_by_xpath(submitUrl).click()
-sleep(3)
+driver.find_element_by_class_name('hs-form__actions__submit').click()
 
+sleep(3)
+driver.quit()
 
 ###########################################################
 # Step : Fill Out Mentor Match form
 ###########################################################
+driver = webdriver.Chrome(executable_path="F:\\private\\CXA_test\chromedriver.exe")
 driver.get("https://share.hsforms.com/1UaE6Ah9ZST65GVTM56H0DQ480b9")
+sleep(3)
 
 EmailUrl    = '//*[@id="email-input"]'
 timeZoneUrl = '//*[@id="your_time_zone-input"]'
-dowUrl      = '//*[@id="study_days4-51a13a02-1f59-493e-b919-54cce7a1f40d-input"]'
-personUrl   = '//*[@id="study_hours3-51a13a02-1f59-493e-b919-54cce7a1f40d-input"]'
+
+WeekDaysUrl = '//*[@id="study_days4-51a13a02-1f59-493e-b919-54cce7a1f40d-input"]'
+WeekHourUrl = '//*[@id="study_hours3-51a13a02-1f59-493e-b919-54cce7a1f40d-input"]'
+personUrl   = '//*[@id="humor4-51a13a02-1f59-493e-b919-54cce7a1f40d-input"]'
 motivateUrl = '//*[@id="motivation1-51a13a02-1f59-493e-b919-54cce7a1f40d-input"]'
-submitUrl   = '//*[@id="hs-form-51a13a02-1f59-493e-b919-54cce7a1f40d-8bc0d6a9-229f-4448-a5ec-92ec3f787bf4"]/div[2]/button'
 
 driver.find_element_by_xpath(EmailUrl).send_keys(LearnerEmail)
 driver.find_element_by_xpath(timeZoneUrl).send_keys("CST")
-driver.find_element_by_xpath(dowUrl).click()
+
+driver.find_element_by_xpath(WeekDaysUrl).click()
+driver.find_element_by_xpath(WeekHourUrl).click()
 driver.find_element_by_xpath(personUrl).click()
 driver.find_element_by_xpath(motivateUrl).click()
-driver.find_element_by_xpath(submitUrl).click()
-sleep(3)
 
+driver.find_element_by_class_name('hs-form__actions__submit').click()
+
+sleep(3)
 
 driver.quit()
 
