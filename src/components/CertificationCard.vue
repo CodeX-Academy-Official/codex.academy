@@ -28,7 +28,7 @@
         </li>
 
         <li class="list-group-item">
-          <a @click="selectCertification()" class="btn btn-primary">
+          <a @click="selectCertification()" class="btn btn-primary" id="prgmSelect">
             <strong v-if="!getApplicant">Start Application</strong>
             <strong v-if="getApplicant">Select Program</strong>
           </a>

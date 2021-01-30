@@ -79,7 +79,7 @@
           <td></td>
 
           <td v-for="c in certifications" :key="c.id">
-            <a @click="selectCertification(c)" class="btn btn-primary">
+            <a @click="selectCertification(c)" class="btn btn-primary" id="prgmSelect">
               <strong v-if="!getApplicant">Start Application</strong>
               <strong v-if="getApplicant">Select Program</strong>
             </a>

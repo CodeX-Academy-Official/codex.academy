@@ -76,10 +76,11 @@
         <tr>
           <th>Promo Code:</th>
           <td>
-            <input style="width: 100px" class="inputLikeText" v-model="promoCode" />
+            <input style="width: 100px" class="inputLikeText" v-model="promoCode" id="promoCode" />
             <button
               class="btn btn-sm btn-outline-secondary ml-2"
               @click.prevent="applyPromoCode"
+              id="promoSubmit"
             >Apply</button>
             <p
               v-if="getPromoCodesDisplay"
@@ -90,7 +91,7 @@
       </table>
     </div>
     <p class="mt-4 text-center">
-      <button class="btn btn-primary">
+      <button class="btn btn-primary" id="ContinueApplication">
         <strong>Continue Application</strong>
       </button>
     </p>

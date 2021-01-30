@@ -6,6 +6,7 @@
         <input
           type="text"
           class="form-control"
+          id="fname"
           name="fname"
           autocomplete="given-name"
           v-model.trim="applicant.firstName"
@@ -18,6 +19,7 @@
         <input
           type="text"
           class="form-control"
+          id="lname"
           name="lname"
           autocomplete="family-name"
           v-model.trim="applicant.lastName"
@@ -68,7 +70,12 @@
       </div>
       <div class="form-group col-md-4">
         <label for="inputAddress2">Apartment, Suite, Floor #:</label>
-        <input type="text" class="form-control" id="inputAddress2" v-model="applicant.address2" />
+        <input 
+          type="text" 
+          class="form-control" 
+          id="inputAddress2" 
+          v-model="applicant.address2" 
+        />
       </div>
     </div>
     <div class="form-row">
@@ -89,6 +96,7 @@
         <input
           class="form-control"
           type="text"
+          id="inputState"
           name="state"
           v-model.trim="applicant.state"
           :class="(applicant.state)"
@@ -110,7 +118,7 @@
       <div class="form-group col-md-3">
         <label for="inputCountry">Country</label>
         <!-- </div> -->
-        <select v-model="applicant.country" class="form-control">
+        <select v-model="applicant.country" class="form-control" id="inputCountry">
           <option v-for="c in getCountries" :key="c.country" :value="c.country">{{c.country}}</option>
         </select>
         <!-- <input
@@ -241,7 +249,7 @@
 
     <div class>
       <p class="mt-4 text-center">
-        <button class="btn btn-primary">
+        <button class="btn btn-primary" id="contApplication">
           <strong>Continue Application</strong>
         </button>
       </p>
