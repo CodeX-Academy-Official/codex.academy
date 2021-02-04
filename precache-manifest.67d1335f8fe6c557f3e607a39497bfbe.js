@@ -772,6 +772,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/logo/Grayscale_1024x1024_72dpi.png"
   },
   {
+    "revision": "221fc0a331322808b5cde002acb8dd70",
+    "url": "/img/logo/codex-emblem-logo-avatar.png"
+  },
+  {
     "revision": "747af11be8abdf518d1bef7e0b4e6590",
     "url": "/img/logo/codex_hat_white.png"
   },
