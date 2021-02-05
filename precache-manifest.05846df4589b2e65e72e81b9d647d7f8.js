@@ -148,6 +148,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/Climb-Credit-Logo-small.png"
   },
   {
+    "revision": "528b7ab240ee827c6e715746a6a5458b",
+    "url": "/img/FED Certificate.pdf"
+  },
+  {
     "revision": "f64177830c5fbbd807a6430b8ff498ce",
     "url": "/img/agile.f6417783.svg"
   },
