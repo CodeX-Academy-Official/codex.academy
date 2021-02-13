@@ -26,7 +26,7 @@
         <td v-for="p in plans" :key="p.id">{{ p.description }}</td>
       </tr>
       <tr>
-        <th>Weekly 1:1 Mentoring</th>
+        <th>Weekly Mentoring</th>
         <td v-for="p in plans" :key="p.id">{{ p.mentorSessions }} sessions</td>
       </tr>
       <tr>

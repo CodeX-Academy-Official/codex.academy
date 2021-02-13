@@ -34,7 +34,7 @@
               </div>
               <div class="item">
                 <Icon name="checkbox" />
-                <span>Live 1:1 Mentoring Sessions</span>
+                <span>Live Mentoring Sessions</span>
               </div>
               <div class="item">
                 <Icon name="checkbox" />
