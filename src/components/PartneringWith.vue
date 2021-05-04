@@ -13,6 +13,7 @@ const partners = {
   pathrise: { logo: "img/partners/pathrise.svg", url: "https://pathrise.com" },
   nashvillestate: { logo: "img/partners/nscc.png", url: "https://www.nscc.edu" },
   slttech: { logo: "img/partners/slt.jpg", url: "https://www.slttechla.com/" },
+  batonrougecc: { logo: "img/partners/brcc.jpg", url: "https://www.mybrcc.edu/" },
   talently: { logo: "img/partners/talently.svg", url: "https://talently.tech" },
   flexiple: { logo: "img/partners/flexiple.png", url: "https://flexiple.com/" },
   outco: { logo: "img/partners/outco.png", url: "https://outco.io/" },
