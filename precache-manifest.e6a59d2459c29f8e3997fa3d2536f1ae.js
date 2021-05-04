@@ -120,7 +120,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/about.2e593756.css"
   },
   {
-    "revision": "bfec5f2bedf83f9d7eba",
+    "revision": "0227e1b075ce7b6289cf",
     "url": "/css/app.49569e19.css"
   },
   {
@@ -840,6 +840,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/partners/lifeway.svg"
   },
   {
+    "revision": "fe5ebd8e0bdb058e90af291244d5a6a3",
+    "url": "/img/partners/nscc.png"
+  },
+  {
     "revision": "9d64918129039dbf2c1e4382adfe60a1",
     "url": "/img/partners/outco.png"
   },
@@ -850,6 +854,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "40180b5e643210c29ad7edbf40680355",
     "url": "/img/partners/recruiterly.svg"
+  },
+  {
+    "revision": "885d8d43dde16452e855166be578193d",
+    "url": "/img/partners/slt.jpg"
   },
   {
     "revision": "de2026ad194f33f83de5f8a73a6a8e8c",
@@ -1084,7 +1092,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/zero.579b7008.svg"
   },
   {
-    "revision": "13d0b0916eeeb317c307030b7937c133",
+    "revision": "c9675e13ae934d95a3f9479ec5437593",
     "url": "/index.html"
   },
   {
@@ -1092,8 +1100,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/about.9df2d9e1.js"
   },
   {
-    "revision": "bfec5f2bedf83f9d7eba",
-    "url": "/js/app.b22c8880.js"
+    "revision": "0227e1b075ce7b6289cf",
+    "url": "/js/app.42ac323e.js"
   },
   {
     "revision": "4a86772632cf483b3706",
