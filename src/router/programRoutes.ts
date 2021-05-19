@@ -1,10 +1,15 @@
 import Programs from "../views/Programs.vue";
+import BaaS from "../views/BaaS.vue";
 import SelfPacedPlans from "../views/Selfpaced.vue";
 import FullStackDeveloper from "../views/programs/fullstackdev.vue";
 import FrontEndDeveloper from "../views/programs/frontenddev.vue";
 import FullStackEngineer from "../views/programs/fullstackeng.vue";
 
 const routes: Array<any> = [
+  {
+    path: "/baas",
+    component: BaaS,
+  },
   {
     path: "/programs",
     component: Programs,

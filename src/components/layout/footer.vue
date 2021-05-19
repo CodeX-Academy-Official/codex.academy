@@ -19,6 +19,9 @@
             <router-link to="/faqs">FAQs</router-link>
           </p>
           <p>
+            <router-link to="/baas">Bootcamp as a Service</router-link>
+          </p>
+          <p>
             <router-link to="/contact">Contact Us</router-link>
           </p>
         </div>

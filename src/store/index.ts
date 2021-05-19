@@ -3,6 +3,7 @@ import Vuex, { ActionContext } from "vuex";
 import VuexPersistence from "vuex-persist";
 import { shuffle } from "./utils";
 import { sendToHubspot } from "./hubspot";
+import { sendToApi } from "./api";
 import { testimonials } from "./testimonials";
 import { pillars } from "./pillars";
 import { technologies } from "./technologies";
@@ -31,6 +32,16 @@ const SET_PROGRAM_TITLE = "SET_PROGRAM_TITLE";
 const RESET = "RESET";
 const SET_SOURCE = "SET_SOURCE";
 const SET_AUDIENCE = "SET_AUDIENCE";
+
+async function sendToApiWithTracking(url: string, payload: any) {
+  try {
+    return await sendToApi(url, payload);
+  } catch (error) {
+    const v: any = Vue;
+    v.rollbar.error(error);
+    throw error;
+  }
+}
 
 async function sendToHubspotAndTrackErrors(
   portalId: string,
@@ -64,7 +75,7 @@ export default new Vuex.Store({
     priceClass: undefined,
     activePlan: undefined,
     source: "CodeX Academy April 2020",
-    audience: ""
+    audience: "",
   },
   mutations: {
     [RESET](state: any) {
@@ -100,11 +111,17 @@ export default new Vuex.Store({
     },
     [SET_AUDIENCE](state: any, audience: string) {
       state.audience = audience;
-    }
+    },
   },
   actions: {
     reset({ commit }) {
       commit(RESET);
+    },
+    async sendBaaSInterestForm(_context, info) {
+      await sendToApiWithTracking(
+        "https://hooks.zapier.com/hooks/catch/6492165/bo2os43/",
+        info
+      );
     },
     setPriceClass(context, priceClass: string) {
       context.commit(SET_PRICE_CLASS, priceClass);
@@ -133,7 +150,7 @@ export default new Vuex.Store({
       await sendApplication({
         context,
         applicant,
-        hsForm
+        hsForm,
       });
     },
     async enroll(context, applicant) {
@@ -144,7 +161,9 @@ export default new Vuex.Store({
       });
     },
     applyPromoCode({ commit, state }, promoCodeInput) {
-      const newCodes = (promoCodeInput||"").split(",").map((x:string)=> x.trim().toUpperCase());
+      const newCodes = (promoCodeInput || "")
+        .split(",")
+        .map((x: string) => x.trim().toUpperCase());
       const allCodes = [...newCodes, ...state.promoCodes];
       const uniqueCodes = [...new Set(allCodes)];
       commit(SET_PROMO_CODES, uniqueCodes);
@@ -192,7 +211,6 @@ export default new Vuex.Store({
     getPriceClass: (state) => state.priceClass,
     getSource: (state) => state.source,
     getProgramTitle: (state) => state.programTitle,
-    
   },
   modules: {},
   plugins: [vuexLocal.plugin],
