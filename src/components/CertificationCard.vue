@@ -1,13 +1,16 @@
 <template>
   <div class>
-    <div class="card" v-bind:class="{ 'card-outline-primary': certification.recommended }">
+    <div
+      class="card"
+      v-bind:class="{ 'card-outline-primary': certification.recommended }"
+    >
       <div class="text-center mt-4">
-         <img
-              class="card-img-top"
-              :src="certification.badgeUrl"
-              :alt="certification.name"
-              style="width: 70%"
-            />
+        <img
+          class="card-img-top"
+          :src="certification.badgeUrl"
+          :alt="certification.name"
+          style="width: 70%"
+        />
         <div class="font-italic">{{ certification.duration }}</div>
       </div>
       <ul class="list-group list-group-flush text-center mt-4">
@@ -15,19 +18,25 @@
           <div class="plan-description">{{ certification.description }}</div>
         </li>
 
-        <li class="list-group-item" v-for="feature in features" :key="feature">{{ feature }}</li>
-        <li class="list-group-item">Average {{ certification.levels }} Months Full-Time</li>
-        <li class="list-group-item">Average {{ certification.levels * 2 }} Months Part-Time</li>
+        <li class="list-group-item" v-for="feature in features" :key="feature">
+          {{ feature }}
+        </li>
+        <li class="list-group-item" v-if="!hideDefaultFeatures">
+          Average {{ certification.levels }} Months Full-Time
+        </li>
+        <li class="list-group-item" v-if="!hideDefaultFeatures">
+          Average {{ certification.levels * 2 }} Months Part-Time
+        </li>
 
-        <li class="list-group-item">
+        <li class="list-group-item" v-if="!price">
           Estimated Tuition:
           <Money :amount="certification.price" />
         </li>
-        <li class="list-group-item">
-          <strong>ZERO up-front tuition payments!</strong>
+        <li class="list-group-item" v-else-if="price">
+          <h3><Money :amount="price" /></h3>
         </li>
 
-        <li class="list-group-item">
+        <li class="list-group-item" v-if="!hideCallToAction">
           <a @click="selectCertification()" class="btn btn-primary">
             <strong v-if="!getApplicant">Start Application</strong>
             <strong v-if="getApplicant">Select Program</strong>
@@ -47,20 +56,23 @@ import Icon from "@/components/Icon";
 export default {
   props: {
     certification: Object,
-    features: Array
+    features: Array,
+    hideDefaultFeatures: Boolean,
+    price: Number,
+    hideCallToAction: Boolean,
   },
   components: {
     Money,
-    Icon
+    Icon,
   },
   computed: {
-    ...mapGetters(["getApplicant"])
+    ...mapGetters(["getApplicant"]),
   },
   methods: {
     selectCertification() {
       this.$emit("certificationSelected", this.certification);
-    }
-  }
+    },
+  },
 };
 </script>
 

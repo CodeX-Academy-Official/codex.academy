@@ -3,7 +3,8 @@
     <LevelUpInternationalOct2020 v-if="levelup && international" />
     <LevelUpOct2020 v-else-if="levelup" />
     <InternationalMay2020 v-else-if="international" />
-    <CollegeMay2021 v-else-if="college" />
+    <CollegeFSDMay2021 v-else-if="college && program == 'fsd'" />
+    <CollegeFEMay2021 v-else-if="college && program == 'fed'" />
     <HomeApril2020 v-else-if="loaded" />
   </div>
 </template>
@@ -11,7 +12,8 @@
 <script>
 import LandingContainer from "../views/landing/LandingContainer.vue";
 import HomeApril2020 from "../views/landing/HomeApril2020.vue";
-import CollegeMay2021 from "../views/landing/CollegeMay2021.vue";
+import CollegeFEMay2021 from "../views/landing/CollegeFEMay2021.vue";
+import CollegeFSDMay2021 from "../views/landing/CollegeFSDMay2021.vue";
 import StudentApril2020 from "../views/landing/StudentApril2020.vue";
 import IndiaMay2020 from "../views/landing/IndiaMay2020.vue";
 import SummerCampMay2020 from "../views/landing/SummerCampMay2020.vue";
@@ -25,7 +27,8 @@ import LevelUpInternationalOct2020 from "../views/landing/LevelUpInternationalOc
 export default {
   components: {
     HomeApril2020,
-    CollegeMay2021,
+    CollegeFEMay2021,
+    CollegeFSDMay2021,
     InternationalMay2020,
     TalentlyAug2020,
     PathriseAug2020,
@@ -38,6 +41,7 @@ export default {
       international: false,
       levelup: false,
       college: false,
+      program: false,
       campaign: false,
       source: false,
       loaded: false,
@@ -54,6 +58,8 @@ export default {
 
     const campaign = this.$route.query.utm_campaign;
     if (campaign) this.campaign = campaign.toLowerCase();
+    const program = this.$route.query.program;
+    if (program) this.program = program.toLowerCase();
 
     if (this.campaign) {
       this.international = this.campaign.indexOf("-int-") > -1;
