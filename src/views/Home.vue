@@ -1,13 +1,9 @@
 <template>
   <div>
-    <!-- <TalentlyAug2020 v-if="source === 'talently'" />
-    <InternationalPathriseAug2020
-      v-else-if="international && source === 'pathrise'"
-    />
-    <PathriseAug2020 v-else-if="source === 'pathrise'" /> -->
     <LevelUpInternationalOct2020 v-if="levelup && international" />
     <LevelUpOct2020 v-else-if="levelup" />
     <InternationalMay2020 v-else-if="international" />
+    <CollegeMay2021 v-else-if="college" />
     <HomeApril2020 v-else-if="loaded" />
   </div>
 </template>
@@ -15,6 +11,7 @@
 <script>
 import LandingContainer from "../views/landing/LandingContainer.vue";
 import HomeApril2020 from "../views/landing/HomeApril2020.vue";
+import CollegeMay2021 from "../views/landing/CollegeMay2021.vue";
 import StudentApril2020 from "../views/landing/StudentApril2020.vue";
 import IndiaMay2020 from "../views/landing/IndiaMay2020.vue";
 import SummerCampMay2020 from "../views/landing/SummerCampMay2020.vue";
@@ -28,6 +25,7 @@ import LevelUpInternationalOct2020 from "../views/landing/LevelUpInternationalOc
 export default {
   components: {
     HomeApril2020,
+    CollegeMay2021,
     InternationalMay2020,
     TalentlyAug2020,
     PathriseAug2020,
@@ -39,6 +37,7 @@ export default {
     return {
       international: false,
       levelup: false,
+      college: false,
       campaign: false,
       source: false,
       loaded: false,
@@ -67,8 +66,14 @@ export default {
       if (this.levelup) {
         this.$store.dispatch("setAudience", "levelup");
       }
+
+      this.college = this.campaign.indexOf("college") > -1;
+      if (this.college) {
+        this.$store.dispatch("setAudience", "college");
+      }
     } else {
       this.levelup = this.$store.state.audience === "levelup";
+      this.college = this.$store.state.audience === "college";
       this.international = this.$store.state.priceClass === "international";
     }
     this.loaded = true;
@@ -76,5 +81,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

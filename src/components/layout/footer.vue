@@ -148,7 +148,7 @@
         </div>
       </div>
       <div class="text-center">
-        <p>Copyright &copy; CodeX Academy, LLC 2020</p>
+        <p>Copyright &copy; CodeX Academy, LLC 2021</p>
       </div>
     </div>
     <!-- /.container -->

@@ -6,10 +6,18 @@ const routes: Array<any> = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: Home,
+  },
+  {
+    path: "/nn",
+    name: "No Navigation",
+    component: Home,
+    meta: {
+      layout: "no-nav",
+    },
   },
 
-  // OLD ROUTES 
+  // OLD ROUTES
   {
     path: "/landing",
     name: "Landing",
@@ -31,8 +39,8 @@ const routes: Array<any> = [
         meta: {
           layout: "no-navbar",
           source: "none",
-          international: true
-        }
+          international: true,
+        },
       },
       {
         path: "camp202005",
@@ -44,33 +52,33 @@ const routes: Array<any> = [
         component: Loading,
         meta: {
           source: "none",
-          international: true
-        }
+          international: true,
+        },
       },
       {
         path: "talently202008",
         component: Loading,
         meta: {
           source: "talently",
-          international: true
-        }
+          international: true,
+        },
       },
       {
         path: "pathrise1202008",
         component: Loading,
         meta: {
           source: "pathrise",
-          international: false
-        }
+          international: false,
+        },
       },
       {
         path: "pathriseint1202008",
         component: Loading,
         meta: {
           source: "pathrise",
-          international: true
-        }
-      }
+          international: true,
+        },
+      },
     ],
   },
 ];

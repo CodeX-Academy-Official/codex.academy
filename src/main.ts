@@ -31,9 +31,11 @@ Vue.use(VueScrollTo, {
 
 import Default from "@/components/layout/Default.vue";
 import NoNavbar from "@/components/layout/NoNavbar.vue";
+import NoNav from "@/components/layout/NoNav.vue";
 
 Vue.component("default-layout", Default);
 Vue.component("no-navbar-layout", NoNavbar);
+Vue.component("no-nav-layout", NoNav);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 bootstrapFontAwesome();
