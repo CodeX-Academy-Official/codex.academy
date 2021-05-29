@@ -4,7 +4,7 @@
     <LevelUpOct2020 v-else-if="levelup" />
     <InternationalMay2020 v-else-if="international" />
     <CollegeFSDMay2021 v-else-if="college && program == 'fsd'" />
-    <CollegeFEMay2021 v-else-if="college && program == 'fed'" />
+    <CollegeFEMay2021 v-else-if="college" />
     <HomeApril2020 v-else-if="loaded" />
   </div>
 </template>
