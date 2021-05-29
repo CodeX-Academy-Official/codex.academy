@@ -140,13 +140,20 @@
       </div>
     </div>
 
-    <StatsSection />
-
-    <div class="pb-5 bg-periwinkle">
+    <div class="pb-5">
       <div class="container">
         <TestimonialsSection />
         <div class="text-center mt-5">
           <a href="#" class="btn btn-lg btn-danger">Start Assessment</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pb-5 pt-3 bg-periwinkle">
+      <div class="container">
+        <QandASection />
+        <div class="text-center mt-0">
+          <a href="#" class="btn btn-lg btn-primary">Start Assessment</a>
         </div>
       </div>
     </div>
@@ -171,10 +178,12 @@ import Technologies from "@/components/Technologies";
 import CommercialSection from "@/components/sections/CommercialSection";
 import StatsSection from "@/components/sections/StatsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import QandASection from "@/components/sections/QandASection";
 
 export default {
   components: {
     Hero,
+    QandASection,
     Thanks,
     SalaryBlock,
     StartApplicationForm,

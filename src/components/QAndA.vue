@@ -19,7 +19,7 @@
       role="tabpanel"
       aria-labelledby="headingOne"
     >
-      <div class="card-body">
+      <div class="card-body text-left">
         <slot />
       </div>
     </div>
@@ -30,7 +30,7 @@
 export default {
   props: {
     question: String,
-    id: String
-  }
+    id: String,
+  },
 };
 </script>

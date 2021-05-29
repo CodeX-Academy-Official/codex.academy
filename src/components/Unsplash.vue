@@ -10,18 +10,17 @@ export default {
     imageId: { type: String, default: "" },
     query: { type: String, default: "" },
     description: String,
-    width: String,
-    height: String,
-    imageClass: { type: String, default: "img-fluid" }
+    width: { type: String, default: "" },
+    height: { type: String, default: "" },
+    imageClass: { type: String, default: "img-fluid" },
   },
   computed: {
     fullPath() {
       const url = generateUnsplashUrl(this.imageId, this.width, this.height);
       return url;
-    }
-  }
+    },
+  },
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
