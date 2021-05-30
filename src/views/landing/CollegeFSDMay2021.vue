@@ -39,7 +39,7 @@
           </div>
 
           <div class="col-5 d-none d-lg-block my-auto">
-            <div class="start-application-form" v-if="!hasApplied">
+            <div class="start-application-form" id="app">
               <h5 class="card-title text-center">See If you Qualify</h5>
               <StartApplicationForm
                 @submitted="startAssessment"
@@ -48,7 +48,6 @@
                 submitButtonLabel="Start Assessment"
               />
             </div>
-            <Thanks v-if="hasApplied" @startOver="clearApplicant" />
             <PartneringWith :partner="getSource" />
           </div>
         </div>
@@ -58,7 +57,7 @@
     <div class="container d-block d-lg-none mt-5">
       <div class="row justify-content-center">
         <div class="col-10 bg-periwinkle shadow border p-4">
-          <div class="start-application-form" v-if="!hasApplied">
+          <div class="start-application-form" id="app">
             <h2 class="card-title text-center">See If you Qualify</h2>
             <StartApplicationForm
               @submitted="startAssessment"
@@ -67,7 +66,6 @@
               submitButtonLabel="Start Assessment"
             />
           </div>
-          <Thanks v-if="hasApplied" @startOver="clearApplicant" />
           <PartneringWith :partner="getSource" />
         </div>
       </div>
@@ -166,12 +164,11 @@ export default {
         applicant,
       });
       // await this.$store.dispatch("setStartDate", applicant.startDate);
-      this.hasApplied = true;
 
       const { email, firstName, lastName } = applicant;
-      const url = `https://docs.google.com/forms/d/e/1FAIpQLSdYB6iTFPym8cl1Cmrqzc0_SgAS-XuTV8utSkDEX9Q5PSeuWQ/viewform?usp=pp_url&entry.986276391=${urlEncode(
+      const url = `https://docs.google.com/forms/d/e/1FAIpQLSdYB6iTFPym8cl1Cmrqzc0_SgAS-XuTV8utSkDEX9Q5PSeuWQ/viewform?usp=pp_url&entry.986276391=${encodeURI(
         firstName
-      )}&entry.1956546528=${urlEncode(lastName)}&entry.367274024=${urlEncode(
+      )}&entry.1956546528=${encodeURI(lastName)}&entry.367274024=${encodeURI(
         email
       )}`;
       location.href = url;

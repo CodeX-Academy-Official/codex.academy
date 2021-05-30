@@ -32,7 +32,7 @@
     </div>
 
     <div class="container text-center mt-5">
-      <a href="#" class="btn btn-lg btn-primary">Start Assessment</a>
+      <a href="#app" class="btn btn-lg btn-primary">Start Assessment</a>
     </div>
     <div class="mt-5 pb-5 bg-lilac">
       <div class="container">
@@ -42,7 +42,7 @@
         </h5>
         <Technologies :certification="certification.name" :includeName="true" />
         <div class="text-center mt-5">
-          <a href="#" class="btn btn-lg btn-warning">Start Assessment</a>
+          <a href="#app" class="btn btn-lg btn-warning">Start Assessment</a>
         </div>
       </div>
     </div>
@@ -51,7 +51,7 @@
       <div class="container">
         <TestimonialsSection />
         <div class="text-center mt-5">
-          <a href="#" class="btn btn-lg btn-danger">Start Assessment</a>
+          <a href="#app" class="btn btn-lg btn-danger">Start Assessment</a>
         </div>
       </div>
     </div>
@@ -60,7 +60,7 @@
       <div class="container">
         <QandASection />
         <div class="text-center mt-0">
-          <a href="#" class="btn btn-lg btn-primary">Start Assessment</a>
+          <a href="#app" class="btn btn-lg btn-primary">Start Assessment</a>
         </div>
       </div>
     </div>
