@@ -38,8 +38,8 @@
             </div>
           </div>
 
-          <div class="col-5 d-none d-lg-block my-auto">
-            <div class="start-application-form" id="app">
+          <div class="col-5 d-none d-lg-block my-auto" id="assessment2">
+            <div class="start-application-form">
               <h5 class="card-title text-center">See If you Qualify</h5>
               <StartApplicationForm
                 @submitted="startAssessment"
@@ -54,10 +54,10 @@
       </div>
     </Hero>
 
-    <div class="container d-block d-lg-none mt-5">
+    <div class="container d-block d-lg-none mt-5" id="assessment">
       <div class="row justify-content-center">
         <div class="col-10 bg-periwinkle shadow border p-4">
-          <div class="start-application-form" id="app">
+          <div class="start-application-form">
             <h2 class="card-title text-center">See If you Qualify</h2>
             <StartApplicationForm
               @submitted="startAssessment"
