@@ -132,8 +132,15 @@ export default {
   },
   methods: {
     goto(el) {
-      let element = document.getElementById(el);
-      element.scrollIntoView({ behavior: "smooth", block: "end" });
+      function isHidden(el) {
+        return el.offsetParent === null;
+      }
+
+      let element = document.getElementsByClassName(el);
+      element.forEach((e) => {
+        if (!isHidden(e))
+          e.scrollIntoView({ behavior: "smooth", block: "end" });
+      });
     },
   },
 };
