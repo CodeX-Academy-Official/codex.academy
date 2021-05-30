@@ -73,91 +73,30 @@
       </div>
     </div>
 
-    <div class="container">
-      <div class="row mt-5">
-        <div class="col-md-6 col-lg-7">
-          <div class>
-            <h2>The Swiss Army Knife of Development</h2>
-            <p class>
-              Being a Full-Stack Developer means you can be trusted with every
-              development angle of a software application. You are able to
-              develop and maintain features in all layers including the user
-              interface, the browser logic, back-end API's, business domain and
-              database. You are such a versatile developer that very seldom is
-              it necessary to call in a specialist. You are plan A and plan B!
-            </p>
-          </div>
-          <SalaryBlock
-            :amount="105813"
-            url="https://www.glassdoor.com/Salaries/full-stack-developer-salary-SRCH_KO0,20.htm"
-            :title="certification.name"
-          />
-
-          <div class="mt-5 mb-5">
-            <h5>Every CodeX Academy program comes with:</h5>
-            <ul>
-              <li v-for="f in getBootcampFeatures" :key="f">{{ f }}</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-5">
-          <CertificationCard
-            :certification="certification"
-            :hideDefaultFeatures="true"
-            :hideCallToAction="true"
-            :price="8000"
-            :features="[
-              '52 Weeks Part-Time',
-              '20 Hours/Week Minimum',
-              'Self-Paced, Mastery-Based Curriculum',
-              'Daily classes and touchpoints',
-            ]"
-          />
-          <div class="d-lg-none mt-5">
-            <DesignedByByron />
-          </div>
-        </div>
-      </div>
-      <div class="d-none d-lg-block">
-        <DesignedByByron />
-      </div>
-    </div>
-
-    <div class="container text-center mt-5">
-      <a href="#" class="btn btn-lg btn-primary">Start Assessment</a>
-    </div>
-
-    <div class="mt-5 pb-5 bg-lilac">
-      <div class="container">
-        <h2 class="text-center pt-5">Technologies you will Master</h2>
-        <h5 class="text-center mb-5">
-          In the {{ certification.name }} Certification
-        </h5>
-        <Technologies :certification="certification.name" :includeName="true" />
-        <div class="text-center mt-5">
-          <a href="#" class="btn btn-lg btn-warning">Start Assessment</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="pb-5">
-      <div class="container">
-        <TestimonialsSection />
-        <div class="text-center mt-5">
-          <a href="#" class="btn btn-lg btn-danger">Start Assessment</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="pb-5 pt-3 bg-periwinkle">
-      <div class="container">
-        <QandASection />
-        <div class="text-center mt-0">
-          <a href="#" class="btn btn-lg btn-primary">Start Assessment</a>
-        </div>
-      </div>
-    </div>
+    <DetailedLandingPageContent
+      :certification="certification"
+      :bootcampFeatures="[
+        '52 Weeks Part-Time',
+        '20 Hours/Week Minimum',
+        'Self-Paced, Mastery-Based Curriculum',
+        'Daily classes and touchpoints',
+      ]"
+    >
+      <h2>The Swiss Army Knife of Development</h2>
+      <p class>
+        Being a Full-Stack Developer means you can be trusted with every
+        development angle of a software application. You are able to develop and
+        maintain features in all layers including the user interface, the
+        browser logic, back-end API's, business domain and database. You are
+        such a versatile developer that very seldom is it necessary to call in a
+        specialist. You are plan A and plan B!
+      </p>
+      <SalaryBlock
+        :amount="105813"
+        url="https://www.glassdoor.com/Salaries/full-stack-developer-salary-SRCH_KO0,20.htm"
+        :title="certification.name"
+      />
+    </DetailedLandingPageContent>
   </div>
 </template>
 
@@ -179,16 +118,21 @@ import Technologies from "@/components/Technologies";
 import CommercialSection from "@/components/sections/CommercialSection";
 import StatsSection from "@/components/sections/StatsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import QandASection from "@/components/sections/QandASection";
+import DetailedLandingPageContent from "./DetailedLandingPageContent";
+import { getSku } from "./sku";
 
 export default {
   components: {
     Hero,
+    DetailedLandingPageContent,
     Thanks,
     SalaryBlock,
     StartApplicationForm,
     CertificationCard,
     Icon,
     Logo,
+    QandASection,
     Thanks,
     DesignedByByron,
     PromoAppFeeWaived,

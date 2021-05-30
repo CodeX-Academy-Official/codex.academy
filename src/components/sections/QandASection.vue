@@ -112,6 +112,10 @@
             <li>Ask a question in the chat community, exchange some ideas</li>
             <li>Attend a status meeting with your cohort/level</li>
             <li>Apply new skills to your capstone project</li>
+            <li>
+              Get stuck, ask for help, end up in a pairing session with another
+              student
+            </li>
             <li>Attend a mentoring session or group class</li>
             <li>Make some notes for where to start tomorrow</li>
           </ul>

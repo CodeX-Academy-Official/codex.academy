@@ -73,90 +73,30 @@
       </div>
     </div>
 
-    <div class="container">
-      <div class="row mt-5">
-        <div class="col-md-6 col-lg-7">
-          <div class>
-            <h2>Everything the User Touches</h2>
-            <p class>
-              As a Front-End Developer, you are the master of the user
-              interface. Everything the user clicks, feels, sees and experiences
-              is a result of your work in the front-end. Using technologies like
-              HTML, CSS and Javascript, you build the interfaces that move our
-              culture!
-            </p>
-          </div>
-          <SalaryBlock
-            :amount="76929"
-            url="https://www.glassdoor.com/Salaries/front-end-developer-salary-SRCH_KO0,19.htm"
-            :title="certification.name"
-          />
-
-          <div class="mt-5 mb-5">
-            <h5>Every CodeX Academy program comes with:</h5>
-            <ul>
-              <li v-for="f in getBootcampFeatures" :key="f">{{ f }}</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-5">
-          <CertificationCard
-            :certification="certification"
-            :hideDefaultFeatures="true"
-            :hideCallToAction="true"
-            :price="4000"
-            :features="[
-              '26 Weeks Part-Time',
-              '20 Hours/Week Minimum',
-              'Self-Paced, Mastery-Based Curriculum',
-              'Daily classes and touchpoints',
-            ]"
-          />
-          <div class="d-lg-none mt-5">
-            <DesignedByByron />
-          </div>
-        </div>
+    <DetailedLandingPageContent
+      :certification="certification"
+      :bootcampFeatures="[
+        '26 Weeks Part-Time',
+        '20 Hours/Week Minimum',
+        'Self-Paced, Mastery-Based Curriculum',
+        'Daily classes and touchpoints',
+      ]"
+    >
+      <div class>
+        <h2>Everything the User Touches</h2>
+        <p class>
+          As a Front-End Developer, you are the master of the user interface.
+          Everything the user clicks, feels, sees and experiences is a result of
+          your work in the front-end. Using technologies like HTML, CSS and
+          Javascript, you build the interfaces that move our culture!
+        </p>
       </div>
-      <div class="d-none d-lg-block">
-        <DesignedByByron />
-      </div>
-    </div>
-
-    <div class="container text-center mt-5">
-      <a href="#" class="btn btn-lg btn-primary">Start Assessment</a>
-    </div>
-
-    <div class="mt-5 pb-5 bg-lilac">
-      <div class="container">
-        <h2 class="text-center pt-5">Technologies you will Master</h2>
-        <h5 class="text-center mb-5">
-          In the {{ certification.name }} Certification
-        </h5>
-        <Technologies :certification="certification.name" :includeName="true" />
-        <div class="text-center mt-5">
-          <a href="#" class="btn btn-lg btn-warning">Start Assessment</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="pb-5">
-      <div class="container">
-        <TestimonialsSection />
-        <div class="text-center mt-5">
-          <a href="#" class="btn btn-lg btn-danger">Start Assessment</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="pb-5 pt-3 bg-periwinkle">
-      <div class="container">
-        <QandASection />
-        <div class="text-center mt-0">
-          <a href="#" class="btn btn-lg btn-primary">Start Assessment</a>
-        </div>
-      </div>
-    </div>
+      <SalaryBlock
+        :amount="76929"
+        url="https://www.glassdoor.com/Salaries/front-end-developer-salary-SRCH_KO0,19.htm"
+        :title="certification.name"
+      />
+    </DetailedLandingPageContent>
   </div>
 </template>
 
@@ -179,6 +119,7 @@ import CommercialSection from "@/components/sections/CommercialSection";
 import StatsSection from "@/components/sections/StatsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import QandASection from "@/components/sections/QandASection";
+import DetailedLandingPageContent from "./DetailedLandingPageContent";
 
 export default {
   components: {
@@ -186,6 +127,7 @@ export default {
     QandASection,
     Thanks,
     SalaryBlock,
+    DetailedLandingPageContent,
     StartApplicationForm,
     CertificationCard,
     Icon,
