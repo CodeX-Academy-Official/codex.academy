@@ -17,7 +17,7 @@
             </div>
             <div class="checklist">
               <div class="title">
-                We'll help you do it in <strong>26 weeks!</strong>
+                We'll help you do it in <strong>24 weeks!</strong>
               </div>
               <div class="item">
                 <Icon name="checkbox" />
@@ -74,7 +74,7 @@
     <DetailedLandingPageContent
       :certification="certification"
       :bootcampFeatures="[
-        '26 Weeks Part-Time',
+        '24 Weeks Part-Time',
         '20 Hours/Week Minimum',
         'Self-Paced, Mastery-Based Curriculum',
         'Daily classes and touchpoints',

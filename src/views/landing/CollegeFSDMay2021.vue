@@ -74,7 +74,8 @@
     <DetailedLandingPageContent
       :certification="certification"
       :bootcampFeatures="[
-        '52 Weeks Part-Time',
+        '24 Weeks Part-Time',
+        'Front-end development skills required',
         '20 Hours/Week Minimum',
         'Self-Paced, Mastery-Based Curriculum',
         'Daily classes and touchpoints',
