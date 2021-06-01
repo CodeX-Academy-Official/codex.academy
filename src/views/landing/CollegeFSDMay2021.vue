@@ -17,7 +17,7 @@
             </div>
             <div class="checklist">
               <div class="title">
-                We'll help you do it in <strong>52 weeks!</strong>
+                We'll help you do it in <strong>48 weeks!</strong>
               </div>
               <div class="item">
                 <Icon name="checkbox" />
@@ -74,8 +74,7 @@
     <DetailedLandingPageContent
       :certification="certification"
       :bootcampFeatures="[
-        '24 Weeks Part-Time',
-        'Front-end development skills required',
+        '48 Weeks Part-Time',
         '20 Hours/Week Minimum',
         'Self-Paced, Mastery-Based Curriculum',
         'Daily classes and touchpoints',
