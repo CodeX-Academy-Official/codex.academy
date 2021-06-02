@@ -129,7 +129,7 @@ export default {
 img.partner {
   border: #eee solid 1px;
   background-color: white;
-  padding: 5px;
+  padding: 15px;
   max-height: 125px;
   max-width: 400px;
 }

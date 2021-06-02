@@ -71,30 +71,32 @@
       </div>
     </div>
 
-    <DetailedLandingPageContent
-      :certification="certification"
-      :bootcampFeatures="[
-        '24 Weeks Part-Time or Full-Time',
-        '20 Hours/Week Minimum',
-        'Self-Paced, Mastery-Based Curriculum',
-        'Daily classes and touchpoints',
-      ]"
-    >
-      <div class>
-        <h2>Everything the User Touches</h2>
-        <p class>
-          As a Front-End Developer, you are the master of the user interface.
-          Everything the user clicks, feels, sees and experiences is a result of
-          your work in the front-end. Using technologies like HTML, CSS and
-          Javascript, you build the interfaces that move our culture!
-        </p>
-      </div>
-      <SalaryBlock
-        :amount="76929"
-        url="https://www.glassdoor.com/Salaries/front-end-developer-salary-SRCH_KO0,19.htm"
-        :title="certification.name"
-      />
-    </DetailedLandingPageContent>
+    <div class="container">
+      <DetailedLandingPageContent
+        :certification="certification"
+        :bootcampFeatures="[
+          '24 Weeks Part-Time or Full-Time',
+          '20 Hours/Week Minimum',
+          'Self-Paced, Mastery-Based Curriculum',
+          'Daily classes and touchpoints',
+        ]"
+      >
+        <div class>
+          <h2>Everything the User Touches</h2>
+          <p class>
+            As a Front-End Developer, you are the master of the user interface.
+            Everything the user clicks, feels, sees and experiences is a result
+            of your work in the front-end. Using technologies like HTML, CSS and
+            Javascript, you build the interfaces that move our culture!
+          </p>
+        </div>
+        <SalaryBlock
+          :amount="76929"
+          url="https://www.glassdoor.com/Salaries/front-end-developer-salary-SRCH_KO0,19.htm"
+          :title="certification.name"
+        />
+      </DetailedLandingPageContent>
+    </div>
   </div>
 </template>
 
@@ -184,6 +186,13 @@ export default {
 
 <style lang="scss">
 @import "@/variables";
+img.partner {
+  border: #eee solid 1px;
+  background-color: white;
+  padding: 15px;
+  max-height: 125px;
+  max-width: 350px;
+}
 
 .level-up-landing-hero {
   .thanks-box {

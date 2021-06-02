@@ -71,30 +71,32 @@
       </div>
     </div>
 
-    <DetailedLandingPageContent
-      :certification="certification"
-      :bootcampFeatures="[
-        '48 Weeks Part-Time or Full-Time',
-        '20 Hours/Week Minimum',
-        'Self-Paced, Mastery-Based Curriculum',
-        'Daily classes and touchpoints',
-      ]"
-    >
-      <h2>The Swiss Army Knife of Development</h2>
-      <p class>
-        Being a Full-Stack Developer means you can be trusted with every
-        development angle of a software application. You are able to develop and
-        maintain features in all layers including the user interface, the
-        browser logic, back-end API's, business domain and database. You are
-        such a versatile developer that very seldom is it necessary to call in a
-        specialist. You are plan A and plan B!
-      </p>
-      <SalaryBlock
-        :amount="105813"
-        url="https://www.glassdoor.com/Salaries/full-stack-developer-salary-SRCH_KO0,20.htm"
-        :title="certification.name"
-      />
-    </DetailedLandingPageContent>
+    <div class="container">
+      <DetailedLandingPageContent
+        :certification="certification"
+        :bootcampFeatures="[
+          '48 Weeks Part-Time or Full-Time',
+          '20 Hours/Week Minimum',
+          'Self-Paced, Mastery-Based Curriculum',
+          'Daily classes and touchpoints',
+        ]"
+      >
+        <h2>The Swiss Army Knife of Development</h2>
+        <p class>
+          Being a Full-Stack Developer means you can be trusted with every
+          development angle of a software application. You are able to develop
+          and maintain features in all layers including the user interface, the
+          browser logic, back-end API's, business domain and database. You are
+          such a versatile developer that very seldom is it necessary to call in
+          a specialist. You are plan A and plan B!
+        </p>
+        <SalaryBlock
+          :amount="105813"
+          url="https://www.glassdoor.com/Salaries/full-stack-developer-salary-SRCH_KO0,20.htm"
+          :title="certification.name"
+        />
+      </DetailedLandingPageContent>
+    </div>
   </div>
 </template>
 
@@ -190,6 +192,13 @@ export default {
 
 <style lang="scss">
 @import "@/variables";
+img.partner {
+  border: #eee solid 1px;
+  background-color: white;
+  padding: 15px;
+  max-height: 125px;
+  max-width: 350px;
+}
 
 .level-up-landing-hero {
   .thanks-box {
