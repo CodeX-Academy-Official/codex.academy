@@ -120,8 +120,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/about.2e593756.css"
   },
   {
-    "revision": "c2dc9c38a4a7c1839458",
-    "url": "/css/app.d2591fc3.css"
+    "revision": "36efdeb4dc23fd7d04cf",
+    "url": "/css/app.0dbb3d04.css"
   },
   {
     "revision": "4a86772632cf483b3706",
@@ -736,6 +736,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/learner-flow.png"
   },
   {
+    "revision": "65ffa5d7cf50844ee398c4be958498ca",
+    "url": "/img/left-right-arrows.65ffa5d7.svg"
+  },
+  {
     "revision": "423bd88e9a60cfd42b6ac596172a72a0",
     "url": "/img/logo/FullColor_1024x1024.eps"
   },
@@ -1096,7 +1100,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/zero.579b7008.svg"
   },
   {
-    "revision": "552038fe2a04e51f308e234e65b77b1b",
+    "revision": "c676430ee06a86c16bbbc048346f585b",
     "url": "/index.html"
   },
   {
@@ -1104,8 +1108,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/about.9df2d9e1.js"
   },
   {
-    "revision": "c2dc9c38a4a7c1839458",
-    "url": "/js/app.f2f59d6e.js"
+    "revision": "36efdeb4dc23fd7d04cf",
+    "url": "/js/app.c63302a6.js"
   },
   {
     "revision": "4a86772632cf483b3706",
