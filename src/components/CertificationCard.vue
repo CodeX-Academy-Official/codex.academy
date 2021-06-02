@@ -28,11 +28,11 @@
           Average {{ certification.levels * 2 }} Months Part-Time
         </li>
 
-        <li class="list-group-item" v-if="!price">
+        <li class="list-group-item" v-if="!price && !hidePrice">
           Estimated Tuition:
           <Money :amount="certification.price" />
         </li>
-        <li class="list-group-item" v-else-if="price">
+        <li class="list-group-item" v-else-if="price && !hidePrice">
           <h3><Money :amount="price" /></h3>
         </li>
 
@@ -60,6 +60,7 @@ export default {
     hideDefaultFeatures: Boolean,
     price: Number,
     hideCallToAction: Boolean,
+    hidePrice: Boolean,
   },
   components: {
     Money,

@@ -74,7 +74,7 @@
     <DetailedLandingPageContent
       :certification="certification"
       :bootcampFeatures="[
-        '48 Weeks Part-Time',
+        '48 Weeks Part-Time or Full-Time',
         '20 Hours/Week Minimum',
         'Self-Paced, Mastery-Based Curriculum',
         'Daily classes and touchpoints',

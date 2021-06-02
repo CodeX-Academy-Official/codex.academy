@@ -1,4 +1,5 @@
 import LandingContainer from "../views/landing/LandingContainer.vue";
+import NSCC from "../views/landing/nscc.vue";
 import Home from "../views/Home.vue";
 import Loading from "../views/landing/Loading.vue";
 
@@ -7,6 +8,14 @@ const routes: Array<any> = [
     path: "/",
     name: "Home",
     component: Home,
+  },
+  {
+    path: "/nscc",
+    name: "NSCC",
+    component: NSCC,
+    meta: {
+      layout: "no-nav",
+    },
   },
   {
     path: "/nn",
