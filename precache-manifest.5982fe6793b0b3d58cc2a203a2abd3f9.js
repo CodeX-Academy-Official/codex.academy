@@ -848,8 +848,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/partners/lifeway.svg"
   },
   {
-    "revision": "fe5ebd8e0bdb058e90af291244d5a6a3",
+    "revision": "edbca1096aa1fc4e5ee4d38c89ec0063",
     "url": "/img/partners/nscc.png"
+  },
+  {
+    "revision": "fe5ebd8e0bdb058e90af291244d5a6a3",
+    "url": "/img/partners/nscc2.png"
   },
   {
     "revision": "9d64918129039dbf2c1e4382adfe60a1",
