@@ -10,9 +10,12 @@
       <h5>Learn to code. Change the world.</h5>
     </Hero>
     <div class="container">
+      <div class="col-12 d-block d-lg-none mt-5">
+        <PartneringWith :partner="getSource" />
+      </div>
       <h2 class="mt-5 text-center">Please select a program:</h2>
-      <div class="row mt-5">
-        <div class="col-4">
+      <div class="row justify-content-center">
+        <div class="col-8 col-md-6 col-lg-4 mt-5">
           <CertificationCard
             :certification="fed"
             :hidePrice="true"
@@ -21,13 +24,13 @@
             @certificationSelected="certificationSelected"
           />
         </div>
-        <div class="col-4">
+        <div class="col-4 d-none d-lg-block mt-5">
           <PartneringWith :partner="getSource" />
           <div class="text-center mt-5">
             <Icon name="left-right-arrows" :size="300" color="#60c3fe" />
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-8 col-md-6 col-lg-4 mt-5">
           <CertificationCard
             :certification="fsd"
             :hidePrice="true"
