@@ -120,6 +120,7 @@ import StatsSection from "@/components/sections/StatsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import QandASection from "@/components/sections/QandASection";
 import DetailedLandingPageContent from "./DetailedLandingPageContent";
+import { getSku } from "./sku";
 
 export default {
   components: {
@@ -159,8 +160,13 @@ export default {
   },
   methods: {
     async startAssessment(applicant) {
+      const price = getSku(this).price || this.certification.price;
       await this.$store.dispatch("startApplication", {
-        applicant,
+        applicant: {
+          ...applicant,
+          programName: "Front-End Developer",
+          program_price: price,
+        },
       });
       // await this.$store.dispatch("setStartDate", applicant.startDate);
       this.hasApplied = true;

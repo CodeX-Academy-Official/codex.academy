@@ -1,5 +1,6 @@
 import LandingContainer from "../views/landing/LandingContainer.vue";
 import NSCC from "../views/landing/nscc.vue";
+import URL_Builder from "../views/url-builder.vue";
 import Home from "../views/Home.vue";
 import Loading from "../views/landing/Loading.vue";
 
@@ -17,6 +18,12 @@ const routes: Array<any> = [
       layout: "no-nav",
     },
   },
+  {
+    path: "/url",
+    name: "url-builder",
+    component: URL_Builder,
+  },
+
   {
     path: "/nn",
     name: "No Navigation",

@@ -163,8 +163,14 @@ export default {
   methods: {
     async startAssessment(applicant) {
       try {
+        const price = getSku(this).price || this.certification.price;
+
         await this.$store.dispatch("startApplication", {
-          applicant,
+          applicant: {
+            ...applicant,
+            programName: "Front-End Developer",
+            program_price: price,
+          },
         });
       } catch (err) {
         console.log("Unable to send applicant to HS.");
