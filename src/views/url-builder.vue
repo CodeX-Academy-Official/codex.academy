@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container">
+    <div class="container mt-5 mb-5">
       <h1>URL Builder</h1>
       <div class="row">
         <div class="col-4 form-label-group">
@@ -21,7 +21,7 @@
         </div>
         <div class="col-4 form-label-group">
           <label for="promoCode">Features</label>
-          <input class="form-control" v-model="features" />
+          <input class="form-control" v-model="features" disabled />
         </div>
         <div class="col-4 form-label-group">
           <label for="promoCode">Navigation</label>
