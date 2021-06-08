@@ -164,7 +164,7 @@ export default {
       await this.$store.dispatch("startApplication", {
         applicant: {
           ...applicant,
-          programName: "Front-End Developer",
+          program_name: "Front-End Developer",
           program_price: price,
         },
       });
