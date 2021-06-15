@@ -190,8 +190,10 @@ export default {
     },
   },
   mounted() {
-    const applicant = this.getApplicant;
-    this.hasApplied = applicant;
+    this.$nextTick(function() {
+      const applicant = this.getApplicant;
+      this.hasApplied = applicant;
+    });
   },
 };
 </script>

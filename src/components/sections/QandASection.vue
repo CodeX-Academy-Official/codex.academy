@@ -237,6 +237,53 @@
             versatility.
           </p>
         </QAndA>
+
+        <QAndA
+          id="faq-finish-on-time"
+          question="What if I don't complete the curriculum before my end date?"
+        >
+          <p>
+            If this is on your mind, then you must really understand how a
+            self-paced curriculum works! In a mastery-based program like we have
+            in CodeX Academy, learning is naturally self-paced. While we
+            wholeheartedly believe this is the BEST way to learn to code,
+            self-paced programs alo come with some natural pitfall or risks. One
+            such risk is the possibility of getting behind and running out of
+            time. This is a reality we help students work through on a daily
+            basis. Here are a few of our typical strategies:
+          </p>
+          <p>
+            <b>Weekly Trajectory Evaluations: </b> They say, "An ounce of
+            prevention is worth a pound of cure." We agree! Rather than waiting
+            until it's too late to correct your course, we prefer a more
+            granular approach. Each week, we look at the data for each student
+            and calculate their new trajectory based on past progress. If any
+            student is falling behind, we meet with them to strategize and plan
+            a way back.
+          </p>
+          <p>
+            <b>Time Extensions: </b> Sometimes it's better to plan on some extra
+            time in our program rather than trying to cram in too much in a
+            short amount of time... it all depends on what your brain needs! We
+            have various options to extend your time in the program so that you
+            can take the time you truly need to gain real mastery.
+          </p>
+          <p>
+            <b>Target Resets: </b> There may be scenarios where it is
+            appropriate to adjust your target level so that you can finish on
+            time with less pressure. Unlike universities or traditional programs
+            where "graduation" is the only meaningful achievement, CodeX Academy
+            provides numerous independently-valuable milestones called
+            "certifications". We have nine such certifications, each
+            representing valuable and marketable sets of skills. Perhaps you
+            originally set a goal of achieving level 6 (Full-Stack Developer),
+            but find yourself running out of time. At that point in time, it
+            might be improbable that you could achieve level 6, but more
+            possible to achieve level 4 or 5 (still very respectable levels!).
+            Resetting your target level can help relieve some pressure and
+            ensure a stronger finish!
+          </p>
+        </QAndA>
       </div>
     </div>
   </div>
