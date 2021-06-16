@@ -247,9 +247,9 @@
             self-paced curriculum works! In a mastery-based program like we have
             in CodeX Academy, learning is naturally self-paced. While we
             wholeheartedly believe this is the BEST way to learn to code,
-            self-paced programs alo come with some natural pitfall or risks. One
-            such risk is the possibility of getting behind and running out of
-            time. This is a reality we help students work through on a daily
+            self-paced programs also come with some natural pitfall or risks.
+            One such risk is the possibility of getting behind and running out
+            of time. This is a reality we help students work through on a daily
             basis. Here are a few of our typical strategies:
           </p>
           <p>
