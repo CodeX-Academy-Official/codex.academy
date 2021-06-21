@@ -168,7 +168,7 @@ export default {
         await this.$store.dispatch("startApplication", {
           applicant: {
             ...applicant,
-            program_name: "Front-End Developer",
+            program_name: this.certification.name,
             program_price: price,
           },
         });
@@ -190,10 +190,8 @@ export default {
     },
   },
   mounted() {
-    this.$nextTick(function() {
-      const applicant = this.getApplicant;
-      this.hasApplied = applicant;
-    });
+    const applicant = this.getApplicant;
+    this.hasApplied = applicant;
   },
 };
 </script>
