@@ -165,13 +165,14 @@ export default {
       try {
         const price = getSku(this).price || this.certification.price;
 
-        await this.$store.dispatch("startApplication", {
+        const app = {
           applicant: {
             ...applicant,
             program_name: this.certification.name,
             program_price: price,
           },
-        });
+        };
+        await this.$store.dispatch("startApplication", app);
       } catch (err) {
         console.log("Unable to send applicant to HS.");
       }
