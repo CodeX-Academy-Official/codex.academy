@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="cta">
     <Hero
       class="pathrise-landing-hero"
       unsplashId="f5pTwLHCsAg"
@@ -47,9 +47,16 @@
     </Hero>
 
     <div class="container">
+      <h3 class="mt-5 text-center">Bootcamp-as-a-Service (BaaS)</h3>
+
       <div class="row justify-content-center">
-        <div class="mt-5 col-8">
-          <h3 class="text-center">Bootcamp-as-a-Service (BaaS)</h3>
+        <div class="mt-3 col-10 col-md-6 col-lg-7" ref="video">
+          <video-embed
+            :params="{ autoplay: 0 }"
+            src="https://www.youtube.com/watch?v=6X_fHeBLewM"
+          ></video-embed>
+        </div>
+        <div class="mt-3 col-10 col-md-6 col-lg-3">
           <p>
             CodeX Academy now offers it’s comprehensive backend and framework
             for an organization, club, or individual to launch their very own
@@ -59,7 +66,11 @@
             amazing mentors and instructors, or you can bring your own (or
             handle it yourself). CodeX Academy will handle the rest!
           </p>
+        </div>
+      </div>
 
+      <!-- <div class="row">
+        <div class="col">
           <p>
             CodeX Academy has ongoing open enrollment for any student who wants
             to join and begin learning. However, CodeX also provides individuals
@@ -75,10 +86,10 @@
             their audiences.
           </p>
         </div>
-      </div>
+      </div> -->
 
       <div class="row justify-content-center">
-        <div class="col-5">
+        <div class="col-10 col-md-8 col-lg-6">
           <div
             class="border bg-periwinkle p-4 m-4 text-center row justify-content-center"
           >
@@ -102,152 +113,76 @@
       </div>
     </div>
 
+    <p class="text-center mt-3">
+      <a @click="goto('cta')" class="btn btn-lg btn-warning"
+        >Start the Conversation</a
+      >
+    </p>
+
     <div class="mt-5 pb-5 pt-5 bg-lilac">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-8">
-            <h1 class="text-center">Additional Services</h1>
-            <table clas="table">
-              <tr>
-                <td>Student Orientation</td>
-                <td>
-                  <ul>
-                    <li>
-                      Adaptation of core orientation class to your bootcamp as
-                      needed
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Student Progress Tracking
-                </td>
-                <td>
-                  <ul>
-                    <li>
-                      Frequent pace/trajectory re-calculation
-                    </li>
-                    <li>
-                      Student low-progress alerts
-                    </li>
-                    <li>
-                      Check-in meeting facilitation
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Reporting
-                </td>
-                <td>
-                  <ul>
-                    <li>
-                      Student records available to host upon request
-                    </li>
-                    <li>
-                      Frequent student progress reports
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Student Success Management
-                </td>
-                <td>
-                  <ul>
-                    <li>
-                      Mentor introductions
-                    </li>
-                    <li>
-                      Kicking off each level with a strategy meeting
-                    </li>
-                    <li>
-                      Working with students to maintain goal-focused pace
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Community Support
-                </td>
-                <td>
-                  <ul>
-                    <li>
-                      Active developer/mentor/learner chat community
-                    </li>
-                    <li>
-                      Daily monitoring and moderating
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Payment and Financial Aid Services
-                </td>
-                <td>
-                  <ul>
-                    <li>
-                      Credit/Debit card payments (no transaction fees)
-                    </li>
-                    <li>
-                      Student loans available
-                    </li>
-                    <li>
-                      ISA’s available
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Job Placement Services
-                </td>
-                <td>
-                  <ul>
-                    <li>
-                      Resume/CV feedback
-                    </li>
-                    <li>
-                      Extensive and growing curated list of internship and
-                      hiring partners
-                    </li>
-                    <li>
-                      Job Application counseling/advice
-                    </li>
-                    <li>
-                      Professional introductions
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Curriculum Support
-                </td>
-                <td>
-                  <ul>
-                    <li>
-                      Students are welcome to use CodeX Academy’s core
-                      full-stack software development curriculum if desired.
-                    </li>
-                    <li>
-                      If you need help adapting your own curriculum or learning
-                      resources, we will provide assistance as needed.
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-            </table>
+          <h1 class="text-center">BaaS Framework</h1>
+          <p class="col-8">
+            CodeX Academy's robust backend and framework takes the guess-work
+            out of running a bootcamp. Allow us to handle the logistics while
+            you focus on your students.
+          </p>
+          <div class="col-10">
+            <BootcampFeatures />
           </div>
         </div>
       </div>
+      <p class="text-center mt-5">
+        <a @click="goto('cta')" class="btn btn-lg btn-primary"
+          >Start the Conversation</a
+        >
+      </p>
     </div>
-    <QandASection />
+
+    <div class="pb-5 pt-5 bg-muted">
+      <div class="container">
+        <div class="row justify-content-center">
+          <h1 class="text-center">Additional Services</h1>
+          <p class="col-10">
+            CodeX Academy boot camps are flexible enough for you to bring your
+            own program while we handle the logistics. But, you may want some
+            help with learning activities, mentoring, etc. We're glad to provide
+            you these services.
+          </p>
+          <div class="col-10">
+            <AdditionalBootcampServices :services="services" />
+          </div>
+        </div>
+      </div>
+      <p class="text-center mt-5">
+        <a @click="goto('cta')" class="btn btn-lg btn-warning"
+          >Start the Conversation</a
+        >
+      </p>
+    </div>
+
+    <!-- <div class="mt-5 pb-5 pt-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-10">
+            <h1 class="text-center">Boot Camp Price Calculator:</h1>
+
+            <BaaSCalculator :services="services" :baseFee="375" />
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="pb-5 pt-3 bg-periwinkle">
+      <div class="container">
+        <QandASection />
+        <p class="text-center">
+          <a @click="goto('cta')" class="btn btn-lg btn-primary"
+            >Start the Conversation</a
+          >
+        </p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -260,33 +195,82 @@ import Money from "@/components/Money";
 import Logo from "@/components/Logo";
 import BaaSInterestForm from "@/components/BaaSInterestForm";
 import QandASection from "@/components/sections/BasS-qanda";
+import BootcampFeatures from "@/components/sections/baas/BootcampFeatures";
+import BaaSCalculator from "@/components/sections/baas/BaaSCalculator";
+import AdditionalBootcampServices from "@/components/sections/baas/AdditionalBootcampFeatures";
 
 export default {
   components: {
     Unsplash,
     Hero,
     Logo,
+    AdditionalBootcampServices,
     Icon,
     Money,
     BaaSInterestForm,
+    BootcampFeatures,
+    BaaSCalculator,
     QandASection,
   },
   computed: {
     ...mapGetters([]),
   },
+  data: () => ({
+    services: [
+      {
+        name: "1-on-1 Mentoring Sessions",
+        icon: "mentorscreen",
+        price: 20,
+        maxAttendees: 1,
+        defaultQuantity: 2,
+      },
+      {
+        name: "Evaluations/Skills Assessments",
+        icon: "test",
+        price: 25,
+        maxAttendees: 1,
+        defaultQuantity: 2,
+      },
+      {
+        name: "Daily Status Meetings",
+        icon: "meeting",
+        price: 20,
+        maxAttendees: 10,
+        defaultQuantity: 5,
+      },
+      {
+        name: "Group Q&A Sessions",
+        icon: "hands",
+        price: 35,
+        maxAttendees: 10,
+        defaultQuantity: 3,
+      },
+      {
+        name: "Live Online Classes",
+        icon: "class",
+        price: 35,
+        maxAttendees: 20,
+        defaultQuantity: 1,
+      },
+      {
+        name: "Custom Curriculum Support",
+        icon: "blueprints",
+      },
+    ],
+  }),
   methods: {
-    // certificationSelected(cert) {
-    //   this.$store.dispatch(
-    //     "setActivePlan",
-    //     mapCertificationToPlan(cert, this.getStartDate)
-    //   );
-    //   this.$router.push("/enroll");
-    // }
+    goto(el) {
+      function isHidden(el) {
+        return el.offsetParent === null;
+      }
+
+      let element = document.getElementsByClassName(el);
+      element.forEach((e) => {
+        if (!isHidden(e))
+          e.scrollIntoView({ behavior: "smooth", block: "end" });
+      });
+    },
   },
-  mounted() {
-    // if (this.isInternational) {
-    //   this.$router.push("/programs/international");
-    // }
-  },
+  mounted() {},
 };
 </script>

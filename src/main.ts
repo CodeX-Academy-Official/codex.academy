@@ -4,7 +4,6 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
-import VueYouTube from "vue-youtube";
 import VueGtag from "vue-gtag";
 import Hotjar from "vue-hotjar";
 import bootstrapFontAwesome from "./bootstrapFontAwesome";
@@ -12,7 +11,9 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import VueScrollTo from "vue-scrollto";
 import VueProgressiveImage from "vue-progressive-image";
 import Rollbar from "vue-rollbar";
+import Embed from "v-video-embed";
 
+Vue.use(Embed);
 Vue.use(VueProgressiveImage);
 
 Vue.use(VueScrollTo, {
@@ -70,7 +71,6 @@ Vue.use(Rollbar, {
   },
 });
 
-Vue.use(VueYouTube);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 

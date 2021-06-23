@@ -31,13 +31,13 @@ export default {
   props: {
     maxWidth: { type: Number, default: 600 },
     video: { type: String, default: "video/2020-03-45s.mp4" },
-    poster: { type: String, default: "img/commercial/24-weeks.png" }
+    poster: { type: String, default: "img/commercial/24-weeks.png" },
   },
   methods: {
     getWidth(multiplier) {
       return this.maxWidth * multiplier;
-    }
-  }
+    },
+  },
 };
 </script>
 

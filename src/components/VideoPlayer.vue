@@ -9,15 +9,15 @@ import "video.js/dist/video-js.min.css";
 export default {
   name: "VideoPlayer",
   props: {
-    autoplan: Boolean,
+    autoplay: Boolean,
     controls: { type: Boolean, default: true },
     mp4: String,
     width: Number,
-    poster: String
+    poster: String,
   },
   data() {
     return {
-      player: null
+      player: null,
     };
   },
   mounted() {
@@ -30,9 +30,9 @@ export default {
       sources: [
         {
           src: this.mp4,
-          type: "video/mp4"
-        }
-      ]
+          type: "video/mp4",
+        },
+      ],
     };
 
     this.player = videojs(
@@ -47,6 +47,6 @@ export default {
     if (this.player) {
       this.player.dispose();
     }
-  }
+  },
 };
 </script>
