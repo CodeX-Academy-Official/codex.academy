@@ -1,6 +1,10 @@
 <template>
   <div class="row">
-    <div class="mt-5 col-3 text-center" v-for="f in features" :key="f.name">
+    <div
+      class="mt-5 col-6 col-md-3 text-center"
+      v-for="f in features"
+      :key="f.name"
+    >
       <Icon :name="f.icon" color="black" />
       <p class="mt-4 muted">{{ f.name }}</p>
     </div>
