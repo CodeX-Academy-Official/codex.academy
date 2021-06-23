@@ -1208,6 +1208,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/video/2020-03-45s.mp4"
   },
   {
+    "revision": "fbd968253d6ca728609f7f40fa9e00da",
+    "url": "/video/CodeX BaaS Poster.jpg"
+  },
+  {
     "revision": "fed7eabdaae698ac43fdf95b131b1356",
     "url": "/video/CodeX presents Bootcamp-as-a-Service (BaaS).mp4"
   }
