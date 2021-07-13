@@ -100,12 +100,10 @@
             <div class="col">
               <span class>Simple flat fee per student:</span>
               <div>
-                <h2 style="display: inline;">
-                  <Money :amount="375" />
-                </h2>
+                <h2 style="display: inline;"><Money :amount="87" /></h2>
               </div>
               <div class="small text-muted">
-                per month + additional services
+                per week plus additional services
               </div>
             </div>
           </div>
@@ -193,8 +191,8 @@ import { mapGetters } from "vuex";
 import Icon from "@/components/Icon";
 import Money from "@/components/Money";
 import Logo from "@/components/Logo";
-import BaaSInterestForm from "@/components/BaaSInterestForm";
-import QandASection from "@/components/sections/BasS-qanda";
+import BaaSInterestForm from "@/components/sections/baas/BaaSInterestForm";
+import QandASection from "@/components/sections/baas/BasS-qanda";
 import BootcampFeatures from "@/components/sections/baas/BootcampFeatures";
 import BaaSCalculator from "@/components/sections/baas/BaaSCalculator";
 import AdditionalBootcampServices from "@/components/sections/baas/AdditionalBootcampFeatures";
