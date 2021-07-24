@@ -133,11 +133,10 @@ jobs:
 
   # Further shorten the feedback loop by letting the whole team know of a failure.
   notify-failure-slack:
+    runs-on: ubuntu-latest
     if: failure()
-    env:
-      SLACK_BOT_TOKEN: ${{ secrets.SLACK_WEBHOOK }}
-    uses: voxmedia/github-action-slack-notify-build@v1
-    with:
-      channel: website
-      status: FAILED
-      color: danger
+    steps:
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
