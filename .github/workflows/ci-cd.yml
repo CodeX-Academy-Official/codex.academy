@@ -1,11 +1,9 @@
 name: Continuous Delivery
 on:
-  # push:
-  #   branches:
-  #     - master
+  push:
+    branches:
+      - master
   pull_request:
-    # branches-ignore:
-    #   - master
 
 jobs:
   # _________                __  .__
