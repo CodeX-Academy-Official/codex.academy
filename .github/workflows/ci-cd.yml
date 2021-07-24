@@ -52,6 +52,7 @@ jobs:
   # integrate it into your day-to-day workflow.
   static-analysis:
     runs-on: ubuntu-latest
+    needs: [build, test, audit]
     steps:
       - run: echo 'Check for code smells'
       - run: echo 'Measure cyclomatic complexity'
@@ -74,7 +75,7 @@ jobs:
   # create your stack here before you deploy
   create-infrastructure:
     runs-on: ubuntu-latest
-    needs: [build, test, audit]
+    needs: [static-analysis]
     steps:
       - run: echo 'Use CF or TF to stand up servers and services'
 
