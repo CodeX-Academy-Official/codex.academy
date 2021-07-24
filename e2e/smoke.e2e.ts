@@ -22,6 +22,6 @@ const assert = require("assert");
     }
   } catch (err) {
     console.log(err);
-    throw err;
+    (<any>process).exit(1);
   }
 })();
