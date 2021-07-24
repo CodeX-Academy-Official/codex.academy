@@ -1,5 +1,4 @@
 const puppeteer = require("puppeteer");
-const assert = require("assert");
 
 (async () => {
   try {
@@ -20,6 +19,7 @@ const assert = require("assert");
       console.error("Smoke test failed.");
       (<any>process).exit(1);
     }
+    console.log("Smoke test passed.");
   } catch (err) {
     console.log(err);
     (<any>process).exit(1);
