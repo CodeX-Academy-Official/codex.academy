@@ -70,21 +70,28 @@ jobs:
   # /_______  /\___  >   __/|____/\____// ____|__|_|  /\___  >___|  /__|
   #         \/     \/|__|               \/          \/     \/     \/
 
-  # Reduce human error by deploying exactly
-  # the same way every time.
+  # If you're using IAC, you would want to
+  # create your stack here before you deploy
   create-infrastructure:
     runs-on: ubuntu-latest
+    needs: [build, test, audit]
     steps:
       - run: echo 'Use CF or TF to stand up servers and services'
 
+  # After you have established your infrastructure
+  # you'll need to configure it, perhaps with
+  # Ansible.
   configure-infrastructure:
     runs-on: ubuntu-latest
+    needs: [create-infrastructure]
     steps:
       - run: echo 'Use Ansible to "remote in" to servers and configure them'
 
+  # Reduce human error by deploying exactly
+  # the same way every time.
   deploy-production:
     runs-on: ubuntu-latest
-    needs: [build, test, audit]
+    needs: [configure-infrastructure]
     if: github.ref == 'refs/heads/master'
     steps:
       - name: Checkout
@@ -114,9 +121,12 @@ jobs:
       - name: Run Smoke Test
         run: export TEST_URL=https://codex.academy && npm i && npm run smoke
 
+  # Automating a rollback after failure cleans
+  # up infrastructure and puts things back the
+  # way they were before heads roll,
   rollback:
     runs-on: ubuntu-latest
-    needs: [deploy-production]
+    needs: [verify-production]
     if: failure() # Only run this step if there's a failure
     steps:
       - run: echo 'Revert production to original state in case of failure'
