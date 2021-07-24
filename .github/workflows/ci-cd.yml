@@ -19,15 +19,18 @@ jobs:
   # |___|___|  /__|  \___  >___  /|__|  (____  /__| |__|\____/|___|  /
   #          \/          \/_____/            \/                    \/
 
-  build: # Reduce human error by compiling on new code.
+  # Reduce human error by compiling on new code.
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Build
-        run: npm i && npm run build
+        run: npm i && npm run build # Generates "artifact" (./dist folder)
 
-  test: # Reduce human error by running unit tests every time there's new code
+  # Reduce human error by running unit tests
+  # every time there's new code
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -35,13 +38,24 @@ jobs:
       - name: Run Tests
         run: npm i && npm t
 
-  audit: # Do you perform audits often? Probably not. Having it here makes it a daily thing.
+  # Do you perform audits often? Probably not.
+  # Having it here makes it a daily thing.
+  audit:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Check For Security Issues
         run: npm audit --audit-level=critical
+
+  # Do you perform static analysis at all? Here's a way to
+  # integrate it into your day-to-day workflow.
+  static-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Check for code smells'
+      - run: echo 'Measure cyclomatic complexity'
+      - run: echo 'Log results to a db for study'
 
   # _________                __  .__
   # \_   ___ \  ____   _____/  |_|__| ____  __ __  ____  __ __  ______
@@ -56,7 +70,19 @@ jobs:
   # /_______  /\___  >   __/|____/\____// ____|__|_|  /\___  >___|  /__|
   #         \/     \/|__|               \/          \/     \/     \/
 
-  deploy-production: # Reduce human error by deploying exactly the same way every time.
+  # Reduce human error by deploying exactly
+  # the same way every time.
+  create-infrastructure:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Use CF or TF to stand up servers and services'
+
+  configure-infrastructure:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Use Ansible to "remote in" to servers and configure them'
+
+  deploy-production:
     runs-on: ubuntu-latest
     needs: [build, test, audit]
     if: github.ref == 'refs/heads/master'
@@ -74,7 +100,10 @@ jobs:
           BRANCH: gh-pages
           FOLDER: dist
 
-  verify-production: # Automating a smoke test prevents friday deploys from turning into weekend death marches.
+  # Automating a smoke test prevents friday
+  # deploys from turning into weekend death
+  # marches.
+  verify-production:
     runs-on: ubuntu-latest
     needs: [deploy-production]
     if: github.ref == 'refs/heads/master'
@@ -84,3 +113,10 @@ jobs:
 
       - name: Run Smoke Test
         run: export TEST_URL=https://codex.academy && npm i && npm run smoke
+
+  rollback:
+    runs-on: ubuntu-latest
+    needs: [deploy-production]
+    if: failure() # Only run this step if there's a failure
+    steps:
+      - run: echo 'Revert production to original state in case of failure'
