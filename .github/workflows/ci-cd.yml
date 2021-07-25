@@ -141,11 +141,16 @@ jobs:
       - run: echo 'Revert production to original state in case of failure'
 
   # Further shorten the feedback loop by letting the whole team know of a failure.
-  notify-failure-slack:
+  notify-failure:
+    needs: rollback
     runs-on: ubuntu-latest
-    if: failure()
+    if: always()
     steps:
-      - name: Slack Notification
-        uses: rtCamp/action-slack-notify@v2
+      - uses: technote-space/workflow-conclusion-action@v2
+      - uses: 8398a7/action-slack@v3
+        with:
+          status: failure
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+        if: env.WORKFLOW_CONCLUSION == 'failure'
