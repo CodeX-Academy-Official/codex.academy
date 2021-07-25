@@ -1,6 +1,6 @@
 const puppeteer = require("puppeteer");
 
-(async () => {
+async function main() {
   try {
     const url = process.env.TEST_URL;
     if (!url) throw Error("No TEST_URL defined.");
@@ -16,13 +16,14 @@ const puppeteer = require("puppeteer");
     await browser.close();
     const found = value.indexOf("Learn to code") > -1;
     if (!found) {
-      console.error("Smoke test failed.");
-      (<any>process).exit(1);
+      throw new Error("Smoke test failed.");
     }
     console.log("Smoke test passed.");
-    (<any>process).exit(0);
+    (<any>process).exitCode = 0;
   } catch (err) {
-    console.log(err);
-    (<any>process).exit(1);
+    (<any>process).exitCode = 1;
+    throw err;
   }
-})();
+}
+
+main();
