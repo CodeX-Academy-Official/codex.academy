@@ -20,6 +20,7 @@ const puppeteer = require("puppeteer");
       (<any>process).exit(1);
     }
     console.log("Smoke test passed.");
+    (<any>process).exit(0);
   } catch (err) {
     console.log(err);
     (<any>process).exit(1);
