@@ -60,9 +60,6 @@ jobs:
         with:
           languages: javascript
 
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@v1
-
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v1
 
@@ -142,7 +139,7 @@ jobs:
 
   # Further shorten the feedback loop by letting the whole team know of a failure.
   notify-failure:
-    needs: rollback
+    needs: [verify-production]
     runs-on: ubuntu-latest
     if: always()
     steps:
