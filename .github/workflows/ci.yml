@@ -40,4 +40,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Check for security issue
-        run: npm audit --audit-level=critical
+        run: npm audit #--audit-level=critical
