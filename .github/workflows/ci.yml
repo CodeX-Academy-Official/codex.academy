@@ -2,9 +2,22 @@ name: Contoinuous Delivery
 on: push
 
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Checkout
-      uses: actions/checkout@v1
-    - name: Build
-      run: npm i && npm run build
+  #   _________                __  .__
+  # \_   ___ \  ____   _____/  |_|__| ____  __ __  ____  __ __  ______
+  # /    \  \/ /  _ \ /    \   __\  |/    \|  |  \/  _ \|  |  \/  ___/
+  # \     \___(  <_> )   |  \  | |  |   |  \  |  (  <_> )  |  /\___ \
+  #  \______  /\____/|___|  /__| |__|___|  /____/ \____/|____//____  >
+  #         \/            \/             \/                        \/
+  # .___        __                              __  .__
+  # |   | _____/  |_  ____   ________________ _/  |_|__| ____   ____
+  # |   |/    \   __\/ __ \ / ___\_  __ \__  \\   __\  |/  _ \ /    \
+  # |   |   |  \  | \  ___// /_/  >  | \// __ \|  | |  (  <_> )   |  \
+  # |___|___|  /__|  \___  >___  /|__|  (____  /__| |__|\____/|___|  /
+  #          \/          \/_____/            \/                    \/
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Build
+        run: npm i && npm run build
