@@ -2,7 +2,7 @@ name: Contoinuous Delivery
 on: push
 
 jobs:
-  runs-on: ubuntu
+  runs-on: ubuntu-latest
   steps:
     - name: Checkout
       uses: actions/checkout@v1
