@@ -80,7 +80,7 @@ jobs:
   #         \/     \/|__|               \/          \/     \/     \/
   deploy-prod:
     runs-on: ubuntu-latest
-    needs: [build]
+    needs: [build, static-analysis, test]
     steps:
       - uses: actions/checkout@v1
       - run: npm i && npm run build
