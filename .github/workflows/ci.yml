@@ -57,6 +57,7 @@ jobs:
 
   static-analysis:
     runs-on: ubuntu-latest
+    needs: [security-audit]
     steps:
       - uses: actions/checkout@v1
       - name: Initialize CodeQL
