@@ -24,6 +24,16 @@ jobs:
       - name: Build
         run: npm run build
 
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Install Dependencies
+        run: npm i
+      - name: Lint the code
+        npm: npm run lint
+
   test:
     runs-on: ubuntu-latest
     steps:
@@ -40,4 +50,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Check for security issue
-        run: npm audit #--audit-level=critical
+        run: npm audit --audit-level=critical
