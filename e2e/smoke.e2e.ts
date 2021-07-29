@@ -14,7 +14,7 @@ async function main() {
     let value = await element.evaluate((el: any) => el.textContent);
     if (!value) throw new Error("Element had no value.");
     await browser.close();
-    const found = value.indexOf("Byron") > -1;
+    const found = value.indexOf("Learn to code") > -1;
     if (!found) {
       throw new Error("Smoke test failed.");
     }
