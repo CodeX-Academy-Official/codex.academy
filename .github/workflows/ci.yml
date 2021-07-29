@@ -56,7 +56,7 @@ jobs:
         run: npm audit --audit-level=critical
 
   static-analysis:
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - name: Initialize CodeQL
