@@ -18,6 +18,8 @@
         :isSubscription="true"
         :paymentType="paymentType"
         :applicant="applicant"
+        successRoute="enroll-complete"
+        cancelRoute="enroll-payment"
         ><strong>Subscribe</strong></StripeCheckoutButton
       >
     </div>

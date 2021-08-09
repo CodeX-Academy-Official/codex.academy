@@ -136,6 +136,7 @@ const routes = [
         component: EnrollmentForm,
       },
       {
+        name: "waitForApproval",
         path: "waitForApproval",
         component: WaitForApproval,
       },
@@ -145,6 +146,7 @@ const routes = [
         component: PaymentOptions,
       },
       {
+        name: "appfee",
         path: "appfee",
         component: ApplicationFee,
       },
