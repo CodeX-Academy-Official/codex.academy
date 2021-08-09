@@ -10,7 +10,11 @@
       <p>
         <i>This payment is made using a secure payment portal by Stripe.</i>
       </p>
-      <PayAppFee :applicant="getApplicant" />
+      <div class="row">
+        <div class="col col-sm-6 col-md-6 col-lg-4">
+          <PayAppFee :applicant="getApplicant" />
+        </div>
+      </div>
     </div>
     <div v-else>
       <p>
@@ -22,7 +26,7 @@
         >Meet with Admissions</router-link
       > -->
       <router-link to="/enroll/waitForApproval" class="btn btn-primary"
-        >Next</router-link
+        >Continue Application</router-link
       >
     </div>
   </div>
@@ -40,7 +44,6 @@ export default {
     amount: 50,
   }),
   components: { PayAppFee },
-  mounted() {},
 };
 </script>
 

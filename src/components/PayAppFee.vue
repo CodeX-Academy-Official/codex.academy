@@ -19,13 +19,8 @@ export default {
   },
   data: () => ({
     paymentType: {
-      type: "stripeCreditCard",
       stripeSku: "sku_HKFWFhfuSLJiEQ",
       testStripeSku: "price_1JMcYqLzpK0DhepDdCqi9EY4",
-      monthlyCharge: 50,
-      worksWith: () => {
-        return false;
-      },
     },
   }),
   methods: {},

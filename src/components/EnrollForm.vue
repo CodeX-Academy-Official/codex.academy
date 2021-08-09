@@ -9,7 +9,7 @@
           name="fname"
           autocomplete="given-name"
           v-model.trim="applicant.firstName"
-          :class="(applicant.firstName)"
+          :class="applicant.firstName"
           required
         />
       </div>
@@ -21,7 +21,7 @@
           name="lname"
           autocomplete="family-name"
           v-model.trim="applicant.lastName"
-          :class="(applicant.lastName)"
+          :class="applicant.lastName"
           required
         />
       </div>
@@ -35,7 +35,7 @@
           class="form-control"
           id="inputEmail4"
           v-model.trim="applicant.email"
-          :class="(applicant.email)"
+          :class="applicant.email"
           required
         />
       </div>
@@ -47,7 +47,7 @@
           id="phone"
           name="phone"
           v-model.trim="applicant.phone"
-          :class="(applicant.phone)"
+          :class="applicant.phone"
           required
         />
       </div>
@@ -62,13 +62,18 @@
           id="inputAddress"
           name="address"
           v-model.trim="applicant.address1"
-          :class="(applicant.address1)"
+          :class="applicant.address1"
           required
         />
       </div>
       <div class="form-group col-md-4">
         <label for="inputAddress2">Apartment, Suite, Floor #:</label>
-        <input type="text" class="form-control" id="inputAddress2" v-model="applicant.address2" />
+        <input
+          type="text"
+          class="form-control"
+          id="inputAddress2"
+          v-model="applicant.address2"
+        />
       </div>
     </div>
     <div class="form-row">
@@ -80,7 +85,7 @@
           id="inputCity"
           name="city"
           v-model.trim="applicant.city"
-          :class="(applicant.city)"
+          :class="applicant.city"
           required
         />
       </div>
@@ -91,7 +96,7 @@
           type="text"
           name="state"
           v-model.trim="applicant.state"
-          :class="(applicant.state)"
+          :class="applicant.state"
         />
       </div>
       <div class="form-group col-md-2">
@@ -102,7 +107,7 @@
           id="inputZip"
           name="zip"
           v-model.trim="applicant.zip"
-          :class="(applicant.zip)"
+          :class="applicant.zip"
           required
         />
       </div>
@@ -111,7 +116,12 @@
         <label for="inputCountry">Country</label>
         <!-- </div> -->
         <select v-model="applicant.country" class="form-control">
-          <option v-for="c in getCountries" :key="c.country" :value="c.country">{{c.country}}</option>
+          <option
+            v-for="c in getCountries"
+            :key="c.country"
+            :value="c.country"
+            >{{ c.country }}</option
+          >
         </select>
         <!-- <input
           type="text"
@@ -133,7 +143,7 @@
           id="inputDob"
           name="date"
           v-model.trim="applicant.dateOfBirth"
-          :class="(applicant.dateOfBirth)"
+          :class="applicant.dateOfBirth"
           required
           :min="dateMin"
           :max="dateMax"
@@ -144,7 +154,9 @@
         <select class="form-control" id="gender" v-model="applicant.gender">
           <option value="Male">Male</option>
           <option value="Female">Female</option>
-          <option value="Other / Prefer not to answer">Other / Prefer not to answer</option>
+          <option value="Other / Prefer not to answer"
+            >Other / Prefer not to answer</option
+          >
         </select>
       </div>
     </div>
@@ -261,7 +273,7 @@ import { mapGetters } from "vuex";
 export default {
   props: {
     plan: Object,
-    initialApplicant: Object
+    initialApplicant: Object,
   },
   data: () => ({
     applicant: {
@@ -274,8 +286,8 @@ export default {
       state: "",
       zip: "",
       country: "United States",
-      dateOfBirth: ""
-    }
+      dateOfBirth: "",
+    },
   }),
   computed: {
     ...mapGetters(["getCountries"]),
@@ -284,16 +296,16 @@ export default {
     },
     dateMax() {
       return formatted(today());
-    }
+    },
   },
   methods: {
     submitForm() {
       this.$emit("applicationFormSubmitted", this.applicant);
-    }
+    },
   },
   created() {
     if (this.initialApplicant) this.applicant = this.initialApplicant;
-  }
+  },
 };
 </script>
 
