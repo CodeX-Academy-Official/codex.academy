@@ -13,10 +13,22 @@
         </tr>
       </thead>
       <tbody>
+      <tr>
+          <td></td>
+
+          <td v-for="c in certifications" :key="c.id">
+            <a @click="selectCertification(c)" class="btn btn-primary">
+              <strong v-if="!getApplicant">Start Application</strong>
+              <strong v-if="getApplicant">Select Program</strong>
+            </a>
+            
+          </td>
+        </tr>
         <tr>
-          <th>Description</th>
+          <th>Description/Goals</th>
           <td v-for="c in certifications" :key="c.id">{{ c.description }}</td>
         </tr>
+
 
         <tr>
           <th>Micro-Certification Levels</th>
