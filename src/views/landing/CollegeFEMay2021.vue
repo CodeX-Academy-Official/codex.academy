@@ -46,6 +46,7 @@
                 hasPromoCode=""
                 :offerFinancialAid="true"
                 submitButtonLabel="Start Assessment"
+                 :extraFields="shortFormExtraFields"
               />
             </div>
             <PartneringWith :partner="getSource" />
@@ -64,6 +65,7 @@
               hasPromoCode=""
               :offerFinancialAid="true"
               submitButtonLabel="Start Assessment"
+               :extraFields="shortFormExtraFields"
             />
           </div>
           <PartneringWith :partner="getSource" />
@@ -120,7 +122,7 @@ import StatsSection from "@/components/sections/StatsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import QandASection from "@/components/sections/QandASection";
 import DetailedLandingPageContent from "./DetailedLandingPageContent";
-import { getSku } from "./sku";
+import { getSku, getFields } from "./url-context";
 
 export default {
   components: {
@@ -157,6 +159,9 @@ export default {
     certification() {
       return this.getCertifications.find((x) => x.name === FRONT_END_DEVELOPER);
     },
+    shortFormExtraFields() {
+      return this.getFields();
+    }
   },
   methods: {
     async startAssessment(applicant) {

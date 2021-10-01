@@ -16,6 +16,7 @@ const partners = {
     logo: "img/partners/nscc.png",
     url: "https://www.nscc.edu",
   },
+  mtz1021: { logo: "img/partners/mtz.jpg", url:"https://www.mtzionnashville.org/" },
   scf: { logo: "img/partners/scf.jpg", url: "https://www.scf.edu/" },
   slttech: { logo: "img/partners/slt.jpg", url: "https://www.slttechla.com/" },
   batonrougecc: {

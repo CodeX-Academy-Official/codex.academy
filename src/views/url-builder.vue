@@ -23,7 +23,11 @@
           <label for="promoCode">Features</label>
           <input class="form-control" v-model="features" disabled />
         </div>
-        <div class="col-4 form-label-group">
+        <div class="col-3 form-label-group">
+          <label for="promoCode">Short-Form Extra Fields</label>
+          <input class="form-control" v-model="fields" />
+        </div>
+        <div class="col-1 form-label-group">
           <label for="promoCode">Navigation</label>
           <input type="checkbox" class="form-control" v-model="nav" />
         </div>
@@ -47,6 +51,7 @@ export default {
     source: "",
     campaign: "",
     program: "",
+    fields: "",
     price: 0,
     features: "",
     nav: false,
@@ -59,6 +64,7 @@ export default {
       const campaign = this.campaign ? `utm_campaign=${this.campaign}&` : "";
 
       const payload = {};
+      if (this.fields) payload.fields = this.fields;
       if (this.price) payload.price = this.price;
       if (this.features)
         payload.features = this.features.split(",").map((x) => x.trim());

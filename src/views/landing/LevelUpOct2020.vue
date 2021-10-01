@@ -43,6 +43,7 @@
                 @submitted="startApplication"
                 :hasPromoCode="getPromoCodesDisplay"
                 :offerFinancialAid="true"
+                :extraFields="shortFormExtraFields"
               />
             </div>
             <Thanks v-if="hasApplied" @startOver="clearApplicant" />
@@ -61,6 +62,7 @@
               @submitted="startApplication"
               :hasPromoCode="getPromoCodesDisplay"
               :offerFinancialAid="true"
+              :extraFields="shortFormExtraFields"
             />
           </div>
           <Thanks v-if="hasApplied" @startOver="clearApplicant" />
@@ -93,6 +95,7 @@ import TechSection from "@/components/sections/tech";
 import CommercialSection from "@/components/sections/CommercialSection";
 import StatsSection from "@/components/sections/StatsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import { getFields } from "./url-context";
 
 export default {
   components: {
@@ -110,7 +113,7 @@ export default {
     CommercialSection,
   },
   data: () => ({
-    hasApplied: false,
+    hasApplied: false,     
   }),
   computed: {
     ...mapGetters([
@@ -119,6 +122,9 @@ export default {
       "getApplicant",
       "getPromoCodesDisplay",
     ]),
+    shortFormExtraFields() {
+      return this.getFields();
+    }
   },
   methods: {
     async startApplication(applicant) {

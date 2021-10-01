@@ -91,7 +91,7 @@ import CommercialSection from "@/components/sections/CommercialSection";
 import StatsSection from "@/components/sections/StatsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import QandASection from "@/components/sections/QandASection";
-import { getSku } from "./sku";
+import { getSku } from "./url-context";
 
 export default {
   props: {
