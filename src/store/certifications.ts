@@ -27,7 +27,7 @@ export const certifications = [
     id: "fed",
     name: FRONT_END_DEVELOPER,
     description:
-      "Develop and deploy complex, dynamic front-end web applications using HTML, CSS, JavaScript and React.",
+      "Develop and deploy complex, dynamic front-end web applications using HTML, CSS, JavaScript, React and Firebase.",
     studyHours: 520,
     levels: 3,
     icon: "pencil-ruler",
@@ -58,7 +58,7 @@ export const certifications = [
     id: "fse",
     name: FULL_STACK_ENGINEER,
     description:
-      "Develop complex, secure and well-engineered full-stack web applications using multiple front-end and back-end technologies.",
+      "Lead Agile teams to develop complex, secure and well-built full-stack web applications using multiple modern front-end and back-end technologies.",
     studyHours: 1560,
     levels: 9,
     icon: "server",
