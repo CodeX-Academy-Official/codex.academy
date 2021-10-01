@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="submitForm">
-    <div class="form-label-group">
+    <div class="form-label-group" v-if="showName">
       <label for="inputUserName">Applicant Name</label>
       <input
         type="text"
@@ -12,7 +12,7 @@
         required
       />
     </div>
-    <div class="form-label-group">
+    <div class="form-label-group" v-if="showEmail">
       <label for="inputEmail">Email address</label>
       <input
         type="email"
@@ -40,6 +40,20 @@
     <div class="form-label-group" v-if="hasPromoCode">
       <label for="promoCode">Promo Code</label>
       <input class="form-control" v-model="promoCode" />
+    </div>
+
+    <div class="form-label-group" v-if="showZip">
+      <label for="promoCode">Zip/Postal Code</label>
+      <input class="form-control" placeholder="Zip/Postal Code" v-model="zip" />
+    </div>
+
+    <div class="form-label-group" v-if="showPhone">
+      <label for="promoCode">Cell Phone Number</label>
+      <input
+        class="form-control"
+        placeholder="Cell Phone Number"
+        v-model="mobilephone"
+      />
     </div>
 
     <!-- <div class="form-label-group">
@@ -88,16 +102,36 @@ export default {
     hasPromoCode: String,
     offerFinancialAid: Boolean,
     submitButtonLabel: String,
+    extraFields: String,
   },
   data: () => ({
     name: "",
     email: "",
+    zip: "",
+    mobilephone: "",
     financialAid: true,
     promoCode: "",
     startDate: getNextDeadlineFormatted(),
   }),
   computed: {
     ...mapGetters(["getPromoCodesDisplay"]),
+    showZip() {
+      return (this.extraFields || "").toLowerCase().indexOf("zip") > -1;
+    },
+    showPhone() {
+      return (this.extraFields || "").toLowerCase().indexOf("phone") > -1;
+    },
+    showEmail() {
+      const fields = (this.extraFields || "").toLowerCase();
+      const hasNoEmail = fields.indexOf("no-email") > -1;
+      if(hasNoEmail) return false;
+      return true;
+    },showName() {
+      const fields = (this.extraFields || "").toLowerCase();
+      const hasNo = fields.indexOf("no-name") > -1;
+      if(hasNo) return false;
+      return true;
+    },
   },
   mounted() {
     this.promoCode = (this.hasPromoCode || "").toUpperCase();
@@ -110,6 +144,8 @@ export default {
       });
     },
     submitForm() {
+      const zip = this.zip.trim();
+      const mobilephone = this.mobilephone.trim();
       const nameParts = this.name.trim().split(" ");
       const lastName = nameParts[nameParts.length - 1];
       const firstName = this.name.replace(lastName, "").trim();
@@ -117,6 +153,8 @@ export default {
       this.$emit("submitted", {
         firstName,
         lastName,
+        zip,
+        mobilephone,
         financialAid: this.financialAid,
         email: this.email,
         startDate: this.startDate,

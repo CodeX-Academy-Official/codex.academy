@@ -8,12 +8,16 @@
           <input class="form-control" v-model="source" />
         </div>
         <div class="col-4 form-label-group">
-          <label for="promoCode">Campaign</label>
+          <label for="campaign">Campaign</label>
           <input class="form-control" v-model="campaign" />
+          <label for="campaign"
+            >ex: yyy-levelup-rrr, uuu-college-eee, sss-int-qqq</label
+          >
         </div>
         <div class="col-4 form-label-group">
-          <label for="promoCode">Program</label>
+          <label for="program">Program</label>
           <input class="form-control" v-model="program" />
+          <label for="program">ex: fed, fsd, fse</label>
         </div>
         <div class="col-4 form-label-group">
           <label for="promoCode">Price</label>
@@ -24,8 +28,9 @@
           <input class="form-control" v-model="features" disabled />
         </div>
         <div class="col-3 form-label-group">
-          <label for="promoCode">Short-Form Extra Fields</label>
+          <label for="fields">Short-Form Fields</label>
           <input class="form-control" v-model="fields" />
+          <label for="fields">ex: phone, zip, no-email, no-name</label>
         </div>
         <div class="col-1 form-label-group">
           <label for="promoCode">Navigation</label>
@@ -71,8 +76,10 @@ export default {
 
       const encoded = btoa(JSON.stringify(payload));
 
+      const program = this.program ? `program=${this.program}&` : "";
+
       const sku = encoded ? `sku=${encoded}&` : "";
-      return `http://codex.academy/#/${nav}?${source}${campaign}${sku}`;
+      return `http://codex.academy/#/${nav}?${source}${campaign}${sku}${program}`;
     },
   },
   methods: {},

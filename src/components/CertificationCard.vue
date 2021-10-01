@@ -58,7 +58,7 @@ export default {
     certification: Object,
     features: Array,
     hideDefaultFeatures: Boolean,
-    price: Number,
+    price: [Number, String],
     hideCallToAction: Boolean,
     hidePrice: Boolean,
   },

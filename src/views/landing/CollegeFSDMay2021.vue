@@ -73,7 +73,6 @@
       </div>
     </div>
 
-    <div class="container">
       <DetailedLandingPageContent
         :certification="certification"
         :bootcampFeatures="[
@@ -98,7 +97,7 @@
           :title="certification.name"
         />
       </DetailedLandingPageContent>
-    </div>
+    
   </div>
 </template>
 
@@ -162,7 +161,7 @@ export default {
       );
     },
     shortFormExtraFields() {
-      return this.getFields();
+      return getFields(this);
     }
   },
   methods: {

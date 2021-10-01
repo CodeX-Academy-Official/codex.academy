@@ -22,30 +22,34 @@ export default {
     useNoun: Boolean,
     includeName: Boolean,
     onlyImportant: Boolean,
-    certification: String
+    certification: String,
+    max: Number
   },
   components: {
-    TechLogo
+    TechLogo,
   },
   computed: {
     ...mapGetters(["getTechnologies"]),
     techs() {
+      let output = [];
       if (this.certification) {
-        return this.getTechnologies.filter(
-          x => x.certifications.indexOf(this.certification) > -1
+        output = this.getTechnologies.filter(
+          (x) => x.certifications.indexOf(this.certification) > -1
         );
+      } else if (this.onlyImportant) {
+        output = this.getTechnologies.filter((x) => x.important);
+      } else {
+        output = this.getTechnologies;
       }
-      if (this.onlyImportant) {
-        return this.getTechnologies.filter(x => x.important);
-      }
-
-      return this.getTechnologies;
-    }
-  }
+      console.log(this.max);
+      if (this.max) return output.slice(0, this.max);
+      return output;
+    },
+  },
 };
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 .tech-logo {
   text-align: center;
   img {

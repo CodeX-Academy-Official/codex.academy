@@ -20,6 +20,7 @@
         <VideoPlayer :mp4="video" :width="300" :poster="poster" />
       </div>
     </div>
+    <slot/>
   </div>
 </template>
 

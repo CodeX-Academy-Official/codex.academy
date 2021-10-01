@@ -10,7 +10,7 @@ export function dollars(num) {
 
 export default {
   props: {
-    amount: Number
+    amount: [Number, String]
   },
   computed: {
     formattedAmount() {

@@ -36,7 +36,7 @@
             </div>
           </div>
 
-          <div class="col-5 d-none d-lg-block my-auto">
+          <div class="col-5 d-none d-lg-block my-auto apply">
             <div class="start-application-form" v-if="!hasApplied">
               <h5 class="card-title text-center">Sign Up Today</h5>
               <StartApplicationForm
@@ -71,13 +71,43 @@
       </div>
     </div>
 
-    <StatsSection />
 
-    <CommercialSection />
+          
 
-    <TechSection />
+    <StatsSection>
+    
+   <div class="text-center mt-0">
+          <a @click="goto('apply')" class="btn btn-lg btn-primary">Start Application</a>
+        </div>
+        
+        </StatsSection>
 
-    <TestimonialsSection />
+
+    <CommercialSection>
+       <div class="text-center mt-0">
+          <a @click="goto('apply')" class="btn btn-lg btn-primary">Start Application</a>
+        </div>
+        </CommercialSection>
+
+    <TechSection :max="12" />
+
+    <TestimonialsSection>
+     <div class="text-center mt-0">
+          <a @click="goto('apply')" class="btn btn-lg btn-primary">Start Application</a>
+        </div>
+        </TestimonialsSection>
+
+    <div class="pb-5 pt-3 bg-periwinkle">
+      <div class="container">
+        <QandASection />
+        <div class="text-center mt-0">
+          <a @click="goto('apply')" class="btn btn-lg btn-primary"
+            >Start Application</a
+          >
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -88,10 +118,13 @@ import Thanks from "@/views/landing/Thanks";
 import { mapGetters } from "vuex";
 import Icon from "@/components/Icon";
 import Logo from "@/components/Logo";
+import DetailedLandingPageContent from "./DetailedLandingPageContent";
+
 import PartneringWith from "@/components/PartneringWith";
 import SelectPlanButton from "@/components/SelectPlanButton";
 import PromoAppFeeWaived from "@/components/PromoAppFeeWaived";
 import TechSection from "@/components/sections/tech";
+import QandASection from "@/components/sections/QandASection";
 import CommercialSection from "@/components/sections/CommercialSection";
 import StatsSection from "@/components/sections/StatsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
@@ -102,14 +135,14 @@ export default {
     Hero,
     Thanks,
     StartApplicationForm,
-    Icon,
+    Icon,QandASection,
     Logo,
     Thanks,
     PromoAppFeeWaived,
     PartneringWith,
     TechSection,
     StatsSection,
-    TestimonialsSection,
+    TestimonialsSection,DetailedLandingPageContent,
     CommercialSection,
   },
   data: () => ({
@@ -123,7 +156,7 @@ export default {
       "getPromoCodesDisplay",
     ]),
     shortFormExtraFields() {
-      return this.getFields();
+      return getFields(this);
     }
   },
   methods: {
@@ -137,6 +170,17 @@ export default {
     },
     clearApplicant() {
       this.hasApplied = false;
+    },
+    goto(el) {
+      function isHidden(el) {
+        return el.offsetParent === null;
+      }
+
+      let element = [...document.getElementsByClassName(el)];
+      element.forEach((e) => {
+        if (!isHidden(e))
+          e.scrollIntoView({ behavior: "smooth", block: "end" });
+      });
     },
   },
   mounted() {
