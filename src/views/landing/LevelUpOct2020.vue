@@ -57,7 +57,7 @@
       <div class="row justify-content-center">
         <div class="col-10 bg-periwinkle shadow border p-4">
           <div class="start-application-form" v-if="!hasApplied">
-            <h2 class="card-title text-center">Get Started Learning</h2>
+            <h2 class="card-title text-center apply">Get Started Learning</h2>
             <StartApplicationForm
               @submitted="startApplication"
               :hasPromoCode="getPromoCodesDisplay"
@@ -74,14 +74,15 @@
 
           
 
-    <StatsSection>
     
+
+<ProgramsSection>
    <div class="text-center mt-0">
           <a @click="goto('apply')" class="btn btn-lg btn-primary">Start Application</a>
         </div>
         
-        </StatsSection>
 
+</ProgramsSection>
 
     <CommercialSection>
        <div class="text-center mt-0">
@@ -126,6 +127,7 @@ import PromoAppFeeWaived from "@/components/PromoAppFeeWaived";
 import TechSection from "@/components/sections/tech";
 import QandASection from "@/components/sections/QandASection";
 import CommercialSection from "@/components/sections/CommercialSection";
+import ProgramsSection from "@/components/sections/ProgramsSection";
 import StatsSection from "@/components/sections/StatsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import { getFields } from "./url-context";
@@ -135,7 +137,7 @@ export default {
     Hero,
     Thanks,
     StartApplicationForm,
-    Icon,QandASection,
+    Icon,QandASection,ProgramsSection,
     Logo,
     Thanks,
     PromoAppFeeWaived,
