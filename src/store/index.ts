@@ -199,6 +199,8 @@ export default new Vuex.Store({
     getPromoCodes: (state) => state.promoCodes,
     getPromoCodesDisplay: (state) =>
       (state.promoCodes || [])
+        .map((p:String) => p.trim())  
+        .filter((p:String) => p)  
         .reverse()
         .join(", ")
         .toUpperCase(),
