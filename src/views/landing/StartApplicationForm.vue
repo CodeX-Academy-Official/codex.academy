@@ -123,12 +123,12 @@ export default {
     },
     showEmail() {
       const fields = this.extraFields?.toLowerCase();
-      const hasNoEmail = fields.indexOf("no-email") > -1;
+      const hasNoEmail = fields?.indexOf("no-email") > -1;
       if(hasNoEmail) return false;
       return true;
     },showName() {
       const fields = this.extraFields?.toLowerCase();
-      const hasNo = fields.indexOf("no-name") > -1;
+      const hasNo = fields?.indexOf("no-name") > -1;
       if(hasNo) return false;
       return true;
     },
