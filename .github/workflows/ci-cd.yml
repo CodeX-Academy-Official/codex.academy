@@ -119,24 +119,24 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       
-      # - name: Tag # Gives us a way back to safety!
-      #   id: autotagger
-      #   uses: butlerlogic/action-autotag@stable
-      #   with:
-      #     GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Tag # Gives us a way back to safety!
+        id: autotagger
+        uses: butlerlogic/action-autotag@stable
+        with:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
       
-      # - name: Release
-      #   id: create_release
-      #   if: steps.autotagger.outputs.tagname != ''
-      #   uses: actions/create-release@v1.0.0
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     tag_name: ${{ steps.autotagger.outputs.tagname }}
-      #     release_name: Version ${{ steps.autotagger.outputs.version }}
-      #     body: ${{ steps.autotagger.outputs.tagmessage }}
-      #     draft: false
-      #     prerelease: true
+      - name: Release
+        id: create_release
+        if: steps.autotagger.outputs.tagname != ''
+        uses: actions/create-release@v1.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.autotagger.outputs.tagname }}
+          release_name: Version ${{ steps.autotagger.outputs.version }}
+          body: ${{ steps.autotagger.outputs.tagmessage }}
+          draft: false
+          prerelease: true
 
       - name: Retrieve Artifact
         uses: actions/download-artifact@v2
@@ -144,9 +144,6 @@ jobs:
           name: website-dist
           path: dist
 
-      # - name: Rebuild Prod Version (there are better ways)
-      #   run: npm i && npm run build
-      
       - name: Publish
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
@@ -155,25 +152,25 @@ jobs:
           FOLDER: dist
 
       - name: Smoke Test
-        run: export TEST_URL=https://codex.academy && npm run smoke
+        run: export TEST_URL=https://codex.academy && npx ts-node e2e/smoke.e2e.ts
 
-      # - name: Rollback Release
-      #   if: failure() && steps.create_release.outputs.id != ''
-      #   uses: author/action-rollback@stable
-      #   with:
-      #     id: ${{ steps.create_release.id }}
-      #     tag: ${{ steps.autotagger.outputs.tagname }}
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Rollback Release
+        if: failure() && steps.create_release.outputs.id != ''
+        uses: author/action-rollback@stable
+        with:
+          id: ${{ steps.create_release.id }}
+          tag: ${{ steps.autotagger.outputs.tagname }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # - name: Rebuild Previous Version
-      #   if: failure() && steps.create_release.outputs.id != ''
-      #   run: npm i && npm run build
+      - name: Rebuild Previous Version
+        if: failure() && steps.create_release.outputs.id != ''
+        run: npm i && npm run build
       
-      # - name: Re-Publish Previous Version
-      #   if: failure() && steps.create_release.outputs.id != ''
-      #   uses: JamesIves/github-pages-deploy-action@releases/v3
-      #   with:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     BRANCH: gh-pages
-      #     FOLDER: dist
+      - name: Re-Publish Previous Version
+        if: failure() && steps.create_release.outputs.id != ''
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: dist

@@ -21,7 +21,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/vue-fontawesome": "^0.1.9",
     "@storybook/preset-typescript": "^3.0.0",
-    "axios": "^0.19.2",
+    "axios": ">=0.21.2",
     "babel-eslint": "^10.1.0",
     "bootstrap": "^4.4.1",
     "bootstrap-vue": "^2.11.0",
