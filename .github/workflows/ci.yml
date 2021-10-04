@@ -24,12 +24,98 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+
+      - name: Cache Node Modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+
       - name: Checkout
         uses: actions/checkout@v1
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 13.x
 
       - name: Install Dependencies
         run: npm i
 
       - name: Build
         run: npm run build
+      
+      - name: Store Artifact 
+        uses: actions/upload-artifact@v2
+        with:
+          name: website-dist
+          path: dist
+  
+  lint:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+  
+      - name: Cache Node Modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+        
+      - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm i
+  
+      - name: Lint the code
+        run: echo Simulating lint #npm run lint 
+
+  test:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+  
+      - name: Cache Node Modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+        
+      - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm i
+  
+      - name: Run Unit Tests
+        run: npm t
+
+  security-audit:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+ 
+      - name: Check for security issue
+        run: npm audit --audit-level=critical #or "high"
+
+  static-analysis:
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - uses: actions/checkout@v1
+  
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v1
+        with:
+          languages: javascript
+  
+      - name: Perform Analysis
+        #uses: github/codeql-action/analyze@v1
+        run: echo Simulating static analysis
 
