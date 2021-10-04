@@ -58,6 +58,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
   
+      - name: Cache Node Modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+        
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm i
@@ -72,6 +79,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
   
+      - name: Cache Node Modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+        
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm i
@@ -157,12 +171,19 @@ jobs:
           BRANCH: gh-pages
           FOLDER: dist
 
+      - name: Cache Node Modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+          
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm i
       
       - name: Smoke Test
-        run: export TEST_URL=https://codex.academy && npm run smoke
+        run: export TEST_URL=https://codex1.academy && npm run smoke
 
       - name: Rollback Release
         if: failure() && steps.create_release.outputs.id != ''
