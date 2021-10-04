@@ -138,3 +138,20 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build, test, lint, security-audit, static-analysis]
     if: github.ref == 'refs/heads/master'
+    steps:
+      - uses: actions/checkout@v1
+      
+      - name: Retrieve Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: website-dist
+          path: dist
+
+      - name: Publish
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: dist
+
+     
