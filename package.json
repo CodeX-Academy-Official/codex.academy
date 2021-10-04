@@ -11,7 +11,8 @@
     "test": "jest --coverage",
     "predeploy": "cross-env NODE_ENV=production npm run build",
     "storybook:build": "vue-cli-service storybook:build -c config/storybook",
-    "storybook": "vue-cli-service storybook:serve -p 6006 -c config/storybook"
+    "storybook": "vue-cli-service storybook:serve -p 6006 -c config/storybook",
+    "smoke": "ts-node e2e/smoke.e2e.ts"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free-brands": "^5.0.13",
@@ -74,7 +75,9 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
     "node-sass": "^4.12.0",
+    "puppeteer": "^10.4.0",
     "sass-loader": "^8.0.2",
+    "ts-node": "^10.2.1",
     "typescript": "~3.7.5",
     "vue-cli-plugin-storybook": "^1.2.2"
   }

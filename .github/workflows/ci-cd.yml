@@ -23,6 +23,13 @@ jobs:
     #needs: [security-audit]
     steps:
 
+      - name: Cache Node Modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+        
       - name: Checkout
         uses: actions/checkout@v1
     
@@ -34,13 +41,6 @@ jobs:
       - name: Install Dependencies
         run: npm i
     
-      - name: Cache Node Modules
-        id: cache-node-modules
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: node-modules-${{ hashFiles('package-lock.json') }}
-        
       - name: Build
         run: npm run build
 
@@ -142,6 +142,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: website-dist
+          path: dist
 
       # - name: Rebuild Prod Version (there are better ways)
       #   run: npm i && npm run build
