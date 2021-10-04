@@ -122,7 +122,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       
-      - name: Tag # Gives us a way back to safety!
+      - name: Tag 
         id: autotagger
         uses: butlerlogic/action-autotag@stable
         with:
@@ -154,8 +154,12 @@ jobs:
           BRANCH: gh-pages
           FOLDER: dist
 
+      - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm i
+      
       - name: Smoke Test
-        run: export TEST_URL=https://codex.academy && npx ts-node e2e/smoke.e2e.ts
+        run: export TEST_URL=https://codex.academy && npm run smoke
 
       - name: Rollback Release
         if: failure() && steps.create_release.outputs.id != ''
@@ -168,7 +172,7 @@ jobs:
 
       - name: Rebuild Previous Version
         if: failure() && steps.create_release.outputs.id != ''
-        run: npm i && npm run build
+        run: npm run build
       
       - name: Re-Publish Previous Version
         if: failure() && steps.create_release.outputs.id != ''
