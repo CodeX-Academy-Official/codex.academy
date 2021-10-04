@@ -1,5 +1,3 @@
-codebeautify.org
-
 name: Continuous Delivery
 on:
   push:
