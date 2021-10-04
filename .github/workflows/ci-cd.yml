@@ -6,6 +6,7 @@ on:
   pull_request:
 
 jobs:
+
   #   _________                __  .__
   # \_   ___ \  ____   _____/  |_|__| ____  __ __  ____  __ __  ______
   # /    \  \/ /  _ \ /    \   __\  |/    \|  |  \/  _ \|  |  \/  ___/
@@ -18,6 +19,7 @@ jobs:
   # |   |   |  \  | \  ___// /_/  >  | \// __ \|  | |  (  <_> )   |  \
   # |___|___|  /__|  \___  >___  /|__|  (____  /__| |__|\____/|___|  /
   #          \/          \/_____/            \/                    \/
+  
   build:
     runs-on: ubuntu-latest
     steps:
@@ -61,7 +63,7 @@ jobs:
         run: npm i
   
       - name: Lint the code
-        run: npm run lint
+        run: echo Simulating lint #npm run lint 
 
   test:
     needs: [build]
@@ -89,7 +91,7 @@ jobs:
 
   static-analysis:
     runs-on: ubuntu-latest
-    needs: [build, security-audit]
+    needs: [build]
     steps:
       - uses: actions/checkout@v1
   
@@ -99,7 +101,10 @@ jobs:
           languages: javascript
   
       - name: Perform Analysis
-        uses: github/codeql-action/analyze@v1
+        #uses: github/codeql-action/analyze@v1
+        run: echo Simulating static analysis
+
+
   # _________                __  .__
   # \_   ___ \  ____   _____/  |_|__| ____  __ __  ____  __ __  ______
   # /    \  \/ /  _ \ /    \   __\  |/    \|  |  \/  _ \|  |  \/  ___/
@@ -112,9 +117,10 @@ jobs:
   #  |    `   \  ___/|  |_> >  |_(  <_> )___  |  Y Y  \  ___/|   |  \  |
   # /_______  /\___  >   __/|____/\____// ____|__|_|  /\___  >___|  /__|
   #         \/     \/|__|               \/          \/     \/     \/
+  
   deploy-prod:
     runs-on: ubuntu-latest
-    needs: [static-analysis]
+    needs: [build, test, lint, security-audit, static-analysis]
     if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v1
