@@ -71,7 +71,7 @@ jobs:
         run: npm i
   
       - name: Lint the code
-        run: echo Simulating lint #npm run lint 
+        run: npm run lint 
 
   test:
     needs: [build]
@@ -116,6 +116,6 @@ jobs:
           languages: javascript
   
       - name: Perform Analysis
-        #uses: github/codeql-action/analyze@v1
-        run: echo Simulating static analysis
+        uses: github/codeql-action/analyze@v1
+        #run: echo Simulating static analysis
 
