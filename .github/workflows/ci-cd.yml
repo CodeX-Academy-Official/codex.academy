@@ -20,7 +20,6 @@ jobs:
   #          \/          \/_____/            \/                    \/
   build:
     runs-on: ubuntu-latest
-    #needs: [security-audit]
     steps:
 
       - name: Cache Node Modules
@@ -50,55 +49,59 @@ jobs:
           name: website-dist
           path: dist
 
-  # lint:
-  #   runs-on: ubuntu-latest
-  #   needs: [security-audit]
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v1
-  #
-  #     - name: Install Dependencies
-  #       if: steps.cache.outputs.cache-hit != 'true'
-  #       run: npm i
-  #
-  #     - name: Lint the code
-  #       run: npm run lint
+  lint:
+    needs: [build]
+    runs-on: ubuntu-latest
+    needs: [security-audit]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+  
+      - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm i
+  
+      - name: Lint the code
+        run: npm run lint
 
-  # test:
-  #   runs-on: ubuntu-latest
-  #   needs: [security-audit]
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v1
-  #
-  #     - name: Install Dependencies
-  #       run: npm i
-  #
-  #     - name: Run Unit Tests
-  #       run: npm t
+  test:
+    needs: [build]
+    runs-on: ubuntu-latest
+    needs: [security-audit]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+  
+      - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm i
+  
+      - name: Run Unit Tests
+        run: npm t
 
-  # security-audit:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v1
+  security-audit:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
  
-  #     - name: Check for security issue
-  #       run: npm audit --audit-level=critical #or "high"
+      - name: Check for security issue
+        run: npm audit --audit-level=critical #or "high"
 
-  # static-analysis:
-  #   runs-on: ubuntu-latest
-  #   needs: [build, security-audit]
-  #   steps:
-  #     - uses: actions/checkout@v1
-  #
-  #     - name: Initialize CodeQL
-  #       uses: github/codeql-action/init@v1
-  #       with:
-  #         languages: javascript
-  # 
-  #     - name: Perform Analysis
-  #       uses: github/codeql-action/analyze@v1
+  static-analysis:
+    runs-on: ubuntu-latest
+    needs: [build, security-audit]
+    steps:
+      - uses: actions/checkout@v1
+  
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v1
+        with:
+          languages: javascript
+  
+      - name: Perform Analysis
+        uses: github/codeql-action/analyze@v1
   # _________                __  .__
   # \_   ___ \  ____   _____/  |_|__| ____  __ __  ____  __ __  ______
   # /    \  \/ /  _ \ /    \   __\  |/    \|  |  \/  _ \|  |  \/  ___/
@@ -113,7 +116,7 @@ jobs:
   #         \/     \/|__|               \/          \/     \/     \/
   deploy-prod:
     runs-on: ubuntu-latest
-    # needs: [static-analysis]
+    needs: [static-analysis]
     needs: [build]
     if: github.ref == 'refs/heads/master'
     steps:
