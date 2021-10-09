@@ -102,7 +102,7 @@ export default {
     hasPromoCode: String,
     offerFinancialAid: Boolean,
     submitButtonLabel: String,
-    extraFields: String,
+    extraFields: [String,Object]
   },
   data: () => ({
     name: "",
@@ -116,19 +116,23 @@ export default {
   computed: {
     ...mapGetters(["getPromoCodesDisplay"]),
     showZip() {
-      return this.extraFields?.toLowerCase().indexOf("zip") > -1;
+      if(!this.extraFields) return false;
+      return this.extraFields.toString().toLowerCase().indexOf("zip") > -1;
     },
     showPhone() {
-      return this.extraFields?.toLowerCase().indexOf("phone") > -1;
+      if(!this.extraFields) return false;
+      return this.extraFields.toString().toLowerCase().indexOf("phone") > -1;
     },
     showEmail() {
-      const fields = this.extraFields?.toLowerCase();
-      const hasNoEmail = fields?.indexOf("no-email") > -1;
+      if(!this.extraFields) return false;
+      const fields = this.extraFields.toString().toLowerCase();
+      const hasNoEmail = fields.indexOf("no-email") > -1;
       if(hasNoEmail) return false;
       return true;
     },showName() {
-      const fields = this.extraFields?.toLowerCase();
-      const hasNo = fields?.indexOf("no-name") > -1;
+      if(!this.extraFields) return false;
+      const fields = this.extraFields.toString().toLowerCase();
+      const hasNo = fields.indexOf("no-name") > -1;
       if(hasNo) return false;
       return true;
     },
