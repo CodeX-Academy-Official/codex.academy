@@ -33,13 +33,12 @@
         <h3>Contact Details</h3>
         <p>
           CodeX Academy, LLC
-          <br />1612 Westgate Circle, Suite 222
-          <br />Brentwood, TN 37027
+          <br />1612 Westgate Circle, Suite 222 <br />Brentwood, TN 37027
         </p>
         <p>
           <span title="Phone">Phone:</span>
           <br />
-          <a href="tel:6156698239">(615) 266-4847</a>
+          <a href="tel:6152664847">(615) 266-4847</a>
         </p>
         <p>
           <span title="Email">Email:</span>
@@ -72,7 +71,7 @@ import HubspotForm from "@/components/HubspotForm";
 
 export default {
   components: {
-    HubspotForm
-  }
+    HubspotForm,
+  },
 };
 </script>
