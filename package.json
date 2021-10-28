@@ -11,7 +11,8 @@
     "test": "jest --coverage",
     "predeploy": "cross-env NODE_ENV=production npm run build",
     "storybook:build": "vue-cli-service storybook:build -c config/storybook",
-    "storybook": "vue-cli-service storybook:serve -p 6006 -c config/storybook"
+    "storybook": "vue-cli-service storybook:serve -p 6006 -c config/storybook",
+    "smoke": "ts-node e2e/smoke.e2e.ts"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free-brands": "^5.0.13",
@@ -20,12 +21,13 @@
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/vue-fontawesome": "^0.1.9",
     "@storybook/preset-typescript": "^3.0.0",
-    "axios": "^0.19.2",
+    "axios": ">=0.21.2",
     "babel-eslint": "^10.1.0",
     "bootstrap": "^4.4.1",
     "bootstrap-vue": "^2.11.0",
     "core-js": "^3.6.5",
     "gh-pages": "^2.2.0",
+    "lint": "^0.7.0",
     "moment": "^2.24.0",
     "register-service-worker": "^1.7.1",
     "v-video-embed": "^1.0.8",
@@ -73,7 +75,9 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
     "node-sass": "^4.12.0",
+    "puppeteer": "^10.4.0",
     "sass-loader": "^8.0.2",
+    "ts-node": "^10.2.1",
     "typescript": "~3.7.5",
     "vue-cli-plugin-storybook": "^1.2.2"
   }

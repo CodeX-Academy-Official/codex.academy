@@ -161,9 +161,7 @@ export default new Vuex.Store({
       });
     },
     applyPromoCode({ commit, state }, promoCodeInput) {
-      const newCodes = (promoCodeInput || "")
-        .split(",")
-        .map((x: string) => x.trim().toUpperCase());
+      const newCodes = promoCodeInput?.split(",").map((x: string) => x.trim().toUpperCase());
       const allCodes = [...newCodes, ...state.promoCodes];
       const uniqueCodes = [...new Set(allCodes)];
       commit(SET_PROMO_CODES, uniqueCodes);
@@ -199,6 +197,8 @@ export default new Vuex.Store({
     getPromoCodes: (state) => state.promoCodes,
     getPromoCodesDisplay: (state) =>
       (state.promoCodes || [])
+        .map((p:String) => p.trim())  
+        .filter((p:String) => p)  
         .reverse()
         .join(", ")
         .toUpperCase(),

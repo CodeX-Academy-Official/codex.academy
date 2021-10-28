@@ -41,7 +41,6 @@ export default {
       } else {
         output = this.getTechnologies;
       }
-      console.log(this.max);
       if (this.max) return output.slice(0, this.max);
       return output;
     },

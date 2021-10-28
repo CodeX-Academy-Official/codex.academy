@@ -17,22 +17,7 @@
             </div>
             <div class="checklist">
               <div class="title">We'll help you do it!</div>
-              <div class="item">
-                <Icon name="checkbox" />
-                <span>Modern, Marketable Skills</span>
-              </div>
-              <div class="item">
-                <Icon name="checkbox" />
-                <span>Live Mentoring Sessions</span>
-              </div>
-              <div class="item">
-                <Icon name="checkbox" />
-                <span>100% Online</span>
-              </div>
-              <div class="item">
-                <Icon name="checkbox" />
-                <span>Any Experience Level</span>
-              </div>
+              <HeroBullets />
             </div>
           </div>
 
@@ -71,44 +56,41 @@
       </div>
     </div>
 
-
-          
-
-    
-
-<ProgramsSection>
-   <div class="text-center mt-0">
-          <a @click="goto('apply')" class="btn btn-lg btn-primary">Start Application</a>
-        </div>
-        
-
-</ProgramsSection>
+    <ProgramsSection>
+      <div class="text-center mt-0">
+        <a @click="goto('apply')" class="btn btn-lg btn-primary"
+          >Start Application</a
+        >
+      </div>
+    </ProgramsSection>
 
     <CommercialSection>
-       <div class="text-center mt-0">
-          <a @click="goto('apply')" class="btn btn-lg btn-primary">Start Application</a>
-        </div>
-        </CommercialSection>
+      <div class="text-center mt-0">
+        <a @click="goto('apply')" class="btn btn-lg btn-primary"
+          >Start Application</a
+        >
+      </div>
+    </CommercialSection>
 
     <TechSection :max="12" />
 
     <TestimonialsSection>
-     <div class="text-center mt-0">
-          <a @click="goto('apply')" class="btn btn-lg btn-primary">Start Application</a>
-        </div>
-        </TestimonialsSection>
+      <div class="text-center mt-0">
+        <a @click="goto('apply')" class="btn btn-lg btn-primary"
+          >Start Application</a
+        >
+      </div>
+    </TestimonialsSection>
 
     <div class="pb-5 pt-3 bg-periwinkle">
       <div class="container">
         <QandASection />
         <div class="text-center mt-0">
           <a @click="goto('apply')" class="btn btn-lg btn-primary"
-            >Start Application</a
-          >
+            >Start Application</a>
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -120,6 +102,7 @@ import { mapGetters } from "vuex";
 import Icon from "@/components/Icon";
 import Logo from "@/components/Logo";
 import DetailedLandingPageContent from "./DetailedLandingPageContent";
+import HeroBullets from "./HeroBullets";
 
 import PartneringWith from "@/components/PartneringWith";
 import SelectPlanButton from "@/components/SelectPlanButton";
@@ -137,18 +120,22 @@ export default {
     Hero,
     Thanks,
     StartApplicationForm,
-    Icon,QandASection,ProgramsSection,
+    Icon,
+    QandASection,
+    ProgramsSection,
     Logo,
     Thanks,
     PromoAppFeeWaived,
+    HeroBullets,
     PartneringWith,
     TechSection,
     StatsSection,
-    TestimonialsSection,DetailedLandingPageContent,
+    TestimonialsSection,
+    DetailedLandingPageContent,
     CommercialSection,
   },
   data: () => ({
-    hasApplied: false,     
+    hasApplied: false,
   }),
   computed: {
     ...mapGetters([
@@ -159,7 +146,7 @@ export default {
     ]),
     shortFormExtraFields() {
       return getFields(this);
-    }
+    },
   },
   methods: {
     async startApplication(applicant) {
@@ -196,7 +183,6 @@ export default {
 @import "@/variables";
 
 .level-up-landing-hero {
-  
   .thanks-box {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 5px;
@@ -218,17 +204,6 @@ export default {
       text-align: left;
       padding-top: 30px;
       padding-bottom: 20px;
-    }
-    .item {
-      padding-bottom: 5px;
-      svg {
-        fill: white;
-        width: 20px;
-        height: 20px;
-      }
-      span {
-        padding-left: 15px;
-      }
     }
   }
 

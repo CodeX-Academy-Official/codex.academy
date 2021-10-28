@@ -36,6 +36,16 @@
           <label for="promoCode">Navigation</label>
           <input type="checkbox" class="form-control" v-model="nav" />
         </div>
+        <div class="col-9 form-label-group">
+          <label for="heroBullets">Hero Bullets</label>
+          <input class="form-control" v-model="heroBullets" />
+          <label for="heroBullets">Separated by //</label>
+        </div>
+        <div class="col-3 form-label-group">
+          <label for="promoCode">Promo Code</label>
+          <input class="form-control" v-model="promoCode" />
+          
+        </div>
       </div>
       <div class="row">
         <div class="col-12 form-label-group">
@@ -56,7 +66,9 @@ export default {
     source: "",
     campaign: "",
     program: "",
+    heroBullets: "",
     fields: "",
+    promoCode:"",
     price: 0,
     features: "",
     nav: false,
@@ -71,15 +83,17 @@ export default {
       const payload = {};
       if (this.fields) payload.fields = this.fields;
       if (this.price) payload.price = this.price;
+      if (this.heroBullets) payload.heroBullets = this.heroBullets.split("//");
       if (this.features)
         payload.features = this.features.split(",").map((x) => x.trim());
 
       const encoded = btoa(JSON.stringify(payload));
 
       const program = this.program ? `program=${this.program}&` : "";
+      const promoCode = this.promoCode ? `promo=${this.promoCode}&` : "";
 
       const sku = encoded ? `sku=${encoded}&` : "";
-      return `http://codex.academy/#/${nav}?${source}${campaign}${sku}${program}`;
+      return `http://codex.academy/#/${nav}?${source}${campaign}${sku}${program}${promoCode}`;
     },
   },
   methods: {},
