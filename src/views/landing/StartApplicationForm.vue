@@ -124,13 +124,13 @@ export default {
       return this.extraFields.toString().toLowerCase().indexOf("phone") > -1;
     },
     showEmail() {
-      if(!this.extraFields) return false;
+      if(!this.extraFields) return true;
       const fields = this.extraFields.toString().toLowerCase();
       const hasNoEmail = fields.indexOf("no-email") > -1;
       if(hasNoEmail) return false;
       return true;
     },showName() {
-      if(!this.extraFields) return false;
+      if(!this.extraFields) return true;
       const fields = this.extraFields.toString().toLowerCase();
       const hasNo = fields.indexOf("no-name") > -1;
       if(hasNo) return false;
