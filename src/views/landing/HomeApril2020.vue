@@ -95,6 +95,8 @@
     <TestimonialsSection class="pb-5" />
 
     <InternshipPartnersSection />
+
+    <AwardsSection />
   </div>
 </template>
 
@@ -113,7 +115,7 @@ import CommercialSection from "@/components/sections/CommercialSection";
 import StatsSection from "@/components/sections/StatsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import InternshipPartnersSection from "@/components/sections/InternshipPartnersSection";
-
+import AwardsSection from "@/components/sections/AwardsSection";
 export default {
   components: {
     Hero,
@@ -129,6 +131,7 @@ export default {
     TestimonialsSection,
     CommercialSection,
     InternshipPartnersSection,
+    AwardsSection,
   },
   data: () => ({
     hasApplied: false,
