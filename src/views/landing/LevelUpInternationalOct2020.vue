@@ -14,7 +14,6 @@
               <h3 class="text-left action">Level up your skills</h3>
               <h1 class="text-left action">Ready to hire in 6 months</h1>
               <h3 class="text-left action">Or less!</h3>
-              
             </div>
 
             <!-- <div class="d-none d-lg-block">
@@ -39,19 +38,19 @@
               <div class="item">
                 <Icon name="checkbox" />
                 <span>100% Online</span>
-              </div>            
+              </div>
               <div class="item">
                 <Icon name="checkbox" />
                 <span>Any Experience Level</span>
               </div>
-              
             </div>
 
             <router-link
               class="btn btn-lg btn-primary mt-5"
               to="/programs/international"
-            >Select a Monthly Plan</router-link>
-            
+              >Select a Monthly Plan</router-link
+            >
+
             <!-- </div> -->
 
             <!-- <Promo25OffMonthly style="max-width: 450px;" class="mt-5" /> -->
@@ -79,18 +78,20 @@
       <router-link
         class="btn btn-lg btn-primary mt-5"
         to="/programs/international"
-      >Select a Monthly Plan</router-link>
+        >Select a Monthly Plan</router-link
+      >
     </div>
 
-    <InternshipPartnersSection/>
-    
+    <InternshipPartnersSection />
+
     <CommercialSection />
 
     <div class="text-center mb-5">
       <router-link
         class="btn btn-lg btn-primary mt-5"
         to="/programs/international"
-      >Select a Monthly Plan</router-link>
+        >Select a Monthly Plan</router-link
+      >
     </div>
 
     <TechSection />
@@ -100,7 +101,12 @@
       <router-link
         class="btn btn-lg btn-primary mt-5"
         to="/programs/international"
-      >Select a Monthly Plan</router-link>
+        >Select a Monthly Plan</router-link
+      >
+    </div>
+
+    <div class="bg-periwinkle">
+      <AwardsSection />
     </div>
   </div>
 </template>
@@ -120,6 +126,7 @@ import CommercialSection from "@/components/sections/CommercialSection";
 import StatsSection from "@/components/sections/StatsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import InternshipPartnersSection from "@/components/sections/InternshipPartnersSection";
+import AwardsSection from "@/components/sections/AwardsSection";
 
 export default {
   components: {
@@ -135,16 +142,24 @@ export default {
     StatsSection,
     TestimonialsSection,
     CommercialSection,
-    InternshipPartnersSection
+    InternshipPartnersSection,
+    AwardsSection,
   },
   data: () => ({
-    hasApplied: false
+    hasApplied: false,
   }),
-  computed: { ...mapGetters(["getMethods", "getSource", "getApplicant", "getPromoCodesDisplay"]) },
+  computed: {
+    ...mapGetters([
+      "getMethods",
+      "getSource",
+      "getApplicant",
+      "getPromoCodesDisplay",
+    ]),
+  },
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", {
-        applicant
+        applicant,
       });
       await this.$store.dispatch("setStartDate", applicant.startDate);
       this.hasApplied = true;
@@ -152,12 +167,12 @@ export default {
     },
     clearApplicant() {
       this.hasApplied = false;
-    }
+    },
   },
   mounted() {
     const applicant = this.getApplicant;
     this.hasApplied = applicant;
-  }
+  },
 };
 </script>
 
@@ -165,7 +180,6 @@ export default {
 @import "@/variables";
 
 .level-up-int-landing-hero {
-  
   .thanks-box {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 5px;
