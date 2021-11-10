@@ -62,7 +62,11 @@
       </div>
     </div>
 
-    <div class="pb-5 pt-3 bg-periwinkle">
+    <div class="bg-periwinkle">
+      <AwardsSection />
+    </div>
+
+    <div class="pb-5 pt-3">
       <div class="container">
         <QandASection />
         <div class="text-center mt-0">
@@ -91,6 +95,7 @@ import CommercialSection from "@/components/sections/CommercialSection";
 import StatsSection from "@/components/sections/StatsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import QandASection from "@/components/sections/QandASection";
+import AwardsSection from "@/components/sections/AwardsSection";
 import { getSku } from "./url-context";
 
 export default {
@@ -113,6 +118,7 @@ export default {
     StatsSection,
     TestimonialsSection,
     CommercialSection,
+    AwardsSection,
   },
   data: () => ({
     hasApplied: false,

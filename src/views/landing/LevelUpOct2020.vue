@@ -81,13 +81,17 @@
         >
       </div>
     </TestimonialsSection>
-
     <div class="pb-5 pt-3 bg-periwinkle">
+      <AwardsSection />
+    </div>
+
+    <div class="pb-5 pt-3">
       <div class="container">
         <QandASection />
         <div class="text-center mt-0">
           <a @click="goto('apply')" class="btn btn-lg btn-primary"
-            >Start Application</a>
+            >Start Application</a
+          >
         </div>
       </div>
     </div>
@@ -113,6 +117,7 @@ import CommercialSection from "@/components/sections/CommercialSection";
 import ProgramsSection from "@/components/sections/ProgramsSection";
 import StatsSection from "@/components/sections/StatsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import AwardsSection from "@/components/sections/AwardsSection";
 import { getFields } from "./url-context";
 
 export default {
@@ -133,6 +138,7 @@ export default {
     TestimonialsSection,
     DetailedLandingPageContent,
     CommercialSection,
+    AwardsSection,
   },
   data: () => ({
     hasApplied: false,

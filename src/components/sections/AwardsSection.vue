@@ -4,7 +4,7 @@
       <div class="container">
         <div class="pt-5 text-center">
           <h1>Awards & Recognition</h1>
-          <div class="mt-5 mb-5">
+          <div class="mt-5 pb-5">
             <h5 class="winner">Technology Emerging Winner</h5>
             <img
               src="https://www.ec.co/wp-content/uploads/2021/06/EC_Next_Logo_2021_Black-1-768x321.png"

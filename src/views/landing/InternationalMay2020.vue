@@ -52,7 +52,8 @@
             <router-link
               class="btn btn-lg btn-primary mt-5"
               to="/programs/international"
-            >Select a Monthly Plan</router-link>
+              >Select a Monthly Plan</router-link
+            >
             <!-- </div> -->
 
             <!-- <Promo25OffMonthly style="max-width: 450px;" class="mt-5" /> -->
@@ -80,18 +81,20 @@
       <router-link
         class="btn btn-lg btn-primary mt-5"
         to="/programs/international"
-      >Select a Monthly Plan</router-link>
+        >Select a Monthly Plan</router-link
+      >
     </div>
 
-    <InternshipPartnersSection/>
-    
+    <InternshipPartnersSection />
+
     <CommercialSection />
 
     <div class="text-center mb-5">
       <router-link
         class="btn btn-lg btn-primary mt-5"
         to="/programs/international"
-      >Select a Monthly Plan</router-link>
+        >Select a Monthly Plan</router-link
+      >
     </div>
 
     <TechSection />
@@ -101,7 +104,12 @@
       <router-link
         class="btn btn-lg btn-primary mt-5"
         to="/programs/international"
-      >Select a Monthly Plan</router-link>
+        >Select a Monthly Plan</router-link
+      >
+    </div>
+
+    <div class="bg-periwinkle">
+      <AwardsSection />
     </div>
   </div>
 </template>
@@ -120,6 +128,7 @@ import CommercialSection from "@/components/sections/CommercialSection";
 import StatsSection from "@/components/sections/StatsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import InternshipPartnersSection from "@/components/sections/InternshipPartnersSection";
+import AwardsSection from "@/components/sections/AwardsSection";
 
 export default {
   components: {
@@ -134,16 +143,19 @@ export default {
     StatsSection,
     TestimonialsSection,
     CommercialSection,
-    InternshipPartnersSection
+    InternshipPartnersSection,
+    AwardsSection,
   },
   data: () => ({
-    hasApplied: false
+    hasApplied: false,
   }),
-  computed: { ...mapGetters(["getMethods", "getApplicant", "getPromoCodesDisplay"]) },
+  computed: {
+    ...mapGetters(["getMethods", "getApplicant", "getPromoCodesDisplay"]),
+  },
   methods: {
     async startApplication(applicant) {
       await this.$store.dispatch("startApplication", {
-        applicant: { ...applicant }
+        applicant: { ...applicant },
       });
       await this.$store.dispatch("setStartDate", applicant.startDate);
       this.hasApplied = true;
@@ -151,12 +163,12 @@ export default {
     },
     clearApplicant() {
       this.hasApplied = false;
-    }
+    },
   },
   mounted() {
     const applicant = this.getApplicant;
-    this.hasApplied = applicant;    
-  }
+    this.hasApplied = applicant;
+  },
 };
 </script>
 
