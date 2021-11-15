@@ -22,6 +22,9 @@
             <router-link to="/baas">Bootcamp as a Service</router-link>
           </p>
           <p>
+            <router-link to="/corp">For Enterprise</router-link>
+          </p>
+          <p>
             <router-link to="/contact">Contact Us</router-link>
           </p>
         </div>

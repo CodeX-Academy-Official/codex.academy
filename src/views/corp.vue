@@ -14,25 +14,25 @@
             <div class>
               <h3 class="text-left action">Turn-key, Co-Branded</h3>
               <h1 class="text-left action">Coding Bootcamps</h1>
-              <h3 class="text-left action">as a Service</h3>
+              <h3 class="text-left action">To Reskill Your Team</h3>
             </div>
             <div class="checklist">
               <div class="title">We've got you covered!</div>
               <div class="item">
                 <Icon name="checkbox" />
-                <span>Flexible Curriculum (Yours/Ours)</span>
+                <span>Flexible Curriculum</span>
               </div>
               <div class="item">
                 <Icon name="checkbox" />
-                <span>Revenue Sharing</span>
+                <span>Faculty Provided</span>
               </div>
               <div class="item">
                 <Icon name="checkbox" />
-                <span>Financial Aid for Students</span>
+                <span>Student Reporting</span>
               </div>
               <div class="item">
                 <Icon name="checkbox" />
-                <span>Personal Account Manager</span>
+                <span>Smart Invoicing</span>
               </div>
             </div>
           </div>
@@ -48,7 +48,7 @@
     </Hero>
 
     <div class="container">
-      <h3 class="mt-5 text-center">Bootcamp-as-a-Service (BaaS)</h3>
+      <h3 class="mt-5 text-center">Bootcamp-as-a-Service</h3>
 
       <div class="row justify-content-center">
         <div class="mt-3 col-10 col-md-6 col-lg-7" ref="video">
@@ -60,12 +60,13 @@
         <div class="mt-3 col-10 col-md-6 col-lg-3">
           <p>
             CodeX Academy now offers it’s comprehensive backend and framework
-            for an organization, club, or individual to launch their very own
-            boot camp. Your boot camp can follow CodeX Academy’s software
+            for any organization or company that wishes to reskill their
+            workforce or give exciting new opportunities to their team members.
+            Your organization's boot camp can follow CodeX Academy’s software
             development pathways and curriculum, or you can bring your own
             curriculum and learning materials. You can depend on CodeX Academy’s
-            amazing mentors and instructors, or you can bring your own (or
-            handle it yourself). CodeX Academy will handle the rest!
+            amazing mentors and instructors, or you can bring your own. CodeX
+            Academy will handle the rest!
           </p>
         </div>
       </div>
@@ -121,7 +122,7 @@
     <div class="mt-5 pb-5 pt-5 bg-lilac">
       <div class="container">
         <div class="row justify-content-center">
-          <h1 class="text-center">BaaS Framework</h1>
+          <h1 class="text-center">Framework</h1>
           <p class="col-8">
             CodeX Academy's robust backend and framework takes the guess-work
             out of running a bootcamp. Allow us to handle the logistics while
@@ -193,8 +194,8 @@ import Icon from "@/components/Icon";
 import Money from "@/components/Money";
 import Logo from "@/components/Logo";
 import BaaSInterestForm from "@/components/sections/baas/BaaSInterestForm";
-import QandASection from "@/components/sections/baas/BasS-qanda";
-import BootcampFeatures from "@/components/sections/baas/BootcampFeatures";
+import QandASection from "@/components/sections/corp/corp-qanda";
+import BootcampFeatures from "@/components/sections/corp/BootcampFeatures";
 import BaaSCalculator from "@/components/sections/baas/BaaSCalculator";
 import AdditionalBootcampServices from "@/components/sections/baas/AdditionalBootcampFeatures";
 

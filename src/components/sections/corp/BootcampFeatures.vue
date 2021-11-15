@@ -62,9 +62,8 @@ export default {
         ],
         icon: "mentor",
       },
-
       {
-        name: "Payment and Financial Aid Services",
+        name: "Low Per-Student Cost",
         bullets: [
           "Credit/Debit card payments (no transaction fees)",
           "Student loans available",
@@ -74,7 +73,7 @@ export default {
       },
 
       {
-        name: "Job Placement Services",
+        name: "Flexible Schedule",
         bullets: [
           "Resume/CV feedback",
           "Extensive and growing curated list of internship and hiring",
