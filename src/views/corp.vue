@@ -122,7 +122,7 @@
     <div class="mt-5 pb-5 pt-5 bg-lilac">
       <div class="container">
         <div class="row justify-content-center">
-          <h1 class="text-center">Framework</h1>
+          <h1 class="col-10 text-center">Framework</h1>
           <p class="col-8">
             CodeX Academy's robust backend and framework takes the guess-work
             out of running a bootcamp. Allow us to handle the logistics while
