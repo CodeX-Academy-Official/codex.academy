@@ -1,10 +1,11 @@
 <template>
-  <div id="cta">
+  <div>
     <Hero
       class="pathrise-landing-hero"
       unsplashId="f5pTwLHCsAg"
       height="100vh"
       backgroundColor="rgba(25, 32, 71,0.7)"
+      id="cta"
     >
       <div class="container">
         <div class="row h-100">
@@ -262,11 +263,9 @@ export default {
         return el.offsetParent === null;
       }
 
-      let element = document.getElementsByClassName(el);
-      element.forEach((e) => {
-        if (!isHidden(e))
-          e.scrollIntoView({ behavior: "smooth", block: "end" });
-      });
+      let element = document.getElementById(el);
+      if (!isHidden(element))
+        element.scrollIntoView({ behavior: "smooth", block: "end" });
     },
   },
   mounted() {},
