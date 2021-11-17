@@ -6,11 +6,7 @@
           <h1>Awards & Recognition</h1>
           <div class="mt-5 pb-5">
             <h5 class="winner">Technology Emerging Winner</h5>
-            <img
-              src="https://www.ec.co/wp-content/uploads/2021/06/EC_Next_Logo_2021_Black-1-768x321.png"
-              alt="this slowpoke moves"
-              class="winnerImg"
-            />
+            <AwardModal />
             <slot />
           </div>
         </div>
@@ -20,10 +16,9 @@
 </template>
 
 <script>
+import AwardModal from "@/components/AwardModal";
 export default {
-  props: {
-    video: { type: String, default: "video/movie.gif" },
-  },
+  components: { AwardModal },
 };
 </script>
 
@@ -34,8 +29,5 @@ export default {
 .winnerDate {
   padding-top: 1rem;
   padding-left: 2rem;
-}
-.winnerImg {
-  width: 40%;
 }
 </style>
