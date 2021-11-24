@@ -57,6 +57,8 @@
             class="form-control"
             placeholder="Description"
             name="message"
+            v-model="message"
+            autofocus
           />
         </div>
 
