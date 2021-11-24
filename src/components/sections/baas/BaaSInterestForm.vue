@@ -51,6 +51,14 @@
             autofocus
           />
         </div>
+        <div class="form-label-group">
+          <label for="inputMessage">Description</label>
+          <textarea
+            class="form-control"
+            placeholder="Description"
+            name="message"
+          />
+        </div>
 
         <div class="form-label-group" v-if="offerFinancialAid">
           <label for="inputPassword">Curriculum</label>
@@ -99,6 +107,7 @@ export default {
     email: "",
     phone: "",
     org: "",
+    message: "",
     hasCurriculum: true,
     filled: false,
   }),
@@ -123,6 +132,7 @@ export default {
         email: this.email,
         phone: this.phone,
         org: this.org,
+        message: this.message,
         hasCurriculum: this.hasCurriculum,
       });
       this.filled = true;
@@ -168,6 +178,12 @@ export default {
       height: 20px;
       width: 20px;
     }
+  }
+
+  textarea {
+    overflow-y: scroll;
+    height: 100px;
+    resize: none; /* Remove this if you want the user to resize the textarea */
   }
 }
 </style>
