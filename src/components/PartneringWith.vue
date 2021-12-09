@@ -20,10 +20,6 @@ const partners = {
     logo: "img/partners/mtz.jpg",
     url: "https://www.mtzionnashville.org/",
   },
-  Metroafterschool: {
-    logo: "img/partners/metrons.jpg",
-    url: "https://mnps.org/",
-  },
   scf: { logo: "img/partners/scf.jpg", url: "https://www.scf.edu/" },
   slttech: { logo: "img/partners/slt.jpg", url: "https://www.slttechla.com/" },
   batonrougecc: {
