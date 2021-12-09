@@ -20,7 +20,7 @@ const partners = {
     logo: "img/partners/mtz.jpg",
     url: "https://www.mtzionnashville.org/",
   },
-  Metroafterschool:{
+  metroafterschool:{
   logo:"img/partners/metrons.jpg",
   url:"https://mnps.org",
   },
