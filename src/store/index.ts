@@ -56,12 +56,29 @@ async function sendToHubspotAndTrackErrors(
     throw error;
   }
 }
+async function sendFormToZappier(
+  portalId: string,
+  formId: string,
+  payload: any
+) {
+  try {
+    const payloadZappier = { ...payload, portalId, formId };
+    console.log(payloadZappier);
+    let urlZap = "https://hooks.zapier.com/hooks/catch/6492165/b1r0em5/";
+    return await sendToApi(urlZap, payloadZappier);
+  } catch (error) {
+    const v: any = Vue;
+    v.rollbar.error(error);
+    throw error;
+  }
+}
 async function sendApplication({ context, applicant, hsForm }: any) {
   const formId = hsForm || "56d6a407-24b7-4a6b-be49-45d4dbc6eea5";
   const source = context.state.source || "none";
   const applicantWithId = { ...applicant, learnerId: Date.now(), source };
   context.commit(ENROLL, applicantWithId);
-  await sendToHubspotAndTrackErrors("7092117", formId, applicantWithId);
+  await sendFormToZappier("7092117", formId, applicantWithId);
+  // await sendToHubspotAndTrackErrors("7092117", formId, applicantWithId);
 }
 
 export default new Vuex.Store({
@@ -161,7 +178,9 @@ export default new Vuex.Store({
       });
     },
     applyPromoCode({ commit, state }, promoCodeInput) {
-      const newCodes = promoCodeInput?.split(",").map((x: string) => x.trim().toUpperCase());
+      const newCodes = promoCodeInput
+        ?.split(",")
+        .map((x: string) => x.trim().toUpperCase());
       const allCodes = [...newCodes, ...state.promoCodes];
       const uniqueCodes = [...new Set(allCodes)];
       commit(SET_PROMO_CODES, uniqueCodes);
@@ -197,8 +216,8 @@ export default new Vuex.Store({
     getPromoCodes: (state) => state.promoCodes,
     getPromoCodesDisplay: (state) =>
       (state.promoCodes || [])
-        .map((p:String) => p.trim())  
-        .filter((p:String) => p)  
+        .map((p: String) => p.trim())
+        .filter((p: String) => p)
         .reverse()
         .join(", ")
         .toUpperCase(),
