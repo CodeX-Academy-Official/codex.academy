@@ -72,12 +72,29 @@ async function sendFormToZappier(
     throw error;
   }
 }
-async function sendApplication({ context, applicant, hsForm }: any) {
+async function sendShortForm({ context, applicant, hsForm }: any) {
   const formId = hsForm || "56d6a407-24b7-4a6b-be49-45d4dbc6eea5";
   const source = context.state.source || "none";
   const applicantWithId = { ...applicant, learnerId: Date.now(), source };
   context.commit(ENROLL, applicantWithId);
-  await sendFormToZappier("7092117", formId, applicantWithId);
+  //await sendFormToZappier("7092117", formId, applicantWithId);
+  await sendToApiWithTracking(
+    "https://hooks.zapier.com/hooks/catch/6492165/ocfqtk3/",
+    applicantWithId
+  );
+  // await sendToHubspotAndTrackErrors("7092117", formId, applicantWithId);
+}
+
+async function sendLongForm({ context, applicant, hsForm }: any) {
+  const formId = hsForm || "56d6a407-24b7-4a6b-be49-45d4dbc6eea5";
+  const source = context.state.source || "none";
+  const applicantWithId = { ...applicant, learnerId: Date.now(), source };
+  context.commit(ENROLL, applicantWithId);
+  //await sendFormToZappier("7092117", formId, applicantWithId);
+  await sendToApiWithTracking(
+    "https://hooks.zapier.com/hooks/catch/6492165/ocady18",
+    applicantWithId
+  );
   // await sendToHubspotAndTrackErrors("7092117", formId, applicantWithId);
 }
 
@@ -153,6 +170,10 @@ export default new Vuex.Store({
       const formId = "a69ff037-472e-4b81-a35d-1a91b59787d7";
       commit(SCHEDULE_CARD_PAYMENT, paymentInfo);
       await sendToHubspotAndTrackErrors("7092117", formId, paymentInfo);
+      // await sendToApiWithTracking(
+      //   "https://hooks.zapier.com/hooks/catch/6492165/ocfqtk3/",
+      //   paymentInfo
+      // );
     },
     setActivePlan(context, plan: Plan) {
       context.commit(SET_ACTIVE_PLAN, plan);
@@ -164,14 +185,14 @@ export default new Vuex.Store({
       context.commit(SET_SOURCE, source);
     },
     async startApplication(context: any, { applicant, hsForm }: any) {
-      await sendApplication({
+      await sendShortForm({
         context,
         applicant,
         hsForm,
       });
     },
     async enroll(context, applicant) {
-      await sendApplication({
+      await sendLongForm({
         context,
         applicant,
         hsForm: "c4c04dcc-7c42-4552-86df-cd3d25294c79",
