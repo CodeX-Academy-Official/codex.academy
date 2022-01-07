@@ -284,6 +284,26 @@
             ensure a stronger finish!
           </p>
         </QAndA>
+        <QAndA id="faq-cost" question="What does this cost?">
+          <p>
+            Well it cost $400 per month
+          </p>
+        </QAndA>
+        <QAndA id="faq-time-it-takes" question="How long will this take?">
+          <p>
+            Well it will take 6 months (which we have that now in learn to code
+            in 6 months)
+          </p>
+        </QAndA>
+        <QAndA
+          id="faq-dont-have-money"
+          question="What if I don’t have the money right now?"
+        >
+          <p>
+            No money, no problem. Don’t pay us until you get your first job but
+            we also have financial aid available for as little as $3000.
+          </p>
+        </QAndA>
       </div>
     </div>
   </div>

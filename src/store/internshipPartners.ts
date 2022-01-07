@@ -42,4 +42,29 @@ export const internshipPartners = [
     logo: "img/internships/acklen.png",
     url: "https://acklenavenue.com",
   },
+  {
+    name: "Pairify",
+    logo: "img/internships/pairify.png",
+    url: "",
+  },
+  {
+    name: "Dev Amplifier",
+    logo: "img/internships/DEV_AMPLIFIER.png",
+    url: "",
+  },
+  {
+    name: "Varsity Dev",
+    logo: "img/internships/Varsity_Dev.png",
+    url: "",
+  },
+  {
+    name: "Sommardahl Ventures",
+    logo: "img/internships/Sommardahl_ventures.png",
+    url: "",
+  },
+  {
+    name: "Grow Strong",
+    logo: "img/internships/grow_strong.png",
+    url: "m",
+  },
 ];

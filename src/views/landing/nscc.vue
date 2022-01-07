@@ -20,7 +20,7 @@
             :certification="fed"
             :hidePrice="true"
             :hideDefaultFeatures="true"
-            :features="['24 Weeks', 'Part-Time or Full-Time']"
+            :features="['24 Weeks', 'Part-Time']"
             @certificationSelected="certificationSelected"
           />
         </div>
@@ -35,7 +35,7 @@
             :certification="fsd"
             :hidePrice="true"
             :hideDefaultFeatures="true"
-            :features="['48 Weeks', 'Part-Time or Full-Time']"
+            :features="['48 Weeks', 'Part-Time']"
             @certificationSelected="certificationSelected"
           />
         </div>

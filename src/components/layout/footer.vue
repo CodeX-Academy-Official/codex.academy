@@ -143,6 +143,14 @@
         </div>
         <div class="col-1">
           <a
+            href="https://www.linkedin.com/company/codexdotacademy"
+            target="_blank"
+          >
+            <font-awesome-icon :icon="faLinkedin" class="fa-2x" />
+          </a>
+        </div>
+        <div class="col-1">
+          <a
             href="https://www.youtube.com/channel/UCUKP1GrIaI-dcuV1IlK7x8Q"
             target="_blank"
           >
@@ -164,6 +172,7 @@ import {
   faInstagram,
   faTwitterSquare,
   faYoutubeSquare,
+  faLinkedin,
 } from "@fortawesome/fontawesome-free-brands";
 import { mapGetters } from "vuex";
 
@@ -173,6 +182,7 @@ export default {
     faInstagram,
     faTwitterSquare,
     faYoutubeSquare,
+    faLinkedin,
   }),
   computed: {
     ...mapGetters(["isInternational"]),
