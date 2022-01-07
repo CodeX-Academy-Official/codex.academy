@@ -5,7 +5,7 @@
     <InternationalMay2020 v-else-if="international" />
     <CollegeFSDMay2021 v-else-if="college && program == 'fsd'" />
     <CollegeFEMay2021 v-else-if="college" />
-    <CollegeFSDMay2021 v-else-if="loaded" />
+    <HomeApril2020 v-else-if="loaded" />
   </div>
 </template>
 
