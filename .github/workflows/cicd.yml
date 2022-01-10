@@ -18,6 +18,7 @@ jobs:
   #                     |___/
 
   build:
+    needs: [security-audit]
     runs-on: ubuntu-latest
     steps:
       - name: Cache Node Modules
@@ -88,3 +89,12 @@ jobs:
 
       - name: Run Unit Tests
         run: npm t
+
+  security-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Check for security issue
+        run: npm audit --audit-level=critical #or "high"
