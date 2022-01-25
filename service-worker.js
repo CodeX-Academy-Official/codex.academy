@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.c690af7bdc7815a916b2dd874aefc43c.js"
+  "/precache-manifest.6834c4957fd12cc61b77401c645a1a26.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "codex-academy-website"});
