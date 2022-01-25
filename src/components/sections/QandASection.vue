@@ -284,24 +284,52 @@
             ensure a stronger finish!
           </p>
         </QAndA>
-        <QAndA id="faq-cost" question="What does this cost?">
+        <QAndA
+          id="faq-cost"
+          question="Is there any financial aid for international students?"
+        >
           <p>
-            Well it cost $400 per month
-          </p>
-        </QAndA>
-        <QAndA id="faq-time-it-takes" question="How long will this take?">
-          <p>
-            Well it will take 6 months (which we have that now in learn to code
-            in 6 months)
+            Currently we only support Credit Card payments for International
+            students.
           </p>
         </QAndA>
         <QAndA
-          id="faq-dont-have-money"
-          question="What if I don’t have the money right now?"
+          id="faq-schedule-pricing"
+          question="What would the schedule and pricing look like?"
         >
           <p>
-            No money, no problem. Don’t pay us until you get your first job but
-            we also have financial aid available for as little as $3000.
+            Pricing Example. $4500 for a 3mo plan (fulltime). This is our
+            Front-End developer path We also offer part time which is 20hrs a
+            week. This will be the same program content, just at half pace and
+            take 6mo.
+          </p>
+        </QAndA>
+        <QAndA
+          id="faq-fed-vs-fsd"
+          question="What is difference between Front-End Developer and Full-Stack Developer?"
+        >
+          <p>
+            Front-End path enables you to build landing pages and simple
+            websites, the Back-End enables you to handle complex back-end
+            interfaces for eg databases, therefore Full Stack Developers can do
+            Front End and Back End tasks. For more information:
+            <a href="https://www.codex.academy/#/programs/front-end-developer"
+              >https://www.codex.academy/#/programs/front-end-developer</a
+            >
+            <a href="https://www.codex.academy/#/programs/full-stack-developer"
+              >https://www.codex.academy/#/programs/full-stack-developer</a
+            >
+          </p>
+        </QAndA>
+        <QAndA
+          id="faq-time"
+          question="How much time should I dedicate to the course?"
+        >
+          <p>
+            If you choose part-time we expect 20hrs per week. This is good for
+            people that have full time jobs or other commitments. Full time is
+            recommended for students that can commit 40hrs a week to this
+            bootcamp.
           </p>
         </QAndA>
       </div>
