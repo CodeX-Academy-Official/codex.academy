@@ -312,14 +312,19 @@
             Front-End path enables you to build landing pages and simple
             websites, the Back-End enables you to handle complex back-end
             interfaces for eg databases, therefore Full Stack Developers can do
-            Front End and Back End tasks. For more information:
-            <a href="https://www.codex.academy/#/programs/front-end-developer"
-              >https://www.codex.academy/#/programs/front-end-developer</a
-            >
-            <a href="https://www.codex.academy/#/programs/full-stack-developer"
-              >https://www.codex.academy/#/programs/full-stack-developer</a
-            >
+            Front End and Back End tasks.
           </p>
+          <p>For more information:</p>
+          <a
+            class="info-links"
+            href="https://www.codex.academy/#/programs/front-end-developer"
+            >https://www.codex.academy/#/programs/front-end-developer</a
+          >
+          <a
+            class="info-links"
+            href="https://www.codex.academy/#/programs/full-stack-developer"
+            >https://www.codex.academy/#/programs/full-stack-developer</a
+          >
         </QAndA>
         <QAndA
           id="faq-time"
@@ -349,4 +354,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.info-links {
+  display: block;
+}
+</style>
