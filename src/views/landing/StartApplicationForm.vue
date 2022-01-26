@@ -15,15 +15,20 @@
     <div class="form-label-group" v-if="showEmail">
       <label for="inputEmail">Email address</label>
       <input
-        type="email"
-        class="form-control"
-        placeholder="Email address"
         name="email"
-        v-model="email"
+        class="form-control"
+        for="email"
+        type="email"
+        placeholder="Email address"
         required
         autofocus
+        v-model="email"
+        @change="validateEmail"
       />
     </div>
+    <span class="floating-placeholder" v-if="this.showEmailError"
+      >Please enter a valid email address</span
+    >
 
     <!-- <div class="form-label-group">
       <label for="inputUserName">Phone Number</label>
@@ -102,7 +107,7 @@ export default {
     hasPromoCode: String,
     offerFinancialAid: Boolean,
     submitButtonLabel: String,
-    extraFields: [String,Object]
+    extraFields: [String, Object],
   },
   data: () => ({
     name: "",
@@ -112,28 +117,41 @@ export default {
     financialAid: true,
     promoCode: "",
     startDate: getNextDeadlineFormatted(),
+    reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/,
+    showEmailError: false,
   }),
   computed: {
     ...mapGetters(["getPromoCodesDisplay"]),
     showZip() {
-      if(!this.extraFields) return false;
-      return this.extraFields.toString().toLowerCase().indexOf("zip") > -1;
+      if (!this.extraFields) return false;
+      return (
+        this.extraFields
+          .toString()
+          .toLowerCase()
+          .indexOf("zip") > -1
+      );
     },
     showPhone() {
-      if(!this.extraFields) return false;
-      return this.extraFields.toString().toLowerCase().indexOf("phone") > -1;
+      if (!this.extraFields) return false;
+      return (
+        this.extraFields
+          .toString()
+          .toLowerCase()
+          .indexOf("phone") > -1
+      );
     },
     showEmail() {
-      if(!this.extraFields) return true;
+      if (!this.extraFields) return true;
       const fields = this.extraFields.toString().toLowerCase();
       const hasNoEmail = fields.indexOf("no-email") > -1;
-      if(hasNoEmail) return false;
+      if (hasNoEmail) return false;
       return true;
-    },showName() {
-      if(!this.extraFields) return true;
+    },
+    showName() {
+      if (!this.extraFields) return true;
       const fields = this.extraFields.toString().toLowerCase();
       const hasNo = fields.indexOf("no-name") > -1;
-      if(hasNo) return false;
+      if (hasNo) return false;
       return true;
     },
   },
@@ -141,6 +159,13 @@ export default {
     this.promoCode = this.hasPromoCode?.toUpperCase();
   },
   methods: {
+    validateEmail() {
+      if (this.reg.test(this.email)) {
+        this.showEmailError = false;
+      } else {
+        this.showEmailError = true;
+      }
+    },
     track() {
       this.$gtag.event("conversion", {
         event_label: "Landing Page Form Filled",
@@ -148,23 +173,25 @@ export default {
       });
     },
     submitForm() {
-      const zip = this.zip.trim();
-      const mobilephone = this.mobilephone.trim();
-      const nameParts = this.name.trim().split(" ");
-      const lastName = nameParts[nameParts.length - 1];
-      const firstName = this.name.replace(lastName, "").trim();
-      this.$store.dispatch("applyPromoCode", this.promoCode);
-      this.$emit("submitted", {
-        firstName,
-        lastName,
-        zip,
-        mobilephone,
-        financialAid: this.financialAid,
-        email: this.email,
-        startDate: this.startDate,
-        promoCodes: this.getPromoCodesDisplay,
-      });
-      this.track();
+      if (!this.showEmailError) {
+        const zip = this.zip.trim();
+        const mobilephone = this.mobilephone.trim();
+        const nameParts = this.name.trim().split(" ");
+        const lastName = nameParts[nameParts.length - 1];
+        const firstName = this.name.replace(lastName, "").trim();
+        this.$store.dispatch("applyPromoCode", this.promoCode);
+        this.$emit("submitted", {
+          firstName,
+          lastName,
+          zip,
+          mobilephone,
+          financialAid: this.financialAid,
+          email: this.email,
+          startDate: this.startDate,
+          promoCodes: this.getPromoCodesDisplay,
+        });
+        this.track();
+      }
     },
   },
 };
@@ -198,6 +225,10 @@ export default {
       height: 20px;
       width: 20px;
     }
+  }
+
+  .floating-placeholder {
+    color: red;
   }
 }
 </style>
