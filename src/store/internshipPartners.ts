@@ -61,5 +61,6 @@ export const internshipPartners = [
   {
     name: "Grow Strong",
     logo: "img/internships/grow_strong.png",
+    url: "https://growstrong.io/homepage",
   },
 ];
