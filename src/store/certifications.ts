@@ -42,7 +42,7 @@ export const certifications = [
     id: "fsd",
     name: FULL_STACK_DEVELOPER,
     description:
-      "Develop challenging full-stack, data-driven web applications using best practices in technologies like React, NodeJS, TypeScript and C#.",
+      "Develop challenging full-stack, data-driven web applications using best practices in technologies like React, NodeJS, TypeScript and C Sharp",
     recommended: true,
     studyHours: 1040,
     levels: 6,
@@ -64,7 +64,7 @@ export const certifications = [
     icon: "server",
     noun: "server",
     badgeUrl: "img/badges/fse-master.png",
-    learnMoreUrl: "#/programs/full-stack-engineer", 
+    learnMoreUrl: "#/programs/full-stack-engineer",
     mentorSessions: 195 * 2,
     evaluations: 90,
     price: 13500,
