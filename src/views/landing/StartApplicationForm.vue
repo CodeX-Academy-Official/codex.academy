@@ -1,14 +1,26 @@
 <template>
   <form @submit.prevent="submitForm">
-    <div class="form-label-group" v-if="showName">
-      <label for="inputUserName">Applicant Name</label>
+    <div class="form-label-group" v-if="showFirstName">
+      <label for="inputUserFirstName">First Name</label>
       <input
         type="text"
-        name="name"
-        autocomplete="name"
+        name="firstName"
+        autocomplete="given-name"
         class="form-control"
-        placeholder="Name"
-        v-model="name"
+        placeholder="First name"
+        v-model="firstName"
+        required
+      />
+    </div>
+    <div class="form-label-group" v-if="showLastName">
+      <label for="inputUserLastName">Last Name</label>
+      <input
+        type="text"
+        name="lastName"
+        autocomplete="family-name"
+        class="form-control"
+        placeholder="last name"
+        v-model="lastName"
         required
       />
     </div>
@@ -110,7 +122,8 @@ export default {
     extraFields: [String, Object],
   },
   data: () => ({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     zip: "",
     mobilephone: "",
@@ -147,7 +160,14 @@ export default {
       if (hasNoEmail) return false;
       return true;
     },
-    showName() {
+    showFirstName() {
+      if (!this.extraFields) return true;
+      const fields = this.extraFields.toString().toLowerCase();
+      const hasNo = fields.indexOf("no-name") > -1;
+      if (hasNo) return false;
+      return true;
+    },
+    showLastName() {
       if (!this.extraFields) return true;
       const fields = this.extraFields.toString().toLowerCase();
       const hasNo = fields.indexOf("no-name") > -1;
@@ -176,13 +196,10 @@ export default {
       if (!this.showEmailError) {
         const zip = this.zip.trim();
         const mobilephone = this.mobilephone.trim();
-        const nameParts = this.name.trim().split(" ");
-        const lastName = nameParts[nameParts.length - 1];
-        const firstName = this.name.replace(lastName, "").trim();
         this.$store.dispatch("applyPromoCode", this.promoCode);
         this.$emit("submitted", {
-          firstName,
-          lastName,
+          firstName: this.firstName,
+          lastName: this.lastName,
           zip,
           mobilephone,
           financialAid: this.financialAid,
