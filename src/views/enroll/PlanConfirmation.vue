@@ -16,7 +16,12 @@
               @change="changedActivePlan"
               v-if="!activePlan.isFixed"
             >
-              <option v-for="c in availablePrograms" :key="c.name" :value="c.id">{{ c.name }}</option>
+              <option
+                v-for="c in availablePrograms"
+                :key="c.name"
+                :value="c.id"
+                >{{ c.name }}</option
+              >
             </select>
           </td>
         </tr>
@@ -37,54 +42,73 @@
               <option :value="20">Part-Time (around 20 hours/week)</option>
               <option :value="40">Full-Time (40 hours/week or more)</option>
             </select>
-            <p v-if="isMonthly || activePlan.isFixed">{{ studyHours }} Hours/Week</p>
+            <p v-if="isMonthly || activePlan.isFixed">
+              {{ studyHours }} Hours/Week
+            </p>
           </td>
         </tr>
         <tr>
           <th>Weekly Live Sessions:</th>
           <td>
-            <span
-              title="Calculated from your weekly study hours."
-            >{{ calculatedMentorSessions }} sessions</span>
+            <span title="Calculated from your weekly study hours."
+              >{{ calculatedMentorSessions }} sessions</span
+            >
           </td>
         </tr>
         <tr v-if="calculatedProgramMonths > 1">
           <th>Average Program Duration:</th>
           <td>
-            <span
-              title="Calculated from your weekly study hours."
-            >{{ calculatedProgramMonths }} months</span>
+            <span title="Calculated from your weekly study hours."
+              >{{ calculatedProgramMonths }} months</span
+            >
           </td>
         </tr>
-        
+
         <tr>
           <th>Start Date:</th>
           <td>
-            <input
+            <!-- <input
               type="date"
               v-model="startDate"
               class="inputLikeText"
               :class="{ error: !isValid(startDate) }"
-            />
-            <div
-              class="mt-2 text-danger"
-              role="alert"
-              v-if="startDate && !isValid(startDate)"
-            >Start date must be in the future.</div>
+            /> -->
+            <select
+              required
+              id="startDate"
+              class="inputLikeText"
+              placeholder="Select a Date"
+              v-model="startDate"
+              @change="changedStartDate"
+            >
+              <option
+                v-for="(Monday, key) in nextThreeMondays"
+                :value="Monday"
+                :key="key"
+                :selected="key === 0"
+              >
+                {{ Monday }}
+              </option>
+            </select>
           </td>
         </tr>
         <tr>
           <th>Promo Code:</th>
           <td>
-            <input style="width: 100px" class="inputLikeText" v-model="promoCode" />
+            <input
+              style="width: 100px"
+              class="inputLikeText"
+              v-model="promoCode"
+            />
             <button
               class="btn btn-sm btn-outline-secondary ml-2"
               @click.prevent="applyPromoCode"
-            >Apply</button>
-            <p
-              v-if="getPromoCodesDisplay"
-              class="small muted"
-            >{{ getPromoCodesDisplay.toUpperCase() }} applied</p>
+            >
+              Apply
+            </button>
+            <p v-if="getPromoCodesDisplay" class="small muted">
+              {{ getPromoCodesDisplay.toUpperCase() }} applied
+            </p>
           </td>
         </tr>
       </table>
@@ -103,30 +127,31 @@ import PlanSpread from "@/components/PlanSpread";
 import EnrollForm from "@/components/EnrollForm";
 import axios from "axios";
 import { mapGetters } from "vuex";
-import { getNextDeadlineFormatted, getNextDeadline } from "@/utils/dates";
+import { getNextMondays, formatted } from "@/utils/dates";
 import { mapToActivePlan } from "../../store/plans";
 import { mapCertificationToPlan } from "../../store/certifications";
 
-function getFutureDate() {
-  var d = new Date();
-  d.setDate(d.getDate() + 365);
-  return d;
-}
+// function getFutureDate() {
+//   var d = new Date();
+//   d.setDate(d.getDate() + 365);
+//   return d;
+// }
 
-function getYesterday() {
-  var d = new Date();
-  d.setDate(d.getDate() - 1);
-  return d;
-}
+// function getYesterday() {
+//   var d = new Date();
+//   d.setDate(d.getDate() - 1);
+//   return d;
+// }
 
 export default {
   data() {
     return {
       activePlanId: 0,
       activePlan: {},
-      startDate: getNextDeadlineFormatted(),
       promoCode: "",
-      studyHours: 40
+      studyHours: 40,
+      nextThreeMondays: [],
+      startDate: null,
     };
   },
   computed: {
@@ -135,18 +160,18 @@ export default {
       "getCertifications",
       "getStartDate",
       "getPromoCodesDisplay",
-      "getInternational"
+      "getInternational",
     ]),
     isMonthly() {
       return this.activePlan && this.activePlan.isMonthly;
     },
     availablePrograms() {
       if (this.isMonthly) {
-        return this.getInternational.map(x =>
+        return this.getInternational.map((x) =>
           mapToActivePlan(x, this.getStartDate)
         );
       }
-      return this.getCertifications.map(x =>
+      return this.getCertifications.map((x) =>
         mapCertificationToPlan(x, this.getStartDate)
       );
     },
@@ -157,10 +182,10 @@ export default {
     calculatedProgramMonths() {
       const weeks = this.activePlan.totalStudyHours / this.studyHours;
       return (weeks / 52) * 12;
-    }
+    },
   },
   components: {
-    PlanSpread
+    PlanSpread,
   },
   methods: {
     changedActivePlan() {
@@ -168,26 +193,24 @@ export default {
         this.studyHours = this.activePlan.studyHours;
       }
       this.activePlan = this.availablePrograms.find(
-        x => x.id === this.activePlanId
+        (x) => x.id === this.activePlanId
       );
     },
-    isValid(startDate) {
-      return new Date(startDate) > getYesterday();
+    changedStartDate() {
+      this.startDate = this.nextThreeMondays.find((x) => x === this.startDate);
     },
     confirmProgram() {
-      if (this.isValid(this.startDate)) {
-        this.applyPromoCode();
-        const activePlan = mapToActivePlan(this.activePlan, this.startDate);
-
-        this.$store.dispatch("setActivePlan", {
-          ...this.activePlan,
-          startDate: this.startDate,
-          studyHours: this.studyHours,
-          mentorSessions: this.calculatedMentorSessions,
-          months: this.calculatedProgramMonths
-        });
-        this.$emit("completed", 1);
-      }
+      this.applyPromoCode();
+      const activePlan = mapToActivePlan(this.activePlan, this.startDate);
+      this.startDate = formatted(new Date(this.startDate));
+      this.$store.dispatch("setActivePlan", {
+        ...this.activePlan,
+        startDate: this.startDate,
+        studyHours: this.studyHours,
+        mentorSessions: this.calculatedMentorSessions,
+        months: this.calculatedProgramMonths,
+      });
+      this.$emit("completed", 1);
     },
     changePlan() {
       this.$router.push("/findplan");
@@ -196,7 +219,7 @@ export default {
       if (!this.promoCode) return;
       this.$store.dispatch("applyPromoCode", this.promoCode);
       this.promoCode = "";
-    }
+    },
   },
   mounted() {
     this.activePlan = this.getActivePlan;
@@ -216,7 +239,9 @@ export default {
     if (this.getStartDate) {
       this.startDate = this.getStartDate;
     }
-  }
+    this.nextThreeMondays = getNextMondays();
+    this.startDate = this.nextThreeMondays[0];
+  },
 };
 </script>
 
