@@ -55,7 +55,7 @@ export function getNextMondayV2(anyDate: Date) {
   return nextMonday;
 }
 export function getNextMondays() {
-  let d = new Date("2022-03-24");
+  let d = new Date();
   d.setDate(d.getDate() + 1);
   let nextThreeMondays = [];
   for (let a = 0; a < 3; a++) {
