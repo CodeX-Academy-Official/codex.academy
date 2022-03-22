@@ -45,22 +45,26 @@ export const internshipPartners = [
   {
     name: "Pairify",
     logo: "img/internships/pairify.png",
+    url: "https://pairify.io/",
   },
   {
     name: "Dev Amplifier",
     logo: "img/internships/DEV_AMPLIFIER.png",
+    url: "https://devamplifier.io/",
   },
   {
     name: "Varsity Dev",
     logo: "img/internships/Varsity_Dev.png",
+    url: "https://varsity.dev/",
   },
   {
     name: "Sommardahl Ventures",
     logo: "img/internships/Sommardahl_ventures.png",
+    url: "https://sommardahl.com/",
   },
   {
     name: "Grow Strong",
     logo: "img/internships/grow_strong.png",
-    url: "https://growstrong.io/homepage",
+    url: "https://growstrong.io/",
   },
 ];
