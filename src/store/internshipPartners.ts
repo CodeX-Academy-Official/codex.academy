@@ -67,4 +67,9 @@ export const internshipPartners = [
     logo: "img/internships/grow_strong.png",
     url: "https://growstrong.io/",
   },
+  {
+    name: "Nashville State Community College",
+    logo: "img/internships/nashville_state.png",
+    url: "https://workforce.nscc.edu/individual-training/coding-bootcamps/",
+  },
 ];
