@@ -24,8 +24,8 @@ export const withTechnologies = () => ({
         icon={faSimCard}
       >
         <p>
-          As a CodeX Leader, you'll be matched with your very own full-stack
-          mentor who will be there with you every step of the way.
+          As a CodeX Leader, you'll have access to a pool of full-stack
+          mentors who will be there with you every step of the way.
         </p>
       </PillarSecondary>
     );
