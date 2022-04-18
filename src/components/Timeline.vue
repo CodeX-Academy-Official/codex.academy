@@ -31,7 +31,7 @@
       </p>
       <ul>
         <li>
-          Meet with your mentor to go over battle plan, compare notes and clear
+          Meet with a mentor to go over battle plan, compare notes and clear
           up any blockers you have.
         </li>
         <li>Study course material independently</li>
