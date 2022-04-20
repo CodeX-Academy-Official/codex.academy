@@ -89,8 +89,8 @@
             <b-badge variant="primary">Several times/week</b-badge>
           </p>
           <p class="card-text">
-            You will meet with your mentor frequently in an online video-call.
-            Face time with your mentor helps solidify and strengthen what you
+            You will meet with expert mentors frequently in online video calls.
+            Face time with mentors helps solidify and strengthen what you
             have been learning independently.
           </p>
         </div>

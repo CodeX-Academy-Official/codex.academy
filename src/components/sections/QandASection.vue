@@ -159,10 +159,10 @@
             Yes, it is. Like any course, we have a curriculum that serves as a
             roadmap to guide you as you are learning. You will have multiple
             touchpoints throughout the week to help keep you moving and on
-            track. You will meet weekly with your mentor, a time you will grow
+            track. You will meet with a mentor at least once, a time you will grow
             to cherish. During mentoring sessions, you will strategize on next
             steps through the curriculum, troubleshoot tough problems, and do
-            some pair programming. Your instructors and mentor will lead you
+            some pair programming. Your instructors and mentors will lead you
             through the process of learning to code.
           </p>
         </QAndA>

@@ -5,7 +5,7 @@ export const pillars = [
     subtitle: "Live 1-on-1 Mentorship",
     isPrimary: true,
     description:
-      "CodeX Academy believes mentorship is the key to achieving true mastery in programming. As you learn to code, you will get stuck several times (maybe a pesky semi-colon missing). As a CodeX Academy Learner, you have access to a personal mentor who can answer you via chat or even jump on a video call to work it out. Live 1-on-1 mentorship accelerates learning and makes it stick!",
+      "CodeX Academy believes mentorship is the key to achieving true mastery in programming. As you learn to code, you will get stuck several times (maybe a pesky semi-colon missing). As a CodeX Academy Learner, you have access to a pool of experts who can help you via chat or even jump on a video call to work it out. Live 1-on-1 mentorship accelerates learning and makes it stick!",
     icon: "faPeopleCarry",
   },
   {

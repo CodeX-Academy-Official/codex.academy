@@ -11,8 +11,8 @@
         :class="{ needsBorder: i.needsBorder }"
         :style="{ 'background-image': `url(${i.logo})` }"
       ></div>
-      <p class="mt-2 text-center text-muted">
-        <small>{{ i.name }}</small>
+      <!--<p class="mt-2 text-center text-muted">
+        <small>{{ i.name }}</small>-->
       </p>
     </div>
     <div class="col-6 col-sm-4 col-md-3 col-lg-2 internship">

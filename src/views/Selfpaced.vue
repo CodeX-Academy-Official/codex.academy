@@ -21,8 +21,8 @@
           Our Self-Paced Programs provide you the chance to learn coding and
           make it stick ON YOUR TERMS. When you can go faster, you have the
           option to go faster. When you need to take more time, you have the
-          freedom to stay with a concept longer. Your mentor will be with you at
-          each step!
+          freedom to stay with a concept longer. You'll have help at each 
+          step!
         </p>
       </div>-->
       <div class="d-block d-md-none mt-5">
