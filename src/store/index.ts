@@ -64,8 +64,9 @@ async function sendFormToZappier(
   try {
     const payloadZappier = { ...payload, portalId, formId };
     console.log(payloadZappier);
-    let urlZap = "https://hooks.zapier.com/hooks/catch/6492165/b1r0em5/";
-    return await sendToApi(urlZap, payloadZappier);
+    const v3Endpoint = "https://hooks.zapier.com/hooks/catch/6492165/bkznu75/";
+    const v2Endpoint = "https://hooks.zapier.com/hooks/catch/6492165/b1r0em5/";
+    return await sendToApi(v3Endpoint, payloadZappier);
   } catch (error) {
     const v: any = Vue;
     v.rollbar.error(error);
@@ -78,8 +79,10 @@ async function sendShortForm({ context, applicant, hsForm }: any) {
   const applicantWithId = { ...applicant, learnerId: Date.now(), source };
   context.commit(ENROLL, applicantWithId);
   //await sendFormToZappier("7092117", formId, applicantWithId);
+  const v2Endpoint = "https://hooks.zapier.com/hooks/catch/6492165/ocfqtk3/";
+  const v3Endpoint = "https://hooks.zapier.com/hooks/catch/6492165/bkzxvw1/";
   await sendToApiWithTracking(
-    "https://hooks.zapier.com/hooks/catch/6492165/ocfqtk3/",
+    v3Endpoint,
     applicantWithId
   );
   // await sendToHubspotAndTrackErrors("7092117", formId, applicantWithId);
@@ -91,8 +94,10 @@ async function sendLongForm({ context, applicant, hsForm }: any) {
   const applicantWithId = { ...applicant, learnerId: Date.now(), source };
   context.commit(ENROLL, applicantWithId);
   //await sendFormToZappier("7092117", formId, applicantWithId);
+  const v3Endpoint = "https://hooks.zapier.com/hooks/catch/6492165/bkznu75/";
+  const v2Endpoint = "https://hooks.zapier.com/hooks/catch/6492165/b1r0em5/";
   await sendToApiWithTracking(
-    "https://hooks.zapier.com/hooks/catch/6492165/ocady18",
+    v3Endpoint,
     applicantWithId
   );
   // await sendToHubspotAndTrackErrors("7092117", formId, applicantWithId);
@@ -152,6 +157,7 @@ export default new Vuex.Store({
       commit(RESET);
     },
     async sendBaaSInterestForm(_context, info) {
+      //TODO: Need to change this to v3
       await sendToApiWithTracking(
         "https://hooks.zapier.com/hooks/catch/6492165/bo2os43/",
         info
