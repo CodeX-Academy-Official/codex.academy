@@ -14,6 +14,9 @@ const routes: Array<any> = [
     path: "/nscc",
     name: "NSCC",
     component: NSCC,
+    beforeEnter(to, from, next) {
+      window.location.href = "https://go.codex.academy/nscc";
+    },
     meta: {
       layout: "no-nav",
     },
