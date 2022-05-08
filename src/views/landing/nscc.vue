@@ -119,7 +119,9 @@ export default {
       location.href = url;
     },
   },
-  mounted() {},
+  mounted() {
+window.location.href = "https://go.codex.academy/nscc";
+},
 };
 </script>
 
