@@ -78,14 +78,12 @@ async function sendShortForm({ context, applicant, hsForm }: any) {
   const source = context.state.source || "none";
   const applicantWithId = { ...applicant, learnerId: Date.now(), source };
   context.commit(ENROLL, applicantWithId);
-  //await sendFormToZappier("7092117", formId, applicantWithId);
   const v2Endpoint = "https://hooks.zapier.com/hooks/catch/6492165/ocfqtk3/";
   const v3Endpoint = "https://hooks.zapier.com/hooks/catch/6492165/bkzxvw1/";
   await sendToApiWithTracking(
     v3Endpoint,
     applicantWithId
   );
-  // await sendToHubspotAndTrackErrors("7092117", formId, applicantWithId);
 }
 
 async function sendLongForm({ context, applicant, hsForm }: any) {
@@ -93,14 +91,12 @@ async function sendLongForm({ context, applicant, hsForm }: any) {
   const source = context.state.source || "none";
   const applicantWithId = { ...applicant, learnerId: Date.now(), source };
   context.commit(ENROLL, applicantWithId);
-  //await sendFormToZappier("7092117", formId, applicantWithId);
   const v3Endpoint = "https://hooks.zapier.com/hooks/catch/6492165/bkznu75/";
-  const v2Endpoint = "https://hooks.zapier.com/hooks/catch/6492165/b1r0em5/";
+  const v2Endpoint = "https://hooks.zapier.com/hooks/catch/6492165/ocady18/";
   await sendToApiWithTracking(
     v3Endpoint,
     applicantWithId
   );
-  // await sendToHubspotAndTrackErrors("7092117", formId, applicantWithId);
 }
 
 export default new Vuex.Store({
@@ -157,7 +153,6 @@ export default new Vuex.Store({
       commit(RESET);
     },
     async sendBaaSInterestForm(_context, info) {
-      //TODO: Need to change this to v3
       await sendToApiWithTracking(
         "https://hooks.zapier.com/hooks/catch/6492165/bo2os43/",
         info
@@ -176,10 +171,6 @@ export default new Vuex.Store({
       const formId = "a69ff037-472e-4b81-a35d-1a91b59787d7";
       commit(SCHEDULE_CARD_PAYMENT, paymentInfo);
       await sendToHubspotAndTrackErrors("7092117", formId, paymentInfo);
-      // await sendToApiWithTracking(
-      //   "https://hooks.zapier.com/hooks/catch/6492165/ocfqtk3/",
-      //   paymentInfo
-      // );
     },
     setActivePlan(context, plan: Plan) {
       context.commit(SET_ACTIVE_PLAN, plan);
