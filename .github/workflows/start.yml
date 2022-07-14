@@ -140,24 +140,18 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       
-      - name: Tag 
-        id: autotagger
-        uses: butlerlogic/action-autotag@stable
-        with:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-      
-      - name: Release
+      - name: Create Release
         id: create_release
-        if: steps.autotagger.outputs.tagname != ''
-        uses: actions/create-release@v1.0.0
+        uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
-          tag_name: ${{ steps.autotagger.outputs.tagname }}
-          release_name: Version ${{ steps.autotagger.outputs.version }}
-          body: ${{ steps.autotagger.outputs.tagmessage }}
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            Stable version
           draft: false
-          prerelease: true
+          prerelease: false
 
       - name: Retrieve Artifact
         uses: actions/download-artifact@v2
