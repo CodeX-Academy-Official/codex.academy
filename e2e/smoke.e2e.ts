@@ -14,11 +14,10 @@ async function main() {
     let value = await element.evaluate((el: any) => el.textContent);
     if (!value) throw new Error("Element had no value.");
     await browser.close();
-    const found = value.toLowerCase().indexOf("hyperfocused curriculum") > -1;
+    const found = value.toLowerCase().indexOf("hyperfocused curr1culum") > -1;
     if (!found) {
       console.log(value);
       throw new Error("Smoke test failed.");
-      
     }
     console.log("Smoke test passed.");
     (<any>process).exitCode = 0;
