@@ -22,3 +22,24 @@ jobs:
 
       - name: Build
         run: npm run build
+
+  lint:
+    #needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      # - name: Cache Node Modules
+      #   id: cache-node-modules
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: node_modules
+      #     key: node-modules-${{ hashFiles('package-lock.json') }}
+
+      - name: Install Dependencies
+        # if: steps.cache.outputs.cache-hit != 'true'
+        run: npm i
+
+      - name: Lint the code
+        run: npm run lint
