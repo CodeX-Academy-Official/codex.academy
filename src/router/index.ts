@@ -46,6 +46,9 @@ const routes = [
     path: "/programs/overview",
     name: "ProgramOverview",
     component: ProgramOverview,
+    beforeEnter() {
+      window.location.href = "https://go.codex.academy/select-target";
+    },
   },
   {
     path: "/faqs",
@@ -127,7 +130,7 @@ const routes = [
     path: "/enroll",
     component: EnrollmentContainer,
     beforeEnter() {
-      window.location.href = "https://go.codex.academy/select-target";
+      //window.location.href = "https://go.codex.academy/select-target";
     },
     // children: [
     //   {

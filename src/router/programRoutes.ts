@@ -17,11 +17,14 @@ const routes: Array<any> = [
   },
   {
     path: "/programs",
-    component: Programs,
+    component: Programs,    
   },
   {
     path: "/programs/international",
     component: SelfPacedPlans,
+    beforeEnter() {
+      window.location.href = "https://go.codex.academy/select-target";
+    },
   },
   { path: "/programs/full-stack-developer", component: FullStackDeveloper },
   { path: "/programs/full-stack-engineer", component: FullStackEngineer },

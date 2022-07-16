@@ -111,11 +111,12 @@ export default {
   },
   methods: {
     certificationSelected(cert) {
-      this.$store.dispatch(
-        "setActivePlan",
-        mapCertificationToPlan(cert, this.getStartDate)
-      );
-      this.$router.push("/enroll");
+      // this.$store.dispatch(
+      //   "setActivePlan",
+      //   mapCertificationToPlan(cert, this.getStartDate)
+      // );
+      // this.$router.push("/enroll");
+      window.location.href = `https://go.codex.academy/select-target/?select=${cert.id}`;
     },
   },
 };
