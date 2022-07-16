@@ -127,7 +127,7 @@ const routes = [
     path: "/enroll",
     component: EnrollmentContainer,
     beforeEnter() {
-      window.location.href = "https://go.codex.academy/program";
+      window.location.href = "https://go.codex.academy/select-target";
     },
     // children: [
     //   {
