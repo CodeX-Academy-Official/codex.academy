@@ -126,44 +126,47 @@ const routes = [
   {
     path: "/enroll",
     component: EnrollmentContainer,
-    children: [
-      {
-        path: "",
-        component: PlanConfirmation,
-      },
-      {
-        path: "applicant",
-        component: EnrollmentForm,
-      },
-      {
-        name: "waitForApproval",
-        path: "waitForApproval",
-        component: WaitForApproval,
-      },
-      {
-        name: "enroll-payment",
-        path: "payment",
-        component: PaymentOptions,
-      },
-      {
-        name: "appfee",
-        path: "appfee",
-        component: ApplicationFee,
-      },
-      {
-        path: "climb",
-        component: FinancialAid,
-      },
-      {
-        path: "admissions",
-        component: MeetWithAdmissions,
-      },
-      {
-        name: "enroll-complete",
-        path: "complete",
-        component: EnrollmentComplete,
-      },
-    ],
+    beforeEnter() {
+      window.location.href = "https://go.codex.academy/program";
+    },
+    // children: [
+    //   {
+    //     path: "",
+    //     component: PlanConfirmation,
+    //   },
+    //   {
+    //     path: "applicant",
+    //     component: EnrollmentForm,
+    //   },
+    //   {
+    //     name: "waitForApproval",
+    //     path: "waitForApproval",
+    //     component: WaitForApproval,
+    //   },
+    //   {
+    //     name: "enroll-payment",
+    //     path: "payment",
+    //     component: PaymentOptions,
+    //   },
+    //   {
+    //     name: "appfee",
+    //     path: "appfee",
+    //     component: ApplicationFee,
+    //   },
+    //   {
+    //     path: "climb",
+    //     component: FinancialAid,
+    //   },
+    //   {
+    //     path: "admissions",
+    //     component: MeetWithAdmissions,
+    //   },
+    //   {
+    //     name: "enroll-complete",
+    //     path: "complete",
+    //     component: EnrollmentComplete,
+    //   },
+    // ],
   },
   {
     path: "/enrollment-complete",
