@@ -36,7 +36,7 @@ export const certifications = [
     learnMoreUrl: "#/programs/front-end-developer",
     mentorSessions: 65 * 2,
     evaluations: 30,
-    price: 4500,
+    price: 5850,
   },
   {
     id: "fsd",
@@ -52,7 +52,7 @@ export const certifications = [
     learnMoreUrl: "#/programs/full-stack-developer",
     mentorSessions: 130 * 2,
     evaluations: 60,
-    price: 9000,
+    price: 11700,
   },
   {
     id: "fse",
@@ -67,6 +67,6 @@ export const certifications = [
     learnMoreUrl: "#/programs/full-stack-engineer",
     mentorSessions: 195 * 2,
     evaluations: 90,
-    price: 13500,
+    price: 17550,
   },
 ];
