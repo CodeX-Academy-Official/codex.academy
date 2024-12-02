@@ -28,7 +28,7 @@
     "core-js": "^3.6.5",
     "gh-pages": "^2.2.0",
     "lint": "^0.7.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "register-service-worker": "^1.7.1",
     "sass": "^1.44.0",
     "v-video-embed": "^1.0.8",
